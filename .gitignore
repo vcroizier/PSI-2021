@@ -1,0 +1,31 @@
+*/
+!01-Cours/
+!01-Cours/**
+!05-Interro/
+!05-Interro/**
+!10-DNS/
+!10-DNS/**
+!20-DS/
+!20-DS/**
+!30-Programmes de colle/
+!30-Programmes de colle/**
+!40-Informatique/
+!40-Informatique/**
+!79-Colles/
+!79-Colles/**
+10-DNS/*-copies/
+10-DNS/*-copies/**
+20-DS/*-copies/
+20-DS/*-copies/**
+
+*.aux
+*.log
+*.out
+*.pdf
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.zip
+*.7z
+*.sty

@@ -1,0 +1,303 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{cours}
+\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\usepackage{pifont}
+
+\begin{document}
+\everymath{\displaystyle}
+
+
+\begin{center}
+\textit{{ {\huge TD 6 : Suites et séries de fonctions}}}
+\end{center}
+
+
+\bigskip
+
+\noindent Dans la suite, $I$ sera un intervalle de $\mathbb{R}$ contenant au moins deux points.
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Convergence de suites de fonctions}}}
+\end{center}
+
+
+\begin{Exa} Pour tout entier $n \geq 1$, on note $f_n$ la fonction définie sur $\mathbb{R}_+$ par :
+$$ f_n(x) = \frac{x}{n+x}$$
+Étudier la convergence uniforme de $(f_n)_{n \geq 1}$ sur $\mathbb{R}_+$ puis sur un segment de $\mathbb{R}_+$.
+\end{Exa}
+
+
+\begin{Exa} Soient $\alpha \in \R$ et $(f_n)_{n \geq 1}$ la suite de fonctions définies pour tout $x \in [0,1]$ par :
+$$f_n(x) = n^\alpha x(1-x)^n$$
+
+\begin{enumerate}
+ \item Étudier la convergence simple de $(f_n)_{n \geq 1}$.
+ \item Y a-t-il convergence uniforme ?
+  \end{enumerate}
+\end{Exa}
+
+
+\begin{Exa} Pour tout entier $n \geq 0$, on note $f_n$ la fonction définie sur $\mathbb{R}_+$ par :
+$$ f_n(x) = \frac{x^n e^{-x}}{n!}$$
+
+\begin{enumerate}
+\item Déterminer la limite simple de $(f_n)_{n \geq 0}$ sur $\mathbb{R}_+$.
+\item Montrer qu'il y a convergence uniforme (on pourra utiliser la formule de Stirling).
+\end{enumerate}
+\end{Exa} 
+
+
+\begin{Exa} Soit $(f_n)_{n \geq 1}$ la suite de fonctions définies pour tout $x \in \mathbb{R}_+$ par :
+$$f_n(x) = \frac {nx}{1+n^2x^2}$$
+\begin{enumerate}
+\item Étudier la convergence simple de $(f_n)_{n \geq 1}$ sur $\mathbb{R}_+$.
+\item Étudier la convergence uniforme de $(f_n)_{n \geq 1}$ sur $\mathbb{R}_+$ puis sur $[a, + \infty[$ pour $a>0$.
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa} Montrer que la limite simple d'une suite de fonctions croissantes de $I$ vers $\mathbb{R}$ est croissante.
+\end{Exa}
+
+\begin{Exa} On pose pour tout entier $n \geq 0$ et tout $x \in \mathbb{R}$,
+$$f_{n}(x) =\dfrac{n+2}{n+1}\mathrm{e}^{-n x^{2}}$$
+\begin{enumerate}
+\item \'Etudier la convergence simple de la suite de fonctions $\left(f_{n}\right) _{n \geq 0}$.
+\item La suite de fonctions  $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniformément sur $\left[ 0,+\infty\right[$ ?
+\item Soit $a>0$. La suite de fonctions $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniform\'{e}ment sur  $[a,+\infty[$ ?	
+\item La suite de fonctions  $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniform\'{e}ment sur $]0,+\infty[$? 
+\end{enumerate}
+\end{Exa}
+
+\begin{Exa} \begin{enumerate}
+\item Soient $X$ une partie de $\mathbb{R}$ et $\left( f_{n}\right) _{n \geq 0}$ une suite de fonctions de $X$ dans $\mathbb{R}$ convergeant simplement vers une fonction $f$. \\
+On suppose qu'il existe une suite $\left( x_{n}\right)_{n \geq 0}$ d'\'{e}l\'{e}ments de $X$ telle que la suite $\left( f_{n}(x_{n})-f\left( x_{n}\right) \right) _{n \geq 0}$ ne tende pas vers $0$. \medskip
+
+D\'{e}montrer que la suite de fonctions $\left( f_{n}\right) _{n \geq 0}$ ne converge pas uniform\'{e}ment vers $f$ sur $X$.
+
+\item Pour tout $x\in\mathbb{R}$ et tout entier $n \geq 0$, on pose :
+$$f_{n}(x) =\dfrac{\sin \left( nx\right) }{1+n^{2}x^{2}}$$
+	\begin{enumerate}
+	\item \'Etudier la convergence simple de la suite $\left( f_{n}\right)_{n \geq 0}$.
+	\item \'Etudier la convergence uniforme de la suite $\left( f_{n}\right)_{n \geq 0}$ sur $[a,+\infty[$ (avec $a>0$),  puis sur $]0,+\infty[$.
+	\end{enumerate}
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa} 
+\begin{enumerate}
+
+\item Soient $(g_n)_{n \geq 0}$ une suite de fonctions de $X$ dans $\mathbb{C}$ et $X$ un ensemble non vide quelconque.\\
+On suppose que, pour tout $n\in \mathbb{N}$, $g_n$ est bornée et que la suite $(g_n)_{n \geq 0}$ converge uniformément sur $X$ vers $g$. Démontrer que la fonction  $g$ est bornée.
+\item
+On considère la suite  $(f_n)_{n \geq 1}$ de fonctions  définies sur $\mathbb{R}$ par : 
+
+$$f_n(x)=\left\lbrace \begin{array}{lll}
+n^2x&\:\text{si}\:&|x|\leq \frac{1}{n}\\[0.3cm]
+\dfrac{1}{x}&\:\text{si}\:&|x|>\frac{1}{n}
+\end{array}\right.$$
+Prouver que $(f_n)_{n \geq 1}$  converge simplement sur $\mathbb{R}$.\\
+La convergence est-elle uniforme sur $\mathbb{R}$?
+
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa} Pour tout $n \geq 1$, on pose $f_n : \mathbb{R} \rightarrow \mathbb{R}$ définie par :
+$$ f_n(x)= \left\lbrace \begin{array}{cl}
+\dfrac{nx^2}{1+nx} & \hbox{ si } x \geq 0 \\[0.3cm]
+\dfrac{nx^3}{1+nx^2} & \hbox{ si } x < 0 \\
+\end{array}\right.$$
+\begin{enumerate}
+\item Montrer que $(f_n)_{n \geq 1}$ converge uniformément sur $\mathbb{R}$ vers une fonction $f$ que l'on précisera.
+\item Montrer que $(f_n')_{n \geq 1}$ converge simplement mais pas uniformément sur $[-1,1]$.
+\end{enumerate}
+\end{Exa}
+
+
+
+
+\begin{Exa}[\ding{80}] Soit $(P_{n})_{n \geq 0}$ une suite de fonctions polynômiales de $\R$ dans $\R$. On suppose que cette suite converge uniformément vers une fonction $f$ sur $\R$. Montrer que la fonction $f$ est polynomiale.
+\end{Exa}
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Convergence de séries de fonctions}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Étudier la convergence simple, normale et uniforme de $\Sum{n\geq 1}{} f_n$ sur $\mathbb{R}_+^*$ où pour tout entier $n \geq 1$ et tout $x \in \mathbb{R}_+^*$, 
+$$ f_n(x) = \frac{1}{n+n^3x^2}$$
+Cette série converge t-elle uniformément sur tout segment de $\mathbb{R}_+^*$ ?
+\end{Exa} 
+
+
+
+\begin{Exa}[\ding{80}] Étudier la convergence simple, normale puis uniforme de $\dis \Sum{n\geq 0}{} f_n$ sur $\mathbb{R}_+$ où pour tout entier $n \geq 0$ et tout $x \in \mathbb{R}_+$, $f_n(x) = nx^2e^{-x\sqrt{n}}.$
+\end{Exa}
+
+\begin{Exa} Pour tout entier $n \geq 1$ et tout $x \in \mathbb{R}$, on pose :
+$$ f_n(x) = \dfrac{\left(-1\right)^{n}e^{-nx}}{n} $$
+
+\begin{enumerate}
+\item \'Etudier la convergence simple sur $\mathbb{R}$  de la série de fonctions $\Sum{n\geq 1}{} f_n.$
+\item \'Etudier la convergence uniforme sur $\left[ 0,+\infty\right[ $  de la série de fonctions $\Sum{n\geq 1}{} f_n.$
+\end{enumerate}
+\end{Exa}
+
+ 
+
+
+\begin{Exa}[\ding{80}] Soient $A\subset \mathbb{R}$ et $\left( f_{n}\right)_{n \geq 0}$ une suite de fonctions de $A$ dans $\mathbb{R}$.
+
+\begin{enumerate}
+\item D\'{e}montrer l'implication:
+	\begin{eqnarray*}
+	&  \text{La s\'{e}rie de fonctions }\dis \Sum{n\geq 0}{} f_n\ \text{converge uniform\'{e}ment sur $A$}& \\
+	&\Downarrow &\\
+	&\text{La suite de fonctions\ }\left( f_{n}\right) _{n \geq 0}\ \text{converge uniform\'{e}ment vers la fonction nulle sur $A$}&
+	\end{eqnarray*}
+\item
+On pose pour tout $n\in\mathbb{N}$ et tout $x\in\left[ 0,+\infty\right[ $, 
+$$f_n(x)=nx^2\mathrm{e}^{-x\sqrt{n}}$$
+Prouver que $\Sum{n\geq 0}{} f_n$ converge simplement sur $\left[ 0,+\infty\right[$. La convergence est-elle uniforme ?
+\end{enumerate}
+\end{Exa}
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Interversion limite-intégrale}}}
+\end{center}
+
+\medskip
+
+
+\begin{Exa}On pose pour tout entier $n \geq 1$ et tout $x \in [0,1]$,
+$$f_{n}\left( x\right) =\left( x^{2}+1\right) \dfrac{ne^{x}+xe^{-x}}{n+x} $$
+
+\begin{enumerate}
+\item Démontrer que la suite de fonctions $\left( f_{n}\right) _{n \geq 1}$ converge uniform\'{e}ment sur $[0,1]$.
+\item Calculer $\underset{n\rightarrow +\infty }{\lim }\displaystyle\int\limits_{0}^{1}\left( x^{2}+1\right) \dfrac{ne^{x}+xe^{-x}}{n+x}\text{d}x$.
+\end{enumerate}
+\end{Exa} 
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Fonctions définies par une somme}}}
+\end{center}
+
+\medskip
+
+
+\begin{Exa} Donner l'ensemble de définition et de continuité de la fonction $f$ définie par :
+  \[
+  f(x) = \sum_{n = 0}^{ + \infty} \e^{ - x\sqrt n}
+  \]
+ Déterminer la limite en $ + \infty$ de $f$.
+ \end{Exa}
+ 
+
+\begin{Exa} On consid\`{e}re la s\'{e}rie de fonctions de terme g\'{e}n\'{e}ral $u_{n}$ d\'{e}finie par: 
+\begin{equation*}
+\forall n\in \mathbb{N}^{*},\ \forall x\in \lbrack 0,1], \ \ u_{n}\left(x\right) =\ln \left( 1+\dfrac{x}{n}\right) -\dfrac{x}{n}~
+\end{equation*}
+
+On pose, lorsque la s\'{e}rie converge, $S(x)=\displaystyle\sum\limits_{n=1}^{+\infty }\left[ \ \ln \left( 1+\dfrac{x}{n}\right) -\dfrac{x}{n}\right] \cdot$
+
+\begin{enumerate}
+\item D\'{e}montrer que $S$ est dérivable sur $[0,1]$.
+\item Calculez $S'(1)$.
+\end{enumerate}
+\end{Exa}
+
+
+
+
+\begin{Exa} On pose pour tout $x \in \mathbb{R}$,
+$$ f(x) = \sum_{n=1}^{+ \infty} \dfrac{\arctan(nx)}{n^2}$$
+\begin{enumerate}
+\item Déterminer $\dis \lim_{n \rightarrow + \infty} f(x)$ sachant que $\dis \sum_{n=1}^{+ \infty} \dfrac{1}{n^2} = \dfrac{\pi^2}{6} \cdot$
+\item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}^*$.
+\item Déterminer $\dis \lim_{n \rightarrow + \infty} f'(x)$.
+\item Que peut-on en déduire sur le graphe de $f$?
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} \begin{enumerate}
+\item D\'eterminer l'ensemble $I$ des r\'eels $x$ pour lesquels la s\'erie $\Sum{n\geq 1}{} \dfrac{1}{1+(nx)^2}$ converge.\\
+On d\'efinit alors la fonction $f$ de $I$ dans $\R$ en posant $f(x)=\dis \sum_{n=1}^{+\infty}\frac{1}{1+(nx)^2}\cdot$
+\item D\'eterminer la parité de $f$ puis son sens de variation de $f$. 
+\item Prouver que $f$ est de classe $C^1$ sur $I$.
+\item Calculer $\dis \lim_{x\to +\infty}f(x)$.
+\item
+\begin{enumerate}
+\item V\'erifier que :
+\[\forall p\in \N^*,\ \forall x >0,\ \frac{1}{1+(p+1)^2x^2}\leq \int_p^{p+1}\frac{dt}{1+t^2x^2}\leq \frac{1}{1+p^2x^2}\] 
+\item En d\'eduire un \'equivalent de $f$ au voisinage de $0$.
+\end{enumerate}
+\item Donner l'allure de la courbe repr\'esentative de $f$.
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa}  Soit $\Sum{n \geq 1}{} u_n$ la s\'erie de fonctions d'une variable r\'eelle de terme g\'en\'eral $u_n$ d\'efini pour tout $n \in \N^*$ par : 
+$$ \forall x \in \R ,\ u_n(x)=\dfrac{2x}{x^2+n^2\pi^2}$$
+\begin{enumerate}
+\item Montrer que $\Sum{n \geq 1}{} u_n$ converge simplement sur $\R$. On note $U$ la somme de cette  s\'erie de fonctions.
+\item Montrer que, pour tout $a > 0$ , $\Sum{n \geq 1}{} u_n$ converge normalement sur $[-a,a]$.
+\item La s\'erie $\Sum{n \geq 1}{} u_n$ converge-t-elle normalement sur $\mathbb{R}$ ?
+\item Montrer que $U$ est continue sur $\R$.
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Soit $S : x \mapsto \dis \sum_{n=0}^{+ \infty}  (-1)^n \dfrac{\cos^3(3^nx)}{3^n} \cdot$
+
+\begin{enumerate}
+\item Déterminer l'ensemble de définition, notée $I$, de $S$.
+\item Donner une expression simple de $S(x)$ pour $x \in I$.
+\end{enumerate}
+\end{Exa}
+
+
+
+
+
+\begin{Exa} Pour $n\in\N^*,$ on considère la fonction $f_n : \, ] 1,+\infty[ \rightarrow \mathbb{R}$ définie par :
+$$ f_n(x)=\frac{(-1)^n}{\ln(nx)}$$
+
+\begin{enumerate}
+	\item Justifier que $F : x\longmapsto \dis\sum_{n=1}^{+\infty} f_n(x)$ est bien définie sur $]1,+\infty[.$
+	
+	\item Démontrer que $\Sum{n\geq 1}{} f_n$ converge uniformément sur $]1,+\infty[.$ 
+	
+	\item Montrer que $F$ est continue sur $]1,+\infty[$ et déterminer $\dis\lim_{x \rightarrow 1}F(x)$ et  $\dis\lim_{x \rightarrow  +\infty}F(x)$.
+	
+	\item Démontrer que $F$ est de classe ${\cal C}^1$ sur $]1,+\infty[$ et préciser les variations de $F.$
+\end{enumerate}
+\end{Exa}
+
+
+
+ 
+
+\begin{Exa}[\ding{80}] Posons :
+$$f: x \mapsto \sum_{n=1}^{+ \infty} \dfrac{1}{n^2+x^2}$$
+Montrer que $f$ est définie et de classe $\mathcal{C}^{\infty}$ sur $\mathbb{R}$.
+\end{Exa} 
+
+
+\end{document}

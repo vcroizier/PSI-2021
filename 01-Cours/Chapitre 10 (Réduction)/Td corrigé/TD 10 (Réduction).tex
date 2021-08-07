@@ -1,0 +1,1834 @@
+\documentclass[a4paper,10pt]{report}
+\newcommand{\pmatrice}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\usepackage{cours}
+\usepackage{pifont}
+
+\begin{document}
+\everymath{\displaystyle}
+\begin{center}
+\textit{{ {\huge TD 10 : Réduction}}}
+\end{center}
+
+\bigskip
+
+
+\noindent Dans la suite, $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$ et $n \in \mathbb{N}^*$.
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Éléments propres}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soient $E = \mathbb{R}[X]$ et $\varphi \in \mathcal{L}(E)$ défini par $\varphi(P)=XP'$. Déterminer les éléments propres de $\varphi$.
+\end{Exa}
+
+\corr Raisonnons par analyse-synthèse. 
+
+\medskip
+
+\noindent \textit{Analyse.} Soit $\lambda \in \mathbb{R}$ une valeur propre de $\varphi$. Il existe donc un polynôme non nul de $E$ tel que $\varphi(P)=\lambda P$ ou encore $XP' = \lambda P$. On a donc pour tout réel $x$ :
+$$ x P'(x) = \lambda P(x)$$
+En particulier, $P$ est solution sur $]0,1[$ de l'équation différentielle linéaire homogène du premier ordre suivant :
+$$ y' - \dfrac{\lambda}{x} y = 0$$
+donc les solutions sont de la forme :
+$$ x \mapsto K e^{\lambda \ln(x)} = K x^{\lambda}$$
+Si $\lambda$ n'est pas un entier naturel, toutes les dérivées de $x \mapsto x^{\lambda}$ sont non nulles car pour tout entier $n \geq 0$, la dérivée de $x \mapsto x^{\lambda}$ a pour expression :
+$$ \lambda (\lambda-1) \times \cdots (\lambda-n+1) x^{\lambda -n}$$
+ce qui est impossible car $P$ est un polynôme donc à partir d'un certains rang, toutes ses dérivées sont nulles. Si $\lambda$ est un entier naturel, on en déduit que $P= K X^n$.
+
+\medskip
+
+\noindent \textit{Synthèse.} Pour tout entier $n \geq 0$,
+$$ \varphi(X^n) = X(X^n)'=X(nX^{n-1})=nX^n$$
+Sachant que $X^n$ est non nul, on en déduit que c'est un vecteur propre de $\varphi$ associé à la valeur propre de $n$.
+
+\medskip
+
+\noindent D'après l'analyse-synthèse, on sait que le spectre de $\varphi$ est $\mathbb{N}$ et que pour tout entier $n \geq 0$,
+$$ E_{n}(\varphi) = \textrm{Vect}(X^n)$$
+
+\begin{Exa} Soient $f$ un endomorphisme d'un $\mathbb{K}$-espace vectoriel de dimension finie et $n \in \mathbb{N}^{*}$. On suppose que $0$ est dans le spectre de $f^n$. Montrer que $0$ est aussi dans le spectre de $f$.
+\end{Exa}
+
+\corr Supposons que $0$ est dans le spectre de $f^n$. Alors le noyau de $f^n$ n'est pas réduit au vecteur nul donc $f^n$ n'est pas inversible donc son déterminant est nul. Or :
+$$ \textrm{det}(f^n) = \textrm{det}(f)^n$$
+On en déduit que $\textrm{det}(f)$ est nul donc $f$ n'est pas inversible et ainsi $f$ n'est pas injective (l'espace vectoriel est de dimension finie) et $0$ est valeur propre de $f$.
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Diagonalisation}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Diagonaliser $\begin{pmatrix}
+0 & 2 & -1 \\
+3 & -2 & 0 \\
+-2 & 2 & 1 \\
+\end{pmatrix}\cdot$
+\end{Exa}
+
+\corr Notons $A$ cette matrice. On trouve :
+$$ \chi_A(X) = (X-2)(X-1)(X+4)$$
+La matrice $A$ a trois valeurs propres distinctes et $A$ appartient à $\mathcal{M}_3(\mathbb{R})$ donc $A$ est diagonalisable.
+\begin{itemize}
+\item Base de $E_1(A)$ : $((1,1,1))$.
+\item Base de $E_2(A)$ : $((4,3,-2))$.
+\item Base de $E_{-4}(A)$ : $((2,-3,2))$.
+\end{itemize}
+D'après la formule de changement de base, on a $A = PDP^{-1}$ avec :
+$$ P = \begin{pmatrix}
+1 & 4 & 2 \\
+1 & 3 & -3 \\
+1 & -2 & 2
+\end{pmatrix}, \; D=\textrm{diag}(1,2,-4)$$
+et par la méthode usuelle pour inverser une matrice :
+$$ P^{-1} = \dfrac{1}{30} \begin{pmatrix}
+0 & 12 & 18 \\
+5 & 0 & -5 \\
+5 & -6 & 1 
+\end{pmatrix}$$
+
+\begin{Exa} Diagonaliser $\begin{pmatrix}
+1 & 0& 1 \\
+-1 & 2 & 1 \\
+0 & 0 & 2 \\
+\end{pmatrix}\cdot$
+\end{Exa}
+
+\corr Notons $A$ cette matrice. On trouve :
+$$ \chi_A(X) = (X-2)^2(X-1)$$
+\begin{itemize}
+\item On a : 
+$$ A- I_3 = \begin{pmatrix}
+0 & 0& 1 \\
+-1 & 1 & 1 \\
+0 & 0 & 1 \\
+\end{pmatrix}$$
+Notons $C_1$, $C_2$ et $C_3$ les colonnes de cette matrice. Cette matrice est de rang $2$ car $C_1=-C_2 \neq \tilde{0}$ et $C_2$ et $C_3$ sont non colinéaires. Ainsi $\textrm{Ker}(A-I_3)$ est de dimension $1$ d'après le théorème du rang. Sachant que $C_1=-C_2$, on en déduit que le vecteur non nul $\begin{pmatrix}
+1 \\
+1 \\
+0 \\
+\end{pmatrix}$ forme une base de $E_1(A)$.
+\item On a : 
+$$ A- 2I_3 = \begin{pmatrix}
+-1 & 0& 1 \\
+-1 & 0 & 1 \\
+0 & 0 & 0 \\
+\end{pmatrix}$$
+Notons $C_1$, $C_2$ et $C_3$ les colonnes de cette matrice. Cette matrice est de rang $1$ car $C_2$ est nulle et que $C_1=C_3 \neq \tilde{0}$. On en déduit que $\textrm{Ker}(A-I_3)$ est de dimension $2$ d'après le théorème du rang. Sachant que $C_1=-C_3$ et $C_2= \tilde{0}$, on en déduit que les vecteurs non colinéaires $\begin{pmatrix}
+1 \\
+0 \\
+1 \\
+\end{pmatrix}$ et $\begin{pmatrix}
+0 \\
+1 \\
+0
+\end{pmatrix}$ forment une base de $E_2(A)$. 
+\end{itemize}
+Ainsi,
+$$ \textrm{dim}(E_1(A))+ \textrm{dim}(E_2(A)) = 3 = \textrm{dim}(\mathcal{M}_{3,1}(\mathbb{R}))$$
+On en déduit que $A$ est diagonalisable. D'après la formule de changement de base, on a $A = PDP^{-1}$ avec :
+$$ P = \begin{pmatrix}
+1 & 1 & 0\\
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+\end{pmatrix}, \; D=\textrm{diag}(1,2,2)$$
+et par la méthode usuelle pour inverser une matrice :
+$$ P^{-1} =  \begin{pmatrix}
+1 & 0 & -1 \\
+0 & 0 & 1 \\
+-1 & 1 & 1 
+\end{pmatrix}$$
+
+\begin{Exa} Soit $A= \begin{pmatrix}
+0 & a \\
+b & 0
+\end{pmatrix} \in \mathcal{M}_n(\mathbb{R})$ où $(a,b) \in \mathbb{R}^2$. 
+
+Donner une condition nécessaire et suffisante sur $(a,b)$ pour que $A$ soit diagonalisable.
+\end{Exa}
+
+\corr On a :
+$$ \chi_A(X) = \left\vert \begin{array}{cc}
+X & -a \\
+-b & X \\
+\end{array}\right\vert = X^2-ab$$
+\begin{itemize}
+\item Si $ab<0$ alors $-ab>0$ donc $\chi_A$ n'est pas scindé sur $\mathbb{R}$ et $A$ n'est pas diagonalisable.
+\item Si $ab>0$ alors :
+$$ \chi_A(X) = (X- \sqrt{ab}) (X+ \sqrt{ab})$$
+donc $A$ est carrée d'ordre deux et admet deux valeurs propres distinctes donc $A$ est diagonalisable.
+\item Si $ab=0$, la seule valeur propre de $A$ est $0$ donc $A$ est diagonalisable si et seulement si elle est semblable à la matrice nulle ou encore si et seulement si elle est la matrice nulle. Ainsi, sous l'hypothèse $ab=0$, $A$ est diagonalisable si et seulement si $a$ et $b$ sont nuls.
+\end{itemize}
+On en déduit que $A$ est diagonalisable si et seulement si $ab>0$ ou $a=0$ et $b=0$.
+
+\begin{Exa} Posons :
+    \[
+    A =
+    \begin{pmatrix}
+      1 & 1 & 1 & 1 \\
+      2 & 2 & 2 & 2 \\
+      3 & 3 & 3 & 3 \\
+      4 & 4 & 4 & 4
+    \end{pmatrix}
+    \]
+Déterminer simplement les valeurs propres de $A$. La matrice $A$ est-elle diagonalisable?
+\end{Exa}
+
+\corr La matrice $A$ est de rang $1$ car toutes les colonnes sont égales et non nulles. Ainsi, $E_0(A)$ a pour dimension $3$ donc $0$ est valeur propre de $A$ avec une multiplicité supérieure ou égale à $3$. Or $\chi_A$ est unitaire et de degré $4$ donc il existe un réel $\lambda$ tel que :
+$$ \chi_A(X) = X^3(X-\lambda)$$
+Le polynôme $\chi_A$ est scindé dans $\mathbb{R}$ donc la somme des valeurs propres de $A$ (comptées avec multiplicité) est égal à la trace de $A$. On en déduit que $\lambda = 10$. Ainsi,
+$$ \chi_A(X)=X^3(X- 10)$$
+Le réel $10$ est donc valeur propre simple de $A$ donc :
+$$ \textrm{dim}(E_0(A))+ \textrm{dim}(E_{10}(A)) = 3+1 = 4 = \textrm{dim}(\mathcal{M}_{4,1}(\mathbb{R}))$$
+La matrice $A$ est donc diagonalisable.
+
+\begin{Exa}\label{Rang} Soit $A \in \mathcal{M}_{n}(\mathbb{K})$ de rang $1$. Montrer que $A$ est diagonalisable si et seulement si $\textrm{Tr}(A) \neq 0$ \end{Exa}
+
+\corr La matrice $A$ est de rang $1$ donc son noyau est de dimension $n-1$. Ainsi, $0$ est valeur propre de $A$ avec une multiplicité (en tant que racine de $\chi_A$) supérieure ou égale à $n-1$. Or, $\chi_A$ est unitaire et de degré $n$ donc il existe un scalaire $\lambda$ tel que :
+$$ \chi_A(X)=X^{n-1}(X- \lambda)$$
+$\chi_A$ est scindé donc la somme des valeurs propres vaut la trace de $A$ et ainsi $\lambda = \textrm{Tr}(A)$. Finalement,
+$$ \chi_A(X)= X^{n-1}(X- \textrm{Tr}(A))$$
+\begin{itemize}
+\item Si la trace de $A$ est non nulle alors $\textrm{Tr}(A)$ est une valeur propre non nulle et la dimension du sous-espace propre associé est supérieure ou égale à $1$. Ainsi,
+$$ \textrm{dim}(E_0(A))+ \textrm{dim}(E_{\textrm{Tr}(A)}(A)) \geq (n-1)+1 = n = \textrm{dim}(\mathcal{M}_{n,1}(\mathbb{R}))$$
+D'après le cours, on sait aussi que :
+$$ \textrm{dim}(E_0(A))+ \textrm{dim}(E_{\textrm{Tr}(A)}(A)) \leq \textrm{dim}(\mathcal{M}_{n,1}(\mathbb{R}))$$
+et ainsi :
+$$ \textrm{dim}(E_0(A))+ \textrm{dim}(E_{\textrm{Tr}(A)}(A)) = \textrm{dim}(\mathcal{M}_{n,1}(\mathbb{R}))$$
+La matrice $A$ est donc diagonalisable.
+\item Montrons que si $A$ est diagonalisable alors la trace de $A$ est non nulle. Par contraposée, supposons que la trace de $A$ est nulle. Alors $\chi_A(X)=X^n$. La seule valeur propre de $A$ est $0$. La dimension de $E_0(A)$ est $n-1$ et la multiplicité de $0$ en tant que racine de $\chi_A$ est $n$ donc $A$ n'est pas diagonalisable.
+\end{itemize}
+Ainsi, $A$ est diagonalisable si et seulement si la trace de $A$ est non nulle.
+
+\begin{Exa} Soient $a \in \mathbb{C}^*$ et $A$ la matrice de $\mathcal{M}_n(\mathbb{C})$ définie par $A=( a^{i+j-2})_{1 \leq i,j \leq n}$.
+
+\begin{enumerate}
+%\item Dans le cas où $a \in \mathbb{R}$, montrer que $A$ est diagonalisable.
+\item Donner une valeur propre de $a$.
+\item Déterminer une condition nécessaire sur $a$ pour que $A$ soit diagonalisable.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+\begin{enumerate}
+%\item $A$ est symétrique réelle.
+\item La matrice est de rang $1$ car le coefficient $a_{1,1}$ est non nul et que si l'on note $C_1$, $\ldots$, $C_n$, les colonnes de $A$, on a $C_2= aC_1$, $C_3=a^2 C_1$, $\ldots$, $C_n=a^{n-1} C_1$. Le noyau de $A$ est donc de dimension $n-1$ et ainsi $0$ est valeur propre de $A$.
+\item Une matrice de rang $1$ est diagonalisable si et seulement si sa trace est non nulle (voir l'exercice \ref{Rang}). Or on a :
+\begin{align*}
+ \textrm{Tr}(A) & = \sum_{k=1}^n a^{2k-2} \\
+ & = \sum_{k=0}^{n-1} (a^2)^k \\
+ & = \left\lbrace \begin{array}{cl}
+ \dfrac{1-a^{2n}}{1-a^2} & \hbox{ si } a^2 \neq 1 \\
+ n & \hbox{ si } a^2 = 1 
+ \end{array}\right. 
+ \end{align*}
+ Si $a=1$ ou $-1$, la trace est non nulle donc $A$ est diagonalisable. Si $a^2 \neq 1$, la trace est non nulle si et seulement si $a$ n'est pas une racine $(2n)$-ième de l'unité. Finalement, $A$ est diagonalisable si et seulement si $a$ n'est pas une racine $(2n)$-ième de l'unité différente de $1$ ou $-1$.
+\end{enumerate}
+
+\begin{Exa} Posons, pour $n \geq 1$, la matrice $A_n$ d'ordre $2n$ suivante :
+$$ A_n = \begin{pmatrix}
+1 & 2n & 1 & \cdots & 2n \\
+2 & 2n-1 & 2 & \cdots & 2n-1 \\
+3 & 2n-2 & 3 & \cdots & 2n-2 \\
+\vdots & \vdots & \vdots &  & \vdots \\
+2n & 1 & 2n & \cdots & 1
+\end{pmatrix}$$
+
+\begin{enumerate}
+\item Déterminer le rang de $A_n$.
+\item Montrer que $A_n$ est diagonalisable.
+%\item Déterminer ses éléments propres.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item La matrice $A_n$ est de rang $2$ car elle est de la forme :
+$$A_n =[C_1 \, \vert \, C_2 \, \vert \, C_1 \, \vert \, C_2 \, \vert \, \cdots \, \vert C_1 \, \vert \, C_2]$$
+où $C_1$ et $C_2$ sont non nulles et non colinéaires ($1 \times (2n-1)-2\times 2n \neq 0$).
+\item La matrice $A_n$ est de rang $2$ donc d'après le théorème du rang, le noyau de $A_n$ est de dimension $2n-2$. 
+
+\medskip
+
+\noindent La somme des termes d'une ligne est constante égale à :
+$$ \lambda = n(2n+1)$$
+On a ainsi :
+$$ A_n \begin{pmatrix}
+1 \\
+1 \\
+\vdots \\
+1 \\
+\end{pmatrix} = \lambda \begin{pmatrix}
+1 \\
+1 \\
+\vdots \\
+1 \\
+\end{pmatrix}$$
+donc $X = \begin{pmatrix}
+1 \\
+1 \\
+\vdots \\
+1 \\
+\end{pmatrix}$ (étant non nul) est un vecteur propre de $A_n$ associé à la valeur propre $\lambda$.
+
+\medskip
+
+\noindent Le polynôme caractéristique de $A_n$ est unitaire et de degré $2n$. Il est divisible par $X^{2n-2}$ et par $(X- n(2n+1))$ donc il existe un réel $\mu$ tel que :
+$$ \chi_{A_n}(X) = X^{2n-2} (X- n(2n+1)) (X- \mu)$$
+Ce polynôme est donc scindé donc d'après le cours, la trace de $A_n$ est égale à la somme des valeurs propres. On en déduit que :
+\begin{align*}
+ n(2n+1) + \mu & = 2 \sum_{k=1}^n (2k-1) \\
+ & = 4 \sum_{k=1}^n k - 2 \sum_{k=1}^n 1 \\
+ & = 2n(n+1) -2n 
+ \end{align*}
+ et ainsi :
+ $$ \mu = 2n(n+1)-2n-n(2n+1) = n(2n+2-2-2n-1) = -n$$
+ On a donc :
+ $$  \chi_{A_n}(X) = X^{2n-2} (X- n(2n+1)) (X+n)$$
+ Les valeurs propres $n(2n+1)$ et $-n$ sont simples donc la dimension des sous-espaces propres associés est égale à $1$. Ainsi,
+ $$ \textrm{dim}(E_0(A_n))+ \textrm{dim}(E_{n(2n+1)}(A_n))+ \textrm{dim}(E_{-n}(A_n)) = 2n-2+1+1=2n = \textrm{dim}(\mathcal{M}_{2n,1}(\mathbb{R}))$$
+Ainsi, $A_n$ est diagonalisable.
+%\item Le noyau de $A_n$ est de dimension $2n-2$. Notons $C_1$, $\ldots$, $C_{2n-2}$ les colonnes de $A_n$. On a :
+%$$ C_{2k-1}-C_{2j-1}= \tilde{0}$$
+%pour tout $1 \leq k <j \leq n$ ce qui donne 
+%\begin{align*}
+%\sum_{1 \leq k <j \leq n} 1 & = \sum_{k=1}^n \sum_{j=k+1}^{n} 1 \\
+%& = \sum_{k=1}^n n-k \\
+%& = (n-1) + (n-2) + \cdots + 1 + 0 \\
+%& = \dfrac{(n-1)n}{2}
+%\end{align*}
+%vecteurs propres.
+\end{enumerate}
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Polynômes annulateurs}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $A$ la matrice de $\mathcal{M}_n(\mathbb{R})$ avec des coefficients égaux à $1$, sauf ceux de la diagonale valant $0$.
+
+\begin{enumerate}
+%\item La matrice est-elle diagonalisable ?
+\item Calculer $(A+I_n)^2$.
+\item Montrer que si $P$ est un polynôme annulateur de $A$ alors toute valeur propre de $A$ est racine de $P$.
+\item La matrice $A$ est-elle diagonalisable ? Déterminer ses valeurs propres de $A$. 
+\end{enumerate}
+\end{Exa}
+
+\corr 
+\begin{enumerate}
+%\item $A$ est symétrique réelle.
+\item Par simple calcul, $(A+I_n)^2 = n (A+I_n)$.
+\item Preuve du cours.
+\item D'après la question $1$, sachant que $A$ et $I_n$ commutent :
+$$ A^2 +2A+I_n -nA-nI_n=0_n$$
+ou encore $P(A)=0_n$ où :
+$$ P(X)=X^2+(2-n)X+(1-n) = (X+1)(X+1-n)$$
+Sachant que $n \geq 1$, $P$ est un polynôme annulateur de $A$ scindé à racines simples donc $A$ est diagonalisable. Les valeurs propres possibles de $A$ sont $-1$ et $n-1$. $A$ est diagonalisable donc admet au moins une valeur propre et si $A$ admettait une unique valeur propre $\lambda$, sachant qu'elle est diagonalisable, elle serait semblable à $\lambda I_n$ donc égale à $\lambda I_n$ ce qui est faux. Ainsi, $A$ admet au moins et au plus deux valeurs propres donc les valeurs propres de $A$ sont $-1$ et $n-1$.
+\end{enumerate}
+
+\begin{Exa} Soit $A \in \mathcal{M}_n(\mathbb{R})$, non nulle, vérifiant $A^3+9A=0_n$.
+\begin{enumerate}
+\item Montrer que les valeurs propres éventuelles de $A$ sont $0$, $3i$ et $-3i$.
+\item $A$ est-elle diagonalisable dans $\mathbb{C}$? Dans $\mathbb{R}$?
+\item Montrer que $A$ n'est pas inversible si $n$ est impair. 
+\end{enumerate}
+\end{Exa}
+
+\begin{enumerate}
+\item On peut juste dire que $X^3+9X=X(X^2+9)$ est un polynôme annulateur de $A$ et utiliser le résultat hors-programme du cours mais je pense qu'il faut le reprouver ici...
+
+\medskip
+
+\noindent Soit $\lambda$ une valeur propre éventuelle de $A$ et $X$ un vecteur propre associé. Remarquons que :
+$$ A^3 X= A^2(AX)= \lambda A^2X = \lambda A(AX) = \lambda^2 AX = \lambda^3 X$$
+donc
+$$ (A^3+9A)X = \lambda ^3 X+ 9 \lambda X = (\lambda^3+9)X$$
+Or $ A^3+9A=0_n$ donc $(\lambda^3+9\lambda)X= 0_{n,1}$ et $X$ étant non nul, $\lambda^3+9\lambda=0$. Ainsi, $\lambda$ est racine de $Y^3+9Y$ dont les racines sont $0$, $3i$ et $-3i$.
+\item Le polynôme $X(X-3i)(X+3i)$ est scindé à racines simples dans $\mathbb{C}$ et est un polynôme annulateur de $A$ donc $A$ est diagonalisable dans $\mathbb{C}$.
+
+\medskip
+
+\noindent La seule valeur propre réelle éventuelle de $A$ est $0$. Si $A$ est diagonalisable dans $\mathbb{R}$ alors $A$ est semblable à la matrice nulle donc est nulle ce qui faux d'après l'énoncé donc $A$ n'est pas diagonalisable dans $\mathbb{R}$.
+
+\item Soit $n$ un entier impair. Supposons par l'absurde que $A$ est inversible. On sait que :
+$$ A^3 = -9A$$
+donc par multilinéarité du déterminant, on a :
+$$ \textrm{det}(A^3) = (-9)^n \textrm{det}(A)$$
+et ainsi :
+$$ \textrm{det}(A)^3 = (-9)^n \textrm{det}(A)$$
+Le déterminant de $A$ est non nul car $A$ est inversible donc :
+$$ \textrm{det}(A)^2 = (-9)^n $$
+Sachant que $n$ est impair, $(-9)^n$ est strictement négatif alors que $\textrm{det}(A)^2$ est un réel au carré (la matrice $A$ est réelle) donc est positif ou nul. Par l'absurde, on a bien montré que $A$ n'est pas inversible si $n$ est impair. 
+\end{enumerate}
+
+\begin{Exa} Soit $A = \begin{pmatrix}
+1 & 1 & 0 \\
+-1 & 0 & 0 \\
+2 & 0 & -1 
+\end{pmatrix}\cdot$
+\begin{enumerate}
+\item Montrer qu'il n'existe pas de polynôme annulateur non nul et de degré inférieur ou égal à deux de $A$.
+\item Trouver un polynôme annulateur de $A$ et en déduire $A^{-1}$.
+\item Quels sont les polynômes annulateurs de $A$?
+\end{enumerate}
+\end{Exa}
+
+\corr \begin{enumerate}
+\item Il n'existe pas de polynôme constant annulateur de $A$ ni de polynôme de degré $1$ ($A$ n'est pas multiple de $I_3$). Supposons l'existence d'un polynôme de degré $2$ annulateur de $A$. On peut supposer celui-ci unitaire (en divisant par le coefficient dominant). Il existe donc deux réels $\alpha$ et $\beta$ tels que :
+$$ A^2 + \alpha A + \beta I_3 = 0_3$$
+On a :
+$$ A^2 = \begin{pmatrix}
+0 & 1 & 0 \\
+-1 & -1 & 0 \\
+0 & 2 & 1 
+\end{pmatrix}$$
+et donc :
+$$ A^2+ \alpha A + \beta I_3 = \begin{pmatrix}
+\alpha+ \beta & 1+ \alpha & 0 \\
+-1- \alpha & -1+ \beta & 0 \\
+2 \alpha & 2 & 1  - \alpha + \beta
+\end{pmatrix}$$
+et ainsi $1+ \alpha = 0$ donc $\alpha =-1$ mais $2 \alpha = 0$ donc $\alpha = 0$ : c'est absurde ! Ainsi, il n'existe pas de polynôme annulateur non nul et de degré inférieur ou égal à deux de $A$.
+\item D'après le théorème de Cayley-Hamilton, le polynôme caractéristique de $A$ est un polynôme annulateur de $A$. Par simple calcul, on a $\chi_A(X) = X^3+1$. On en en particulier :
+$$ (-A^2)A= -A^3 = I_3$$
+donc $A$ est inversible d'inverse $-A^2$.
+\item On sait que toute valeur propre de $A$ est racine de tout polynôme annulateur de $A$. Or :
+$$ X^3+1 = (X+1) (X+j)(X+ \overline{j})$$
+Ainsi tout polynôme annulateur $P$ de $A$ admet $-1$, $-j$ et $- \overline{j}$ est racine de $P$ donc $P$ est de la forme :
+$$ P(X)= Q(X) (X^3+1)$$
+où $Q$ est un polynôme de $\mathbb{R}[X]$. Réciproquement, si $P$ est de cette forme, alors :
+$$ P(A) = Q(A)(A^3+1) = Q(A) 0_3 = 0_3$$
+Finalement, l'ensemble des polynômes qui sont annulateurs de $A$ est l'ensemble des multiples de $\chi_A$.
+\end{enumerate}
+
+\begin{Exa}
+  \begin{enumerate}
+  \item  Soit $A \in \mathcal{M}_{n}(\mathbb{C})$ nilpotente. Déterminer $\chi_{A}$.
+  \item Même question avec $A \in \mathcal{M}_{n}(\mathbb{R})$.
+  \end{enumerate}
+\end{Exa} 
+
+\corr 
+
+\begin{enumerate}
+\item La matrice $A$ est nilpotente : il existe un entier $k \geq 1$ tel que $A^k = 0_n$. Le polynôme $X^k$ est donc annulateur de $A$. Les valeurs propres de $A$ appartiennent à l'ensemble des racines de tout polynôme annulateur de $A$ (hors-programme à connaitre) donc la seule valeur propre possible de $A$ est $0$. Le polynôme $\chi_A$ est unitaire, de degré $n$ et scindé (tout polynôme de degré supérieur ou égal à $1$ l'est dans $\mathbb{C}[X]$) donc nécessairement $\chi_A(X)=X^n$.
+
+\medskip
+
+\noindent \textit{Remarque.} En particulier, d'après le théorème de Cayley-Hamilton, on en déduit que $A^n=0_n$. Par exemple une matrice nilpotente de $\mathcal{M}_5(\mathbb{C})$ vérifie nécessairement $M^5=0_5$.
+\item Si $A \in \mathcal{M}_n(\mathbb{R})$, $A \in \mathcal{M}_n(\mathbb{C})$ donc d'après la question précédente (la définition de $\chi_A$ ne dépend pas du corps), $\chi_A(X)=X^n$.
+\end{enumerate}
+
+\begin{Exa} Soient $n \geq 3$ et $A \in \mathcal{M}_{n}(\mathbb{C})$ une matrice de rang $2$, de trace nulle et telle que $A^n$ soit non nulle. Montrer que $A$ est diagonalisable.
+\end{Exa}
+
+\corr La matrice est de rang $2$ donc son noyau est de dimension $n-2$. La multiplicité de $0$ en tant que valeur propre est donc supérieure ou égale à $n-2$. La matrice $A$ appartenant à $\mathcal{M}_{n}(\mathbb{C})$, son polynôme caractéristique est scindé, unitaire et de degré $n$. On sait aussi que $X^{n-2}$ divise ce polynôme donc il existe deux complexes $a$ et $b$ tels que :
+$$ \chi_A(X)= X^{n-2} (X-a)(X-b)$$
+On sait que :
+$$ \textrm{Tr}(A) = \sum_{\lambda \in \textrm{Sp}(A)} \lambda$$
+donc $a+b=0$ et ainsi $b=-a$. On en déduit que :
+$$ \chi_A(X)= X^{n-2} (X-a)(X+a)$$
+Si par l'absurde, $a$ était nul, alors $\chi_A(X)=X^n$ et d'après le théorème de Cayley-Hamilton, $A^n= 0_n$, ce qui est absurde d'après l'hypothèse. Ainsi $a$ et $-a$ sont deux valeurs propres distinctes de $A$ et la dimension des sous-espaces propres associés est supérieure ou égale à $1$. Ainsi,
+$$ \textrm{dim}(E_0(A)) + \textrm{dim}(E_a(A)) + \textrm{dim}(E_{-a}(A)) \geq (n-2)+1+1 = n = \textrm{dim}(\mathcal{M}_n(\mathbb{C}))$$
+On sait d'après le cours que :
+$$   \textrm{dim}(E_0(A)) + \textrm{dim}(E_a(A)) + \textrm{dim}(E_{-a}(A)) \leq \textrm{dim}(\mathcal{M}_n(\mathbb{C}))$$
+et ainsi :
+$$   \textrm{dim}(E_0(A)) + \textrm{dim}(E_a(A)) + \textrm{dim}(E_{-a}(A)) = \textrm{dim}(\mathcal{M}_n(\mathbb{C}))$$
+On en déduit que $A$ est diagonalisable.
+
+\begin{Exa} Soit $A \in \mathcal{M}_{n}(\mathbb{R})$ telle que :
+  \[
+  A^{3} - A^{2} + A - I_n = 0_n
+  \]
+Montrer que $\textrm{det}(A) = 1$.
+\end{Exa}
+
+\corr Le polynôme $X^3-X^2+X-1$ est un polynôme annulateur de $A$. On a :
+\begin{align*}
+X^3-X^2+X-1 & = X^2(X-1)+X-1 \\
+& = (X^2+1)(X-1) \\
+& = (X+i)(X-i)(X-1)
+\end{align*}
+Les valeurs propres complexes éventuelles de $A$ sont donc $-i$, $i$ et $1$. Alors on a :
+$$ \chi_A(X)= (X+i)^{m(-i)} (X+i)^{m(i)} (X-i)^{m(1)}$$
+avec $m(k)$ la multiplicité (éventuellement nulle) de $k \in \lbrace -i, i ,1 \rbrace \cdot$
+
+\medskip
+
+\noindent La matrice $A$ est à coefficients réels donc $\chi_A$ est un polynôme de $\mathbb{R}[X]$ donc $m(-i)=m(i)$. Ainsi,
+$$ \chi_A(X) = (X+i)^{m(i)} (X+i)^{m(i)} (X-i)^{m(1)}$$
+Sachant que $\chi_A$ est scindé sur $\mathbb{C}$, on sait d'après le cours que :
+$$ \textrm{det}(A) = (-i)^{m(i)} (i)^{m(i)} 1^{m(1)} = (-i^2)^{m(i)} = 1$$
+
+
+\begin{Exa} Pour tout $\begin{pmatrix}
+a & b \\
+c & d 
+\end{pmatrix} \in \mathcal{M}_2(\mathbb{R})$, on pose :
+$$ f \left( \begin{pmatrix}
+a & b \\
+c & d 
+\end{pmatrix} \right) = \begin{pmatrix}
+-a & c \\
+b & -d 
+\end{pmatrix}$$
+
+\begin{enumerate}
+\item Montrer que $f$ est un endomorphisme de $\mathcal{M}_2(\mathbb{R})$.
+\item $f$ est-il diagonalisable ? inversible ?
+\item Déterminer les éléments de propres de $f$.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Soient $\lambda \in \mathbb{R}$, $M = \begin{pmatrix}
+a & b \\
+c & d 
+\end{pmatrix}$, $N = \begin{pmatrix}
+e & f \\
+g & h 
+\end{pmatrix}$. Alors :
+\begin{align*}
+f( \lambda M+N) & = f \left( \begin{pmatrix}
+\lambda a + e &\lambda b + f \\
+ \lambda c + g &\lambda d + h
+\end{pmatrix} \right) \\
+& = \begin{pmatrix}
+-\lambda a - e &\lambda c + g \\
+  \lambda b + f&-\lambda d - h
+\end{pmatrix} \\
+& =  \lambda  \begin{pmatrix}
+-a & c \\
+b & -d 
+\end{pmatrix} + \begin{pmatrix}
+-e & g \\
+f & -h 
+\end{pmatrix} \\
+& = \lambda f(M)+f(N)
+\end{align*}
+De plus, pour tout $M \in \mathcal{M}_2(\mathbb{R})$, $f(M) \in \mathcal{M}_2(\mathbb{R})$. Ainsi, $f$ est un endomorphisme de $\mathcal{M}_2(\mathbb{R})$.
+\item Il est clair que $f^2 = \textrm{Id}$. Ainsi, $X^2-1= (X-1)(X+1)$ est un polynôme annulateur scindé à racines simples de $f$ donc $f$ est diagonalisable. Les valeurs propres de $f$ sont nécessairement racines de ce polynôme (hors-programme à connaitre) donc les valeurs propres possibles de $f$ sont $-1$ et $1$. Ainsi, $0$ n'est pas valeur propre de $f$ donc $f$ est bijective.
+\item Les valeurs propres possibles de $f$ sont $-1$ et $1$.
+\begin{itemize}
+\item Soit $M= \begin{pmatrix}
+a&b \\
+c & d \\
+\end{pmatrix} \in \mathcal{M}_2(\mathbb{R})$. Alors :
+\begin{align*}
+M \in E_1(f) & \Longleftrightarrow f(M)=M \\
+& \Longleftrightarrow \begin{pmatrix}
+-a&c \\
+b & -d \\
+\end{pmatrix} = \begin{pmatrix}
+a&b \\
+c & d \\
+\end{pmatrix} \\
+& \Longleftrightarrow a=d=0 \; \hbox{ et } \; c=b \\
+& \Longleftrightarrow M= b \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix} 
+\end{align*}
+Ainsi, $E_1(M) = \textrm{Vect}(M_1)$ où :
+$$ M_1 = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}$$
+\item Soit $M= \begin{pmatrix}
+a&b \\
+c & d \\
+\end{pmatrix} \in \mathcal{M}_2(\mathbb{R})$. Alors :
+\begin{align*}
+M \in E_{-1}(f) & \Longleftrightarrow f(M)=-M \\
+& \Longleftrightarrow \begin{pmatrix}
+-a&c \\
+b & -d \\
+\end{pmatrix} = \begin{pmatrix}
+-a&-b \\
+-c & -d \\
+\end{pmatrix} \\
+& \Longleftrightarrow c=-b\\
+& \Longleftrightarrow M=a \begin{pmatrix} 1 & 0 \\
+0 & 0 \\ 
+\end{pmatrix} + b \begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix} + c \begin{pmatrix} 0 & 0 \\
+0 & 1 \\ 
+\end{pmatrix} 
+\end{align*}
+Ainsi, $E_1(M) = \textrm{Vect}(M_2,M_3,M_4)$ où :
+$$ M_2 = \begin{pmatrix} 1 & 0 \\
+0 & 0 \\ 
+\end{pmatrix} , \; M_3= \begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix} \; \hbox{ et } M_4 = \begin{pmatrix} 0 & 0 \\
+0 & 1 \\ 
+\end{pmatrix}  $$
+\end{itemize}
+\end{enumerate}
+
+\begin{Exa} Soient $A \in \mathcal{M}_n(\mathbb{R})$ et $f_A : \mathcal{M}_n(\mathbb{R}) \rightarrow \mathcal{M}_n(\mathbb{R})$ définie $f_A(M)=AM$.
+
+\begin{enumerate}
+\item Montrer que $f_A$ est un endomorphisme de $\mathcal{M}_n(\mathbb{R})$.
+\item Montrer que si $A^2=A$ alors $f_A$ est un projecteur.
+\item Montrer que $A$ est diagonalisable si et seulement $f_A$ l'est.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Pour tout $M \in \mathcal{M}_n(\mathbb{R})$, $AM \in \mathcal{M}_n(\mathbb{R})$ donc $f(M) \in \mathcal{M}_n(\mathbb{R})$. Soient $\lambda \in \mathbb{R}$ et $(M,N) \in \mathcal{M}_n(\mathbb{R})^2$. Alors :
+\begin{align*}
+f(\lambda M +N) & = A(\lambda M +N) \\
+& = \lambda AM + AN \\
+& = \lambda f(M)+f(N)
+\end{align*}
+Ainsi, $f \in \mathcal{L}(\mathcal{M}_n(\mathbb{R}))$.
+\item Soit $M \in \mathcal{M}_n(\mathbb{R})$. Alors :
+\begin{align*}
+f^2(M) & = f(f(M)) \\
+& = Af(M) \\
+& = A(AM) \\
+& = A^2M \\
+& = AM \\
+& = f(M)
+\end{align*}
+Ainsi, $f^2=f$ donc $f$ est un projecteur.
+\item Soit $P \in \mathbb{R}[X]$. Avec le même procédé que dans la question précédente, on montre que pour tout entier $k \geq 0$ et pour tout $M \in \mathcal{M}_n(\mathbb{R})$,
+$$ f^k(M) = A^k M$$
+et on en déduit que $P(f)(M)= P(A) M$.
+\begin{itemize}
+\item Si $A$ est diagonalisable, il existe un polynôme $P \in \mathbb{R}[X]$ scindé à racines simples tel que $P(A)=0_n$. On en déduit que pour tout $M \in \mathcal{M}_n(\mathbb{R})$, $P(f)(M)= 0_n$ et ainsi $P(f)$ est l'endomorphisme nul. Finalement, $P$ est un polynôme annulateur de $f$, scindé à racines simples donc $f$ est diagonalisable.
+\item Si $f$ est diagonalisable, il existe un polynôme $P \in \mathbb{R}[X]$ scindé à racines simples tel que $P(f)$ est l'endomorphisme nul. On en déduit que pour tout $M \in \mathcal{M}_n(\mathbb{R})$, $P(f)(M)= P(A)M=0_n$. En particulier pour $M=I_n$, on en déduit que $P(A)=0_n$. Finalement, $P$ est un polynôme annulateur de $A$, scindé à racines simples donc $A$ est diagonalisable.
+\end{itemize}
+Ainsi, $A$ est diagonalisable si et seulement $f_A$ l'est.
+\end{enumerate}
+
+\begin{Exa} Soit $A \in GL_n(\mathbb{R})$. Montrer que $f$, définie pour tout $M \in \mathcal{M}_n(\mathbb{R})$ par $f(M)= 2 \textrm{Tr}(M) A$, est un endomorphisme de $\mathcal{M}_n(\mathbb{R})$. Est-il diagonalisable ?
+\end{Exa}
+
+\corr Il est clair que pour tout $M \in \mathcal{M}_n(\mathbb{R})$, $f(M) \in \mathcal{M}_n(\mathbb{R})$. Soient $(M,N) \in \mathcal{M}_n(\mathbb{R})^2$ et $\lambda \in \mathbb{R}$. On a :
+\begin{align*}
+f(\lambda M + N) & = 2 \textrm{Tr}(\lambda M + N) A \\
+& = 2 (\lambda \textrm{Tr}(M) +  \textrm{Tr}(N))A \quad \hbox{(linéarité de la trace)} \\
+& =\lambda (2 \textrm{Tr}(M)A) + 2 \textrm{Tr}(N)A \\
+&= \lambda f(M) + f(N)
+\end{align*}
+Ainsi, $f$ est un endomorphisme de $\mathcal{M}_n(\mathbb{R})$.
+
+\medskip
+%
+%\noindent 
+
+\noindent Pour tout $M \in \mathcal{M}_n(\mathbb{R})$, on a :
+\begin{align*}
+f(f(M)) & =  2\textrm{Tr}(f(M)) A \\
+& = 2\textrm{Tr}(2\textrm{Tr}(M) A) A \\
+& = 4 \textrm{Tr}(M) \textrm{Tr}(A) A \quad \hbox{(linéarité de la trace)} \\
+& = 2 \textrm{Tr}(A) f(M)
+\end{align*}
+Ainsi, $X^2-2\textrm{Tr}(A)X= X(X- 2 \textrm{Tr}(A))$ est un polynôme annulateur de $f$. Si la trace de $A$ est non nulle, ce polynôme est scindé à racines simples donc $f$ est diagonalisable. Si la trace de $A$ est nulle alors $X^2$ est un polynôme annulateur de $f$ donc la seule valeur propre possible de $f$ est $0$ donc si $f$ était diagonalisable, $f$ serait nulle (sa matrice dans n'importe quelle base serait semblable à la matrice nulle) ce qui est faux car $A$ est non nulle (car inversible). Finalement, $f$ est diagonalisable si et seulement si la trace de $A$ est non nulle.
+
+\medskip
+
+\noindent \textit{Remarque.} Supposons que la trace de $A$ soit non nulle. Soit $M \in \mathcal{M}_n(\mathbb{R})$. Alors $M$ appartient au noyau de $f$ si et seulement si sa trace est nulle ($A$ est non nulle car inversible). Or la trace est une forme linéaire donc son noyau est un hyperplan de $\mathcal{M}_n(\mathbb{R})$ donc de dimension $n^2-1$. On remarque facilement que :
+$$ f(A) = 2 \textrm{Tr}(A) A$$
+donc $A$ est un vecteur propre de $f$ associée à la valeur propre $2 \textrm{Tr}(A)$. La dimension du sous-espace propre associée à $2 \textrm{Tr}(A)$ est $1$ (car le noyau est de dimension $n^2-1$ et que la somme des dimensions des sous-espaces est égale à $n^2$ car $f$ est diagonalisable). Ainsi, $E_{2\textrm{Tr}(A)}(f) = \textrm{Vect}(A)$.
+
+\begin{Exa}  Pour tout $M \in \mathcal{M}_n(\mathbb{R})$, on pose :
+$$ \varphi(M) = M +2 \, {}^t M$$
+\begin{enumerate}
+\item Trouver un polynôme annulateur de $\varphi$.
+\item Qu'en déduit-on ?
+\item Déterminer les sous-espaces propres ainsi que leurs dimensions.
+\item Donner la trace de $\varphi$.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item L'application $\varphi$ est un endomorphisme de $\mathcal{M}_n(\mathbb{R})$. Pour tout $M \in \mathcal{M}_n(\mathbb{R})$,
+\begin{align*}
+\varphi^2(M) & = \varphi(\varphi(M)) \\
+& =  \varphi(M +2 \, {}^t M) \\
+& = M +2 \, {}^t M +2 \, {}^t (M +2 \, {}^t M) \\
+& = M +2 \, {}^t M +2 \, {}^t M +4M \\
+& = 5M + 4{}^t M \\
+& = 3M + 2(M +2{}^t M) \\
+& = 3M + 2\varphi(M)
+\end{align*}
+Ainsi, $X^2-2X-3=(X+1)(X-3)$ est un polynôme annulateur de $\varphi$.
+\item Le polynôme annulateur obtenu est scindé à racines simples donc $\varphi$ est diagonalisable.
+\item Les valeurs propres possibles de $\varphi$ sont racines du polynôme annulateur obtenu donc sont $-1$ et $3$.
+\begin{itemize}
+\item Soit $M \in \mathcal{M}_n(\mathbb{R})$. Alors :
+\begin{align*}
+M \in E_{-1}(\varphi) & \Longleftrightarrow \varphi(M)=-M \\
+& \Longleftrightarrow M +2{}^t M = -M \\
+& \Longleftrightarrow {}^t M= - M 
+\end{align*}
+Ainsi, $E_{-1}(\varphi) = \mathcal{A}_n(\mathbb{R})$ dont la dimension est $\dfrac{n(n-1)}{2} \cdot$
+\item Soit $M \in \mathcal{M}_n(\mathbb{R})$. Alors :
+\begin{align*}
+M \in E_{3}(\varphi) & \Longleftrightarrow \varphi(M)=3M \\
+& \Longleftrightarrow M +2{}^t M = 3M \\
+& \Longleftrightarrow {}^t M=  M 
+\end{align*}
+Ainsi, $E_{3}(\varphi) = \mathcal{S}_n(\mathbb{R})$ dont la dimension est $\dfrac{n(n+1)}{2}\cdot$
+\end{itemize}
+
+\item $\varphi$ est diagonalisable donc la trace de $\varphi$ est égale à la somme des valeurs propres comptées avec les multiplicités (qui sont aussi les dimensions des sous-espaces propres associés) donc :
+\begin{align*}
+\textrm{Tr}(\varphi)& = \dfrac{n(n-1)}{2} \times (-1) + \dfrac{n(n+1)}{2} \times 3  \\
+& = \dfrac{n(-(n-1)+3(n+1))}{2} \\
+& = \dfrac{n(2n+4)}{2} \\
+& = n(2n+1) 
+\end{align*}
+\end{enumerate}
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Trigonalisation}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $A= \begin{pmatrix}
+1 & -3 & 4 \\
+4 & -7 & 8 \\
+6 & -7 & 7 \\
+\end{pmatrix}\cdot$
+
+\begin{enumerate}
+\item La matrice $A$ est-elle diagonalisable ? Trigonalisable ?
+\item Trigonaliser la matrice $A$. 
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Par simple calcul, on trouve :
+$$ \chi_A(X) = (X+1)^2(X-3)$$
+On a :
+$$ A+I_3 =  \begin{pmatrix}
+2 & -3 & 4 \\
+4 & -6 & 8 \\
+6 & -7 & 8 \\
+\end{pmatrix}$$
+En notant $C_1$, $C_2$ et $C_3$, les colonnes de cette matrice, on a :
+$$ C_1+2C_2+C_3= \tilde{0}$$
+Donc le vecteur non nul $\begin{pmatrix}
+1 \\
+2 \\
+1 \\
+\end{pmatrix}$ appartient à $E_{-1}(A)$. Or $C_2$ et $C_3$ sont non colinéaires donc le rang de $A+I_3$ est supérieur ou égal à $2$ et donc égal à $2$ d'après le théorème du rang. Ainsi $E_{-1}(A)$ est de dimension $1$ alors que la multiplicité de $1$ en tant que racine de $\chi_A$ vaut $2$. Ainsi, $A$ n'est pas diagonalisable.
+
+\medskip
+
+\noindent La matrice $A$ est trigonalisable car $\chi_A$ est scindé.
+\item Déterminons une base de $E_3(A)$ (qui est de dimension $1$ car $3$ est une valeur propre simple de $A$) :
+$$ A- 3I_3 = \begin{pmatrix}
+-2 & -3 & 4 \\
+4 & -10 & 8 \\
+6 & -7 & 4 \\
+\end{pmatrix}$$
+En notant $C_1$, $C_2$ et $C_3$, les colonnes de cette matrice, on a :
+$$ C_1+2C_2+2C_3= \tilde{0}$$
+Donc le vecteur non nul $\begin{pmatrix}
+1 \\
+2 \\
+2 \\
+\end{pmatrix}$ appartient à $E_{3}(A)$, qui est de dimension $1$, donc forme une base de cet espace. 
+
+\medskip
+
+\noindent Posons :
+$$ X_1 = \begin{pmatrix}
+1 \\
+2 \\
+1 \\
+\end{pmatrix}, \; X_2 = \begin{pmatrix}
+1 \\
+2 \\
+2 \\
+\end{pmatrix} \; \hbox{ et } \; X_3=\begin{pmatrix}
+1 \\
+0 \\
+0 \\
+\end{pmatrix}$$
+Le déterminant de la famille $(X_1, X_2,X_3)$ dans la base canonique $\mathcal{B}$ de $\mathcal{M}_{3,1}(\mathbb{R})$ vaut :
+$$ \left\vert \begin{array}{ccc}
+1 & 1 & 1 \\
+2 & 2 & 0 \\
+1 & 2 & 0 \\
+\end{array}\right\vert = \left\vert \begin{array}{cc}
+2 & 2 \\
+1 & 2  \\
+\end{array}\right\vert = 2 \neq 0$$
+Ainsi, $\mathcal{B}'=(X_1, X_2, X_3)$ est une base de $\mathcal{M}_{3,1}(\mathbb{R})$. Soit $f$ l'endomorphisme $\mathcal{M}_{3,1}(\mathbb{R})$ canoniquement associé à $A$. On sait que $f(X_1)=-X_1$, $f(X_2)=3X_3$. On cherche deux réels $\alpha$ et $\beta$ tels que\footnote{On sait que le coefficient de $X_3$ sera $-1$ car $-1$ a pour multiplicité $2$.} :
+$$ f(X_3) = \alpha X_1 + \beta X_2 - X_3$$
+ou encore :
+$$ \begin{pmatrix}
+1 \\
+4 \\
+6 \\
+\end{pmatrix} = \alpha \begin{pmatrix}
+1 \\
+2 \\
+1
+\end{pmatrix} + \beta \begin{pmatrix}
+1 \\
+2 \\
+2
+\end{pmatrix} -  \begin{pmatrix}
+1 \\
+0 \\
+0 \\
+\end{pmatrix}$$
+ce qui est équivalent à $\alpha+ \beta =2$ et $\alpha+2 \beta =6$ ou encore $\alpha=-2$ et $\beta =4$. On en déduit que :
+$$ \textrm{Mat}_{\mathcal{B}'}(f) = \begin{pmatrix}
+-1 & 0 & -2 \\
+0 & 3 & 4 \\
+0 & 0 & -1
+\end{pmatrix}$$
+Les matrices $A$ et $\textrm{Mat}_{\mathcal{B}'}(f)$ représentent le même endomorphisme de $\mathcal{M}_{3,1}(\mathbb{R})$ donc sont semblables. On en déduit que :
+$$ A = P \textrm{Mat}_{\mathcal{B}'}(f) P^{-1}$$
+où 
+$$P=P_{\mathcal{B}, \mathcal{B}'} = \begin{pmatrix}
+1 & 1 & 1 \\
+2 & 2 & 0 \\
+1 & 2 & 0 \\
+\end{pmatrix}$$
+La méthode usuelle pour inverser une matrice permet d'obtenir :
+$$ P^{-1} = \begin{pmatrix}
+0 & 1 & -1 \\
+0 & -1/2 & 1 \\
+1 & -1/2 & 0 \\
+\end{pmatrix}$$
+
+\end{enumerate}
+
+\begin{Exa} Soient $A = \begin{pmatrix} -1 &\phantom-2 & 0 \cr 2 &2 &-3 \cr -2 &2 &1 \cr \end{pmatrix}$ et $\varphi$ l'endomorphisme de $\R^3$ canoniquement associé à $A$.
+
+\begin{enumerate}
+  \item Vérifier que $A$ n'est pas diagonalisable.
+    
+  \item Chercher deux vecteurs propres de $A$ linéairement indépendants.
+    
+  \item Compléter ces vecteurs en une base de $\R^3$.
+    
+  \item \'Ecrire la matrice de $\varphi$ dans cette base.
+        
+\end{enumerate}
+\end{Exa} 
+
+\corr
+
+\begin{enumerate}
+\item Par simple calcul, on a :
+$$ \chi_A(X)=X(X-1)^2$$
+On a :
+$$ A-I_3 = \begin{pmatrix} -2 &\phantom-2 & 0 \cr 2 &1 &-3 \cr -2 &2 &0 \cr \end{pmatrix}$$
+Les deux dernières colonnes sont non colinéaires donc le rang de $A-I_3$ est supérieur ou égal à $2$. Or la somme des trois colonnes est nulle donc le rang est aussi inférieur ou égal à $2$ donc il vaut $2$. D'après le théorème du rang, on en déduit que $E_1(A)$ est de dimension $1$ alors que $1$ a pour multiplicité $2$ en tant que racine de $\chi_A$. Ainsi, $A$ n'est pas diagonalisable.
+\item D'après la question précédente, 
+$$ X_1 = \begin{pmatrix}
+1 \\
+1 \\
+1 \\
+\end{pmatrix}$$ 
+est un vecteur propre non nul associé à la valeur propre $1$.
+On remarque aussi que :
+$$ X_2 = \begin{pmatrix}
+2 \\
+1 \\
+2 \\
+\end{pmatrix}$$ 
+est un vecteur propre non nul associé à la valeur propre $0$. Les vecteurs $X_1$ et $X_2$ sont non colinéaires donc $(X_1,X_2)$ est libre.
+\item Posons :
+$$ X_3 = \begin{pmatrix}
+1 \\
+0 \\
+0  \\
+\end{pmatrix}$$
+et $\mathcal{B}'=(X_1,X_2,X_3)$. Le déterminant de la famille $\mathcal{B}'$ dans la base canonique $\mathcal{B}$ vaut :
+$$ \left\vert \begin{array}{ccc}
+1 & 2 & 1 \\
+1 & 1 & 0 \\
+1 & 2 & 0 \\
+\end{array}\right\vert = \left\vert \begin{array}{cc}
+1 & 1 \\
+1 & 2 \\
+\end{array}\right\vert =  1 \neq 0$$
+donc $\mathcal{B}'$ est une base de $\mathbb{R}^3$.
+\item On sait que $\varphi(X_1)=X_1$ et $\varphi(X_2) = \tilde{0}$. Déterminons deux réels $\alpha$ et $\beta$ tels que :
+$$ \varphi(X_3) = \alpha X_1 + \beta X_2 + X_3$$
+ou encore :
+$$ \begin{pmatrix}
+-1 \\
+2 \\
+-2 \\
+\end{pmatrix} = \alpha \begin{pmatrix}
+1 \\
+1 \\
+1 \\
+\end{pmatrix} + \beta \begin{pmatrix}
+2 \\
+1 \\
+2 \\
+\end{pmatrix} + \begin{pmatrix}
+1 \\
+0\\
+0\\
+\end{pmatrix}$$
+ce qui est équivalent à :
+$$  \begin{pmatrix}
+-2 \\
+2 \\
+-2 \\
+\end{pmatrix} = \alpha \begin{pmatrix}
+1 \\
+1 \\
+1 \\
+\end{pmatrix} + \beta \begin{pmatrix}
+2 \\
+1 \\
+2 \\
+\end{pmatrix} $$
+et donc à $\alpha+ 2\beta =-2$ et $\alpha+ \beta = 2$. On obtient $\beta =-4$ et $\alpha =6$. Ainsi :
+$$ \varphi(X_3) = 6 X_1 - 4 X_2 + X_3$$
+et ainsi :
+$$ \textrm{Mat}_{\mathcal{B}'}(\varphi) = \begin{pmatrix}
+1 & 0 & 6 \\
+0 & 0 & -4 \\
+0 & 0 & 1 \\
+\end{pmatrix}$$
+\end{enumerate}
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Applications de la réduction}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Déterminer un polynôme annulateur de degré $2$ de :
+$$ A = \begin{pmatrix}
+1 & 2 & 2 \\
+2 & 1 & 2 \\
+2 & 2 & 1 \\
+\end{pmatrix}$$
+En déduire les puissances de $A$. 
+\end{Exa}
+
+\corr On a :
+$$ A= 2J-I_3$$
+où $J$ est la matrice de $\mathcal{M}_3(\mathbb{R})$ dont tous les coefficients sont égaux à $1$. On a $J^2=3J$. Sachant que $J$ et $I$ commutent, on a :
+\begin{align*}
+A^2 & = (2J-I_3)^2 \\
+& = 4J^2 - 4J+ I_3 \\
+& = 12J-4J+I_3 \\
+& = 8J+I_3 \\
+& = 4(A+I_3) + I_3 \\
+& = 4A +5I_3
+\end{align*}
+Ainsi, $X^2-4X-5=(X+1)(X-5)$ est un polynôme annulateur de $A$.
+
+\medskip
+
+\noindent Pour tout entier $n \geq 1$, d'après le théorème de division euclidienne, il existe un unique couple $(Q_n,R_n)$ de $\mathbb{R}[X]^2$ tel que :
+$$ X^n = Q_n(X) (X+1)(X-5) + R_n(X)$$
+et tel que $\textrm{deg}(R_n)<\textrm{deg}((X+1)(X-2))=2$. Ainsi, il existe deux réels $a_n$ et $b_n$ tels que :
+$$ R_n(X)= a_n X + b$$
+On a donc :
+$$ X^n = Q_n(X) (X+1)(X-5) + a_n X + b_n$$
+En évaluant en $-1$ et en $5$, on obtient :
+$$ \left\lbrace \begin{array}{ccl}
+-a_n + b_n & = & (-1)^n \\
+5a_n + b_n & = & 5^n
+\end{array}\right.$$
+L'opération $L_2 \leftarrow L_2- L_1$ implique que : $6 a_n = 5^n - (-1)^n$ donc :
+$$ a_n = \dfrac{5^n-(-1)^n}{6}$$
+et ainsi en injectant dans $L_1$ :
+$$ b_n = (-1)^n + \dfrac{5^n-(-1)^n}{6}$$
+On en déduit que pour tout entier $n \geq 1$,
+$$ X^n = Q_n(X) (X+1)(X-5) +\dfrac{5^n-(-1)^n}{6}  X + (-1)^n + \dfrac{5^n-(-1)^n}{6}$$
+et ainsi :
+$$ A^n = \dfrac{5^n-(-1)^n}{6}  A + \left((-1)^n + \dfrac{5^n-(-1)^n}{6}\right) I_3$$
+
+
+\begin{Exa}Soit $A= \begin{pmatrix}
+1 & 2 & 0 \\
+0 & 3 & 0 \\
+4 & 0 & -1 \\
+\end{pmatrix}\cdot$
+\begin{enumerate}
+\item Montrer que $A$ est diagonalisable et donner ses valeurs propres.
+\item Soit $D$ la matrice diagonale portant les valeurs propres de $A$. Montrer que si une matrice $M \in \mathcal{M}_3(\mathbb{R})$ commute avec $D$ alors elle est diagonale.
+\item Soit $P(X)=X^7+ 4X^3+1$. Trouver toutes les matrices $M$ de $\mathcal{M}_3(\mathbb{R})$ telles que $P(M)=A$.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Par simple calcul, on a :
+$$ \chi_A(X)=(X+1)(X-1)(X-3)$$
+Ainsi $A$ a trois valeurs propres distinctes et appartient à $\mathcal{M}_3(\mathbb{R})$ donc $A$ est diagonalisable. Même si ce n'est pas demandé, donnons les sous-espaces propres :
+$$ E_{-1}(A) = \textrm{Vect} \left( \begin{pmatrix}
+0 \\
+0 \\
+1
+\end{pmatrix} \right), \; E_{1}(A) = \textrm{Vect} \left( \begin{pmatrix}
+1 \\
+0 \\
+2
+\end{pmatrix} \right) \hbox{ et } E_{3}(A) = \textrm{Vect} \left( \begin{pmatrix}
+1 \\
+1 \\
+1
+\end{pmatrix} \right) $$
+\item On a (sans savoir l'ordre des valeurs propres car ce n'est pas donné dans l'énoncé...) :
+$$ D = \begin{pmatrix}
+-1 & 0 & 0 \\
+0 & 1& 0 \\
+0 & 0 & 3
+\end{pmatrix}$$
+Pour toute matrice $M = \begin{pmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i 
+\end{pmatrix}$, on a :
+\begin{align*}
+MD=DM & =\begin{pmatrix}
+-a & b & 3c \\
+-d & e & 3f \\
+-g & h & 3i 
+\end{pmatrix} = \begin{pmatrix}
+-a &- b & -c \\
+d & e & f \\
+3g & 3h & 3i 
+\end{pmatrix} \\
+& \Longleftrightarrow b=c=f=d=g=h=0 \\
+& \Longleftrightarrow M= \textrm{diag}(a,e,i) 
+\end{align*}
+Ainsi si matrice $M \in \mathcal{M}_3(\mathbb{R})$ commute avec $D$ alors elle est diagonale (et la réciproque est vraie).
+\item Soit $M \in \mathcal{M}_3(\mathbb{R})$. Il existe une matrice inversible $P \in \mathcal{M}_3(\mathbb{R})$ tel que $A=PDP^{-1}$. Alors :
+\begin{align*}
+P(M) =A & \Longleftrightarrow M^7+4M^3 + I_3 = PDP^{-1} \\
+& \Longleftrightarrow (P^{-1}MP)^7 + 4(P^{-1}MP)^3+ I_3 = D 
+\end{align*}
+On cherche donc toutes les matrices $N \in \mathcal{M}_3(\mathbb{R})$ ($N=P^{-1}MP$) telles que :
+$$ N^7+4N^3+I_3=D$$
+Une matrice $N$ vérifiant cette égalité est nécessairement diagonale car commute avec $N^7+4N^3+I_3$ donc avec $D$ et on conclut avec la question précédente. En posant $N= \textrm{diag}(a,b,c)$, $N$ vérifie l'égalité précédente si et seulement si :
+$$ a^7+ 4a^3+1= -1, \; b^7+ 4b^3+1= 1 \hbox{ et } c^7+ 4c^3+1= 3 $$
+ou encore :
+$$ a^7+ 4a^3= -2, \; b^7+ 4b^3= 0 \hbox{ et } c^7+ 4c^3= 2 $$
+La fonction polynômiale $x \mapsto x^7+4x^3$ est strictement croissante et continue sur $\mathbb{R}$ (par somme). D'après le théorème de bijection monotone, elle est bijective de $\mathbb{R}$ sur $\mathbb{R}$ (les limites en $+ \infty$ et $- \infty$ sont évidentes). Il existe donc un unique triplet de réels $(a,b,c)$ vérifiant les trois égalités précédentes. Il est évident que $b=0$ et que $c=-a$ (par imparité). Trouver une valeur pour $a$ ne semble pas évident ... Une méthode de dichotomie donne $a \approx -0.771557$. En se rappelant que $N=P^{-1}MP$, il existe donc une unique matrice $M$ de $\mathcal{M}_3(\mathbb{R})$ telle que $P(M)=A$ et cette matrice est définie par :
+$$ M = P \textrm{diag}(a,0,-a) P^{-1}$$
+\end{enumerate}
+
+\begin{Exa}
+\begin{enumerate}
+\item R\'eduire la matrice $A= \left(\begin{array}{rrr}  2 & 2 & 1\\
+1 & 3 & 1\\
+1 & 2 & 2 \end{array}\right) \cdot $\\
+\item Déterminer alors le commutant de $A$, noté $\mathcal{C}(A)$ et défini par : 
+$${\cal C}(A)=\{M\in{\cal M}_3(\R) \, \vert \, AM=MA\}$$
+\end{enumerate}
+\end{Exa} 
+
+\corr 
+
+\begin{enumerate}
+\item Par simple calcul :
+$$ \chi_A(X)= (X-1)^2 (X-5)$$
+La méthode usuelle donne (on confond $\mathbb{R}^3$ et $\mathcal{M}_{3,1}(\mathbb{R})$) :
+\begin{itemize}
+\item Les vecteurs $\begin{pmatrix}
+1 \\
+0 \\
+-1
+\end{pmatrix}$ et $\begin{pmatrix}
+0\\
+1 \\
+-2 \\
+\end{pmatrix}$ forment une base de $E_1(A)$.
+\item Le vecteur $\begin{pmatrix}
+1 \\
+1 \\
+1 \\
+\end{pmatrix}$ est une base de $E_5(A)$.
+\end{itemize}
+La formule de changement de base implique que $A=PDP^{-1}$ où 
+$$ P = \begin{pmatrix}
+1& 0 & 1 \\
+0& 1 & 1 \\
+-1 & -2 & 1 \\
+\end{pmatrix}, \; D= \textrm{diag}(1,1,5)$$
+et la méthode usuelle pour inverser une matrice donne :
+$$ P^{-1} = \dfrac{1}{4} \begin{pmatrix}
+3 & -2 & -1 \\
+-1 & 2 & -1 \\
+1 & 2 & 1 \\
+\end{pmatrix}$$
+\item Soit $M \in \mathcal{M}_3(\mathbb{R})$. Alors :
+\begin{align*}
+M \in \mathcal{C}(A) & \Longleftrightarrow AM=MA \\
+& \Longleftrightarrow PDP^{-1} M = M PDP^{-1} \\
+& \Longleftrightarrow DP^{-1}MP = P^{-1}MPD  \\
+& \Longleftrightarrow P^{-1}MP \in \mathcal{C}(D)
+\end{align*}
+Déterminons alors $\mathcal{C}(D)$. Pour toute matrice $N = \begin{pmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i \\
+\end{pmatrix}$, on a :
+$$ ND = \begin{pmatrix}
+a & b & 5c \\
+d & e & 5f \\
+g & h & 5i \\
+\end{pmatrix} \; \hbox{ et } \; DN = \begin{pmatrix}
+a & b & c \\
+d & e & f \\
+5g & 5h & 5i \\
+\end{pmatrix}$$
+On en déduit que $N$ appartient à $\mathcal{C}(D)$ si et seulement si $c=f=g=h=0$. Ainsi,
+\begin{align*}
+\mathcal{C}(D) & = \left\lbrace \begin{pmatrix}
+a & b & 0 \\
+d & e & 0 \\
+0 & 0 & i \\
+\end{pmatrix}, \, (a,b,d,e,i) \in \mathbb{R}^5 \right\rbrace \\
+& = \textrm{Vect}(E_{1,1}, E_{1,2}, E_{2,1}, E_{2,2},E_{3,3})
+\end{align*}
+Pour tout $M \in \mathcal{M}_n(\mathbb{R})$,
+\begin{align*}
+M \in \mathcal{C}(A) & \Longleftrightarrow P^{-1}MP \in \mathcal{C}(D) \\
+& \Longleftrightarrow  P^{-1}MP \in \textrm{Vect}(E_{1,1}, E_{1,2}, E_{2,1}, E_{2,2},E_{3,3}) \\
+& \Longleftrightarrow \exists (a,b,c,d,e) \in \mathbb{R}^5 \, \vert \, P^{-1}MP = aE_{1,1}+bE_{1,2}+c E_{2,1}+d E_{2,2}+eE_{3,3} \\
+& \Longleftrightarrow \exists (a,b,c,d,e) \in \mathbb{R}^5 \, \vert \, M = aPE_{1,1}P^{-1}+bPE_{1,2}P^{-1}+c PE_{2,1}P^{-1}+d PE_{2,2}P^{-1}+ePE_{3,3}P^{-1} \\
+\end{align*}
+Ainsi,
+$$ \mathcal{C}(A) = \textrm{Vect}(PE_{1,1}P^{-1},PE_{1,2}P^{-1},PE_{2,1}P^{-1},PE_{2,2}P^{-1},PE_{3,3}P^{-1}) $$
+La famille $(E_{1,1}, E_{1,2}, E_{2,1}, E_{2,2}, E_{3,3})$ est libre (sous-famille de la base canonique de $\mathcal{M}_n(\mathbb{R})$) donc par injectivité de l'endomorphisme de $\mathcal{M}_n(\mathbb{R})$ définie par $M \mapsto PMP^{-1}$, la famille :
+$$(PE_{1,1}P^{-1},PE_{1,2}P^{-1},PE_{2,1}P^{-1},PE_{2,2}P^{-1},PE_{3,3}P^{-1})$$
+est libre ce qui implique que $\mathcal{C}(A)$ est de dimension $5$.
+
+\end{enumerate}
+
+\begin{Exa} Soit $A= \begin{pmatrix}
+2 & 3 & 1 \\
+0 & -4 & -2 \\
+4 & 12 & 5 \\
+\end{pmatrix}\cdot$
+
+\begin{enumerate}
+\item Diagonaliser $A$.
+\item Montrer que si $B \in \mathcal{M}_n(\mathbb{C})$ est telle que $B^2=A$ alors $A$ et $B$ commutent.
+\item Déterminer $\lbrace B \in \mathcal{M}_n(\mathbb{C}) \, \vert \, B^2=A \rbrace \cdot$
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Par simple calcul, on a :
+$$ \chi_A(X) = X(X-1)(X-2)$$
+La matrice $A$ est diagonalisable car $A$ appartient à $\mathcal{M}_3(\mathbb{R})$ et a trois valeurs propres distinctes. La méthode usuelle donne :
+\begin{itemize}
+\item $((1,-2,4))$ est une base de $E_0(A)$.
+\item $((1,-2,5)$ est une base de $E_1(A)$.
+\item $((3,-4,12))$ est une base de $E_2(A)$.
+\end{itemize}
+D'après la formule de changement de base, $A=PDP^{-1}$ où :
+$$ P = \begin{pmatrix}
+1 & 1 & 3 \\
+-2 & -2 & -4 \\
+4 & 5 & 12 \\
+\end{pmatrix}, \; D= \textrm{diag}(0,1,2)$$
+et la méthode permettant d'obtenir l'inverse d'une matrice donne :
+$$ P^{-1} = \begin{pmatrix}
+2 & -3/2 & -1 \\
+-4 & 0 & 1 \\
+1 & 1/2 & 0 \\
+\end{pmatrix}$$
+\item Si $B^2=A$ alors $AB=B^2B=B^3=BB^2=BA$.
+\item Pour tout $B \in \mathcal{M}_3(\mathbb{C})$,
+\begin{align*}
+B^2 = A & \Longleftrightarrow B^2 = PDP^{-1} \\
+& \Longleftrightarrow P^{-1}B^2 P = D \\
+& \Longleftrightarrow P^{-1}BPP^{-1}P = D \\
+& \Longleftrightarrow (P^{-1}BP)^2 = D
+\end{align*}
+Déterminons donc les matrices $N= \begin{pmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i \\
+\end{pmatrix}$ de $\mathcal{M}_3(\mathbb{R})$ vérifiant $N^2=D$. Soit $N$ une telle matrice. D'après la question précédente, $ND=DN$. Or on a :
+$$ ND = \begin{pmatrix}
+0 & b & 2c \\
+0 &  e & 2f \\
+0 & h & 2i \\
+\end{pmatrix} \; \hbox{ et } DN = \begin{pmatrix}
+0 & 0 & 0 \\
+d & e & f \\
+2g & 2h & 2i 
+\end{pmatrix}$$
+Ainsi, $b=c=d=g=f=h=0$ donc :
+$$ N = \textrm{diag}(a,b,c)$$
+Or $N^2= D=\textrm{diag}(0,1,2)$ donc $a=0$, $b= -1$ ou $1$ et $c= - \sqrt{2}$ ou $\sqrt{2}$. Réciproquement, toute matrice de cette forme vérifie bien $N^2=D$.
+
+\medskip
+
+\noindent Avec le raisonnement précédent, on en déduit que $B^2=A$ si et seulement si :
+$$ P^{-1} B P = \textrm{diag}(0, \pm 1, \pm \sqrt{2})$$
+ou encore :
+$$ B = P \textrm{diag}(0, \pm 1, \pm \sqrt{2}) P^{-1}$$
+ce qui donne $4$ solutions car $N \mapsto P^{-1}MP$ est un endomorphisme injectif de $\mathcal{M}_3(\mathbb{R})$.
+\end{enumerate}
+
+\begin{Exa}
+Soit $A$ la matrice de $\mathcal{M}_{3}\left(\mathbb{R}\right)$
+d\'efinie par
+\[
+A=\left(\begin{array}{ccc}
+1 & -1 & -1\\
+-1 & 1 & -1\\
+-1 & -1 & 1
+\end{array}\right)
+\]
+
+\begin{enumerate}
+\item Montrer que la matrice $A$ est diagonalisable. D\'eterminer ses valeurs propres et ses sous-espaces propres.
+\item D\'eterminer une relation entre $A^{2}$, $A$ et $I_{n}$.\\
+En d\'eduire une relation entre $A^{n+1}$, $A^{n}$ et $A^{n-1}$ pour
+tout entier $n\geq1$.
+\item Montrer par r\'ecurrence qu'il existe deux suites $\left(u_{n}\right)_{n\in\mathbb{N}}$
+et $\left(v_{n}\right)_{n\in\mathbb{N}}$ telles que
+\[
+\forall n\in\mathbb{N},\quad A^{n}=\left(\begin{array}{ccc}
+u_{n} & v_{n} & v_{n}\\
+v_{n} & u_{n} & v_{n}\\
+v_{n} & v_{n} & u_{n}
+\end{array}\right)
+\]
+qui v\'erifient la relation de r\'ecurrence :
+\[
+\forall n\geq1,\quad\left\{ \begin{array}{ccc}
+u_{n+1} & = & u_{n}+2u_{n-1}\\
+v_{n+1} & = & v_{n}+2v_{n-1}
+\end{array}\right.
+\]
+\item D\'eterminer, pour tout entier naturel $n$, l'expression de $u_{n}$
+et $v_{n}$ en fonction de $n$.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+\begin{enumerate}
+\item Calculons le polynôme caractéristique de $A$ :
+\begin{align*}
+\chi_A(X) & =\det \left\vert  \begin{array}{*{20}{c}}
+{X - 1}&1&1\\
+1&{X - 1}&1\\
+1&1&{X - 1}
+\end{array}  \right\vert \\
+&  \underset{{C_1} \leftarrow {C_1} + {C_2} + {C_3}}{=} \left\vert \begin{array}{*{20}{c}}
+{X + 1}&1&1\\
+{X + 1}&{X - 1}&1\\
+{X + 1}&1&{X - 1} 
+\end{array} \right\vert  \\
+&  \underset{{L_k} \leftarrow {L_k} - {L_1}, k=2,3}{=}  \left\vert \begin{array}{*{20}{c}}
+{X + 1}&1&1\\
+0&{X - 2}&0\\
+0&0&{X - 2}
+\end{array} \right\vert \\
+& = \left( {X + 1} \right){\left( {X - 2} \right)^2} \\
+\end{align*}
+Ainsi $-1$ est valeur propre simple donc $\textrm{dim}(E_{-1}(A))=1$. On a :
+$$ A-2I_3 = \left(\begin{array}{ccc}
+-1 & -1 & -1\\
+-1 & -1 & -1\\
+-1 & -1 & -1
+\end{array}\right)$$
+Clairement $A-2I_3$ est de rang $1$ donc le noyau de $A-2I_3$ est de dimension $2$ par théorème du rang. Ainsi,
+$$ \textrm{dim}(E_{-1}(A)) + \textrm{dim}(E_2(A)) = 1+2 = 3 = \textrm{dim}(\mathcal{M}_{3,1}(\mathbb{R}))$$
+et donc $A$ est diagonalisable. $A$ a pour valeur propre $-1$ et $2$. On sait que :
+$$ x_1= \begin{pmatrix}
+1 \\
+ -1 \\ 0 
+\end{pmatrix} \et x_2=\begin{pmatrix}
+1 \\
+0 \\
+-1
+\end{pmatrix}$$
+appartiennent à $E_2(A)$ qui est de dimension $2$ et sont non colinéaires. Ainsi, la famille $(x_1,x_2)$ est une base de $E_2(A)$. On a aussi :
+$$ A+I_3  = \left(\begin{array}{ccc}
+2 & -1 & -1\\
+-1 & 2 & -1\\
+-1 & -1 & 2
+\end{array}\right)$$
+Ainsi le vecteur 
+$$ x_3 = \begin{pmatrix}
+1 \\
+1 \\
+1
+\end{pmatrix}$$
+appartient à $E_{-1}(A)$ qui est de dimension $1$ et est non nul. Ainsi, la famille $(x_3)$ est une base de $E_{-1}(A)$.
+\item Notons :
+ \[D = \left( {\begin{array}{*{20}{c}}
+{ - 1}&0&0\\
+0&2&0\\
+0&0&2
+\end{array}} \right)\]
+On a alors :
+ \[{D^2} = \left( {\begin{array}{*{20}{c}}
+1&0&0\\
+0&4&0\\
+0&0&4
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+{ - 1}&0&0\\
+0&2&0\\
+0&0&2
+\end{array}} \right) + 2\left( {\begin{array}{*{20}{c}}
+1&0&0\\
+0&1&0\\
+0&0&1
+\end{array}} \right) = D +2 {I_3}\]
+Or d'après la question précédente, la matrice $A$ est semblable à $D$ donc il existe une matrice inversible $P$ telle que $A=PDP^{-1}$. On a ainsi :
+$$ A^2 = (PDP^{-1})^2 = PD^2P^{-1} = P(D+2I_3)P^{-1} = PDP^{-1} + 2I_3 = A+2 I_3$$
+Ainsi, $A^2 = A + 2 I_3$. 
+
+\medskip
+
+\noindent \textit{Remarque}. Sinon on calcule tout simplement $A^2$... Mais c'est moins drôle !
+
+\medskip
+
+\noindent En multipliant, pour $n \geq 1$, l'égalité précédente par $A^{n-1}$, on obtient :
+$$A^{n+1} = A^{n} + 2 A^{n-1}$$
+
+\item On raisonne à l'aide d'une démonstration par récurrence. Pour tout entier $n \geq 0$, on pose $$ \mathcal{P}_n : \hbox{\og} \  \exists (u_n, v_n) \in \mathbb{R}^2 \, \vert \;  A^n  = \left( {\begin{array}{*{20}{c}}
+{{u_n}}&{{v_n}}&{{v_n}}\\
+{{v_n}}&{{u_n}}&{{v_n}}\\
+{{v_n}}&{{v_n}}&{{u_n}}
+\end{array}} \right) \hbox{\fg}$$
+\begin{enumerate}
+\item [$\bullet$] $\mathcal{P}_0$ et $\mathcal{P}_1$ sont vraies : il suffit de prendre $u_0=1$ et $v_0=0$ puis $u_1 = 1$, $v_1=-1$.
+\item [$\bullet$] Soit $n \in \mathbb{N}^*$ tel que $\mathcal{P}_{n-1}$ et $\mathcal{P}_n$ soient vraies. Montrons alors que $\mathcal{P}_{n+1}$ l'est aussi. On sait que $A^{n+1} = A^n + 2 A^{n-1}$ donc \[\left( {\begin{array}{*{20}{c}}
+{{u_n}}&{{v_n}}&{{v_n}}\\
+{{v_n}}&{{u_n}}&{{v_n}}\\
+{{v_n}}&{{v_n}}&{{u_n}}
+\end{array}} \right) + 2\left( {\begin{array}{*{20}{c}}
+{{u_{n - 1}}}&{{v_{n - 1}}}&{{v_{n - 1}}}\\
+{{v_{n - 1}}}&{{u_{n - 1}}}&{{v_{n - 1}}}\\
+{{v_{n - 1}}}&{{v_{n - 1}}}&{{u_{n - 1}}}
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+{{u_n} + 2{u_{n - 1}}}&{{v_n} + 2{v_{n - 1}}}&{{v_n} + 2{v_{n - 1}}}\\
+{{v_n} + 2{v_{n - 1}}}&{{u_n} + 2{u_{n - 1}}}&{{v_n} + 2{v_{n - 1}}}\\
+{{v_n} + 2{v_{n - 1}}}&{{v_n} + 2{v_{n - 1}}}&{{u_n} + 2{u_{n - 1}}}
+\end{array}} \right)\]
+est de la forme voulue en posant $u_{n+1} = u_n + 2 u_{n-1}$ et $v_{n+1}= v_n + 2 v_{n-1}$.
+\item [$\bullet$] Par principe de récurrence double, la propriété est donc vraie pour tout $n \geq 0$.
+\end{enumerate}
+Ainsi, il existe deux suites $\left(u_{n}\right)_{n \geq 0}$
+et $\left(v_{n}\right)_{n \geq 0}$ telles que :
+\[
+\forall n\in\mathbb{N},\quad A^{n}=\left(\begin{array}{ccc}
+u_{n} & v_{n} & v_{n}\\
+v_{n} & u_{n} & v_{n}\\
+v_{n} & v_{n} & u_{n}
+\end{array}\right)
+\]
+qui v\'erifient la relation de r\'ecurrence
+\[
+\forall n\geq 1,\quad\left\{ \begin{array}{ccc}
+u_{n+1} & = & u_{n}+2u_{n-1}\\
+v_{n+1} & = & v_{n}+2v_{n-1}
+\end{array}\right.
+\]
+\item Les suites $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ sont des suites récurrentes linéaires d'ordre deux (avec la même relation). L'équation caractéristique associée admet deux racines distinctes qui sont $-1$ et $2$. Il existe donc quatre r\'eels $\alpha, \beta, \gamma, \delta$ tels que pour tout $n \in \mathbb{N}$,
+$$ u _n = \alpha 2^n + \beta (-1)^n \et v_n  = \gamma 2^n + \delta (-1)^n$$
+La prise en compte des conditions initiales $u_0=u_1=1$ permet de conclure que 
+$$\forall n \geq 0, \; u_{n} = \frac{1}{3}\left(2^{n+1} + (-1)^n\right)$$ 
+et les conditions $v_0=0, \; v_1=-1$ permettent d'avoir :
+$$ \forall n \geq 0, \; v_{n} = \frac{1}{3} \left( (-1)^n - 2^{n} \right) $$
+\end{enumerate}
+
+
+\begin{Exa} Soient $(u_k)_{k \geq 0}$ et $(v_k)_{k \geq 0}$ deux suites \`a termes r\'eels d\'efinies par
+$$\left\{\begin{array}{l}u_0=1\\ v_0=2\end{array}\right.\qquad\hbox{et}\qquad \forall k\in\N,\;\left\{\begin{array}{l}u_{k+1}=4u_k-2v_k\\
+v_{k+1}=u_k+v_k\end{array}\right.$$
+Déterminer pour tout entier $k \geq 0$, l'expression de $u_k$ et $v_k$ en fonction de $k$.
+\end{Exa}
+
+\corr Pour tout entier $k \geq 0$, posons :
+$$ X_k = \begin{pmatrix}
+u_k \\
+v_k \\
+\end{pmatrix}$$
+et
+$$ A=\pmatrice{4&-2\\1&1} $$
+On montre par récurrence immédiate que pour tout entier $k \geq 0$,
+$$ X_k=A^k X_0$$
+Le calcul du polynôme caractéristique de $A$ donne :
+$$ \chi_A(X) = (X-2)(X-3)$$
+Ainsi, $A$ appartient à $\mathcal{M}_2(\mathbb{R})$ et a deux valeurs propres distinctes donc elle est diagonalisable. On a :
+$$ A - 2I_2 = \pmatrice{2&-2\\1&-1}$$
+La somme des deux colonnes est nulle donc $V_1=\begin{pmatrix}
+1 \\
+1 \\
+\end{pmatrix}$
+est non nul et appartient à $\ker(A-2I_2)$ qui est de dimension $1$ car $2$ est valeur propre simple de $A$. On a aussi :
+$$A-3I_2=\pmatrice{1&-2\\1&-2}$$ 
+donc $V_2=\begin{pmatrix}
+2 \\
+1 \\
+\end{pmatrix}$ est non nul et appartient à $\ker(A-3I_2)$ qui est de dimension $1$ car $2$ est valeur propre simple de $A$. La famille $(V_1,V_2)$ est donc une base de vecteurs propres de $A$ et si l'on note 
+$$P=\pmatrice{1&2 \\ 1&1}$$
+la matrice de passage de la base canonique \`a cette base de vecteurs propres , on a donc $A=PDP^{-1}$ avec 
+$$D=\pmatrice{2&0\\0&3}$$
+Pour tout entier $k \geq 0$, on a (d'après la formule de changement de base appliquée à $u^k$ où $u$ est l'endomorphisme canoniquement associé à $A$) :
+$$A^k=PD^kP^{-1}$$
+Par calcul, on a : 
+$$P^{-1}=\pmatrice{-1&2\\1&-1}$$
+puis sachant que $D$ est diagonale : 
+$$D^k=\pmatrice{2^k&0\\0&3^k}$$ 
+et enfin 
+$$A^k=\pmatrice{1&2 \\ 1&1}\times\pmatrice{2^k&0\\0&3^k}\times \pmatrice{-1&2\\1&-1} = \pmatrice{2 \times 3^k-2^k & -2 \times 3^k+2^{k+1}\\[0.15cm]3^k-2^k& -3^k+2^k}$$
+On sait que pour tout $k \geq 0$,
+$$X_k=A^kX_0$$
+donc :
+$$\pmatrice{u_k\\v_k}=A^k\pmatrice{1\\2}$$
+d'o\`u finalement :
+\[
+u_k=3 \times 2^k-2 \times 3^k \quad \textrm{ et } \quad v_k=3 \times 2^k-3^k 
+\]
+\medskip
+
+\begin{center}
+\textit{{ {\large Matrices définies par blocs}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $A= \begin{pmatrix}
+1& 2 \\
+2 & 1 \\
+\end{pmatrix}\cdot$
+\begin{enumerate}
+\item $A$ est-elle diagonalisable ? $A$ est-elle inversible ? Donner les éléments propres de $A$.
+\item  On définit $B = \begin{pmatrix}
+A & A \\
+A & A 
+\end{pmatrix}\cdot$
+
+$B$ est-elle diagonalisable ? Donner les éléments propres de $B$.
+\end{enumerate}
+\end{Exa}
+
+\corr \begin{enumerate}
+\item Le déterminant de $A$ est non nul donc $A$ est inversible. Le calcul du polynôme caractéristique donne :
+$$ \chi_A(X) = (X+1)(X-3)$$
+Donc $A$ admet deux valeurs propres distinctes, $-1$ et $3$, et appartient à $\mathcal{M}_2(\mathbb{R})$ donc elle est diagonalisable. En calculant $A+I_2$ et $A-3I_2$, on obtient :
+$$ E_{-1}(A) = \textrm{Vect} \left( \begin{pmatrix}
+1 \\
+-1 \\
+\end{pmatrix}\right) \hbox{ et } E_{3}(A) = \textrm{Vect} \left( \begin{pmatrix}
+1 \\
+1 \\
+\end{pmatrix}\right)$$
+\item La première colonne de $B$ est égale à la troisième et la deuxième colonne est égale à la quatrième donc les vecteurs :
+$$ \begin{pmatrix}
+1 \\
+0 \\
+-1 \\
+0
+\end{pmatrix} \hbox{ et } \begin{pmatrix}
+0 \\
+1 \\
+0 \\
+-1
+\end{pmatrix}$$
+appartiennent à $\textrm{Ker}(B)= E_0(B)$ et sont non colinéaires donc $\textrm{dim}(E_0(B)) \geq 2$. La forme de la matrice $B$ incite à un calcul par blocs. Si $X \in \mathcal{M}_{2,1}(\mathbb{R})$ est un vecteur propre de $A$ associé à la valeur propre $\lambda$ alors le vecteur $\tilde{X} \in \mathcal{M}_{4,1}(\mathbb{R})$ défini (abusivement) par :
+$$ \tilde{X} = \begin{pmatrix}
+X \\
+X \\
+\end{pmatrix}$$
+vérifie :
+$$ B \tilde{X} = \begin{pmatrix}
+A & A \\
+A & A 
+\end{pmatrix} \begin{pmatrix}
+X \\
+X \\
+\end{pmatrix} = \begin{pmatrix}
+2 AX \\
+2AX
+\end{pmatrix} = 2 \lambda \begin{pmatrix}
+X \\
+X \\
+\end{pmatrix} = 2 \lambda \tilde{X}$$
+Ainsi $\tilde{X}$ (non nul car $X$ l'est) est un vecteur propre de $B$ associé à la valeur propre $2 \lambda$. Ainsi, les vecteurs 
+$$ \begin{pmatrix}
+1 \\
+-1 \\
+1 \\
+-1
+\end{pmatrix} \hbox{ et } \begin{pmatrix}
+1 \\
+1 \\
+1 \\
+1 \\
+\end{pmatrix}$$
+sont des vecteurs propres de $B$ associés aux valeurs propres $-2$ et $6$. On a alors que :
+$$ \textrm{dim}(E_0(B)) + \textrm{dim}(E_{-2}(B)) + \textrm{dim}(E_6(B))  \geq 4 = \textrm{dim}(\mathcal{M}_{4,1}(\mathbb{R}))$$
+Or d'après le cours :
+$$ \textrm{dim}(E_0(B)) + \textrm{dim}(E_{-2}(B)) + \textrm{dim}(E_6(B))  \leq \textrm{dim}(\mathcal{M}_{4,1}(\mathbb{R}))$$
+donc :
+$$ \textrm{dim}(E_0(B)) + \textrm{dim}(E_{-2}(B)) + \textrm{dim}(E_6(B))  = \textrm{dim}(\mathcal{M}_{4,1}(\mathbb{R}))$$
+On en déduit que $B$ est diagonalisable et que $-2$ et $6$ sont valeurs propres simples et que $E_0(B)$ est de dimension $2$ donc :
+$$ E_0(B) = \textrm{Vect} \left(\begin{pmatrix}
+1 \\
+0 \\
+-1 \\
+0
+\end{pmatrix},\begin{pmatrix}
+0 \\
+1 \\
+0 \\
+-1
+\end{pmatrix}\right), \;  E_{-2}(B) = \textrm{Vect} \left( \begin{pmatrix}
+1 \\
+-1 \\
+1 \\
+-1
+\end{pmatrix}\right) \hbox{ et } E_{6}(B) = \textrm{Vect} \left(\begin{pmatrix}
+1 \\
+1 \\
+1 \\
+1
+\end{pmatrix}\right)$$
+\end{enumerate}
+
+\begin{Exa} Soient $A$ et $B$ deux matrices complexes inversibles d'ordres $n \geq 1$. On pose :
+$$ N = \begin{pmatrix}
+0 & B \\
+A & 0
+\end{pmatrix}$$
+\begin{enumerate}
+\item Montrer que $N$ est inversible et déterminer $N^{-1}$.
+\item Calculer $N^2$ et $P(N^2)$ pour $P \in \mathbb{C}[X]$.
+\item Si $N$ est diagonalisable, $AB$ l'est-elle ? Étudier la réciproque.
+\end{enumerate}
+\end{Exa}
+
+\corr \begin{enumerate}
+\item Posons :
+$$ M = \begin{pmatrix}
+0 & A^{-1} \\
+B^{-1} & 0& 
+\end{pmatrix}$$
+Un calcul par blocs montre que $NM=I_{2n}$. Ainsi, $N$ est inversible est :
+$$ N^{-1} = \begin{pmatrix}
+0 & A^{-1} \\
+B^{-1} & 0& 
+\end{pmatrix}$$
+\item Un calcul par blocs montre que :
+$$ N^{2} = \begin{pmatrix}
+BA & 0 \\
+0 & AB
+\end{pmatrix}$$
+Une démonstration par récurrence montre que pour tout $k \geq 0$,
+$$ (N^2)^k =  \begin{pmatrix}
+(BA)^k & 0 \\
+0 & (AB)^k
+\end{pmatrix}$$
+et ainsi pour $P \in \mathbb{C}[X]$, 
+$$ P(N^2) = \begin{pmatrix}
+P(BA) & 0 \\
+0 & P(AB) 
+\end{pmatrix}$$
+\item Supposons que $N$ est diagonalisable. Alors $N^2$ est diagonalisable et il existe donc un polynôme annulateur scindé à racines simples $P$ tel que $P(N^2)=0_{2n}$ et donc d'après la question précédente, $P(AB)=0_n$. Ainsi, $AB$ a un polynôme annulateur scindé à racines simples et est donc diagonalisable.
+
+\medskip
+
+\noindent On pourrait se passer de la question précédente en remarquant que si $f$ est l'endomorphisme de $\mathbb{R}^{2n}$ canoniquement associé à $N^2$ alors $f$ est diagonalisable et $AB$ est la matrice de l'endomorphisme induit par $f$ sur l'espace engendré par $n$ derniers vecteurs de la base canonique de $\mathbb{R}^{2n}$ donc $AB$ est aussi diagonalisable.
+
+\medskip
+
+\noindent Supposons maintenant que $AB$ est diagonalisable. Sachant que $A$ est inversible, on a :
+$$ AB=A(BA)A^{-1}$$
+Donc $AB$ et $BA$ sont semblables et ainsi $BA$ est aussi diagonalisable et ces deux matrices sont semblables à une matrice diagonale $D$ : il existe deux matrices $P$, $Q$, d'ordre $n$ et inversibles tels que $AB=PDP^{-1}$ et $BA= QDQ^{-1}$. Un calcul par blocs donne :
+$$ N^2 = \begin{pmatrix}
+Q & 0 \\
+0 & P
+\end{pmatrix} \begin{pmatrix}
+D & 0 \\
+0 & D
+\end{pmatrix} \begin{pmatrix}
+Q^{-1} & 0 \\
+0 & P^{-1}
+\end{pmatrix}$$
+et sachant que :
+$$ \begin{pmatrix}
+Q & 0 \\
+0 & P
+\end{pmatrix} \begin{pmatrix}
+Q^{-1} & 0 \\
+0 & P^{-1}
+\end{pmatrix} = I_{2n}$$
+on en déduit que $N^2$ est diagonalisable. Notons $\lambda_1$, $\ldots$, $\lambda_k$ les valeurs propres de $N^2$ ($k \geq 1$). D'après le cours, on sait que :
+$$ P(X) = \prod_{j=1}^k X- \lambda_j$$
+est un polynôme annulateur de $N^2$. Ainsi :
+$$ \prod_{j=1} ^k (N^2- \lambda_j I_{2n}) = 0_{2n}$$
+Or $N^2$ est inversible car $N$ l'est donc toutes les valeurs propres de $N^2$ sont non nulles. Ainsi, chaque valeur propre $\lambda_j$ admet deux racines carrées distinctes $a_j$ et $b_j$. On en déduit que :
+$$ \prod_{j=1} ^k (N- a_j I_{2n})(N - b_j I_{2n}) = 0_{2n}$$
+Ainsi le polynôme :
+$$ Q(X) = \prod_{j=1}^k (X-a_j)(X- b_j)$$
+est un polynôme annulateur scindé à racines simples de $N$ (les $\lambda_i$ sont deux à deux distincts et les racines carrées aussi sinon les $\lambda_i$ ne le seraient pas) donc $N$ est diagonalisable.
+\end{enumerate}
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Divers}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $A \in \mathcal{M}_{n}(\mathbb{R})$ dont des valeurs propres réelles sont positives. Montrer que le déterminant de $A$ est positif ou nul.
+\end{Exa} 
+
+\corr La matrice $A$ a des coefficients réels donc son polynôme caractéristique appartient à $\mathbb{R}[X]$. Notons $\textrm{Sp}_{\mathbb{R}}(A)$ l'ensemble des valeurs propres réelles de $A$. Remarquons que si $\lambda \in \mathbb{C} \setminus \mathbb{R}$ est une valeur propre de $A$, alors $\overline{\lambda}$ l'est aussi car $\chi_A \in \mathbb{R}[X]$ (et la multiplicité est la même). En notant $\mathcal{S}$ l'ensemble des valeurs propres non réelles de $A$ ayant une partie imaginaire strictement positive, on a (en autorisant les répétitions) en sachant que le déterminant est le produit des valeurs propres :
+\begin{align*}
+ \textrm{det}(A) & = \left(\prod_{ \lambda \in \textrm{Sp}_{\mathbb{R}}(A)} \lambda \right) \times \left(\prod_{ \lambda \in \mathcal{S}} \lambda  \times \overline{\lambda }\right)  \\
+&  = \left(\prod_{ \lambda \in \textrm{Sp}_{\mathbb{R}}(A)} \lambda \right) \times \left(\prod_{ \lambda \in \mathcal{S}} \vert \lambda \vert ^2\right) \geq 0 
+ \end{align*}
+  car les valeurs propres réelles sont positives.
+
+
+\begin{Exa}
+\begin{enumerate}
+\item Deux matrices carrées $A$ et $B$ d'ordre $n \geq 2$ possèdent le même spectre. Sachant que leurs valeurs propres sont deux à deux distinctes, montrer que $A$ et $B$ sont semblables.
+\item Donner deux matrices possédant les mêmes valeurs propres mais qui ne soient pas semblables.
+\end{enumerate}
+\end{Exa} 
+
+\corr \begin{enumerate}
+\item Les valeurs propres de $A$ et $B$ sont les mêmes et deux à deux distinctes donc ces deux matrices sont diagonalisables et semblables à la même matrice diagonale. La relation \og être semblable à \fg étant une relation d'équivalence alors $A$ et $B$ sont semblables par transitivité.
+\item Posons :
+$$ A = I_2 \hbox{ et } B = \begin{pmatrix}
+1 & 1 \\
+0 & 1 
+\end{pmatrix}$$
+Les matrices $A$ et $B$ ont le même spectre (unique valeur propre égale à $1$) mais si $B$ était semblable à $A$ alors $B$ serait égale à $A$ (l'unique matrice semblable à $I_2$ est $I_2$) ce qui est faux.
+\end{enumerate}
+
+
+
+\begin{Exa} \begin{enumerate}
+\item Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension $3$. Montrer que $H$, plan de $E$, est stable par $u \in \mathcal{L}(E)$ si et seulement si il existe $\lambda \in \mathbb{K}$ tel que $\textrm{Im}(u- \lambda \textrm{Id}) \subset H$.
+\item Trouver tous les sous-espaces de $\mathcal{M}_{3,1}(\mathbb{R})$ stables par l'application linéaire canoniquement associée à 
+$$A= \begin{pmatrix}
+-1 & 2 & -3 \\
+-2 & -5 & -2 \\
+-2 & 2 & 0 \\
+\end{pmatrix} $$
+\end{enumerate}
+\end{Exa}
+
+\corr \begin{enumerate}
+\item Supposons l'existence d'un scalaire $\lambda$ tel que $\textrm{Im}(u- \lambda \textrm{Id}) \subset H$. Montrons que $H$ est stable par $u$, c'est-à-dire :
+$$ \forall h \in H, \; u(h) \in H$$
+On sait que $\textrm{Im}(u- \lambda \textrm{Id}) \subset H$ donc :
+$$ \forall x \in E, \; u(x)- \lambda x \in H$$
+Soit $h \in H$. On a :
+$$ u(h) = u(h)- \lambda h + \lambda h$$
+On sait que $u(h) - \lambda h \in H$ et $\lambda h \in H$ donc sachant que $H$ est un espace vectoriel, on obtient que $u(h) \in H$ ce qui donne le résultat.
+
+\medskip
+
+\noindent Supposons maintenant que $H$ est stable par $u$ :
+$$ \forall h \in H, \; u(h) \in H$$
+$H$ admet un supplémentaire engendré par un vecteur non nul $a$. Soit $x \in E$. Il existe un unique vecteur $h \in H$ et un unique scalaire $\lambda$ tel que $x=h + \alpha a$. Par linéarité de $u$, on a :
+$$ u(x) = u(h) + \alpha u(a)$$
+Remarquons que $u(h)$ appartient à $H$ par hypothèse. Le vecteur $u(a)$ se décompose de manière unique sous la forme :
+$$ u(a) = h' + \beta  a$$
+où $h' \in H$ et $\beta \in \mathbb{K}$. Ainsi,
+\begin{align*}
+u(x) & = u(h)+ \alpha (h'+ \beta a) \\
+& = u(h) + \alpha h' + \beta (\alpha a) \\
+& = u(h) + \alpha h' + \beta(x-h) \\
+& = u(h)+ \alpha h' - \beta h + \beta x
+\end{align*}
+Ainsi,
+$$ u(x)- \beta x = u(h)+ \alpha h' - \beta h \in H$$
+car $u(h)$, $h'$ et $h$ appartient à $H$ qui est un espace vectoriel. Finalement, $\textrm{Im}(u- \beta \textrm{Id}) \subset H$.
+\item Notons $f \in \mathcal{L}(\mathcal{M}_{3,1}(\mathbb{K}))$ l'application linéaire canoniquement associée à $A$. Les sous-espaces stables triviaux de $f$ sont $\lbrace 0_{\mathcal{M}_{3,1}(\mathbb{K})} \rbrace$ et $\mathcal{M}_{3,1}(\mathbb{K})$. Il reste à déterminer les sous-espaces stables de $f$ de dimension $1$ et $2$. D'après le cours, les droites vectorielles stables par $f$ sont les droites engendrées par des vecteurs propres. Le calcul du polynôme caractéristique donne :
+$$ \chi_A(X) = (X-2)(X^2+8X+23)$$
+La seule valeur propre réelle de $A$ est $2$ donc la seule droite vectorielle de $f$ est $E_2(f)$, c'est-à-dire (par la méthode habituelle) :
+$$ E_2(f) = \textrm{Vect} \left( \begin{pmatrix}
+1 \\
+0 \\
+-1 
+\end{pmatrix} \right)$$
+Si $H$ est un plan stable par $f$, il existe d'après la question précédente un réel $\lambda$ tel que $\textrm{Im}(f- \lambda \textrm{Id}) \subset H$. Nécessairement, $\textrm{Im}(f- \lambda \textrm{Id})$ est de dimension au plus $2$ ce qui implique d'après le théorème du rang que $E_{\lambda}(f)$ est de dimension au moins égale à $1$. La seule possibilité est $\lambda=2$. On sait que $E_2(f)$ est de dimension $1$ donc $\textrm{Im}(f- 2 \textrm{Id})$ est de dimension $2$. Sachant que $f$ et $f- 2 \textrm{Id}$ commutent, on en déduit que $\textrm{Im}(f- 2 \textrm{Id})$ est bien stable par $f$. Sachant que :
+$$ A - 2I_3 = \begin{pmatrix}
+-3 & 2 & -3 \\
+-2 & -7 & -2 \\
+-2 & 2 & -2 \\
+\end{pmatrix} $$
+L'image de $A-2I_3$ est de dimension $2$ et ses deux premières colonnes sont non colinéaires donc finalement, le seul plan stable par $f$ est :
+$$ \textrm{Vect} \left( \begin{pmatrix}
+-3 \\
+-2 \\
+-2 \\
+\end{pmatrix}, \begin{pmatrix}
+2 \\
+-7 \\
+2 \\
+\end{pmatrix}\right)$$
+\end{enumerate}
+
+\begin{Exa} Soient $A \in \mathcal{M}_{3,2}(\mathbb{R})$ et $B \in \mathcal{M}_{2,3}(\mathbb{R})$ telles que :
+$$ AB = \begin{pmatrix}
+1 & 0 & x \\
+0 & 1 & 0 \\
+1 & 0 & 1 
+\end{pmatrix}$$
+où $x \in \mathbb{R}$.
+\begin{enumerate}
+\item La matrice $AB$ est-elle inversible ? Quelles sont les valeurs possibles de $x$ ?
+\item La matrice $BA$ est-elle diagonalisable?
+\item Montrer que $\mathbb{R}^3 = \textrm{Im}(A) \oplus \textrm{Ker}(B)$.
+\item Montrer qu'il existe une infinité de couples $(A,B)$ vérifiant l'hypothèse donnée dans l'énoncé.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+\begin{enumerate}
+\item Le déterminant de la matrice vaut (après l'opération $L_3 \leftarrow L_3- L_1$) $1-x$ donc la matrice est inversible si et seulement si $x \neq 1$. Si la matrice est inversible alors le rang de $AB$ vaut $3$. Or le rang de $AB$ est inférieur ou égal au rang de $A$ car l'image de $AB$ est inclus dans l'image de $A$. On en déduit alors que la matrice $A$ est au moins de rang $3$ ce qui est absurde car $A$ est de taille $3 \times 2$ donc au maximum de rang $2$. Ainsi, $A$ ne peut pas être inversible et nécessairement $x$ vaut $1$.
+%\item On sait que la trace de $BA$ est égal à la trace de $AB$ donc $3$. La matrice $BA$ est carrée d'ordre deux donc son polynôme caractéristique est de la forme :
+%$$ P(X)=X^2-3X + \lambda$$
+%où $\lambda \in \mathbb{R}$. 
+
+\item Le polynôme caractéristique de $AB$ vaut (après calculs) $X(X-1)(X-2)$, $AB$ a donc $3$ valeurs propres distinctes et est d'ordre $3$ donc est diagonalisable. On obtient facilement que :
+$$ E_{0}(AB) = \textrm{Vect}(X_0), \; E_{1}(AB) = \textrm{Vect}(X_1) \hbox{ et } E_{2}(AB) = \textrm{Vect}(X_2)$$
+où 
+$$ X_0 = \begin{pmatrix}
+1 \\
+0 \\
+-1
+\end{pmatrix},  \; X_1 = \begin{pmatrix}
+0 \\
+1 \\
+0
+\end{pmatrix} \hbox{ et } X_2 = \begin{pmatrix}
+1 \\
+0 \\
+1
+\end{pmatrix}$$
+Remarquons alors que $ABX_1=X_1$ donc $BABX_1=BX_1$ donc $BX_1$ appartient au sous-espace propre de $BA$ associé à la valeur propre $1$. Remarquons que $BX_1$ n'est pas nul sinon $X_1$ l'est ce qui est faux donc $BX_1$ est un vecteur propre de $BA$ associé à la valeur propre $1$. De même, $ABX_2=2X_2$ donc $BABX_2=BX_2$ donc $BX_2$ appartient au sous-espace propre de $BA$ associé à la valeur propre $2$. Remarquons que $BX_2$ n'est pas nul sinon $X_2$ l'est ce qui est faux donc $BX_2$ est un vecteur propre de $BA$ associé à la valeur propre $2$.  Ainsi $BA$ admet deux valeurs propres distinctes et est carrée d'ordre deux donc elle est diagonalisable.
+\item Soit $X \in \textrm{Im}(A) \cap \textrm{Ker}(B)$. Alors $BX=0$ et il existe $Z \in \mathcal{M}_{2,1}(\mathbb{R})$ tel que $X=AZ$. Alors $BAZ=0$ donc $Z$ est dans le noyau de $BA$. Or $0$ n'est pas valeur propre de $BA$ donc $Z$ est nul et $X=AZ$ aussi. Ainsi, $\textrm{Im}(A)$ et $\textrm{Ker}(B)$ sont en somme directe. La matrice $A$ est de taille $3 \times 2$. D'après le théorème du rang,
+$$ 2 = \textrm{dim}(\textrm{Im}(A)) + \textrm{dim}(\textrm{Ker}(A))$$
+Or le noyau de $A$ est réduit au vecteur nul sinon $BA$ aurait un noyau de dimension au moins égal à $1$ ce qui est faux car $0$ n'est pas valeur propre. Ainsi,
+$$\textrm{dim}(\textrm{Im}(A))  = 2$$
+La matrice $B$ est de taille $2 \times 3$ donc a un rang inférieur ou égal à $2$ donc d'après le théorème du rang,
+$$ \textrm{dim}(\textrm{Ker}(B)) = 3- \textrm{dim}(\textrm{Im}(B)) \geq 3-2 = 1$$
+Ainsi :
+$$ \textrm{dim}(\textrm{Im}(A)) + \textrm{dim}(\textrm{Ker}(B)) \geq 3$$
+et l'autre inégalité est vérifiée car l'image de $A$ et le noyau de $B$ sont en somme directe. Finalement, $\mathbb{R}^3 = \textrm{Im}(A) \oplus \textrm{Ker}(B)$.
+\item Posons :
+$$ A  = \begin{pmatrix}
+1 & 0 \\
+0 & 1\\
+1 & 0 \\
+\end{pmatrix} 
+\hbox{ et } B = \begin{pmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0
+\end{pmatrix}$$
+Alors :
+$$ AB = \begin{pmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 1 
+\end{pmatrix}$$
+et tout couple de la forme $(yA, 1/y \times B)$ où $y \neq 0$ est encore solution donc il existe une infinité de couples $(A,B)$ vérifiant l'hypothèse donnée dans l'énoncé.
+\end{enumerate}
+
+\begin{Exa} Soient $A,B \in \mathcal{M}_{n}(\mathbb{K})$. Le but de l'exercice est de montrer que $\chi_{AB} = \chi_{BA}$.
+\begin{enumerate}
+\item Montrer le résultat quand $A$ est inversible.
+\item En déduire le résultat dans ce cas général. \textit{On pourra utiliser, pour $x \in \mathbb{K}$ fixé, les applications $f : \mathbb{K} \rightarrow \mathbb{K}$ et $g : \mathbb{K} \rightarrow \mathbb{K}$ définies par :}
+$$ f(t) = \textrm{det}((A-t I_n)B -x I_n) \; \hbox{ et } g(t) = \textrm{det}(B(A-tI_n)-xI_n)$$
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Pour tout scalaire $x$,
+\begin{align*}
+\chi_{AB}(x) & = \textrm{det}(AB-xI_n) \\
+& = \textrm{det}(ABAA^{-1}-xA A^{-1}) \\
+& = \textrm{det}(A(BA-xI_n) A^{-1}) \\
+& = \textrm{det}(A)\textrm{det}(BA-xI_n) A^{-1})\textrm{det}(A^{-1}) \\
+& = \textrm{det}(A)\textrm{det}(BA-xI_n) A^{-1}) \dfrac{1}{\textrm{det}(A)} \\
+& = \textrm{det}(BA-xI_n) \\
+& = \chi_{BA}(x)
+\end{align*}
+Ainsi, $\chi_{AB}= \chi_{BA}$.
+
+\medskip
+
+\noindent \textit{Remarque.} On peut aussi remarquer que :
+$$ AB=  A(BA)A^{-1}$$
+Ainsi, $AB$ et $BA$ sont semblables donc ont le même polynôme caractéristique.
+\item Soit $x \in \mathbb{K}$ fixé. La matrice $A$ a un nombre fini de valeurs propres donc pour une infinité de scalaire $t$, $A-t I_n$ est inversible et donc d'après la question précédente :
+$$ f(t)=g(t)$$
+Or, les applications $f$ et $g$ sont polynômiales car leurs coefficients le sont (par développement). Elles coïncident en une infinité de scalaires dont sont égales. En particulier, $f(0)=g(0)$ et donc :
+$$ \textrm{det}(AB-xI_n)= \textrm{det}(BA-xI_n)$$
+Ceci est vrai pour tout scalaire $x$. On en déduit que $\chi_{AB}= \chi_{BA}$.
+\end{enumerate}
+
+\begin{Exa}  Soient $f$ et $g$ deux endomorphismes diagonalisables d'un espace vectoriel $E$ de dimension finie. Montrer que si $f$ et $g$ commutent alors il existe une base diagonalisante commune à $f$ et $g$.
+\end{Exa}
+
+\corr $f$ est diagonalisable donc :
+$$ E = \bigoplus_{\lambda \in \textrm{Sp}(f)} E_{\lambda}(f)$$
+Les endomorphismes $f$ et $g$ commutent donc les sous-espaces propres de $f$ sont stables par $g$. Pour toute valeur propre $\lambda$ de $f$, l'endomorphisme induit par $g$ sur $E_{\lambda}(f)$ est diagonalisable car $g$ l'est. Il existe donc une base $\mathcal{B}_{\lambda}$ de $E_{\lambda}(f)$ formée de vecteurs propres de $g$. Ainsi, par concaténation,
+$$ \mathcal{B} = \bigcup_{\lambda  \in \textrm{Sp}(f)} \mathcal{B}_{\lambda}$$
+est une base de $E$ formée de vecteurs propres de $f$ et de $g$ donc il existe une base diagonalisante commune à $f$ et $g$.
+
+
+
+
+
+\end{document}

@@ -1,0 +1,367 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{cours}
+\usepackage{pifont}
+
+\begin{document}
+\everymath{\displaystyle}
+
+\begin{center}
+\textit{{ {\huge TD 16 : Variables aléatoires discrètes}}}
+\end{center}
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Loi d'une variable aléatoire}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} On effectue une suite de lancers d'une pièce équilibrée jusqu'à obtenir au moins une fois un Pile et un Face. On note alors $X$ le nombre de tirages effectués.
+
+\begin{enumerate}
+\item Déterminer $X(\Omega)$.
+\item Déterminer la loi de $X$. 
+\item Vérifier que $X$ admet une espérance et la calculer.
+\end{enumerate}
+\end{Exa}
+
+\begin{Exa}
+ Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}^*$ telle que pour tout $k \in \mathbb{N}^*$, $\dis P(X=k)=a3^{-k}$ où $a \in \mathbb{R}$.
+\begin{enumerate}
+\item Déterminer $a$ pour que l'on définisse bien ainsi une loi de probabilité.
+\item $X$ a-t-elle plus de chance de prendre des valeurs paires ou impaires ?
+\item $X$ admet-elle une espérance ? Si oui, calculer la.
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Soit $N$ une variable aléatoire donnant le nombre de jetons tirés cours d'un jeu. Celle-ci vérifie $N(\Omega)= \mathbb{N}^*$ et pour tout $n \geq 1$,
+$$ \P(N=n) = \dfrac{1}{2^n}$$
+Si le nombre $n$ de jetons tirés est pair, le joueur gagne $n$ jetons sinon il en perd $n$.
+\begin{enumerate}
+\item Déterminer la probabilité de gagner.
+\item Déterminer l'expression du gain algébrique $G$ et son espérance.
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa}Soit $\lambda \in{\left] 0,+\infty\right[ }$.\\
+Soit $X$ une variable aléatoire discrète à valeurs dans $\mathbb{N}^\ast$. On suppose que pour tout $n \in \mathbb{N}^*$, 
+$$P(X=n)=\dfrac{\lambda}{n(n+1)(n+2)} $$
+\begin{enumerate}
+\item Décomposer en éléments simples $x \mapsto \dfrac{1}{x(x+1)(x+2)} \cdot$
+\item
+Calculer $\lambda$.
+\item
+Prouver que $X$ admet une espérance, puis la calculer.
+\item
+$X$ admet-elle une variance? Justifier.
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Soient $p\in \left] 0,1\right[$ et $r\in\mathbb{N}^*$.\\
+On dépose une bactérie dans une enceinte fermée à l'instant $t=0$ (le temps est exprimé en secondes).\\
+On envoie un rayon laser par seconde dans cette enceinte.\\
+Le premier rayon laser est envoyé à l'instant $t=1$.\\
+La bactérie a la probabilité $p$ d'être touchée par le rayon laser.\\
+Les tirs de laser sont indépendants.\\
+La bactérie ne meurt que lorsqu'elle a été touchée $r$ fois par le rayon laser.\\
+Soit $X$ la variable aléatoire égale à la durée de vie de la bactérie.\\
+\begin{enumerate}
+\item \textit{Préliminaire.} Soient $q \in \mathbb{N}^*$ et $x \in ]-1,1[$. Montrer que : 
+$$ \sum\limits_{k=q}^{+\infty}\dbinom{k}{q}x^{k-q}=\dfrac{1}{(1-x)^{q+1}}$$
+\item
+Déterminer la loi de $X$.
+\item
+Prouver que $X$ admet une espérance et la calculer.
+\end{enumerate}
+\end{Exa}
+
+
+
+
+\begin{Exa} On lance $n$ fois un dé ($n \geq 1$) et on note $X_k$ le chiffre obtenu lors du $k$-ième lancer.
+\begin{enumerate}
+\item Donner la loi et la fonction de répartition $F$ de $X_k$.
+\item Donner, en fonction de $F$, la fonction de répartition $F_n$, du maximum $M_n$ atteint au cours des $n$ lancers.
+\item La suite $(F_n)$ converge-t-elle simplement sur $\mathbb{R}$ ? Uniformément ?
+\item Même question avec le minimum $m_n$.
+\end{enumerate}
+\end{Exa}
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Lois usuelles}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} On désigne par $n$ un entier naturel supérieur ou égal à 2. On note $p$ un réel de $]0,1[$ et on pose $q = 1-p$. On dispose d'une pièce donnant Pile avec la probabilité $p$ et Face avec la probabilité $q$.
+
+\noindent On lance cette pièce et on arrête les lancers dans l'une des deux situations suivantes :
+\begin{itemize}
+ \item Soit si l'on a obtenu Pile.
+ \item Soit si l'on a obtenu $n$ fois Face.
+\end{itemize}
+%
+%\noindent Pour tout entier naturel $k$ non nul, on note $P_k$ (respectivement $F_k$) l'événement \og on a obtenu Pile (respectivement Face) au $k^{ieme}$ lancer \fg.
+
+\noindent On note $T_n$ le nombre de lancers effectués, $X_n$ le nombre de Pile obtenus et enfin $Y_n$ le nombre de Face obtenus. 
+\begin{enumerate}
+ \item  Déterminer la loi de $T_n$.
+ \item  Déterminer l'espérance de $T_n$.
+% \begin{enumerate}
+%  \item Pour tout $k$ de $\Interv{1}{n-1}$, déterminer, en distinguant le cas $k=1$, la probabilité $P(T_n = k)$.
+%  \item Déterminer $P(T_n = n)$.
+%  \item Vérifier par le calcul que $\dis \sum_{k=1}^n P(T_n = k) = 1$.
+%  \item Vérifier que l'espérance de $T_n$ est $\dis \frac{1-q^n}{1-q}\cdot$
+% \end{enumerate}
+ \item Déterminer la loi et l'espérance de $X_n$.
+% \begin{enumerate}
+%  \item Donner la loi de $X_n$.
+%  \item Vérifier que $E(X_n) = 1-q^n$.
+% \end{enumerate}
+ \item Loi de $Y_n$.
+ \begin{enumerate}
+  \item Déterminer, pour tout $k$ de $\Interv{1}{n-1}$, la probabilité $P(Y_n = k)$.
+  \item Déterminer $P(Y_n = n)$.
+  \item Écrire une égalité liant les variables aléatoires $T_n$, $X_n$ et $Y_n$, puis en déduire $E(Y_n)$.
+\end{enumerate}
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Une urne contient deux boules blanches et huit boules noires.
+\begin{enumerate}
+\item
+Un joueur tire successivement, avec remise,  cinq boules dans cette urne.\\
+Pour chaque boule blanche tirée, il gagne 2 points et pour chaque boule noire tirée, il perd 3 points.\\
+On note $X$ la variable aléatoire représentant le nombre de boules blanches tirées.\\
+On note $Y$ le nombre de points obtenus par le joueur sur une partie.
+\begin{enumerate}
+\item
+Déterminer la loi de $X$, son espérance et sa variance.
+\item
+Déterminer la loi de $Y$, son espérance et sa variance.
+\end{enumerate}
+\item
+Dans cette question, on suppose que les cinq tirages successifs se font sans remise.
+\begin{enumerate}
+\item 
+Déterminer la loi de $X$.
+\item
+Déterminer la loi de $Y$.
+\end{enumerate}
+\end{enumerate}
+\end{Exa}
+
+
+
+
+\begin{Exa} Soit $n \geq 2$. On considère $n$ variables aléatoires indépendantes $X_1$, $X_2$, $\ldots$ et $X_n$, suivant chacune une loi de Bernoulli de paramètres respectifs $1$, $\tfrac{1}{2}$, $\ldots$ et $\tfrac{1}{n}\cdot$
+
+\noindent Trouver la loi de la variable aléatoire $X$ qui vaut $0$ si :
+$$ X_1= X_2= \cdots = X_n = 1$$
+et qui vaut $\min \lbrace k \in \Interv{1}{n} \, \vert \, X_k =0 \rbrace$ sinon.
+\end{Exa} 
+
+\begin{Exa} Soit $p \in ]0,1[$. On se donne une pièce qui tombe sur pile avec la probabilité $p$. On lance cette pièce jusqu'à obtenir deux piles et on note $X$ le nombre de face(s) obtenu(s).
+
+\begin{enumerate}
+\item Déterminer la loi de $X$.
+\item Montrer l'existence et donner la valeur de l'espérance de $X$.
+\item Si $X$ vaut $n \geq 0$, on place $n+1$ boules numérotées de $0$ à $n$ dans une urne. On pioche alors au hasard une boule de l'urne et on note $Y$ le numéro de la boule. Donner la loi de $Y$ et son espérance.
+\end{enumerate}   
+\end{Exa}
+
+\begin{Exa} Soit $X$ une variable aléatoire suivant une loi de Poisson de paramètre $\lambda>0$. Si la valeur prise par $X$ est paire, on pose $Y = \dfrac{X}{2}$ et $Y=0$ sinon. Déterminer la loi de $Y$ et son espérance.
+\end{Exa}
+
+\begin{Exa} Soient $X$ et $Y$ deux variables indépendantes suivant la loi géométrique de paramètre $p \in ]0,1[$. Déterminer les lois de $Z= \max(X,Y)$ et $T=X-Y$. Les variables $Z$ et $T$ sont-elles indépendantes ?
+\end{Exa}
+
+
+\begin{Exa} Soit $X$ une variable aléatoire suivant une loi binomiale de paramètres $n$ et $p \in ]0,1[$. Déterminer l'espérance de la variable $Y$ définie par :
+  \[
+  Y = 2^X
+  \]
+\end{Exa}
+
+
+\begin{Exa} Soient $\lambda >0$ et $X$ une variable aléatoire suivant la loi de Poisson de paramètre $\lambda$. Montrer que la variable aléatoire $Y$ définie par :
+$$ Y = \frac{1}{X+1}$$
+admet une espérance et donner la.
+\end{Exa}
+
+
+\begin{Exa} Soit $X$ une variable suivant une loi binomiale de paramètres $n \geq 1$ et $p \in ]0,1[$. Pour quelle(s) valeur(s) de $k$, $\P(X=k)$ est-il maximal ?
+\end{Exa}
+
+
+\begin{Exa} Soient $X$ et $Y$ deux variables aléatoires indépendantes suivant la même loi géométrique de paramètre $p \in ]0,1[$. On pose :
+$$ A = \begin{pmatrix}
+X & 1 \\
+0 & Y \\
+\end{pmatrix}$$
+Déterminer la probabilité que la matrice $A$ soit diagonalisable.
+\end{Exa} 
+
+\begin{Exa} Soit $X$ une variable aléatoire suivant une loi binomiale de paramètres $n \in \mathbb{N}^*$ et $p \in ]0,1[$. Un compteur est censé afficher le résultat de $X$ mais celui-ci ne fonctionne pas correctement : si $X$ n'est pas nul, le compteur affiche bien la valeur de $X$ mais si $X$ est nul, il affiche au hasard une valeur entre $1$ et $n$. On note $Y$ la variable aléatoire égale au nombre affiché par le compteur.
+
+\begin{enumerate}
+\item Déterminer la loi de $Y$.
+\item Justifier sans calcul que $E(X) \leq E(Y)$ et vérifier cela par calcul.
+\end{enumerate}
+\end{Exa}
+\medskip
+\newpage
+
+\begin{center}
+\textit{{ {\large Loi d'une couple}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soient $X$ et $Y$ deux variables indépendantes suivant la loi de Bernoulli de paramètre $p \in ]0,1[$. Déterminer la loi de $Z= \max(X,Y)$.
+\end{Exa}
+
+\begin{Exa} Soit $n$ un entier naturel non nul. On dispose de $n$ boites numérotées de $1$ à $n$ et on sait que la boite $i \in \Interv{1}{n}$ contient $i$ boules numérotées de $1$ à $n$. On choisit au hasard une urne et on tire une boule dans celle-ci. Soient $X$ le numéro de la boite et $Y$ le numéro de la boule. 
+
+\begin{enumerate}
+\item Déterminer la loi du couple $(X,Y)$.
+\item Déterminer $\P(X=Y)$.
+\item Déterminer la loi de $Y$ ainsi que son espérance.
+\end{enumerate}
+\end{Exa}
+
+\begin{Exa} Un péage comporte 10 guichets numérotés de 1 à 10. Le nombre de voitures $N$, arrivant au péage en une heure, suit la loi de Poisson de paramètre $\lambda>0$. On suppose de plus que les conducteurs choisissent leur file au hasard et indépendamment des autres.\\
+Soit $X$ la variable aléatoire égale au nombre de voitures se présentant au guichet numéro 1.
+\begin{enumerate}
+\item Déterminer le nombre moyen de voitures arrivant au péage en une heure.
+\item Quelle est la probabilité qu'une voiture donnée se présente au guichet numéro 1.
+\item Calculer $P_{(N=n)}(X=k)$ pour tout $(k,n) \in \mathbb{N}^2$.
+\item Justifier que pour tout $k \in \mathbb{N}$, $\displaystyle{P(X=k)=\sum_{n=k}^{+\infty}P_{[N=n]}(X=k) P(N=n).}$
+\item En déduire la loi de probabilité de $X$ (on reconnaîtra une loi usuelle). Préciser espérance et variance.
+\end{enumerate}
+\end{Exa}
+
+\begin{Exa} Soient $X$ et $Y$ deux variables aléatoires indépendantes et à valeurs dans $\mathbb{N}$. On suppose qu'elles suivent la même loi définie par :
+$$\forall\:k\in\mathbb{N}, \; \P(X=k)=\P(Y=k)=pq^k$$
+où $p \in \left] 0,1\right[$ et $q=1-p$. On considère alors les variables $U$ et $V$ définies par $U=\max(X,Y)$ et $V=\max(X,Y)$.
+\begin{enumerate}
+\item
+Déterminer la loi du couple $(U,V)$.
+\item
+Expliciter les lois marginales de ce couple.
+\item
+$U$ et $V$ sont-elles indépendantes?
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa} Soit $a\in {\left] 0,+\infty\right[ }$. Soit $(X,Y)$ un couple de variables aléatoires à valeurs dans $\mathbb{N}^2$ dont la loi est donnée par: 
+$$\forall (j,k)\in {\mathbb{N}^2}, \; P(X=j,Y=k)=\dfrac{(j+k)\left( \tfrac{1}{2}\right) ^{j+k}}{\mathrm{e}\:j!\:k!}$$
+Déterminer les lois marginales de $X$ et de $Y$. Les variables $X$ et $Y$ sont-elles indépendantes?
+\end{Exa}
+
+\newpage
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Fonctions génératrices}}}
+\end{center}
+
+\medskip
+
+\begin{Exa}  Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}^*$ telle que pour tout $k \in \mathbb{N}^*$,
+$$ \P(X=k) = \dfrac{k-1}{2^k}$$
+
+\begin{enumerate}
+\item Vérifier que cela définit bien une loi de probabilité.
+\item Déterminer la fonction génératrice de $X$. Quel est le rayon de convergence associé ?
+\item Déterminer de deux manières que $X$ admet une espérance finie et calculer celle-ci.
+\end{enumerate}
+\end{Exa}
+
+\begin{Exa} Soit $X$ une variable al\'eatoire telle que $X(\Omega)=\N$ dont la loi est donnée par :
+$$\forall n\in\N,\qquad P(X=n)=an^2\dis\frac{\lambda^n}{n!}$$
+où $a \in \mathbb{R}$.
+\begin{enumerate}
+	\item D\'eterminer sa fonction g\'en\'eratrice $G_X.$ En d\'eduire la valeur de $a.$
+	
+	\item Calculer l'esp\'erance de $X.$
+\end{enumerate}
+\end{Exa}
+
+\begin{Exa} Soit $X$ une variable al\'eatoire \`a valeurs dans $\N$ dont la fonction g\'en\'eratrice est définie par :
+$$\forall t\in\R,\qquad G_X(t)=ae^{1+t^2}$$
+
+\begin{enumerate}
+	\item D\'eterminer $a.$
+	
+	\item Donner la loi de $X$ et calculer $E(X)$ et $V(X).$
+	
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa}
+Soient $X$ et $Y$ deux variables aléatoires indépendantes suivant des lois de Poisson de paramètres respectifs $\lambda$ et $\mu$.
+\begin{enumerate}
+\item Déterminer la loi de $Z=X+Y$.
+\item Déterminer la probabilité conditionnelle $\P_{(Z=n)}(X=h)$.
+\item Déterminer la loi de $X$ sachant $(Z=n)$.
+\end{enumerate}
+\end{Exa}
+
+
+
+
+\begin{Exa}
+Soit $X$ une variable suivant une loi de Poisson de paramètre $\lambda>0$. 
+\begin{enumerate}
+\item Montrer que pour tout $n \geq 0$,
+$$ \P(X \leq n) = \dfrac{1}{n!} \int_{\lambda}^{+ \infty} e^{-t} t^n \dt$$
+\item En déduire un équivalent de $\dis \int_{\lambda}^{+ \infty} e^{-t} t^n \dt$ quand $n$ tend vers $+ \infty$.
+\item Donner la fonction génératrice $G_X$ de $X$. Que valent $g_X(1)$ et $g_X(-1)$? En déduire la probabilité que $X$ soit paire.
+\item Pour $Y$ une variable aléatoire suivant une loi uniforme sur $\lbrace 1,2 \rbrace$, calculer $\P(XY$ soit paire).
+\end{enumerate}
+\end{Exa}
+
+
+\newpage
+
+
+\begin{center}
+\textit{{ {\large Résultats asymptotiques}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $X$ une variable aléatoire suivant une loi géométrique de paramètre $\tfrac{1}{n}$ où $n$ est un entier supérieur ou égal à $2$.
+
+\begin{enumerate}
+\item Montrer que $\P(X \geq n^2) \leq \tfrac{1}{n}\cdot$
+\item Montrer que $\P(\vert X-n \vert  \geq n ) \leq 1 - \tfrac{1}{n} \cdot$
+\item En déduire que $\P(X \geq 2n) \leq 1 - \tfrac{1}{n} \cdot$
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Soient $X$ une variable aléatoire discrète sur un espace probabilisé et $\lambda >0$. On suppose que $\exp(\lambda X)$ admet une espérance. Montrer que pour tout réel $a$,
+$$ \P(X \geq a) \leq e^{-\lambda a} \E(e^{\lambda X})$$
+\end{Exa}
+
+
+\end{document}

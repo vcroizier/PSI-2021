@@ -1,0 +1,1262 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{Cours}
+\usepackage{delarray}
+\usepackage{fancybox}
+\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\newcommand{\Int}[2]{\ensuremath{\mathchoice%
+	{{\displaystyle\int_{#1}^{#2}}}
+	{{\displaystyle\int_{#1}^{#2}}}
+	{\int_{#1}^{#2}}
+	{\int_{#1}^{#2}}
+	}}
+
+
+\begin{document}
+% \everymath{\displaystyle}
+
+\maketitle{Chapitre 11}{Espaces probabilisés}
+\section{Rappels sur les ensembles finis}
+\subsection{Définition et propriétés}
+
+\begin{defip} Soit $E$ un ensemble. On dit que $E$ est un \textit{ensemble fini} si l'une des assertions suivantes est vérifiée :
+\begin{itemize}
+\item $E$ est non vide et il existe un entier naturel $n$ non nul tel que $E$ soit en bijection avec $\Interv{1}{n}$. Dans ce cas, l'entier $n$ est unique et on l'appelle le \textit{cardinal} de $E$ et on note $\textrm{Card}(E)=n$.
+\item $E$ est vide. Dans ce cas, par convention, on dit que $E$ a pour \textit{cardinal} $0$.
+\end{itemize}
+\end{defip}
+
+\begin{prop} Soient $E$ un ensemble fini et $F$, $G$, $E_1$, $\ldots$, $E_k$ ($k \geq 1$) des sous-ensembles de $E$. Alors :
+\begin{enumerate}
+\item $F$ est un ensemble fini et $\textrm{Card}(F) \leq \textrm{Card}(E) $. De plus, on a l'égalité des cardinaux si et seulement si $E=F$.
+\item $\textrm{Card}(E \setminus F)= \textrm{Card}(E) - \textrm{Card}(F)$.
+\item Si $E_1$, $\ldots$, $E_k$ forment une partition de $E$ (l'union de ces évènements est $E$ et ceux-ci sont deux à deux disjoints) alors :
+$$ \textrm{Card}(E) = \sum_{i=1}^k \textrm{Card}(E_i) $$
+\item $\textrm{Card}(F \setminus G) = \textrm{Card}(F) - \textrm{Card}(F \cap G)$.
+\item \textit{Formule de Grassman} : $\textrm{Card}(F \cup G) = \textrm{Card}(F) + \textrm{Card}(G) - \textrm{Card}(F \cap G)$.
+\end{enumerate}
+\end{prop}
+
+%\noindent \textit{Preuve de la formule de Grassman.}
+%
+%\vspace{7cm}
+
+%\noindent On a $F \cup G = (F \setminus G) \cup (F \cap G) \cup (G \setminus F)$ et ces évènements sont deux à deux incompatibles. Ainsi :
+%$$  \textrm{Card}(F \cup G) =  \textrm{Card}(F \setminus G) +\textrm{Card}(F \cap G) + \textrm{Card}(G \setminus F)$$
+%et ainsi :
+%$$  \textrm{Card}(F \cup G) =  \textrm{Card}(F) -  \textrm{Card}(F \cap G) +\textrm{Card}(F \cap G) + \textrm{Card}( G)  -  \textrm{Card}(F \cap G)$$
+%ce qui donne finalement le résultat :
+%$$ \textrm{Card}(F \cup G) = \textrm{Card}(F) + \textrm{Card}(G) - \textrm{Card}(F \cap G)$$
+
+\begin{prop} Soient $E$ et $F$ deux ensembles finis. Alors :
+
+\begin{itemize}
+\item $E \times F$ est un ensemble fini et :
+$$ \textrm{Card}(E \times F) = \textrm{Card}(E) \times \textrm{Card}(F)$$
+\item $\mathcal{P}(E)$ est un ensemble fini et :
+$$ \textrm{Card}(\mathcal{P}(E)) = 2^{\textrm{Card}(E)}$$
+\item $\mathcal{F}(E,F)$ est un ensemble fini et :
+$$ \textrm{Card}(\mathcal{F}(E,F)) = \textrm{Card}(F)^{\textrm{Card}(E)}$$
+\end{itemize}
+\end{prop}
+
+\noindent \textit{Preuve des deux derniers points.}
+
+\vspace{8cm}
+
+\begin{rem} La première formule se généralise à un produit cartésien d'un nombre fini d'ensembles finis.
+\end{rem}
+
+
+\subsection{Dénombrement}
+\subsubsection{Listes avec ou sans répétition}
+
+\begin{defin}
+Soient $E$ un ensemble et $p \in \mathbb{N}^*$. Une $p$-liste de $E$ est un élément de $E^p$.
+\end{defin}
+
+\begin{rem}
+Une liste peut contenir des répétitions : par exemple, si $E = \lbrace 0,1,2 \rbrace$ alors $(0,0)$ est une liste à $2$ éléments de $E$. Il faut aussi faire attention à l'ordre : $(1,2)$ et $(2,1)$ sont deux listes différentes.
+\end{rem}
+
+%\begin{att}
+%Une liste est \textit{ordonnée}.
+%\end{att}
+
+\begin{prop}
+Soit $E$ de cardinal $n \geq 1$. Alors $n!$ est :
+\begin{itemize}
+\item Le nombre de listes que l'on peut former avec tous les éléments de $E$, sans répétition.
+\item Le nombre de permutations de $E$.
+\end{itemize}
+\end{prop}
+
+\begin{preuve} 
+\vspace{6cm}
+%Montrons le premier point. Dénombrons le nombre de listes que l'on peut former avec tous les éléments de $E$, sans répétition :
+%\begin{itemize}
+%\item On a $n$ choix pour le premier élément de la liste.
+%\item On a ensuite $n-1$ choix pour le deuxième élément de la liste (car le premier élément est choisi).
+%\item $\ldots$
+%\item On a finalement un unique choix pour le dernier élément de la liste (car les $n-1$ premiers éléments sont fixés et que $E$ a $n$ éléments).
+%\end{itemize}
+%Finalement, le nombre de liste cherché vaut :
+%$$n \times (n-1) \times \cdots \times 1 = n!$$
+%On procède de même pour le deuxième point.
+\end{preuve}
+
+%
+%\begin{ex} On dispose dans un jeu d'une main de $5$ cartes. De combien de manières peut-on les ranger ?
+%
+%\vspace{3cm}
+%\end{ex}
+
+
+\begin{prop}
+Soient $n \in \mathbb{N}^*$, $E$ un ensemble de cardinal $n$ et $p \in \mathbb{N}^*$. Il y a exactement $n^p$ $p$-listes de $E$.
+\end{prop}
+
+\begin{preuve} 
+
+\vspace{3cm}
+%
+%Dénombrons le nombre de listes à $p$ éléments que l'on peut former avec des éléments de $E$ : on a $n$ choix pour chaque élément (car il peut y avoir répétition) donc le nombre de liste cherché vaut $n^p$.
+\end{preuve}
+ 
+%
+%\begin{ex} Pour ouvrir un cadenas, on a besoin d'un code à $4$ chiffres (les chiffres possibles étant les entiers de $0$ à $9$). Combien de codes différents existe-t-il?
+%
+%\vspace{3cm}
+%\end{ex}
+
+%\vspace{6cm}
+
+
+\begin{prop}
+Soit $E$ un ensemble à $n$ éléments et $p \in \Interv 1n$. Alors il y a exactement 
+\[  n \times (n-1) \times \cdots \times (n-p+1)  = \frac{n!}{(n-p)!} \]
+listes à $p$ éléments de $E$ sans répétition. C'est aussi le nombre d'injections d'un ensemble à $p$ éléments dans un ensemble à $n$ éléments.
+\end{prop}
+
+\begin{preuve} 
+%Dénombrons le nombre de listes à $p$ éléments de $E$ sans répétition : 
+\vspace{7cm}
+%\begin{itemize}
+%\item On a $n$ choix pour le premier élément de la liste.
+%\item On a ensuite $n-1$ choix pour le deuxième élément de la liste (car le premier élément est fixé et qu'il n'y a pas répétition).
+%\item $\ldots$
+%\item On a finalement $n-(p-1)=n-p+1$ choix pour le dernier élément de la liste car $p-1$ éléments de $E$ sont déjà fixés et il en reste $n-(p-1)$.
+%\end{itemize}
+%Finalement, le nombre de listes cherché vaut :
+%$$n \times (n-1) \times \cdots \times (n-p+1)  = \frac{n!}{(n-p)!}$$
+%On raisonne de même pour le nombre d'injections.
+\end{preuve}
+
+\begin{rem} 
+Évidemment, si $p>n$, il n'existe pas de liste à $p$ éléments de $E$ sans répétitions.
+\end{rem}
+%
+%\begin{ex}
+%Combien y a t-il de mots de quatre lettres distinctes dans notre alphabet (ayant un sens ou non)?
+%
+%\vspace{3cm}
+%\end{ex}
+
+\begin{ex}
+On tire successivement et avec remise trois cartes d'un jeu de 32 cartes. Quel est le nombre de tirages possibles ? Combien y a-t-il de tirages ne contenant que des rois ? Combien y a-t-il de tirages ne contenant pas de pique ? Combien y a-t-il de tirages contenant au moins un pique ? Reprendre la question en considérant des tirages sans remise.
+
+\vspace{9cm}
+\end{ex}
+
+
+
+\begin{exa} Les questions sont indépendantes.
+\begin{enumerate}
+\item Combien y a t-il de façons de placer huit personnes côte à côte sur une rangée de huit chaises ?
+\item Combien de mots de $5$ lettres peut-on former avec les lettres $A,B,C,D,E$?
+\item On assiste à une course où 15 chevaux sont en compétition. On peut parier sur les noms des trois premiers chevaux en les donnant dans l'ordre de leur arrivée. Combien y a-t-il de tiercés possibles ?
+\end{enumerate}
+\end{exa}
+
+\subsubsection{Combinaisons}
+
+\begin{defin}
+Soient $E$ un ensemble de cardinal $n$ et $p \in \Interv 0n$. On appelle \textit{p-combinaison} de $E$ toute partie à $p$ éléments de $E$.
+\end{defin}
+
+\medskip
+
+\begin{ex}
+Soit $E= \lbrace 0,1,2 \rbrace$. Les 2-combinaisons de $E$ sont : 
+\end{ex}
+
+\medskip
+
+\begin{att}
+Il faut bien remarquer qu'une partie contient des éléments distincts et que l'ordre n'a pas d'importance. Dans l'exemple précédent, $\lbrace 0,1 \rbrace$ et $ \lbrace1,0 \rbrace$ représentent la même partie de $E$.
+\end{att}
+
+\begin{prop} Soient $E$ un ensemble de cardinal $n$ et $p \in \Interv 0n$. Le nombre de $p$-combinaisons de $E$ est :
+$$\binom{n}{p}  = \frac{n!}{p!(n-p)!}$$
+\end{prop}
+
+\begin{ex} On tire simultanément trois cartes d'un jeu de 32 cartes.
+\begin{enumerate}
+\item Quel est le nombre de tirages possibles ?
+
+\vspace{2cm}
+\newpage
+\item Combien y a-t-il de tirages contenant :\\
+$\begin{array}{lll}
+\text{a) que des rois ?} & \text{c) au moins un roi ?} & \text{e) au plus un roi ?}\\
+\text{b) aucun roi ?} & \text{d) exactement un roi ?} &
+\end{array}$
+\end{enumerate}
+
+\vspace{7cm}
+\end{ex}
+
+\begin{exa} Soient $p,q \in \N^*$ et $n \in \Interv{0}{p+q}$. Proposer une démonstration par dénombrement de l'égalité suivante :
+  \[
+  \binom{p + q}{n} = \sum_{k = 0}^{n} \binom{p}{k}\binom{q}{n - k}
+  \]
+\end{exa}
+
+\begin{rem} Il est important de connaitre parfaitement la formule du binôme de Newton (avec une preuve), la formule de Pascal (avec une preuve) et les diverses propriétés des coefficients binomiaux.
+\end{rem}
+
+\section{Ensembles dénombrables}
+
+
+\begin{defin} Un ensemble est \textit{dénombrable} si \phantom{il est en bijection avec $\mathbb{N}$.}
+\end{defin}
+
+\begin{rem} Soit $E$ un ensemble dénombrable. Il existe une bijection $\varphi : \mathbb{N} \rightarrow E$ et ainsi tout élément de $E$ s'écrit d'une unique manière sous la forme $\varphi(n)$ où $n \geq 0$. En posant pour tout $n \geq 0$, $x_n= \varphi(n)$, on a :
+$$ E = \lbrace x_n \, \vert \, n \geq 0 \rbrace$$
+%Ainsi, un ensemble dénombrable est l'ensemble des termes d'une suite à valeurs dans $E$.
+\end{rem}
+
+\medskip
+
+\begin{exems}
+\item $\mathbb{N}$ est dénombrable : \phantom{il suffit de considérer l'application identité de $\mathbb{N}$.}
+\item $\mathbb{N}^*$ est dénombrable : \phantom{il suffit de considérer $\varphi : \mathbb{N} \rightarrow \mathbb{N}^*$ défini par $\varphi(n)=n+1$.}
+\end{exems}
+
+\medskip
+
+\begin{defin} Un ensemble est \textit{au plus dénombrable} si il est fini ou si il est dénombrable.
+\end{defin}
+
+\begin{prop} L'ensemble $\mathbb{Z}$ est dénombrable.
+\end{prop}
+
+\begin{preuve} 
+%Soit $f : \mathbb{N} \rightarrow \mathbb{Z}$ définie pour tout entier $n \geq 0$ par :
+%$$ \varphi(n) = \begin{array}{cl}
+%- \dfrac{n}{2} & \hbox{ si n est pair} \\
+%\dfrac{n+1}{2} & \hbox{ si n est impair} \\
+%\end{array}$$
+%Soit $m \in \mathbb{Z}$. On résout l'équation $f(n)=m$ d'inconnue $n \in \mathbb{N}$. Distinguons deux cas :
+%
+%\begin{itemize}
+%\item Si $m > 0$ : dans ce cas, si $n$ est pair, $f(n)$ est toujours différent de $m$ car $f(n) \leq 0$. On cherche donc $n$ impair tel que $f(n)=m$, ou encore $\dfrac{n+1}{2} = m$ ce qui est équivalent à $n=2m-1$.
+%\item Si $m \leq 0$ : dans ce cas, si $n$ est impair, $f(n)$ est toujours différent de $m$ car $f(n) > 0$. On cherche donc $n$ pair tel que $f(n)=m$, ou encore $-\dfrac{n}{2} = m$ ce qui est équivalent à $n=-2m$.
+%\end{itemize}
+%Ainsi, pour tout $m \in \mathbb{Z}$, l'équation $f(n)=m$ d'inconnue $n \in \mathbb{N}$ admet une unique solution. L'application $f$ est donc bijective et donc $\mathbb{Z}$ est dénombrable.
+\vspace{8.5cm}
+\end{preuve}
+
+\newpage
+
+$\phantom{test}$
+
+\vspace{6cm}
+
+\begin{prop} Le produit cartésien fini d'ensembles dénombrables est dénombrable.
+\end{prop} 
+
+\begin{preuve}
+
+\vspace{6cm}
+%Il suffit de faire la preuve pour deux ensembles dénombrables (et de raisonner par récurrence ensuite). Admettons que $\mathbb{N}^2$ soit dénombrable (voir TD pour une preuve). Soient $E_1$ et $E_2$ deux ensembles dénombrables. Il existe alors deux bijections $f_1 : \mathbb{N} \rightarrow E_1$ et $f_2 : \mathbb{N} \rightarrow E_2$. Posons $\varphi : \mathbb{N}^2 \rightarrow E_1 \times E_2$ défini par :
+%$$ \varphi((n,m)) = (f_1(n), f_2(m))$$
+%Cette application est clairement bijective.
+\end{preuve}
+
+
+
+\begin{exems}
+\item Pour tout entier $n \geq 1$, $\mathbb{N}^n$ et $\mathbb{Z}^n$ sont dénombrables.
+\item Pour tout entier $n \geq 1$, $\mathcal{M}_n(\mathbb{N})$ est dénombrable car en bijection avec $\mathbb{N}^{n^2}$ qui est lui-même dénombrable.
+\end{exems}
+
+\begin{exa} Montrer que l'ensemble des entiers naturels pairs et l'ensemble des entiers naturels impairs sont des ensembles dénombrables.
+\end{exa}
+
+%\section{Probabilités sur un univers fini (rappels)}
+%\subsection{Évènements et probabilité}
+%\begin{defin}
+%\begin{itemize}
+% \item Une \textit{expérience aléatoire} est une expérience dont on ne peut pas prévoir le résultat à l'avance. 
+% \item On appelle \textit{univers des possibles} (ou simplement \textit{univers}) l'ensemble des résultats observables ou encore des issues possibles d'une expérience aléatoire. On note en général $\Omega$ l'univers des possibles et $\omega$ un élément de $\Omega$.
+%\end{itemize}
+%\end{defin}
+%
+%\medskip
+%
+%\begin{rem}
+%En première année, seul des univers fini étaient considérés. 
+%\end{rem}
+%
+%\medskip
+%
+%\noindent Voici quelques exemples d'expériences aléatoires dont l'univers est fini :
+%
+%
+%\begin{itemize}
+%\item On lance un dé cubique dont les faces sont numérotées de 1 à 6 et on observe le numéro de la face supérieure.
+%\item On dispose de 2 dés cubiques dont les faces sont numérotées de 1 à 6,  l'un est blanc et l'un est rouge. On lance simultanément ces 2 dés. 
+%\item Une urne contient 3 boules rouges, 2 vertes et 1 bleue. On tire une boule au hasard et on note la couleur de la boule tirée.
+%\end{itemize}
+%
+%\medskip
+%
+%\begin{rem}
+%Dans certaines expériences liées à un tirage, il est important de savoir si ce tirage est simultané, sans remise ou avec remise.
+%\end{rem}
+%
+%\medskip
+%
+%
+%
+%\noindent Dans le cas d'un univers fini, tout sous-ensemble de l'univers (autrement dit, tout élément de $\mathcal{P}(\Omega)$) est considéré comme un évènement.
+%
+%\medskip
+%
+%\begin{ex} Considérons trois dés (un rouge, un bleu, un vert). On lance simultanément ces trois dés. Donner un ensemble modélisant l'univers et décrire l'évènement \og La somme des trois dés est inférieure ou égale à $1$ \fg comme un sous-ensemble de cet univers.
+%
+%\vspace{3cm}
+%\end{ex} 
+%%
+%%\begin{defin}
+%% On dit que $(\Omega, \mathcal{P}(\Omega))$ est un espace probabilisable.
+%%\end{defin}
+%
+%
+%\begin{defin}
+% \begin{itemize}
+%  \item L'événement $\Omega$ est appelé \textit{événement certain} : il est toujours réalisé.
+%  \item L'événement $\varnothing$ est appelé \textit{l'événement impossible} : il n'est jamais réalisé.
+%  \item On appelle \textit{événement élémentaire} un événement qui ne se réalise que pour une seule issue, il est de la forme $\{\omega\}$ où $\omega$ est un élément de $\Omega$.
+%  \end{itemize}
+%\end{defin}
+%
+%\noindent Les événements étant des parties de l'univers $\Omega$, les opérations sur les parties d'un ensemble (union, intersection...) s'appliquent aux événements mais il ne faut pas oublier le sens de ces opérations.
+%
+%\begin{defin}
+%Soient $A,B$ deux évènements.
+% \begin{itemize}
+%  \item L'événement contraire de $A$, notée $\overline{A}$ est l'évènement réalisé si et seulement si $A$ n'est pas réalisé.
+%  \item L'événement \og $A$ ou $B$ \fg , notée $A \cup B$ est l'évènement réalisé si et seulement si au moins un des deux événement $A$ ou $B$ est réalisé.
+%  \item L'événement \og $A$ et $B$ \fg , notée $A \cap B$ es l'évènement réalisé si et seulement si les deux événements $A$ et $B$ sont réalisés.
+% \end{itemize}
+%\end{defin}
+%
+%\begin{ex}
+%Soit $n \in \mathbb{N}^*$. Une épreuve consiste à lancer $n$ fois une pièce. Pour tout $k \in \Interv1n$, on note $P_k$ l'évènement \og on obtient pile au $k^{\hbox{ième}}$ lancer \fg . On note $A_n$ l'évènement \og On obtient pile à chacun des $n$ lancers \fg et $B_n$ l'évènement \og On obtient au moins un face dans les $n$ lancers \fg . Donner $A_n$ et $B_n$ en fonction des évènements $P_1, \ldots, P_n$ et/ou de leurs évènements contraires.
+%
+%\vspace{4cm}
+%\end{ex}
+%
+%\begin{defin}
+% $A \subset B$ signifie que si $A$ est réalisé, alors $B$ est réalisé.
+%\end{defin}
+%
+%\begin{defin}
+% Deux événements $A$ et $B$ tels que $A \cap B=\varnothing$, c'est-à-dire qui ne peuvent pas se réaliser simultanément, sont dits \textit{incompatibles}.
+%\end{defin}
+%
+%\begin{defin}
+%On appelle \textit{probabilité} sur $(\Omega,\mathcal{P}(\Omega))$ toute application $\P : \mathcal{P}(\Omega) \rightarrow [0,1]$ vérifiant :
+%\begin{itemize}
+%\item $\P(\Omega)=1$.
+%\item \textit{Propriété d'additivité} : pour tout $(A,B) \in \mathcal{P}(\Omega)^2 $ tel que $A \cap B=\varnothing$,\; $\P(A \cup B)=\P(A)+\P(B)$.
+%\end{itemize}
+%\end{defin}
+%
+%\begin{rems} 
+%\item A l'aide d'une démonstration par récurrence, on montre que si $A_1, \ldots, A_n$ est une famille d'évènements deux à deux incompatibles alors :
+%\[ P\dis \bigg{(} \dis \bigcup_{i=1}^n  A_i \bigg{)} = \sum_{i=1}^{n} P(A_i) \]
+%\item La somme des probabilités des évènements élémentaires vaut 1.
+%\end{rems}
+%
+%\begin{defin}
+% On dit que $(\Omega,\mathcal{P}(\Omega),\P)$ est un \textit{espace probabilisé (fini)}.
+%\end{defin}
+%
+%\begin{att}
+%Il faut bien discerner les différentes notions : $A$ est un événement, c'est-à-dire une partie de $\Omega$, c'est un ensemble alors que $P(A)$ est la probabilité de $A$, c'est un nombre.
+%\end{att}
+%
+%
+%
+%
+%\subsection{Propriétés générales d'une probabilité}
+%
+%\begin{prop}\label{Prop1}
+%Soient $(\Omega,\mathcal{P}(\Omega),P)$ un espace probabilisé fini et $A$ et $B$ deux événements. On a :
+%\begin{itemize}
+%\item $\P(\overline{A})=1-P(A)$.
+%\item $\P(A \setminus B)=\P(A)-P(A \cap B)$.
+%\end{itemize}
+%\end{prop}
+%
+%\begin{rem}
+% En particulier, $\P(\varnothing)= 0 $
+%\end{rem}
+%
+%\begin{prop}[croissance]
+%Soient $(\Omega,\mathcal{P}(\Omega),P)$ un espace probabilisé fini et $A$ et $B$ deux événements.\\
+%Si $A \subset B$ alors $\P(A) \leq \P(B)$.
+%\end{prop}
+%
+%\begin{thm}[union de deux événements]
+%Soient $(\Omega,\mathcal{P}(\Omega),P)$ un espace probabilisé fini et $A$ et $B$ deux événements, on a :
+%$$\P(A \cup B)=\P(A)+\P(B)-P(A \cap B)$$
+%et en particulier :
+%$$ \P(A \cup B) \leq \P(A) + \P(B)$$
+%\end{thm}
+%
+%\begin{thm}[union de $n$ événements]
+%Soient $n \geq 1$, $(\Omega,\mathcal{P}(\Omega),P)$ un espace probabilisé fini et $A_1, \ldots, A_n$ $n$ événements.
+%\begin{itemize}
+%\item Si les $n$ évènements sont deux à deux incompatibles, on a :
+%$$\P \left( \bigcup_{i=1}^n A_i\right)= \sum_{i=1}^n \P(A_i)$$
+%\item Dans tous les cas, on a (propriété de \textit{sous-additivité}) :
+%$$ \P \left(\bigcup_{i=1}^n A_i \right) \leq \sum_{i=1}^n \P(A_i) $$
+%\end{itemize}
+%\end{thm}
+%
+%\begin{thm}[\label{Prop2}de Poincaré ou du crible]
+%Soient $(\Omega,\mathcal{P}(\Omega),\P)$ un espace probabilisé fini et $A, B$ et $C$ trois événements, on a
+% \begin{align*}
+%  \P(A\cup B \cup C) = & \P(A) + \P(B) + \P(C) \\
+%  &- \Big( \P(A\cap B) + \P(A\cap C) + \P(B\cap C) \Big) \\
+%  &+ \P(A\cap B \cap C)
+% \end{align*}
+%\end{thm}
+
+\section{Probabilité}
+\subsection{Introduction}
+\noindent Rappelons quelques définitions de première année :
+\begin{itemize}
+ \item Une \textit{expérience aléatoire} est une expérience dont on ne peut pas prévoir le résultat à l'avance. 
+ \item On appelle \textit{univers des possibles} (ou simplement \textit{univers}) l'ensemble des résultats observables ou encore des issues possibles d'une expérience aléatoire. On note en général $\Omega$ l'univers des possibles et $\omega$ un élément de $\Omega$.
+\end{itemize}
+En première année, seul des univers finis étaient considérés. Voici quelques exemples d'expériences aléatoires dont l'univers est fini :
+
+\begin{itemize}
+\item On lance un dé cubique dont les faces sont numérotées de 1 à 6 et on observe le numéro de la face supérieure.
+\item On dispose de 2 dés cubiques dont les faces sont numérotées de 1 à 6,  l'un est blanc et l'autre est rouge. On lance simultanément ces 2 dés. 
+\item Une urne contient 3 boules rouges, 2 vertes et 1 bleue. On tire une boule au hasard et on note la couleur de la boule tirée.
+\end{itemize}
+
+\begin{ex}
+On tire $4$ cartes dans un jeu de $32$ cartes. Quel est le cardinal de l'univers $\Omega$ si le tirage est simultané ? Si le tirage est sans remise? Si le tirage est avec remise?
+
+\vspace{3cm}
+
+\end{ex}
+
+\medskip
+
+\noindent Dans de nombreuses expériences aléatoires, l'univers peut-être infini.
+
+\vspace{0.2cm}
+
+\begin{exems}
+\item On jette un dé équilibré une infinité de fois.
+\item On choisit un réel au hasard entre 0 et 1.
+\end{exems}
+
+\medskip
+
+\noindent Dans le cas d'un univers $\Omega$ fini, tout sous-ensemble de $\Omega$ était un évènement. Dans le cas général, on ne peut malheureusement pas donner le statut d'évènement à tout sous-ensemble de $\Omega$. Les raisons dépassent le cadre de ce cours mais une des idées est que déterminer la probabilité d'un ensemble c'est le mesurer et qu'il n'est pas possible de \og tout mesurer \fg car certains ensembles infinis peuvent être très complexes. Les évènements feront donc partie en général d'un ensemble $\mathcal{A} \subset \mathcal{P}(\Omega)$ plus petit (au sens de l'inclusion) que $\mathcal{P}(\Omega)$.
+
+\medskip
+
+\noindent En se basant sur le cas d'un univers fini, certaines propriétés de l'ensemble contenant les évènements semblent assez \og naturelles \fg :
+
+\vspace{0.2cm}
+
+\begin{itemize}
+\item Cet ensemble doit contenir l'évènement certain $\Omega$.
+\item Lorsque l'on considère un évènement, on doit pouvoir considérer son évènement contraire.
+\item L'union d'évènements doit encore être un évènement.
+\item L'intersection d'évènements doit encore être un évènement.
+\end{itemize}
+
+\subsection{Intersection et union dénombrable}
+
+\noindent Soit $n \in \mathbb{N}^*$ et $A_1, A_2, \ldots, A_n$ $n$ sous-ensembles d'un ensemble $X$. On a :
+$$ \bigcup_{i=1}^n A_i = A_1 \cup \cdots \cup A_n =  \qquad \qquad \qquad \qquad \et \bigcap_{i=1}^n A_i = A_1 \cap \cdots \cap A_n =\qquad \qquad \qquad \qquad$$
+En considérant $(A_n)_{n \geq 1}$ une suite de sous-ensembles de $X$, on généralise en posant :
+$$ \bigcup_{n=1}^{+ \infty} A_n =  \qquad \qquad \qquad \qquad \et \bigcap_{n=1}^{+ \infty} A_n  =\qquad \qquad \qquad  \qquad\qquad$$
+
+\noindent On peut plus même considérer l'union et l'intersection de sous ensembles de $X$ indexées par des ensembles au plus dénombrables $I$ et on utilise alors dans ce cas les notations $\dis \bigcap_{i \in I} A_i$ et $\dis \bigcup_{i \in I} A_i$.
+
+\begin{prop}[Distributivité]
+Soient  $X$ un ensemble, $I$ un ensemble au plus dénombrable, $(A_n)_{n\in I}$ une famille de sous-ensembles de $X$ et $B$ un sous-ensemble de $X$. Alors :
+ $$ B \cap \l(\bigcup_{n\in I} A_n \r) = \bigcup_{n\in I} (B \cap A_n) \et  B \cup \l(\bigcap_{n\in I} A_n \r) = \bigcap_{n\in I} (B \cup A_n) $$
+\end{prop}
+
+
+\begin{thm}[Lois de Morgan]
+ Soient $X$ un ensemble, $I$ un ensemble au plus dénombrable et $(A_n)_{n\in I}$ une famille de sous-ensembles de $X$. Alors :
+ $$ \overline{\bigcap_{n\in I} A_n} = \bigcup_{n\in I} \overline{A_n} \et \overline{\bigcup_{n\in I} A_n} = \bigcap_{n\in I} \overline{A_n}$$
+\end{thm}
+
+
+\subsection{Tribu}
+
+\begin{defin}[Tribu]
+Soit $\Omega $ un ensemble. 
+\begin{itemize}
+\item Une famille $\A$ de parties de $\Omega$ est une \textit{tribu sur $\Omega$} si elle satisfait les trois propriétés suivantes :
+\begin{enumerate}
+\item $\Omega \in\A$ 
+\item $\A$ est stable par passage au complémentaire : pour tout $A \in\A$,  $\overline{A} \in \A$.
+\item Pour toute suite $(A_n)_{n \in \mathbb{N}}$ d'évènements de $\A$, $\dis \bigcup_{n \geq 0} A_n \in \A$.
+\end{enumerate}
+\item Les éléments de $\A$ (qui sont donc des sous-ensembles de $\Omega$) sont appelés \textit{évènements}.
+\item $\A$ est appelée \textit{tribu d'événements}, c'est l'ensemble de tous les évènements.
+\end{itemize}
+\end{defin}
+
+\vspace{0.2cm}
+
+\noindent Autrement dit, si l'on considère un univers $\Omega$ associé à une expérience aléatoire, une tribu est un sous-ensemble de $\mathcal{P}(\Omega)$ vérifiant les propriétés suivantes :
+\begin{itemize}
+\item La tribu contient l'univers $\Omega$.
+\item Si la tribu contient un ensemble, son complémentaire est aussi dans la tribu.
+\item Si la tribu contient des ensembles (indexés par $\mathbb{N}$), elle contient aussi l'union de tous ces ensembles.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\begin{rems}
+\item $\varnothing$ est un événement. En effet $\,\Omega \in\A\,$ et $\,\overline{\Omega} = \varnothing$, \ donc $\,\varnothing\in\A$.
+\item La stabilité par union indexée par $\mathbb{N}$ implique que l'union (finie ou dénombrable) d'évènements est encore un évènement. Pour les ensembles finis, il suffit à partir d'un certain rang de considérer que $A_n = \varnothing$ et pour les ensembles dénombrables, il suffit de remarquer que ceux-ci sont en bijection avec $\mathbb{N}$.
+\end{rems}
+
+\medskip
+
+\begin{exems}
+\item Soit $\Omega$ un ensemble. Alors $\mathcal{P}(\Omega)$ est une tribu.
+\item Soient $\Omega$ un ensemble et $A \subset \Omega$. Alors $\mathcal{A} = \lbrace \varnothing, A, \overline{A}, \Omega \rbrace$ est une tribu. 
+\end{exems}
+
+\vspace{0.2cm}
+
+\noindent Lors de la discussion en début de section, on a précisé qu'il serait naturel que l'intersection d'évènements soit encore un évènement. C'est en fait une conséquence de la définition d'une tribu.
+
+\vspace{0.2cm}
+
+
+\begin{prop}
+Soit $\A$ une tribu sur un ensemble $\Omega$. Pour tout ensemble au plus dénombrable $I$ et pour et toute famille $(A_i)_{i \in I}$ d'évènements (c'est-à-dire d'éléments de $\A$), $\dis \bigcap_{i \in I} A_i$ est encore un évènement.
+\end{prop}
+
+\begin{preuve} 
+
+\vspace{6cm}
+%
+%Soit $(A_i)_{i \in I}$ une famille d'évènements. Par passage au complémentaire, pour tout $i \in I$, $\overline{A_i} \in \mathcal{A}$ puis par union au plus dénombrable :
+%$$ \bigcup_{i \in I} \overline{A_i} \in\mathcal{A}$$
+%puis par passage au complémentaire :
+%$$ \overline{\bigcup_{i \in I} \overline{A_i}} \in\mathcal{A} $$
+%et ainsi d'après les lois de Morgan :
+%$$ \bigcap_{i \in I} \overline{\overline{A_i}} =  \bigcap_{i \in I} A_i \in \mathcal{A}$$
+\end{preuve}
+%
+%\begin{rem} La stabilité par union indexée par une partie de $\mathbb{N}$ implique que l'union (finie ou dénombrable) d'évènements est encore un évènement.
+%\end{rem}
+
+%
+%\begin{exems}
+%\item $\mathcal P(\Omega )\,$ est une tribu de $\,\Omega\,$. C'est la plus utilisée quand il y a un nombre fini d'issues.
+%\item Si \ $A\subset \Omega $, \ $\A = \{\,\varnothing\,,\,A\,,\,\overline{A}\,,\,\Omega\,\}\ $ est une tribu très simple de $\Omega$ : c'est la tribu utilisée pour une expérience de Bernoulli (succès-échec). Elle ne donne d'information que sur la réalisation ou non de l'événement $A$.
+%\end{exems}
+%
+%\medskip
+
+\noindent Rappelons quelques définitions et remarques de première année ($A$ et $B$ désignent deux évènements) : 
+
+\medskip
+
+\begin{itemize}
+  \item L'événement $\Omega$ est appelé \textit{événement certain} : il est toujours réalisé.
+  \item L'événement $\varnothing$ est appelé \textit{l'événement impossible} : il n'est jamais réalisé.
+  \item On appelle \textit{événement élémentaire} un événement qui ne se réalise que pour une seule issue, il est de la forme $\{\omega\}$ où $\omega$ est un élément de $\Omega$.
+ \item L'événement contraire de $A$, notée $\overline{A}$ est l'évènement réalisé si et seulement si $A$ n'est pas réalisé.
+  \item L'événement \og $A$ ou $B$ \fg , notée $A \cup B$ est l'évènement réalisé si et seulement si au moins un des deux événements $A$ ou $B$ est réalisé.
+  \item L'événement \og $A$ et $B$ \fg , notée $A \cap B$ es l'évènement réalisé si et seulement si les deux événements $A$ et $B$ sont réalisés.
+\item $A \subset B$ signifie que si $A$ est réalisé, alors $B$ est réalisé.
+\item Deux événements $A$ et $B$ tels que $A \cap B=\varnothing$, c'est-à-dire qui ne peuvent pas se réaliser simultanément, sont dits \textit{incompatibles}.
+\end{itemize}
+
+
+\medskip
+
+\noindent Les évènements sont des sous-ensembles de la tribu $\A$ mais on ne doit pas oublier le point de vue probabiliste d'un évènement : c'est l'ensemble qui contient les issues qui le réalisent. En particulier, si $I$ est un ensemble au plus dénombrable :
+
+\vspace{0.2cm}
+
+\begin{itemize}
+  \item $\dis \bigcap\limits_{k\in I} A_k$ est réalisé si et seulement si 
+  \item  $\dis \bigcup\limits_{k\in I} A_k$ est réalisé si et seulement si 
+%  \item  $\dis A\bs B = A\cap \overline{B}$ est réalisé ssi 
+\end{itemize}
+
+\medskip
+
+\begin{ex} Un joueur lance  une pièce équilibrée une infinité de fois. On introduit les événements suivants :
+\begin{enumerate}
+\item[\tri] $A$ : \og Il obtient Face à tous les lancers \fg,
+\item[\tri] $B$ : \og Il obtient Pile à tous les lancers \fg,
+\item[\tri] $C$ : \og Il obtient au moins une fois Face \fg,
+\item[\tri] $D$ : \og Il n'obtient jamais Face \fg,
+\item[\tri] pour $n \in \mathbb{N}^*$, $A_n$ : \og Il obtient Face au $n$-ème lancer \fg,
+\item[\tri] pour $n \in \mathbb{N}^*$, $B_n$ : \og Il obtient pour la première fois Face au $n$-ème lancer \fg,
+\item[\tri] pour $n \in \mathbb{N}^*$, $C_n$ : \og Il obtient Face aux $n$ premiers lancers \fg.
+\end{enumerate}
+\begin{enumerate}
+\item Décrire les événements $A$, $B$, $C$ et $D$ à l'aide des suites d'événements $(A_n)_{n \in \mathbb{N}^*}$, $(B_n)_{n \in \mathbb{N}^*}$ et $(C_n)_{n \in \mathbb{N}^*}$.
+
+\vspace{3cm}
+\item Soit $n \in \mathbb{N}^*$. Décrire les événements $B_n$ et $C_n$ à l'aide des évènements de la suite $(A_k)_{k \in \mathbb{N}^*}$.
+
+\vspace{3cm}
+\end{enumerate}
+\end{ex}
+
+
+
+\begin{defin}[système complet d'événements]
+Soit $\A$ une tribu sur un ensemble $\Omega$ et $I$ un ensemble au plus dénombrable.
+Une famille $(A_i)_{i\in\, I}$ {d'événements} est appelée un \textit{système complet d'événements} de $\Omega$ lorsque, quelle que soit l'issue de l'expérience, un et un seul des événements $A_i$ est réalisé. Autrement dit si les événements $A_i$ ($i \in I$) sont deux à deux incompatibles et que leur union est $\Omega$.
+\end{defin}
+
+\begin{exems}
+\item Si $A\in \A$, alors $\,(A\,,\,\overline A\,)\,$ est un système complet d'événements de $\Omega$.
+\item Si $\,\Omega = \{\,\omega _k\ , \ k\in  \mathbb N\,\}\,$ et si $\,\A = \mathcal P(\Omega )$, \ 
+alors $\,\big(\{\omega _k\}\big) _{k\in \mathbb N}\,$ est un système complet d'évènements de $\,\Omega$.
+\end{exems}
+
+\subsection{Probabilités}
+
+\begin{defin}[Probabilité]
+\noindent Soit $\A$ une tribu sur un espace $\Omega$. 
+
+\begin{itemize}
+\item On appelle \textit{probabilité} sur $\,(\Omega\,,\,\A)\,$ toute application $\P : \A \mapsto [0,1]$ telle que : 
+\begin{enumerate}
+\item $\P(\Omega )=1$
+\item $\P$ est une application \textit{$\sigma -$additive} : pour toute famille $(A_n)_{n\in \mathbb N}$ d'\textit{événements deux à deux incompatibles}, 
+\[ \P\Big(\bigcup\limits_{k=0}^{+ \infty} A_k\Big) = \sum\limits_{k=0}^{+\infty } \P(A_k)  \]
+\end{enumerate}
+\item Le triplet $\,(\Omega , \A , \P)\,$ est appelé \textit{espace probabilisé}. 
+\item Pour $A\in\A$, le nombre $\,\P(A)\,$ est la \textit{probabilité de l'événement $A$}.
+\end{itemize} 
+\end{defin}
+
+\begin{rems} 
+\item Il faut bien comprendre  la définition, l'affirmation 
+\[  \P\Big(\bigcup\limits_{k\in \mathbb N} A_k\Big) = \sum\limits_{k=0}^{+\infty } \P(A_k) \]
+signifie que la série de terme général $P(A_n)$ converge (\textit{pas besoin de le vérifier}) et que sa somme est $\dis \P\Big(\bigcup\limits_{k\in \mathbb N} A_k\Big) \cdot$
+\item Quand on considère l'union des évènements $A_k$, l'ordre n'est pas important alors que par définition,
+$$ \sum\limits_{k=0}^{+\infty } \P(A_k)$$
+est la limite des sommes partielles donc dépend \textit{à priori} de l'ordre des évènements. On admettra que l'ordre n'est en fait pas important (car les termes de la série sont positifs).
+\item Dans le cas où l'univers $\Omega$ est fini, une probabilité était définie en première année comme une application $\P : \mathcal{P}(\Omega) \rightarrow [0,1]$ vérifiant $\P(\Omega)=1$ et pour tout $(A,B) \in \mathcal{P}(\Omega)^2$ tel que $A \cap B=\varnothing$, $\P(A \cup B)=\P(A)+\P(B)$.
+\end{rems}
+
+\medskip
+
+\noindent \textbf{Cas particulier si l'univers $\Omega$ est dénombrable.}
+
+\medskip
+
+\vspace{9cm}
+
+\begin{ex} Soit $\P$ une probabilité sur $(\mathbb{N}, \mathcal{P}(\mathbb{N}))$. Montrons que $\dis \lim_{n \rightarrow + \infty} \P( \lbrace n \rbrace )= 0$.
+ \newpage
+\end{ex}
+\begin{exa}
+Soit $\lambda \in \mathbb{R}$. Lors d'une expérience aléatoire, on choisit un entier naturel en connaissant les règles suivantes : la probabilité d'obtenir un entier $k$ vaut $ \dis \lambda/2^k$. Déterminer $\lambda$ pour que cela définisse bien une probabilité. Quelle est la probabilité d'obtenir un entier inférieur ou égal à 10? Un entier pair ?
+\end{exa}
+
+\begin{defin}
+\begin{itemize}
+\item Un événement est dit \textit{presque sûr} lorsque sa probabilité vaut $0$.
+\item Un événement est dit \textit{presque impossible} ou \textit{négligeable} lorsque sa probabilité vaut $1$.
+\end{itemize}
+\end{defin}
+
+
+ 
+
+
+
+
+\subsection{Propriétés}
+\noindent Les propriétés suivantes se démontrent de la même manière qu'en première année : 
+
+\begin{prop}\label{Prop1}
+Soient $(\Omega, \mathcal{A}, \P)$ un espace probabilisé et $A$ et $B$ deux événements. On a :
+\begin{itemize}
+\item $\P(\overline{A})=$\phantom{$1-P(A)$.}
+\item $\P(A \setminus B) =$\phantom{$\P(A)-P(A \cap B)$.}
+\end{itemize}
+\end{prop}
+
+\begin{rem}
+ En particulier, $\P(\varnothing)= 0$.
+\end{rem}
+
+\begin{prop}[croissance]
+Soient $(\Omega, \mathcal{A}, \P)$ un espace probabilisé et $A$ et $B$ deux événements.\\
+Si $A \subset B$ alors $\phantom{\P(A) \leq \P(B)}$
+\end{prop}
+
+\begin{thm}[union de deux événements]
+Soient $(\Omega, \mathcal{A}, \P)$ un espace probabilisé et $A$ et $B$ deux événements, on a :
+$$\P(A \cup B)=\phantom{\P(A)+\P(B)-P(A \cap B)}$$
+et en particulier :
+$$ \P(A \cup B) \leq \P(A) + \P(B)$$
+\end{thm}
+
+\begin{thm}[union de $n$ événements]
+Soient $n \geq 1$, $(\Omega, \mathcal{A}, \P)$ un espace probabilisé et $A_1, \ldots, A_n$ $n$ événements.
+\begin{itemize}
+\item Si les $n$ évènements sont deux à deux incompatibles, on a :
+$$\P \left( \bigcup_{i=1}^n A_i\right)= \phantom{\sum_{i=1}^n \P(A_i)}$$
+\item Dans tous les cas, on a (propriété de \textit{sous-additivité}) :
+$$ \P \left(\bigcup_{i=1}^n A_i \right) \leq \sum_{i=1}^n \P(A_i) $$
+\end{itemize}
+\end{thm}
+
+\begin{thm}[\label{Prop2}de Poincaré ou du crible]
+Soient $(\Omega, \mathcal{A}, \P)$ un espace probabilisé et $A, B$ et $C$ trois événements, on a
+ \begin{align*}
+  \P(A\cup B \cup C) = & \P(A) + \P(B) + \P(C) \\
+  &- \Big( \P(A\cap B) + \P(A\cap C) + \P(B\cap C) \Big) \\
+  &+ \P(A\cap B \cap C)
+ \end{align*}
+\end{thm}
+
+
+\begin{prop}
+Soient $(\Omega, \mathcal{A}, \P)$ un espace probabilisé et $n \in \mathbb{N}^*$.
+\begin{itemize}
+\item Si $\,(A_1, A_2,\ldots, A_n)$ \ est un système complet d'évènements de $\Omega$ alors :
+$\sum\limits_{k=1}^{n } \P(A_k) = 1$. 
+\item Si $(A_n)_{n\in \N}\,$ est un système complet d'évènements de $\Omega$ alors :
+$\sum\limits_{k=0}^{+\infty } \P(A_k) = 1$. 
+\end{itemize}
+\end{prop}
+
+\begin{preuve} Donnons la preuve du deuxième point (le premier peut être vu comme une conséquence du deuxième point en prenant pour tout $k \geq n+1$, $A_{k}= \varnothing$). 
+
+\vspace{5cm}
+%
+%On sait que $(A_n)_{n\in \N}$ est un système complet d'évènements de $\Omega$ donc :
+%$$ \Omega = \bigcup_{n \geq 0} A_n$$
+%De plus, les évènements $A_n$ sont deux à deux incompatibles donc :
+%$$ \P(\Omega) = P \bigg{(} \bigcup_{n \geq 0} A_n \bigg{)} = \sum_{k=0}^{+ \infty} \P(A_k)$$
+%On obtient le résultat souhaité car  $\P(\Omega)=1$.
+\end{preuve}
+
+\vspace{0.3cm}
+
+\noindent D'après la définition de probabilité, si $(A_n)_{n \geq 1}$ est une famille d'évènements deux à deux incompatibles alors la série $\dis \sum_{n \geq 1} \P(A_n)$ converge et on a : 
+\[ \P\Big(\bigcup\limits_{n\in \mathbb N^*} A_n\Big) = \sum_{n=1}^{+ \infty} \P (A_n) \]
+Autrement dit, on sait calculer la probabilité d'une union d'évènements deux à deux incompatibles. Comment faire si ils ne le sont pas ?
+
+%\vspace{0.3cm}
+%
+%\begin{rap}
+%Soient $A,B$ deux évènements d'un espace probabilisé. Alors $A \subset B$ signifie que si $A$ est réalisé alors $B$ est réalisé (toute issue de $A$ est une issue de $B$).
+%\end{rap}
+
+\begin{thm}[Continuité croissante et décroissante]
+Soit $\,(\Omega , \A , \P)\,$ un espace probabilisé. Alors :
+
+\vspace{0.2cm}
+
+\begin{itemize}
+\item Si $\,(A_n)_{n \geq 0}\,$ est une \textit{suite croissante d'événements} 
+(c'est-à-dire si pour tout $n \in \mathbb{N}$, $A_n\subset A_{n+1}$) alors la suite $\,\big(\P(A_n)\big)_{n \geq 0}\,$ est convergente et l'on a :
+$$\P\Big(\bigcup_{k=0}^{\pinf\ }A_k\Big) =\lim_{n\to\pinf}\P(A_n)$$
+\item  Si $\,(A_n)_{n \geq 0}\,$ est une \textit{suite décroissante d'événements}
+(c'est-à-dire si pour tout $n \in \mathbb{N}$,  $A_{n+1}\subset A_n$) alors la suite $\,\big(\P(A_n)\big)_{n \geq 0}\,$ est convergente et l'on a :
+$$\P\Big(\bigcap_{k=0}^{\pinf\ }A_k\Big) = \lim\limits_{n\to\pinf}\P(A_n).$$
+\end{itemize}
+\end{thm}
+
+\begin{preuve} 
+
+
+\vspace{10cm}
+%\noindent $\rhd$ Posons $B_0$ et pour tout entier $k \geq 1$, $B_k = A_k \setminus A_{k-1}$. Alors :
+%$$ \bigcup_{k=0}^{+ \infty} A_k = \bigcup_{k=0}^{+ \infty} B_k$$
+%Montrons que les évènements $B_k$ ($k \geq 0$) sont deux à deux incompatibles en raisonnons par l'absurde : si ces évènements ne sont pas deux à deux incompatibles, il existe $(n,m) \in \mathbb{N}^2$ vérifiant $n < m$ et tel que $B_n \cap B_m$. Il existe un élément de l'univers $\omega$ appartenant à $B_n$ (donc à $A_n$ mais pas à $A_{n-1}$) et appartenant à $B_m$ (donc à $A_m$ mais pas à $A_{m-1}$). Or par croissance, $\omega \in A_n \subset  A_{m-1}$ ce qui est absurde.
+%
+%\medskip
+%
+%\noindent Par deux à deux incompatibilité des évènements, on a alors :
+%$$ \P \left(  \bigcup_{k=0}^{+ \infty} A_k \right) =  \P \left(  \bigcup_{k=0}^{+ \infty} B_k \right) = \sum_{k=0}^{+ \infty} \P(B_k) $$
+%Or $\P(B_0)=\P(A_0)$ et pour tout entier $k \geq 1$,
+%$$ \P(B_k) = \P(A_k \setminus A_{k-1}) = \P(A_k) - P(A_k \cap A_{k-1}) = \P(A_k) - P(A_{k-1})$$
+%car $A_{k-1} \subset A_k$. Ainsi :
+%\begin{equation}\label{teles}
+%\P \left(  \bigcup_{k=0}^{+ \infty} A_k \right) = \P(A_0) + \sum_{k=1}^{+\infty} P(A_k)-P(A_{k-1})
+%\end{equation}
+%Or par téléscopage on a pour tout $n \geq 1$, 
+%$$ \sum_{k=1}^{n} P(A_k)-P(A_{k-1}) = \P(A_n) - \P(A_0)$$
+%donc :
+%$$  \sum_{k=1}^{+\infty} P(A_k)-P(A_{k-1}) =  \lim_{n \rightarrow + \infty} \P(A_n) - \P(A_0)$$
+%ce qui donne le résultat avec (\ref{teles}).
+%
+%\medskip
+%
+%\noindent $\rhd$ Posons pour tout $k \in \mathbb{N}$, $B_k = \overline{A_k}$. On sait que pour tout $k \in \mathbb{N}$, $A_{k+1} \subset A_k$ donc $B_k \subset B_{k+1}$. D'après le premier point, on a alors que la suite $\,\big(\P(B_n)\big)_{n \geq 0}\,$ converge et que :
+%$$\P\Big(\bigcup_{k=0}^{\pinf\ }B_k \Big) =\lim_{n\to\pinf}\P(B_n)$$
+%Par passage au complémentaire et d'après les lois de Morgan, on a donc :
+%$$ 1 - \P\Big(\bigcap_{k=0}^{\pinf\ }\overline{B_k} \Big) = \lim_{n \rightarrow + \infty} 1 - \P(A_n)$$
+%Le résultat est donc prouvé en remarquant que $\overline{B_k}= A_k$.
+\end{preuve}
+
+\newpage
+
+$\phantom{test}$
+
+\vspace{5cm}
+
+\begin{att}
+Une suite d'événements n'a pas de limite : c'est la suite $(P(A_n))_{n \geq 0}$ qui peut en avoir une (mais pas forcément).
+\end{att}
+
+\medskip
+
+%\begin{ex} En France la probabilité de gagner au loto est $p=1/19 068 840$. Un joueur immortel décide de jouer tous les jours au loto. Pour tout $n \geq 1$, on note $A_n$ l'évènement \og Le joueur a perdu tous les jours jusqu'au jour $n$ \fg 
+%
+%\noindent Que représente l'évènement $\dis \bigcap_{k=0}^{\pinf\ }A_k$? Calculer sa probabilité.
+%
+%\vspace{9cm}
+%\end{ex}
+ 
+\noindent \textbf{Application.}
+
+\noindent Soit $\,(A_n)_{n \geq 0}\,$ une \textit{suite quelconque d'événements}. On a :
+\begin{itemize}
+\item $\dsp\P \left(\bigcup\limits_{k=0}^{\pinf\ } A_k\right) = \phantom{
+\lim\limits_{n\to\pinf}\!\!\P\left(\bigcup\limits_{k=0}^{n} A_k\right) 
+\quad}$ 
+\item $\dis \P \left(\bigcap\limits_{k=0}^{\pinf\ } A_k\right) = 
+\phantom{\lim\limits_{n\to\pinf}\!\!\P\left(\bigcap\limits_{k=0}^{n} A_k\right)} $
+\end{itemize}
+
+\medskip
+
+\noindent Prouvons le premier point (le deuxième se prouve de la même manière).
+% Posons pour tout $n \geq 0$, 
+%$$ B_n = \bigcup_{k=0}^n A_k $$
+%Pour tout $n \geq 0$, on a alors $B_n \subset B_{n+1}$ et ainsi :
+%\begin{equation}\label{Prop2}
+% P \left( \bigcup_{n \geq 0} B_n \right) = \lim_{n \rightarrow + \infty} \P(B_n)
+% \end{equation}
+%Or on a :
+%$$ \bigcup_{n \geq 0} B_n  = \bigcup_{k \geq 0}\bigcup_{k=0}^n A_k = \bigcup_{n \geq 0} A_n$$
+%et ainsi d'après  (\ref{Prop2}) :
+%$$  P \left( \bigcup_{n \geq 0} A_n \right) = \lim_{n \rightarrow + \infty} \P( \bigcup_{k=0}^n A_k) $$
+
+\vspace{7cm}
+
+
+\begin{thm}[Sous-additivité]
+Soient $n \geq 1$, $(\Omega,\mathcal{A},P)$ un espace probabilisé et $(A_n)_{n \geq 0}$ une suite d'évènements. Si $\Sum{n \geq 0}{} \P(A_n)$ converge alors :
+$$ \P \left(\bigcup_{k \geq 0} A_k \right) \leq \sum_{k=0}^{+ \infty} \P(A_k)$$
+\end{thm}
+
+\begin{preuve}
+
+\vspace{5cm}
+% Pour tout $n \geq 1$, on a :
+%$$  \P \left(\bigcup_{k= 0}^n A_k \right) \leq \sum_{k=0}^{n} \P(A_k) $$
+%La première expression admet une limite quand $n$ tend vers $+ \infty$ (d'après l'application précédente) et la deuxième expression est une somme partielle de série convergente. Par passage à la limite, on a le résultat.
+\end{preuve}
+%
+%\subsection{Un cas fréquent : lorsque \textit{$\Omega$} peut être indexé par $\N$}
+%\noindent Dans de nombreux cas, $\Omega$ est de la forme $\Omega = \{\,\omega_n, \ n\in\mathbb N\,\}\,$. Dans ce cas, on a :
+%\[ 1 = P(\Omega) = \sum_{k=0}^{+ \infty} P( \lbrace \omega_k \rbrace) \]
+%et pour tout événement $A$, on a :
+%
+%\[\P(A) = \sum\limits _{\omega _k\in A}\P(\lbrace \omega_k \rbrace)\]
+%
+%\noindent Ainsi pour calculer la probabilité de l'évènement $A$, il suffit de \og sommer \fg les probabilités des issues qui réalisent $A$. Cette somme étant soit finie (lorsque $A$ l'est), soit la somme d'une série convergente (car P est $\sigma -$additive). 
+%
+%\vspace{0.2cm}
+%
+%\noindent \textit{Conclusion :} si l'on connait la valeur de $\,\P( \lbrace \omega _n \rbrace)\,$ pour tout $n \in \mathbb{N}$ alors on connait la probabilité de tout évènement et ainsi cela caractérise entièrement la probabilité. De plus, les $\,\P(\lbrace \omega_n \rbrace)\,$ forment une suite de réels positifs dont la somme vaut 1 (il s'agit de la somme de la série de terme général $\,\P(\lbrace \omega_n \rbrace)\,$). 
+%
+%\vspace{0.2cm}
+%
+%\noindent Réciproquement : si l'on dispose d'une \textit{suite $(p_n)_{n\ \geq 0}$ de réels positifs dont la somme} (de la série de terme général $p_n$) \textit{vaut 1}, on peut construire un univers $\,\Omega\,$ et une tribu $\A$ de $\,\Omega$, de façon à ce que la donnée des réels $p_n$ définisse une probabilité $\,\P\,$ sur $\,(\Omega\,,\,\A)$.
+%
+%\vspace{0.2cm}
+%
+%\begin{ex}
+%Soit $\lambda \in \mathbb{R}$. Lors d'une expérience aléatoire, on choisit un entier naturel en connaissant les règles suivantes : la probabilité d'obtenir un entier $k$ vaut $ \dis \lambda/2^k$. Déterminer $\lambda$ pour que cela définisse bien une probabilité. Quelle est la probabilité d'obtenir un entier inférieur ou égal à 10? un entier pair ?
+%
+%\vspace{5cm}
+%\end{ex} 
+\subsection{Un exemple important : l'équiprobabilité}
+
+\begin{defin}
+ \begin{itemize}
+ \item Deux événements d'un espace probabilisé sont dits \textit{équiprobables} lorsqu'ils ont la même probabilité.
+\item On dit qu'il y a \textit{équiprobabilité} lorsque tous les événements élémentaires d'un espace probabilisé sont équiprobables.
+ \end{itemize}
+\end{defin}
+\begin{thm}
+ Soient $n \in \mathbb{N}^*$, $\Omega$ un ensemble de cardinal $n$ et $\P$ une probabilité sur $(\Omega,\mathcal{P}(\Omega))$. Si il y a équiprobabilité, alors pour tout $\omega \in \Omega$,
+$ \P(\{\omega\}) = \dfrac 1n$ et plus généralement, pour tout événement $A$, 
+$$P(A) = \frac{\textrm{Card}(A)}{\textrm{Card}\Omega)}$$
+\end{thm}
+
+\begin{ex} On compose au hasard un numéro de téléphone à 10 chiffres. Quelle est la probabilité que tous les chiffres soient distincts ? Que le nombre obtenu soit divisible par 2 ?
+
+\vspace{5cm}
+\end{ex}
+
+\begin{exa}
+On tire trois cartes simultanément d'un jeu de 32 cartes.
+\begin{enumerate}
+ \item Quelle est la probabilité d'avoir au moins un As ?
+ \item Quelle est la probabilité d'avoir 3 cartes de la même hauteur ?
+ \item Quelle est la probabilité d'avoir au moins deux couleurs différentes ?
+ \item Quelle est la probabilité d'avoir un roi et deux dames ?
+ \item Refaire les questions précédentes dans le cas où l'on tire les cartes successivement et sans remise.
+\end{enumerate}
+\end{exa}
+
+\section{Probabilités conditionnelles}
+\noindent Dans cette section, on se place dans le cadre d'un espace probabilisé $(\Omega, \A, \P)$ quelconque. Dans la suite, $A$, $B$, $A_1$, $\ldots$, $A_n$ ($n \geq 1$) seront des évènements.
+
+\begin{defin}
+Soit $B$ un événement tel que $\P(B) \neq 0$.\\
+Pour tout événement $A$ on appelle \textit{probabilité de $A$ sachant $B$} le nombre $\P_B(A)$ défini par 
+
+$$ \P_B(A) = \phantom{\frac{\P(A\cap B)}{\P(B)}}$$
+
+\end{defin}
+
+\begin{rem} On note parfois $P(A \, \vert \, B)$ au lieu de $P_B(A)$.
+\end{rem}
+
+%%\begin{att}
+% Ne pas confondre $\P(A\cap B)$ et $\P_A(B)$
+% \begin{lt}
+%  \item dans $\P_A(B)$, on sait que $A$ est réalisé et on en déduit la probabilité de $B$ ; 
+%  \item dans $\P(A\cap B)$, on ne sait rien a priori, aucune hypothèse n'est faite.
+% \end{lt}
+%\end{att}
+
+\begin{prop}
+Soit $B$ un événement tel que $\P(B) \neq 0$.\\
+L'application $\P_B$ de $\A$ dans $[0,1]$ qui à tout $A \in \A$ associe $\P_B(A)$ est une probabilité.
+\end{prop}
+
+\begin{preuve}
+Il suffit d'adapter celle effectuée en première année.
+\end{preuve}
+\begin{cor}
+Soient $B$ un événement tel que $\P(B) \ne 0$ et $A,C$ deux évènements. Alors 
+ \begin{itemize}
+  \item $\P_B(\Omega) = $
+  \item $\P_B(\varnothing) = $
+  \item $\P_B(\overline{A})$
+  \item $\P_B(A\cup C) = $
+ \end{itemize}
+\end{cor}
+%
+%\begin{metho}
+%Pour calculer la probabilité d'une intersection finie, on utilise la formule des probabilités composées.
+%\end{metho}
+
+
+\begin{thm}[Formule des probabilités composées]
+ \begin{itemize}
+  \item Intersection de deux événements : si $\P(A) \ne 0$, $\P(A\cap B) = $
+  \item Intersection d'une famille finie d'événements : si $\P(A_1 \cap A_2 \cap \ldots \cap A_{n-1}) \neq 0$,
+   $$\P(A_1 \cap A_2 \cap \ldots \cap A_n)= \qquad \qquad \qquad \phantom{ahahaaaaaaaaaaaa bla bla bla}$$
+ \end{itemize}
+\end{thm}
+
+\begin{ex} Une urne contient 3 boules blanches et 7 boules noires. On tire successivement et sans remise 3 boules dans cette urne. Quelle est la probabilité d'obtenir la première boule blanche au 3$^{\text{ème}}$ tirage ?
+
+\vspace{4cm}
+\end{ex}
+
+
+\begin{ex} On lance une infinité de fois une pièce équilibrée. Quelle est la probabilité de n'obtenir que des Faces ?
+
+\vspace{5cm}
+\end{ex}
+
+
+\begin{rem} L'évènement précédent est négligeable alors qu'il n'est pas impossible.
+\end{rem}
+
+\begin{exa} Un joueur lance $n$ fois de suite un dé équilibré.
+ \begin{enumerate}
+  \item Déterminer la probabilité qu'il n'obtienne aucun six dans ces $n$ lancers.
+  \item Calculer la probabilité $p_n$ qu'il obtienne au moins un six.
+  \item Déterminer la probabilité qu'il obtienne exactement un six.
+ \end{enumerate}
+ \end{exa}
+ 
+\begin{thm}[Formule des probabilités totales : cas fini]
+Soient $(\Omega, \mathcal{A}, \P)$ un espace probabilisé, $n \geq 1$ et $(A_1, \ldots, A_n)$ un système complet d'évènements. Pour tout évènement $B$ de $\A$, on a :
+$$ \P(B) = \phantom{blabbbbbbbbbbb\sum_{k=1}^n P(A_k \cap B)}$$
+Si de plus, pour tout $k \in \Interv{1}{n}$, $\P(A_k) >0$, alors :
+$$\P(B) = \phantom{blabbbbbbbbbbb \sum_{k=1}^n P(A_k) \times P_{A_k}(B)} $$
+\end{thm}
+
+
+\begin{ex} 
+On choisit au hasard une des 4 urnes ci-dessous et on en tire une boule au hasard.
+\begin{itemize}
+ \item L'urne 1 contient 3 boules rouges, 2 blanches et 3 noires.
+ \item L'urne 2 contient 4 boules rouges, 3 blanches et 1 noire.
+ \item L'urne 3 contient 2 boules rouges, 1 blanche et 1 noire.
+ \item L'urne 4 contient 1 boule rouge, 6 blanches et 2 noires.
+\end{itemize}
+Déterminons la probabilité que cette boule ne soit pas blanche.
+
+\vspace{7cm}
+\end{ex}
+
+\begin{exa} On dispose de deux pièces truquées : $P_1$ donne pile avec la probabilité $\dis \frac{1}{3}$ et $P_2$ donne pile avec la probabilité $\dis \frac{2}{5} \cdot$ Au départ, on choisit une pièce au hasard et on la lance jusqu'à ce que l'on obtienne face, on change alors de pièce et ainsi de suite. On désigne par $L_k$ l'évènement \og on lance la pièce $P_1$ au k-ième lancer \fg pour $k \in \mathbb{N}^*$ et on note $p_k$ la probabilité de cet évènement.
+\begin{enumerate}
+\item Que vaut $p_1$? $p_2$?
+\item Trouver une relation entre $p_k$ et $p_{k+1}$ pour $k \in \mathbb{N}^*$.
+\item En déduire $p_k$ pour tout $k \in \mathbb{N}^*$.
+\end{enumerate}
+\end{exa}
+
+\begin{thm}[Formule des probabilités totales : cas dénombrable]
+Soit $(\Omega, \mathcal{A}, \P)$ un espace probabilisé. Si $(A_n)_{n \geq 0}$ est un système complet d'évènements alors pour tout évènement $B$ de $\A$, la série 
+$$ \sum_{n \geq 0} \P(A_n \cap B)$$
+converge et on a :
+$$ \P(B) = \sum_{n=0}^{+ \infty} P(A_n \cap B) = \sum_{n=0}^{+ \infty} P(A_n) \times P_{A_n}( B)$$
+en adoptant la convention $P(A_n) \times P_{A_n}( B)=0$ si $\P(A_n)=0$.
+\end{thm}
+%
+%\begin{itemize}
+%\item Si $\,\big(A_k\big)_{k \geq 0}\,$ est un système complet d'événements, alors pour tout événement $E$, on a  :
+%\[ \qquad\dsp\P(E) = \phantom{\sum\limits_{k=0}^{\pinf} \P(A_k\cap E)} \]
+%\item Si de plus les $A_k$ sont tous de probabilités non nulles pour tout $k \geq 1$, alors pour tout événement $E$, on a :
+%\[ \dsp\P(E) = \phantom{\sum\limits_{k=0}^{\pinf} \P(A_k)\times \P_{A_k}(E)} \]
+%\end{itemize}
+%\end{thm}
+%\begin{rems}
+%\item C'est \textit{cette formule qui permet d'obtenir les relations de récurrence} dans presque tous les exercices de probabilités.
+%\item Si le système complet d'évènements est fini, il suffit de considérer des sommes finies.
+%\item La formule des probabilités totales garantit la convergence des séries.
+%\item Si l'une des probabilités $\P(A_k)$ est nulle, il suffit de sortir le terme nul correspondant de la première somme. On peut ensuite passer à la deuxième formule.
+%\end{rems}
+
+\begin{preuve}
+
+\vspace{6cm}
+\end{preuve}
+
+\begin{ex} On considère une infinité d'urnes. On en choisit une au hasard de telle sorte que la probabilité de choisir l'urne $n$ soit égale à $\dis \frac{1}{2^n}$ (avec $n \in \mathbb{N}^*$), on note $A_n$ l'évènement \og on choisit l'urne $n$ \fg .
+\begin{enumerate}
+\item Vérifions que $P \dis \bigg{(} \bigcup_{n \in \mathbb{N}^*} A_n \bigg{)} = 1$.
+
+\vspace{5cm}
+\item Pour tout entier $n \geq 1$, l'urne $n$ contient $2^n$ boules dont une seule est blanche. On choisit une urne au hasard puis on tire une boule et on note $B$ l'évènement \og on tire une boule blanche \fg . Déterminons $P(B)$. 
+
+\vspace{6cm}
+\end{enumerate}
+\end{ex}
+
+\begin{prop}[Formule de Bayes]
+Soit $(\Omega, \mathcal{A}, \P)$ un espace probabilisé.
+\begin{itemize}
+\item Si $A$ et $B$ sont des événements probabilités non nulles, alors
+
+\[ \dsp \P_B(A)\ = \qquad \qquad \qquad \qquad \]
+
+\item Si $\ \big(A_k\big)_{k \geq 0}\ $ est un système complet d'événements de probabilités non nulles et si $B$ est un événement de probabilité non nulle alors pour tout $\,i\in\N$, on a :
+$$\P_B(A_i) = \phantom{\frac{\ \P(A_i)\times  \P_{A_i}(B)\ }{ \P(B)} 
+= \frac{\P(A_i)\times  \P_{A_i}(B)}{\ \sum\limits_{k=0}^{\pinf} \P(A_k)\times  \P_{A_k}(B)\ }}$$
+\end{itemize}
+\end{prop}
+
+\begin{rem} Si le système complet d'évènements est fini, il suffit de considérer des sommes finies.
+\end{rem}
+
+\begin{ex} Dans un laboratoire, on fait le constat suivant :
+\begin{enumerate}
+\item Si une souris porte l'anticorps 1 alors elle porte l'anticorps 2 avec la probabilité $\dis \frac{2}{5} \cdot$
+
+\vspace{-0.2cm}
+\item Si une souris ne porte pas l'anticorps 1 alors elle ne porte pas l'anticorps 2 avec la probabilité $\dis \frac{4}{5} \cdot$
+\item La moitié de la population des souris porte l'anticorps 1.
+\end{enumerate}
+
+\medskip
+\noindent Soient A l'évènement \og la souris porte l'anticorps 1 \fg et B l'évènement \og la souris porte l'anticorps 2 \fg 
+\noindent Sachant qu'une souris porte l'anticorps 2, quelle est la probabilité qu'elle porte l'anticorps 1?
+
+\vspace{6cm}
+\end{ex}
+
+\newpage
+
+$\phantom{test}$
+
+\vspace{4cm}
+
+\begin{exa} On dispose de 100 pièces de monnaie. Une pièce sur quatre est truquée et une pièce truquée indique pile avec une probabilité de $\dis \frac{4}{5} \cdot$ On choisit au hasard une pièce parmi les 100 et on obtient pile. Quelle est la probabilité qu'il s'agisse d'une pièce truquée ?
+\end{exa}
+
+\section{Indépendance}
+\noindent Dans cette section, on se place dans le cadre d'un espace probabilisé $(\Omega, \A, \P)$ quelconque. Dans la suite, $A$, $B$, $A_1$, $\ldots$, $A_n$ ($n \geq 1$) seront des évènements.
+
+
+
+\begin{defin}
+\begin{itemize}
+ \item On dit que deux événements $A$ et $B$ sont \textit{indépendants} lorsque 
+$$\P(A \cap B)= \P(A)\P(B)$$
+ \item On dit que $A_1,A_2,\ldots,A_n$ sont \textit{mutuellement indépendants} lorsque :
+$$\forall I \subset \Interv 1n,\;\P\l(\bigcap_{i \in I}A_i\r)= \prod_{i \in I}\P(A_i)$$
+\end{itemize}
+\end{defin}
+
+\begin{prop}
+Soit $(\Omega,\mathcal{P}(\Omega),\P)$ un espace probabilisé. Soient B un événement de probabilité non nulle et A un événement. Alors A et B sont indépendants si et seulement si $\P_B(A)=\P(A)$
+\end{prop}
+
+\begin{preuve}
+
+\vspace{4cm}
+\end{preuve}
+
+\begin{exa} Montrer que si deux évènements $A$ et $B$ d'un espace probabilisé sont indépendants, il en est de même des évènements $A$ et $\overline{B}$.
+\end{exa}
+
+
+
+ 
+\noindent On a la généralisation suivante de la mutuelle indépendance pour une suite infinie d'événements :
+
+\begin{defin}
+ Soit $(A_i)_{i \in \N}$ une suite d'événements. Ces événements sont dits \textit{mutuellement indépendants} si  pour toute partie \textit{finie} $I$ de $\N$,
+$$ P\left(\bigcap_{i \in I} A_i \right) = \phantom{\prod_{i\in I} P(A_i).}$$
+\end{defin}
+
+\begin{prop} La mutuelle indépendance d'évènements implique l'indépendance deux à deux de ces évènements. La réciproque est fausse.
+\end{prop}
+
+\begin{preuve} Il suffit de considérer les parties $I$ de cardinal $2$ dans la définition. Montrons maintenant que la réciproque est fausse en général. 
+
+\vspace{5cm}
+\end{preuve}
+
+\begin{att}
+ Ne pas confondre indépendants et incompatibles.
+\end{att}
+
+\medskip
+
+\begin{rems}
+ \item L'indépendance mutuelle d'une famille finie ou infinie d'événements sera une hypothèse (qui peut être implicite) de l'énoncé.
+ \item Si $\,A_1,\,A_2,\,\dots,\,A_n\,$ sont des événements mutuellement indépendants, 
+alors la formule des probabilités composées devient beaucoup plus simple. On a alors : 
+$$ \P(A_1\cap A_2\cap \cdots\cap A_{n})\ = \phantom{ \P(A_1)\times \P(A_2)\times\cdots\times \P(A_{n})}$$
+\end{rems}
+
+
+\begin{ex} En France la probabilité de gagner au loto est $p=1/19 068 840$. Un joueur immortel décide de jouer tous les jours au loto. Pour tout $n \geq 1$, on note $A_n$ l'évènement \og Le joueur a perdu tous les jours jusqu'au jour $n$ \fg 
+
+\noindent Que représente l'évènement $\dis \bigcap_{k=0}^{\pinf\ }A_k$? Calculer sa probabilité.
+
+\vspace{9cm}
+\end{ex}
+
+
+
+
+
+
+
+% 
+% 
+% 
+% \section{Exercices d'applications directes du cours}
+% 
+% \exo 
+%
+%\begin{multicols}{2}
+%\begin{enumerate}
+%\item Combien y a t-il de façons de placer huit personnes côte à côte sur une rangée de huit chaises ?
+%\item On tire successivement et avec remise trois cartes d'un jeu de 32 cartes. Quel est le nombre de tirages possibles ? Combien y a-t-il de tirages ne contenant que des rois ? Combien y a-t-il de tirages ne contenant pas de pique ? Combien y a-t-il de tirages contenant au moins un pique ? 
+%\item Pareil que la question précédente mais sans remise.
+%\item Combien de mots de $5$ lettres peut-on former avec les lettres $A,B,C,D,E$?
+%\item On tire simultanément cinq cartes dans un jeu de 32 cartes.
+%Combien y a-t-il de tirages différents contenant exactement 2 trèfles et 3 piques ? exactement 1 roi et 2 dames ?  
+%\end{enumerate}
+%\end{multicols}
+% 
+% \exo Soit $(n,p) \in \N^2$ tel que $p\le n$. Redonner (sans réfléchir) les valeurs de :
+%$$ \binom n0 , \binom nn , \binom n1 ,  \binom np \hbox{ (en fonction de } n-p)$$
+% 
+% \exo Retrouver (sans trop réfléchir) la formule de Pascal.
+%
+%\exo Soit $n \in \mathbb{N}$. Déterminer le nombre de parties d'un ensemble à $n$ éléments (on distinguera suivant le cardinal de celles-ci).
+%
+% \exo Montrer que l'ensemble des entiers naturels pairs est dénombrable.
+% 
+%\exo Une urne contient 7 boules rouges et 5 boules blanches. On tire au hasard deux boules de cette urne. Déterminer la probabilité d'obtenir deux boules de la même couleur dans les cas suivants :
+%\begin{enumerate}
+%\item Le tirage est simultané.
+%\item On tire une boule après l'autre, sans remise.
+%\item On tire une boule après l'autre, avec remise.
+%\end{enumerate}
+%
+%
+%
+%\exo
+%On jette une infinité de fois une pièce équilibrée. Pour tout $n \geq 1$, on note $B_n$ l'évènement \og On obtient pour la première fois Pile au $(2n)$-ième lancer \fg . Exprimer l'évènement $C$ : \og On obtient pour la première fois Pile dans un lancer pair \fg en fonction des évènements $B_n$, $n \geq 1$. En déduire la probabilité de $C$.
+%
+%\exo
+%On choisit au hasard une des 4 urnes ci-dessous et on en tire une boule au hasard.
+%\begin{itemize}
+% \item L'urne 1 contient 3 boules rouges, 2 blanches et 3 noires.
+% \item L'urne 2 contient 4 boules rouges, 3 blanches et 1 noire.
+% \item L'urne 3 contient 2 boules rouges, 1 blanche et 1 noire.
+% \item L'urne 4 contient 1 boule rouge, 6 blanches et 2 noires.
+%\end{itemize}
+%\begin{enumerate}
+% \item Déterminer la probabilité que cette boule ne soit pas blanche.
+% \item La boule est blanche, quelle est la probabilité qu'elle vienne de l'urne 3 ?
+%\end{enumerate}
+%
+%\exo Montrer que si deux évènements $A$ et $B$ d'un espace probabilisé sont indépendants, il en est de même des évènements $A$ et $\overline{B}$.
+
+\end{document}

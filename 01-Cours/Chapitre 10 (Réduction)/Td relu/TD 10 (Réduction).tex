@@ -1,0 +1,473 @@
+\documentclass[a4paper,10pt]{report}
+\newcommand{\pmatrice}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\usepackage{cours}
+\usepackage{pifont}
+
+\begin{document}
+\everymath{\displaystyle}
+\begin{center}
+\textit{{ {\huge TD 10 : Réduction}}}
+\end{center}
+
+\bigskip
+
+
+\noindent Dans la suite, $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$ et $n \in \mathbb{N}^*$.
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Éléments propres}}}
+\end{center}
+
+\medskip
+
+\begin{Exa}[\ding{80}] Soient $E = \mathbb{R}[X]$ et $\varphi \in \mathcal{L}(E)$ défini par $\varphi(P)=XP'$. Déterminer les éléments propres de $\varphi$.
+\end{Exa}
+
+
+
+\begin{Exa} Soient $f$ un endomorphisme d'un $\mathbb{K}$-espace vectoriel de dimension finie et $n \in \mathbb{N}^{*}$. On suppose que $0$ est dans le spectre de $f^n$. Montrer que $0$ est aussi dans le spectre de $f$.
+\end{Exa}
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Diagonalisation}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Diagonaliser $\begin{pmatrix}
+0 & 2 & -1 \\
+3 & -2 & 0 \\
+-2 & 2 & 1 \\
+\end{pmatrix}\cdot$
+\end{Exa}
+
+
+
+\begin{Exa} Diagonaliser $\begin{pmatrix}
+1 & 0& 1 \\
+-1 & 2 & 1 \\
+0 & 0 & 2 \\
+\end{pmatrix}\cdot$
+\end{Exa}
+
+
+
+\begin{Exa} Soit $A= \begin{pmatrix}
+0 & a \\
+b & 0
+\end{pmatrix} \in \mathcal{M}_n(\mathbb{R})$ où $(a,b) \in \mathbb{R}^2$. 
+
+Donner une condition nécessaire et suffisante sur $(a,b)$ pour que $A$ soit diagonalisable.
+\end{Exa}
+
+
+\begin{Exa} Posons :
+    \[
+    A =
+    \begin{pmatrix}
+      1 & 1 & 1 & 1 \\
+      2 & 2 & 2 & 2 \\
+      3 & 3 & 3 & 3 \\
+      4 & 4 & 4 & 4
+    \end{pmatrix}
+    \]
+Déterminer simplement les valeurs propres de $A$. La matrice $A$ est-elle diagonalisable?
+\end{Exa}
+
+
+
+\begin{Exa}\label{Rang} Soit $A \in \mathcal{M}_{n}(\mathbb{K})$ de rang $1$. Montrer que $A$ est diagonalisable si et seulement si $\textrm{Tr}(A) \neq 0$ \end{Exa}
+
+
+\begin{Exa} Soient $a \in \mathbb{C}^*$ et $A$ la matrice de $\mathcal{M}_n(\mathbb{C})$ définie par $A=( a^{i+j-2})_{1 \leq i,j \leq n}$.
+
+\begin{enumerate}
+%\item Dans le cas où $a \in \mathbb{R}$, montrer que $A$ est diagonalisable.
+\item Donner une valeur propre de $a$.
+\item Déterminer une condition nécessaire sur $a$ pour que $A$ soit diagonalisable.
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa}[\ding{80}] Posons, pour $n \geq 1$, la matrice $A_n$ d'ordre $2n$ suivante :
+$$ A_n = \begin{pmatrix}
+1 & 2n & 1 & \cdots & 2n \\
+2 & 2n-1 & 2 & \cdots & 2n-1 \\
+3 & 2n-2 & 3 & \cdots & 2n-2 \\
+\vdots & \vdots & \vdots &  & \vdots \\
+2n & 1 & 2n & \cdots & 1
+\end{pmatrix}$$
+
+\begin{enumerate}
+\item Déterminer le rang de $A_n$.
+\item Montrer que $A_n$ est diagonalisable.
+%\item Déterminer ses éléments propres.
+\end{enumerate}
+\end{Exa}
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Polynômes annulateurs}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $A$ la matrice de $\mathcal{M}_n(\mathbb{R})$ avec des coefficients égaux à $1$, sauf ceux de la diagonale valant $0$.
+
+\begin{enumerate}
+%\item La matrice est-elle diagonalisable ?
+\item Calculer $(A+I_n)^2$.
+\item Montrer que si $P$ est un polynôme annulateur de $A$ alors toute valeur propre de $A$ est racine de $P$.
+\item La matrice $A$ est-elle diagonalisable ? Déterminer ses valeurs propres de $A$. 
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa} Soit $A \in \mathcal{M}_n(\mathbb{R})$, non nulle, vérifiant $A^3+9A=0_n$.
+\begin{enumerate}
+\item Montrer que les valeurs propres éventuelles de $A$ sont $0$, $3i$ et $-3i$.
+\item $A$ est-elle diagonalisable dans $\mathbb{C}$? Dans $\mathbb{R}$?
+\item Montrer que $A$ n'est pas inversible si $n$ est impair. 
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Soit $A = \begin{pmatrix}
+1 & 1 & 0 \\
+-1 & 0 & 0 \\
+2 & 0 & -1 
+\end{pmatrix}\cdot$
+\begin{enumerate}
+\item Montrer qu'il n'existe pas de polynôme annulateur non nul et de degré inférieur ou égal à deux de $A$.
+\item Trouver un polynôme annulateur de $A$ et en déduire $A^{-1}$.
+\item Quels sont les polynômes annulateurs de $A$?
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa}
+  \begin{enumerate}
+  \item  Soit $A \in \mathcal{M}_{n}(\mathbb{C})$ nilpotente. Déterminer $\chi_{A}$.
+  \item Même question avec $A \in \mathcal{M}_{n}(\mathbb{R})$.
+  \end{enumerate}
+\end{Exa} 
+
+
+\begin{Exa}[\ding{80}] Soient $n \geq 3$ et $A \in \mathcal{M}_{n}(\mathbb{C})$ une matrice de rang $2$, de trace nulle et telle que $A^n$ soit non nulle. Montrer que $A$ est diagonalisable.
+\end{Exa}
+
+
+\begin{Exa}[\ding{80}] Soit $A \in \mathcal{M}_{n}(\mathbb{R})$ telle que :
+  \[
+  A^{3} - A^{2} + A - I_n = 0_n
+  \]
+Montrer que $\textrm{det}(A) = 1$.
+\end{Exa}
+
+
+\begin{Exa} Pour tout $\begin{pmatrix}
+a & b \\
+c & d 
+\end{pmatrix} \in \mathcal{M}_2(\mathbb{R})$, on pose :
+$$ f \left( \begin{pmatrix}
+a & b \\
+c & d 
+\end{pmatrix} \right) = \begin{pmatrix}
+-a & c \\
+b & -d 
+\end{pmatrix}$$
+
+\begin{enumerate}
+\item Montrer que $f$ est un endomorphisme de $\mathcal{M}_2(\mathbb{R})$.
+\item $f$ est-il diagonalisable ? inversible ?
+\item Déterminer les éléments de propres de $f$.
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Soient $A \in \mathcal{M}_n(\mathbb{R})$ et $f_A : \mathcal{M}_n(\mathbb{R}) \rightarrow \mathcal{M}_n(\mathbb{R})$ définie $f_A(M)=AM$.
+
+\begin{enumerate}
+\item Montrer que $f_A$ est un endomorphisme de $\mathcal{M}_n(\mathbb{R})$.
+\item Montrer que si $A^2=A$ alors $f_A$ est un projecteur.
+\item Montrer que $A$ est diagonalisable si et seulement $f_A$ l'est.
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Soit $A \in GL_n(\mathbb{R})$. Montrer que $f$, définie pour tout $M \in \mathcal{M}_n(\mathbb{R})$ par $f(M)= 2 \textrm{Tr}(M) A$, est un endomorphisme de $\mathcal{M}_n(\mathbb{R})$. Est-il diagonalisable ?
+\end{Exa}
+
+
+\begin{Exa}  Pour tout $M \in \mathcal{M}_n(\mathbb{R})$, on pose :
+$$ \varphi(M) = M +2 \, {}^t M$$
+\begin{enumerate}
+\item Trouver un polynôme annulateur de $\varphi$.
+\item Qu'en déduit-on ?
+\item Déterminer les sous-espaces propres ainsi que leurs dimensions.
+\item Donner la trace de $\varphi$.
+\end{enumerate}
+\end{Exa}
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Trigonalisation}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $A= \begin{pmatrix}
+1 & -3 & 4 \\
+4 & -7 & 8 \\
+6 & -7 & 7 \\
+\end{pmatrix}\cdot$
+
+\begin{enumerate}
+\item La matrice $A$ est-elle diagonalisable ? Trigonalisable ?
+\item Trigonaliser la matrice $A$. 
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa} Soient $A = \begin{pmatrix} -1 &\phantom-2 & 0 \cr 2 &2 &-3 \cr -2 &2 &1 \cr \end{pmatrix}$ et $\varphi$ l'endomorphisme de $\R^3$ canoniquement associé à $A$.
+
+\begin{enumerate}
+  \item Vérifier que $A$ n'est pas diagonalisable.
+    
+  \item Chercher deux vecteurs propres de $A$ linéairement indépendants.
+    
+  \item Compléter ces vecteurs en une base de $\R^3$.
+    
+  \item \'Ecrire la matrice de $\varphi$ dans cette base.
+        
+\end{enumerate}
+\end{Exa} 
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Applications de la réduction}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Déterminer un polynôme annulateur de degré $2$ de :
+$$ A = \begin{pmatrix}
+1 & 2 & 2 \\
+2 & 1 & 2 \\
+2 & 2 & 1 \\
+\end{pmatrix}$$
+En déduire les puissances de $A$. 
+\end{Exa}
+
+
+\begin{Exa}Soit $A= \begin{pmatrix}
+1 & 2 & 0 \\
+0 & 3 & 0 \\
+4 & 0 & -1 \\
+\end{pmatrix}\cdot$
+\begin{enumerate}
+\item Montrer que $A$ est diagonalisable et donner ses valeurs propres.
+\item Soit $D$ la matrice diagonale portant les valeurs propres de $A$. Montrer que si une matrice $M \in \mathcal{M}_3(\mathbb{R})$ commute avec $D$ alors elle est diagonale.
+\item Soit $P(X)=X^7+ 4X^3+1$. Trouver toutes les matrices $M$ de $\mathcal{M}_3(\mathbb{R})$ telles que $P(M)=A$.
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa}
+\begin{enumerate}
+\item R\'eduire la matrice $A= \left(\begin{array}{rrr}  2 & 2 & 1\\
+1 & 3 & 1\\
+1 & 2 & 2 \end{array}\right) \cdot $\\
+\item Déterminer alors le commutant de $A$, noté $\mathcal{C}(A)$ et défini par : 
+$${\cal C}(A)=\{M\in{\cal M}_3(\R) \, \vert \, AM=MA\}$$
+\end{enumerate}
+\end{Exa} 
+
+
+
+\begin{Exa} Soit $A= \begin{pmatrix}
+2 & 3 & 1 \\
+0 & -4 & -2 \\
+4 & 12 & 5 \\
+\end{pmatrix}\cdot$
+
+\begin{enumerate}
+\item Diagonaliser $A$.
+\item Montrer que si $B \in \mathcal{M}_n(\mathbb{C})$ est telle que $B^2=A$ alors $A$ et $B$ commutent.
+\item Déterminer $\lbrace B \in \mathcal{M}_n(\mathbb{C}) \, \vert \, B^2=A \rbrace \cdot$
+\end{enumerate}
+\end{Exa} 
+
+
+\begin{Exa}
+Soit $A$ la matrice de $\mathcal{M}_{3}\left(\mathbb{R}\right)$
+d\'efinie par
+\[
+A=\left(\begin{array}{ccc}
+1 & -1 & -1\\
+-1 & 1 & -1\\
+-1 & -1 & 1
+\end{array}\right)
+\]
+
+\begin{enumerate}
+\item Montrer que la matrice $A$ est diagonalisable. D\'eterminer ses valeurs propres et ses sous-espaces propres.
+\item D\'eterminer une relation entre $A^{2}$, $A$ et $I_{n}$.\\
+En d\'eduire une relation entre $A^{n+1}$, $A^{n}$ et $A^{n-1}$ pour
+tout entier $n\geq1$.
+\item Montrer par r\'ecurrence qu'il existe deux suites $\left(u_{n}\right)_{n\in\mathbb{N}}$
+et $\left(v_{n}\right)_{n\in\mathbb{N}}$ telles que
+\[
+\forall n\in\mathbb{N},\quad A^{n}=\left(\begin{array}{ccc}
+u_{n} & v_{n} & v_{n}\\
+v_{n} & u_{n} & v_{n}\\
+v_{n} & v_{n} & u_{n}
+\end{array}\right)
+\]
+qui v\'erifient la relation de r\'ecurrence :
+\[
+\forall n\geq1,\quad\left\{ \begin{array}{ccc}
+u_{n+1} & = & u_{n}+2u_{n-1}\\
+v_{n+1} & = & v_{n}+2v_{n-1}
+\end{array}\right.
+\]
+\item D\'eterminer, pour tout entier naturel $n$, l'expression de $u_{n}$
+et $v_{n}$ en fonction de $n$.
+\end{enumerate}
+\end{Exa}
+
+
+
+
+\begin{Exa} Soient $(u_k)_{k \geq 0}$ et $(v_k)_{k \geq 0}$ deux suites \`a termes r\'eels d\'efinies par
+$$\left\{\begin{array}{l}u_0=1\\ v_0=2\end{array}\right.\qquad\hbox{et}\qquad \forall k\in\N,\;\left\{\begin{array}{l}u_{k+1}=4u_k-2v_k\\
+v_{k+1}=u_k+v_k\end{array}\right.$$
+Déterminer pour tout entier $k \geq 0$, l'expression de $u_k$ et $v_k$ en fonction de $k$.
+\end{Exa}
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Matrices définies par blocs}}}
+\end{center}
+
+\medskip
+
+\begin{Exa}[\ding{80}] Soit $A= \begin{pmatrix}
+1& 2 \\
+2 & 1 \\
+\end{pmatrix}\cdot$
+\begin{enumerate}
+\item $A$ est-elle diagonalisable ? $A$ est-elle inversible ? Donner les éléments propres de $A$.
+\item  On définit $B = \begin{pmatrix}
+A & A \\
+A & A 
+\end{pmatrix}\cdot$
+
+$B$ est-elle diagonalisable ? Donner les éléments propres de $B$.
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa}[\ding{80}] Soient $A$ et $B$ deux matrices complexes inversibles d'ordres $n \geq 1$. On pose :
+$$ N = \begin{pmatrix}
+0 & B \\
+A & 0
+\end{pmatrix}$$
+\begin{enumerate}
+\item Montrer que $N$ est inversible et déterminer $N^{-1}$.
+\item Calculer $N^2$ et $P(N^2)$ pour $P \in \mathbb{C}[X]$.
+\item Si $N$ est diagonalisable, $AB$ l'est-elle ? Étudier la réciproque.
+\end{enumerate}
+\end{Exa}
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Divers}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $A \in \mathcal{M}_{n}(\mathbb{R})$ dont des valeurs propres réelles sont positives. Montrer que le déterminant de $A$ est positif ou nul.
+\end{Exa} 
+
+
+
+
+\begin{Exa}
+\begin{enumerate}
+\item Deux matrices carrées $A$ et $B$ d'ordre $n \geq 2$ possèdent le même spectre. Sachant que leurs valeurs propres sont deux à deux distinctes, montrer que $A$ et $B$ sont semblables.
+\item Donner deux matrices possédant les mêmes valeurs propres mais qui ne soient pas semblables.
+\end{enumerate}
+\end{Exa} 
+
+
+
+
+
+\begin{Exa}[\ding{80}] \begin{enumerate}
+\item Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension $3$. Montrer que $H$, plan de $E$, est stable par $u \in \mathcal{L}(E)$ si et seulement si il existe $\lambda \in \mathbb{K}$ tel que $\textrm{Im}(u- \lambda \textrm{Id}) \subset H$.
+\item Trouver tous les sous-espaces de $\mathcal{M}_{3,1}(\mathbb{R})$ stables par l'application linéaire canoniquement associée à 
+$$A= \begin{pmatrix}
+-1 & 2 & -3 \\
+-2 & -5 & -2 \\
+-2 & 2 & 0 \\
+\end{pmatrix} $$
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa}[\ding{80}] Soient $A \in \mathcal{M}_{3,2}(\mathbb{R})$ et $B \in \mathcal{M}_{2,3}(\mathbb{R})$ telles que :
+$$ AB = \begin{pmatrix}
+1 & 0 & x \\
+0 & 1 & 0 \\
+1 & 0 & 1 
+\end{pmatrix}$$
+où $x \in \mathbb{R}$.
+\begin{enumerate}
+\item La matrice $AB$ est-elle inversible ? Quelles sont les valeurs possibles de $x$ ?
+\item La matrice $BA$ est-elle diagonalisable?
+\item Montrer que $\mathbb{R}^3 = \textrm{Im}(A) \oplus \textrm{Ker}(B)$.
+\item Montrer qu'il existe une infinité de couples $(A,B)$ vérifiant l'hypothèse donnée dans l'énoncé.
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Soient $A,B \in \mathcal{M}_{n}(\mathbb{K})$. Le but de l'exercice est de montrer que $\chi_{AB} = \chi_{BA}$.
+\begin{enumerate}
+\item Montrer le résultat quand $A$ est inversible.
+\item En déduire le résultat dans ce cas général. \textit{On pourra utiliser, pour $x \in \mathbb{K}$ fixé, les applications $f : \mathbb{K} \rightarrow \mathbb{K}$ et $g : \mathbb{K} \rightarrow \mathbb{K}$ définies par :}
+$$ f(t) = \textrm{det}((A-t I_n)B -x I_n) \; \hbox{ et } g(t) = \textrm{det}(B(A-tI_n)-xI_n)$$
+\end{enumerate}
+\end{Exa}
+
+
+\begin{Exa}[\ding{80}]  Soient $f$ et $g$ deux endomorphismes diagonalisables d'un espace vectoriel $E$ de dimension finie. Montrer que si $f$ et $g$ commutent alors il existe une base diagonalisante commune à $f$ et $g$.
+\end{Exa}
+
+
+
+\end{document}

@@ -1,0 +1,947 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{cours}
+\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\usepackage{pifont}
+
+\begin{document}
+\everymath{\displaystyle}
+
+
+\begin{center}
+\textit{{ {\huge TD 14 : Espaces préhilbertiens réels, }}}
+
+\textit{{ {\huge espaces euclidiens}}}
+\end{center}
+
+\bigskip
+
+\noindent Si rien n'est précisé dans un exercice, le produit scalaire utilisé est noté $< \cdot , \cdot >$ et la norme associée est notée $\Vert \cdot \Vert$.
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Produit scalaire, orthogonalité}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} On pose pour tout $(P,Q) \in \mathbb{R}[X]^2$,
+$$ <P,Q> = \sum_{n=0}^{+ \infty} P(n) Q(n) e^{-n} $$
+Justifier que cela définit un produit scalaire sur $\mathbb{R}[X]$.
+\end{Exa}
+
+\corr Commençons par justifier que l'application est bien définie. Soit $(P,Q) \in \mathbb{R}[X]^2$. D'après le théorème des croissances comparées, on a :
+$$ \lim_{n \rightarrow + \infty} n^2 P(n)Q(n) e^{-n} = 0$$
+donc
+$$ P(n)Q(n) e^{-n} \underset{+ \infty}{=} o \left( \dfrac{1}{n^2} \right)$$
+La série de terme général positif $1/n^2$ converge (série de Riemann avec $2>1$) donc par critère de comparaison la série de terme général $P(n)Q(n) e^{-n}$ converge absolument donc converge. Ainsi, $<P,Q>$ est bien défini.
+
+\medskip
+
+\noindent Vérifions les différents points de la définition.
+
+\begin{itemize}
+\item Pour tout $(P,Q) \in \mathbb{R}[X]^2$, $<P,Q> \in \mathbb{R}$.
+\item Pour tout $(P,Q) \in \mathbb{R}[X]^2$, $<P,Q>= <Q,P>$ (par commutativité du produit de nombres).
+\item La bilinéarité est évidente par symétrie et par linéarité par rapport à la première variable (dû à la linéarité de la somme).
+\item Soit $P \in \mathbb{R}[X]$. Alors :
+$$ <P,P> = \sum_{k=0}^{+\infty} P(k)^2 e^{-k} \geq 0$$
+Si $<P,P>=0$, la série de terme général positif $P(k)^2 e^{-k}$ a donc une somme nulle. La suite des sommes partielles étant croissante et positive, on en déduit que c'est la suite nulle donc toutes les sommes partielles (de termes positifs) sont nulles donc on en déduit que pour tout $k \geq 0$,
+$$ P(k)^2 e^{-k} = 0$$
+et ainsi $P(k)=0$. Le polynôme $P$ a donc une infinité de racines et est donc le polynôme nul.
+\end{itemize}
+Ainsi, cela définit un produit scalaire sur $\mathbb{R}[X]$.
+
+
+
+
+\begin{Exa}\label{PS} On pose pour tout $(P,Q) \in \mathbb{R}[X]^2$,
+$$ <P,Q> = \int_{0}^1 \dfrac{P(t)Q(t)}{\sqrt{1-t}} \dt $$
+Justifier que cela définit un produit scalaire sur $\mathbb{R}[X]$.
+\end{Exa}
+
+\corr Commençons par justifier que l'application est bien définie. Soit $(P,Q) \in \mathbb{R}[X]^2$. Le polynôme $PQ$ est continue sur le segment $[0,1]$\footnote{On confond polynôme et fonction polynomiale.} donc est bornée sur ce segment : il existe un réel positif $M$ tel que pour tout $x \in [0,1]$,
+$$ \vert P(x)Q(x) \vert \leq M$$
+On a alors pour tout $t \in ]0,1]$,
+$$ \left\vert  \dfrac{P(t)Q(t)}{\sqrt{1-t}} \right\vert \leq \dfrac{M}{\sqrt{1-t}}$$
+Pour tout $A \in ]0,1[$, on a :
+$$ \int_{0}^A \dfrac{1}{\sqrt{1-t}} \dt = [-2 \sqrt{1-t}]_0^A = - 2 \sqrt{1-A}+2$$
+On en déduit que :
+$$ \lim_{A \rightarrow 1}  \int_{0}^A \dfrac{1}{\sqrt{1-t}} \dt = 2$$
+Ainsi, la fonction (positive) $t \mapsto \dfrac{M}{\sqrt{1-t}}$ est intégrable donc par critère de comparaison, la fonction :
+$$ t \mapsto  \dfrac{P(t)Q(t)}{\sqrt{1-t}} $$
+aussi et $<P,Q>$ est donc bien défini.
+
+\medskip
+
+\noindent Vérifions les différents points de la définition.
+
+\begin{itemize}
+\item Pour tout $(P,Q) \in \mathbb{R}[X]^2$, $<P,Q> \in \mathbb{R}$.
+\item Pour tout $(P,Q) \in \mathbb{R}[X]^2$, $<P,Q>= <Q,P>$ (par commutativité du produit de nombres).
+\item La bilinéarité est évidente par symétrie et par linéarité par rapport à la première variable (dû à la linéarité de l'intégrale).
+\item Soit $P \in \mathbb{R}[X]$. Alors :
+$$ <P,P> =\int_0^1 \dfrac{P(t)^2}{\sqrt{1-t}} \dt \geq 0$$
+par positivité de l'intégrale (les bornes sont dans le bon sens). Si $<P,P>=0$, alors pour stricte positivité de l'intégrale, on en déduit que :
+$$ \forall t \in [0,1[, \; \dfrac{P(t)^2}{\sqrt{1-t}}=0$$
+et donc, $P(t)=0$. Le polynôme $P$ admet donc une infinité de racines et est donc le polynôme nul. 
+\end{itemize}
+Ainsi, cela définit un produit scalaire sur $\mathbb{R}[X]$.
+
+
+\begin{Exa} \label{PS2} On pose pour tout $(f,g) \in \mathcal{C}^1([0,1],\mathbb{R})^2$,
+$$ <f,g> = \int_{0}^1 f'(x)g'(x)+f(x)g(x) \dx$$
+Justifier que cela définit un produit scalaire sur $\mathcal{C}^1([0,1],\mathbb{R})$.
+\end{Exa} 
+
+\corr 
+
+\begin{itemize}
+\item Pour tout $(f,g) \in \mathcal{C}^1([0,1],\mathbb{R})^2$, $<f,g>$ est bien définie car $f$, $g$, $f'$ et $g'$ sont continues sur $[0,1]$ et ces fonctions sont à valeurs réelles donc $<f,g> \in \mathbb{R}$.
+\item Pour tout $(f,g) \in \mathcal{C}^1([0,1],\mathbb{R})^2$, $<f,g>= <g,f>$ (par commutativité du produit de nombres).
+\item La bilinéarité est évidente par symétrie et par linéarité par rapport à la première variable (dû à la linéarité de l'intégrale et de la dérivation).
+\item Soit $f \in \mathcal{C}^1([0,1],\mathbb{R})$. Alors :
+$$ <f,f> =\int_0^1 f'(t)^2+f(t)^2 \dt \geq 0$$
+par positivité de l'intégrale (les bornes sont dans le bon sens). Si $<f,f>=0$, alors pour stricte positivité de l'intégrale, on en déduit que :
+$$ \forall t \in [0,1], \, f'(t)^2+f(t)^2=0$$
+et donc, $f'(t)=f(t)=0$. On en déduit que $f$ est la fonction nulle. 
+\end{itemize}
+Ainsi, cela définit un produit scalaire sur $\mathcal{C}^1([0,1],\mathbb{R})$.
+
+\begin{Exa} Soit $H$ un espace préhilbertien et $f : H \rightarrow H$ une application telle que :
+$$ \forall (x,y) \in H^2, \; <f(x),y>=<x,f(y)>$$
+Montrer que $f \in \mathcal{L}(H)$.
+\end{Exa} 
+
+\corr Soient $\lambda \in \mathbb{R}$ et $(x,y) \in H^2$. Pour tout $z \in H$, on a :
+\begin{align*}
+<f(\lambda x +y),z> & = <\lambda x+y, f(z)> \quad \hbox{(par hypothèse)} \\
+& = \lambda <x,f(z)> + <y,f(z)> \quad \hbox{(linéarité par rapport à la première variable)} \\
+& = \lambda <f(x),z) + <f(y),z>  \quad \hbox{(par hypothèse)} \\
+& = <\lambda f(x)+f(y), z> 
+\end{align*}
+par linéarité par rapport à la première variable. Toujours par linéarité, on en déduit que pour tout $z \in H$,
+$$ <f(\lambda x +y)-\lambda f(x)-f(y), z> =0$$
+Ainsi, le vecteur $f(\lambda x +y)-\lambda f(x)-f(y)$ appartient à l'orthogonal de $H$ qui ne contient que le vecteur nul donc :
+$$ f(\lambda x +y)-\lambda f(x)-f(y) = 0_H$$
+et finalement,
+$$ f(\lambda x +y)= \lambda f(x)+f(y)$$
+On en déduit que $f \in \mathcal{L}(H)$.
+
+\begin{Exa} Considérons $\mathbb{R}^5$ muni du produit scalaire usuel. Soit $F= \textrm{Vect}(x_1,x_2)$ où
+$$ x_1 = (1,1,1,1,1) \et x_2 = (1,2,3,4,5)$$
+Déterminer une base de $F^{\perp}$.
+\end{Exa} 
+
+\corr Soit $x= (x_1,x_2,x_3,x_4,x_5) \in \mathbb{R}^5$. Alors :
+\begin{align*}
+x \in F^{\perp} & \Longleftrightarrow <x,x_1>=0 \, \hbox{ et } \,  <x,x_2>=0 \\
+& \Longleftrightarrow x_1+x_2+x_3+x_4+x_5=0 \, \hbox{ et } \, x_1+2x_2+3x_3+4x_4+5x_5=0 \\
+& \Longleftrightarrow x_1=-x_2-x_3-x_4-x_5 \, \hbox{ et } \, x_1+2x_2+3x_3+4x_4+5x_5=0 \\
+& \Longleftrightarrow x_1=-x_2-x_3-x_4-x_5 \, \hbox{ et } \, -x_2-x_3-x_4-x_5+2x_2+3x_3+4x_4+5x_5=0 \\
+&  \Longleftrightarrow x_1=-x_2-x_3-x_4-x_5 \, \hbox{ et } \, x_2=-2x_3-3x_4-5x_5 \\
+&  \Longleftrightarrow x_1=2x_3+3x_4+5x_5-x_3-x_4-x_5 \, \hbox{ et } \, x_2=-2x_3-3x_4-5x_5 \\
+&  \Longleftrightarrow x_1=x_3+2x_4+4x_5 \, \hbox{ et } \, x_2=-2x_3-3x_4-5x_5 \\
+& \Longleftrightarrow x= (x_3+2x_4+4x_5, -2x_3-3x_4-5x_5,x_3,x_4,x_5) \\
+& \Longleftrightarrow x= x_3 u+x_4 v+ x_5w
+\end{align*}
+où
+$$ u=(1,-2,1,0,0), \, v =(2,-3,0,1,0) \, \hbox{ et } \, w=(4,-5,0,0,1)$$
+Ainsi,
+$$ F^{\perp} = \textrm{Vect}(u,v,w)$$
+On montre facilement (à faire) que la famille $(u,v,w)$ est libre donc c'est une base de $F^{\perp}$.
+
+\begin{Exa} Soient $x$ et $y$ deux vecteurs d'un espace préhilbertien réel tels que :
+$$ \forall \lambda \in \mathbb{R}, \; \Vert x+\lambda y \Vert \geq \Vert x \Vert$$
+Montrer que $x$ et $y$ sont orthogonaux.
+\end{Exa}
+
+\corr Par croissance de la fonction carré sur $\mathbb{R}_{+}$, on a pour tout $\lambda \in \mathbb{R}$,
+$$ \Vert x+\lambda y \Vert^2 \geq \Vert x \Vert^2$$
+ou encore :
+$$ \Vert x \Vert^2 + 2  <x,\lambda y> + \Vert \lambda y \Vert^2 \geq \Vert x \Vert^2$$
+et ainsi par bilinéarité et homogénéité :
+$$ 2 \lambda <x,y> + \lambda^2 \Vert y \Vert^2 \geq 0$$
+ce qui donne en factorisant :
+$$ \lambda (2<x,y> + \lambda \Vert y \Vert^2) \geq 0$$
+Si $y$ est le vecteur nul, le résultat souhaité est évident. Supposons maintenant que $y$ n'est pas le vecteur nul. Alors $\Vert y \Vert^2$ est non nul et le polynôme $X(2<x,y>+ X \Vert y \Vert^2)$ est donc un polynôme de degré $2$ positif et ayant $0$ pour racine. On sait alors que $0$ est racine double donc $2<x,y>+0=0$ donc $x$ et $y$ sont orthogonaux.
+
+
+\begin{Exa} Soient $F, G$ deux sous-espaces vectoriels d'un espace euclidien $E.$ Montrer que :
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item $F\subset G \ \Longrightarrow \ G^{\perp}\subset F^{\perp}$
+\item $(F+G)^{\perp}=F^{\perp}\cap G^{\perp}$
+\columnbreak
+\item $(F\cap G)^{\perp}=F^{\perp}+G^{\perp}$
+\item $E=F\oplus G \ \Longleftrightarrow \ E=G^{\perp}\oplus F^{\perp}$
+\end{enumerate}
+\end{multicols}
+\end{Exa}
+
+\corr
+
+\begin{enumerate}
+\item Supposons que $F\subset G$. Soit $x \in G^{\perp}$. Alors :
+$$ \forall y \in G, \, <x,y>=0$$
+Sachant que $F \subset G$, on a :
+$$ \forall y \in F, \, <x,y>=0$$
+Ainsi, $x \in F^{\perp}$. Finalement :
+$$F\subset G \ \Longrightarrow \ G^{\perp}\subset F^{\perp}$$
+\item Raisonnons par double inclusion.
+\begin{itemize}
+\item Soit $x \in (F+G)^{\perp}$. Alors :
+$$ \forall (f,g) \in F \times G, \, <x,f+g>=0$$
+$F$ et $G$ sont des sous-espaces vectoriels de $E$ donc contiennent le vecteur nul donc :
+$$ \forall f \in F  \, <x,f>=<x,f+0_E>=0$$
+donc $x \in F^{\perp}$ et 
+$$ \forall g \in G  \, <x,g>=<x,0_E+g>=0$$
+donc $g \in G^{\perp}$. Ainsi, $x \in F^{\perp}\cap G^{\perp}$.
+\item Soit $x \in F^{\perp}\cap G^{\perp}$. Soit $z \in F+G$. Alors :
+$$ \exists (f,g) \in F \times G \, \vert \, z=f+g$$
+Par bilinéarité du produit scalaire, on a alors :
+$$ <x,z>=<x,f+g> = <x,f>+<x,g> = 0$$
+car $x \in F^{\perp}\cap G^{\perp}$. Ainsi, $x \in (F+G)^{\perp}$.
+\end{itemize}
+Finalement,
+$$(F+G)^{\perp}=F^{\perp}\cap G^{\perp}$$
+\item Montrons que :
+$$ F^{\perp}+G^{\perp} \subset (F\cap G)^{\perp}$$
+Soit $x \in F^{\perp}+G^{\perp}$. Alors :
+$$ \exists (a,b) \in F^{\perp} \times G^{\perp}, \; x=a+b$$
+Soit $z \in F \cap G$. Alors par bilinéarité du produit scalaire,
+$$ <z,a+b>=<z,a>+<z,b>=0$$
+car $z$ est un élément de $F$ et de $G$ et que $a$ appartient à $F^{\perp}$ et $b$ appartient à $G^{\perp}$. Ainsi,
+$$ x \in (F\cap G)^{\perp}$$
+Finalement,
+$$ F^{\perp}+G^{\perp} \subset (F\cap G)^{\perp}$$
+L'espace $E$ est euclidien donc :
+\begin{align*}
+ \textrm{dim}(F^{\perp}+G^{\perp}) & =  \textrm{dim}(F^{\perp}) +  \textrm{dim}(G^{\perp}) -  \textrm{dim}(F^{\perp} \cap G^{\perp}) \\
+ & = \textrm{dim}(E) - \textrm{dim}(F) + \textrm{dim}(E)- \textrm{dim}(G) - \textrm{dim}(F^{\perp} \cap G^{\perp}) \\ 
+ & = 2 \textrm{dim}(E) - \textrm{dim}(F) - \textrm{dim}(G) - \textrm{dim}(F^{\perp} \cap G^{\perp})\\
+\end{align*}
+D'après la question précédente, on sait que :
+$$ (F+G)^{\perp}=F^{\perp}\cap G^{\perp}$$ 
+donc 
+ \begin{align*}
+ \textrm{dim}(F^{\perp}+G^{\perp}) & = 2 \textrm{dim}(E) - \textrm{dim}(F) - \textrm{dim}(G) - \textrm{dim}((F+G)^{\perp})\\
+ & =  2 \textrm{dim}(E) - \textrm{dim}(F) - \textrm{dim}(G) -  (\textrm{dim}(E) - \textrm{dim}(F+G)) \\
+ & = \textrm{dim}(E) - \textrm{dim}(F) - \textrm{dim}(G) + \textrm{dim}(F+G) \\
+ & =  \textrm{dim}(E) -  \textrm{dim}(F \cap G)) \quad \hbox{(formule de Grassman)} \\
+ & = \textrm{dim}((F \cap G)^{\perp}) 
+ \end{align*}
+ Ainsi, on a montré une inclusion et l'égalité des dimensions donc :
+$$(F\cap G)^{\perp}=F^{\perp}+G^{\perp}$$
+\item Supposons que $E=F\oplus G$. Sachant que $E$ est un espace euclidien, on a :
+\begin{align*}
+\textrm{dim}(G^{\perp}) + \textrm{dim}(F^{\perp})& = \textrm{dim}(E)- \textrm{dim}(G) + \textrm{dim}(E)- \textrm{dim}(F) \\
+& = (\textrm{dim}(E)- \textrm{dim}(G)- \textrm{dim}(F)) + \textrm{dim}(E) \\
+& =  0  + \textrm{dim}(E) \\
+& = \textrm{dim}(E) 
+\end{align*}
+Soit $x \in G^{\perp} \cap F^{\perp}$. Alors d'après la question $2.$, 
+$$ x \in (F+G)^{\perp}$$
+D'après l'hypothèse, $F+G=E$ donc $(F+G)^{\perp}= E^{\perp} = \lbrace 0_E \rbrace$ et ainsi, $x =0_E$. Réciproquement, le vecteur nul appartient à $G^{\perp} \cap F^{\perp}$ (intersection de deux sous-espaces vectoriels). Finalement,
+$$ G^{\perp} \cap F^{\perp} = \lbrace 0_E \rbrace$$
+et ainsi,
+$$ E=G^{\perp}\oplus F^{\perp}$$
+Supposons maintenant que $E=G^{\perp}\oplus F^{\perp}$. D'après la première partie du raisonnement, on a :
+$$ E=(G^{\perp})^{\perp} \oplus (F^{\perp})^{\perp}$$
+Sachant que $E$ est euclidien, on en déduit que :
+$$ E= G \oplus F$$
+On a donc montré l'équivalence souhaitée.
+\end{enumerate}
+
+\begin{Exa} Soit $H= \mathcal{C}([0,1],\mathbb{R})$ muni du produit scalaire suivant :
+$$ \forall (f,g) \in H^2, \, <f,g> = \int_{0}^1 f(t) g(t) \dt $$
+Considérons $F= \lbrace f \in H, \, f(0)=0 \rbrace \cdot$
+
+\begin{enumerate}
+\item Montrer que $F$ est un sous-espace vectoriel de $H$ et déterminer son orthogonal.
+\item Que peut-on dire de $(F^{\perp})^{\perp}$? Qu'en déduit-on ?
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Utilisons la méthode des trois points.
+\begin{itemize}
+\item $F \subset H$.
+\item La fonction nulle appartient à $F$.
+\item Soient $\lambda \in \mathbb{R}$ et $(f,g) \in F^2$. Alors :
+$$ (\lambda f+g)(0) = \lambda f(0)+g(0) = 0$$
+donc $\lambda f+g \in F$.
+\end{itemize}
+Ainsi, $F$ est un sous-espace vectoriel de $H$.
+
+\medskip
+
+\noindent Soit $g \in F^{\perp}$. Posons $h$ la fonction de $F$ définie par :
+$$ \forall t \in [0,1], \; h(t)=tg(t)$$
+On sait que $<g,h>=0$ donc :
+$$ \int_0^1 t g(t)^2 \dt =0$$
+Par positivité de l'intégrale (les bornes sont dans le bon sens), on en déduit que :
+$$ \forall t \in [0,1], \; t g(t)^2=0$$
+donc 
+$$ \forall t \in ]0,1], \; g(t)=0$$
+Par continuité de $g$ sur $[0,1]$, on en déduit que $g$ est la fonction nulle sur $[0,1]$. Réciproquement, la fonction nulle appartient à $F^{\perp}$ car c'est un sous-espace vectoriel de $H$. Ainsi, $F^{\perp}$ est réduit à la fonction nulle.
+\item D'après la question précédente, $(F^{\perp})^{\perp}$ est égal à $H$ qui est différent de $F$ car il existe des fonctions de $H$ ne s'annulant pas en $0$. Il faut donc se méfier de l'orthogonal de l'orthogonal d'un sous-espace vectoriel ...
+\end{enumerate}
+
+\begin{Exa} Considérons $\mathcal{M}_2(\mathbb{R})$ muni du produit scalaire usuel. On pose :
+$$A_1 = I_2, \; A_2 = \begin{pmatrix}
+1 & 1 \\
+1 & 1 \\
+\end{pmatrix} \, \hbox{ et } \, A_3 = \begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix}$$
+Montrer que $(A_1,A_2,A_3)$ est une famille libre de $\mathcal{M}_2(\mathbb{R})$ et orthonormaliser cette famille.
+\end{Exa}
+
+\corr Soient $a,b,c$ trois réels tels que :
+$$ a A_1+bA_2+cA_3= 0_2$$
+alors 
+$$ \begin{pmatrix}
+a+b+c & b \\
+b & a+b
+\end{pmatrix}=0_2$$
+donc $b=0$ puis $a=0$ et $c=0$. Ainsi, $(A_1,A_2,A_3)$ est une famille libre de $\mathcal{M}_2(\mathbb{R})$. Posons $X_1=A_1$. On cherche $\alpha \in \mathbb{R}$ tel que :
+$$ <A_2+ \alpha X_1, X_1>=0$$
+ou encore 
+$$ <\begin{pmatrix}
+1+ \alpha & 1 \\
+1 & 1+ \alpha
+\end{pmatrix}, I_2>=0$$
+Par définition du produit scalaire, c'est équivalent à
+$$ \textrm{Tr} \left( ~^t{\begin{pmatrix} 1+ \alpha & 1 \\
+1 & 1+ \alpha
+\end{pmatrix}} I_2 \right)=0$$
+ou encore 
+$$ \textrm{Tr} \left( \begin{pmatrix} 1+ \alpha & 1 \\
+1 & 1+ \alpha
+\end{pmatrix} \right)=0$$
+puis
+$$ 2+ 2 \alpha=0$$
+donc $\alpha=-1$ convient. On pose donc :
+$$ X_2 = A_2 - X_1 = \begin{pmatrix}
+1-1 & 1 \\
+1 & 1-1\\
+\end{pmatrix}
+ = \begin{pmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{pmatrix}$$
+On cherche maintenant $(\alpha, \beta) \in \mathbb{R}^2$ tel que :
+$$ <A_3+ \alpha X_1+ \beta X_2, X_1>=0 \; \hbox{ et } \; <A_3+ \alpha X_1+ \beta X_2, X_2>=0$$
+On a 
+$$ A_3+ \alpha X_1+ \beta X_2 = \begin{pmatrix}
+1 + \alpha & \beta \\
+\beta & \alpha
+\end{pmatrix}$$
+donc
+$$ ~^t(A_3+ \alpha X_1+ \beta X_2)= \begin{pmatrix}
+1 + \alpha & \beta \\
+\beta & \alpha
+\end{pmatrix}$$
+On a évidemment
+$$ ~^t(A_3+ \alpha X_1+ \beta X_2) I_2= \begin{pmatrix}
+1 + \alpha & \beta \\
+\beta & \alpha
+\end{pmatrix}$$
+et 
+$$ ~^t(A_3+ \alpha X_1+ \beta X_2) X_2 = \begin{pmatrix}
+\beta & 1 + \alpha \\
+\alpha& \beta \\
+\end{pmatrix}$$
+Ainsi, on souhaite résoudre :
+$$ \left\lbrace \begin{array}{rl}
+1+ 2 \alpha & = 0 \\
+2 \beta & = 0 
+\end{array}\right.$$
+Ainsi, $\alpha=-1/2$ et $\beta=0$.
+On pose donc :
+$$ X_3 = A_3 - \dfrac{1}{2} X_1 = -\dfrac{1}{2} \begin{pmatrix}
+-1 & 0 \\
+0 & 1 \\
+\end{pmatrix}$$
+On a :
+$$ \Vert X_1 \Vert = \sqrt{1^2+1^2} = \sqrt{2}$$
+De même :
+$$ \Vert X_2 \Vert = \sqrt{1^2+1^2} = \sqrt{2}$$
+et par homogénéité :
+$$ \Vert X_3 \Vert = \dfrac{1}{2} \sqrt{(-1)^2+1^2} = \dfrac{\sqrt{2}}{2}$$
+En posant pour tout $i \in \lbrace 1,2,3 \rbrace$,
+$$ \varepsilon_i = \dfrac{X_i}{\Vert X_i \Vert}$$
+On a alors que $(\varepsilon_1, \varepsilon_2, \varepsilon_3)$ est une famille orthonormée de $\mathcal{M}_2(\mathbb{R})$.
+
+\begin{Exa} Reprenons le produit scalaire de l'exercice \ref{PS2} en posant $E= \mathcal{C}^1([0,1],\mathbb{R})$. On pose :
+$$ F = \lbrace f \in E \, \vert \, f(0)=f(1)=0\rbrace \et G= \lbrace f \in \mathcal{C}^2([0,1],\mathbb{R}) \, \vert \, f''=f \rbrace$$
+Montrer que $F$ et $G$ sont des sous-espaces supplémentaires orthogonaux  de $E$.
+\end{Exa}
+
+\corr Le fait que $F$ et $G$ soient des espaces vectoriels est facile à vérifier avec la méthode des trois points. Montrons pour commencer que ces deux espaces sont orthogonaux. Soit $(f,g) \in F \times G$. On a :
+$$<f,g>= \int_{0}^1 f'(x)g'(x)+f(x)g(x) \dx$$
+Or $g$ appartient à $G$ donc $g$ est de classe $\mathcal{C}^2$ sur $[0,1]$ et $g=g''$ donc 
+\begin{align*}
+ <f,g> & = \int_{0}^1 f'(x)g'(x)+f(x)g''(x) \dx \\
+ & = \int_{0}^1 (fg')'(x) \dx \\
+ &= \left[ f(x)g'(x) \right]_0^1 \\
+ & = f(1)g'(1)-f(0)g'(0) \\
+ & = 0
+ \end{align*}
+ car $f(1)=0$ et $f(0)=0$. Ainsi, $F$ et $G$ sont orthogonaux dans $E$ (en particulier, ils sont en somme directe).
+ 
+ \medskip
+ 
+ \noindent Raisonnons par analyse-synthèse pour montrer que $F$ et $G$ sont supplémentaires dans $E$.
+ 
+ \medskip
+ 
+ \noindent \textit{Analyse.} Soit $f \in E$. On suppose l'existence de $(f_1,f_2) \in F \times G$ tel que $f=f_1+f_2$. La fonction $f_2$ est solution de $y''=y$ dont on connait l'ensemble des solutions : il existe deux réels $\lambda$ et $\mu$ tels que pour tout $x \in [0,1]$,
+ $$ f_2(x) = \lambda e^x + \mu e^{-x}$$
+ Ainsi, pour tout $x \in [0,1]$,
+ $$ f(x)= f_1(x) + \lambda e^x + \mu e^{-x}$$
+ On sait que $f_1$ appartient à $F$ donc $f_1(0)=0$ et $f_2(0) =0$. Cela nous permet d'obtenir un système :
+ $$ \left\lbrace \begin{array}{rl}
+ \lambda + \mu & = f(0) \\
+ \lambda e+ \mu e^{-1} & = f(1) \\
+ \end{array}\right.$$
+ L'opération $L_2 \leftarrow L_2- e L_1$ permet d'obtenir que :
+ $$ \mu (e^{-1}-e) = f(1)-e f(0)$$
+ ou encore :
+ $$ \mu = \dfrac{f(1)-e f(0)}{e^{-1}-e}$$
+ et ainsi
+ \begin{align*}
+ \lambda & = f(0)- \mu \\
+ & = f(0) - \dfrac{f(1)-ef(0)}{e^{-1}-e} 
+ \end{align*}
+ On vient donc de déterminer $f_2$ donc $f_1$.
+ \medskip
+ 
+ \noindent \textit{Synthèse.} Soit $f \in E$. Posons $f_2 : [0,1] \rightarrow \mathbb{R}$ définie par :
+ $$ \forall x \in [0,1], \, f_2(x)= \left(f(0) - \dfrac{f(1)-ef(0)}{e^{-1}-e} \right) e^x + \dfrac{f(1)-ef(0)}{e^{-1}-e} e^{-x}$$
+ et posons $f_1 = f-f_2$. 
+ \begin{itemize}
+ \item $f=f_1+f_2$.
+ \item $f_2$ est solution de $y''=y$ (on connait l'ensemble des solutions donnée dans l'analyse).
+ \item On a :
+ \begin{align*}
+ f_1(0) & = f(0) - \left(f(0) - \dfrac{f(1)-ef(0)}{e^{-1}-e} \right) e^0 - \dfrac{f(1)-fe(0)}{e^{-1}-e} e^{-0} \\
+ & = f(0) -f(0) + \dfrac{f(1)-ef(0)}{e^{-1}-e} + \dfrac{f(1)-ef(0)}{e^{-1}-e} \\
+ & = 0 
+ \end{align*}
+ On obtient de même que $f_1(1)=0$. Ainsi, $f_1 \in F$.
+ \end{itemize}
+ Pour tout $f \in E$, il existe donc un couple $(f_1,f_2) \in F \times G$ tel que $f=f_1+f_2$. Cette décomposition est unique d'après l'analyse (on le savait par orthogonalité qui implique la somme directe). Ainsi, $E= F \oplus G$.
+ 
+ 
+\begin{Exa} Soit $H$ un espace préhilbertien. On suppose qu'il existe une famille $\mathcal{F}=(e_1, \ldots, e_n)$ ($n \geq 1$) de vecteurs unitaires de $H$ telle que :
+$$ \forall x \in H, \; \Vert x \Vert^2= \sum_{k=1}^n <x,e_k>^2 $$
+Montrer que $\mathcal{F}$ est une base orthonormée de $H$.
+\end{Exa}
+
+\corr Soit $i \in \Interv{1}{n}$. Par hypothèse, on a :
+$$ \Vert e_i \Vert^2= \sum_{k=1}^n <e_i,e_k>^2 = <e_i,e_i>^2 + \sum_{k \neq i}^n <e_i,e_k>^2 $$
+Or $e_i$ est unitaire donc sa norme vaut $1$ (donc $<e_i,e_i>$ aussi). Ainsi :
+$$ 0 =  \sum_{k \neq i}^n <e_i,e_k>^2 $$
+Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls donc pour tout $k \in \Interv{1}{n}$, $k \neq i$, on a :
+$$<e_i,e_k>=0$$
+On en déduit que $(e_1, \ldots, e_n)$ est une famille orthogonale, de vecteurs non nuls car unitaires donc c'est aussi une famille libre. Posons :
+$$ F = \textrm{Vect}(\mathcal{F})$$
+
+\medskip
+
+\noindent Soit $x \in H$. Si $x$ est orthogonal à $F$ alors :
+$$ \Vert x \Vert^2= \sum_{k=1}^n <x,e_k>^2 = \sum_{k=1}^n  0 = 0$$
+donc $x$ est le vecteur nul. On en déduit que $F^{\perp} \subset \lbrace 0_H \rbrace$ et l'autre inclusion est vérifiée car $F^{\perp}$ est un sous-espace vectoriel de $H$. Ainsi,
+$$ F^{\perp} = \lbrace 0_H \rbrace$$
+On a donc 
+$$ (F^{\perp})^{\perp} = \lbrace 0_H \rbrace^{\perp} = H$$
+Or $F$ est de dimension finie donc :
+$$ (F^{\perp})^{\perp} = F$$
+donc $F=H$. Ainsi, $\mathcal{F}$ est une famille libre orthogonal qui génère $H$ et composée de vecteurs unitaires donc c'est une base orthonormée de $H$.
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Projection orthogonale}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Donner la matrice de la projection orthogonale sur le plan d'équation $x-2y+z=0$ dans la base canonique de $\mathbb{R}^3$ muni du produit scalaire usuel.
+\end{Exa}
+
+\corr Notons $F$ le plan d'équation $x-2y+z=0$. Le vecteur $(1,-2,1)$ est un vecteur normal à $F$ et sachant que $F^{\perp}$ est de dimension $1$ ($\mathbb{R}^3$ est évidemment de dimension $3$), on en déduit que :
+$$ n = \dfrac{1}{\sqrt{6}} (1,-2,1)$$
+forme une base orthonormée de $F^{\perp}$. 
+
+\medskip
+
+\noindent Notons $p$ (resp. $q$) la projection orthogonale sur $F$ (resp. $F^{\perp}$). Alors $p+q=\textrm{Id}$. D'après le cours, on sait que pour tout $(x,y,z) \in \mathbb{R}^3$,
+\begin{align*}
+ q((x,y,z)) & = <(x,y,z),n>n  \\
+ & = \dfrac{1}{6} (x-2y+z) (1,-2,1) \\
+ & = \dfrac{1}{6} (x-2y+z,-2x+4y-2z,x-2y+z) 
+ \end{align*}
+ et ainsi :
+ \begin{align*}
+p((x,y,z)) & = (x,y,z) - \dfrac{1}{6} (x-2y+z,-2x+4y-2z,x-2y+z)  \\
+& = \dfrac{1}{6} ( (6x,6y,6z) - (x-2y+z,-2x+4y-2z,x-2y+z)) \\
+& = \dfrac{1}{6}(5x+2y-z, 2x+2y+2z,-x+2y+5z)
+\end{align*}
+et ainsi, en notant $\mathcal{B}$ la base canonique de $\mathbb{R}^3$,
+$$ \textrm{Mat}_{\mathcal{B}}(p) = \dfrac{1}{6} \begin{pmatrix}
+5 & 2& -1 \\
+2 & 2 & 2 \\
+-1 & 2& 5
+\end{pmatrix}$$
+
+ \begin{Exa} On munit $\mathcal{M}_2(\mathbb{R})$ de son produit scalaire usuel.
+\begin{enumerate}
+\item Rappeler le produit scalaire usuel sur $\mathcal{M}_{2}(\mathbb{R})$. 
+\item Montrer que $F=\left\{\left(\begin{array}{cc} a & b\\ -b & a \end{array}\right),\ (a,b)\in\R^2\right
+\}$ est un sous-espace vectoriel de ${\cal M}_2(\R).$
+\item Trouver une base de $F^{\perp}$ et d\'eterminer le projet\'e orthogonal de $N=\left(\begin{array}{cc} 1&1\\ 1&1 \end{array}\right)$ sur $F^{\perp}$.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Je refuse : c'est du cours.
+\item On a :
+\begin{align*}
+F & =\left \lbrace \begin{pmatrix} a & b\\ -b & a \end{pmatrix} \, \vert \,  (a,b)\in\R^2\right\rbrace \\
+& = \left\lbrace aM_1+bM_2 \, \vert \, (a,b) \in \mathbb{R}^2 \right\rbrace \\
+& = \textrm{Vect}(M_1,M_2)
+\end{align*}
+où
+$$ M_1 = I_2, \, \hbox{ et } \, M_2 = \begin{pmatrix}
+0 & 1 \\
+-1 & 0 \\
+\end{pmatrix}$$
+\item Soit $M = \begin{pmatrix}
+a & b \\
+c & d 
+\end{pmatrix} \in \mathcal{M}_2(\mathbb{R})$. On a :
+$$<M_1,M> = \textrm{Tr}(~^tI_2 M) = \textrm{Tr}(M) = a+d$$
+et 
+\begin{align*}
+<M_2,M> & = \textrm{Tr}(~^t M_2M) \\
+& = \textrm{Tr} \left( \begin{pmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{pmatrix}  \begin{pmatrix}
+a & b \\
+c & d 
+\end{pmatrix}  \right)   \\
+& =  \textrm{Tr} \left( \begin{pmatrix}
+-c & -d \\
+a & b
+\end{pmatrix} \right) \\
+& = -c+b
+\end{align*}
+Ainsi, $M$ appartient à $F^{\perp}$ si et seulement si $a=-d$ et $b=c$ donc si et seulement si 
+$$ M = d \begin{pmatrix}
+-1 & 0 \\
+0 & 1 
+\end{pmatrix} + b \begin{pmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{pmatrix}$$
+On en déduit que :
+$$ F^{\perp} = \textrm{Vect}(M_3,M_4)$$
+où
+$$ M_3 = \begin{pmatrix}
+-1 & 0 \\
+0 & 1 
+\end{pmatrix} \, \hbox{ et } \, M_4 = \begin{pmatrix}
+0 & 1 \\
+1 & 0 
+\end{pmatrix}$$
+Les vecteurs $M_3$ et $M_4$ sont non colinéaires donc $(M_3,M_4)$ est une base de $F^{\perp}$.
+
+\medskip
+
+\noindent Il est évident que :
+$$ N= M_1+M_4$$
+avec $M_1 \in F$ et $M_2 \in F^{\perp}$. L'espace $F$ est de dimension finie donc $F$ et $F^{\perp}$ sont supplémentaires orthogonaux. On en déduit que le projeté de $N$ sur $F^{\perp}$ est $M_4$.
+\end{enumerate}
+
+\begin{Exa} Soit $E$ un espace vectoriel euclidien de dimension supérieure à $2$.  Soient $x$ et $y$ deux vecteurs distincts de $E$ tels que $$< x, y> =\Vert y \Vert^{2}$$
+ Montrer qu'il existe un unique hyperplan $H$ de $E$ tel que $y = p_{H}(x)$ où $p_H$ est la projection orthogonale sur $H$.
+ \end{Exa}
+ 
+ \corr Raisonnons par analyse-synthèse.
+ 
+ \begin{itemize}
+ \item \textit{Analyse.} Soit $H$ un hyperplan de $E$ tel que $y = p_{H}(x)$. Alors $y \in H$ et $y-x \in H^{\perp}$. Or sachant que $E$ est un espace euclidien, on sait que :
+ $$ \textrm{dim}(H^{\perp})= \textrm{dim}(E) - \textrm{dim}(H)=1$$
+ Le vecteur $y-x$ est non nul car $y$ et $x$ sont distincts donc :
+ $$ H^{\perp}= \textrm{Vect}(y-x)$$
+ Sachant que $E$ est euclidien, on en déduit que :
+ $$ H = \textrm{Vect}(y-x)^{\perp}$$
+ \item \textit{Synthèse.} Posons :
+ $$ H = \textrm{Vect}(y-x)^{\perp}$$
+ Le vecteur $y-x$ est non nul car $y$ et $x$ sont distincts donc $ \textrm{Vect}(y-x)$ est de dimension $1$ et sachant que $E$ est euclidien, on en déduit que :
+ $$ \textrm{dim}(H) = \textrm{dim}(E) - 1 $$
+ donc $H$ est un hyperplan de $E$. Remarquons maintenant que $y \in H$ car par bilinéarité du produit scalaire :
+ $$ <y,y-x> = <y,y>-<y,x>= \Vert y \Vert^2 - <y,x>= 0$$
+ par hypothèse. De plus, on a :
+ $$ x=x-y+y$$
+ avec $x-y \in H^{\perp}$ (car $E$ est euclidien) et $y \in H$. On a donc bien que $y = p_H(x)$.
+\end{itemize}
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Calcul de distances}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Considérons $\R^4$ muni de son produit scalaire usuel. Soient $e_1=(1,0,1,0)$ et $e_2=(1,-1,1,-1)$ et $F=\textrm{Vect}(e_1,e_2)$.
+\begin{enumerate}
+    \item  D\'eterminer une base orthonormale de $F.$
+    \item  D\'eterminer la matrice dans la base canonique de $\R^4$ du projecteur orthogonal
+sur $F.$
+    \item  D\'eterminer la distance du vecteur $(1,1,1,1)$ au sous-espace vectoriel  $F.$
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item La famille $(e_1,e_2)$ est une une base de $F$ car les vecteurs $e_1$ et $e_2$ sont non colinéaires. On cherche $\alpha \in \mathbb{R}$ tel que :
+$$ <e_2+ \alpha e_1>= 0$$
+C'est équivalent à 
+$$ <(1+ \alpha,-1,1+ \alpha,-1),(1,0,1,0)>=0$$
+ou encore 
+$$ 1+ \alpha + 1 +  \alpha = 0$$
+Ainsi, $\alpha=-1$ convient et on a dans ce cas :
+$$ e_2-e_1 = (0,-1,0,-1)$$
+On a :
+$$ \Vert e_1 \Vert = \sqrt{1^2+0^2+1^2+0^2}= \sqrt{2}$$
+et 
+$$ \Vert e_2-e_1 \Vert = \sqrt{0^2+(-1)^2+0^2+(-1)^2} = \sqrt{2}$$
+On pose donc :
+$$ x_1 = \dfrac{e_1}{\Vert e_1 \Vert} = \dfrac{1}{\sqrt{2}} (1,0,1,0)$$
+et 
+$$ x_2 = \dfrac{e_2-e_1}{\Vert e_2-e_1 \Vert}  = \dfrac{1}{\sqrt{2}}(0,-1,0,-1)$$
+D'après l'algorithme de Gram-Schmidt, on en déduit que $(x_1,x_2)$ est une base orthonormée de $F$.
+\item La famille $(x_1,x_2)$ est une base orthonormée de $F$ donc pour tout $(x,y,z,t) \in \mathbb{R}^4$,
+\begin{align*}
+p_F((x,y,z,t)) & = <(x,y,z,t),x_1>x_1 + <(x,y,z,t),x_2>x_2 \\
+& = \dfrac{1}{2} <(x,y,z,t)(1,0,1,0)>(1,0,1,0) + \dfrac{1}{2} <(x,y,z,t),(0,-1,0,-1)>(0,-1,0,-1) \\
+& = \dfrac{1}{2} (x+z,y+t ,x+z, y+t)
+\end{align*}
+En notant $\mathcal{B}$ la base canonique de $\mathbb{R}^4$, on a alors :
+$$ \textrm{Mat}_{\mathcal{B}}(p_F) =\dfrac{1}{2} \begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 1  &  0 & 1 \\
+1 & 0& 1 & 0\\
+0& 1 &  0 & 1\\
+\end{pmatrix}$$
+\item Remarquons que :
+$$ (1,0,1,0)-(0,-1,0,-1) = (1,1,1,1)$$
+Donc $(1,1,1,1)$ appartient à $F$ donc la distance de vecteur à $F$ vaut $0$.
+
+\medskip
+
+\noindent Sinon, on peut aussi utiliser l'égalité suivante :
+$$ \textrm{d}((1,1,1,1),F) = \Vert (1,1,1,1)-p_F((1,1,1,1) \Vert$$
+et $p_F((1,1,1,1))=(1,1,1,1)$ et on retrouve que la distance est nulle.
+\end{enumerate}
+
+\begin{Exa} 
+On munit $\mathbb{R}_n[X]$ du produit scalaire suivant :
+$$ \forall (P,Q) \in \mathbb{R}_n[X]^2, \; <P,Q> = \sum_{k=0}^{n} P^{(k)}(1)Q^{(k)}(1)$$
+\begin{enumerate}
+\item Justifier que cela définit un produit scalaire sur $\mathbb{R}_n[X]$.
+\item Soit $E= \lbrace P \in \mathbb{R}_n[X] \, \vert \, P(1)=0 \rbrace \cdot$
+
+\noindent Montrer que $E$ est un sous-espace vectoriel de $\mathbb{R}_n[X]$ et donner sa dimension.
+\item Déterminer $\textrm{d}(1,E)$.
+\end{enumerate}
+\end{Exa}
+
+\corr \begin{enumerate}
+\item Vérifions les différents points de la définition.
+
+\begin{itemize}
+\item Pour tout $(P,Q) \in \mathbb{R}_n[X]^2$, $<P,Q> \in \mathbb{R}$.
+\item Pour tout $(P,Q) \in \mathbb{R}_n[X]^2$, $<P,Q>= <Q,P>$ (par commutativité du produit de nombres).
+\item La bilinéarité est évidente par symétrie et par linéarité par rapport à la première variable (dû à la linéarité de la dérivation).
+\item Soit $P \in \mathbb{R}_n[X]$. Alors :
+$$ <P,P> = \sum_{k=0}^{n} P^{(k)}(1)^2 \geq 0$$
+Si $<P,P>=0$ alors sachant qu'une somme de termes positifs est nulle si et seulement si tous les termes sont nuls, on obtient que pour tout $k \in \Interv{0}{n}$, $P^{(k)}(1)=0$. Ainsi, $1$ est une racine d'ordre au moins $n+1$ de $P$ qui est au plus de degré $n$. Nécessairement, $P$ est le polynôme nul. 
+\end{itemize}
+Ainsi, cela définit un produit scalaire sur $\mathbb{R}_n[X]$.
+\item Posons $\varphi : \mathbb{R}_n[X] \rightarrow \mathbb{R}$ définie pour tout $P \in \mathbb{R}_n[X]$ par :
+$$ \varphi(P)= P(1)$$
+L'application $\varphi$ est une forme linéaire et $E$ et le noyau de celle-ci donc $E$ est un hyperplan (donc un sous-espace vectoriel) de $\mathbb{R}_n[X]$ et donc de dimension $n$.
+\item D'après le cours, si $P_0$ est un vecteur non nul de l'orthogonal de $E$ alors :
+$$ d(1,E) = \dfrac{\vert <P_0,1> \vert }{\Vert P_0 \Vert}$$
+Il suffit donc de trouver un polynôme $Q$ tel que pour tout polynôme $P$ vérifiant $P(1)=0$, $<Q,P>=0$. Vu la définition du produit scalaire, le polynôme constant $1$ vérifie bien cela :
+$$ <P,1> = P(1) \times 1 + \sum_{k=1}^n P^{(k)}(1) \times 1^{(k)}(1) = 0\times 1 + \sum_{k=1}^n P^{(k)}(1) \times 0 = 0$$
+Ainsi,
+$$ d(1,E) = \dfrac{\vert <1,1> \vert }{\Vert 1 \Vert} = \Vert 1 \Vert = 1$$
+\end{enumerate}
+
+\begin{Exa} \begin{enumerate}
+	\item Rappeler le produit scalaire usuel sur ${\cal M}_n(\R)$.
+	
+%\item Montrer que la base canonique est orthonormée pour ce produit scalaire.
+
+\item Montrer que pour tout $A\in{\cal M}_n(\R)$, on a  $|$tr$(A)|\leq \sqrt{n\hbox{tr}(^t\!AA)}.$
+	
+\item On note $S_n(\R)$ (resp. $A_n(\R)$)	le sous-espace vectoriel des matrices sym\'etriques (resp. antisym\'etriques). Montrer qu'ils sont suppl\'ementaires orthogonaux.
+
+\item Déterminer $\dis\inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2$ pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donn\'ee.
+\item Soit $A\in{\cal M}_n(\R)$. Montrer que $\textrm{Ker}(A)^{\perp}= \textrm{Im}(^t\!A)$.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Pour tout $(A,B) \in \mathcal{M}_n(\mathbb{R})^2$,
+$$ <A,B> = \textrm{Tr}(^tAB)$$
+\item Soit $A \in \mathcal{M}_n(\mathbb{R})$. D'après l'inégalité de Cauchy-Schwarz :
+$$ \vert <A,I_n> \vert \leq \sqrt{<A,A>} \sqrt{<I_n,I_n>}$$
+On a :
+$$ <A,I_n>=<I_n,A> = \textrm{Tr}(^tI_nA) = \textrm{Tr}(A)$$
+et 
+$$ <I_n,I_n> = \textrm{Tr}(^tI_n I_n) = \textrm{Tr}(I_n) = n$$
+On en déduit donc que :
+$$ \vert\textrm{Tr}(A) \vert \leq \sqrt{n\hbox{tr}(^t\!AA)}$$
+\item Le fait que les espaces sont supplémentaires dans $\mathcal{M}_n(\mathbb{R})$ a déjà été montré $x$ fois dans l'année avec $x$ très grand. Montrons que ces espaces sont orthogonaux. Soit $(A,B) \in \mathcal{S}_n(\mathbb{R}) \times \mathcal{A}_n(\mathbb{R})$. Alors :
+$$ <A,B> = \textrm{Tr}(^tAB) = \textrm{Tr}(AB)$$
+Mais $<A,B>=<B,A>$ par symétrie donc
+$$ <A,B> = \textrm{Tr}(^tBA)  = \textrm{Tr}(-BA) =- \textrm{Tr}(BA) = - \textrm{Tr}(AB)$$
+par linéarité de la trace est propriété de celle-ci. Ainsi,
+$$  \textrm{Tr}(AB) =  - \textrm{Tr}(AB)$$
+donc $\textrm{Tr}(AB)=0$ et ainsi 
+$$ <A,B> = \textrm{Tr}(AB) = 0$$
+On en déduit que $\mathcal{S}_n(\mathbb{R})$ et $\mathcal{A}_n(\mathbb{R})$ sont orthogonaux.
+\item Rappelons que pour une matrice $B=(b_{i,j})$ de $\mathcal{M}_n(\mathbb{R})$, on a :
+$$ \Vert B \Vert^2 = <B,B> = \sum_{1 \leq i,j \leq n} {b_{i,j}}^2$$
+Ainsi, pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donn\'ee,
+$$ \inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2  = \inf_{M\in{\cal S}_n(\R)} \Vert A-M \Vert^2 $$
+On sait que $\mathcal{S}_n(\mathbb{R})$ est un sous-espace vectoriel de dimension finie donc en notant $p$ la projection orthogonale sur $\mathcal{S}_n(\mathbb{R})$ (qui est la projection sur $\mathcal{S}_n(\mathbb{R})$ parallèlement à $\mathcal{A}_n(\mathbb{R})$ d'après la question précédente) on a :
+\begin{align*}
+ \inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 & = \Vert A-p(A) \Vert^2 \\
+ & = \left\Vert A- \dfrac{A+^tA}{2} \right\Vert^2 \\
+ & =  \left\Vert \dfrac{A-^tA}{2} \right\Vert^2 
+ \end{align*}
+ ce qui donne :
+ $$  \inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 = \dfrac{1}{4} \sum_{1 \leq i,j \leq n} (a_{i,j}-a_{j,i})^2$$
+\end{enumerate}
+
+
+\begin{Exa} On pose pour tout $(P,Q) \in \mathbb{R}_n[X]^2$,
+$$ <P,Q> = \sum_{k=0}^n P(a_k) Q(a_k)$$
+où $a_0$, $\ldots$, $a_n$ sont $n$ réels distincts deux à deux $(n \geq 2)$.
+\begin{enumerate}
+\item Montrer que cela définit un produit scalaire sur $\mathbb{R}_n[X]$.
+\item Montrer brièvement que $F= \dis \left\lbrace P \in \mathbb{R}_n[X] \, \vert \, \sum_{k=0}^n P(a_k)=0 \right\rbrace$ est un espace vectoriel. Donner sa dimension et son orthogonal.
+\item Déterminer la distance de $X^n$ à $F$.
+\end{enumerate}
+\end{Exa}
+
+\corr \begin{enumerate}
+\item Remarquons pour commencer que pour tout $(P,Q) \in \mathbb{R}_n[X]^2$, $<P,Q> \in \mathbb{R}$.
+\begin{itemize}
+\item La symétrie est évidente par commutativité du produit de réels.
+\item La linéarité par rapport à la première variable est claire (linéarité de la somme) et donc la bilinéarité aussi (par symétrie).
+\item Soit $P \in \mathbb{R}_n[X]$. Alors :
+$$ <P,P> =  \sum_{k=0}^n P(a_k)^2 \geq 0$$
+Si $<P,P>=0$, sachant qu'une somme de termes positifs est nulle si et seulement si tous les termes sont nuls, on en déduit que :
+$$ P(a_0)= P(a_1) = \cdots = P(a_n)=0$$
+Les réels $a_0$, $\ldots$, $a_n$ sont deux à deux distincts donc $P$ admet $n+1$ racines distinctes et est de degré inférieur ou égal à $n$ donc $P$ est le polynôme nul.
+
+\medskip
+
+\noindent Ainsi, $(P,Q) \mapsto <P,Q>$ définit un produit scalaire sur $\mathbb{R}_n[X]$.
+\end{itemize}
+\item Notons abusivement $1$ le polynôme constant égal à $1$. Alors :
+$$ F = \lbrace P \in \mathbb{R}_n[X] \, \vert \, <P,1>= 0 \rbrace = \textrm{Vect}(1)^{\perp}$$
+On en déduit que $F$ est un sous-espace vectoriel de $ \mathbb{R}_n[X]$ et cet espace étant de dimension finie, on a :
+$$ \textrm{dim}(F) =  \textrm{dim}(\textrm{Vect}(1)^{\perp}) =  \textrm{dim}(\mathbb{R}_n[X]) -  \textrm{dim}(\textrm{Vect}(1)) = n$$
+En utilisant de nouveau que $ \mathbb{R}_n[X]$ est de dimension finie, on a :
+$$ F^{\perp} = (\textrm{Vect}(1)^{\perp})^{\perp} = \textrm{Vect}(1)$$
+\item L'espace $F$ est un hyperplan de $\mathbb{R}_n[X]$ et $1$ génère son orthogonal donc :
+\begin{align*}
+\textrm{d}(X^n, F) & = \dfrac{\vert <X^n,1> \vert}{\Vert 1 \Vert} \\
+& = \dfrac{\dis\left\vert \sum_{k=0}^n a_k^n \right\vert }{\sqrt{<1,1>}} \\
+& = \dfrac{\dis\left\vert \sum_{k=0}^n a_k^n \right\vert }{\sqrt{n+1}} 
+\end{align*}
+\end{enumerate}
+
+\begin{Exa} On définit une application $< \cdot \, , \, \cdot> : \R[X]^2 \rightarrow \R$ par :
+  \[
+ <P,Q> = \int_{0}^{ + \infty} P(t)Q(t)\e^{ - t} \dt
+  \]
+  \begin{enumerate}
+  \item Montrer que $< \cdot \, , \, \cdot>$ est bien définie et définit un produit scalaire sur $\R[X]$.
+  \item Déterminer pour tout $(p,q) \in \mathbb{N}^2$, $<X^{p} ,X^{q}>$.
+  \item Déterminer
+    \[
+    \inf_{(a,b) \in \R^{2}} \int_{0}^{ + \infty} \e^{ - t}(t^{2} - (at + b))^{2} \dt
+    \]
+  \end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Soit $(P,Q) \in \mathbb{R}[X]^2$. La fonction $t \mapsto P(t)Q(t)e^{-t}$ est continue sur $\mathbb{R}_+$. D'après le théorème des croissances comparées, on a :
+$$ \lim_{t \rightarrow + \infty} t^2P(t)Q(t) e^{-t} = 0$$
+donc 
+$$ P(t)Q(t) e^{-t} \underset{+ \infty}{=} o \left( \dfrac{1}{t^2} \right)$$
+La fonction $t \mapsto \dfrac{1}{t^2}$ est intégrable sur $[1, + \infty[$ donc par critère de comparaison $t \mapsto P(t)Q(t)e^{-t}$ est aussi intégrable sur $[1, + \infty[$ et donc sur $\mathbb{R}_+$ par continuité sur $[0,1]$. On en déduit que l'intégrale définissant $<P,Q>$ converge donc l'application est bien définie.
+
+\medskip
+
+\noindent La linéarité par rapport à la première variable est évidente (par linéarité de l'intégrale), la symétrie aussi donc la bilinéarité est vérifiée. Soit $P \in \mathbb{R}[X]$. Alors par positivité de l'intégrale :
+$$ <P,P> = \int_0^{+ \infty} P(t)^2 e^{-t} \dt \geq 0$$
+Si $<P,P>=0$ alors par stricte positivité de l'intégrale (l'intégrande est continue sur $\mathbb{R}_+$) :
+$$ \forall t \geq 0, \; P(t)^2 e^{-t} = 0$$
+donc
+$$ \forall t \geq 0, \; P(t)=0$$
+On en déduit que $P$ a une infinité de racines donc $P$ est le polynôme nul.
+
+\medskip
+
+\noindent Ainsi, $< \cdot \, , \, \cdot>$ est un produit scalaire sur $\mathbb{R}[X]^2$.
+\item Soit $(p,q) \in \mathbb{N}^2$. Alors (voir le chapitre sur l'intégration pour la valeur de $\Gamma$) :
+$$<X^p,X^q> = \int_0^{+ \infty} t^{p+q} e^{-t} \dt = \Gamma(p+q+1) = (p+q)!$$
+\item  On a :
+\begin{align*}
+    \inf_{(a,b) \in \R^{2}} \int_{0}^{ + \infty} \e^{ - t}(t^{2} - (at + b))^{2} \dt&  =   \inf_{(a,b) \in \R^{2}} \Vert X^2-(aX+b)\Vert^2\\
+    &  =   \inf_{Q \in \mathbb{R}_1[X]} \Vert X^2-Q(X) \Vert^2 
+ \end{align*}
+ L'espace $\mathbb{R}_1[X]$ est de dimension finie donc 
+ $$  \inf_{(a,b) \in \R^{2}} \int_{0}^{ + \infty} \e^{ - t}(t^{2} - (at + b))^{2} \dt = \textrm{d}(X^2, \mathbb{R}_1[X]) = \Vert X^2-p(X^2) \Vert^2$$
+ où $p$ est la projection orthogonal sur $\mathbb{R}_1[X]$. On peut déterminer $p$ en orthonormalisant $(1,X)$ mais on va procéder autrement. Le polynôme $p(X^2)$ est l'unique élément de $\mathbb{R}_1[X]$ tel que 
+ $$ X^2-P(X^2) \in \mathbb{R}_1[X]^{\perp}$$
+ Il existe donc deux réels $m$ et $p$ tels que :
+ $$ P(X^2) = mX+p$$
+ On sait que $X^2-P(X^2)$ est orthogonal à $1 \in \mathbb{R}_1[X]$ donc 
+ $$ \int_{0}^{ + \infty} (t^2-mt-p) \e^{ - t} \dt$$
+ Ce qui implique par linéarité (les intégrales sont toutes convergentes d'après la question 1) :
+ $$ \int_{0}^{ + \infty}  t^2 e^{-t} \dt - m \int_{0}^{ + \infty}  t e^{-t} \dt -p \int_{0}^{ + \infty}   e^{-t} \dt =0$$
+ donc d'après la question 2 :
+ $$ 2-m-p=0$$
+ De même, on sait que $X^2-P(X^2)$ est orthogonal à $X \in \mathbb{R}_1[X]$ donc 
+ $$ \int_{0}^{ + \infty} (t^2-mt-p)t \e^{ - t} \dt$$
+ Ce qui implique par linéarité (les intégrales sont toutes convergentes d'après la question 1) :
+ $$ \int_{0}^{ + \infty}  t^3 e^{-t} \dt - m \int_{0}^{ + \infty}  t^2 e^{-t} \dt -p \int_{0}^{ + \infty}  t e^{-t} \dt =0$$
+ donc d'après la question 2 :
+ $$ 6-2m-p$$
+ En soustrayant les deux égalités précédentes, on a :
+ $$ 4-m=0$$
+ donc $m=4$ et $p=-2$. Ainsi,
+ $$ p(X^2) = 4X-2$$
+ donc
+ $$ X^2-p(X^2) = X^2-4X+2$$
+ On a alors :
+ \begin{align*}
+ \Vert X^2-p(X^2) \Vert^2 & = \int_0^{+ \infty} (t^2-4t+2)^2 e^{-t} \dt \\
+ & =  \int_0^{+ \infty} (t^4-8t^3+20t^2-16t+4) e^{-t} \dt \\
+ & = 4!-8 \times 3!+20 \times 2!-16 \times 1! + 4 \times 0! \\
+ & = 24 - 48+40-16+4 \\
+ & = 4
+ \end{align*}
+\end{enumerate}
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Divers}}}
+\end{center}
+
+\medskip
+
+
+\begin{Exa} Considérons $H= \mathbb{R}[X]$ muni du produit scalaire :
+$$ \forall (P,Q) \in H^2, \; <P,Q> = \int_{0}^1 P(t) Q(t) \dt $$
+On pose pour tout $n \in \mathbb{N}$, $P_n(X)= ((X^2-X)^n)^{(n)}$.
+
+\begin{enumerate}
+\item Déterminer pour tout $n \in \mathbb{N}$, le degré et le coefficient dominant de $P_n$.
+\item Montrer que pour tout $n \in \mathbb{N}$ et tout $Q \in \mathbb{R}[X]$,
+$$ <P_n,Q> = (-1)^n \int_{0}^1 (t^2-t)^n Q^{(n)}(t) \dt $$
+\item Montrer que $(P_n)_{n \geq 0}$ est une famille orthogonale.
+\item Déterminer pour tout $(n,m) \in \mathbb{N}^2$, $I_{n,m} = \int_{0}^1 t^n(1-t)^m \dt$. En déduire pour tout $n \geq 0$ la norme de $P_n$.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Le polynôme $Q_n(X)=(X^2-X)^n$ est de degré $2n$ est unitaire donc $P_n$ est un polynôme de degré $n$ et son coefficient dominant vaut :
+$$ 2n(2n-1) \times \cdots (2n-(n-1)) =\dfrac{(2n)!}{n!}$$
+\item Soient $n \in \mathbb{N}$ et $Q \in \mathbb{R}[X]$. On a :
+$$ <P_n,Q> = \int_0^1 P_n(t) Q(t) \dt = \int_0^1 Q_n^{(n)}(t) Q(t) \dt$$
+Par intégration par parties (les fonctions considérées sont de classe $\mathcal{C}^1$ sur $[0,1]$ car polynômiales), on a :
+$$ <P_n,Q> = [Q_n^{(n-1)}(t) Q(t)]_0^1 - \int_0^1 Q_n^{(n-1)}(t) Q'(t) \dt$$
+Or $Q_n=X^n(X-1)^n$ donc $0$ et $1$ sont racines de $Q_n$ d'ordre $n$ ce qui implique que $0$ et $1$ sont racines de $Q_n^{(n-1)}$ d'ordre $1$ donc :
+$$ <P_n,Q> =  - \int_0^1 Q_n^{(n-1)}(t) Q'(t) \dt$$
+On répète alors le procédé $n-1$ fois sachant que $0$ et $1$ sont racines de $Q_n^{(k)}$ pour tout $k \in \Interv{0}{n-1}$ donc le \og crochet \fg{} sera tout le temps nul :
+$$ <P_n,Q> = (-1)^n \int_0^1 Q_n^{(n-n)}(t) Q^{(n)}(t) \dt$$
+donc
+$$ <P_n,Q> = (-1)^n \int_{0}^1 (t^2-t)^n Q^{(n)}(t) \dt $$
+\item Soit $(n,m) \in \mathbb{N}^2$ tel que $n>m$. D'après la question précédente,
+$$ <P_n,P_m> = (-1)^n \int_{0}^1 (t^2-t)^n P_m^{(n)}(t) \dt$$
+Le polynôme $P_m$ est de degré $m<n$ donc $P_m^{(n)}$ est le polynôme nul donc :
+$$ <P_n,P_m>  = 0$$
+Ainsi, $(P_n)_{n \geq 0}$ est une famille orthogonale.
+\item Remarquons que pour tout entier $n \geq 0$,
+$$ I_{n,0} = \int_0^1 t^n \dt = \dfrac{1}{n+1}$$
+Soit $m \in \mathbb{N}^*$. Les fonctions $t \mapsto \dfrac{t^{n+1}}{n+1}$ et $t \mapsto (1-t)^m$ sont de classe $\mathcal{C}^1$ sur $[0,1]$ donc par intégration par parties :
+$$ I_{n,m} = \left[ \dfrac{t^{n+1}}{n+1}(1-t)^{m} \right]_0^1 + \dfrac{m}{n+1} \int_0^1 t^{n+1}(1-t)^{m-1} \dt =  \dfrac{m}{n+1} I_{n+1,m-1}$$
+On en déduit rapidement (récurrence immédiate) que : 
+$$ I_{n,m} = \dfrac{m!}{(n+1)(n+2) \times \cdots \times (n+m)} I_{n+m,0} =   \dfrac{m!}{(n+1)(n+2) \times \cdots \times (n+m+1)}$$
+Remarquons que $P_n$ est un polynôme de degré $n$ et a un coefficient dominant vaut $\dfrac{(2n)!}{n!}$ donc :
+$$ P_n(X) = \dfrac{(2n)!}{n!} X^n + T(X)$$
+ou $T$ est un polynôme de degré strictement plus petit que $n$. En dérivant $n$ fois, on obtient :
+$$ P_n^{(n)}(X) = \dfrac{(2n)!}{n!} \times n! = (2n)!$$
+On en déduit que pour tout entier $n \geq 0$,
+\begin{align*}
+\Vert P_n \Vert^2 & = <P_n,P_n> \\
+& = (-1)^n \int_{0}^1 (t^2-t)^n P_n^{(n)}(t) \dt \\
+& = (-1)^n (2n)! \int_{0}^1 (t^2-t)^n  \dt \\
+& = (-1)^n (2n)! \int_{0}^1t^n(t-1)^n  \dt \\
+& = (2n)! \int_{0}^1t^n(1-t)^n  \dt \\
+& = (2n)! I_{n,n} \\
+& =(2n)! \dfrac{n!}{(n+1)(n+2) \times \cdots \times (2n+1)} \\
+& = \dfrac{(2n)!(n!)^2}{(2n+1)!} \\
+& = \dfrac{(n!)^2}{2n+1}
+\end{align*}
+Par positivité de la norme, on en déduit que :
+$$ \Vert P_n \Vert = \sqrt{\dfrac{(n!)^2}{2n+1}}$$
+\end{enumerate}
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+\end{document}

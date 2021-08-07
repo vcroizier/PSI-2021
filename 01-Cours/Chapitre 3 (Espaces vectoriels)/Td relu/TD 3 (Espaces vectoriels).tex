@@ -1,0 +1,232 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{cours}
+\usepackage{pifont}
+
+\begin{document}
+\everymath{\displaystyle}
+
+\everymath{\displaystyle}
+\begin{center}
+\textit{{ {\huge TD 3 : Espaces vectoriels}}}
+\end{center}
+\bigskip
+
+
+\noindent Dans tout le TD, $n$ sera un entier naturel non nul et $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Sous-espaces vectoriels}}}
+\end{center}
+
+\begin{Exa} Les ensembles suivants sous-ils des sous-espaces vectoriels d'un espace vectoriel de référence ?
+
+\begin{multicols}{2}
+\begin{small}
+\begin{enumerate}
+\item $A = \lbrace (u_n)_{n \geq 0} \in \mathbb{R}^{\mathbb{N}} \, \vert \, (u_n)_{n \geq 0} \hbox{ bornée} \rbrace $
+\item $B = \lbrace (u_n)_{n \geq 0} \in \mathbb{R}^{\mathbb{N}} \, \vert \, (u_n)_{n \geq 0} \hbox{ converge} \rbrace $
+\item $C = \lbrace (u_n)_{n \geq 0} \in \mathbb{R}^{\mathbb{N}} \, \vert \, (u_n)_{n \geq 0} \hbox{ géométrique} \rbrace $
+\item $D = \lbrace f \in \mathcal{F}(\mathbb{R}, \mathbb{R}) \, \vert \, f \hbox{ est croissante} \rbrace$
+\item $E = \lbrace f \in \mathcal{F}(\mathbb{R}, \mathbb{R}) \, \vert \, f \hbox{ est continue en 0} \rbrace$
+\columnbreak
+\item $F = \lbrace f \in \mathcal{F}(\mathbb{R}, \mathbb{R}) \, \vert \, f(x) \underset{ x \rightarrow + \infty}{\rightarrow} 1 \rbrace$
+\item $G= \lbrace f \in \mathcal{F}(\mathbb{R}, \mathbb{R}) \, \vert \, f \hbox{ est paire} \rbrace$
+\item $H= \lbrace P \in \mathbb{C}[X] \, \vert \, P(0)=1  \rbrace$
+\item $I= \lbrace P \in \mathbb{C}[X] \, \vert \, P(X^2)=(X^2+1)P(X)  \rbrace$
+%\item $K= \lbrace M \in \mathcal{M}_n(\mathbb{R}) \, \vert \, M^2=I_n  \rbrace$
+\item $J= \lbrace M \in \mathcal{M}_n(\mathbb{R}) \, \vert \, AM=MA \rbrace$ où $A \in \mathcal{M}_n(\mathbb{R})$
+\end{enumerate}
+\end{small}
+\end{multicols}
+\vspace{0.01cm}
+\end{Exa}
+
+
+
+\begin{Exa} Montrer que $F$ défini par :
+$$ F = \lbrace (u_n)_{n \geq 0} \in \mathbb{R}^{\mathbb{N}} \, \vert \, \forall n \geq 0, \, u_{n+3}=u_{n+2}+u_{n+1}+u_n \rbrace$$
+est un sous-espace vectoriel de $\mathbb{R}^{\mathbb{N}}$.
+\end{Exa}
+
+\begin{Exa} Soient $E = \mathcal{F}(\mathbb{R}, \mathbb{R})$, $C$ l'ensemble des fonctions croissantes de $E$ et $\Delta = \lbrace f-g \, \vert \, (f,g) \in C^2 \rbrace\cdot$
+
+\noindent Montrer que $\Delta$ est un sous-espace vectoriel de $E$.
+\end{Exa}
+
+
+
+\begin{Exa} Soit $F$ le sous-ensemble de $\mathbb{R}^3$ défini par $F=$Vect((1,0,1), (-1,2,3)). 
+\begin{enumerate}
+\item Le vecteur $(-1,1,6)$ appartient-il à $F$?
+\item Comparer $F$ et $G=$Vect((0,2,4), (3,-2,-1)). 
+\end{enumerate}
+\end{Exa}
+
+\begin{Exa} Soit $E$ un $\mathbb{K}$-espace vectoriel de $F$, $G$ deux sous-espaces vectoriels de $E$. Montrer que $F \cup G$ est un sous-espace vectoriel de $E$ si et seulement si $F \subset G$ ou $G \subset F$.
+\end{Exa}
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Familles libres, génératrices, bases}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Les familles suivantes de vecteurs de $\R^3$ sont-elles libres?
+   \begin{enumerate}
+  \item
+        $(x_1 ,x_2)$ avec $x_1 = (1,0,1)$ et $x_2 = (1,1,1)$
+      \item
+        $(x_1 ,x_2 ,x_3)$ avec $x_1 = (1, - 1,1)$, $x_2 = (2, - 1,3)$ et $x_3 = ( - 1,1, - 2)$.
+      \item
+        $(x_1 ,x_2 ,x_3)$ avec $x_1 = (1,2,1)$, $x_2 = (2,1, - 1)$ et $x_3 = (1, - 1, - 2)$
+    \end{enumerate}
+\end{Exa}
+
+
+\begin{Exa} Soit $f : \mathbb{R} \rightarrow \mathbb{R}$ définie par $f(x)=e^x$. Montrer que $(f,f^2,f^3)$ est une famille libre de l'espace vectoriel des fonctions de $\mathbb{R}$ dans $\mathbb{R}$.
+\end{Exa}
+
+\begin{Exa}[\ding{80}] Pour $a \in \mathbb{R}$, on note $f_a$ l'application de $\mathbb{R}$ vers $\mathbb{R}$ définie par 
+$$f_a(x) = \vert x - a \vert$$
+Soit $a_1, \ldots, a_n \in \mathbb{R}$ $(n \geq 2)$ deux à deux distincts. Montrer que $(f_{a_i})_{1 \leq i \leq n}$ est une famille libre de $\mathcal{F}(\mathbb{R}, \mathbb{R})$.
+\end{Exa} 
+
+\begin{Exa} Écrire les sous-ensembles suivants comme des sous-espaces vectoriels engendrés puis donner une base des ces espaces. 
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item $A=\lbrace (x,y,z) \in \mathbb{R}^3 \, \vert  \, 2x-y+z=0 \rbrace$
+\item $B= \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, z+y=0 \rbrace$
+\item $C= \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, z-y=0 \hbox{ et } x-y+z=0 \rbrace$
+
+\item $D = \left\lbrace \begin{pmatrix}
+a+b & 0 & c \\
+0 & b+c & 0 \\
+c+a & 0& a+b 
+\end{pmatrix} \bigg{\vert} (a,b,c) \in \mathbb{R}^3 \right\rbrace$
+
+\columnbreak
+\item $E = \left\lbrace M \in \mathcal{M}_3(\mathbb{R}) \,\vert  MA=AM \right\rbrace$ où \newline \begin{center}
+$A = \begin{pmatrix}
+0 & 2 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1 
+\end{pmatrix}$
+\end{center}
+\item $F= \lbrace a + bX^2 + (c-b)(X-1) \, \vert \, (a,b,c) \in \mathbb{R}^3 \rbrace$
+\item $G = \lbrace P \in \mathbb{R}_3[X] \, \vert \, P(1)=P'(1)=0 \rbrace$
+\end{enumerate}
+\end{multicols}
+
+\vspace{0.05cm}
+\end{Exa}
+
+
+
+\begin{Exa} Montrer que $F$ défini par :
+$$ F=\lbrace f \in \mathcal{C}^2(\mathbb{R}, \mathbb{R}) \, \vert \,  f''-3f'-10f= 0 \rbrace $$
+est un sous-espace vectoriel de $\mathcal{C}^2(\mathbb{R}, \mathbb{R})$ et donner-en une base.
+\end{Exa} 
+
+\begin{Exa} Soient $E= \mathbb{R}_n[X]$ et $\mathcal{F} = (X^k(1-X)^{n-k})_{0 \leq k \leq n}$. Montrer que $\mathcal{F}$ est une base de $E$.
+\end{Exa}
+
+
+\begin{Exa} Soient $n \in \mathbb{N}^*$ et $(a,b) \in \mathbb{R}^2$ avec $a \neq b$.
+\begin{enumerate}
+\item Montrer que $((X-a)^k)_{0 \leq k \leq 2n}$ est une base de $\mathbb{R}_{2n}[X]$.
+\item Déterminer les coordonnées de $(X-a)^n(X-b)^n$ dans la base précédente.
+\end{enumerate}
+\end{Exa} 
+
+\begin{Exa} Soit $E = \mathcal{F}(]-1,1[, \mathbb{R})$. On considère les fonctions de $E$ définies pour tout $x \in ]-1,1[$ par : 
+    \[
+    f_1(x) = \sqrt {\frac{1 + x}{1 - x}} , \; f_2(x) = \sqrt {\frac{1 - x}{1 + x}} , \; f_3(x) = \frac{1}{\sqrt {1 - x^2}}, \; f_4(x) = \frac{x}{\sqrt {1 - x^2}}
+    \]
+Quel est le rang de la famille $(f_1 ,f_2 ,f_3 ,f_4)$?
+\end{Exa}
+
+\begin{Exa} Soit $E$ un $\mathbb{K}$-espace vectoriel muni d'une base $\mathcal{B} = (e_1 , \ldots ,e_n)$. Pour tout $i \in \lbrace 1, \ldots ,n \rbrace$, on pose :
+$$\varepsilon_i = e_1 + \cdots + e_i$$
+Montrer que $\mathcal{B}' = (\varepsilon_1 , \ldots ,\varepsilon_n)$ est une base de $E$.
+\end{Exa} 
+
+\begin{Exa}[\ding{80}] Soient $(e_1 , \ldots ,e_n)$ et $(e'_1 , \ldots ,e'_n)$ deux bases d'un $\mathbb{K}$-espace vectoriel $E$. Montrer qu'il existe $j \in \lbrace 1, \ldots ,n \rbrace$ tel que la famille $(e_1 , \ldots ,e_{n - 1} ,e'_j)$ soit encore une base de $E$.
+\end{Exa}
+
+
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Espaces supplémentaires}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soient $F= \lbrace (x+y,y-2x, x) \, \vert \,  (x,y) \in \mathbb{R}^2 \rbrace$ et $G = \textrm{Vect}((1,2,3))$. Montrer que $F$ et $G$ sont supplémentaires dans $\mathbb{R}^3$.
+\end{Exa} 
+
+\begin{Exa} Soient $E= \mathbb{R}^3$ et $F$, $G$ les ensembles définis par :
+$$ F = \lbrace (x,y,z) \in \mathbb{R}^3, \, x-y+z=0 \rbrace \quad \hbox{ et }  \quad G = \textrm{Vect}((1,1,1)) $$
+
+\begin{enumerate}
+\item Donner une base de $F$ et préciser sa dimension.
+\item Montrer que $F$ et $G$ sont supplémentaires dans $\mathbb{R}^3$.
+\end{enumerate}
+\end{Exa}
+
+\begin{Exa} Soit $F = \lbrace P \in \mathbb{R}_4[X] \, \vert \, P(0)=P'(0)=P'(1)=0 \rbrace \cdot$
+
+\begin{enumerate}
+\item Montrer que $F$ est un espace vectoriel, déterminer en une base et préciser sa dimension.
+\item Montrer que le sous-espace vectoriel $G= \textrm{Vect}(1,X,1+X+X^2)$ et $F$  sont en somme directe.
+\item $F$ et $G$ sont-ils supplémentaires dans $\mathbb{R}_4[X]$?
+\end{enumerate}
+\end{Exa}
+
+\begin{Exa} Montrer que l'ensemble des fonctions paires et l'ensemble des fonctions impaires sont des espaces supplémentaires de l'espace vectoriel des fonctions de $\mathbb{R}$ dans $\mathbb{R}$. 
+\end{Exa}
+
+
+\begin{Exa} Montrer que l'ensemble des matrices symétriques $S_n(\mathbb{R})$ et l'ensemble des matrices antisymétriques $A_n(\mathbb{R})$ sont supplémentaires dans $\mathcal{M}_n(\mathbb{R})$.
+\end{Exa}
+
+
+\begin{Exa} Soit $E = \mathcal{F}(\mathbb{R}, \mathbb{R})$. Montrer que l'ensemble des fonctions affines est un supplémentaire du sous-espace vectoriel $F$ de $E$ défini par $F = \lbrace f \in \mathcal{F}(\mathbb{R}, \mathbb{R}) \, \vert \, f(0)=f(1)=0 \rbrace\cdot$
+\end{Exa}
+
+
+
+\begin{Exa}[\ding{80}] Soit $E$ l'espace des fonctions continues de $[-1,1]$ à valeurs dans $\mathbb{R}$. On considère les sous-espaces vectoriels suivants de $E$ :
+\begin{align*}
+F_1 &= \lbrace f \in E \, \vert \, f{\text{~est constante}} \rbrace \\
+F_2 &= \lbrace f \in E \, \vert \ \forall t \in [ - 1,0], \,  f(t)  = 0 \rbrace \\
+F_3 & = \lbrace f \in E \, \vert \ \forall t \in [0,1], \,  f(t) = 0 \rbrace 
+\end{align*}
+Montrer que $E = F_1 \oplus F_2 \oplus F_3$.
+\end{Exa} 
+
+
+
+\begin{Exa}[\ding{80}] Soient $n\in\N$, $E=\K_n[X]$, $S$ un polynôme de degré $d \in \Interv{1}{n}$ et $F$ l'ensemble des polynômes de $E$ divisibles par $S$.
+\begin{enumerate}
+	\item Montrer que $F$ est un sous-espace vectoriel de $\E$ de dimension $n+1-d$.
+	\item Montrer que $\mathbb{K}_{d-1}[X]$  et $F$ sont des sous-espaces vectoriels supplémentaires de $E$.
+\end{enumerate} 
+\end{Exa}
+
+
+\begin{Exa}[\ding{80}] Considérons $E$ un $\mathbb{K}$-espace vectoriel de dimension finie. Montrer que si $F$ et $G$ sont deux sous-espaces vectoriels de même dimension alors ils ont un sous-espace supplémentaire en commun.
+\end{Exa}
+
+
+
+
+\end{document}

@@ -1,0 +1,366 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{Cours}
+\usepackage{delarray}
+\usepackage{fancybox}
+\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\newcommand{\Int}[2]{\ensuremath{\mathchoice%
+	{{\displaystyle\int_{#1}^{#2}}}
+	{{\displaystyle\int_{#1}^{#2}}}
+	{\int_{#1}^{#2}}
+	{\int_{#1}^{#2}}
+	}}
+
+
+\begin{document}
+% \everymath{\displaystyle}
+
+\maketitle{Chapitre 8}{Rappels sur l'intégration : correction}
+
+\bigskip
+
+\noindent \textbf{Application directe du cours 1.}
+
+\begin{enumerate}
+\item On a : 
+\begin{align*}
+\int_{-2}^{-1} \dfrac{e^{2x}}{\sqrt{1-e^{2x}}} \dx & = -\int_{-2}^{-1} \dfrac{-2e^{2x}}{2 \sqrt{1-e^{2x}}} \dx \quad \left(\hbox{on reconnait } \frac{u'}{2\sqrt{u}} \right) \\
+& = - \left[\sqrt{1-e^{2x}}\right]_{-2}^{-1}  \\
+& = - \sqrt{1-e^{-2}}+ \sqrt{1-e^{-4}} 
+\end{align*}
+\item On a :
+\begin{align*}
+ \int_{e}^{e^2} \dfrac{1}{x\ln(x)} \dx & = \int_{e}^{e^2} \dfrac{1/x}{\ln(x)} \dx \quad \left(\hbox{on reconnait } \frac{u'}{u} \right) \\
+ & = [\ln(\vert \ln(x) \vert)]_{e}^{e^2} \\
+ & = \ln(2) 
+ \end{align*}
+\item On a :
+\begin{align*}
+ \int_{\pi/6}^{\pi/4} \dfrac{\tan^2(x)+1}{\sqrt{\tan(x)}} \dx & =  2\int_{\pi/6}^{\pi/4} \dfrac{\tan^2(x)+1}{2\sqrt{\tan(x)}} \dx \quad \left(\hbox{on reconnait } \frac{u'}{2 \sqrt{u}} \right) \\
+ & = 2 [\sqrt{\tan(x)} ]_{\pi/6}^{\pi/4} \\
+ & = 2- \dfrac{2}{\sqrt{\sqrt{3}}} 
+ \end{align*}
+\item On a :
+\begin{align*}
+ \int_{0}^{\pi/4} \tan(x) \dx & =  - \int_{0}^{\pi/4} \frac{-\sin(x)}{\cos(x)} \dx  \quad \left(\hbox{on reconnait } \frac{u'}{u} \right) \\
+ & = - [\ln(\vert \cos(x) \vert)]_{0}^{\pi/4} \\
+ & = - \ln \left( \dfrac{\sqrt{2}}{2} \right)  \\
+ & = \dfrac{\ln(2)}{2} 
+ \end{align*}
+\item On a :
+\begin{align*}
+\int_{0}^1 \dfrac{\cos(x)}{1+\sin(x)^2} \dx & = [\arctan(\cos(x))]_{0}^{1} \quad \left(\hbox{on reconnait } \frac{u'}{1+u^2} \right) \\
+& = \arctan(\cos(1))- \dfrac{\pi}{4} 
+\end{align*}
+\item On a :
+\begin{align*}
+\int_{1}^{2} \dfrac{e^{-x}}{\sqrt{1-e^{-2x}}} \dx & = \int_{1}^{2} \dfrac{e^{-x}}{\sqrt{1-(e^{-x})^2}} \dx \quad \left(\hbox{on reconnait } \frac{-u'}{\sqrt{1-u^2}} \right) \\
+& = [\textrm{arccos}(e^{-x})]_{1}^{2} \\
+& = \textrm{arccos}(e^{-2})-\textrm{arccos}(e^{-1})
+\end{align*}
+\end{enumerate}
+
+
+\medskip
+
+\noindent \textbf{Application directe du cours 2.}
+
+\noindent Pour tout $t \in \mathbb{R}$, on a :
+\begin{align*}
+\sin(t)^4 & = \left( \frac{e^{it}-e^{-it}}{2i} \right)^4 \\
+& = \frac{e^{4it}-4e^{2it}+6-4e^{-2it}+e^{-4it}}{16} \\
+& = \dfrac{\cos(4t)}{8} - \dfrac{\cos(2t)}{2} +\dfrac{3}{8} 
+\end{align*}
+Donc :
+\begin{align*}
+ \int_{0}^{\pi/2} \sin(t)^4 \dt& = \int_{0}^{\pi/2} \dfrac{\cos(4t)}{8} - \dfrac{\cos(2t)}{2} +\dfrac{3}{8}  \dt \\
+ & = \left[ \dfrac{\sin(4t)}{32} - \dfrac{\sin(2t)}{4} + \dfrac{3}{8}t \right]_{0}^{\pi/2} \\
+ & = \dfrac{3}{8} \times \frac{\pi}{2} 
+\end{align*}
+
+\medskip
+
+\noindent \textbf{Application directe du cours 3.}
+
+\begin{itemize}
+\item Les fonctions $t \mapsto t$ et $t \mapsto \ln(t)$ sont de classe $\mathcal{C}^1$ sur $[1,e]$ et de dérivées respectives $t \mapsto 1$ et $t \mapsto \dfrac{1}{t}$ donc par intégration par parties :
+\begin{align*}
+I= \int_{1}^e \ln(t) \dt & = [t \ln(t) ]_{1}^{e} - \int_{1}^e t \times \frac{1}{t} \dt \\
+& = [t \ln(t) -t]_{1}^{e} \\
+& = 1 
+\end{align*}
+\item Les fonctions $t \mapsto e^t$ et $t \mapsto \cos(2t)$ sont de classe $\mathcal{C}^1$ sur $[0,1]$ et de dérivées respectives $t \mapsto e^t$ et $t \mapsto -2 \sin(2t)$ donc par intégration par parties :
+$$J = \int_{0}^1 \cos(2t) e^t \dt  = \left[\cos(2t) e^t \right]_{0}^1 +2 \int_{0}^1 \sin(2t) e^t \dt $$
+Une deuxième intégration par parties donne alors :
+$$ J =  \left[\cos(2t) e^t \right]_{0}^1 +2 \left[\sin(2t) e^t \right]_{0}^1 -4  \int_{0}^1 \cos(2t) e^t \dt $$
+et donc :
+$$ J=  \left[\cos(2t) e^t \right]_{0}^1 +2 \left[\sin(2t) e^t \right]_{0}^1-4J$$
+puis :
+$$ 5J =  \left[\cos(2t) e^t \right]_{0}^1 +2 \left[\sin(2t) e^t \right]_{0}^1 $$
+et ainsi :
+$$ J = \dfrac{e\cos(2)-1+2e\sin(2)}{5}$$
+\end{itemize}
+
+\medskip
+
+\noindent \textbf{Application directe du cours 4.}
+
+\noindent Calculons $\dis \int_{1}^3 \dfrac{\sqrt{t} \dt}{t^2+t}$ à l'aide du changement du variable $x=\sqrt{t}$.
+
+\begin{itemize}
+\item Posons $x = \sqrt{t}$. La fonction racine est de classe $\mathcal{C}^1$ sur $[1,3]$.
+\item $dx =\dfrac{1}{2\sqrt{t}} \dt$
+\item Si $t=1$, $x=1$ et si $t=3$, $x =\sqrt{3}$.
+\end{itemize}
+En remarquant que :
+$$ \int_{1}^3 \dfrac{\sqrt{t} \dt}{t^2+t} =  \int_{1}^3 \dfrac{\sqrt{t} \dt}{t(t+1)} =  2 \int_{1}^3 \dfrac{1}{t+1} \dfrac{dt}{2\sqrt{t}} $$
+On a donc par changement de variable :
+\begin{align*}
+\int_{1}^3 \dfrac{\sqrt{t} \dt}{t^2+t} & = 2\int_{1}^{\sqrt{3}}  \dfrac{1}{x+1} \dx  \\
+& = 2 \left(\ln( 1+ \sqrt{3})- \ln(2) \right) \\
+& = 2 \ln \left( \dfrac{1+\sqrt{3}}{2} \right) 
+\end{align*}
+
+\medskip
+
+\newpage
+
+
+\noindent \textbf{Application directe du cours 5.}
+\begin{enumerate}
+\item Calculons $I= \dis \int_{0}^1 \dfrac{e^{2t}}{e^t+1} \dt$.
+\begin{itemize}
+\item Posons $x = e^t$. La fonction exponentielle est de classe $\mathcal{C}^1$ sur $[0,1]$.
+\item $dx =e^t \dt$
+\item Si $t=0$, $x=1$ et si $t=1$, $x =e$.
+\end{itemize}
+En remarquant que :
+$$ I= \dis \int_{0}^1 \dfrac{e^{2t}}{e^t+1} \dt = I= \dis \int_{0}^1 \dfrac{e^{t}}{e^t+1} \times e^t \dt $$
+On a donc par changement de variable :
+\begin{align*}
+I & = \int_{1}^{e}  \dfrac{x}{x+1} \dx \\
+& = \int_{1}^{e}  \dfrac{x+1-1}{x+1} \dx \\
+& = \int_{1}^e 1 - \frac{1}{x+1} \dx\\
+& = [x- \ln(\vert x+1 \vert)]_{1}^{e} \\
+& = e- \ln(e+1)-1+ \ln(2) \\
+\end{align*}
+\item  Calculons $J = \dis \int_{0}^1 \dfrac{1}{e^x+1} \dx = \int_{0}^1 \dfrac{e^{-x}}{1+e^{-x}} \dx$.
+\begin{itemize}
+\item Posons $u=e^{-x}$. La fonction $x \mapsto e^{-x}$ est de classe $\mathcal{C}^1$ sur $[0,1]$.
+\item $du = -e^{-x} \dx$
+\item Si $x=0$, $u=1$ et si $x=1$, $u=e^{-1}$.
+\end{itemize}
+On a donc par changement de variable :
+$$ J = \int_{1}^{e^{-1}} - \frac{1}{1+u} du = - [\ln(\vert 1+u \vert)]_{1}^{e^{-1}} = - \ln(1+e^{-1})+ \ln(2) $$
+\end{enumerate}
+
+\medskip
+
+\noindent \textbf{Application directe du cours 6.}
+
+\noindent Posons $I$ cette intégrale. On a :
+
+\begin{align*}
+I & = \int_{0}^{1} \Im m(e^{2it}) e^t \dt \\
+& = \Im m \left(\int_{0}^1e^{(2i+1)t} \dt\right) 
+\end{align*}
+Or on a :
+\begin{align*}
+\int_{0}^1e^{(2i+1)t} \dt  & = \left[ \dfrac{e^{(2i+1)t}}{2i+1} \right]_{0}^1 \\
+& = \dfrac{e^{2i+1}-1}{2i+1} \\
+& = \dfrac{e\times e^{2i} - 1 }{2i+1} \\
+& = \dfrac{e(\cos(2)+i \sin(2))-1}{2i+1} \\
+& = \dfrac{(e(\cos(2)+i \sin(2))-1)(1-2i)}{5} \\
+& = \dfrac{e(\cos(2)+i \sin(2))-1-2i(e(\cos(2)+i \sin(2)))+2i}{5} 
+\end{align*}
+En prenant la partie imaginaire, on obtient :
+$$ I= \dfrac{e\sin(2)-2e\cos(2)+2}{5}$$
+ 
+ 
+\medskip
+
+\noindent \textbf{Application directe du cours 7.}
+
+\noindent Pour tout entier $n \geq 1$, on a :
+$$ \dis \Sum{k=1}{n} k^4 = \dis  n^5 \times \frac{1}{n} \times \Sum{k=1}{n} \left(\frac{k}{n} \right)^4 $$
+La fonction $x \mapsto x^4$ est continue sur $[0,1]$ donc :
+$$ \lim_{n \rightarrow + \infty}  \frac{1}{n} \times \Sum{k=1}{n} \left(\dfrac{k}{n} \right)^4 = \dis \int_{0}^1 x^4 \dx = \frac{1}{5}$$
+Ainsi, on obtient que :
+$$ \Sum{k=1}{n} k^4  \underset{+ \infty}{\sim} \dfrac{n^5}{5}$$
+
+\medskip
+
+\noindent \textbf{Application directe du cours 8.}
+
+\noindent Pour tout entier $n \geq 1$, on a :
+$$ \sum_{k = 1}^{n} \frac{n}{n^{2} + k^{2}} = \frac{1}{n} \sum_{k = 1}^{n} \frac{1}{1 + \left(\frac{k}{n}\right)^{2}}$$
+La fonction $x \mapsto \dfrac{1}{1+x^2}$ est continue sur $[0,1]$ donc :
+$$ \lim_{n \rightarrow + \infty}  \frac{1}{n} \sum_{k = 1}^{n} \frac{1}{1 + \left(\frac{k}{n}\right)^{2}} = \int_{0}^{1} \dfrac{1}{1+x^2} \dx = \left[\arctan(x) \right]_{0}^1 = \dfrac{\pi}{4}$$
+Ainsi,
+$$ \lim_{n \rightarrow + \infty}  \sum_{k = 1}^{n} \frac{n}{n^{2} + k^{2}} = \dfrac{\pi}{4} $$
+
+\medskip
+
+\noindent \textbf{Application directe du cours 9.}
+
+\noindent La fonction $t \mapsto \ln(1+t^4)$ est continue sur $\mathbb{R}$ (car $t \mapsto 1+t^4$ est continue sur $\mathbb{R}$ et à valeurs strictement positives sur $\mathbb{R}$ et que $\ln$ est continue sur $\mathbb{R}_+^{*}$). Les fonctions $x \mapsto x$ et $x \mapsto x^2$ étant définies sur $\mathbb{R}$, pour tout réel $x$,
+$$ H(x) = \int_{-x}^{x^2} \ln(1+t^4) \dt$$
+existe. Soit $F$ une primitive de $t \mapsto \ln(1+t^4)$ sur $\mathbb{R}$ (qui existe car cette fonction est continue sur $\mathbb{R}$). La fonction $F$ est donc de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et on a pour tout réel $x$,
+$$ H(x) = F(x^2)-F(-x)$$
+Par composition de fonctions de classe $\mathcal{C}^1$ sur $\mathbb{R}$, $H$ est donc de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et on a pour tout réel $x$,
+$$ H'(x) = 2x F'(x^2)-(-F'(-x)) = 2x \ln(1+x^8)+ \ln(1+x^4)$$
+
+\medskip
+
+\noindent \textbf{Application directe du cours 10.}
+
+\begin{enumerate}
+  \item Procédons en deux étapes (pour travailler sur des intervalles) :
+  
+ \begin{itemize}
+ \item La fonction $t \mapsto \dfrac{\e^{t}}{t}$ est continue sur $\mathbb{R}_+^{*}$ et pour tout réel $x>0$, $[x,2x] \subset \mathbb{R}_+^{*}$ donc :
+ $$ f(x) = \int_{x}^{2x} \frac{\e^{t}}{t} \dt$$
+existe. Soit $F$ une primitive de $t \mapsto \dfrac{\e^{t}}{t}$ (qui existe car cette fonction est continue sur $\mathbb{R}_+^{*}$) qui est donc une fonction de classe $\mathcal{C}^1$ sur $\mathbb{R}_{+}^{*}$. On a pour tout réel $x>0$,
+$$ f(x) = F(2x)-F(x)$$
+Les fonctions $x \mapsto x$ et $x \mapsto 2x$ sont de classe $\mathcal{C}^1$ sur $\mathbb{R}_+^{*}$ à valeurs dans $\mathbb{R}_+^{*}$. Par composition, $f$ est donc de classe $\mathcal{C}^1$ sur $\mathbb{R}_+^{*}$ et on a pour tout réel $x>0$,
+$$ f'(x) = 2F'(2x)-F'(x) = 2 \dfrac{e^{2x}}{2x}- \dfrac{e^x}{x} = \dfrac{e^{2x}-e^x}{x}$$
+ \item En raisonnant de même sur $\mathbb{R}_{-}^{*}$, on montre que $f$ est donc de classe $\mathcal{C}^1$ sur $\mathbb{R}_{-}^{*}$ et on a pour tout réel $x<0$,
+$$ f'(x) = 2F'(2x)-F'(x) = 2 \dfrac{e^{2x}}{2x}- \dfrac{e^x}{x} = \dfrac{e^{2x}-e^x}{x}$$
+\end{itemize}
+  \item Pour déterminer la limite de $f$ en $0^{+}$, on encadre l'intégrande  par deux fonctions dont on peut déterminer une primitive. Le point important est d'encadrer \og brutalement \fg les termes qui ne semblent pas important pour le comportement. Ici, en $0$, la fonction exponentielle tend vers $1$ alors que la fonction inverse n'est pas définie en $0$ : on encadre donc uniquement l'exponentielle. Pour tout réel $x>0$ et tout $t \in [x,2x]$, on a par croissance de la fonction exponentielle sur cet intervalle :
+  $$ e^{x} \leq e^t \leq e^{2x}$$
+  puis sachant que $t>0$,
+  $$ \dfrac{e^x}{t} \leq \frac{e^t}{t} \leq \frac{e^{2x}}{t}$$
+  puis par croissance de l'intégrale (les bornes sont dans le bon sens) :
+  $$ \int_{x}^{2x}  \dfrac{e^x}{t} \dt \int_{x}^{2x}  \frac{e^t}{t} \leq  \int_{x}^{2x}  \frac{e^{2x}}{t} \dt$$
+On a alors :
+$$ e^x  \int_{x}^{2x}  \dfrac{1}{t} \dt \leq f(x) \leq  e^{2x} \int_{x}^{2x}  \frac{1}{t} \dt$$
+puis en calculant les intégrales :
+$$ e^x (\ln(2x)-\ln(x)) \leq f(x) \leq e^{2x} (\ln(2x)-\ln(x))$$
+et finalement :
+$$ \ln(2) e^{x} \leq f(x) \leq e^{2x} \ln(2) $$
+Sachant que :
+$$ \lim_{x \rightarrow 0^+} \ln(2) e^{x} =  \lim_{x \rightarrow 0^+} \ln(2) e^{2x} = \ln(2)$$
+Par théorème, on en déduit que $f$ admet une limite en $0^+$ et que :
+$$ \lim_{x \rightarrow 0^+} f(x) = \ln(2)$$
+On montre de la même manière que $f$ admet pour limite $\ln(2)$ en $0^{-}$ et ainsi $f$ admet pour limite $\ln(2)$ en $0$ : attention dans ce cas, on intègre sur l'intervalle $[2x,x]$ (pour avoir les bornes dans le bon sens) puis on change l'ordre des bornes. 
+\end{enumerate} 
+
+\medskip
+
+\noindent \textbf{Application directe du cours 11.}
+
+\noindent Pour tout entier $n \geq 0$, on a (sachant que les bornes sont dans le bon sens) :
+\begin{align*}
+0 \leq \left\vert \int_{0}^1 x^n e^{x} \dx \right\vert & \leq  \int_{0}^1 \vert x^n e^x \vert \dx \\
+& =  \int_{0}^1  x^n e^x  \dx \\
+& \leq e \int_{0}^1 x^n \dx \\
+& = \frac{e}{n+1} 
+\end{align*}
+Sachant que :
+$$ \lim_{n \rightarrow + \infty} \frac{e}{n+1} =0 $$
+on en déduit par théorème d'encadrement que la suite étudiée converge et que :
+$$ \lim_{n \rightarrow + \infty} \int_{0}^1 x^n e^{x} \dx = 0$$
+
+%\newpage
+%
+%\medskip
+%
+%\noindent \textbf{Application directe du cours 12.}
+%
+%\begin{enumerate}
+%\item
+%\begin{enumerate}
+%\item On a :
+%\[ I_0 = \left[ \frac{x^3}{3} \right]_1^e = \frac{e^3}{3} - \frac{1^3}{3} = \frac{e^3-1}{3} \]
+%
+%\item Soient $x \in [1,e]$ et $n \geq 0$. On a : 
+%\[ \ln (x)^{n+1}-\ln (x)^{n}=\ln (x)^{n}(\ln (x)-1)\]
+%Or $1\le x\le e$ dont par croissance de $\ln$ sur $]0,+\infty [$, on a $0=\ln (1)\le \ln (x)\le \ln (e)=1$ et ainsi $\ln (x)^{n}\ge 0$ (car $n \geq 0$) et $\ln (x)-1\le 0$ d'o\`{u}
+%$$\ln(x)^{n+1}\le \ln (x)^{n}$$
+%Sachant que $x^{2}\ge 0$, on a alors $x^{2}\ln (x)^{n+1}\le x^{2}\ln (x)^{n}$. Les bornes étant dans le bon sens, on a par croissance :
+%\[ \int_{1}^{e}x^{2}\ln (x)^{n+1}dx\le
+%\int_{1}^{e}x^{2}\ln (x)^{n}dx\]
+%c'est-à-dire $I_{n+1} \leq I_n$. Ainsi, la suite $(I_{n})_{n\ge 0}$ est d\'{e}croissante.
+%
+%\medskip
+%
+%\noindent Pour tout $x \in [1,e]$ et $n \geq 0$, on a $0\le x^{2}\ln (x)^{n}$. Les bornes étant dans le bon sens, on a $I_{n}\ge 0.$ Ainsi, la suite $(I_n)_{n \geq 0}$ est positive.
+%
+%\item Cette suite est d\'{e}croissante et minor\'{e}e par $0$, donc d'après le théorème de la limite monotone,  $(I_n)_{n  \geq 0}$ converge.
+%
+%\item La première inégalité est évidente ($\ln$ positive sur $[1,+\infty[$). Soit $f$ la fonction définie sur $[1,e]$ par $f(x)=\ln (x)-x/e$. $f$ est d\'{e}rivable sur $[1,e]$ (somme de fonctions usuelles) et pour tout $x \in [1,e]$, on a : 
+%\[ f'(x)={\frac{1}{x}}-{\frac{1}{e}}={\frac{e-x}{ex}} \ge 0\]
+%Donc $f$ est croissante sur $[1,e]$. Et comme $f(e)=0$, $f$ est n\'{e}gative sur $[1,e]$ Ainsi, pour tout $x \in [1,e]$, 
+%$$0 \leq \ln(x) \leq \dis \frac{x}{e}$$
+%
+%\item Sachant que $x \mapsto x^{n}$ est croissante sur $[0,+\infty [$ et que $\ln (x)$ et $x/e$ appartiennent à cet intervalle pour $x \in [1,e]$, on a :
+%\[ \ln (x)^{n}\le \frac{x^{n}}{e^{n}}\]
+%et sachant que $x^2 \geq 0$, on a : 
+%\[x^{2}\ln (x)^{n}\le \frac{x^{n+2}}{e^{n}}\]
+%Les bornes étant dans le bon sens et les fonctions continues sur l'intervalle $[1,e]$, on a par croissance :
+%\[ \int_{1}^{e}x^{2}\ln (x)^{n}dx\le \int_{1}^{e}{\frac{x^{n+2}}{e^{n}}} dx=\left[ {\frac{x^{n+3}}{(n+3)e^{n}}}\right] _{1}^{e}={\frac{e^{3}}{(n+3)}}
+%-{\frac{1}{(n+3)e^{n}}}\]
+%On a donc :
+%\[ 0 \le I_n \le  {\frac{e^{3}}{(n+3)}}
+%-{\frac{1}{(n+3)e^{n}}} \]
+%Or, par somme, 
+%$$\dis \lim_{n \rightarrow + \infty} {\frac{e^{3}}{(n+3)}}
+%-{\frac{1}{(n+3)e^{n}}}$$
+% donc par encadrement, $(I_n)_{n \geq 0}$ converge et sa limite est $0$.
+%
+%\end{enumerate}
+%
+%\item 
+%\begin{enumerate}
+%\item  Soit $n \geq 0$. On a  :
+%$$I_{n+1}= \dis \int_{1}^{e}x^{2}(\ln x)^{n+1}dx$$
+%
+%Les fonctions $u : x \mapsto \dfrac{x^3}{3}$ et $v : x \mapsto \ln(x)^{n+1}$ sont $\mathcal{C}^1$ sur $[1,e]$ et de dérivées respectives $u' : x \mapsto x^2$ et $v' : x \mapsto (n+1) \dfrac{\ln(x)^n}{x}$. Par intégration par parties, on a :
+%
+%\newpage
+%
+%\[ I_{n+1}=\big{[}\ln (x)^{n+1} x^{3}/3 \big{]}^{e}-\int_{1}^{e}(n+1){\frac{x^{3}\ln (x)^{n}
+%}{3x}}dx={\frac{e^{3}}{3}}-{\frac{(n+1)}{3}}\int_{1}^{e}x^{2}\ln (x)^{n}dx=
+%{\frac{e^{3}}{3}}-{\frac{n+1}{3}}I_{n}
+%\]
+%
+%\item  A l'aide de l'égalité précédente, on sait que pour tout $n \geq 0$, on a :
+%\[ 3I_{n+1}=e^3-nI_n - I_n \]
+%c'est-à-dire :
+%\[ 3I_{n+1} -e^3 + I_n  = -nI_n \]
+%et finalement :
+%\[ -3I_{n+1}+e^3-I_n = n I_n \]
+%Or $\dis \lim_{n \rightarrow + \infty} I_n = \lim_{n \rightarrow + \infty} I_{n+1} = 0$, donc par somme :
+%\[ \lim\limits_{n\rightarrow +\infty }nI_{n}=e^{3}\]
+%et ainsi :
+%$$ I_n \underset{ + \infty}{\sim} \frac{e^3}{n}$$
+%\end{enumerate}
+%\end{enumerate}
+%
+%\medskip
+%
+%\noindent \textbf{Application directe du cours 13.}
+%
+%\noindent Pour tout entier $n \geq 0$, on a (sachant que les bornes sont dans le bon sens) :
+%\begin{align*}
+%0 \leq \left\vert \int_{0}^1 \frac{x^n}{x^2+1}  \dx \right\vert & \leq  \int_{0}^1 \left\vert \frac{x^n}{x^2+1} \right\vert \dx \\
+%& =  \int_{0}^1 \frac{x^n}{x^2+1} \dx \\
+%& \leq  \int_{0}^1 x^n \dx \\
+%& = \frac{1}{n+1} 
+%\end{align*}
+%Sachant que :
+%$$ \lim_{n \rightarrow + \infty} \frac{1}{n+1} =0 $$
+%on en déduit par théorème d'encadrement que la suite étudiée converge et que :
+%$$ \lim_{n \rightarrow + \infty} \int_{0}^1 \frac{x^n}{x^2+1} \dx = 0$$
+%Pour tout $n \geq 0$, on obtient par intégration par parties (je vous laisse faire!) que :
+%\begin{align*}
+%J_n & = \int_{0}^1 x^n \ln(1+x^2) \, dx \\
+%& = \left[\frac{x^{n+1}}{n+1} \ln(1+x^2)\right]_{0}^1 - \int_{0}^1 \frac{x^{n+1}}{n+1} \times \frac{2x}{x^2+1} \dx \\
+%& = \dfrac{\ln(2)}{n+1} - \dfrac{2}{n+1} I_{n+2}
+%\end{align*}
+%Sachant que $I_{n+2}$ tend vers $0$ quand $n$ tend vers $+ \infty$, on en déduit que quand $n$ tend vers $+ \infty$ :
+%$$ J_n =  \dfrac{\ln(2)}{n+1} + o \left( \frac{1}{n+1} \right)$$
+%et ainsi :
+%$$ J_n \underset{+ \infty}{\sim} \dfrac{\ln(2)}{n+1} \underset{+ \infty}{\sim} \dfrac{\ln(2)}{n}$$
+
+\end{document}

@@ -1,0 +1,242 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{cours}
+\usepackage{pifont}
+
+\begin{document}
+\everymath{\displaystyle}
+
+\begin{center}
+\textit{{ {\huge TD 13 : Fonctions définies par une intégrale}}}
+\end{center}
+
+
+\bigskip
+
+\begin{center}
+\textit{{ {\large Théorème fondamental de l'analyse}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $f$ définie par 
+$$f(x) = \int_{1/x}^{3x}\frac{1}{\sqrt{t^6+1}}\dt$$ 
+\begin{enumerate}
+\item Déterminer l'ensemble de définition $\mathcal{D}$ de $f$.
+\item Étudier la dérivabilité de $f$ sur $\mathcal{D}$ et donner l'expression de sa dérivée.
+\end{enumerate}
+\end{Exa} 
+
+
+
+\begin{Exa} Justifier que la fonction $H$ définie par 
+$$H(x) = \int_{-x}^{x^2} \ln(1+t^4) \dt$$
+est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et donner l'expression de sa dérivée.
+\end{Exa}
+
+
+\begin{Exa} Trouver toutes les fonctions $f$ continues sur $\mathbb{R}$ telles que pour tout $x \in \mathbb{R}$,
+$$ f(x) + \int_{0}^x (x-t)f(t) \dt =1$$
+\end{Exa} 
+
+
+\begin{Exa} Soit $g : \mathbb{R} \rightarrow \mathbb{R}$ une fonction continue. On pose, pour tout $x \in \mathbb{R}$,
+    \[
+    f(x) = \int_0^x {\sin(x - t)g(t) \dt}
+    \]
+    \begin{enumerate}
+      \item Montrer que $f$ est dérivable et déterminer sa dérivée.
+      \item Montrer que $f$ est solution de l'équation différentielle $y'' + y = g(x)$.
+      \item Résoudre cette équation différentielle.
+    \end{enumerate}
+\end{Exa}
+
+
+
+
+
+\bigskip
+
+\begin{center}
+\textit{{ {\large Intégrales à paramètres}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Étudier la continuité sur $\mathbb{R}$ de $\dis x \mapsto \int_{0}^1 \sin(xt^2) \dt$.
+\end{Exa}
+
+
+
+\begin{Exa} Déterminer l'ensemble de définition de la fonction $f$ définie par :
+$$ f(x) = \int_{0}^{+ \infty} \dfrac{\dt}{t^x(1+t)}$$
+Étudier ensuite la continuité de $f$ sur cet ensemble de définition.
+\end{Exa}
+
+
+
+
+\begin{Exa} 
+\begin{enumerate}
+\item Montrer que l'ensemble de définition de $g$, définie par 
+$$ g(x) = \int_{0}^1 \dfrac{\ln(1+xt)}{t} \dt$$
+contient $]-1,1[$.
+\item Montrer que $g$ est de classe $\mathcal{C}^1$ sur $]0,1[$ et déterminer $g'$.
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa}[\ding{80}] Soit $f : \dis x \mapsto \int_{0}^{+ \infty} \dfrac{\arctan(xt)}{t(1+t^2)} \dt$.
+\begin{enumerate}
+\item Déterminer l'ensemble de définition de $f$, notée $\mathcal{D}$.
+\item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathcal{D}$.
+\item Donner l'expression de $f$ à l'aide de fonctions usuelles.
+\end{enumerate}
+\end{Exa}
+
+
+
+
+\begin{Exa}
+\begin{enumerate}
+\item Déterminer l'ensemble de définition de la fonction $f$ définie par :
+$$ f(x) = \int_{0}^{+ \infty} e^{-t^2} \cos(xt) \dt$$
+\item Déterminer $f$ en vérifiant que celle-ci est solution d'une équation différentielle d'ordre $1$.
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Soit $f$ la fonction d\'efinie par 
+$$f(x)=\int_0^1 \frac{t^x}{1+t} \dt$$
+	\begin{enumerate}
+	\item Montrer que $f$ est bien d\'efinie et continue sur $I=]-1, + \infty[$.
+
+	\item Montrer que :
+$$\forall x\in I,\quad f(x+1)+f(x)=\frac1{x+1}$$
+
+	\item Montrer que :
+$$\forall x\in I,\quad 0\leq f(x) \leq \frac1{x+1}$$
+
+	\item Montrer que la fonction $f$ est d\'ecroissante sur $I$.
+
+	\item En d\'eduire que :
+$$\forall x\in]0,+\infty[,\quad \frac1{2(x+1)} \leq f(x) \leq \frac1{2x}$$
+
+	\item Donner, en le justifiant, un \'equivalent simple de $f(x)$ au voisinage de $+\infty$.
+	\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa}[\ding{80}] On considère la fonction $f : x \mapsto \int_0^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}} \dt$.
+\begin{enumerate}
+\item Déterminer l'ensemble de définition de $f$. On le notera $\mathcal{D}$.
+\item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathcal{D}$ et est solution d'équation différentielle linéaire que l'on précisera.
+\item Déterminer les limites de $f$ aux bornes de $\mathcal{D}$.
+\end{enumerate}
+\end{Exa}
+
+
+
+\begin{Exa} Pour tout $x \in \mathbb{R}_+$, on pose :
+ $$ F(x) = \int_{0}^1 \frac{e^{-x^2(t^2+1)}}{t^2+1} \dt, \; G(x) = \left( \int_{0}^x e^{-t^2} \dt \right)^2, \; H(x)=F(x)+G(x)$$
+ 
+ \begin{enumerate}
+ \item Montrer que $F$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}_+$ et donner une expression sous forme d'une intégrale.
+ \item Montrer que $G$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}_+$ et donner une expression sous forme d'une intégrale.
+ \item Justifier que $H$ est une fonction constante et déterminer celle-ci.
+ \item En déduire la valeur de l'intégrale de Gauss $\dis \int_{0}^{+ \infty} e^{-t^2} \dt$.
+ \end{enumerate}
+\end{Exa}
+
+
+
+
+
+
+%%\exo
+%%Soit $f$ la fonction définie sur $\mathbb{R}$ par $\displaystyle{f(x)=\int_x^{2x} e^{-t^2}\;\text{d}t}$.
+%%\begin{enumerate}
+%%\item Montrer que $f$ est une fonction impaire.\\
+%%\textit{Indication :} On pourra faire le changement de variable $u=-t$.
+%%\item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et calculer $f'$.
+%%\item Étudier les variations de $f$.
+%%\item En encadrant $f(x)$, déterminer $\displaystyle{\lim_{x \rightarrow +\infty} f(x)}$.
+%%\end{enumerate}
+%
+%\exo
+%Soit $f$ la fonction définie par $\displaystyle{f(x)=\frac 1 {x-1}\int_1^x \frac{t^2}{t^8+1} \;\text{d}t.}$
+%\begin{enumerate}
+%\item Montrer que $f$ est définie et continue sur $\mathbb{R} \setminus \{1\}$.
+%%\item Soit $\varphi : x \mapsto \int_1^x \frac{t^2}{t^8+1} \;\text{d}t$. Montrer que $\varphi$ est de classe $\mathcal C^1$ sur $\R$ donner son développement limité en 1.
+%\item Montrer que $f$ est prolongeable par continuité en 1.
+%\end{enumerate}
+%% Sur DEPUY
+%\exo Étudier la fonction $x \mapsto \int_{x}^{2x} \dfrac{\dt}{\sqrt{1+t^2+t^4}} \dt$ sur $\mathbb{R}$ : parité, dérivabilité et variations, tangente au point d'abscisse $0$, limite en $+ \infty$.
+%
+%\exo Trouver toutes les fonctions $f$ continues sur $\mathbb{R}$ telles que pour tout $x \in \mathbb{R}$,
+%$$ f(x) + \int_{0}^x (x-t)f(t) \dt =1$$
+%
+
+%\exo \begin{enumerate}
+%  \item On pose pour tout $x>0$ :
+%    \[
+%    f(x) = \int_{0}^{1} \frac{t^{x - 1}}{1 + t} \dt
+%    \]
+%    Justifier que $f$ est bien définie sur $\mathbb{R}_+^{*}$.
+%  \item
+%    Justifier la continuité de $f$ sur son ensemble de définition.
+%  \item
+%    Calculer $f(x) + f(x + 1)$ pour $x > 0$.
+%  \item
+%    Donner un équivalent de $f(x)$ quand $x \rightarrow 0^{+} $ et la limite de $f$ en $ + \infty$.
+%  \end{enumerate}
+%  
+%\exo Soit $a,b$ deux réels strictement positifs.
+%  \begin{enumerate}
+%  \item
+%    Justifier l'existence pour tout $x \in \R$ de
+%    \[
+%    F(x) = \int_{0}^{ + \infty} \frac{\e^{ - at} - \e^{ - bt}}{t}\cos(xt) \dt
+%    \]
+%  \item
+%    Justifier que $F$ est de classe $\mathcal{C}^{1}$ sur $\R$ et calculer $F'(x)$.
+%  \item Donner une expression simple de $F(x)$ pour $x \in \mathbb{R}$.
+%  \end{enumerate}
+%  
+%  \newpage
+%  
+%  \exo Pour $x > 0$, on pose
+%  \[
+%  F(x) = \int_{0}^{\pi / 2} \ln \bigl( \cos^{2}(t) + x^{2} \sin^{2}(t) \bigr) \dt
+%  \]
+%  \begin{enumerate}
+%  \item
+%    Justifier que $F$ est définie et de classe $\mathcal{C}^{1}$ sur $]0, + \infty[$.
+%  \item Calculer $F'(x)$ pour tout réel $x>0$.
+%  \item En déduire un expression simple de $F(x)$ pour $x>0$.
+%  \end{enumerate}
+%  
+%  \exo 
+%  \begin{enumerate}
+%  \item
+%    Justifier la convergence de l'intégrale
+%    \[
+%    I = \int_{0}^{ + \infty} \frac{\sin t}{t} \dt
+%    \]
+%  \item
+%    Pour tout $x \geq 0$, on pose :
+%    \[
+%    F(x) = \int_{0}^{ + \infty} \frac{\e^{ - xt} \sin t}{t} \dt
+%    \]
+%    Déterminer la limite de $F$ en $ + \infty$.
+%  \item
+%    Justifier que $F$ est dérivable sur $]0, + \infty[$ et calculer $F'$
+%  \item En admettant la continuité de $F$ en 0 déterminer la valeur de $I$.
+%  \end{enumerate}
+%  
+% 
+% 
+% \exo Montrer que $f : x \mapsto \int_{0}^{+ \infty} \dfrac{e^{-tx}}{1+t^2} \dt$ est de classe $\mathcal{C}^{\infty}$ sur $]0, + \infty[$ et montrer qu'elle est solution d'une équation différentielle d'ordre deux.
+\end{document}

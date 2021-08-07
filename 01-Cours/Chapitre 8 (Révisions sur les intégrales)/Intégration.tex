@@ -1,0 +1,833 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{Cours}
+\usepackage{delarray}
+\usepackage{fancybox}
+\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\newcommand{\Int}[2]{\ensuremath{\mathchoice%
+	{{\displaystyle\int_{#1}^{#2}}}
+	{{\displaystyle\int_{#1}^{#2}}}
+	{\int_{#1}^{#2}}
+	{\int_{#1}^{#2}}
+	}}
+
+
+\begin{document}
+% \everymath{\displaystyle}
+
+\maketitle{Chapitre 8}{Rappels sur l'intégration}
+
+\noindent Dans la suite $I$ sera un intervalle non vide et non réduit à un point, $n$ un entier naturel, $a$ et $b$ deux réels tels que $a<b$.
+
+\section{Résumé du cours de Sup}
+%\section{Rappels : intégrale d'une fonction continue sur un segment}
+ 
+\subsection{Primitives}
+ 
+\begin{defin} Soit $f : I \rightarrow \mathbb{R}$. On dit qu'une fonction $F$ définie sur $I$ est une primitive de $f$ sur $I$ si $F$ est dérivable sur $I$ et si $F'=f$.
+\end{defin}
+
+\begin{prop} Soit $f : I \rightarrow \mathbb{R}$.
+
+\begin{itemize}
+\item Si $f$ admet une primitive sur $I$, elle en admet une infinité.
+\item Deux primitives de $f$ sur $I$ différent d'une constante.
+\end{itemize}
+\end{prop}
+
+%\begin{preuve}
+%
+%\begin{itemize}
+%\item Si $F$ est une primitive de $f$ sur $I$ alors pour tout $k \in \mathbb{R}$, $F+k$ est une primitive de $f$ sur $I$.
+%\item Soient $F$, $G$ deux primitives de $f$ sur $I$. Alors $F-G$ est dérivable sur $I$, de dérivée nulle sur un \textit{intervalle} donc $F-G$ est constante.
+%\end{itemize}
+%\end{preuve}
+
+\subsection{Théorème fondamental de l'analyse}
+
+\noindent Nous ne redéfinissons pas la notion d'intégrale d'une fonction continue sur $[a,b]$ : nous redonnons juste les propriétés importantes.
+
+
+\begin{thm} Soient $f:  I \rightarrow \mathbb{R}$ une fonction continue et $a \in I$. On pose pour tout $x \in I$,
+$$ F(x) = \int_{a}^x f(t) \dt $$
+Alors $F$ est l'unique primitive de $f$ s'annulant en $a$.
+\end{thm}
+
+\begin{cor} Toute fonction continue sur $I$ admet des primitives sur $I$.
+\end{cor}
+
+\begin{cor} Soient $f:  I \rightarrow \mathbb{R}$ une fonction continue. Pour tout $(a,b) \in I^2$ et toute primitive $G$ de $f$ sur $I$, on a :
+$$ \int_{a}^b f(t) \dt = G(b)-G(a)$$
+\end{cor}
+
+%\begin{prop} Soient $f$ une fonction continue sur $I$ et $\alpha$, $\beta$ deux fonctions dérivables sur un intervalle $J$ et à valeurs dans $I$. Posons pour tout $x \in I$,
+%$$ H(x) = \int_{\alpha(x)}^{\beta(x)} f(t) \dt$$
+%Alors $H$ est bien définie et dérivable sur sur $I$ et on a pour tout $x \in  J$,
+%$$ H'(x) =  \beta'(x) f(\beta(x)) - \alpha'(x) f(\alpha(x))$$
+%\end{prop} 
+%
+%\begin{preuve} 
+%
+%\begin{itemize}
+%\item $H$ est bien définie sur $J$ car $f$ est continue sur $I$, $\alpha$ et $\beta$ sont à valeurs dans $I$ et $I$ est un intervalle.
+%\item La fonction $f$ est continue sur $I$ donc admet une primitive $G$ sur $I$. Pour tout $x \in J$, on a :
+%$$ H(x) = G(\beta(x))- G(\alpha(x))$$
+%Il suffit de dériver (ce qui est licite car $G$ dérivable sur $I$ et $\alpha$, $\beta$ sont dérivables sur $J$ à valeurs dans $I$) pour obtenir le résultat souhaité.
+%\end{itemize}
+%\end{preuve}
+
+\subsection{Sommes de Riemann}
+
+\noindent Soit $f : [a,b] \rightarrow \mathbb{R}$ une fonction continue. Pour tout $n \geq 1$, on pose :
+$$S_n = \frac{b-a}{n}\som k0{n-1} f \bigg{(}  a + k \times \frac{b-a}{n} \bigg{)}$$
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\foreach \k in {0.5,1,...,2.5}
+{\filldraw[fill=gray!20,draw=black,dashed] (\k,0) -- (\k,({\k-1.5)^3/2-\k+3}) -- (\k+0.5,{(\k-1.5)^3/2-\k+3}) -- (\k+0.5,0) -- cycle;}
+\draw [->] (-0.3,0)--(3.5,0) node[above]{$x$};
+\draw [->] (0,-0.3)--(0,2.8) node[left]{$y$};
+\draw (0,0) node[below left] {$0$} ;
+\draw (0.5,2pt) -- (0.5,-2pt) node[below]{$a$};
+\draw (3,2pt) -- (3,-2pt) node[below]{$b$};
+\draw[smooth,domain=-0.2:3.2, samples=20, thick] plot(\x,{(\x-1.5)^3/2-\x+3});
+\draw (3.4,2) node{$\mathcal C_f$} ;
+\end{tikzpicture}
+\end{center}
+
+\medskip
+
+\begin{thm}
+Soient $f$ une fonction continue sur $[a,b]$ et $(S_n)_{n \geq 1}$ la suite de ses sommes de Riemann. Alors : 
+ $$ \lim_{n\to \pinf} S_n =  \int_a^b f(t) \dt$$
+\end{thm}
+
+
+\begin{rems}
+\item Cela signifie que l'aire algébrique des rectangles tend vers l'aire algébrique sous la courbe quand le nombre de rectangles tend vers l'infini. On peut se servir de cela pour calculer des valeurs approchées d'intégrales, cette méthode s'appelle la \textit{méthode des rectangles à gauche}.
+\item En particulier, si $f$ est continue sur $[0,1]$ :
+$$ \lim_{n\to \pinf} \frac 1n \som k0{n-1} f\l(\frac kn\r) = \int_0^1 f(t) \dt$$ 
+\item On peut aussi considérer les rectangles \og à droite \fg : le résultat subsiste (l'indice de la somme varie de $1$ à $n$).
+\end{rems}
+
+%\begin{ex} Déterminer un équivalent de $\dis \Sum{k=1}{n} \sqrt{k}$ quand $n$ tend vers $+ \infty$.
+%
+%\noindent Pour tout $n \geq 1$, on a :
+%$$ \sum_{k=1}^{n} \sqrt{k} = n^{\frac{3}{2}} \left( \frac{1}{n} \sum_{k=1}^n \sqrt{\frac{k}{n}} \right)$$
+%La fonction $x \rightarrow \sqrt{x}$ est continue sur $[0,1]$ donc :
+%$$ \lim_{n \rightarrow + \infty} \frac{1}{n} \sum_{k=1}^n \sqrt{\frac{k}{n}} = \int_{0}^1 \sqrt{x} \dx = \frac{2}{3}$$
+%et ainsi :
+%$$ \sum_{k=1}^{n} \sqrt{k} \underset{+ \infty}{\sim}  \frac{2}{n} n^{\frac{3}{2}}$$
+%\end{ex}
+
+\subsection{Quelques propriétés}
+
+%
+%\subsection{Fonctions continues par morceaux}
+%
+%\begin{defin}
+%Soient $(a,b) \in \mathbb{R}^2$ tel que $a \leq b$ et $f$ une fonction définie sur $[a,b]$.\\
+%Une fonction $f$ est continue par morceaux sur le segment $[a,b]$ s'il existe une subdivision \linebreak $a_0 = a < a_1 < a_2 < \dots < a_n =b$ telle que les restrictions de $f$ à chaque intervalle ouvert $]a_i,a_{i+1}[$ (avec $i \in \Interv0{n-1}$) admettent un prolongement continu à l'intervalle fermé $[a_i,a_{i+1}]$.
+%\end{defin}
+%
+%\begin{rem} La subdivision $(a_0, \ldots, a_n)$ est dite adaptée à $f$. Elle n'est pas unique.
+%\end{rem}
+%%
+%%\pagebreak
+%%
+%\begin{center}
+%\textit{Exemple d'une courbe d'une fonction continue par morceaux}
+%\end{center}
+%
+%\begin{center}
+% \begin{tikzpicture}[>=stealth,scale=1]
+%\draw[->,color=black] (-0.6,0) -- (6.6,0) node[below] {$x$};
+%\foreach \x in {1,2,...,6}
+%\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+%\draw[->,color=black] (0,-0.6) -- (0,4.6) ;
+%\foreach \y in {1,2,...,4}
+%\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+%\draw[color=black] (0pt,-10pt) node[left] {\footnotesize $0$};
+%\clip(-0.6,-0.6) rectangle (6.6,4.6);
+%\draw[smooth,samples=100,domain=0:2] (0,3) node {$\bullet$} plot(\x,{sin(180*\x)+3-\x}) node {$\circ$};
+%\draw (2,0) node {$\circ$} (2,4) node {$\bullet$} (6,3) node {$\bullet$};
+%\draw[smooth,samples=100,domain=2:5] plot(\x,{\x-1-((\x-3.5)/1.5)^2}) node {$\bullet$};
+%\draw[o-o] (5,2)--(6,2);
+%\end{tikzpicture}
+%\end{center}
+%
+%\medskip
+% 
+%\begin{center}
+%\textit{Exemple d'une courbe d'une fonction non continue par morceaux}
+%\end{center}
+%% 
+%%\begin{cex} La fonction $h$ définie sur $[0,6]$ et dont la courbe est 
+% \begin{center}
+%  \begin{tikzpicture}[>=stealth,scale=0.8]
+%\draw[->,color=black] (-0.6,0) -- (6.6,0) node[below] {$x$};
+%\foreach \x in {1,2,...,6}
+%\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+%\draw[->,color=black] (0,-0.6) -- (0,4.6);
+%\foreach \y in {1,2,...,4}
+%\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+%\draw[color=black] (0pt,-10pt) node[left] {\footnotesize $0$};
+%\clip(-0.6,-0.6) rectangle (6.6,4.6);
+%\draw[smooth,samples=100,domain=0:1.9] plot(\x,{1/(2-\x)-\x});
+%\draw (0,0.5) node {$\bullet$};
+%\draw (2,0) node {$\bullet$};
+%\draw[smooth,samples=100,domain=2:6] plot(\x,{0.5*(\x-4)^3-(\x-6)}) node {$\bullet$};
+%\end{tikzpicture}
+%\end{center}
+%
+%%\end{cex}
+%
+%\begin{exems} 
+%\item la fonction $f$ définie sur $[0,5]$ par $f(x) = \begin{cases} x+1 &\text{si } x \le 2 \\ \ln x & \text{si } x > 2 \end{cases}$ est continue par morceaux sur $[0,5]$.
+%\item La fonction $f$ définie sur $[-1,1]$ par $f(x) = \begin{cases} 1 &\text{si } x \le 0 \\ \dfrac{1}{x} & \text{si } x >0 \end{cases}$ n'est pas continue par morceaux sur $[-1,1]$.
+%\end{exems}
+%
+%\begin{defin} Une fonction $f$ est continue par morceaux sur un intervalle $I$ si elle est continue par morceaux sur tout segment $[a,b]$ inclus dans $I$.
+%\end{defin}
+%
+%\begin{rem} La définition est cohérente dans le cas où $I$ est un segment car dans ce cas, $f$ est bien continue par morceaux sur tout sous-segment.
+%\end{rem}
+%
+%\begin{prop} L'ensemble des fonctions continues par morceaux sur $I$ à valeur dans $\mathbb{R}$, notée $\mathcal{CM}(I,\mathbb{R})$ est un sous-espace vectoriel de l'ensemble des fonctions de $I$ à valeurs dans $\mathbb{R}$.
+%\end{prop}
+%
+%\begin{preuve} Vérifions les trois points :
+%
+%\begin{itemize}
+%\item $\mathcal{CM}(I,\mathbb{R}) \subset \mathcal{F}(I, \mathbb{R})$.
+%\item L'application est continue par morceaux sur $I$ (elle est même continue).
+%\item Soient $f$, $g$ deux fonctions continues par morceaux sur $I$ et $\alpha \in \mathbb{R}$. Remarquons d'abord que toute subdivision adaptée à $f$ est aussi adaptée à $\alpha f$. Donnons nous deux subdivisions $(a_0, a_1, \ldots, a_n)$ et $(b_0,b_1, \ldots, b_p)$ de $f$ et $g$ (avec $n,p \in \mathbb{N}^*$). On crée alors l'union de ces deux subdivisions (en rangeant dans l'ordre croissant ces $n+p$ nombres et en enlevant les répétitions). Cette nouvelle subdivision est alors une subdivision adaptée à $\alpha f + g$. Pour cela il suffit de remarquer que si $c$ est un point de la nouvelle subdivision alors soit $c$ est un point des deux subdivisions précédentes et il n'y a rien à vérifier et si $c$ est un point de la subdivision de l'une des deux uniquement alors $c$ est un point où l'autre est continue.
+%\end{itemize}
+%\end{preuve}
+%
+%\begin{prop} Toute fonction continue par morceaux sur un segment $[a,b]$ est bornée sur ce segment.
+%\end{prop}
+%
+%
+%\subsection{Intégrale sur un segment d'une fonction continue par morceaux}
+%
+%\begin{defip} 
+%Soient $(a,b) \in \mathbb{R}^2$ tel que $a \leq b$ et $f$ une fonction définie continue par morceaux sur $[a,b]$.\\
+%Soit $a_0 = a < a_1 < a_2 < \dots < a_n =b$ une subdivision adaptée à $f$. Pour tout $i \in \Interv{0}{n-1}$, on note $\tilde{f}_i$ le prolongement continu de $f$ sur $[a_i,a_{i+1}]$. On définit l'intégrale de $f$ sur $[a,b]$ par :
+%$$ \int_{a}^b f(t) \dt = \int_{a_0}^{a_1} \tilde{f}_0(t) \dt + \int_{a_1}^{a_2} \tilde{f}_1(t) \dt + \cdots + \int_{a_{n-1}}^{a_n} \tilde{f}_{n-1}(t) \dt$$
+%Cette définition ne dépend pas de la subdivision choisie.
+%\end{defip}
+%
+%\begin{preuve} Donnons juste l'idée : si l'on considère une subdivision adaptée à $f$ sur $[a,b]$, on obtient une autre subdivision adapté à $f$ en \og enlevant \fg les points de la première subdivision où $f$ est continue (qui, en un sens, sont inutiles). En faisant, cela on sa ramène à une subdivision \og minimale \fg et on peut alors vérifier que la définition ne dépend pas de la subdivision choisie.
+%\end{preuve}
+%
+%\subsection{Propriétés}
+%
+%\noindent Les propriétés des intégrales des fonctions continues sur un segment se généralisent, pour la plupart, aux intégrales des fonctions continues par morceaux. Nous ne donnons pas les preuves de celles-ci. Dans toute la suite, $(a,b)$ est un couple de réels tels que $a \leq b$.
+
+\begin{prop}[Linéarité] Soient $f,g$ deux fonctions continues sur $[a,b]$ et à valeurs dans $\mathbb{R}$ et $\lambda \in \mathbb{R}$. Alors :
+$$ \int_{a}^b (\lambda f(t) + g(t)) \dt = \lambda \int_{a}^b  f(t) \dt +  \int_{a}^b  g(t) \dt$$
+\end{prop}
+
+\begin{prop}[Relation de Chasles] Soient $f$ une fonction continue sur $[a,b]$ et à valeurs dans $\mathbb{R}$ et $c \in [a,b]$. Alors :
+$$ \int_{a}^b f(t) \dt = \int_{a}^c f(t) \dt + \int_{c}^b f(t) \dt $$
+\end{prop}
+
+\begin{prop}[Positivité] Soient $f$ une fonction continue sur $[a,b]$ et à valeurs réelles \textit{positives}. Alors $\Int{a}{b} f(t) \dt \geq 0$.
+\end{prop}
+
+\newpage
+
+\begin{prop}[Stricte positivité] Soit $f$ une fonction continue sur $[a,b]$ et à valeurs réelles \textit{positives}. 
+
+\begin{itemize}
+\item Si il existe $x_0 \in [a,b]$ tel que $f(x_0)>0$ alors $\Int{a}{b} f(t) \dt>0$.
+\item Si $\Int{a}{b} f(t) \dt =0$ alors $f$ est la fonction nulle sur $[a,b]$.
+\end{itemize}
+\end{prop}
+
+\begin{prop}[Croissance] Soient $f,g$ deux fonctions continues sur $[a,b]$ à valeurs réelles. Si pour tout $t \in [a,b]$, $f(t) \leq g(t)$ alors :
+$$\int_{a}^{b} f(t) \dt  \leq \int_{a}^{b} g(t) \dt $$
+\end{prop}
+
+%
+%
+%\begin{rem} Cette proposition est fausse en toute généralité si la fonction est continue par morceaux : il suffit de penser à la fonction $f$ définie sur $[0,1]$ par $f(x)=0$ si $x \neq 1$ et par $f(\frac{1}{2})=1$.
+%\end{rem}
+
+\begin{prop} Soit $f$ une fonction continue sur $[a,b]$ à valeurs dans $\mathbb{R}$. Alors $\vert f \vert$ est continue sur $[a,b]$ et à valeurs positives et :
+$$ \left\vert \int_{a}^b f(t) \dt \right\vert \leq \int_{a}^b \vert f(t) \vert \dt $$
+\end{prop}
+
+%\begin{prop} Soient $f$, $g$ deux fonctions continues par morceaux sur $[a,b]$ et à valeurs dans $\mathbb{R}$. Si $f$ et $g$ coïncident sauf en un nombre fini de points alors :
+%$$ \int_{a}^b f(t) \dt = \int_{a}^b g(t) \dt $$
+%\end{prop}
+
+%\section{Méthodes de calculs d'intégrales}
+
+%\noindent Dans la suite, $I$ est un intervalle de $\mathbb{R}$.
+
+\subsection{Intégration par parties}
+\begin{thm} Soient $f,g$ deux fonctions de classe $\mathcal{C}^1$ sur $I$ à valeurs dans $\mathbb{R}$. Pour tout $(a,b) \in I^2$, on a :
+$$ \int_{a}^b f'(t) g(t) \dt = \left[ f(t) g(t) \right]_a^b - \int_{a}^b f(t) g'(t) \dt$$
+\end{thm}
+%
+%\begin{preuve} Pour tout $t \in I$, $(fg)'(t) = f'(t) g(t) + f(t) g'(t)$.
+%\end{preuve}
+
+\subsection{Changement de variable}
+
+\begin{thm} Soient $f : I \rightarrow \mathbb{R}$ une fonction continue et $\varphi$ une fonction de classe $\mathcal{C}^1$ sur un segment $[a,b]$ à valeurs dans $I$. Alors :
+$$ \int_{a}^b f(\varphi(t)) \varphi'(t) \dt = \int_{\varphi(a)}^{\varphi(b)} f(x) \dx$$
+\end{thm}
+
+%\begin{preuve} $f$ est est continue sur $I$ donc admet une primitive $F$ sur $I$. Posons $G = F \circ \varphi$. Alors $G$ est $\mathcal{C}^1$ sur $[a,b]$ par composition et $G' = \varphi' \times f \circ \varphi$. Ainsi :
+%$$ \int_{a}^b f(\varphi(t)) \varphi'(t) \dt = G(b)-G(a)$$
+%Mais on a aussi :
+%$$ G(b)-G(a) = F(\varphi(b))- F( \varphi(a))  = \int_{\varphi(a)}^{\varphi(b)} f(x) \dx$$
+%car $F$ est une primitive de $f$ sur $I$.
+%\end{preuve}
+%
+%\noindent On admet le résultat suivant :
+%
+%\begin{thm} Soit $f : I \rightarrow \mathbb{R}$ une fonction continue par morceaux et $\varphi$ une fonction de classe $\mathcal{C}^1$ et \textit{strictement monotone} sur un segment $[a,b]$ à valeurs dans $I$. Alors :
+%$$ \int_{a}^b f(\varphi(t)) \varphi'(t) \dt = \int_{\varphi(a)}^{\varphi(b)} f(x) \dx$$
+%\end{thm}
+
+\subsection{Primitives usuelles}
+
+\noindent Le tableau suivant donne les primitives $F$ des fonctions usuelles $f$, $I$ étant le (ou les) intervalles où les fonctions et leurs primitives sont définies. Une seule primitive est donnée à chaque fois.
+
+\newcommand{\haut}{\rule[-0.4cm]{0cm}{1.05cm}}
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hhline{|---|}
+\haut \qquad \qquad \qquad $f$  & \qquad  \; $F$ &  \qquad $I$ \\
+\hhline{|---|}
+$\haut f(x) = a\quad(\text{constante})$ & $F(x) = ax$ & $\R$ \\
+\hhline{|---|}
+$\haut f(x) = x^n,\ n\in\N$ & $F(x) = \dfrac{x^{n+1}}{\,n+1\,}$ & $\R$ \\
+\hhline{|---|}
+$\haut f(x) = x^n,\ n\in\Z^-\!,\,n\ne -1$ & $F(x) = \dfrac{x^{n+1}}{\,n+1\,} $ & $\R^\ast_+$ ou $\R^\ast_-$ \\
+\hhline{|---|}
+$\haut f(x) = x^\alpha,\ \alpha \in\R,\ \alpha \ne -1$ & $F(x) = 
+\dfrac{x^{\alpha +1}}{\,\alpha +1\,} $ & $\R^\ast_+$ \\
+\hhline{|---|}
+$\haut f(x) = \dfrac{1}{\,x\,}$ & $F(x) = \ln |x| $ & $\R^\ast_+$ ou $\R^\ast_-$ \\
+\hhline{|---|}
+$\haut f(x) = \e^{x}$ & $F(x) = \e^x$ & $\R$ \\
+\hhline{|---|}
+$\haut f(x) = \dis \frac{1}{\sqrt{x}}$ & $F(x) =2\dis \sqrt{x}$ & $\R^\ast_+ $ \\
+\hhline{|---|}
+$\haut f(x) = \sin(x)$ & $F(x) =-\cos(x)$ & $\R$ \\
+\hhline{|---|}
+$\haut f(x) = \cos(x)$ & $F(x) =\sin(x)$ & $\R$ \\
+\hhline{|---|}
+$\haut f(x) = \dfrac{1}{\cos^2(x)}= \tan^2(x)+1$ & $F(x) =\tan(x)$ & $]- \frac{\pi}{2}+n \pi, \frac{\pi}{2}+n \pi[$ où $n \in \mathbb{Z}$ \\
+\hhline{|---|}
+$\haut f(x) = \dfrac{1}{\sqrt{1-x^2}}$ & $F(x) = \arcsin(x)$ & $]-1,1[$ \\
+\hhline{|---|}
+$\haut f(x) = \dfrac{-1}{\sqrt{1-x^2}}$ & $F(x) = \arccos(x)$ & $]-1,1[$ \\
+\hhline{|---|}
+$\haut f(x) = \dfrac{1}{1+x^2}$ & $F(x) = \arctan(x)$ & $\mathbb{R}$ \\
+\hhline{|---|}
+$\haut f(x) = sh(x)$ & $F(x) = ch(x)$ & $\mathbb{R}$ \\
+\hhline{|---|}
+$\haut f(x) = ch(x)$ & $F(x) = sh(x)$ & $\mathbb{R}$ \\
+\hhline{|---|}
+\end{tabular}
+\end{center}
+
+\medskip
+
+\noindent En particulier, par dérivation d'une composée, on obtient des primitives \og à vue \fg de certaines fonctions. 
+
+\medskip
+
+\begin{exems}
+\item Si $u$ est une fonction dérivable sur un intervalle et strictement positive, une primitive de $\dfrac{u'}{u}$ est $\ln( \vert u \vert)$.
+\item Si $u$ est une fonction dérivable sur un intervalle et à valeurs dans $]-1,1[$, une primitive de $\dfrac{u'}{\sqrt{1-u^2}}$ est $\arcsin(u)$.
+\item Si $u$ est une fonction dérivable sur un intervalle, une primitive de $\dfrac{u'}{u^2+1}$ est $\arctan(u)$.
+\end{exems}
+
+%\subsection{Quelques techniques}
+%
+%\subsubsection{Exponentielle versus Polynômes}
+%
+%\noindent Pour calculer une intégrale de de la forme $\dis \Int{}{} P(x) e^{ax+b} \dx$, on procède intégration par parties pour faire \og chuter le degré de $P$ \fg $\cdot$
+%
+%\begin{ex} Calculons $\dis \Int{0}{1} (x^2-1) e^{2x} \dx$. Les fonctions $x \mapsto \dfrac{e^{2x}}{2}$ et $x \mapsto x^2-1$ sont de classes $\mathcal{C}^1$ sur $[0,1]$ donc par intégration par parties :
+%$$  \int_{0}^{1} (x^2-1) e^{2x} \dx = \left[ \left(x^2-1 \right) \dfrac{e^{2x}}{2} \right]_0^1 - \int_{0}^1 x e^{2x} \dx = \frac{1}{2} -  \int_{0}^1 x e^{2x} \dx $$
+%De même, $x \mapsto \dfrac{e^{2x}}{2}$ et $x \mapsto x$ sont de classes $\mathcal{C}^1$ sur $[0,1]$ donc par intégration par parties :
+%$$ \int_{0}^1 x e^{2x} \dx = \left[ x \dfrac{e^{2x}}{2} \right] - \int_{0}^1 \dfrac{e^{2x}}{2}\dx = \frac{e^2}{2} - \left[ \frac{e^{2x}}{4} \right] = \frac{e^2}{2} - \frac{e^2}{4} + \frac{1}{4}$$
+%Finalement :
+%$$ \int_{0}^{1} (x^2-1) e^{2x} \dx = \frac{1}{2} - \frac{e^2}{2} + \frac{e^2}{4} - \frac{1}{4} = \frac{1}{4} - \frac{e^2}{4}$$
+%\end{ex}
+%
+%\begin{rem} On procède de même avec une forme du type cosinus ou sinus versus polynôme.
+%\end{rem}
+%
+%\subsubsection{Exponentielle versus cosinus/sinus} 
+%
+%\noindent Pour calculer une intégrale de de la forme $\dis \Int{}{} e^{\beta x} \cos(ax+b)\dx$ ou $\dis \Int{}{} e^{\beta x} \sin(ax+b)\dx$, on peut effectuer deux intégrations par parties (on obtient une équation du premier degré dont l'intégrale cherchée est solution).
+%
+%\subsubsection{Fractions rationnelles}
+%
+%\noindent On appelle fraction rationnelle tout élément de la forme $\dfrac{A(X)}{B(X)}$ où $(A,B) \in \mathbb{R}[X]^2$ avec $B$ non nul. Pour déterminer calculer l'intégrale d'une fonction associée à une fraction rationnelle, on procède de la manière suivante : 
+%
+%\medskip
+%
+%\noindent $\rhd$ On effectue la division euclidienne de $A$ par $B$ : il existe un unique couple $(Q,R)$ de $\mathbb{R}[X]$ tel que :
+%$$ A(X) = Q(X)B(X) + R(X)$$
+%avec $\textrm{deg}(R)< \textrm{deg}(B)$. On a ainsi :
+%$$ \dfrac{A(X)}{B(X)} = Q(X) + \dfrac{R(X)}{B(X)}$$
+%$R$ est un polynôme, il suffit donc de savoir calculer l'intégrale de la fonction associée à $ \dfrac{R(X)}{B(X)} \cdot$
+%
+%\medskip
+%
+%\noindent $\rhd$ On utilise le résultat suivant :
+%
+%\begin{thm} Si la décomposition de $Q$ en produit de facteurs irréductibles de $\mathbb{R}[X]$ est :
+%$$ Q(X) = \lambda \prod_{k=1}^n (X-a_k)^{\alpha_k} \times \prod_{k=1}^m (X^2+ c_k X + d_k)^{\beta_k} $$
+%Alors il existe une unique décomposition de $\dfrac{R(X)}{B(X)}$ sous la forme :
+%$$ \sum_{k=1}^n \sum_{i=1}^{\alpha_k} \frac{\alpha_{k,i}}{(X-a_k)^{i}} + \sum_{k=1}^m \sum_{i=1}^{\beta_k} \dfrac{\mu_{k,i} X + \nu_{k,i}}{(X^2+ c_k X + d_k)^i} $$
+%où les $\alpha_{k,i}$, $\mu_{k,i}$ et $\nu_{k,i}$ sont des réels.
+%\end{thm}
+%
+%\begin{ex} Il existe des réels $a,b,c$ et $d$ tels que :
+%$$ \dfrac{1}{(X-1)^2 (X^2+1)} = \frac{a}{(X-1)} + \frac{b}{(X-1)^2} + \frac{cX+d}{X^2+1}$$
+%\end{ex}
+%
+%\medskip 
+%
+%\noindent $\rhd$ Il reste à savoir déterminer des primitives de fonctions dont l'expression est de la forme :
+%$$ \frac{1}{(X-a)^m} \quad \hbox{ ou }  \quad\frac{ax+b}{x^2+px+q} \hbox{ avec } p^2-4q<0$$
+%
+%\begin{enumerate}
+%\item Une primitive de $x \mapsto \dfrac{1}{(x-a)}$ sur $\mathbb{R} \setminus \lbrace a \rbrace$ est $x \mapsto \ln( \vert x-a \vert)$.
+%\item Si $n$ est un entier naturel supérieur ou égal à $2$, une primitive de $x \mapsto \dfrac{1}{(x-a)^n}= (x-a)^{-n}$ sur $\mathbb{R} \setminus \lbrace a \rbrace$ est $x \mapsto \dfrac{(x-a)^{-n+1}}{-n+1} = \dfrac{1}{(1-n)(x-a)^{1-n}} \cdot$
+%\item Pour déterminer une primitive d'une fonction dont l'expression est $\dfrac{1}{x^2+px+q}$, on écrit sous forme canonique le dénominateur et on sa ramène à une expression de la forme :
+%$$ \hbox{constante} \times \frac{1}{(\ldots)^2+1}$$
+%ce qui permet de déterminer une primitive à l'aide de la fonction $\arctan$. 
+%
+%\begin{ex} Pour tout $x \in \mathbb{R}$,
+%$$ \frac{1}{x^2+x+1} = \frac{1}{\left( x + \frac{1}{2}\right)^2- \frac{1}{4}+1} = \frac{1}{\left( x + \frac{1}{2}\right)^2 + \frac{3}{4}} = \frac{4}{3} \frac{1}{\left(\frac{\sqrt{3}}{2}\left( x + \frac{1}{2}\right)\right)^2 +1} = \frac{8}{3\sqrt{3}} \frac{\frac{\sqrt{3}}{2}}{\left(\frac{\sqrt{3}}{2}\left( x + \frac{1}{2}\right)\right)^2 +1}$$
+%Une primitive est ainsi donnée par $x \mapsto \dfrac{8}{3\sqrt{3}} \arctan \left(\frac{\sqrt{3}}{2}\left( x + \frac{1}{2}\right) \right)\cdot$
+%\end{ex}
+%\item Pour déterminer une primitive d'une fonction dont l'expression est $\dfrac{ax+b}{x^2+px+q}$, on fait apparaitre la dérivée du dénominateur au numérateur (on déterminer une primitive à l'aide de la fonction logarithme népérien), le terme restant se traitant comme au cas précédent.
+%
+%\begin{ex} Pour tout $x \in \mathbb{R}$,
+%$$ \frac{3x-1}{x^2+x+1} = \frac{3}{2} \times \frac{2x+1}{x^2+x+1} - \frac{5}{2} \times \frac{1}{x^2+x+1}$$
+%Une primitive est ainsi donnée par :
+%$$x \mapsto \dfrac{3}{2} \ln(\vert x^2+x+1 \vert) - \frac{5}{2}\dfrac{8}{3\sqrt{3}} \arctan \left(\frac{\sqrt{3}}{2}\left( x + \frac{1}{2}\right) \right) =  \dfrac{3}{2} \ln( x^2+x+1 ) - \dfrac{20}{3\sqrt{3}} \arctan \left(\frac{\sqrt{3}}{2}\left( x + \frac{1}{2}\right) \right)$$
+%\end{ex}
+%
+%\item Pour déterminer une primitive d'une fonction dont l'expression est $\dfrac{ax+b}{(x^2+px+q)^n}$ avec $n$ un entier naturel supérieur ou égal à $2$, on on fait apparaitre la dérivée du dénominateur au numérateur (on déterminer une primitive à l'aide de la forme $u'u^{-n}$), le terme restant se ramenant avec un changement de variable au calcul de l'intégrale suivante :
+%$$ \int \frac{1}{(1+x^2)^n} \dx$$
+%Celle-ci se calculant par intégration par parties successives en partant de $\dis \Int{}{} \dfrac{1}{1+x^2} \dx$
+%
+%\begin{ex} Déterminons $\Int{a}{b} \frac{1}{(x^2+1)^2} \dx$.
+%
+%\noindent Les fonctions $x \mapsto x$ et $x \mapsto  \dfrac{1}{1+x^2}$ sont de classe $\mathcal{C}^1$ sur $[a,b]$. Par intégration par parties, on a :
+%\begin{align*}
+%\dis \int_{a}^b \dfrac{1}{1+x^2} \dx & = \left[ \frac{x}{1+x^2} \right]_a^b - \int_{a}^b x \left( \frac{-2x}{(1+x^2)^2} \right) \dx \\
+%& = \left[ \frac{x}{1+x^2} \right]_a^b +2 \int_{a}^b \frac{x^2}{(1+x^2)^2} \dx \\
+%& = \left[ \frac{x}{1+x^2} \right]_a^b + 2 \int_{a}^b \frac{1}{1+x^2} - \frac{1}{(1+x^2)^2} \dx \\
+%\end{align*}
+%Finalement, en isolant l'intégrale cherchée, on obtient :
+%$$ \int_{a}^b \frac{1}{(1+x^2)^2} \dx = \frac{1}{2} \int_{a}^b \frac{1}{1+x^2} + \frac{1}{2}\left[ \frac{x}{1+x^2} \right]_a^b $$
+%
+%\end{ex}
+%\begin{ex} Déterminons $\dis \Int{0}{1} \dfrac{3x-1}{(x^2+x+1)^2} \dx$.
+%
+%\noindent Pour tout $x \in [0,1]$,
+%$$ \frac{3x-1}{(x^2+x+1)^2} = \frac{3}{2} \times \frac{2x+1}{(x^2+x+1)^2} - \frac{5}{2} \times \frac{1}{(x^2+x+1)^2} $$
+%Une primitive de $x \mapsto \dfrac{2x+1}{(x^2+x+1)^2}= (2x+1)(x^2+x+1)^{-2}$ est donnée par :
+%$$ x \mapsto \frac{(x^2+x+1)^{-1}}{-1} = - \frac{1}{x^2+x+1}$$
+%On sait de plus que pour tout $x \in [0,1]$,
+%$$  \frac{1}{(x^2+x+1)^2} = \frac{1}{\left(\left( x + \frac{1}{2}\right)^2 + \frac{3}{4}\right)^2} = \frac{16}{9}  \frac{1}{\left(\left(\frac{2}{\sqrt{3}}\left( x + \frac{1}{2}\right)\right)^2 + 1 \right)^2}$$
+%Ainsi par changement de variable affine $u= \frac{2}{\sqrt{3}}\left( x + \frac{1}{2}\right)$, on a :
+%$$ \int_{0}^1  \frac{1}{(x^2+x+1)^2} \dx = \frac{16}{9} \frac{\sqrt{3}}{2} \int_{\frac{1}{\sqrt{3}}}^{\sqrt{3}} \frac{1}{(u^2+1)^2}$$
+%Cette dernière intégrale se calcule à l'aide de l'exemple précédent.
+%\end{ex}
+%\end{enumerate}
+
+\subsection{Formules de Taylor}
+
+
+\begin{thm}[Formule de Taylor avec reste intégrale] Soit $f : I \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^{n+1}$ sur $I$. Pour tout $(x,a) \in I^2$, on a :
+$$ f(x) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k + \int_{a}^x \frac{(x-t)^n}{n!} f^{(n+1)}(t) \dt$$
+\end{thm}
+
+%\begin{preuve} On procède par récurrence sur $n \in \mathbb{N}$.
+%
+%\medskip
+%
+%\noindent $\rhd$ Pour $n=0$, on a d'après le Théorème fondamental de l'analyse ($f$ étant de classe $\mathcal{C}^1$ sur $I$, $f'$ est continue sur $I$) :
+%$$ f(x)=f(a) + \int_{a}^x f'(t) \dt$$
+%ce qui est exactement l'égalité souhaitée.
+%
+%\medskip
+%
+%\noindent $\rhd$ Supposons que la propriété soit vraie pour un rang $n \in \mathbb{N}$ et soit $f$ une fonction de classe $\mathcal{C}^{n+2}$ sur $I$. Par hypothèse de récurrence, on a pour $(a,x) \in I^2$,
+%$$ f(x) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k + \int_{a}^x \frac{(x-t)^n}{n!} f^{(n+1)}(t) \dt$$
+%Les fonctions $t \mapsto f^{(n+1)}(t)$ et $t \mapsto \dfrac{-(x-t)^{n+1}}{(n+1)!}$ sont de classe $\mathcal{C}^1$ sur $I$ donc par intégration par parties :
+%\begin{align*}
+%\int_{a}^x \frac{(x-t)^n}{n!} f^{(n+1)}(t) \dt & = \left[-\dfrac{(x-t)^{n+1}}{(n+1)!} f^{(n+1)}(t)\right]_a^x + \int_{a}^x \dfrac{(x-t)^{n+1}}{(n+1)!} f^{(n+2)}(t) \dt \\
+%& = \dfrac{(x-a)^{n+1}}{(n+1)!} f^{(n+1)}(a) + \int_{a}^x \dfrac{(x-t)^{n+1}}{(n+1)!} f^{(n+2)}(t) \dt\\
+%\end{align*}
+%et ainsi :
+%\begin{align*}
+%f(x) & = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k +\dfrac{(x-a)^{n+1}}{(n+1)!} f^{(n+1)}(a) + \int_{a}^x \dfrac{(x-t)^{n+1}}{(n+1)!} f^{(n+2)}(t) \dt \\
+%& = \sum_{k=0}^{n+1} \frac{f^{(k)}(a)}{k!}(x-a)^k + \int_{a}^x \dfrac{(x-t)^{n+1}}{(n+1)!} f^{(n+2)}(t) \dt \\
+%\end{align*}
+%ce qui établit la propriété au rang $n+1$. Par principe de récurrence, la formule est vraie pour tout $n \in \mathbb{N}$.
+%\end{preuve}
+
+%\begin{cor} Soit $f : I \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^{n+1}$ sur $I$, $(a,x) \in I^2$ et $M$ un majorant de $\vert f^{(n+1)}$ sur $[a,x]$ (ou $[x,a]$). Alors :
+%$$ \left\vert f(x) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k \right\vert \leq M \frac{\vert x - a \vert^{n+1}}{(n+1)!}$$
+%\end{cor}
+%
+%\begin{preuve} Démontrons le résultat dans le cas où $x \geq a$ (même raisonnement dans l'autre cas). D'après la formule de Yalor avec reste intégrale, on a :
+%$$ \left\vert f(x) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k \right\vert = \left\vert \int_{a}^x \frac{(x-t)^n}{n!} f^{(n+1)}(t) \dt  \right\vert$$
+%ce qui implique :
+%\begin{align*}
+%\left\vert f(x) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k \right\vert & \leq \int_{a}^x \frac{\vert x-t \vert^n}{n!} \vert f^{(n+1)}(t) \vert \dt \\
+%& \leq  M \int_{a}^x \frac{ (x-t)^n}{n!}  \dt \\
+%& = M \frac{(x-a)^{n+1}}{(n+1)!}
+%\end{align*}
+%\end{preuve}
+
+%\medskip
+%
+\begin{thm}[Formule de Taylor-Young] Soit $f : I \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^{n}$ sur $I$. Pour tout $a \in I$, on a :
+$$ f(x) \underset{ a}{=} \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k +o((x-a)^n)$$
+\end{thm}
+%
+%\begin{preuve} Donnons juste l'idée : on procède par récurrence.  Pour $n=0$, c'est la définition de continuité. Pour la démonstration de l'hérédité, on applique l'hypothèse de récurrence à $f'$ et on intègre le développement limité.
+%\end{preuve}
+
+\section{Méthodes de calcul d'intégrales}
+\subsection{Méthode 1 : en déterminant une primitive}
+\noindent Si $f$ est une fonction continue sur $[a,b]$, elle admet une primitive $F$ sur $[a,b]$ et on a :
+$$ \int_{a}^{b} f(x) \dx = F(b)-F(a)$$
+Il faut donc connaitre parfaitement :
+\begin{itemize}
+\item Les primitives des fonctions usuelles.
+\item Les formes usuelles à repérer  \og à vue \fg : $u'e^u$, $u'u^{\alpha}$, $u'\cos(u)$...
+\end{itemize}
+
+\medskip
+
+\begin{ex} Posons :
+$$ I = \int_{0}^1  xe^{-x^2} \dx$$
+Par linéarité de l'intégrale, on a :
+$$ I = - \frac{1}{2} \int_{0}^1-2x e^{-x^2} \dx$$
+L'expression $-2x e^{-x^2}$ est de la forme $u'(x)e^{u(x)}$ où $u : x \mapsto -x^2$. On a donc :
+$$ I = - \frac{1}{2} \left[e^{-x^2}\right]_{0}^1 = - \frac{1}{2}e^{-1} + \frac{1}{2}$$
+\end{ex}
+
+\begin{ex} Posons :
+$$ I = \int_{1}^{e}  \frac{\ln(x)}{x} \dx$$
+Remarquons que :
+$$ I =  \int_{1}^{e} \frac{1}{x} \times \ln(x) \dx$$
+L'expression $\dfrac{1}{x} \ln(x)$ est de la forme $u'(x) \times u(x)^1$ où $u : x \mapsto \ln(x)$. On a donc :
+$$ I = \left[ \frac{\ln(x)^2}{2} \right]_{1}^{e} = \frac{1}{2}$$
+\end{ex}
+
+\begin{exa} Calculer les intégrales suivantes :
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\dis \int_{-2}^{-1} \dfrac{e^{2x}}{\sqrt{1-e^{2x}}} \dx$.
+\item $\dis \int_{e}^{e^2} \dfrac{1}{x\ln(x)} \dx$.
+\item $\dis \int_{\pi/6}^{\pi/4} \dfrac{\tan^2(x)+1}{\sqrt{\tan(x)}} \dx$.
+\columnbreak
+\item $\dis \int_{0}^{\pi/4} \tan(x) \dx$.
+\item $\dis \dis \int_{0}^1 \dfrac{\cos(x)}{1+\sin(x)^2} \dx$
+\item $ \dis \int_{1}^{2} \dfrac{e^{-x}}{\sqrt{1-e^{-2x}}} \dx$.
+\end{enumerate}
+\end{multicols}
+\medskip
+\end{exa}
+
+\subsection{Méthode 2 : par linéarisation}
+\noindent Si l'on souhaite calculer l'intégrale d'une fonction de la forme $x \mapsto \cos(x)^n \sin(x)^m$, on utilise les formules :
+$$ \cos(x) = \frac{e^{ix}+e^{-ix}}{2} \; \et \sin(x) =\frac{e^{ix}-e^{-ix}}{2i}$$
+pour linéariser l'expression de la fonction.
+
+\medskip
+
+\begin{ex} Calculons l'intégrale suivante :
+$$ I = \int_{0}^{1} \cos(t)^3 \dt$$
+On sait que pour tout $t \in \mathbb{R}$,
+\begin{align*}
+\cos(t) & = \left( \frac{e^{it}+e^{-it}}{2} \right)^3 \\
+& = \frac{e^{3it}+ 3e^{it}+3 e^{-it}+ e^{-3it}}{8} \\
+& = \dfrac{\cos(3t)}{4} + \dfrac{3\cos(t)}{4} 
+\end{align*}
+Ainsi,
+\begin{align*}
+\int_{0}^{1} \cos(t)^3 \dt & = \int_{0}^{1} \dfrac{\cos(3t)}{4} + \dfrac{3\cos(t)}{4} \dt \\
+& = \left[ \dfrac{\sin(3t)}{12} + \dfrac{3\sin(t)}{4} \right]_{0}^1 \\
+& = \dfrac{\sin(3)}{12} + \dfrac{2\sin(1)}{4} 
+\end{align*}
+\end{ex}
+
+\begin{exa} Calculer $\dis \int_{0}^{\pi/2} \sin(t)^4 \dt$.
+\end{exa}
+
+\subsection{Méthode 3 : par intégration par parties}
+
+\noindent Voici quelques méthodes usuelles ($\alpha$, $\beta$, $m$ et $p$ sont des réels non nuls) :
+
+\medskip
+
+\begin{itemize}
+\item Pour calculer l'intégrale d'une fonction de la forme $x \mapsto P(x)e^{\alpha x + \beta}$ où $P$ est une fonction polynômiale on utilise une (ou plusieurs) intégration(s) par parties : on fait tomber le degré de $P$ et on intègre la fonction exponentielle.
+\item Pour calculer l'intégrale d'une fonction de la forme $x \mapsto P(x) \ln(\alpha x)$ où $P$ est une fonction polynômiale, on utilise une intégration par parties : on dérive la fonction logarithme et on intègre la fonction polynômiale.
+\item Pour calculer une intégrale de la forme :
+$$ I=\int_{a}^b \cos(\alpha x + \beta) e^{mx+p} \dx$$
+On procède par double intégration par parties (en dérivant par exemple deux fois la fonction $\cos$), on obtient alors une égalité de la forme :
+$$ I = \left[ \; \cdots \right]_{a}^b - \textrm{Constante} \times I$$
+On obtient alors $I$ (en l'isolant dans l'égalité précédente). On procède de même avec une fonction liée à $\sin$.
+\end{itemize}
+
+\medskip
+
+\begin{ex} Calculons $\dis \Int{0}{1} (x^2-1) e^{2x} \dx$. Les fonctions $x \mapsto \dfrac{e^{2x}}{2}$ et $x \mapsto x^2-1$ sont de classes $\mathcal{C}^1$ sur $[0,1]$ donc par intégration par parties :
+
+\newpage
+
+$$  \int_{0}^{1} (x^2-1) e^{2x} \dx = \left[ \left(x^2-1 \right) \dfrac{e^{2x}}{2} \right]_0^1 - \int_{0}^1 x e^{2x} \dx = \frac{1}{2} -  \int_{0}^1 x e^{2x} \dx $$
+De même, $x \mapsto \dfrac{e^{2x}}{2}$ et $x \mapsto x$ sont de classes $\mathcal{C}^1$ sur $[0,1]$ donc par intégration par parties :
+$$ \int_{0}^1 x e^{2x} \dx = \left[ x \dfrac{e^{2x}}{2} \right]_0^1 - \int_{0}^1 \dfrac{e^{2x}}{2}\dx = \frac{e^2}{2} - \left[ \frac{e^{2x}}{4} \right]_0^1 = \frac{e^2}{2} - \frac{e^2}{4} + \frac{1}{4}$$
+Finalement :
+$$ \int_{0}^{1} (x^2-1) e^{2x} \dx = \frac{1}{2} - \frac{e^2}{2} + \frac{e^2}{4} - \frac{1}{4} = \frac{1}{4} - \frac{e^2}{4}$$
+\end{ex}
+
+\begin{exa} Calculer $I= \int_{1}^e \ln(t) \dt$ et $J = \int_{0}^1 \cos(2t) e^t \dt$.
+\end{exa}
+
+\subsection{Méthode 4 : par changement de variable}
+\noindent Soit $f : I \rightarrow \mathbb{R}$ une fonction continue et $\varphi$ une fonction de classe $\mathcal{C}^1$ sur un segment $[a,b]$ à valeurs dans $I$. Alors :
+$$ \int_{a}^b f(\varphi(t)) \varphi'(t) \dt = \int_{\varphi(a)}^{\varphi(b)} f(x) \dx$$
+On procède de la manière suivante :
+
+\begin{itemize}
+\item On pose $x = \varphi(t)$ et on précise que la fonction $\varphi$ est de classe $\mathcal{C}^1$ sur $[a,b]$.
+\item On a $\dx = \varphi'(t) \dt$
+\item Si $t=a$, $x = \varphi(a)$ et si $t=b$, $x= \varphi(b)$.
+\end{itemize}
+
+\medskip
+
+\begin{ex} Calculons $I=\dis \int_{1}^{e} \dfrac{\dt}{t+t\ln(t)} \cdot$
+
+\begin{itemize}
+\item Posons $x = \ln(t)$. La fonction $\ln$ est de classe $\mathcal{C}^1$ sur $[1,e]$.
+\item $dx = \dfrac{dt}{t}\cdot$
+\item Si $t=1$, $x=0$ et si $t=e$, $x =1$.
+\end{itemize}
+En remarquant que :
+$$ I = \int_{1}^{e}  \frac{1}{1+\ln(t)} \dfrac{\dt}{t}$$
+On a donc par changement de variable :
+$$ I= \int_{0}^{1} \dfrac{1}{1+x} \dx= \left[ \ln(1+x) \right]_0^1= \ln(2)$$
+\end{ex}
+
+\begin{exa} Calculer $\dis \int_{1}^3 \dfrac{\sqrt{t} \dt}{t^2+t}$ à l'aide du changement du variable $x=\sqrt{t}$.
+\end{exa}
+
+\begin{exa}  Calculer les intégrales suivantes à l'aide d'un changement de variable :
+
+\begin{enumerate}
+\item $I= \dis \int_{0}^1 \dfrac{e^{2t}}{e^t+1} \dt$.
+\item $J = \dis \int_{0}^1 \dfrac{1}{e^x+1} \dx$.
+\end{enumerate}
+\end{exa}
+
+\subsection{Méthode 5 : en utilisant une fonction complexe}
+\noindent Si $f$ est une fonction continue sur $[a,b]$ à valeurs dans $\mathbb{C}$, on pose :
+$$ \int_{a}^b f(t) \dt = \int_{a}^b \Re e(f)(t) \dt + \int_{a}^b \Im m(f)(t) \dt$$
+En utilisant que pour tout $t \in \mathbb{R}$,
+$$ \cos(t) = \Re e(e^{it}) \; \et \sin(t) = \Im m(e^{it})$$
+On peut simplifier de nombreux calculs.
+
+\medskip
+
+\begin{ex} Calculons $I = \int_{0}^{1} \cos(t) e^t \dt$. On a :
+\begin{align*}
+I & = \int_{0}^{1} \Re e(e^{it}) e^t \dt \\
+& = \Re e \left(\int_{0}^1e^{(i+1)t} \dt\right) 
+\end{align*}
+Or on a :
+\begin{align*}
+\int_{0}^1e^{(i+1)t} \dt & = \left[ \dfrac{e^{(i+1)t}}{i+1} \right]_{0}^1 \\
+& = \dfrac{e^{i+1}-1}{i+1} \\
+& = \dfrac{e\times e^i - 1 }{i+1} \\
+& = \dfrac{e(\cos(1)+i \sin(1))-1}{i+1} \\
+& = \dfrac{(e(\cos(1)+i \sin(1))-1)(1-i)}{2} \\
+& = \dfrac{e(\cos(1)+i \sin(1))-1-i(e(\cos(1)+i \sin(1)))+i}{2} 
+\end{align*}
+En prenant la partie réelle, on obtient alors que :
+$$ I = \dfrac{e\cos(1)-1+e \sin(1)}{2}$$
+\end{ex}
+
+\begin{exa} Calculer $\int_{0}^1 \sin(2t)e^t \dt$.
+\end{exa}
+
+\section{Quelques questions classiques}
+
+\subsection{Déterminer un équivalent ou une limite à l'aide des sommes de Riemann}
+
+\begin{ex} Déterminons $\dis \lim_{n \rightarrow + \infty} \sum_{k=1}^n \frac{1}{k+n}\cdot$
+
+\medskip
+
+\noindent Pour tout entier $n \geq 1$, on a :
+$$ \sum_{k=1}^n \frac{1}{k+n} = \frac{1}{n} \sum_{k=1}^n \frac{1}{\frac{k}{n}+1} $$
+La fonction $x \mapsto \dfrac{1}{x+1}$ est continue sur $[0,1]$ donc on a :
+$$ \lim_{n \rightarrow + \infty}  \frac{1}{n} \sum_{k=1}^n \frac{1}{\frac{k}{n}+1} = \int_{0}^1 \frac{1}{x+1} \dx = \ln(2)$$
+\end{ex}
+
+\medskip
+
+\newpage
+
+\begin{ex} Déterminons un équivalent de $\dis \Sum{k=1}{n} \sqrt{k}$ quand $n$ tend vers $+ \infty$.
+
+\noindent Pour tout $n \geq 1$, on a :
+$$ \sum_{k=1}^{n} \sqrt{k} = n^{\frac{3}{2}} \left( \frac{1}{n} \sum_{k=1}^n \sqrt{\frac{k}{n}} \right)$$
+La fonction $x \rightarrow \sqrt{x}$ est continue sur $[0,1]$ donc :
+$$ \lim_{n \rightarrow + \infty} \frac{1}{n} \sum_{k=1}^n \sqrt{\frac{k}{n}} = \int_{0}^1 \sqrt{x} \dx =  \frac{2}{3}$$
+et ainsi :
+$$ \sum_{k=1}^{n} \sqrt{k} \underset{+ \infty}{\sim}  \frac{2}{3} n^{\frac{3}{2}}$$
+\end{ex}
+
+\begin{exa} Déterminer un équivalent de $\dis \Sum{k=1}{n} k^4$ quand $n$ tend vers $+ \infty$.
+\end{exa}
+
+\begin{exa} Déterminer $\dis \lim_{n \rightarrow + \infty} \sum_{k = 1}^{n} \frac{n}{n^{2} + k^{2}} \cdot$
+\end{exa}
+
+\subsection{Savoir étudier une fonction définie par une intégrale}
+
+\noindent La méthode suivante (présentée de manière théorique) doit être parfaitement comprise :
+
+\medskip
+
+\noindent Soient $f$ une fonction continue sur $I$ et $\alpha$, $\beta$ deux fonctions dérivables sur un intervalle $J$ et à valeurs dans $I$. Posons pour tout $x \in J$,
+$$H(x) = \int_{\alpha(x)}^{\beta(x)} f(t) \dt$$
+%Alors $H$ est bien définie et dérivable sur sur $I$ et on a pour tout $x \in  J$,
+%$$ H'(x) =  \beta'(x) f(\beta(x)) - \alpha'(x) f(\alpha(x))$$
+%%\end{prop} 
+%%
+%\begin{preuve} 
+%
+\begin{itemize}
+\item La fonction $H$ est bien définie sur $J$ car $f$ est continue sur $I$, $\alpha$ et $\beta$ sont à valeurs dans $I$ et $I$ est un intervalle.
+\item La fonction $f$ est continue sur $I$ donc admet une primitive $G$ sur $I$. Pour tout $x \in J$, on a :
+$$ H(x) = G(\beta(x))- G(\alpha(x))$$
+La fonction $H$ est alors dérivable sur $J$ car $G$ l'est sur $I$ et que $\alpha$, $\beta$ sont dérivables sur $J$ à valeurs dans $I$. On obtient alors que pour tout $x \in J$ (en faisant attention en dérivant la composée de deux fonctions) :
+$$H'(x) =  \beta'(x) G'(\beta(x)) - \alpha'(x) G'(\alpha(x)) =   \beta'(x) f(\beta(x)) - \alpha'(x) f(\alpha(x))$$
+\end{itemize}
+
+\medskip
+
+\begin{ex} Soit $H$ la fonction définie pour tout $x \in \mathbb{R}$ par :
+$$ H(x) = \int_{x}^{x^2} e^{-t^2} \dt$$
+La fonction $H$ est bien définie sur $\mathbb{R}$ car $t \mapsto e^{-t^2}$ est continue sur $\mathbb{R}$. La fonction $t \mapsto e^{-t^2}$ étant continue sur $\mathbb{R}$, elle admet une primitive $F$ sur $\mathbb{R}$. Ainsi pour tout $x \in \mathbb{R}$,
+$$ H(x) = F(x^2)-F(x)$$
+Les fonctions $x \mapsto x$ et $x \mapsto x^2$ étant dérivables sur $\mathbb{R}$, on en déduit que $H$ est dérivable sur $\mathbb{R}$ et que pour tout $x \in \mathbb{R}$,
+$$ H'(x) = 2x F'(x^2)-F'(x) = 2x e^{-x^4}-e^{-x^2}$$
+\end{ex}
+
+\begin{exa} Justifier que la fonction $H$ définie par $H(x) = \int_{-x}^{x^2} \ln(1+t^4) \dt$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et donner l'expression de sa dérivée.
+\end{exa}
+
+\noindent Parfois, on demande de déterminer les limites de fonctions définies par des intégrales : une méthode type est d'encadrer \textit{subtilement} l'intégrande puis d'intégrer et d'utiliser le théorème d'encadrement.
+
+\begin{exa} 
+\begin{enumerate}
+  \item
+    Montrer que la fonction
+    \[
+    f : x \mapsto \int_{x}^{2x} \frac{\e^{t}}{t} \dt
+    \]
+    est définie et dérivable sur $\R^{*}$.
+  \item
+    Déterminer la limite de $f$ en 0.
+  \end{enumerate}
+  \end{exa}
+
+
+\subsection{Savoir étudier une suite définie par intégrale}
+\noindent Soient $a$, $b$ deux réels tels que $a \leq b$ et $(I_n)_{n \geq 0}$ est une suite définie par :
+$$ I_n = \int_{a}^b f_n(x) \dx$$
+où $f_n$ est une fonction continue sur $[a,b]$. Il est alors généralement facile de déterminer certaines propriétés de cette suite :
+
+\medskip
+
+\begin{itemize}
+\item Si les fonctions $f_n$ sont positives (resp. négatives) alors la suite $(I_n)_{n \geq 0}$ est positive (resp. négative) par positivité de l'intégrale.
+\item On a pour tout $n \geq 0$,
+$$ I_{n+1}-I_n = \int_{a}^b f_{n+1}(x)-f_n(x) \dx$$
+On \textit{factorise} alors au mieux l'expression de $f_{n+1}(x)-f_n(x)$ et le signe de cette expression donne alors le signe de $I_{n+1}-I_n$ et donc la monotonie de $(I_n)_{n \geq 0}$.
+\item Si $f_n$ est de la forme :
+$$ f_n(x) = f(x) x^n$$
+avec $f$ continue sur $[0,1]$ alors celle-ci est continue sur $[0,1]$ donc il existe une constante\footnote{que l'on peut déterminer dans la pratique...} positive $K$ tel que pour tout $x \in [0,1]$,
+$$ \vert f(x) \vert \leq K$$
+Et donc :
+\begin{align*}
+\left\vert \int_{0}^1 f(x) x^n \dx \right\vert & \leq \int_{0}^1 \vert f(x)x^n \vert \dx \quad \hbox{ car } 0<1 \\
+& \leq K \int_{0}^1 x^n \dx \\
+& = \dfrac{K}{n+1} 
+\end{align*}
+Ainsi, par théorème d'encadrement on montre que :
+$$ \lim_{n \rightarrow + \infty} \left\vert \int_{0}^1 f(x) x^n \dx \right\vert = 0 $$
+et donc 
+$$ \lim_{n \rightarrow + \infty} I_n = 0 $$
+\item On peut aussi utiliser le résultat obtenu dans le chapitre sur les suites de fonctions pour obtenir la limite de l'intégrale :  soit $(f_n)_{n \geq 0}$ une suite de fonctions \textit{continues} définies sur $[a,b]$ à valeurs dans $\mathbb{K}$. Supposons que la suite $(f_n)_{n \geq 0}$ converge uniformément sur $[a,b]$ vers une fonction $f$. Alors :
+$$ \lim_{n \rightarrow + \infty} \int_{a}^b f_n(x) \dx = \int_{a}^b \lim_{n \rightarrow + \infty} f_n(x) \dx$$
+
+\end{itemize}
+
+\newpage
+
+\begin{exa} Déterminer $\dis \lim_{n \rightarrow + \infty} \int_{0}^1 x^n e^{x} \dx$.
+\end{exa}
+
+%\begin{exa}  Pour tout entier naturel $n$, on pose $\dis I_{n}=\int_{1}^{e}x^{2}\ln \left( x\right) ^{n}dx$.
+%
+%\begin{enumerate}
+%\item
+%\begin{enumerate}
+%\item  Calculer $I_0$.
+%
+%\item Déterminer le sens de variation et le signe de la suite $(I_{n})_{n \geq 0}$.
+%
+%\item  Montrer que la suite $(I_{n})_{n \geq 0}$ est convergente.
+%
+%\item  Montrer que pour tout $x\in [1,e], \, 0 \leq \ln (x) \leq x/e$.
+%
+%\item  En d\'{e}duire que $\lim\limits_{n\rightarrow +\infty }I_{n}=0$.
+%\end{enumerate}
+%
+%\item 
+%\begin{enumerate}
+%\item  Montrer que pour tout entier naturel $\displaystyle n$, 
+%$$\dis I_{n+1}={
+%\frac{e^{3}}{3}}-{\frac{n+1}{3}}I_{n}$$
+%
+%\item  En d\'{e}duire un équivalent de $I_n$ quand $n$ tend vers $+ \infty$.
+%\end{enumerate}
+%\end{enumerate}
+%\end{exa}
+%
+%\begin{exa} Étudier la convergence de la suite $(I_n)_{n  \geq 0}$ où pour tout $n \in \mathbb{N}$,
+%\[ I_n = \int_{0}^1 \frac{x^n}{1+x^2} \, dx \]
+%Donner ensuite un équivalent la suite $(J_n)_{n \geq 0}$ où pour tout $n \in \mathbb{N}$,
+%\[ J_n = \int_{0}^1 x^n \ln(1+x^2) \, dx \]
+%\end{exa}
+\end{document}
+
+

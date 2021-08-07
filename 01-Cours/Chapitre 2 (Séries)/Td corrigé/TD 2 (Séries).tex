@@ -1,0 +1,1014 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{Cours}
+\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\newcommand{\Int}[2]{\ensuremath{\mathchoice%
+	{{\displaystyle\int_{#1}^{#2}}}
+	{{\displaystyle\int_{#1}^{#2}}}
+	{\int_{#1}^{#2}}
+	{\int_{#1}^{#2}}
+	}}
+
+
+\begin{document}
+\everymath{\displaystyle}
+\begin{center}
+\textit{{ {\huge TD 2 : Séries}}}
+\end{center}
+\bigskip
+
+
+\begin{center}
+\textit{{ {\large Nature de séries à termes positifs}}}
+\end{center}
+
+
+\begin{Exa} Donner la nature des séries suivantes ($a$ est un réel) :
+\begin{multicols}{3}
+%Termes positifs
+\begin{enumerate}
+\item $\Sum{n \geq 0}{} \dis\frac{n-1}{7n^2+7}$
+\item $\Sum{n \geq 1}{}\dis\frac{\sqrt{n}\ln(n)}{n^2+1}$
+\item $\Sum{n \geq 1}{}\dis\frac{\sqrt{n+1}}{n\ln(n)+2}$ 
+\item $\Sum{n \geq 1}{} \dfrac{n!}{n^n} $
+\columnbreak
+% plus petit que 2/n^2 
+\item $\Sum{n \geq 0}{} e^{-n^2} $
+% plus petit que exp(-n)
+\item $\Sum{n \geq 1}{} \dfrac{\ln(n)}{\sqrt{n}} $
+% plus grand que ln(2)/sqrt(n)
+\item $\Sum{n \geq 2}{} \dfrac{1}{n+(-1)^n \sqrt{n}} $
+% Par équivalences
+\item $\Sum{n \geq 1}{} \dfrac{1}{1+2+ \cdots + n} $
+\columnbreak
+% Par équivalences
+\item $\Sum{n \geq 1}{} n^{-1- \frac{1}{n}} $
+% Par équivalences
+\item $\Sum{n \geq 1}{}  \dfrac{n^2}{(n-1)!} $
+% D'alembert
+\item $\Sum{n \geq 0}{} \dfrac{1}{(2n)!} \dis \prod_{k=0}^n (a+k)^2$ 
+% D'alembert mais attention au cas où a est un entier relatif négatif
+\item $\Sum{n \geq 1}{} \dfrac{\sqrt{n+1}-\sqrt{n}}{n^a}$ 
+% Par équivalents et quantité conjugué
+%\item $\dis \sum \frac{1}{d_n^2}$
+\end{enumerate}
+\end{multicols}
+
+\vspace{0.05cm}
+
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item On a :
+$$ \frac{n-1}{7n^2+7} \underset{+ \infty}{\sim} \frac{1}{7n}$$
+Les deux séries sont à termes généraux positifs pour $n \geq 1$. On sait que la série de terme général $1/7n$ diverge (série harmonique) donc par critère de comparaison des séries à termes positifs, on en déduit que la série de terme général $ \dis\frac{n-1}{7n^2+7}$ diverge.
+\item On a :
+$$ \frac{\sqrt{n}\ln(n)}{n^2+1} \times n^{1.2} \underset{+ \infty}{\sim}  \frac{\ln(n)}{n^{0.3}} \underset{n \rightarrow + \infty}{\longrightarrow} 0$$
+par théorème des croissances comparées. Ainsi :
+$$ \frac{\sqrt{n}\ln(n)}{n^2+1} \underset{+\infty}{=} o \left( \frac{1}{n^{1.2}} \right)$$
+%$$ \frac{\sqrt{n}\ln(n)}{n^2+1} \times n^{1.2} \underset{n \rightarrow + \infty}{\longrightarrow} 0$$
+%et donc :
+%$$ \frac{\sqrt{n}\ln(n)}{n^2+1} \underset{+ \infty}{=} o \left( \frac{1}{n^{1.2}} \right)$$
+Or la série de terme général $1/n^{1.2}$ converge (série de Riemann avec $1.2 >1$) donc par critère de comparaison, la série de terme général $\dis\frac{\sqrt{n}\ln(n)}{n^2+1}$ converge absolument et donc converge.
+\item On a :
+$$ n \times \frac{\sqrt{n+1}}{n\ln(n)+2} \underset{+ \infty}{\sim} \dfrac{\sqrt{n}}{\ln(n)}\underset{n \rightarrow + \infty}{\longrightarrow} + \infty$$
+par théorème des croissances comparées. Ainsi, à partir d'un certain rang :
+$$ n \times \frac{\sqrt{n+1}}{n\ln(n)+2} \geq 1$$
+et donc :
+$$ \frac{\sqrt{n+1}}{n\ln(n)+2} \geq \dfrac{1}{n} \geq 0$$
+La série harmonique diverge et les séries étudiées sont à termes positifs donc par critère de comparaison des séries à termes positifs, on en déduit que la série étudiée diverge.
+
+%
+%On a :
+%$$ \frac{1}{n} \times \frac{n\ln(n)+2}{\sqrt{n+1}}  \underset{+ \infty}{\sim} \frac{\ln(n)}{\sqrt{n}} \underset{n \rightarrow + \infty}{\longrightarrow} 0$$
+%par théorème des croissances comparées. Ainsi 
+%$$ \frac{1}{n} \underset{+\infty}{=} o \left(\frac{\sqrt{n+1}}{n\ln(n)+2} \right)$$
+%Supposons par l'absurde que la série de terme général $\dis \frac{\sqrt{n+1}}{n\ln(n)+2}$ converge. Alors par critère de comparaison la série harmonique converge absolument et donc converge : c'est absurde. On en déduit que la série de terme général $\dis\frac{\sqrt{n+1}}{n\ln(n)+2}$ diverge.
+\item Il est possible d'utiliser le critère de D'Alembert mais on peut remarquer plus simplement que pour tout entier $n \geq 2$,
+\begin{align*}
+ 0 \leq \dfrac{n!}{n^n} & = \dfrac{1 \times 2 \times \cdots \times n}{n \times n \times \cdots \times n} \\
+ & = \dfrac{2}{n^2} \times \prod_{k=3}^n \dfrac{k}{n} \\
+ & \leq \dfrac{2}{n^2}
+ \end{align*}
+car pour tout $k \in \Interv{3}{n}$, $k/n \in [0,1]$. La série de terme général $1/n^2$ converge (série de Riemann avec $2>1$). Par critère de comparaison des séries à termes positifs, on en déduit que la série étudiée converge.
+\item Pour tout entier $n \geq 0$, $n^2 \geq n$ donc par décroissance de $x \mapsto e^{-x}$ sur $\mathbb{R}$:
+$$ 0 \leq e^{-n^2} \leq e^{-n} = (e^{-1})^n$$
+La série de terme général $(e^{-1})^n$ est convergente (série géométrique avec $\vert e^{-1}\vert <1$). Par critère de comparaison des séries à termes positifs, on en déduit que la série étudiée converge.
+
+\medskip
+
+\noindent On pouvait aussi remarquer que $e^{-n^2} \underset{+ \infty}{=} o \left( \dfrac{1}{n^2} \right) \cdot$
+\item Pour tout entier $n \geq 2$,
+$$ 0 \leq \dfrac{\ln(2)}{\sqrt{n}} \leq \dfrac{\ln(n)}{\sqrt{n}}$$
+La série de terme général $\dfrac{1}{\sqrt{n}}$ est divergente (série de Riemann avec $1/2<1$). Par critère de comparaison des séries à termes positifs, on en déduit que la série étudiée diverge.
+\item Pour tout entier $n \geq 2$,
+$$ n+(-1)^n \sqrt{n} \geq n- \sqrt{n} >0$$
+La série étudiée est donc à termes strictement positifs. Pour tout entier $n \geq 2$,
+$$ n+(-1)^n \sqrt{n} = n \left( 1 + \dfrac{(-1)^n}{\sqrt{n}} \right) \underset{+ \infty}{\sim} n$$
+Ainsi,
+$$ \dfrac{1}{n+(-1)^n \sqrt{n}} \underset{+ \infty}{\sim} \dfrac{1}{n}$$
+La série à terme général positif $1/n$ est divergente (série harmonique). Par critère de comparaison des séries à termes positifs, on en déduit que la série étudiée diverge.
+\item Pour tout entier $n \geq 1$,
+$$ 0 \leq \dfrac{1}{1+2+ \cdots + n}  = \dfrac{2}{n(n+1)} \leq \dfrac{2}{n^2}$$
+La série de terme général $1/n^2$ converge (série de Riemann avec $2>1$). Par critère de comparaison des séries à termes positifs, on en déduit que la série étudiée converge.
+\item Pour tout entier $n \geq 1$,
+$$ 0 \leq n^{-1- \frac{1}{n}} = \dfrac{1}{n} \times n^{- \frac{1}{n}} = \dfrac{1}{n} \times \exp \left( - \dfrac{1}{n} \ln(n) \right)$$
+D'après le théorème des croissances comparées :
+$$ \lim_{n \rightarrow + \infty}  - \dfrac{1}{n} \ln(n) = 0$$
+et par continuité de la fonction exponentielle en $0$ :
+$$ \lim_{n \rightarrow + \infty}  \exp \left( - \dfrac{1}{n} \ln(n) \right) = 1$$
+Ainsi,
+$$ n^{-1- \frac{1}{n}}  \underset{+ \infty}{\sim} \dfrac{1}{n}$$
+La série à terme général positif $1/n$ est divergente (série harmonique). Par critère de comparaison des séries à termes positifs, on en déduit que la série étudiée diverge.
+\item Pour tout entier $n \geq 1$,
+$$  \dfrac{n^2}{(n-1)!} >0$$
+et :
+\begin{align*}
+\dfrac{ \dfrac{(n+1)^2}{n!}}{ \dfrac{n^2}{(n-1)!}}  & = \dfrac{(n+1)^2}{n!} \times \dfrac{(n-1)!}{n^2} \\
+& = \left(1+ \dfrac{1}{n}\right)^2 \times \dfrac{1}{n}
+\end{align*}
+On a :
+$$ \lim_{n \rightarrow + \infty}  \left(1+ \dfrac{1}{n}\right)^2 \times \dfrac{1}{n} = 0 <1$$
+D'après le critère de D'Alembert, on en déduit que la série étudiée converge.
+\item Distinguons deux cas.
+
+\medskip
+
+\noindent $\rhd$ Si $a$ est un entier négatif ou nul alors pour tout entier $n \geq -a$,
+$$ \prod_{k=0}^n (a+k)^2 = 0$$
+et la série converge car ses termes sont tous nuls à partir d'un certain rang.
+
+\medskip
+
+\noindent $\rhd$ Supposons que $a$ n'est pas un entier négatif ou nul. Pour tout entier $n \geq 0$,
+$$ u_n = \dfrac{1}{(2n)!} \dis \prod_{k=0}^n (a+k)^2 >0$$
+et 
+\begin{align*}
+\dfrac{u_{n+1}}{u_n} & = \dfrac{1}{(2n+2)!} \dis \prod_{k=0}^{n+1} (a+k)^2 \times (2n)! \dis \dfrac{1}{\dis \prod_{k=0}^n (a+k)^2} \\
+& = \dfrac{1}{(2n+2)(2n+1)} \times (a+n+1)^2 
+\end{align*}
+On a :
+$$ \dfrac{(a+n+1)^2}{(2n+2)(2n+1)} \underset{+ \infty}{\sim} \dfrac{n^2}{4n^2} = \dfrac{1}{4}$$
+donc 
+$$ \lim_{n \rightarrow + \infty} \dfrac{u_{n+1}}{u_n} = \dfrac{1}{4} <1$$
+D'après le critère de D'Alembert, on en déduit que la série étudiée converge.
+\item La série étudiée est à termes positifs. Pour tout entier $n \geq 1$,
+\begin{align*}
+ \dfrac{\sqrt{n+1}-\sqrt{n}}{n^a} & =  \dfrac{(\sqrt{n+1}-\sqrt{n})(\sqrt{n+1}+ \sqrt{n})}{(\sqrt{n+1}+ \sqrt{n}) n^a} \\
+ & = \dfrac{1}{(\sqrt{n+1}+ \sqrt{n}) n^a} \\
+ & =\dfrac{1}{(\sqrt{1+1/n}+ 1) n^{a+1/2}} 
+\end{align*}
+Ainsi,
+$$  \dfrac{\sqrt{n+1}-\sqrt{n}}{n^a} \underset{+ \infty}{\sim} \dfrac{1}{ \sqrt{2} n^{a+1/2}} $$
+La série de Riemann de terme général positif $\dfrac{1}{n^{a+1/2}}$ converge si et seulement si $a+1/2>1$ donc si et seulement si $a>1/2$. Par critère de comparaison des séries à termes positifs, on en déduit que la série étudiée converge si et seulement si $a> 1/2$.
+\end{enumerate}
+
+\medskip
+
+
+\begin{Exa} Soient $\Sum{n \geq 0}{} u_n$ et $\Sum{n \geq 0}{} v_n$ deux séries convergentes à termes strictement positifs.
+\begin{enumerate}
+\item Montrer que $\Sum{n \geq 0}{} \min(u_n,v_n)$ et $\Sum{n \geq 0}{} \max(u_n,v_n)$ convergent.
+\item Montrer que $\Sum{n \geq 0}{} \sqrt{u_n v_n}$ et $\Sum{n \geq 0}{} \dfrac{u_n v_n}{u_n+v_n}$ convergent.
+\end{enumerate}
+\end{Exa}
+
+
+\newpage
+
+\corr  
+
+\begin{enumerate}
+\item Pour tout entier $n \geq 0$,
+$$ 0 \leq  \min(u_n,v_n) \leq u_n $$
+La série $\Sum{n \geq 0}{} u_n$ converge. Par critère de comparaison de séries à termes positifs, on en déduit que $\Sum{n \geq 0}{} \min(u_n,v_n)$ converge. 
+
+\medskip
+
+\noindent Pour tout entier $n \geq 0$,
+$$  \max(u_n,v_n) + \min(u_n,v_n) = u_n + v_n $$
+donc 
+$$ \max(u_n,v_n) =   u_n + v_n - \min(u_n,v_n)$$
+Par somme de séries convergentes, on en déduit que $\Sum{n \geq 0}{} \max(u_n,v_n)$ converge.
+\item Utilisons l'inégalité classique :
+$$ \forall (a,b) \in \mathbb{R}^2, \; ab \leq \dfrac{a^2+b^2}{2}$$
+Pour tout entier $n \geq 0$,
+$$ 0 \leq \sqrt{u_n v_n} \leq \dfrac{u_n+ v_n}{2}$$
+Par somme de séries convergentes, la série de terme général $\dfrac{u_n+ v_n}{2}$ converge. Par critère de comparaison de séries à termes positifs, on en déduit que $\Sum{n \geq 0}{} \sqrt{u_n v_n}$ converge. 
+
+\medskip
+
+\noindent Pour tout entier $n \geq 0$, $u_n$ et $v_n$ sont strictement positifs donc $u_n+v_n > u_n >0$ et ainsi :
+$$ 0 \leq \dfrac{u_n v_n}{u_n+v_n} \leq \dfrac{u_n v_n}{u_n} = v_n$$
+La série de terme général $v_n$ converge. Par critère de comparaison de séries à termes positifs, on en déduit que $\Sum{n \geq 0}{} \dfrac{u_n v_n}{u_n+v_n}$ converge. 
+\end{enumerate}
+
+\medskip
+
+\begin{Exa} Considérons une série de terme général $u_n$ à termes strictement positifs et notons pour tout $n\in\N,$ $S_n$ la somme partielle d'ordre $n$ associée. 
+
+On suppose que la s\'erie $\Sum{n \geq 0}{} u_n$ converge. Quelle est la nature de $\Sum{n \geq 0}{} \dis \dfrac{u_n}{S_n}?$
+\end{Exa}
+
+\corr La s\'erie de terme général $u_n$ converge. Puisque pour tout $n \geq 0$, $u_n>0$, la suite des sommes partielles est croissante et converge vers un réel $S>0.$ Ainsi $S_n \underset{+ \infty}{\sim} S$ et donc :
+$$\frac{u_n}{S_n}\underset{+ \infty}{\sim} \dis\frac{u_n}{S}$$
+Les termes généraux des séries étudiées sont à termes positifs et la s\'erie de terme général $u_n/S$ converge par hypothèse ($S$ est une constante). Ainsi, par critère de comparaison de séries à termes positifs, on en déduit que la s\'erie de terme général $\dfrac{u_n}{S_n}$ converge.
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Calcul de sommes}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Déterminer la nature de la série suivante et donner sa somme en cas de convergence : 
+$$ \sum_{n \geq 1} \ln \l( \frac{(n+1)^2}{n(n+2)}\r)$$
+\end{Exa}
+
+\corr Pour tout entier $n \geq 1$,
+\begin{align*}
+\ln \l( \frac{(n+1)^2}{n(n+2)}\r) & = 2\ln(n+1)- \ln(n)- \ln(n+2) \\
+& = \ln(n+1)-\ln(n) + \ln(n+1)-\ln(n+2)
+\end{align*}
+On en déduit que pour tout entier $N \geq 1$,
+\begin{align*}
+\sum_{k=1}^N \ln \l( \frac{(k+1)^2}{k(k+2)}\r) &= \sum_{k=1}^N \ln(k+1)-\ln(k) + \ln(k+1)-\ln(k+2) \\
+& = \sum_{k=1}^N \ln(k+1)-\ln(k) + \sum_{k=1}^N \ln(k+1)-\ln(k+2) \\
+& = \ln(N+1) - \ln(1) + \ln(2)- \ln(N+2) \quad \hbox{(télescopage)} \\
+& = \ln(2) + \ln \left( \dfrac{N+1}{N+2} \right)
+\end{align*}
+On sait que :
+$$ \lim_{N \rightarrow + \infty} \dfrac{N+1}{N+2}=1$$
+donc par continuité du logarithme népérien en $1$, on en déduit que :
+$$ \lim_{N \rightarrow + \infty} \ln \left( \dfrac{N+1}{N+2} \right)=0$$
+et ainsi, la série étudiée converge et on a :
+$$ \sum_{k=1}^{+ \infty} \ln \left( \dfrac{(k+1)^2}{k(k+2)} \right) = \ln(2) $$
+
+
+\medskip
+
+\begin{Exa} On pose pour tout entier $n \geq 1$,
+$$ a_n = \dfrac{1}{1^2+2^2 + \cdots + n^2}$$
+\begin{enumerate}
+\item Montrer que la série de terme général $a_n$ est convergente.
+\item On pose pour tout $n \geq 1$,
+$$ H_n = \sum_{k=1}^n \dfrac{1}{k}$$
+Montrer que $\dis \lim_{n \rightarrow + \infty} H_{2n}-H_n = \ln(2)$.
+\item Trouver $a$, $b$ et $c$ tels que pour tout $n \geq 1$,
+$$ a_n = \dfrac{a}{n} + \dfrac{b}{n+1} + \dfrac{c}{2n+1}$$
+\item En déduire la valeur de $\dis \sum_{n=1}^{+ \infty} a_n$.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+\begin{enumerate}
+\item On a pour tout entier $n \geq 1$,
+$$ a_n = \dfrac{6}{n(n+1)(2n+1)}$$
+et ainsi :
+$$ a_n \underset{+ \infty}{\sim} \dfrac{6}{2n^3}= \dfrac{3}{n^3}$$
+Par comparaison à une série de Riemann convergente $(3>1)$ et sachant que les séries étudiées sont à termes positifs, on en déduit que la série de terme général $a_n$ est convergente.
+\item Soit $n \geq 1$. Alors :
+$$ H_{2n}-H_n = \sum_{k=1}^{2n} \dfrac{1}{k} - \sum_{k=1}^{n} \dfrac{1}{k} = \sum_{k=n}^{2n} \dfrac{1}{k}$$
+Je vois alors au moins deux méthodes pour répondre à la question ...
+
+\medskip
+
+\noindent \textbf{Méthode 1.} Pour tout entier $n \geq 1$,
+\begin{align*}
+\sum_{k=n+1}^{2n} \dfrac{1}{k} & = \sum_{k=1}^{n} \dfrac{1}{k+n} \\
+& = \dfrac{1}{n} \sum_{k=1}^{n} \dfrac{1}{\dfrac{k}{n} +1} \\
+& =  \dfrac{1}{n} \sum_{k=1}^n f \left( \dfrac{k}{n} \right)
+\end{align*}
+où $f : [0,1] \rightarrow \mathbb{R}$ est définie pour tout $x \in [0,1]$ par :
+$$ f(x) = \dfrac{1}{x+1}$$
+La fonction $f$ est continue sur $[0,1]$ donc d'après le résultat lié aux sommes de Riemann :
+\begin{align*}
+\lim_{n \rightarrow + \infty} \dfrac{1}{n} \sum_{k=1}^n f \left( \dfrac{k}{n} \right) & = \int_{0}^1 f(x) \dx \\
+& = \left[\ln(x+1) \right]_0^1 \\
+& = \ln(2) \\
+\end{align*}
+ce qui donne le résultat.
+
+\medskip
+
+\noindent \textbf{Méthode 2.} Soit $k \in \mathbb{N}^*$. La fonction $t \mapsto \dfrac{1}{t}$ est décroissante sur $\mathbb{R}_+^{*}$ donc pour tout $t \in [k,k+1]$,
+$$ \dfrac{1}{k+1} \leq \dfrac{1}{t} \leq \dfrac{1}{k}$$
+puis par croissance de l'intégrale (les bornes étant dans le bon sens) :
+$$ \int_{k}^{k+1} \dfrac{1}{k+1} \dt \leq \int_{k}^{k+1} \dfrac{1}{t} \dt \leq \int_{k}^{k+1} \dfrac{1}{k} \dt$$
+et donc 
+\begin{equation}\label{ineg}
+ \dfrac{1}{k+1}  \leq \int_{k}^{k+1} \dfrac{1}{t} \dt \leq  \dfrac{1}{k} 
+\end{equation}
+Soit $n \geq 2$. En sommant l'inégalité de gauche de (\ref{ineg}) pour $k$ variant de $n-1 \geq 1$ à $2n-1$, on obtient d'après la relation de Chasles :
+$$ \sum_{k=n-1}^{2n-1} \dfrac{1}{k+1} \leq \int_{n-1}^{2n}  \dfrac{1}{t} \dt$$
+A l'aide d'un changement d'indice et en calculant l'intégrale, on obtient :
+$$ \sum_{k=n}^{2n} \dfrac{1}{k} \leq \ln(2n)-\ln(n-1) = \ln(2)+ \ln(n)-\ln(n-1) = \ln(2)- \ln \left(1- \dfrac{1}{n}\right)$$
+En sommant l'inégalité de droite de (\ref{ineg}) pour $k$ variant de $n$ à $2n$, on obtient de la même manière :
+$$ \ln \left( 2 + \dfrac{1}{n}\right)  \leq  \sum_{k=n}^{2n} \dfrac{1}{k} $$
+et ainsi :
+$$ \ln \left( 2 + \dfrac{1}{n}\right)  \leq  H_{2n}-H_n \leq \ln(2)- \ln \left(1- \dfrac{1}{n}\right)$$
+On obtient alors le résultat par théorème d'encadrement en remarquant que la continuité de la fonction logarithme népérien en $1$ et $2$ implique que :
+$$ \lim_{n \rightarrow + \infty} \ln \left( 2 + \dfrac{1}{n}\right) = \ln(2)$$
+et 
+$$ \lim_{n \rightarrow + \infty} \ln(2)- \ln \left(1- \dfrac{1}{n}\right) = \ln(2)$$
+\item Soit $(a,b,c) \in \mathbb{R}^3$. Pour tout entier $n \geq 1$,
+\begin{align*}
+a_n = \dfrac{a}{n} + \dfrac{b}{n+1} + \dfrac{c}{2n+1} & \Longleftrightarrow  \dfrac{6}{n(n+1)(2n+1)} = \dfrac{a}{n} + \dfrac{b}{n+1} + \dfrac{c}{2n+1} \\
+& \Longleftrightarrow 6= a(n+1)(2n+1)+bn(2n+1)+cn(n+1) \\
+& \Longleftrightarrow 6= (2a+2b+c)n^2 + (3a+b+c)n + a 
+\end{align*}
+Il suffit de déterminer $(a,b,c)$ tel que :
+$$ \left\lbrace \begin{array}{rcl}
+2a+2b+c & = & 0 \\
+3a+b+c & =& 0 \\
+a& = &6 \\
+\end{array}\right.$$
+La résolution du système donne $a=6$, $b=6$ et $c=-24$.
+
+\item D'après la question précédente, on a pour tout entier $n \geq 1$,
+$$ a_n = \dfrac{6}{n} + \dfrac{6}{n+1} - \dfrac{24}{2n+1}$$
+et ainsi :
+\begin{align*}
+\sum_{k=1}^n a_k & = 6 H_n + 6(H_{n+1}-1)- 24 \sum_{k=1}^n \dfrac{1}{2k+1} \\
+& = 6 H_n + 6(H_{n+1}-1)- 24 \left( \sum_{k=1}^n \dfrac{1}{2k+1} +  \sum_{k=1}^{n+1} \dfrac{1}{2k} - \sum_{k=1}^{n+1} \dfrac{1}{2k} \right) \\
+& =6 H_n + 6(H_{n+1}-1)-24 \left( \sum_{k=2}^{2n+2} \dfrac{1}{k} -  \dfrac{1}{2} H_{n+1} \right) \\
+& = 6H_n + 6 H_{n+1} - 6 - 24 (H_{2n+2}-1) + 12 H_{n+1} \\
+& = 6(H_n - H_{2n+2}) + 18(H_{n+1}- H_{2n+2}) + 18 \\
+& = 6 \left( H_n - H_{2n} - \dfrac{1}{2n+1} - \dfrac{1}{2n+2} \right) + 18 (H_{n+1}- H_{2n+2})  + 18
+\end{align*}
+D'après les question précédentes, on sait que :
+$$ \lim_{n \rightarrow + \infty} H_n- H_{2n} = \lim_{n \rightarrow + \infty} H_{n+1}- H_{2n+2} = - \ln(2)$$
+On en déduit alors que :
+$$ \sum_{k=1}^{+ \infty} a_k = -6\ln(2) -18 \ln(2) + 18 = 6(3- 4 \ln(2))$$
+\end{enumerate}
+
+\medskip
+
+\begin{Exa} Déterminer la nature, et la somme le cas échéant, de $\Sum{n \geq 0}{} e^{-2n} \ch(n)$.
+\end{Exa}
+
+\corr La série étudiée est à termes positifs. On a :
+$$ e^{-2n} \ch(n) \underset{+ \infty}{\sim} e^{-2n} \times \dfrac{e^n}{2} = \dfrac{1}{2} (e^{-1})^n$$
+La série de terme général positif $(e^{-1})^n$ converge (série géométrique avec $\vert e^{-1} \vert <1$). Par critère de comparaison des séries à termes positifs, on en déduit que la série étudiée converge. 
+
+\medskip
+
+\noindent Notons $S$ la somme de cette série. On a :
+$$ S = \sum_{k=0}^{+ \infty} e^{-2k} \times \dfrac{e^k + e^{-k}}{2} = \dfrac{1}{2} \sum_{k=0}^{+ \infty} e^{-k} + e^{-3k}$$
+Les séries de termes généraux $(e^{-1})^n$ et $(e^{-3})^n$ convergent (séries géométriques avec des raisons positives strictement plus petites que $1$). On a donc :
+\begin{align*}
+S & = \dfrac{1}{2} \sum_{k=0}^{+ \infty} (e^{-1})^k + \dfrac{1}{2} \sum_{k=0}^{+ \infty} (e^{-3})^k \\
+& = \dfrac{1}{2(1-e^{-1})} + \dfrac{1}{2(1-e^{-3})}
+\end{align*}
+
+\medskip
+
+\begin{Exa} Déterminer la nature, et la somme le cas échéant, de $\dis \Sum{n \geq 0}{} \dfrac{\sin(n \theta)}{2^n}$ où $\theta \in \mathbb{R}$.
+\end{Exa}
+
+\corr Remarquons que pour tout entier $n \geq 0$,
+$$ \dfrac{\sin(n \theta)}{2^n} = \Im m \left( \dfrac{e^{i n\theta}}{2^n} \right) = \Im m \left(\left( \dfrac{e^{i \theta}}{2} \right)^n \right)$$
+La série de terme général $(e^{i \theta}/2)^n$ converge car $\vert e^{i \theta}/2 \vert = 1/2 <1$. La partie imaginaire de cette série est donc convergente et on a :
+\begin{align*}
+\sum_{n=0}^{+ \infty}  \dfrac{\sin(n \theta)}{2^n}  & = \Im m \left( \sum_{n=0}^{+ \infty} \left( \dfrac{e^{i \theta}}{2} \right)^n \right) \\
+& = \Im m \left( \dfrac{1}{1-e^{i \theta}/2} \right) \\
+& = \Im m \left( \dfrac{2}{2- e^{i \theta}} \right)
+\end{align*}
+On a :
+\begin{align*}
+\dfrac{2}{2- e^{i \theta}} & = \dfrac{2(2-e^{- i\theta})}{\vert 2- e^{i \theta} \vert^2} \\
+& = \dfrac{2(2- \cos(\theta)+i \sin(\theta))}{\vert 2- e^{i \theta} \vert^2}
+\end{align*}
+Finalement,
+$$ \sum_{n=0}^{+ \infty}  \dfrac{\sin(n \theta)}{2^n} = \dfrac{2\sin(\theta)}{\vert 2- e^{i \theta} \vert^2}$$
+
+\medskip
+
+
+\begin{Exa} 
+\begin{enumerate}
+\item Déterminer trois réels $a$, $b$ et $c$ tels que pour tout entier $n \geq 1$,
+$$ \frac{1}{n(n+1)(n+2)} = \frac{a}{n} + \frac{b}{n+1} + \frac{c}{n+2}$$
+\item En déduire que $\dis \Sum{n \geq 1}{} \dfrac{1}{n(n+1)(n+2)}$ converge et donner sa somme.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+\begin{enumerate}
+\item L'existence de ces réels est assurée par le théorème de décomposition en éléments simples. Posons :
+$$ F(X) = \dfrac{1}{X(X+1)(X+2)}$$
+Alors :
+$$ XF(X) = \dfrac{1}{(X+1)(X+2)} = a + \dfrac{bX}{X+1} + \dfrac{cX}{X+2}$$
+En évaluant en $0$, on obtient :
+$$ a = \dfrac{1}{2}$$
+En réitérant ce procédé avec $(X+1)F(X)$ et $(X+2)F(X)$, on obtient :
+$$ b = -1 \; \hbox{ et } c = \dfrac{1}{2}$$
+Ainsi, pour tout $n \geq 1$,
+$$  \frac{1}{n(n+1)(n+2)} = \dfrac{1}{2} \times \frac{1}{n} - \frac{1}{n+1}  +\dfrac{1}{2} \times \frac{1}{n+2}$$
+\item Soit $N \geq 1$. Alors :
+\begin{align*}
+\sum_{n=1}^N \dfrac{1}{n(n+1)(n+2)} & = \sum_{n=1}^N  \dfrac{1}{2} \times \frac{1}{n} - \frac{1}{n+1} + \dfrac{1}{2} \times \frac{1}{n+2} \\
+& = \dfrac{1}{2} \sum_{n=1}^N  \frac{1}{n} - \frac{2}{n+1}  +\frac{1}{n+2} \\
+& = \dfrac{1}{2} \sum_{n=1}^N  \frac{1}{n} - \frac{1}{n+1} - \frac{1}{n+1}  + \frac{1}{n+2} \\
+& =  \dfrac{1}{2} \sum_{n=1}^N  \frac{1}{n} - \frac{1}{n+1} +  \dfrac{1}{2} \sum_{n=1}^N   \frac{1}{n+2} - \frac{1}{n+1}  \\
+& = \dfrac{1}{2} \left(1 - \dfrac{1}{N+1} \right) + \dfrac{1}{2} \left( \dfrac{1}{N+2} - \dfrac{1}{2} \right)
+\end{align*}
+On a :
+$$ \lim_{N \rightarrow + \infty} \dfrac{1}{2} \left(1 - \dfrac{1}{N+1} \right) + \dfrac{1}{2} \left( \dfrac{1}{N+2} - \dfrac{1}{2} \right) = \dfrac{1}{4}$$
+Ainsi, la série étudiée converge et sa somme est $\dfrac{1}{4} \cdot$
+\end{enumerate}
+
+\medskip
+
+
+\begin{Exa} Pour tout entier naturel non nul $p$, on pose :
+$$ \forall n \in \mathbb{N}^*, \quad u(n,p) = \frac{1}{n(n+1)\cdots(n+p)}$$
+
+\begin{enumerate}
+\item Montrer que $\Sum{n \geq 1}{}  u(n,p)$ converge.
+\item On pose pour tout entier $p \geq 1$,
+$$ \sigma(p) = \sum_{n=1}^{+ \infty} u(n,p)$$
+Calculer $\sigma(1)$.
+\item Pour tout entier $p \geq 2$ et $n \in \mathbb{N}^*$, exprimer $u(n,p-1)-u(n+1,p-1)$ en fonction de $p$ et $u(n,p)$.
+\item En déduire la valeur de $\sigma(p)$ pour tout entier $p \geq 2$.
+\end{enumerate}
+\end{Exa}
+
+\corr \begin{enumerate}
+\item Soit $p \geq 1$. Pour tout $n \in \mathbb{N}^*$, $u(n,p)$ est bien défini et positif. On a :
+$$u(n,p) \underset{+\infty}{\sim} \frac{1}{n^{p+1}} \geq 0$$
+Sachant que $p+1>1$, on a par critère de comparaison de séries à termes positifs (comparaison à une série de Riemann convergente) que la s\'erie $\dis \sum_{n \geq 1} u(n,p)$ converge.
+
+\item  On sait que la s\'erie converge. On a : 
+\begin{align*}
+\sigma (1)& =\sum_{n=1}^{+\infty }\frac{1}{n(n+1)} \\
+& =\sum_{n=1}^{+\infty }\frac{1+n-n}{n(n+1)} \\
+& =\sum_{n=1}^{+\infty }\frac{1}{n}-\frac{1}{n+1} \\
+& = \lim_{N \rightarrow + \infty} \sum_{n=1}^{N}\frac{1}{n}-\frac{1}{n+1} \\
+& =\lim_{N \rightarrow +\infty }\left(1- \frac{1}{N+1}\right) =1 
+\end{align*}
+Ainsi, $\sigma(1)=1$.
+\item On a :
+\begin{align*}
+u(n,p-1)-u(n+1,p-1) & =\frac{1}{n(n+1)\cdots (n+p-1)}-\frac{1}{(n+1)(n+2)\cdots
+(n+p)} \\
+& =\frac{n+p-n}{n(n+1)\cdots (n+p)} \\
+& =p \times u(n,p) 
+\end{align*}
+Ainsi, $u(n,p-1)-u(n+1,p-1)=p \times u(n,p)$.
+\item Sachant que $p>0$, on a :
+\[
+u(n,p)=\frac{u(n,p-1)}{p}-\frac{u(n+1,p-1)}{p} 
+\]
+Ainsi $u(n,p)$ est de la forme $a_{n+1}-a_n$ avec $ \dis a_n=-\frac{u(n,p-1)}{p}$. D'apr\`es l'\'equivalent de la question $1.$,  on sait que :
+$$\dis \lim_{n \rightarrow + \infty} a_{n}=0$$
+Remarquons que : 
+$$a_{1}=-\frac{1}{p} \times \frac{1}{1 \times 2 \times \cdots \times p}=-\frac{1}{pp!}$$ 
+et ainsi (\textit{attention} : on utilise la somme de la série car on a prouvé que celle-ci convergeait) :
+\begin{align*}
+\sigma(p) & = \sum_{n=1}^{+ \infty} a_{n+1}-a_n \\
+& = \lim_{N \rightarrow + \infty}  \sum_{n=1}^{N} a_{n+1}-a_n \\
+& = \lim_{N \rightarrow + \infty} a_{N+1} - a_1 \\
+& = - a_1 \\
+& = \frac{1}{pp!} 
+\end{align*}
+\end{enumerate}
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Nature de séries à termes quelconques}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Déterminer la nature de $\Sum{n \geq 0}{} \dis\frac{\sin(e^n)}{n^3+n^2+1} \cdot$
+\end{Exa}
+
+\corr Pour tout entier $n \geq 1$, on a :
+\begin{equation}\label{ineg1}
+0 \leq \left\vert \frac{\sin(e^n)}{n^3+n^2+1} \right\vert \leq \frac{1}{n^3+n^2+1} \leq \dfrac{1}{n^3}
+\end{equation}
+La série de terme général $1/n^3$ converge (série de Riemann avec $3>1$) donc par critère de comparaison de séries à termes positifs, la série de terme général $\frac{\sin(e^n)}{n^3+n^2+1}$ converge absolument donc converge.
+
+\medskip
+
+\begin{Exa} Déterminer la nature de $\Sum{n \geq 0}{} \sin \left({\pi \sqrt {n^2 + 1}} \right)$.
+\end{Exa}
+
+\corr Pour tout $n \geq 1$, on a :
+\begin{align*}
+\sqrt {n^2 + 1} & = \sqrt{n^2} \left( 1 + \frac{1}{n^2} \right)^{\frac{1}{2}} \\
+& \underset{+ \infty}{=} n \left(1 + \frac{1}{2n^2} - \frac{1}{8n^4} + o \left( \frac{1}{n^4} \right) \right) \quad \hbox{car } \; \frac{1}{n^2} \underset{n \rightarrow + \infty}{\longrightarrow} 0\\
+& \underset{+ \infty}{=} n + \frac{1}{2n} - \frac{1}{8n^3} +  o \left( \frac{1}{n^3} \right)  
+\end{align*}
+donc :
+$$ \pi \sqrt {n^2 + 1} \underset{+ \infty}{=} \pi n + \frac{\pi}{2n} - \frac{\pi}{8n^3} +  o \left( \frac{1}{n^3} \right)  $$
+puis :
+$$\sin \left({\pi \sqrt {n^2 + 1}} \right)  \underset{+ \infty}{=} \sin \left(  \pi n + \frac{\pi}{2n} - \frac{\pi}{8n^3} +  o \left( \frac{1}{n^3} \right) \right)$$
+Or pour tout $(a,b) \in \mathbb{R}^2$, $\sin(a+b)= \sin(a)\cos(b)+\sin(b) \cos(a)$ donc :
+\begin{align*}
+ \sin \left({\pi \sqrt {n^2 + 1}} \right)& \underset{+ \infty}{=} (-1)^n \sin \left(\frac{\pi}{2n} - \frac{\pi}{8n^3} +  o \left( \frac{1}{n^3} \right) \right) \\
+ & \underset{+ \infty}{=} (-1)^n \left[\left(\frac{\pi}{2n} - \frac{\pi}{8n^3} +  o \left( \frac{1}{n^3} \right) \right) + o \left( \left(\frac{\pi}{2n} - \frac{\pi}{8n^3} +  o \left( \frac{1}{n^3} \right) \right)^2 \right) \right] 
+ \end{align*}
+car $\sin(x) \underset{0}{=} x + o(x^2)$ et que $\dis \frac{\pi}{2n} - \frac{\pi}{8n^3} +  o \left( \frac{1}{n^3} \right)$ tend vers $0$ quand $n$ tend vers $+ \infty$. Finalement, on obtient :
+$$ \sin \left({\pi \sqrt {n^2 + 1}} \right) \underset{+ \infty}{=} \frac{\pi (-1)^n}{2n} - \frac{\pi (-1)^n}{8n^3} +  o \left( \frac{1}{n^2} \right) = \frac{\pi (-1)^n}{2n} +  o \left( \frac{1}{n^2} \right)$$
+Chacun de ces termes est le terme général d'une série convergente : le premier correspond à la série harmonique alternée et la deuxième est absolument convergente donc convergente par critère de comparaison à une série de Riemann convergente ($2>1$). Ainsi, par somme, $\dis \Sum{n \geq 0}{} \sin \left({\pi \sqrt {n^2 + 1}} \right)$ converge.
+
+\medskip
+
+
+
+\begin{Exa} Étudier la convergence de $\Sum{n \geq 1}{} \dis \ln \left( 1 + \dfrac{(-1)^n}{n^{\alpha}} \right)$ pour $\alpha>0$.
+\end{Exa} 
+
+\corr Quand $n$ tend vers $+ \infty$, $\dfrac{(-1)^n}{n^{\alpha}}$ tend vers $0$ donc :
+\begin{align*}
+ \ln \left( 1 + \dfrac{(-1)^n}{n^{\alpha}} \right) & \underset{+ \infty}{=} \dfrac{(-1)^n}{n^{\alpha}} - \dfrac{1}{2} \left(\dfrac{(-1)^n}{n^{\alpha}} \right)^2 + \textrm{o} \left(\left(\dfrac{(-1)^n}{n^{\alpha}} \right)^2\right) \\
+ & \underset{+ \infty}{=} \dfrac{(-1)^n}{n^{\alpha}} - \dfrac{1}{2n^{2\alpha}} +  \textrm{o} \left( \dfrac{1}{n^{2 \alpha}} \right)
+ \end{align*}
+ La série de terme général $\dfrac{(-1)^n}{n^{\alpha}}$ converge (critère spécial des séries alternées). On a :
+ $$  - \dfrac{1}{2n^{2\alpha}} +  \textrm{o} \left( \dfrac{1}{n^{2 \alpha}} \right) \underset{+\infty}{\sim}  - \dfrac{1}{2n^{2\alpha}}$$
+ La série de terme général $- \dfrac{1}{2n^{2\alpha}}$ (termes négatifs) converge si et seulement si $2 \alpha>1$ donc par critère de comparaison des séries à termes négatifs (l'autre terme général est négatif à partir d'un certain rang), la série de terme général 
+$$  - \dfrac{1}{2n^{2\alpha}} +  \textrm{o} \left( \dfrac{1}{n^{2 \alpha}} \right)$$
+converge si et seulement si $2 \alpha>1$. Ainsi, par somme, la série étudiée converge si et seulement $\alpha > \dfrac{1}{2} \cdot$
+
+\medskip
+
+
+\begin{Exa} Déterminer la nature de la série de terme général $u_n = \exp \left( (-1)^n \dfrac{\ln(n)}{n} \right)-1$.
+\end{Exa}
+
+\corr D'après le théorème des croissances comparées (et par produit avec une suite bornée), on a :
+$$ \lim_{n \rightarrow + \infty} \dfrac{(-1)^n \ln(n)}{n}=0$$
+Ainsi,
+$$ u_n \underset{+ \infty}{=}  \dfrac{(-1)^n \ln(n)}{n} + \dfrac{1}{2}  \dfrac{\ln(n)^2}{n^2} + o \left(  \dfrac{\ln(n)^2}{n^2} \right)$$
+La série de terme général $\dfrac{(-1)^n \ln(n)}{n}$ converge par critère spécial des séries alternées : une simple étude de fonction montre que $x \mapsto \dfrac{\ln(x)}{x}$ est décroissante sur $[e, + \infty[$ donc la suite de terme général $ \dfrac{\ln(n)}{n}$ est décroissante (à partir du rang $3$) et est positive et convergente vers $0$. On a maintenant :
+$$ \dfrac{1}{2}  \dfrac{\ln(n)^2}{n^2} + o \left(  \dfrac{\ln(n)^2}{n^2} \right) \underset{+ \infty}{\sim}  \dfrac{1}{2}  \dfrac{\ln(n)^2}{n^2}$$
+Or par théorème des croissances comparées, on a :
+$$ \dfrac{1}{2}  \dfrac{\ln(n)^2}{n^2} \underset{+ \infty}{=} o \left( \dfrac{1}{n^{3/2}}\right)$$
+La série de terme général positif $1/n^{3/2}$ est convergente (série de Riemann avec $3/2>1$) donc par critère de comparaison la série de terme général $\dfrac{1}{2}  \dfrac{\ln(n)^2}{n^2}$ est convergente et par critère de comparaison des séries à termes positifs (la première série étudiée est à termes positifs donc l'autre aussi à partir d'un certain rang par équivalences), la série de terme général :
+$$ \dfrac{1}{2}  \dfrac{\ln(n)^2}{n^2} + o \left(  \dfrac{\ln(n)^2}{n^2} \right) $$
+l'est aussi. Par somme, on en déduit que la série de terme général $u_n$ converge.
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Comparaison série-intégrale}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Déterminer un équivalent de $\Sum{k=1}n \dfrac{1}{3k+1}$ quand $n$ tend vers $+ \infty$.
+\end{Exa}
+
+\corr Notons pour tout entier $n \geq 1$, $S_n$ la somme de l'énoncé. La fonction $x \mapsto \dfrac{1}{3x+1}$ est continue et décroissante sur $\mathbb{R}_+$. Soit $k \in \mathbb{N}^*$. Pour tout $t \in [k,k+1]$,
+$$ \dfrac{1}{3(k+1)+1} \leq \dfrac{1}{3t+1} \leq \dfrac{1}{3k+1}$$
+Par croissance de l'intégrale (les bornes sont dans le bon sens), on a alors :
+$$ \int_{k}^{k+1} \dfrac{1}{3(k+1)+1} \dt \leq  \int_{k}^{k+1} \dfrac{1}{3t+1} \dt \leq  \int_{k}^{k+1} \dfrac{1}{3k+1} \dt$$
+et donc :
+$$  \dfrac{1}{3(k+1)+1}  \leq  \int_{k}^{k+1} \dfrac{1}{3t+1} \dt  \leq  \dfrac{1}{3k+1} $$
+Par sommation pour $k$ variant de $1$ à $n \in \mathbb{N}^*$, on a d'après la relation de Chasles :
+$$ \sum_{k=1}^n \dfrac{1}{3(k+1)+1}  \leq  \int_{1}^{n+1} \dfrac{1}{3t+1} \dt  \leq S_n $$
+A l'aide d'un changement d'indice, on obtient :
+$$ \sum_{k=2}^{n+1} \dfrac{1}{3k+1}  \leq  \left[ \dfrac{1}{3} \ln(3t+1) \right]_1^{n+1}  \leq S_n $$
+On a alors :
+$$ S_n + \dfrac{1}{3n+4} - \dfrac{1}{4} \leq \dfrac{1}{3} ( \ln(3n+4)- \ln(4)) \leq S_n $$
+On obtient donc un encadrement de $S_n$ :
+$$ \dfrac{1}{3} \ln \left( \dfrac{3n}{4} + 1 \right) \leq S_n \leq \dfrac{1}{3} \ln \left( \dfrac{3n}{4} + 1 \right) + \dfrac{1}{4} - \dfrac{1}{3n+4}$$
+Sachant que $3n/4+1>1$, $\ln \left( \dfrac{3n}{4} + 1 \right)>0$ donc :
+$$ 1 \leq \dfrac{S_n}{(1/3)\ln \left( \dfrac{3n}{4} + 1 \right)} \leq 1 + \dfrac{1}{(4/3)\ln \left( \dfrac{3n}{4} + 1 \right)} - \dfrac{1}{(1/3)\ln \left( \dfrac{3n}{4} + 1 \right)(3n+4)}$$
+Par théorème d'encadrement, on en déduit alors un équivalent de $S_n$ :
+$$ S_n \underset{+ \infty}{\sim}\dfrac{1}{3} \ln \left( \dfrac{3n}{4} + 1 \right)$$
+Or :
+$$  \dfrac{3n}{4} + 1 \underset{+ \infty}{\sim}  \dfrac{3n}{4}$$
+et :
+$$ \lim_{n \rightarrow + \infty}  \dfrac{3n}{4} = + \infty \neq 1$$
+donc :
+$$ S_n \underset{+ \infty}{\sim} \dfrac{1}{3} \ln \left( \dfrac{3n}{4} \right) =  \dfrac{1}{3} \ln \left( \dfrac{3}{4} \right) + \dfrac{\ln(n)}{3}$$
+et ainsi :
+$$ S_n \underset{+ \infty}{\sim}\dfrac{\ln(n)}{3}$$
+
+\medskip
+
+\begin{Exa}\label{harm} Donner un équivalent de $\dis \Sum{k=1}n \dfrac{1}{k}$ et de $\dis \Sum{k=n}{+ \infty} \dfrac{1}{k^2}$ quand $n$ tend vers $+ \infty$.
+\end{Exa} 
+
+\corr Deux comparaisons série-intégrale montrent que :
+$$ \sum_{k=1}^n \dfrac{1}{k} \underset{+ \infty}{\sim} \ln(n) $$
+et 
+$$ \sum_{k=n}^{+ \infty} \dfrac{1}{k^2} \underset{+ \infty}{\sim} \dfrac{1}{n} $$
+Pour ce deuxième équivalent, attention à bien encadrer pour $N \geq n$ :
+$$ \sum_{k=n}^N \dfrac{1}{k^2}$$
+puis faire tendre vers $N$ vers $+ \infty$.
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Séries alternées}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Déterminer la nature de $\Sum{n \geq 0}{} \dis\frac{(-1)^n}{\sqrt{n+2}}\cdot$
+\end{Exa}
+
+\corr La série étudiée est une série alternée car pour tout entier $n \geq 0$, $\dfrac{1}{\sqrt{n+2}} \geq 0$.
+
+
+\noindent La fonction $x \mapsto \dfrac{1}{\sqrt{x+2}}$ est décroissante sur $\mathbb{R}_+$ (justification par composition ou par dérivation) donc la suite de terme général $\dfrac{1}{\sqrt{n+2}}$ est aussi décroissante, positive et converge vers $0$. Par critère spécial des séries alternées, on en déduit que $\Sum{n \geq 0}{} \dis\frac{(-1)^n}{\sqrt{n+2}}$ converge.
+
+\medskip
+
+\begin{Exa} Montrer que $\Sum{n \geq 0}{} {\dfrac{( - 1)^n 8^n}{(2n)!}}$ est convergente et que sa somme est négative. \end{Exa}
+
+\corr Il est possible de prouver la convergence absolue de cette série à l'aide du critère de D'Alembert ou en minorant $(2n)!$ par $n!$ et en comparant (en valeur absolue) à une série exponentielle. Il semble plus approprié, en regardant la deuxième partie de la question, d'utiliser le critère spécial des séries alternées.
+
+\medskip
+
+\noindent $\rhd$ Pour tout entier $n \geq 0$, $u_n = \dfrac{ 8^n}{(2n)!} > 0$, la série est donc alternée. 
+
+\medskip
+
+\noindent $\rhd$ Pour tout entier $n \geq 0$,
+$$ \dfrac{u_{n+1}}{u_n} = \dfrac{8^{n+1}}{(2n+2)!} \times \dfrac{(2n)!}{8^n} =\dfrac{8}{(2n+2)(2n+1)}$$
+Si $n \geq 1$, $(2n+2)(2n+1) \geq 12$ et ainsi :
+$$  \dfrac{u_{n+1}}{u_n} < 1$$
+La suite $(u_n)_{n \geq 1}$ est donc décroissante.
+
+\medskip
+
+\noindent $\rhd$ D'après le raisonnement précédent,
+$$ \lim_{n \rightarrow + \infty}  \dfrac{u_{n+1}}{u_n} = 0 <1$$
+D'après le critère de D'Alembert ($(u_n)_{n \geq 0}$ est à termes strictement positifs), on en déduit que la série de terme général $u_n$ converge donc en particulier, $(u_n)_{n \geq 0}$ converge vers $0$.
+
+\medskip
+
+\noindent D'après le critère spécial des séries alternées, on en déduit que $\Sum{n \geq 0}{} {\dfrac{( - 1)^n 8^n}{(2n)!}}$ converge (attention, le critère s'applique à partir d'un rang $1$). Notons $S$ la somme de cette série. On a :
+$$ S= 1 - 4 + R_1$$
+où $R_1$ est le reste d'ordre $1$ de la série. D'après le critère spécial, 
+$$ \vert R_1 \vert \leq \dfrac{64}{4!} = \dfrac{64}{24} = \dfrac{8}{3}$$
+Ainsi, 
+$$ \vert S + 3 \vert \leq \dfrac{8}{3}$$
+donc 
+$$ -3- \dfrac{8}{3} \leq S \leq -3 + \dfrac{8}{3} <0$$
+La somme $S$ est donc négative.
+
+\medskip
+
+\begin{Exa} Donner la nature de la série de terme général $u_n = \dfrac{(-1)^n}{\dis \Sum{k=1}{n} \dfrac{1}{k} + (-1)^n} \cdot$
+\end{Exa}
+
+\corr La série harmonique est une série à termes positifs divergente. Posons pour  tout $n \geq 1$,
+$$ H_n = \sum_{k=1}^n \dfrac{1}{k}$$
+Alors $(H_n)_{n \geq 1}$ est une suite croissante divergeant vers $+ \infty$. Pour tout $n \geq 1$,
+\begin{align*}
+u_n & = \dfrac{(-1)^n}{H_n} \times \dfrac{1}{1+ \frac{(-1)^n}{H_n}} \\
+& \underset{+\infty}{=}  \dfrac{(-1)^n}{H_n} \left( 1 - \dfrac{(-1)^n}{H_n} + o \left( \dfrac{1}{H_n} \right) \right) \\
+& \underset{+\infty}{=}  \dfrac{(-1)^n}{H_n}  -\dfrac{1}{(H_n)^2} + o \left( \dfrac{1}{(H_n)^2} \right) 
+\end{align*}
+La série de terme général $(-1)^n/H_n$ vérifie les hypothèses du critère spécial des séries alternées donc converge. On sait que $H_n$ est équivalent à $\ln(n)$ quand $n$ tend vers $+ \infty$ (voir exercice \ref{harm}) donc :
+$$ \dfrac{1}{(H_n)^2} \underset{+ \infty}{\sim} \dfrac{1}{\ln(n)^2}$$
+et donc :
+$$ \dfrac{1}{(H_n)^2} + o \left( \dfrac{1}{(H_n)^2} \right)  \underset{+ \infty}{\sim}  \dfrac{1}{(H_n)^2} \underset{+ \infty}{\sim} \dfrac{1}{\ln(n)^2}$$
+La série de terme général $\dfrac{1}{\ln(n)^2}$ diverge car par théorème des croissances comparées :
+$$ \lim_{n \rightarrow + \infty} \dfrac{n}{\ln(n)^2} = + \infty$$
+donc à partir d'un certain rang,
+$$ \dfrac{n}{\ln(n)^2} \geq 1$$
+et ainsi 
+$$ \dfrac{1}{\ln(n)^2} \geq \dfrac{1}{n} \geq 0$$
+et on conclut à l'aide du critère de comparaison des séries à termes positifs. Ainsi, la série de terme général 
+$$\dfrac{1}{(H_n)^2} + o \left( \dfrac{1}{(H_n)^2} \right)$$
+diverge par critère de comparaison des séries à termes positifs (ce terme général est positif à partir d'un certain rang). Ainsi, par somme, la série de terme général $u_n$ diverge.
+
+\medskip
+
+\begin{Exa} Étudier la convergence et la convergence absolue de $\dis \Sum{n \geq 1}{} \dfrac{(-1)^n}{n-\sin(n)}\cdot$
+\end{Exa}
+
+\corr Posons pour tout entier $n \geq 1$,
+$$ u_n = \dfrac{1}{n-\sin(n)}$$
+La fonction $x \mapsto x- \sin(x)$ à une dérivée positive sur $[1, + \infty[$ donc elle est décroissante sur cet intervalle. Elle est aussi strictement positive sur cet intervalle donc la fonction 
+$$ x \mapsto \dfrac{1}{x-\sin(x)}$$
+est décroissante sur $[1, + \infty[$. Ainsi, $(u_n)_{n \geq 1}$ est décroissante et positive. Par somme d'une suite divergeant vers $+ \infty$ et d'une suite bornée, on a :
+$$ \lim_{n \rightarrow + \infty} n - \sin(n) = + \infty$$
+donc $(u_n)_{n \geq 1}$ converge vers $0$. D'après le critère spécial des séries alternées, on en déduit que la série étudiée converge.
+
+\medskip
+
+\noindent Étudions la convergence absolue de la série étudiée. Posons pour tout $n \geq 1$,
+$$ x_n = \vert u_n \vert = \dfrac{1}{\vert n - \sin(n) \vert} = \dfrac{1}{n- \sin(n)}$$
+La fonction sinus étant bornée sur $\mathbb{R}$, on a :
+$$ x_n \underset{+ \infty}{\sim} \dfrac{1}{n}$$
+La série de terme général positif $1/n$ est divergente (série harmonique). Par critère de comparaison des séries à termes positifs, on en déduit que la série étudiée ne converge pas absolument.
+
+\medskip
+
+\begin{Exa} Étudier la nature de $\dis \Sum{n \geq 0}{} (-1)^n u_n$ où pour tout $n \geq 0$,
+\vspace{-0.4cm}
+$$ u_n = \int_{0}^1 x^n e^{-x} dx$$
+\end{Exa}
+
+\corr Pour tout $n \geq 0$, la fonction $x \mapsto x^n e^{-x}$ est positive et continue sur $[0,1]$ donc par positivité de l'intégrale (les bornes sont dans le bon sens), $u_n$ est positif.
+
+\medskip
+
+\noindent Pour tout $n \geq 0$, on a :
+\begin{align*}
+u_{n+1}-u_n & = \int_{0}^1 x^{n+1} e^{-x} dx - \int_{0}^1 x^{n} e^{-x} dx \\
+& =\int_{0}^1 x^n e^{-x} (x-1) dx
+\end{align*}
+Or pour tout $x \in [0,1]$, $x^n e^{-x} \geq 0$ et $x-1 \leq 0$ donc par positivité de l'intégrale (les bornes sont dans le bon sens), $u_{n+1}-u_n$ est négatif et ainsi la suite $(u_n)_{n \geq 0}$ est décroissante.
+
+\medskip
+
+\noindent Pour tout $x \in [0,1]$, on a par décroissance de $t \mapsto e^{-t}$ sur $\mathbb{R}$ :
+$$e^{-1} \leq e^{-x} \leq 1$$
+puis sachant que $x^n \geq 0$ :
+$$ x^n e^{-1} \leq x^n e^{-x} \leq x^n $$
+Par croissance de l'intégrale (les bornes sont dans le bon sens), on en déduit que :
+$$ \int_{0}^1 e^{-1}x^n dx \leq u_n \leq \int_{0}^1 x^n dx$$
+ou encore :
+$$ \frac{e^{-1}}{n+1} \leq u_n \leq \frac{1}{n+1}$$
+Par théorème d'encadrement, on en déduit que $(u_n)_{n \geq 0}$ converge vers $0$.
+
+\medskip
+
+\noindent Finalement, la suite $(u_n)_{n \geq 0}$ est positive, décroissante et converge vers $0$. D'après le critère spécial des séries alternées, la série de terme général $(-1)^n u_n$ est donc convergente. 
+
+\medskip
+
+\begin{Exa} Étudier la nature de la série de terme général $\dfrac{(-1)^n}{\sqrt[n]{n!}} \cdot$
+\end{Exa}
+
+\corr Posons pour tout $n \geq 1$,
+$$ u_n = \dfrac{1}{\sqrt[n]{n!}}$$
+La série étudiée est une série alternée car la suite $(u_n)_{n \geq 1}$ est strictement positive. 
+
+\noindent Pour tout $n \geq 1$, on a :
+$$ \ln(u_n) = - \dfrac{1}{n} \ln(n!)$$
+Sachant que $n!$ tend vers $+ \infty$ quand $n$ tend vers $+ \infty$, on a d'après la formule de Stirling :
+$$ \ln(u_n) \underset{+ \infty}{\sim} - \dfrac{1}{n} \ln(n^n e^{-n} \sqrt{2 \pi n}) = - \ln(n) +1 - \dfrac{1}{2n} \ln(2 \pi n)$$
+et donc :
+$$ \ln(u_n) \underset{+ \infty}{\sim} - \ln(n)$$
+Ainsi $(\ln(u_n))_{n \geq 1}$ diverge vers $- \infty$ et par composition avec l'exponentielle, on en déduit que $(u_n)_{n \geq 1}$ converge vers $0$.
+
+\medskip
+
+\noindent Étudions maintenant la monotonie de $(u_n)_{n \geq 1}$. Pour tout $n \geq 1$, on a :
+\begin{align*}
+\ln(u_{n+1})-\ln(u_n) & = \dfrac{\ln(n!)}{n} - \dfrac{\ln((n+1)!)}{n+1} \\
+& = \dfrac{(n+1) \ln(n!)-n \ln((n+1)!)}{n(n+1)} \\
+& = \dfrac{(n+1)\ln(n!)-n \ln(n+1)-n \ln(n!)}{n(n+1)} \\
+& = \dfrac{\ln(n!)-n \ln(n+1)}{n(n+1)} \\
+& = \dfrac{1}{n(n+1)} \sum_{k=1}^n \ln(k) - \ln(n+1) 
+\end{align*}
+Chaque terme de la somme est négatif donc on en déduit que $(\ln(u_n))_{n \geq 1}$ est décroissante donc $(u_n)_{n \geq 1}$ l'est aussi (par composition avec la fonction exponentielle qui est croissante sur $\mathbb{R})$.
+
+\medskip
+
+\noindent Finalement, $(u_n)_{n \geq 1}$ est une suite décroissante convergeant vers $0$ donc par le critère spécial des séries alternées, la série de terme général $\dfrac{(-1)^n}{\sqrt[n]{n!}}$ converge.
+
+\medskip
+
+
+
+\begin{center}
+\textit{{ {\large Séries dont le terme général n'est pas explicite}}}
+\end{center}
+
+\medskip
+
+\begin{Exa}  
+\begin{enumerate}
+\item Étudier la convergence de la suite définie par $u_0 \in \mathbb{R}_+$ et pour tout entier $n \geq 0$ par :
+ \[
+u_{n + 1} = \frac{e^{ - u_n}}{n + 1}
+ \]
+% Encadrement, tend vers 0
+\item Donner la nature de la série $\Sum{n \geq 0}{} u_n$ et celle de la série $\Sum{n \geq 0}{} (-1)^n u_n$.
+% un equivalent à 1/n avec la def. Un positif, Un=exp(-Un-1)/n + DL avec un equiv à 1/n donc Un = 1/n + o(1/n)
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Par récurrence immédiate, on montre que la suite $(u_n)_{n \geq 0}$ est positive. Ainsi, pour tout $n \geq 0$, $e^{-u_n} \in [0,1]$ donc :
+$$ 0 \leq u_{n+1} \leq \dfrac{1}{n+1}$$
+Par théorème d'encadrement, on en déduit que $(u_{n+1})_{n \geq 0}$ et donc $(u_n)_{n \geq 0}$ converge vers $0$.
+\item D'après la question précédente, on sait que :
+$$ \lim_{n \rightarrow + \infty} u_n = 0$$
+donc par continuité de la fonction exponentielle en $0$ :
+$$ u_{n+1} = \dfrac{e^{-u_n}}{n+1} \underset{+ \infty}{\sim} \dfrac{1}{n+1}$$
+et ainsi :
+$$ u_n \underset{+ \infty}{\sim} \dfrac{1}{n}$$
+Par critère de comparaison de séries à termes positifs, la série harmonique étant divergente, on en déduit que $\Sum{n \geq 0}{} u_n$ diverge. Sachant que :
+$$  u_n \underset{+ \infty}{\sim} \dfrac{1}{n}$$
+on a :
+$$ u_n \underset{+\infty}{=} \dfrac{1}{n} + o \left( \dfrac{1}{n} \right)$$
+$u_n$ tend vers $0$ quand $n$ tend vers $+ \infty$ donc :
+$$ e^{-u_n} \underset{+\infty}{=} 1 -\dfrac{1}{n} + o \left( \dfrac{1}{n} \right)$$
+puis :
+$$ u_{n+1} \underset{+\infty}{=} \dfrac{1}{n+1} - \dfrac{1}{n(n+1)} + o \left( \dfrac{1}{n(n+1)} \right)$$
+et finalement :
+$$ (-1)^{n+1} u_{n+1} \underset{+\infty}{=} \dfrac{(-1)^{n+1}}{n+1} - \dfrac{(-1)^{n+1}}{n(n+1)} + o \left( \dfrac{1}{n(n+1)} \right)$$
+Les séries de termes généraux $\dfrac{(-1)^{n+1}}{n+1}$ et $\dfrac{(-1)^{n+1}}{n(n+1)}$ convergent (critère spécial des séries alternées) et la série de terme général $o \left( \dfrac{1}{n(n+1)} \right)$ converge par critère de comparaison. Par somme, on en déduit que $\Sum{n \geq 0}{} (-1)^{n+1} u_{n+1}$ converge donc $\Sum{n \geq 0}{} (-1)^n u_n$ converge.
+\end{enumerate}
+
+\medskip
+
+
+
+\begin{Exa} Soit $(a_n )_{n \geq 0} $ la suite d\'efinie par $a_0  \in \mathbb{R}^{*}_+$ et pour $n \in \mathbb{N}$ par :
+$$a_{n + 1}  = 1 - {\mathrm{e}}^{ - a_n } $$
+\begin{enumerate}
+	\item Étudier la convergence de la suite $(a_n )_{n \geq 0}$.
+	
+\item D\'eterminer la nature de la s\'erie de terme g\'en\'eral $( - 1)^n a_n.$
+	
+	\item D\'eterminer la nature de la s\'erie de terme g\'en\'eral $a_n^2 $.
+	
+	\item  D\'eterminer la nature de la s\'erie de terme g\'en\'eral $a_n $. On pourra commencer par étudier la s\'erie de terme général $\dis \ln \left( {\dis\frac{{a_{n + 1} }}{{a_n }}} \right) \cdot$
+\end{enumerate}
+\end{Exa}
+
+
+\corr \begin{enumerate}
+\item Pour tout réel $x>0$, $-x<0$ donc $e^{-x}<1$ puis $1-e^{-x}>0$. Ainsi, en posant $f: x \mapsto 1-e^{-x}$, on a $f(\mathbb{R}_+^{*}) \subset \mathbb{R}_+^{*}$. Or $a_0 >0$ et pour tout $n \in \mathbb{N}$, $a_{n+1}=f(a_n)$. Par récurrence, on montre donc que pour tout $n \in \mathbb{N}$, $a_n >0$. On sait que pour tout $x \in \mathbb{R}$, $e^x \geq 1+x$ donc pour tout $n \geq 0$,
+ $$a_{n+1}=1- {\mathrm{e}}^{ - a_n } \leq 1-(1-a_n)=a_n$$
+La suite $(a_n)_{n \geq 0}$ est donc d\'ecroissante et minorée par $0$ donc elle converge. Notons $\ell\geq 0$ sa limite. Puisque la fonction $\exp$ est continue sur $\R,$ en passant \`a la limite quand $n$ tend vers $+\infty$ dans la relation de récurrence définissant la suite, on obtient :
+$$\ell= 1 - {\mathrm{e}}^{ - \ell }$$
+Or en \'etudiant la fonction $g : x\longmapsto x+{\mathrm{e}}^{ - x }-1,$ on montre que $g(x)=0$ n'admet que $0$ comme solution et donc la suite $(a_n)_{n \geq 0}$ converge vers $0$.
+\item La suite $(a_n)_{n \geq 0}$ est positive, décroissante et converge vers $0$. D'après le critère spécial des séries alternées, la série de terme général $(-1)^n a_n$ est donc convergente. 
+\item On sait que $\dis\lim_{n\to+\infty}a_n=0$ donc quand $n$ tend vers $+ \infty$ :
+\begin{align*}
+a_{n+1}-a_n & = 1 - {\mathrm{e}}^{ - a_n }-a_n \\
+&  \underset{+ \infty}{=} 1-a_n-\left(1-a_n+\dis\frac{a_n^2}{2} + o \left(a_n^2\right)\right) \\
+& \underset{+ \infty}{=} - \dfrac{a_n^2}{2} + o\left(a_n^2\right)\\
+& \underset{+ \infty}{\sim} -\dis\frac{a_n^2}{2} \\
+\end{align*}
+Or la suite $(a_n)_{n \geq 0}$ converge donc la s\'erie t\'elescopique $\Sum{n \geq 0}{} (a_{n+1}-a_n)$ converge. Les termes généraux des séries étudiées sont négatifs et donc, par critère de comparaison de séries à termes négatifs, la s\'erie de terme général $\dfrac{a_n^2}{2}$ converge. Ainsi, la s\'erie $\Sum{n \geq 0}{} a_n^2$ converge.
+
+\item  Sachant que $(a_n)_{n \geq 0}$ converge vers $0$, on a :
+\begin{align*}
+\ln \left( {\dis\frac{{a_{n + 1} }}{{a_n }}} \right) & =  \ln \left( {\dis\frac{1 - {\mathrm{e}}^{ - a_n }}{{a_n }}} \right) \\
+&  \underset{+ \infty}{=}  \ln \left( \dis\frac{1}{a_n}\left(a_n-\dis\frac{a_n^2}{2}+ o\left(a_n^2\right)\right) \right)\\
+& \underset{+ \infty}{=}  	\ln \left(1-\dis\frac{a_n}{2}+ o\left(a_n\right) \right) \\
+& \underset{+ \infty}{=} -\dis\frac{a_n}{2}+ o\left(a_n\right) \\
+& \underset{+ \infty}{\sim} -\dis\frac{a_n}{2} \\
+\end{align*}
+Or la suite $(\ln(a_n))$ diverge vers $-\infty$ car $(a_n)_{n \geq 0}$ converge vers $0$ (par valeurs positives) donc la s\'erie t\'elescopique de terme général $\dis \ln(a_{n+1})-\ln(a_n)$ diverge. Les termes g\'en\'eraux des s\'eries étudiées sont n\'egatifs donc par critère de comparaison de séries à termes négatifs, la série de terme général $ \dis\frac{a_n}{2}$ diverge et donc la s\'erie de terme général $a_n$ diverge.
+\end{enumerate}
+
+\medskip
+
+
+\begin{Exa} 
+\begin{enumerate}
+\item Montrer que pour tout entier $n \geq 1$, l'équation $nx^3+n^2x-2=0$ admet une unique solution réelle. On note $x_n$ cette solution.
+\item Étudier la convergence de $(x_n)_{n \geq 1}$.
+\item Étudier la convergence de la série de terme général $x_n$.
+\end{enumerate}
+\end{Exa}
+
+\corr 
+
+\begin{enumerate}
+\item Soit $n \geq 1$. Posons $f_n : \mathbb{R} \rightarrow \mathbb{R}$ définie par :
+$$ f_n(x) = nx^3+n^2x-2$$
+La fonction $f_n$ est de classe $\mathcal{C}^1$ (donc continue) sur $\mathbb{R}$ et pour tout $x \in \mathbb{R}$,
+$$ f_n'(x) = 3nx^2 + n^2 >0$$
+donc $f_n$ est strictement croissante sur $\mathbb{R}$. D'après le théorème de bijection, $f_n$ est une bijection de $\mathbb{R}$ sur $f(\mathbb{R})$ où :
+$$ f(\mathbb{R}) =  ]\lim_{x \rightarrow - \infty} f(x), \lim_{x \rightarrow +\infty} f(x)[= \mathbb{R}$$
+Sachant que $0 \in \mathbb{R}$, on obtient le résultat souhaité.
+\item On a $f_n(0)=-2$ et 
+$$ f_n \left( \dfrac{1}{n} \right) = \dfrac{1}{n^2} + n -2$$
+On a $f_n(1/n)>0$ pour tout entier $n \geq 2$ et dans ce cas :
+$$ f_n(0) \leq f_n(x_n) \leq f_n \left( \dfrac{1}{n} \right) $$
+Par stricte croissance de $f_n$ sur $\mathbb{R}$, on en déduit que :
+$$ 0 < x_n < \dfrac{1}{n}$$
+On en déduit à l'aide du théorème d'encadrement que $(x_n)_{n \geq 1}$ converge vers $0$.
+\item Pour tout entier $n \geq 1$,
+$$ nx_n^3+n^2x_n=2$$
+Sachant que $x_n$ tend vers $0$ quand $n$ tend vers $+ \infty$, on a :
+$$ nx_n^3+n^2x_n \underset{+ \infty}{\sim} n^2 x_n$$
+et ainsi :
+$$ 
+n^2 x_n \underset{+ \infty}{\sim} 2$$
+ce qui implique que :
+$$ x_n \underset{+ \infty}{\sim}  \dfrac{2}{n^2}$$
+La série de terme général positif $1/n^2$ converge (série de Riemann avec $2>1$). Par critère de comparaison de séries à termes positifs, on en déduit que la série de terme général $x_n$ converge.
+\end{enumerate}
+
+\medskip
+
+
+\begin{center}
+\textit{{ {\large Divers}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $\alpha \in \mathbb{R}$. Pour tout $n \in \mathbb{N}^*$, on pose :
+$$ u_n = \sum_{k=0}^n \frac{1}{2k+1} -  \alpha \ln(n)$$
+
+\begin{enumerate}
+\item Donner un équivalent de $u_{n+1}-u_n$ quand $n$ tend vers $+ \infty$.
+\item Déterminer $\alpha$ pour que $(u_n)_{n \geq 0}$ converge.
+\end{enumerate}
+\end{Exa} 
+
+\corr 
+
+\begin{enumerate}
+\item Soit $n \geq 1$. Alors :
+\begin{align*}
+u_{n+1}-u_n & = \sum_{k=0}^{n+1} \frac{1}{2k+1} -  \alpha \ln(n+1) -\sum_{k=0}^n \frac{1}{2k+1} + \alpha \ln(n) \\
+& = \dfrac{1}{2n+3} - \alpha \ln \left( \dfrac{n+1}{n} \right) \\
+& = \dfrac{1}{2n+3} - \alpha \ln \left( 1+ \dfrac{1}{n} \right) \\
+& \underset{+ \infty}{=} \dfrac{1}{2n+3} - \dfrac{\alpha}{n}  + \dfrac{\alpha}{2n^2} + o \left( \dfrac{1}{n^2} \right) \\
+& \underset{+ \infty}{=} \dfrac{n- \alpha(2n+3)}{n(2n+3)}  +\dfrac{\alpha}{2n^2} + o \left( \dfrac{1}{n^2} \right) \\
+& \underset{+ \infty}{=} \dfrac{(1-2 \alpha)n - 3 \alpha}{n(2n+3)}  +\dfrac{\alpha}{2n^2} + o \left( \dfrac{1}{n^2} \right) \\
+\end{align*}
+On distingue alors deux cas :
+
+\medskip
+
+\noindent $\rhd$ Si $\alpha = \dfrac{1}{2}$, $1-2 \alpha=0$ et ainsi :
+\begin{align*}
+ u_{n+1}-u_n & \underset{+ \infty}{=} -\dfrac{3}{2n(2n+3)}  + \dfrac{1}{4n^2} + o \left( \dfrac{1}{n^2} \right) \\
+ & \underset{+ \infty}{=} \dfrac{1}{n^2} \left( -\dfrac{3n^2}{2n(2n+3)}  + \dfrac{1}{4} + o (1) \right) 
+ \end{align*}
+ Sachant que :
+ $$ \lim_{n \rightarrow + \infty} -\dfrac{3n^2}{2n(2n+3)} = - \dfrac{3}{4}$$
+ On en déduit que :
+ $$ u_{n+1}-u_n \underset{+ \infty}{\sim} - \dfrac{1}{2n^2}$$
+
+\medskip
+
+\noindent $\rhd$ Si $\alpha \neq \dfrac{1}{2}$, $1-2 \alpha \neq 0$ et ainsi :
+$$
+ u_{n+1}-u_n  \underset{+ \infty}{=} \dfrac{1}{n} \left( \dfrac{(1-2 \alpha)n - 3 \alpha}{2n+3}  +\dfrac{\alpha}{2n} + o \left( \dfrac{1}{n} \right)\right)
+ $$
+On a :
+$$ \lim_{n \rightarrow + \infty} \dfrac{(1-2 \alpha)n - 3 \alpha}{2n+3}  = \dfrac{1-2 \alpha}{2}$$
+On en déduit que :
+$$ u_{n+1}-u_n \underset{+ \infty}{\sim}  \dfrac{1-2 \alpha}{2n}$$
+\item La suite $(u_n)_{n \geq 1}$ converge si et seulement si la série de terme général $u_{n+1}-u_n$ converge. D'après la question précédente, $u_{n+1}-u_n$ est équivalent, à constante près, au terme général d'une série de Riemann (donc de signe constant) convergente si $\alpha = 1/2$ et divergente si $\alpha \neq 1/2$. A partir d'un certain rang, $u_{n+1}-u_n$ est donc aussi de signe constant et par critère ce comparaison, on en déduit que la série de terme général $u_{n+1}-u_n$ converge si et seulement $\alpha =1/2$. Finalement, $(u_n)_{n \geq 1}$ converge si et seulement $\alpha = 1/2$.
+\end{enumerate}
+
+\medskip
+
+
+\begin{Exa} Montrer que $\Sum{k=n+1}{+ \infty} \dfrac{1}{k!} \underset{ + \infty}{\sim} \dfrac{1}{(n+1)!} \cdot$ \end{Exa}
+
+\corr La série de terme général $\dfrac{1}{k!}$ converge donc pour tout $n \geq 0$,
+$$ R_n = \sum_{k=n+1}^{+ \infty} \dfrac{1}{k!}$$
+existe. 
+
+\medskip
+
+\noindent Le terme prépondérant de $R_n$ semble être $\dfrac{1}{(n+1)!}\cdot$
+
+\medskip
+
+\noindent Pour tout $n \geq 0$, on a :
+$$ \dfrac{1}{(n+1)!} \leq R_n$$
+car les termes de la somme sont positifs. On a aussi :
+\begin{align*}
+R_n & = \sum_{k=n+1}^{+ \infty} \dfrac{1}{k!} \\
+& = \dfrac{1}{(n+1)!} \sum_{k=n+1}^{+ \infty} \dfrac{(n+1)!}{k!} \\
+& = \dfrac{1}{(n+1)!} \sum_{k=0}^{+ \infty} \dfrac{(n+1)!}{(k+n+1)!} \\
+& = \dfrac{1}{(n+1)!} \left(1 + \sum_{k=1}^{+ \infty} \dfrac{1}{(n+2)(n+3) \times \cdots \times (n+k+1)} \right)
+\end{align*}
+Pour tout entier $n \geq 0$ et $k \geq 1$,
+$$ (n+2)(n+3) \times \cdots (n+k+1) \geq (n+2)^k$$
+La série de terme général $\dfrac{1}{(n+2)^k}$ converge car $\left\vert \dfrac{1}{n+2} \right\vert<1$, on obtient alors par décroissance de la fonction inverse sur $\mathbb{R}_+^*$ :
+$$ \dfrac{1}{(n+1)!} \leq R_n \leq \dfrac{1}{(n+1)!} \left(1+ \sum_{k=1}^{+ \infty} \dfrac{1}{(n+2)^k} \right)$$
+ou encore :
+$$ 1 \leq (n+1)! R_n \leq 1 + \dfrac{1/(n+2)}{1-1/(n+2)} = 1 + \dfrac{1}{n+1}$$
+Par théorème d'encadrement, on en déduit que $((n+1)! R_n)_{n \geq 0}$ converge vers $1$ donc :
+$$ \sum_{k=n+1}^{+ \infty} \dfrac{1}{k!} \underset{ + \infty}{\sim} \dfrac{1}{(n+1)!}$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

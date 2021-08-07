@@ -1,0 +1,670 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{Cours}
+\usepackage{delarray}
+\usepackage{fancybox}
+\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\newcommand{\Int}[2]{\ensuremath{\mathchoice%
+	{{\displaystyle\int_{#1}^{#2}}}
+	{{\displaystyle\int_{#1}^{#2}}}
+	{\int_{#1}^{#2}}
+	{\int_{#1}^{#2}}
+	}}
+
+
+\begin{document}
+% \everymath{\displaystyle}
+
+\maketitle{Chapitre 15}{Séries entières}
+
+\noindent L'idée du chapitre est d'utiliser les résultats généraux obtenus dans le cas des séries de fonctions dans un cadre particulier.
+
+\medskip
+
+\section{Convergence d'une série entière}
+\subsection{Définition et rayon de convergence}
+
+\begin{defin} On appelle \textit{série entière} associée à la suite réelle ou complexe $(a_n)_{n \geq 0}$ la série de fonctions 
+$$\dis \sum_{n \geq 0} u_n \; \hbox{ où } \; u_n : z \mapsto a_n z^n$$
+Par abus de notation, on note souvent cette série $\dis \Sum{n \geq 0}{} a_n z^n$.
+\end{defin}
+
+
+
+\noindent Dans toute la suite, $(a_n)_{n \geq 0}$ est une suite de nombres réels ou complexes.
+
+\medskip
+
+\begin{rems} 
+\item On considère selon les cas que $u_n : \mathbb{R} \rightarrow \mathbb{R}$ ou $u_n : \mathbb{C} \rightarrow \mathbb{C}$.
+\item Le premier indice de la série peut être n'importe quel entier naturel $n_0$, on note dans ce cas $\dis \Sum{n \geq n_0}{} a_n z^n$.
+\item Les scalaires $a_n$ sont appelés \textit{coefficients} de la série entière.
+ \end{rems}
+ 
+ \begin{defin}[Somme : cas complexe] Soit $\dis \Sum{n \geq 0}{} a_n z^n$ une série entière. On définit le \textit{domaine de convergence} de cette série par :
+ $$ \mathcal{D} = \lbrace z \in \mathbb{C} \, \vert \,  \Sum{n \geq 0}{} a_n z^n \hbox{ converge} \rbrace$$
+ On définit alors la \textit{somme} de cette série entière comme étant la fonction $S$ définie pour tout $z \in \mathcal{D}$ par :
+ $$ S(z) = \sum_{n=0}^{+ \infty} a_n z^n$$
+ \end{defin}
+ 
+  \begin{defin}[Somme : cas réel] Soit $\dis \Sum{n \geq 0}{} a_n x^n$ une série entière d'une variable réelle. On définit le \textit{domaine de convergence} de cette série par :
+ $$ \mathcal{D} = \lbrace x \in \mathbb{R} \, \vert \,  \Sum{n \geq 0}{} a_n x^n \hbox{ converge} \rbrace$$
+ On définit alors la \textit{somme} de cette série entière comme étant la fonction $S$ définie pour tout $x \in \mathcal{D}$ par :
+ $$ S(x) = \sum_{n=0}^{+ \infty} a_n x^n$$
+ \end{defin}
+ 
+ \begin{rems} 
+ \item Une série entière converge toujours pour $z=0$ car pour tout $n \geq 1$, $z^n=0$. On a de plus $S(0)=a_0$.
+ \item Un polynôme est la somme d'une série entière dont les coefficients sont nuls à partir d'un certain rang.
+ \end{rems}
+
+\begin{ex} $\Sum{n \geq 0}{} z^n$ est une série entière. 
+
+%Elle converge sur le disque unité ouvert $D$ de $\mathbb{C}$ et si on note $S$ sa somme, on a :
+%$$ \forall z \in D, \; S(z) = \sum_{n=0}^{+ \infty} z^n = \frac{1}{1-z}$$
+\end{ex}
+
+\newpage
+
+\begin{lem}[Abel]
+Soit $\Sum{n \geq 0}{} a_n z^n$ une série entière. Soit $z_0 \in \mathbb{C}$ tel $(a_n z_0^n)_{n \geq 0}$ soit bornée. Alors pour tout $z \in \mathbb{C}$ tel que $\vert z \vert < \vert z_0 \vert$, la série $\Sum{n \geq 0}{} a_n z^n$ converge absolument.
+\end{lem}
+
+\begin{preuve}
+
+\vspace{6cm}
+\end{preuve}
+
+\noindent Soit $\Sum{n \geq 0}{} a_n z^n$ une série entière. On pose :
+$$ I = \lbrace \rho \geq 0 \, \vert \, (a_n \rho^n)_{n \geq 0} \hbox{ bornée}\rbrace $$
+Cet ensemble est non vide car $(a_n 0^n)_{n \geq 0}$ est bornée. On distingue alors deux cas :
+\begin{itemize}
+\item Si $I$ est majoré, $R = \sup(I)$ existe et appartient à $\mathbb{R}_+$.
+\item Si $I$ n'est pas majoré, on pose $R= + \infty$ ($+ \infty$ est la borne supérieure de $I$ dans $\overline{\mathbb{R}} = \mathbb{R} \cup \lbrace + \infty \rbrace)$.
+\end{itemize}
+
+\begin{defin} L'élément $R$ de $\mathbb{R}_+ \cup \lbrace + \infty \rbrace$ défini précédemment est appelé \textit{rayon de convergence} de la série entière $\Sum{n \geq 0}{} a_n z^n$.
+\end{defin}
+
+\begin{rems}
+\item Attention, une borne supérieure n'appartient pas forcément à l'ensemble donc $R$ peut ou pas appartenir à $I$.
+\item $R$ dépend uniquement de la suite $(a_n)_{n \geq 0}$.
+\item Le rayon de convergence reste le même que l'on travaille avec une variable complexe $z$ ou une variable réelle $x$.
+\item On notera dans la suite que pour tout $z \in \mathbb{C}$, $ \vert z \vert < + \infty$ et que l'on a jamais $\vert z \vert > + \infty$.
+\end{rems}
+
+\begin{prop} Soient $\Sum{n \geq 0}{} a_n z^n$ une série entière et $R$ son rayon de convergence. Soit $z \in \mathbb{C}$.
+
+\begin{itemize}
+\item Si $\vert z \vert < R$ alors la série $\Sum{n \geq 0}{} a_n z^n$ converge absolument.
+\item Si $\vert z \vert > R$ alors la série $\Sum{n \geq 0}{} a_n z^n$ diverge grossièrement.
+\end{itemize}
+\end{prop}
+
+\begin{preuve}
+\vspace{3cm}
+\end{preuve}
+
+\subsection{Domaine de convergence}
+\noindent Résumons le résultat de la propriété précédente : 
+
+\begin{center}
+\textbf{Représentation graphique du rayon de convergence}
+\end{center}
+
+\vspace{4cm}
+
+\begin{defin} Soient $\Sum{n \geq 0}{} a_n z^n$ ou $\Sum{n \geq 0}{} a_n x^n$ une série entière et $R$ son rayon de convergence.
+
+\begin{itemize}
+\item Dans le cas d'une variable complexe, l'ensemble $D(0,R)$ défini par :
+$$ D(0,R)= \lbrace z \in \mathbb{C} \, \vert \, \vert z \vert < R \rbrace$$
+est appelé \textit{disque ouvert de convergence} de la série entière. Si $R = + \infty$, il s'agit de $\mathbb{C}$ tout entier.
+\item Dans le cas d'une variable réelle, l'intervalle $]-R,R[$ est appelé \textit{intervalle ouvert de convergence}. Si $R = + \infty$, il s'agit de $\mathbb{R}$ tout entier.
+\end{itemize}
+\end{defin}
+
+\begin{retenir} Une série entière converge sur son disque (ou intervalle) ouvert de convergence, il peut tout se passer sur la frontière (convergence ou divergence) et la série entière diverge (grossièrement) ailleurs. Ainsi, en notant $\mathcal{D}$ le domaine de convergence de la série entière et $R$ son rayon de convergence, on a :
+\begin{itemize}
+\item Dans le cas complexe : $\lbrace z \in \mathbb{C} \, \, \vert \, \vert z \vert < R \rbrace \subset \mathcal{D} \subset \lbrace z \in \mathbb{C} \, \, \vert \, \vert z \vert \leq R \rbrace\cdot$
+\item Dans le cas réel : $]-R,R[ \subset \mathcal{D} \subset [-R,R]$.
+\end{itemize}
+\end{retenir}
+
+
+
+\noindent Voici quelques moyens rapides de minorer et majorer le rayon de convergence $R$ d'une série entière $\Sum{n \geq 0}{} a_n z^n$ :
+
+\begin{itemize}
+\item Si $(a_n z_0^n)$ est bornée pour un certain $z_0 \in \mathbb{C}$ alors $R \geq \vert z_0 \vert$.
+\item Si $(a_n z_0^n)$ n'est pas bornée pour un certain $z_0 \in \mathbb{C}$ alors $R \leq \vert z_0 \vert$.
+\item Si $(a_n z_0^n)$ converge vers $0$ pour un certain $z_0 \in \mathbb{C}$ alors $R \geq \vert z_0 \vert$.
+\item Si $\Sum{n \geq 0}{} a_n z_0^n$ converge (ou converge absolument) pour un certain $z_0 \in \mathbb{C}$ alors $R \geq \vert z_0 \vert$.
+\item Si $\Sum{n \geq 0}{} a_n z_0^n$ diverge (ou diverge grossièrement) pour un certain $z_0 \in \mathbb{C}$ alors $R \leq \vert z_0 \vert$.
+\end{itemize}
+
+\begin{ex} Déterminons le rayon de convergence de $\Sum{n \geq 0}{} n z^n$ :
+
+\vspace{4cm}
+\end{ex}
+
+\begin{ex} Déterminons le rayon de convergence de $\Sum{n \geq 0}{} \arctan(n) z^n$ :
+
+\vspace{4cm}
+\end{ex}
+
+\newpage
+
+$\phantom{test}$
+
+\vspace{2cm}
+
+\begin{ex} Déterminons le rayon de convergence de $\Sum{n \geq 0}{} z^{n^3}$ :
+
+\vspace{4cm}
+\end{ex}
+
+\begin{exa} Déterminer le rayon de convergence de $\dis \Sum{n \geq 1}{} \dfrac{z^n}{n} \cdot$
+\end{exa}
+\subsection{Un critère de comparaison}
+
+\begin{prop}[Comparaison de rayons de convergence]
+Soient $\Sum{n \geq 0}{} a_n z^n$ et $\Sum{n \geq 0}{} b_n z^n$ deux séries entières de rayons de convergences $R_a$ et $R_b$. 
+\begin{itemize}
+\item Si $a_n \underset{+ \infty}{=} O(b_n)$ alors $R_a \geq R_b$.
+\item Si $a_n \underset{+ \infty}{\sim} b_n$ alors $R_a = R_b$.
+\end{itemize}
+\end{prop}
+
+\begin{preuve}
+\vspace{5cm}
+\end{preuve}
+
+\begin{rem} Pour tout $\rho \geq 0$, $(a_n \rho^n)$ est bornée si et seulement si $(\vert a_n \vert \rho^n)$ est bornée donc :
+$$ \Sum{n \geq 0}{} a_n z^n \et \Sum{n \geq 0}{} \vert a_n \vert z^n$$
+ont le même rayon de convergence. Ainsi, dans le critère précédent, on peut remplacer la condition $a_n \underset{+ \infty}{\sim} b_n$ par $\vert a_n \vert \underset{+ \infty}{\sim} \vert b_n \vert$.
+\end{rem}
+
+%\begin{cor} Si une suite $(a_n)_{n \geq 0}$ est bornée alors le rayon de convergence de $\dis \sum_{n \geq 0} a_n z^n$ est supérieur ou égal à $1$.
+%\end{cor}
+%
+%\begin{preuve}
+%
+%\vspace{5cm}
+%\end{preuve}
+
+\begin{rem} Rajoutant un résultat (à savoir redémontrer) : si une suite $(a_n)_{n \geq 0}$ ne tend pas vers $0$ alors le rayon de convergence de $\dis \sum_{n \geq 0} a_n z^n$ est inférieur ou égal à $1$. Prouvons ce résultat : 
+
+\vspace{2cm}
+\end{rem}
+
+\begin{ex} On pose pour tout $n \geq 1$, $a_n$ le reste de la division euclidienne de $n$ par $3$. Que peut-on dire de la convergence de $\dis \sum_{n \geq 1} a_n z^n$?
+
+\vspace{3cm}
+\end{ex}
+
+\subsection{Utilisation de la règle de d'Alembert pour les séries entières}
+\noindent Soit $\dis \sum_{n \geq 0} a_n z^n$ une série entière. Cette série converge pour $z=0$. Pour tout $z \in \mathbb{C}$ non nul, si $a_n$ est non nul à partir d'un certain rang $N$, on pose pour tout entier $n \geq N$,
+$$ u_n = \vert a_n z^n \vert >0$$
+On peut alors appliquer la règle de d'Alembert pour des séries à termes strictement positifs.
+
+\medskip
+
+%
+%\begin{prop}[Règle de D'Alembert]
+%Soit $\dis \sum_{n \geq 0} a_n z^n$ une série entière dont on note $R$ le rayon de convergence. On suppose que :
+%\begin{itemize}
+%\item $\exists N \in \mathbb{N} \, \vert \, \forall n \geq N, \, a_n \neq 0$.
+%\item Il existe $\ell \in \mathbb{R}_+ \cup \lbrace + \infty \rbrace$ tel que la suite $\dis \left(\left\vert \frac{ a_{n+1}}{ a_n } \right\vert \right)_{n \geq N}$ tende vers $\ell$ quand $n$ tend vers $+ \infty$.
+%\end{itemize}
+%Alors $R= \dfrac{1}{\ell}$ avec les conventions suivantes : $R=0$ si $\ell = + \infty$ et $R = + \infty$ si $\ell = 0^+$.
+%\end{prop}
+
+%\begin{preuve}
+%
+%\vspace{8.5cm}
+%\end{preuve}
+
+\begin{ex} Déterminons le rayon de convergence de $\dis \sum_{n \geq 1} n z^n$.
+
+\vspace{4cm}
+\end{ex}
+
+\begin{ex} Déterminons le rayon de convergence de $\dis \sum_{n \geq 0} n! z^n$.
+
+\vspace{4cm}
+\end{ex}
+
+\begin{exa} Déterminer le rayon de convergence de $\dis \sum_{n \geq 0} \dfrac{2^n}{(n!)^2}z^n$ et $\dis \sum_{n \geq 0} (n^2+1)z^n$.
+\end{exa}
+
+\begin{att} Il faut faire un peu plus attention aux séries \og lacunaires \fg, c'est-à-dire aux séries avec une infinité de coefficients nuls... Par exemple des séries de la forme $\dis \sum a_n z^{2n}$, $\dis \sum a_n z^{2n+1}$, $\dis \sum a_n z^{n^2}$... 
+%
+%Dans ce cas, on se ramène au critère de D'Alembert lié aux séries numériques.
+\end{att}
+
+\begin{ex} Déterminons le rayon de convergence de $\dis \sum_{n \geq 1} \dfrac{2^n}{n} z^{2n}$.
+
+\vspace{5.5cm}
+\end{ex}
+
+\begin{exa} Déterminer le rayon de convergence de $\dis \sum_{n \geq 2} 2^n \ln(n) z^{2n}$.
+\end{exa}
+
+\subsection{Propriétés de convergence}
+\begin{prop} Soit $\dis \sum a_n x^n$ une série entière d'une variable réelle ayant pour rayon de convergence $R$. Si l'on pose pour tout $n \geq 0$, $f_n : x \mapsto a_n x^n$, on a les résultats suivant :
+\begin{itemize}
+\item Pour tout $x \in ]-R,R[$, $\dis \sum_{n \geq 0} f_n(x)$ converge absolument.
+\item $\dis \sum_{n \geq 1} f_n$ converge normalement (et donc uniformément) sur tout segment de $]-R,R[$.
+\end{itemize}
+\end{prop}
+
+\begin{preuve}
+\vspace{4cm}
+\end{preuve}
+
+\section{Opérations sur les séries entières}
+
+\begin{thm}[Produit d'une série entière par un scalaire]
+Soient $\dis \sum_{n \geq 0} a_n z^n$ une série entière de rayon de convergence $R$ et $\lambda$ un réel ou un complexe. Alors la série entière $\dis \sum_{n \geq 0} \lambda a_n z^n$ a pour rayon de convergence  :
+\begin{itemize}
+\item $+ \infty$ si $\lambda =0$.
+\item $R$ si $\lambda \neq 0$.
+\end{itemize}
+Pour tout $z$ tel que $\vert z \vert < R$, on a :
+$$ \sum_{n = 0}^{+ \infty} \lambda a_n z^n = \lambda \sum_{n = 0}^{+ \infty} a_n z^n $$
+\end{thm}
+
+
+
+
+\begin{thm}[Somme de séries entières]
+Soient $\dis \sum_{n \geq 0} a_n z^n$ et $\dis \sum_{n \geq 0} b_n z^n$ deux séries entières de rayons de convergences respectifs $R_a$ et $R_b$.
+
+\noindent Le rayon de convergence $R$ de la série entière $\dis \sum_{n \geq 0} (a_n+b_n) z^n$ vérifie alors :
+$$ R \geq \min(R_a,R_b)$$
+avec égalité si $R_a \neq R_b$. De plus, pour tout $z \in \mathbb{C}$ tel que $\vert z \vert < \min(R_a, R_b)$, on a :
+$$ \sum_{n = 0}^{+ \infty} (a_n +b_n) z^n =  \sum_{n = 0}^{+ \infty} a_n z^n +  \sum_{n = 0}^{+ \infty} b_n z^n$$
+\end{thm}
+
+\begin{preuve}
+
+\vspace{3.5cm}
+\end{preuve}
+
+\newpage
+
+\phantom{test}
+
+\vspace{3.5cm}
+
+\begin{exa} Donner un exemple de deux séries entières de rayons de convergence 1 et telles que la somme de ces deux séries ait un rayon de convergence infini.
+\end{exa}
+
+\begin{thm}[Produit de Cauchy de séries entières]
+Soient $\dis \sum_{n \geq 0} a_n z^n$ et $\dis \sum_{n \geq 0} b_n z^n$ deux séries entières de rayons de convergences respectifs $R_a$ et $R_b$. On définit le \textit{produit de Cauchy} de ces deux séries entières par $\dis \sum_{n \geq 0} c_n z^n$ où pour tout $n \geq 0$,
+$$ c_n =  \sum_{k=0}^n a_k b_{n-k}  $$
+Le rayon de convergence $R$ de cette série vérifie :
+$$ R \geq \min(R_a,R_b)$$
+et pour tout $z$ vérifiant $\vert z \vert < \min(R_a,R_b)$, on a :
+$$ \sum_{n=0}^{+ \infty} c_n z^n = \left( \sum _{n=0}^{+ \infty} a_n z^n \right)  \left( \sum _{n=0}^{+ \infty} b_n z^n \right)$$
+\end{thm}
+
+\begin{rem} Si les séries n'ont pas pour premier indice $0$, il suffit de rajouter des coefficients nuls.
+\end{rem}
+
+\begin{preuve}
+
+\vspace{4cm}
+\end{preuve}
+
+\begin{ex} Déterminons le produit de Cauchy de $\dis \sum_{n \geq 0} z^n$ avec elle-même :
+
+\vspace{5cm}
+\end{ex}
+
+\newpage
+\begin{ex} Étudions le produit de Cauchy de $1-z$ par $\dis \sum_{n \geq 0} z^n$ :
+
+\vspace{6.5cm}
+\end{ex}
+
+
+
+\begin{exa} Déterminer le produit de Cauchy de $\dis \sum_{n \geq 0} z^n$ avec $\dis \sum_{n \geq 0} (n+1)z^n$. On donnera l'expression des coefficients et le rayon de convergence.
+\end{exa}
+
+\section{Propriétés de la somme d'une série entière}
+
+\subsection{Continuité}
+
+\begin{thm}[Cas réel] Soient $\dis \sum_{n \geq 0} a_n x^n$ une série entière d'une variable réelle et $R$ sont rayon de convergence. Alors la fonction somme :
+$$ S : x \mapsto \sum_{n=0}^{+ \infty} a_n x^n $$
+est continue sur $]-R,R[$.
+\end{thm}
+
+\begin{preuve}
+\vspace{4cm}
+\end{preuve}
+
+\begin{thm}[Cas complexe : admis] Soient $\dis \sum_{n \geq 0} a_n z^n$ une série entière d'une variable complexe et $R$ sont rayon de convergence. Alors la fonction somme :
+$$ S : z \mapsto \sum_{n=0}^{+ \infty} a_n z^n $$
+est continue sur $D(0,R)$.
+\end{thm}
+
+\subsection{Un petit résultat utile}
+
+\begin{prop} Soit $\dis \sum_{n \geq 0} a_n z^n$ une série entière de rayon de convergence $R$. Alors la série entière $\dis \sum_{n \geq 0} n z^n$ a aussi pour rayon de convergence $R>0$.
+\end{prop}
+
+\begin{rem} A un facteur $z$ près, c'est la \og dérivée terme à terme \fg de la première série entière :
+
+\vspace{3cm}
+\end{rem}
+
+\begin{preuve}
+\vspace{7.5cm}
+\end{preuve} 
+
+
+
+\subsection{Série entière de la variable réelle : intégration}
+
+\begin{thm}[Primitivation terme à terme]
+Soient $\dis \sum_{n \geq 0} a_n x^n$ une série entière d'une variable réelle de rayon de convergence $R>0$ et $S$ sa somme. Alors la série entière :
+$$ \dis \sum_{n \geq 0}  \dfrac{a_n}{n+1} x^{n+1}$$
+a pour rayon de convergence $R$ et sa somme est l'unique primitive sur $]-R,R[$ de $S$ s'annulant en $0$.
+\end{thm}
+
+\noindent Autrement dit, on peut \og primitiver \fg terme à terme pour déterminer une primitive d'une somme de série entière sur l'intervalle ouvert de convergence. Toute série de la forme :
+$$ \lambda + \dis \sum_{n\geq 0}  \dfrac{a_n}{n+1} x^{n+1} \hbox{ où } \lambda \in \mathbb{R}$$
+est appelée \textit{série primitive} de $\dis \sum_{n \geq 0} a_n x^n$.
+
+\begin{preuve}
+
+\vspace{7cm}
+\end{preuve}
+
+\newpage
+
+\phantom{test}
+
+\vspace{4cm}
+
+\subsection{Série entière de la variable réelle : dérivation}
+
+\begin{thm}[Dérivation terme à terme]
+Soient $\dis \sum_{n \geq 0} a_n x^n$ une série entière d'une variable réelle de rayon de convergence $R>0$ et $S$ sa somme. Alors $S$ est de classe $\mathcal{C}^1$ sur $]-R,R[$ et pour tout $x \in ]-R,R[$,
+$$S'(x) = \sum_{n=1}^{+ \infty} n a_n x^{n-1} = \sum_{n=0}^{+ \infty} (n+1) a_{n+1} x^n$$
+De plus, la série entière associée a pour rayon de convergence $R>0$.
+\end{thm}
+
+\noindent Autrement dit, on peut dériver terme à terme la somme d'une série entière sur son intervalle ouvert de convergence. On appelle :
+$$ \dis \sum_{n \geq 1} n a_n x^{n-1}$$
+la \textit{série dérivée} de $\dis \sum_{n \geq 0} a_n x^n$.
+
+\begin{preuve}
+\vspace{6cm}
+\end{preuve}
+%
+%\newpage
+%
+%\phantom{test}
+%
+%\vspace{3cm}
+\begin{thm} Soit $\dis \sum_{n \geq 0} a_n x^n$ une série entière d'une variable réelle de rayon de convergence $R>0$. Alors la fonction somme, notée $S$, de cette série est de classe $\mathcal{C}^{\infty}$ sur $]-R,R[$ et pour tout $x \in ]-R,R[$ et tout $k \in \mathbb{N}$,
+$$S^{(k)}(x) = \sum_{n=k}^{+ \infty} n(n-1)\cdots(n-k+1) a_n x^{n-k} = \sum_{n=k}^{+ \infty} \frac{n!}{(n-k)!} a_n x^{n-k}$$
+\end{thm}
+
+\begin{preuve} Il suffit d'itérer le raisonnement du théorème de dérivation terme à terme.
+\end{preuve}
+
+\begin{cor}[Coefficients d'une série entière] Soient $\dis \sum_{n \geq 0} a_n x^n$ une série entière d'une variable réelle de rayon de convergence $R>0$ et $S$ sa fonction somme. Alors pour tout $k \geq 0$,
+$$ a_k = \frac{S^{(k)}(0)}{k!}$$
+\end{cor}
+
+\begin{preuve}
+
+\vspace{4cm}
+\end{preuve}
+
+\begin{rem} Les coefficients d'une série entière sont donc entièrement déterminés par la somme de celle-ci.
+\end{rem}
+
+\begin{thm}[Unicité du développement en série entière]
+Soient $\dis \sum_{n \geq 0} a_n x^n$ et $\dis \sum_{n \geq 0} b_n x^n$ deux séries entières de rayons de convergences $R_a$ et $R_b$. Si il existe $r>0$ tel que $R_a>r$ et $R_b >r$ et si :
+$$ \forall x \in ]-r,r[, \sum_{n=0}^{+ \infty} a_n x^n = \sum_{n=0}^{\infty} b_n x^n$$
+alors pour tout $n \in \mathbb{N}$, $a_n=b_n$.
+\end{thm}
+
+\begin{preuve}
+\vspace{4cm}
+\end{preuve}
+
+\begin{cor}[à savoir reprouver] Soient $\dis \sum_{n \geq 0} a_n x^n$ une série entière d'une variable réelle de rayon de convergence $R>0$ et $S$ sa somme. Alors :
+\begin{itemize}
+\item $S$ est paire sur $]-R,R[$ si et seulement si pour tout $n \in \mathbb{N}$, $a_{2n+1}=0$.
+\item $S$ est impaire sur $]-R,R[$ si et seulement si pour tout $n \in \mathbb{N}$, $a_{2n}=0$.
+\end{itemize}
+\end{cor}
+
+\begin{preuve}
+
+\vspace{3cm}
+\end{preuve}
+
+\section{Développement en séries entières}
+\subsection{Série de Taylor}
+
+\begin{defin}[Fonction développable en série entière]
+Soient $r>0$ et $f : ]-r,r[ \rightarrow \mathbb{C}$ une fonction. On dit que $f$ est \textit{développable en série entière} si $f$ est la fonction somme d'une série entière sur $]-r,r[$. Autrement dit, si il existe une série entière de la variable réelle $\dis \sum_{n \geq 0} a_n x^n$, admettant un rayon de convergence supérieur ou égal à $r$ et telle que :
+$$ \forall x \in ]-r,r[, \; f(x) = \sum_{n=0}^{+ \infty} a_n x^n$$
+\end{defin}
+
+\begin{ex} La fonction $x \mapsto \dfrac{1}{1-x}$ est développable en série entière sur $]-1,1[$ car $\dis \sum_{n \geq 0} x^n$ a pour rayon de convergence $1$ et pour tout $x \in ]-1,1[$,
+$$ \frac{1}{1-x}= \sum_{n=0}^{+ \infty} x^n$$
+\end{ex}
+
+\begin{att} La fonction $x \mapsto \dfrac{1}{1-x}$ est définie sur $\mathbb{R} \setminus \lbrace 1 \rbrace$ mais est développable au mieux sur $]-1,1[$.
+\end{att}
+
+\medskip
+
+\noindent \textbf{Question :} Quelles fonctions sont développables en séries entières ?
+
+\medskip
+
+\noindent Supposons que $f : ]-r,r[ \rightarrow \mathbb{C}$ soit une fonction développable en série entière (avec pour série entière associée $\dis \sum_{n \geq 0} a_n x^n$). Alors c'est la somme d'une série entière donc :
+\begin{itemize}
+\item $f$ est $\mathcal{C}^{\infty}$ sur $]-r,r[$.
+\item Pour tout $n \geq 0$, $a_n = \dfrac{f^{(n)}(0)}{n!} \cdot$
+\end{itemize}
+Ainsi,
+$$ \forall x \in ]-r,r[, \; f(x)= \sum_{n=0}^{+ \infty} \dfrac{f^{(n)}(0)}{n!}  x^n$$
+
+\medskip
+
+\noindent Cela pousse a définir la notion suivante :
+
+\begin{defin}[Série de Taylor]
+Soient $f : ]-r,r[ \rightarrow \mathbb{C}$ une fonction de classe $\mathcal{C}^{\infty}$ où $r>0$. On appelle série de Taylor de $f$ en $0$ la série entière définie par :
+$$ \dis \sum_{n \geq 0} \frac{f^{(n)}(0)}{n!} x^n$$
+\end{defin}
+
+\begin{cor} Si une fonction est développable en série entière, cette série entière est sa série de Taylor en $0$.
+\end{cor}
+
+\begin{att} Ce corollaire ne donne que le candidat éventuel : on va voir dans la partie suivante que ce n'est pas parce que la série de Taylor d'une série converge sur un intervalle $]-r,r[$ que la fonction est développable en série entière.
+\end{att}
+
+\subsection{Un contre-exemple : se méfier de la série de Taylor}
+
+\noindent Commençons par rappeler un théorème important ($I$ est un intervalle de $\mathbb{R}$ contenant au moins deux points) :
+
+\begin{thm}[de la limite de la dérivée] Soient $a \in I$ et $f : I \rightarrow \mathbb{R}$ une fonction continue sur $I$ et dérivable sur $I \setminus \lbrace a \rbrace$. Si :
+$$ \exists \ell \in \overline{\mathbb{R}} \, \vert \, \lim_{x \rightarrow a} f'(x) = \ell$$
+Alors :
+$$ \lim_{x \rightarrow a } \dfrac{f(x)-f(a)}{x-a} = \ell$$
+En particulier, si $\ell \in \mathbb{R}$, $f$ est dérivable en $a$ et $f'(a)= \ell$.
+\end{thm}
+
+\noindent Considérons la fonction $f$ définie sur $\mathbb{R}$ pour tout $x \in \mathbb{R}$ par :
+$$ f(x) = \left\lbrace \begin{array}{cl}
+e^{- \frac{1}{x^2} } & \hbox{ si } x \neq 0 \\
+0 & \hbox{ si } x=0\\
+\end{array}\right.$$
+La fonction $f$ est de classe $\mathcal{C}^{\infty}$ sur $\mathbb{R}_{-}^{*}$ et $\mathbb{R}_{+}^{*}$. Montrons par récurrence que pour tout $n \in \mathbb{N}$,
+
+\begin{center}
+\og Il existe un polynôme $P_n$ tel que pour tout $x \neq 0$, $\dis f^{(n)}(x) = P_n \left(\frac{1}{x} \right) e^{- \frac{1}{x^2}}$ \fg
+\end{center}
+
+\newpage
+
+\phantom{test}
+
+\vspace{7cm}
+
+\noindent Montrons maintenant que $f$ est $\mathcal{C}^{\infty}$ sur $\mathbb{R}$ :
+
+\vspace{7cm}
+
+\noindent \textbf{Que retenir?} D'après le raisonnement précédent, on a pour tout $n \geq 0$, $f^{(n)}(0)=0$. Ainsi, la série de Taylor de $f$ en $0$ est nulle et a donc un rayon de convergence infini. Pourtant, sa somme est égale à $f$ uniquement en $0$ car pour tout $x \neq 0$, $f(x) \neq 0$.
+
+\begin{rem} Si une fonction $f$ est $\mathcal{C}^{\infty}$ sur un intervalle $]-r,r[$ avec $r>0$, on vient de montrer qu'elle n'est pas forcément développable en série entière. Remarquons que l'on sait tout de même grâce à la formule de Taylor-Young que pour tout $n \geq 0$,
+$$ f(x) \underset{0}{=} \sum_{k=0}^n \dfrac{f^{(k)}(0)}{k!}x^k + o(x^n)$$
+\end{rem}
+\subsection{Développement en série entière des fonctions usuelles}
+\noindent Une des manières de déterminer des développements en séries entières de fonctions est d'utiliser la formule de Taylor avec reste intégrale :
+
+\begin{thm}[Formule de Taylor avec reste intégrale] Soit $f : I \rightarrow \mathbb{C}$ une fonction de classe $\mathcal{C}^{n+1}$ (où $n \geq 0$) sur $I$. Pour tout $(x,a) \in I^2$, on a :
+$$ f(x) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k + \int_{a}^x \frac{(x-t)^n}{n!} f^{(n+1)}(t) \dt$$
+\end{thm}
+\noindent Si la fonction $f$ étudiée est $\mathcal{C}^{\infty}$ sur un intervalle non trivial centré en $0$ et si l'on sait prouver que le reste intégrale tend vers $0$ quand $k$ tend vers $+ \infty$ pour tout réel de cet intervalle alors on obtient le développement en série entière de $f$.
+
+\begin{thm} Pour tout $z \in \mathbb{C}$,
+$$ e^z = \sum_{k=0}^{+ \infty} \dfrac{z^k}{k!}$$
+Le rayon de convergence associé vaut $+ \infty$.
+\end{thm}
+
+\begin{preuve}
+\vspace{11cm}
+\end{preuve}
+
+\begin{ex} Montrons que la fonction $f$ définie sur $\mathbb{R}^*$ pour tout $x \in \mathbb{R}^*$ par :
+$$ f(x) = \frac{e^x-1-x}{x^2}$$
+est prolongeable en une fonction $\mathcal{C}^{\infty}$ sur $\mathbb{R}$.
+
+\vspace{5cm}
+\end{ex}
+
+\begin{cor} Pour tout $x \in \mathbb{R}$,
+
+$$ \begin{array}{ll}
+\dis \cos(x) = \sum_{k=0}^{+ \infty} (-1)^k \dfrac{x^{2k}}{(2k)!} & \quad \dis  \sin(x) = \sum_{k=0}^{+ \infty} (-1)^k \dfrac{x^{2k+1}}{(2k+1)!}\\
+\dis \ch(x) = \sum_{k=0}^{+ \infty} \dfrac{x^{2k}}{(2k)!} & \quad \dis  \sh(x) = \sum_{k=0}^{+ \infty}  \dfrac{x^{2k+1}}{(2k+1)!} \end{array}$$
+Les rayons de convergence associés sont toux égaux à $+ \infty$.
+\end{cor}
+
+\begin{preuve}
+\vspace{6cm}
+\end{preuve}
+
+\begin{prop} Pour tout $z \in \mathbb{C}$,
+$$ \dfrac{1}{1-z} = \sum_{n=0}^{+ \infty} z^n$$ 
+Le rayon de convergence associé vaut $1$.
+\end{prop}
+
+\begin{rem} On obtient ainsi très facilement de nombreux développements en séries entières :
+
+\begin{itemize}
+\item Pour tout $x \in ]-1,1[$, $-x \in ]-1,1[$ donc :
+$$ \dfrac{1}{1+x} = \sum_{n=0}^{+ \infty} (-1)^n x^n$$
+\item Pour tout $x \in ]-1,1[$, $x^2 \in ]-1,1[$ donc :
+$$ \dfrac{1}{1-x^2}=  \sum_{n=0}^{+ \infty} x^{2n}$$
+\item Pour tout $x \in ]-1,1[$, $x^2 \in ]-1,1[$ donc par le premier développement de cette remarque :
+$$ \dfrac{1}{1+x^2} = \sum_{n=0}^{+ \infty} (-1)^n x^{2n}$$
+\item Par théorème de dérivation terme à terme, on obtient par la proposition précédente que pour tout $x \in ]-1,1[$,
+$$ \dfrac{1}{(1-x)^2} = \sum_{n=1}^{+ \infty} n x^{n-1}$$
+\end{itemize}
+\end{rem}
+
+\begin{exa} Développer en série entière sur $]-1,1[$ les fonctions :
+$$ x \mapsto \dfrac{1}{1-x^3} \hbox{ et } x \mapsto \dfrac{1}{(1-x)^3}$$
+\end{exa}
+
+\begin{prop} Pour tout $x \in ]-1,1[$,
+$$ \ln(1+x) = \sum_{n=1}^{+ \infty} (-1)^{n-1} \dfrac{x^n}{n} \hbox{ et } \ln(1-x) = -\sum_{n=1}^{+ \infty} \dfrac{x^n}{n}$$
+et 
+$$ \arctan(x)= \ \sum_{n=0}^{+ \infty} (-1)^n \frac{x^{2n+1}}{2n+1} $$
+\end{prop}
+
+\begin{preuve}
+\vspace{7.5cm}
+\end{preuve}
+
+\begin{thm} Pour tout $\alpha \in \mathbb{R}$ et pour tout $x \in ]-1,1[$,
+$$ (1+x)^{\alpha} = 1 + \sum_{n=1}^{+ \infty} \dfrac{\alpha (\alpha-1) \times \cdots \times (\alpha-n+1)}{n!} x^n$$
+L'égalité est valable pour tout $x \in \mathbb{R}$ si $\alpha$ est un entier naturel (formule du binôme).
+\end{thm}
+
+\begin{preuve}
+
+\vspace{12cm}
+\end{preuve}
+
+%\newpage
+%
+%\phantom{test}
+%
+%\vspace{10cm}
+
+\newpage
+\subsection{Quelques méthodes}
+\noindent \textbf{Première idée : se ramener à un développement connu.}
+
+\noindent Soit $a \in \mathbb{R}^{*}$. On a pour tout $x \in \mathbb{R}$ différent de $a$ :
+$$ \dfrac{1}{x-a} = - \dfrac{1}{a} \times \dfrac{1}{1- \frac{x}{a}}$$
+Si $\vert x \vert <a$, on a alors :
+$$ \dfrac{1}{x-a} = - \dfrac{1}{a} \sum_{n=0}^{+ \infty} \dfrac{x^n}{a^n} = -\sum_{n=0}^{+ \infty} \dfrac{x^n}{a^{n+1}}$$
+Par dérivation terme à terme, on en déduit que pour tout $x \in ]-\vert a \vert, \vert a \vert[$,
+$$ \dfrac{1}{(x-a)^2} = - \sum_{n=1}^{+ \infty} \dfrac{n}{a^{n+1}} x^{n-1}$$
+
+\begin{exa} Développer en série entière $x \mapsto \dfrac{1}{x-7}$ et $x \mapsto \dfrac{1}{(x-7)^2}\cdot$
+\end{exa}
+
+\begin{ex} Développons en série entière $f : x \mapsto \dfrac{1}{(1-x)(2+x)}\cdot$
+
+\vspace{8cm}
+\end{ex}
+\medskip
+
+
+
+$\phantom{test}$
+\vspace{5cm}
+\begin{rem} Si on travaille avec une fonction de la forme $x \mapsto \dfrac{1}{x^2+px+q}$ avec un dénominateur ayant des racines complexes, on peut décomposer en éléments simples dans $\mathbb{C}$ puis revenir ensuite sur $\mathbb{R}$.
+\end{rem}
+
+\medskip
+
+
+\noindent \textbf{Deuxième idée : dériver puis intégrer}
+
+\noindent Parfois, $f'$ est plus simple à développer en série entière. On utilise ensuite le théorème d'intégration terme à terme (sans oublier la constante d'intégration).
+
+\medskip
+\newpage
+\begin{ex} Déterminons le développement en série entière en $0$ de $\arcsin$.
+
+\vspace{17.5cm}
+\end{ex}
+
+\begin{exa} Développer en série entière $x \mapsto \ln(7-x)$.
+\end{exa}
+
+\medskip
+
+\noindent \textbf{Troisième idée : utiliser une équation différentielle}
+
+\noindent Voir le chapitre sur les équations différentielles.
+\end{document}
