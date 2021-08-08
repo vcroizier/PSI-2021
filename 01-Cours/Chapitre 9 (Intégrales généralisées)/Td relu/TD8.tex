@@ -1,0 +1,355 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{cours}
+
+\begin{document}
+\everymath{\displaystyle}
+\begin{center}
+\textit{{ {\huge TD 9 : Intégrales généralisées}}}
+\end{center}
+
+
+\bigskip
+
+\begin{center}
+\textit{{ {\large Nature d'une intégrale}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Étudier la nature des intégrales suivantes. Préciser la valeur en cas de convergence.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item $A = \dis \int_1^{+ \infty} \dfrac{1}{x^{3/2}} \dx$
+\item $B = \dis \int_0^{+ \infty} \dfrac{1}{1+x^2} \dx$
+\item $C = \dis \int_0^{+ \infty} x e^{-2x} \dx$
+\item $D= \dis \int_2^{+ \infty} \dfrac{1}{(x-1)(x+1)} \dx$.
+\item $E= \int_{e}^{+ \infty} \dfrac{1}{x\ln(x)} \dx$
+\item $F= \int_0^1 \dfrac{\ln(x)}{(1+x)^2} \dx$
+\end{enumerate}
+\end{multicols}
+\vspace{0.1cm}
+\end{Exa}
+
+
+
+\begin{Exa} Étudier la nature des intégrales suivantes. 
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item $A = \dis \int_1^{+ \infty} \dfrac{\sin(x)}{x^2} \dx$
+\item $B = \dis \int_1^{+ \infty} \dfrac{\cos(x)}{x^{3/2}+\ln(x)} \dx$
+\item $C = \dis \int_0^{1} \dfrac{1}{\sqrt{1-x^2}} \sin \left(\dfrac{1}{x}\right) \dx$
+\item $D= \dis \int_1^{+ \infty} \dfrac{1}{x} \sin \left(\dfrac{1}{x}\right) \dx$.
+\item $E= \dis \int_{0}^{+ \infty} e^{-x} \sin(x) \dx$
+\item $F= \dis \int_0^{+\infty} \dfrac{\sin(x)}{x^2+4} \dx$
+\item $G= \dis \int_0^{+ \infty} \dfrac{\cos(x)}{\ch(x)} \dx$.
+\item $H= \dis \int_1^{+\infty} \dfrac{\sin(10x)-\sin(5x)}{x^{4/3}} \dx$.
+\end{enumerate}
+\end{multicols}
+\vspace{0.1cm}
+\end{Exa}
+
+
+\begin{Exa} \begin{enumerate}
+\item Montrer que l'int\'egrale $\dis \int_0^{+ \infty} \frac{\sin(t)}{t}\, \dt$ est convergente.
+\item Montrer que l'int\'egrale $\dis \int_1^{+\infty}\frac{\cos(2t)}{t}\, \dt$ est convergente.
+\item Montrer que l'int\'egrale g\'en\'eralis\'ee $\dis \int_1^{+\infty}\frac{\sin^2(t)}{t} \, \dt$ est divergente. En d\'eduire la divergence de l'int\'egrale g\'en\'eralis\'ee $\dis \int_1^{+\infty}\frac{|\sin(t)|}{t} \, \dt$.
+\end{enumerate}
+\end{Exa}
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Intégrabilité}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $\alpha \in \mathbb{R}$. Étudier, sur les intervalles indiqués, l'int\'egrabilit\'e des fonctions dont les expressions sont données par :
+\begin{multicols}{2}
+\begin{itemize}
+\item $f_1(x)=\dis\frac{\sqrt{x^2+x+1}-\sqrt{x^2-x+1}}{x}$ sur \newline $[1,+\infty[$.
+\item $f_2(x)=\dis\frac{\ln^2(x)}{\sqrt{x^3+x}}$ sur $[1,+\infty[$.
+\item $f_3(x)=\dis\frac{\sin(x)}{\sqrt{x(1-x)}}$ sur $]0,1[$.
+\columnbreak
+\item $f_4(x)=\dis\frac{1-\ch(x)}{x^{\alpha}}$ sur $]0,+\infty[$.
+\item $f_5(x)=\dis\frac{x^{\alpha}\ln(x)}{1-x^2}$ sur $]0,1[$.
+\item $f_6(x)=\dis\frac{\ln(x)\ln(1-x)}{x}$ sur $]0,1[$.
+\end{itemize}
+\end{multicols}
+
+\vspace{0.1cm}
+\end{Exa}
+
+
+
+\begin{Exa} Montrer que si $f : \mathbb{R}_+ \rightarrow \mathbb{R}$ est une fonction intégrable sur $\mathbb{R}_+$ admettant une limite en $+ \infty$ alors cette limite est nulle. 
+\end{Exa} 
+
+
+
+\begin{Exa}  Soit $f :[0, + \infty[ \rightarrow \R$ une fonction continue par morceaux.  On suppose que $f$ est intégrable sur $[0, + \infty[$.  Montrer que :
+  \[
+  \lim_{x \rightarrow + \infty} \int_{x}^{x + 1} f(t) \dt =0 
+  \]
+\end{Exa}
+
+
+
+\begin{Exa}
+Soit $f : x \mapsto \sin(x^2)$.
+\begin{enumerate}
+\item Montrer que $\dis \int_{0}^{+ \infty}  f(t) \dt$ converge.
+\item Montrer que $f$ n'est pas intégrable sur $\mathbb{R}_+$. On pourra commencer par montrer grâce au changement de variable $t=x^2$ que pour tout $n \geq 1$,
+$$ \int_{\sqrt{n \pi}}^{\sqrt{(n+1)\pi}} \vert \sin(x^2) \vert \dx \geq \frac{1}{\sqrt{(n+1) \pi}}$$
+\end{enumerate}
+\end{Exa}
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Changements de variables et intégrations par parties}}}
+\end{center}
+
+\medskip
+
+
+\begin{Exa} Justifier l'existence puis donner la valeur de :
+  \[
+  I = \int_{0}^{ + \infty} \frac{\dt}{(1 + t^{2})^{2}}
+  \]
+On pourra utiliser le changement de variable $u = \dfrac{1}{t} \cdot$
+\end{Exa}
+
+
+\begin{Exa}
+\begin{enumerate}
+  \item
+    Montrer que :
+    \[
+\int_{0}^{ + \infty} \frac{\d x}{x^{3} + 1} = \int_{0}^{ + \infty} \frac{x}{x^{3} + 1}\dx
+    \]
+  \item
+    En déduire la valeur de cette intégrale.
+  \end{enumerate}
+\end{Exa} 
+
+
+
+
+
+\begin{Exa} Montrer que les intégrales 
+$$ I=\int_{0}^1 -e^{-x} \ln(x) \dx \quad \hbox{ et } \quad J= \int_{0}^1 \frac{1-e^{-x}}{x} \dx$$
+convergent et sont égales.
+\end{Exa}
+
+
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Théorème de convergence dominée}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Déterminer $\lim_{n \to + \infty} \int_{0}^{ + \infty} \frac{\sin(nt)}{nt + t^{2}} \dt$.
+\end{Exa}
+
+
+
+\begin{Exa} Déterminer $\lim_{n \rightarrow + \infty}\int_{0}^{ + \infty} \frac{x^{n}}{1 + x^{n + 2}} \dx$.
+\end{Exa}
+
+
+
+
+
+\begin{Exa} Déterminer $\lim_{n \to + \infty} \int_{0}^{n} \biggl( 1 + \frac{x}{n} \biggr)^{\!\!n} \e^{ - 2x} \dx$.
+\end{Exa}
+
+
+
+ \begin{Exa} Déterminer $\dis \lim_{n \rightarrow + \infty} \int_{0}^{ + \infty} \frac{\dx}{x^{n} + \e^{x}} \cdot$
+ \end{Exa}
+ 
+
+
+\begin{Exa}
+Pour tout $n \geq 1$, on pose $f_n(t) = \left( 1 - \dfrac{t}{n} \right)^{n-1}\ln(t)$ si $t \in ]0,n]$ et $f_n(t)=0$ si $t>n$.
+\begin{enumerate}
+\item Montrer que : $\dis \lim_{n \rightarrow + \infty} \int_{0}^n f_n(t) \dt = \int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt$.
+\item Sachant que quand $n$ tend vers $+ \infty$,
+$$ \sum_{k=1}^n \dfrac{1}{k} = \ln(n)+ \gamma + o(1)$$
+où $\gamma$ est la constante d'Euler, montrer que :
+$$ \int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt = - \gamma$$
+On pourra utiliser le changement de variable $u=\dfrac{t}{n}$ puis une intégration par parties.
+\end{enumerate}
+\end{Exa}
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Théorème d'intégration terme à terme}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Montrer que $\dis \int_{0}^{+ \infty} \frac{\sin(x)}{e^x-1} \dx = \sum_{n=1}^{+ \infty} \frac{1}{n^2+1}\cdot$
+\end{Exa}
+
+
+
+\begin{Exa} Soient $a$ et $b$ deux réels strictement positifs.
+\begin{enumerate}
+\item Déterminer une suite de fonctions $(u_n)_{n \geq 0}$, définies sur $]0,1[$ et à valeurs dans $\mathbb{R}$, telles que pour tout réel $t \in ]0,1[$,
+$$ \dfrac{t^{a-1}}{1+t^b} = \sum_{k=0}^{+ \infty} u_k(t)$$
+\item Déterminer la nature de $\dis \sum_{n \geq 0} \int_0^1 \vert u_n(t) \vert \dt$? Qu'en déduit-on ?
+\item Montrer que :
+$$ \sum_{n=0}^{+ \infty} \dfrac{(-1)^n}{a+nb} = \int_0^1 \dfrac{t^{a-1}}{1+t^b} \dt$$
+\end{enumerate}
+\end{Exa}
+
+
+ 
+
+
+\begin{Exa}\label{gamma} Soit $I = \dis \int_{0}^{+ \infty} \frac{x}{\sh(x)} \dx$.
+
+\begin{enumerate}
+\item Montrer l'existence de $I$.
+\item Montrer que $I= \dis \sum_{n=0}^{+ \infty} \frac{2}{(2n+1)^2}\cdot$
+\end{enumerate}
+\end{Exa} 
+
+
+
+ 
+\begin{Exa} Pour $n,m \in \N$, on pose :
+  \[
+  I_{n}(m) = \int_{0}^{1} x^{n}(\ln x)^{m} \dx
+  \]
+  \begin{enumerate}
+  \item Justifier pour tout $n,m \in \mathbb{N}$, l'existence de $I_n(m)$.
+  \item Calculer pour tout $n \geq 0$, $I_{n}(n)$.
+  \item
+    En déduire que :
+    \[
+    \int_{0}^{1} x^{ - x} \d x = \sum_{n = 1}^{ + \infty} n^{ - n}
+    \]
+  \end{enumerate}
+\end{Exa}
+
+
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Suites et fonctions définies par des intégrales}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Pour $n\in\N,$ on pose :
+$$I_n=\dis\int_0^{+\infty} t^ne^{-t} \dt$$
+Justifier l'existence de $I_n$. D\'eterminer une relation liant $I_n$ et $I_{n+1}$ puis en d\'eduire la valeur de $I_n.$
+\end{Exa} 
+
+
+
+\begin{Exa} On pose pour tout $n \geq 1$, $u_n = \int_{0}^{+ \infty} \dfrac{\dt}{(1+t^3)^n} \cdot$
+\begin{enumerate}
+\item Déterminer une relation entre $u_{n+1}$ et $u_n$ pour $n \geq 1$.
+\item Soient $\alpha \in \mathbb{R}$ et $(v_n)_{n \geq 1}$ définie par $v_n = \ln(u_n) + \alpha \ln(n)$. Étudier, en fonction de $\alpha$, le comportement de $(v_n)_{n \geq 1}$.
+\item En déduire un équivalent simple de $u_n$ quand $n$ tend vers $+ \infty$.
+\end{enumerate}
+\end{Exa} 
+
+
+
+\begin{Exa} On considère $f$ définie par $f(x)= \dis \int_x^{+ \infty} \dfrac{\sin(t)}{t^2} \dt$.
+\begin{enumerate}
+\item Montrer que $f$ est définie et dérivable sur $\mathbb{R}_+^{*}$.
+\item Montrer que $f(x) \underset{0}{\sim} -\ln(x)$.
+\item Montrer que $f(x) \underset{+ \infty}{=} \textrm{O} \left( \dfrac{1}{x^2} \right) \cdot$
+\item Montrer que $f$ est intégrable sur $]0, + \infty[$.
+\end{enumerate}
+\end{Exa}
+
+
+
+
+
+
+%
+%\exo Donner la nature des intégrales suivantes ($a$ est un réel).
+%
+%\begin{multicols}{3}
+%\begin{enumerate}
+%\item $I_1=\dis \int_{0}^{+ \infty} e^{-x^2} \dx$.
+%\item $I_2= \dis \int_{-\pi/2}^{\pi/2} \ln(1+ \sin(x)) \dx$
+%\item $I_3= \dis \int_{0}^{+ \infty} \dfrac{1+\sin(t)}{1+\sqrt{t^3}} \dt$
+%\item $I_4=  \dis \int_{0}^{1} -e^{-x} \ln(x)  \dx$
+%\item $I_5=  \dis \int_{0}^{+ \infty} \dfrac{1}{ch(t) - \cos(t)} \dt$
+%\item $I_6= \dis \int_{0}^{1} \dfrac{\ln(x)}{\sqrt{x}} \dx$
+%\item $I_7 = \dis \int_{1}^{+ \infty} \frac{\sin(x)}{x^2} \dx$
+%\item $I_8 = \dis \int_{2}^3 \frac{\sin \left( \frac{1}{x-2} \right)}{\sqrt{(x-2)(3-x)}}  \dx$
+%\item $I_{9} = \dis \int_{1}^{+ \infty} \frac{1}{t} \left(e^{\frac{1}{t}}- \cos \left( \frac{1}{t} \right) \right) \dt \; $
+%\item $I_{10} = \dis \int_{1}^{+\infty}  \frac{1}{x} \sin \left( \frac{1}{x} \right) \dx$
+%\item $I_{11} = \dis \int_{1}^{ + \infty} \frac{\arctan(t)}{t^2} \dt$.
+%\item $I_{12} = \dis \int_{1}^{+ \infty} \frac{1}{(x-1)^a (x+1)} \dx$ 
+%\item $I_{13} = \dis \int_{0}^{\pi} \frac{\dx}{(1-\cos(x))^a}$
+%\item $I_{14} = \dis \int_{0}^{\pi/2} \ln(\sin(x)) \dx$
+%\item $I_{15} = \dis \int_{1}^{3} \frac{1}{\sqrt{x^3-1}} \dx$
+%\end{enumerate}
+%\end{multicols}
+
+
+
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+
+%
+%\exo Pour tout entier $n \geq 1$ et $t>1$, on pose :
+%$$ f_n(t) =  \frac{n}{\sqrt{t}} \ln \left( 1 + \frac{1}{nt} \right)$$
+%
+%\begin{enumerate}
+%\item Montrer que pour tout $n \geq 1$, $f_n$ est intégrable sur $]1,+ \infty[$.
+%\item Étudier la limite de $\int_{1}^{+ \infty} f_n(t) \dt$ quand $n$ tend vers $+ \infty$.
+%\end{enumerate}
+%
+%
+%\exo Calculer $\dis \lim_{n \to + \infty} \int_{0}^{ + \infty} \frac{n!}{\prod_{k = 1}^{n} {(k + x)}} \dx$.
+
+
+%\exo  \begin{enumerate}
+%  \item
+%    Démontrer la convergence de la série de terme général $\dis a_{n} = \frac{n!}{n^{n}}\cdot$
+%  \item
+%    Comparer pour $n \geq 1$,
+%    \[
+%    a_{n} \et n\int_{0}^{ + \infty} t^{n} \e^{ - nt} \dt
+%    \]
+%  \item
+%    En déduire:
+%    \[
+%    \sum_{n = 1}^{ + \infty} a_{n} = \int_{0}^{ + \infty} \frac{t\e^{ - t}}{(1 - t\e^{ - t})^{2}} \dt
+%    \]
+%  \end{enumerate}
+\end{document}

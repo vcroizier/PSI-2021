@@ -1,0 +1,334 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage{cours}
+\usepackage{pifont}
+\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+
+\begin{document}
+\everymath{\displaystyle}
+
+\begin{center}
+\textit{{ {\huge TD 19 : Calcul différentiel}}}
+\end{center}
+
+\medskip
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Un peu de continuité ...}}}
+\end{center}
+
+\medskip
+
+
+\begin{Exa} Étudier la continuité de $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par $ f((x,y))=  \max(x,y)$.
+\end{Exa}
+
+\corr Soit $(x,y) \in \mathbb{R}^2$. On sait que :
+$$ \max(x,y)+ \min(x,y) = x+y$$
+et 
+$$ \max(x,y)-\min(x,y) = \vert x-y \vert$$
+On en déduit que :
+$$ f(x,y)= \max(x,y) = \dfrac{x+y+ \vert x-y \vert}{2}$$
+Les fonctions polynômiales (en les composantes) sont bornées sur $\mathbb{R}^2$ et la valeur absolue l'est sur $\mathbb{R}$ donc par composition, $f$ est continue sur $\mathbb{R}^2$.
+
+\begin{Exa} Étudier la continuité de $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par $f((x,y))= \ln(1 + \sqrt{x^2+y^2})$.
+\end{Exa}
+
+\corr La fonction $(x,y) \mapsto x^2+y^2$ est polynômiale (en les composantes) donc continue sur $\mathbb{R}^2$ et à valeurs positives, $t \mapsto \sqrt{t}$ est continue sur $\mathbb{R}_+$ et à valeurs positives donc :
+$$ (x,y) \mapsto 1+ \sqrt{x^2+y^2}$$
+est continue et strictement positive sur $\mathbb{R}^2$. La fonction $\ln$ est continue sur $\mathbb{R}_+^{*}$ donc $f$ est continue sur $\mathbb{R}^2$.
+
+\begin{Exa} Étudier la continuité de la fonction $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par :
+$$ f((x,y)) = \left\lbrace \begin{array}{cl}
+\dfrac{x^4 y}{x^6+y^4} & \hbox{ si } (x,y) \neq (0,0) \\
+0 & \hbox{ si } (x,y)=(0,0) \\
+\end{array}\right.$$
+\end{Exa}
+
+\corr La fonction $f$ est continue en tout point $(x,y) \neq (0,0)$ par quotient de fonctions polynômiales et sachant que dans ce cas, $x^6+y^4 \neq 0$. 
+
+\medskip
+
+\noindent Étudions la continuité de $f$ en $(0,0)$. Celle-ci est continue en $(0,0)$ si :
+$$ \lim_{(x,y) \rightarrow (0,0)} f((x,y)) =f((0,0))= 0$$
+Pour tout réel $x$ non nul,
+$$ f((x,x^2)) = \dfrac{x^6}{x^6+x^8} = \dfrac{1}{1+x^2}$$
+Si $x$ tend vers $0$, $(x,x^2)$ tend vers $(0,0)$ et pourtant :
+$$ \lim_{x \rightarrow 0} \dfrac{1}{1+x^2} = 1 \neq 0$$
+donc $f$ n'est pas continue en $(0,0)$.
+
+\begin{Exa} Étudier la continuité en $(0,0)$ de la fonction $f : \R^{2} \rightarrow \R$ définie par :
+  \[
+  f((x,y)) =
+  \begin{cases}
+    \frac{xy}{\vert x \vert + \vert y \vert} & \hbox{ si } (x,y) \neq (0,0) \\
+    \, \; 0 & \hbox{ si } (x,y)=(0,0)
+  \end{cases}
+  \]
+\end{Exa}
+
+\corr La fonction $f$ est continue en $(0,0)$ si :
+$$ \lim_{(x,y) \rightarrow (0,0)} f((x,y)) =f((0,0))= 0$$
+Utilisons la norme $1$. Pour tout couple non nul $(x,y)$, on a :
+\begin{align*}
+0 \leq \vert f((x,y)) \vert & = \dfrac{\vert x \vert \times \vert y \vert}{\vert x \vert + \vert y \vert} \\
+& \leq \dfrac{(\vert x \vert + \vert y \vert)(\vert x \vert + \vert y \vert)}{\vert x \vert + \vert y \vert} \\
+& = \vert x \vert + \vert y \vert \\
+& = \Vert (x,y) \Vert_1
+\end{align*}
+Ainsi, si $(x,y)$ tend vers $(0,0)$, on en déduit par théorème d'encadrement que :
+$$  \lim_{(x,y) \rightarrow (0,0)} f((x,y)) =f((0,0))= 0$$
+et donc $f$ est continue en $(0,0)$.
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Dérivées partielles, fonctions de classe $\mathcal{C}^1$}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par :
+$$ f((x,y)) = \left\lbrace \begin{array}{cl}
+\dfrac{xy}{\sqrt{x^{2}+y^{2}}} & \hbox{ si } (x,y) \neq (0,0) \\
+0 & \hbox{ si } (x,y) = (0,0)\\
+\end{array}\right.$$
+
+\begin{enumerate}
+\item Montrer que $f$ est continue sur $\mathbb{R}^{2}$.
+\item Démontrer que $f$ admet des d\'{e}riv\'{e}es partielles en tout point de $\mathbb{R}^{2}$.
+\item $f$ est-elle de classe $C^{1}$ sur $\mathbb{R}^2$?
+\end{enumerate}
+\end{Exa}
+
+\corr
+\begin{enumerate}
+
+\item Par opérations sur les fonctions continues, $f$ est continue sur  $\mathbb{R}^2 \setminus \left\{ {(0,0)} \right\}$.
+On munit $\mathbb{R}^2$ de la norme $2$ :
+$$\forall\:(x,y)\in\mathbb{R}^2, \,  \Vert (x,y) \Vert_2 = \sqrt{x^2+y^2}$$
+Soit $(x,y)\in\mathbb{R}^2$. On a $|x|\leq \Vert (x,y) \Vert_2$ et $|y|\leq \Vert (x,y) \Vert_2$ donc si $(x,y) \neq (0,0)$ :
+$$ 0 \leq |f(x,y)-f(0,0)|=\dfrac{|x||y|}{\Vert (x,y) \Vert_2}\leq\dfrac{\left(\Vert (x,y) \Vert_2\right) ^2}{||(x,y)||_2}=\Vert (x,y) \Vert_2\underset{(x,y)\to (0,0)}{\longrightarrow} 0$$
+On en déduit que $f$ est continue en $(0,0)$ et donc finalement sur $\mathbb{R}^2$.
+
+\medskip
+Ainsi $f$ est continue sur $\mathbb{R}^2 $.\\
+\item Par opérations sur les fonctions admettant des dérivées partielles, $f$ admet des dérivées partielles en tout point de $\mathbb{R}^2 \setminus \left\{ {(0,0)} \right\}$.
+
+\medskip
+
+\noindent Pour tout réel $t \neq 0$, on a :
+$$ \dfrac{1}{t}\left( {f(t,0) - f(0,0)} \right) = 0$$
+donc 
+$$\mathop {\lim }\limits_{t \to 0} \dfrac{1}{t}\left( {f(t,0) - f(0,0)} \right) = 0$$
+Ainsi, $f$ admet une dérivée partielle en $(0,0)$ par rapport à sa première variable et on a :
+$$\dfrac{{\partial f}}{{\partial x}}(0,0) = 0$$
+De même, $f$ admet une  dérivée partielle en $(0,0)$ par rapport à sa seconde variable et on a :
+$$\dfrac{{\partial f}}{{\partial y}}(0,0) = 0$$
+\item Par définition, $f$ est de classe $C^{1}$ sur $\mathbb{R}^{2}$ si $\dfrac{\partial f}{ \partial x}$ et $\dfrac{\partial f}{ \partial y }$ existent et sont continues sur $\mathbb{R}^{2}$. Par calcul, on a pour tout $(x,y)\in\mathbb{R}^2 \setminus \left\{ {(0,0)} \right\}$ :
+$$\dfrac{\partial f}{ \partial x}(x,y)=\dfrac{y^3}{\left( x^2+y^2\right)^{\frac{3}{2}} }$$
+En particulier, pour tout $x>0$,   
+$$\dfrac{\partial f}{ \partial x}(x,x)=\dfrac{1}{2\sqrt{2}}$$
+On a alors :
+$$\lim\limits_{x\to 0^{+}}^{}\dfrac{\partial f}{ \partial x}(x,x)=\dfrac{1}{2\sqrt{2}}\neq \dfrac{\partial f}{ \partial x}(0,0) $$
+On en déduit que $\dfrac{\partial f}{ \partial x}$ n'est pas continue  en $(0,0)$ donc $f$ n'est pas de classe $C^{1}$ sur $\mathbb{R}^{2}$.
+
+\end{enumerate}
+
+
+\begin{Exa} Soit $ f : \mathbb{R}^2 \rightarrow \mathbb{R}$ l'application définie par :
+ $$f((x,y))=\left\lbrace
+  \begin{array}{ll}
+ xy\dfrac{x^2-y^2}{x^2+y^2}& \text{si}\: (x,y)\neq (0,0)\\
+ 0 &\text{si} \:(x,y)=(0,0)
+ \end{array}
+ \right. $$
+
+ \begin{enumerate}
+ \item Montrer que $f$ est continue sur $\mathbb{R}^2$.
+ \item Montrer que $f$ est de classe $\mathcal {C}^1$ sur $\mathbb{R}^2$.
+ \end{enumerate}
+ \end{Exa}
+ 
+ \corr
+ 
+ \begin{enumerate}
+ \item Les fonctions $(x,y)\mapsto x^2+y^2$ et $(x,y)\mapsto xy(x^2-y^2)$ sont continues sur  $\mathbb{R}^2 \setminus \{(0,0)\}$ et $(x,y)\mapsto x^2+y^2$ ne s'annule pas sur $\mathbb{R}^2 \setminus \{(0,0)\}$ donc $f$ est continue sur $\mathbb{R}^2\setminus\{(0,0)\}$. On munit $\mathbb{R}^2$ de la norme $2$ :
+$$\forall\:(x,y)\in\mathbb{R}^2, \,  \Vert (x,y) \Vert_2 = \sqrt{x^2+y^2}$$
+Soit $(x,y)\in\mathbb{R}^2$. On a $|x|\leq \Vert (x,y) \Vert_2$ et $|y|\leq \Vert (x,y) \Vert_2$ donc si $(x,y) \neq (0,0)$ et d'après l'inégalité triangulaire :
+$$|f(x,y)-f(0,0)|=\left|xy\frac{x^2-y^2}{x^2+y^2}\right| \leq |x| \times |y|\leq \Vert (x,y) \Vert_2^2$$
+Ainsi, $f$ est continue en $(0,0)$ et finalement sur $\mathbb{R}^2$.
+\item Par définition, la fonction $f$ est de classe ${\cal C}^1$ sur $\mathbb{R}^2$ si $\frac{\partial f}{\partial x}$ et $\frac{\partial f}{\partial y}$ existent sur $\mathbb{R}^2$ et sont continues sur $\mathbb{R}^2$.
+\begin{itemize}
+\item Par opérations usuelles, $f$ admet des dérivées partielles sur $\mathbb{R}^2 \setminus \{(0,0)\}$ et elles sont continues sur $\mathbb{R}^2 \setminus \{(0,0)\}$ et pour tout couple $(x,y)$ de cet ensemble, on a :
+$$\dfrac{\partial f}{\partial x}(x,y)=\dfrac{x^4y+4x^2y^3-y^5}{(x^2+y^2)^{2}} \; \hbox{ et } \; \dfrac{\partial f}{\partial y}(x,y)=\dfrac{x^5-4x^3y^2-xy^4}{(x^2+y^2)^{2}}$$
+\item Étudions l'existence des dérivées partielles en $(0,0)$. Pour tout $x\in\mathbb{R}^*$, on a :
+$$\frac{f(x,0)-f(0,0)}{x-0}=0$$
+donc 
+$$\lim\limits_{x\rightarrow 0}\frac{f(x,0)-f(0,0)}{x-0}=0$$
+Ainsi, $\frac{\partial f}{\partial x}(0,0)$ existe et vaut $0$. De même, $\frac{\partial f}{\partial y}(0,0)$ existe et vaut $0$.
+\item Étudions la continuité des dérivées partielles en $(0,0)$. Pour tout $(x,y)\in \mathbb{R}^2 \setminus \{(0,0)\}$, on a $|x|\leq \Vert (x,y) \Vert_2$ et $|y|\leq \Vert (x,y) \Vert_2$ donc si $(x,y) \neq (0,0)$ et d'après l'inégalité triangulaire :
+$$ 0 \leq \left|\dfrac{\partial f}{\partial x}(x,y)\right|\leq \dfrac{6\Vert (x,y) \Vert_2^5}{\Vert (x,y) \Vert_2^4}=6\|(x,y)\|$$ 
+Donc par théorème d'encadrement :
+$$\lim\limits_{(x,y)\to (0,0)}\frac{\partial f}{\partial x}(x,y)=0=\frac{\partial f}{\partial x}(0,0)$$
+On obtient de même que :
+$$\lim\limits_{(x,y)\to (0,0)}\frac{\partial f}{\partial y}(x,y)=0=\frac{\partial f}{\partial y}(0,0)$$
+Ainsi, $\frac{\partial f}{\partial x}$ et $\frac{\partial f}{\partial y}$ sont continues en $(0,0)$.
+\end{itemize}
+On en déduit que $f$ est de classe $C^1$ sur $\mathbb{R}^2$.
+ \end{enumerate}
+
+\begin{Exa} Soit $f \in \mathcal{C}^2(\mathbb{R}^2, \mathbb{R})$. Déterminer $g''(0)$ où $g : x \mapsto f(0,x)+f(x,x^2)$.
+\end{Exa}
+
+\corr La fonction $f$ est de classe $\mathcal{C}^2$ sur $\mathbb{R}^2$ et $x \mapsto x^2$ aussi donc par composition, $g$ est de classe $\mathcal{C}^2$ sur $\mathbb{R}$. D'après la règle de la chaine, on a pour tout $x \in \mathbb{R}$,
+$$ g'(x) = \dfrac{\partial f}{\partial y}(0,x) + \dfrac{\partial f}{\partial x}(x,x^2) + 2x \dfrac{\partial f}{\partial y}(x,x^2)$$
+puis 
+\begin{align*}
+ g''(x) & = \dfrac{\partial^2 f}{\partial y^2}(0,x) +  \dfrac{\partial^2 f}{\partial x^2}(x,x^2) + 2x  \dfrac{\partial^2 f}{ \partial y\partial x}(x,x^2) + 2 \dfrac{\partial f}{\partial y}(x,x^2) \\
+ & + 2x \left( \dfrac{\partial^2 f}{ \partial x \partial y}(x,x^2) + 2x\dfrac{\partial^2 f}{\partial y^2}(x,x^2) \right)
+ \end{align*}
+ donc
+ $$ g''(0) =  \dfrac{\partial^2 f}{\partial y^2}(0,0) +  \dfrac{\partial^2 f}{\partial x^2}(0,0) + 2 \dfrac{\partial f}{\partial y}(0,0) $$
+ 
+ 
+ \medskip
+ 
+ \begin{center}
+\textit{{ {\large Problèmes d'extrema}}}
+\end{center}
+
+\begin{Exa} Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par :
+$$ \forall (x,y) \in \mathbb{R}^2, \; f(x,y) = x^{2} + xy + y^{2} - 3x - 6y$$
+Déterminer les extrema locaux de $f$.
+\end{Exa}
+
+\corr La fonction $f$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}^2$ (elle est polynomiale). On a pour tout $(x,y) \in \mathbb{R}^2$,
+$$ \nabla f ((x,y)) = \left( \dfrac{\partial f}{\partial x} ((x,y)),  \dfrac{\partial f}{\partial y} ((x,y)) \right) = (2x+y-3,x+2y-6)$$
+On détermine le(s) point(s) critique(s) de $f$ :
+$$ \left\lbrace \begin{array}{ccl}
+2x+y-3 & = &0 \\
+x+2y-6 & =& 0 \\
+\end{array}\right. \underset{L_1 \leftarrow L_1-2L_2}{\Longleftrightarrow}\left\lbrace \begin{array}{ccl}
+-3y+9 & =& 0 \\
+x+2y-6 & =& 0 \\
+\end{array}\right. \Longleftrightarrow \left\lbrace \begin{array}{ccl}
+y & = & 3 \\
+x & =  & 0 \\
+\end{array}\right.$$
+Le seul point critique de $f$ est $(0,3)$ donc le seul point ou $f$ peut atteindre un extremum est ce point. Pour tout $(x,y) \in \mathbb{R}^2$, on a :
+\begin{align*}
+ f((x,y)) - f((0,3)) & = x^{2} + xy + y^{2} - 3x - 6y + 9 \\
+ & = \left( x + \dfrac{y-3}{2} \right)^2 - \dfrac{(y-3)^2}{4} + y^2-6y+9 \\
+ & = \left( x + \dfrac{y-3}{2} \right)^2 - \dfrac{(y-3)^2}{4} + (y-3)^2 \\
+ & = \left( x + \dfrac{y-3}{2} \right)^2 + \dfrac{3}{4} (y-3)^2 \geq 0
+ \end{align*}
+ Ainsi, $f$ atteint en $(0,3)$ un minimum local valant $-9$.
+ 
+ 
+ \begin{Exa} Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par :
+$$ \forall (x,y) \in \mathbb{R}^2, \; f(x,y) = x^3+y^3$$
+Déterminer les extrema locaux de $f$.
+\end{Exa}
+
+\corr La fonction $f$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}^2$ (elle est polynomiale). On a pour tout $(x,y) \in \mathbb{R}^2$,
+$$ \nabla f ((x,y)) = \left( \dfrac{\partial f}{\partial x} ((x,y)),  \dfrac{\partial f}{\partial y} ((x,y)) \right) = (3x^2,3y^2)$$
+De manière évidente, le seul point critique est $(0,0)$. Le seul point critique de $f$ est $(0,3)$ donc le seul point ou $f$ peut atteindre un extremum est ce point. Remarquons que pour tout $x \in \mathbb{R}$,
+$$ f((x,0))-f((0,0)) = x^3$$
+et $x^3$ est négatif si $x<0$ et positif si $x>0$. Ainsi, $f$ n'admet ni un minimum, ni un maximum, en $(0,0)$. Cette fonction n'admet pas d'extremum local sur $\mathbb{R}^2$.
+ 
+\medskip
+
+\begin{center}
+\textit{{ {\large Courbe et surfaces}}}
+\end{center}
+
+\medskip
+
+\begin{Exa} Montrer que l'équation $x\ln(y)+y \ln(x) = \ln(2)$ définit localement une courbe paramétrée de classe $\mathcal{C}^1$ au voisinage du point $(1,2)$. Déterminer l'équation de la tangente à cette courbe en ce point.
+\end{Exa}
+
+\corr Soit $f : (\mathbb{R}_+^*)^2 \rightarrow \mathbb{R}$ définie par :
+$$ \forall x,y>0, \; f((x,y))= x\ln(y)+y \ln(x) - \ln(2)$$
+La fonction $f$ est de classe $\mathcal{C}^1$ sur  $(\mathbb{R}_+^*)^2$ et pour tout $(x,y) \in  (\mathbb{R}_+^*)^2$, on a :
+$$ \nabla f ((x,y)) = \left( \dfrac{\partial f}{\partial x} ((x,y)),  \dfrac{\partial f}{\partial y} ((x,y)) \right) = \left( \ln(y) + \dfrac{y}{x}, \dfrac{x}{y} + \ln(x) \right)$$
+On a $f((1,2))= 0$ et
+$$ \nabla f ((1,2)) = \left( \ln(2)+2, \dfrac{1}{2} \right) \neq 0$$
+Ainsi, $(1,2)$ est un point régulier de la courbe d'équation $f((x,y)=0$ donc d'après un théorème du cours, l'équation $x\ln(y)+y \ln(x) = \ln(2)$ définit localement une courbe paramétrée de classe $\mathcal{C}^1$ au voisinage du point $(1,2)$. L'équation de la tangente à cette courbe en ce point est alors :
+$$  \dfrac{\partial f}{\partial  x}(1,2)(x-1) + \dfrac{\partial f}{\partial y}(1,2) (y-2)=0$$
+ou encore :
+$$  (\ln(2)+2) (x-1) + \dfrac{1}{2} (y-2)=0$$
+
+\begin{Exa} Soit $\mathcal{S}$ la surface d'équation $xyz=1$. Montrer que tout point de $\mathcal{S}$ est régulier et déterminer l'équation du plan tangent en tout point de $\mathcal{S}$.
+\end{Exa}
+
+\corr La fonction $f$ définie par :
+$$ f : (x,y) \mapsto xyz-1$$
+est de classe $\mathcal{C}^1$ sur $\mathbb{R}^2$ (car polynomiale). Ainsi, on peut calculer le gradient pour tout $(x,y,z) \in \mathbb{R}^3$ :
+$$ \nabla f(x,y,z)=(yz,xz,xy)$$
+Tout point $(a,b,c)$ de $\mathcal{S}$ vérifie $abc=1$ donc les réels $a$, $b$ et $c$ sont tous non nuls et ainsi :
+$$  \nabla f(a,b,c) \neq (0,0,0)$$
+Ainsi, tout point de $\mathcal{S}$ est régulier. 
+
+\medskip
+
+\noindent Soit $(a,b,c)$ un point (régulier) de $\mathcal{S}$. L'équation du plan tangent à $\mathcal{S}$ au point $(a,b,c)$ est :
+$$ bc(x-a)+ac(y-b)+ab(z-c)=0$$
+ou encore :
+$$ bcx+acy+abz -3abc=0$$
+Or $abc=1$ donc l'équation se réécrit :
+$$ bcx+acy+abz -3=0$$
+
+
+\medskip
+
+\begin{center}
+\textit{{ {\large Équation aux dérivées partielles}}}
+\end{center}
+
+\medskip
+
+
+
+\begin{Exa} Déterminer les fonctions $f : \R^{2} \rightarrow \R$ de classe $\mathcal{C}^{1}$ solutions de l'équation aux dérivées partielles:
+  \[
+  \frac{\partial f}{\partial x} + \frac{\partial f}{\partial y} = f
+  \]
+On pourra utiliser le changement de variable suivant :
+  \[
+  \left\lbrace\begin{array}{lll}
+    u & = &  x \\
+    v & = & y - x
+  \end{array}\right.
+  \]
+\end{Exa} 
+
+\corr On souhaite faire un changement de variable du type :
+$$ f((x,y))=g((u,v))$$
+Soit $(u,v) \in \mathbb{R}^2$. Alors pour tout $(x,y) \in \mathbb{R}^2$,
+$$  \left\lbrace\begin{array}{lll}
+    u & = &  x \\
+    v & = & y - x
+  \end{array}\right. \Longleftrightarrow  \left\lbrace\begin{array}{lll}
+    x & = &  u \\
+    y & = & u+v
+  \end{array}\right.$$
+ Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$. On pose $g : \mathbb{R}^2 \rightarrow \mathbb{R}$ la fonction définie par :
+ $$ \forall (u,v) \in \mathbb{R}^2, \; g((u,v)) = f((u,u+v))$$
+ La fonction est de classe $\mathcal{C}^1$ sur $\mathbb{R}^2$ et on a :
+ $$ \dfrac{\partial g}{\partial u} ((u,v)) = \dfrac{\partial f}{\partial x} ((u,u+v)) + \dfrac{\partial f}{\partial y} ((u,u+v))$$
+ Soit $(E)$ l'équation considérée. La fonction $f$ est solution de $(E)$ si et seulement si :
+ $$ \forall (x,y) \in \mathbb{R}^2, \;  \frac{\partial f}{\partial x}((x,y)) + \frac{\partial f}{\partial y}((x,y)) = f((x,y))$$
+ ou encore, en utilisant que $(u,v) \rightarrow (u,u+v)$ est une bijection de $\mathbb{R}^2$ (d'après la résolution du système effectuée précédemment), si et seulement si :
+ $$ \forall (u,v) \in \mathbb{R}^2, \;  \frac{\partial f}{\partial x}((u,u+v)) + \frac{\partial f}{\partial y}((u,u+v)) = f((u,u+v))$$
+ ce qui est équivalent à :
+ $$ \forall (u,v) \in \mathbb{R}^2, \; \dfrac{\partial g}{\partial u} ((u,v)) = g((u,v))$$
+On en déduit l'existence d'une fonction $K : \mathbb{R} \rightarrow \mathbb{R}$ telle que :
+$$  \forall (u,v) \in \mathbb{R}^2, \; g((u,v)) = K(v) e^{u}$$
+ou encore (toujours d'après la bijection précédemment obtenue) :
+$$  \forall (x,y) \in \mathbb{R}^2, \;  f((x,y)) = K(y-x) e^x$$
+Remarquons que $K(y-x)= f((x,y))e^{x}$ donc $K$ est $\mathcal{C}^1$ sur $\mathbb{R}$. Réciproquement les fonctions de la forme :
+$$ (x,y) \rightarrow  K(y-x) e^x$$
+où $K : \mathbb{R} \rightarrow \mathbb{R}$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$, sont solutions (simple vérification).
+\end{document}
