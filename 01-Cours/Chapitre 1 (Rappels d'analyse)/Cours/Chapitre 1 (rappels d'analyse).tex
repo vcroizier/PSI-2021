@@ -19,11 +19,11 @@
 
 \section{Suites}
 
-\noindent Dans toute cette section, $\mathbb{K}= \mathbb{R}$ ou $\mathbb{C}$. Rappelons qu'une suite $(u_n)_{n \geq 0}$ d'Ã©lÃ©ments de $\mathbb{K}$ est simplement une application de $\mathbb{N}$ dans $\mathbb{K}$. Nous considÃ©rerons des suites dÃ©finies Ã  partir du rang $0$ : tout s'adapte facilement si la suite est dÃ©finie Ã  partir d'un autre rang. Nous noterons $\overline{\mathbb{R}}$ l'ensemble $\mathbb{R} \cup \lbrace - \infty, + \infty \rbrace\cdot$
+\noindent Dans toute cette section, $\mathbb{K}= \mathbb{R}$ ou $\mathbb{C}$. Rappelons qu'une suite $(u_n)_{n \geq 0}$ d'éléments de $\mathbb{K}$ est simplement une application de $\mathbb{N}$ dans $\mathbb{K}$. Nous considérerons des suites définies à partir du rang $0$ : tout s'adapte facilement si la suite est définie à partir d'un autre rang. Nous noterons $\overline{\mathbb{R}}$ l'ensemble $\mathbb{R} \cup \lbrace - \infty, + \infty \rbrace\cdot$
 
-\subsection{Convergence : dÃ©finitions et rÃ©sultats principaux}
+\subsection{Convergence : définitions et résultats principaux}
 
-\noindent Dans cette partie, $(u_n)_{ n \geq 0}$ est une suite d'Ã©lÃ©ments de $\mathbb{K}$.
+\noindent Dans cette partie, $(u_n)_{ n \geq 0}$ est une suite d'éléments de $\mathbb{K}$.
 
 \begin{defip} 
 \begin{itemize}
@@ -37,7 +37,7 @@ $$ \dis \lim_{ n \rightarrow + \infty} u_n = \ell \quad \hbox{ ou } \quad u_n \u
 \begin{preuve}
 
 \vspace{11cm}
-%Montrons l'unicitÃ© de la limite. Soient $(\ell, \ell') \in \mathbb{K}^2$ tels que $u_n \underset{n \rightarrow + \infty}{\longrightarrow} \ell$ et $u_n \underset{n \rightarrow + \infty}{\longrightarrow} \ell'$.
+%Montrons l'unicité de la limite. Soient $(\ell, \ell') \in \mathbb{K}^2$ tels que $u_n \underset{n \rightarrow + \infty}{\longrightarrow} \ell$ et $u_n \underset{n \rightarrow + \infty}{\longrightarrow} \ell'$.
 %
 %\medskip
 %
@@ -46,7 +46,7 @@ $$ \dis \lim_{ n \rightarrow + \infty} u_n = \ell \quad \hbox{ ou } \quad u_n \u
 %
 %\noindent Posons $N = \max(N_1,N_2)$. Pour tout entier $n \geq N$, on a alors :
 %$$ \vert u_n - \ell \vert \leq \varepsilon \quad \hbox{ et } \quad  \vert u_n - \ell' \vert \leq \varepsilon $$
-%et d'aprÃ¨s l'inÃ©galitÃ© triangulaire :
+%et d'après l'inégalité triangulaire :
 %$$ \vert \ell - \ell ' \vert = \vert \ell - u_n +u_n - \ell' \vert \leq \vert \ell  - u_n \vert + \vert u_n - \ell' \vert \leq 2 \varepsilon$$
 %Ainsi, pour tout $\varepsilon>0$,
 %\begin{equation}\label{unicite}
@@ -54,14 +54,14 @@ $$ \dis \lim_{ n \rightarrow + \infty} u_n = \ell \quad \hbox{ ou } \quad u_n \u
 %\end{equation}
 %Par l'absurde, si $\ell \neq \ell'$, $\vert \ell- \ell' \vert >0$ et donc par (\ref{unicite}) en posant $\varepsilon = \dfrac{\vert \ell- \ell' \vert}{2}$, on a :
 %$$ \vert \ell- \ell' \vert <  \vert \ell- \ell' \vert$$
-%ce qui est absurde. Ainsi $\ell = \ell'$ et on a bien l'unicitÃ© de la limite.
+%ce qui est absurde. Ainsi $\ell = \ell'$ et on a bien l'unicité de la limite.
 
 \end{preuve}
 
 \begin{defin} Si une suite n'est pas convergente, on dit qu'elle est \textit{divergente}.
 \end{defin}
 
-\noindent Il y a deux situations possibles pour une suite \textit{rÃ©elle} divergente :
+\noindent Il y a deux situations possibles pour une suite \textit{réelle} divergente :
 \begin{itemize}
  \item la suite peut tendre vers $\pinf$ ou $\minf$.
  \item la suite peut ne pas admettre de limite (finie ou infinie) lorsque $n$ tend vers $\pinf$.
@@ -69,28 +69,28 @@ $$ \dis \lim_{ n \rightarrow + \infty} u_n = \ell \quad \hbox{ ou } \quad u_n \u
 
 
 \begin{defin}
-Soit $(u_n)_{n \geq 0}$ une suite \textit{rÃ©elle}.
+Soit $(u_n)_{n \geq 0}$ une suite \textit{réelle}.
 \begin{itemize}
-\item On dit que la suite $(u_n)_{n \geq 0}$ \textit{diverge vers} $+\infty$ lorsque pour tout rÃ©el $A$, on peut trouver un rang Ã  partir duquel tous les termes de la suite sont supÃ©rieurs Ã  $A$. Autrement dit si :
+\item On dit que la suite $(u_n)_{n \geq 0}$ \textit{diverge vers} $+\infty$ lorsque pour tout réel $A$, on peut trouver un rang à partir duquel tous les termes de la suite sont supérieurs à $A$. Autrement dit si :
 $$\forall A \in \R, \exists N \in \N \, \vert \, \forall n \ge N, u_n \geq A $$
-On dit Ã©galement que \textit{$u_n$ tend vers $+\infty$ lorsque $n$ tend vers $+\infty$} et on note :
+On dit également que \textit{$u_n$ tend vers $+\infty$ lorsque $n$ tend vers $+\infty$} et on note :
 $$\displaystyle{\lim_{n \rightarrow +\infty}u_n=+\infty} \quad \hbox{ ou } \quad u_n \underset{n \rightarrow + \infty}{\longrightarrow} + \infty $$
-\item On dÃ©finit de la mÃªme maniÃ¨re la divergence vers $- \infty$.
+\item On définit de la même manière la divergence vers $- \infty$.
 \end{itemize}
 \end{defin}
 
-\begin{rem} Il y a aussi unicitÃ© des limites dans le cas des limites infinies.
+\begin{rem} Il y a aussi unicité des limites dans le cas des limites infinies.
 \end{rem}
 
-\begin{thm} Toute suite convergente est bornÃ©e. La rÃ©ciproque est fausse.
+\begin{thm} Toute suite convergente est bornée. La réciproque est fausse.
 \end{thm}
 
 \begin{preuve}
 \vspace{9.5cm}
 \end{preuve}
-%\subsection{OpÃ©rations sur les limites}
+%\subsection{Opérations sur les limites}
 %
-%\noindent Voici les rÃ¨gles usuelles liÃ©es aux opÃ©rations viables sur les limites de suites rÃ©elles. Dans cette partie, $\ell_1$ et $\ell_2$ dÃ©signent deux rÃ©els et $k$ est un rÃ©el.
+%\noindent Voici les règles usuelles liées aux opérations viables sur les limites de suites réelles. Dans cette partie, $\ell_1$ et $\ell_2$ désignent deux réels et $k$ est un réel.
 %
 %
 %\begin{center}
@@ -113,7 +113,7 @@ $$\displaystyle{\lim_{n \rightarrow +\infty}u_n=+\infty} \quad \hbox{ ou } \quad
 %%\vspace{0.4cm}
 %
 %%\begin{center}
-%%\textbf{Limite du produit d'une suite par un rÃ©el}
+%%\textbf{Limite du produit d'une suite par un réel}
 %%\end{center}
 %%
 %%$$\renewcommand{\arraystretch}{2.2}
@@ -147,13 +147,13 @@ $$\displaystyle{\lim_{n \rightarrow +\infty}u_n=+\infty} \quad \hbox{ ou } \quad
 %
 %\bigskip
 %
-%\noindent Pour dÃ©terminer la limite de l'inverse d'une suite rÃ©elle qui tend vers 0, on a besoin de supposer que le signe des termes de la suite soit constant Ã  partir d'un certain rang.
+%\noindent Pour déterminer la limite de l'inverse d'une suite réelle qui tend vers 0, on a besoin de supposer que le signe des termes de la suite soit constant à partir d'un certain rang.
 %
 %\vspace{0.2cm}
 % 
 %\begin{itemize}
-% \item Si $\dsp \lim_{n\to \pinf} u_n = 0$ et $u_n > 0$ Ã  partir d'un certain rang, on notera $\ell = 0^+$.
-% \item Si $\dsp \lim_{n\to \pinf} u_n = 0$ et $u_n < 0$ Ã  partir d'un certain rang, on notera $\ell = 0^-$.
+% \item Si $\dsp \lim_{n\to \pinf} u_n = 0$ et $u_n > 0$ à partir d'un certain rang, on notera $\ell = 0^+$.
+% \item Si $\dsp \lim_{n\to \pinf} u_n = 0$ et $u_n < 0$ à partir d'un certain rang, on notera $\ell = 0^-$.
 %\end{itemize}
 %
 %\begin{center}
@@ -172,13 +172,13 @@ $$\displaystyle{\lim_{n \rightarrow +\infty}u_n=+\infty} \quad \hbox{ ou } \quad
 %\medskip
 %
 %\begin{rem}
-%Pour un quotient, il suffit de se ramener Ã  produit avec un inverse.
+%Pour un quotient, il suffit de se ramener à produit avec un inverse.
 %\end{rem}
 
 
 
-\begin{prop}[Limites et inÃ©galitÃ©s larges]
-Soit $(u_n)_{n \geq 0}$ une suite \textit{rÃ©elle} convergeant vers $\ell \in \mathbb{R}$ et soient $a$ et $b$ deux rÃ©els.
+\begin{prop}[Limites et inégalités larges]
+Soit $(u_n)_{n \geq 0}$ une suite \textit{réelle} convergeant vers $\ell \in \mathbb{R}$ et soient $a$ et $b$ deux réels.
 \begin{itemize}
 \item Si pour tout $n \in \mathbb{N}$, $u_n \geq a$ alors $\ell \geq a$.
 \item Si pour tout $n \in \mathbb{N}$, $u_n \leq b$ alors $\ell \leq b$.
@@ -186,14 +186,14 @@ Soit $(u_n)_{n \geq 0}$ une suite \textit{rÃ©elle} convergeant vers $\ell \in \m
 \end{itemize}
 \end{prop}
 
-\begin{rem} En toute gÃ©nÃ©ralitÃ©, les inÃ©galitÃ©s strictes ne sont pas conservÃ©es par passage Ã  la limite. Par exemple, pour tout $n \geq 1$, $1/n > 0$ et pourtant $\dis \lim_{n \rightarrow + \infty}1/n= 0.$
+\begin{rem} En toute généralité, les inégalités strictes ne sont pas conservées par passage à la limite. Par exemple, pour tout $n \geq 1$, $1/n > 0$ et pourtant $\dis \lim_{n \rightarrow + \infty}1/n= 0.$
 \end{rem}
 
 
-\subsection{ThÃ©orÃ¨mes de convergence pour des suites rÃ©elles}
+\subsection{Théorèmes de convergence pour des suites réelles}
 
 \begin{thm}[de la limite par comparaison]
-Soient $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ deux suites \textit{rÃ©elles}. On suppose que pour tout $n \in \mathbb{N}$, $u_n \leq v_n$.
+Soient $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ deux suites \textit{réelles}. On suppose que pour tout $n \in \mathbb{N}$, $u_n \leq v_n$.
 \begin{itemize}
  \item Si la suite $(u_n)_{n \geq 0}$ diverge vers $+\infty$ alors  $(v_n)_{\geq 0}$ aussi. 
  \item Si la suite $(v_n)_{n \geq 0}$ diverge vers $-\infty$ alors $(u_n)_{n \geq 0}$ aussi.
@@ -201,7 +201,7 @@ Soient $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ deux suites \textit{rÃ©elles}. O
 \end{thm}
 
 \begin{thm}[de la limite par encadrement]
-Soient $(u_n)_{n \geq 0}$, $(a_n)_{n \geq 0}$ et $(b_n)_{n \geq 0}$ trois suites \textit{rÃ©elles} et $\ell \in \mathbb{R}$.
+Soient $(u_n)_{n \geq 0}$, $(a_n)_{n \geq 0}$ et $(b_n)_{n \geq 0}$ trois suites \textit{réelles} et $\ell \in \mathbb{R}$.
 
 \medskip
 
@@ -215,57 +215,57 @@ Soient $(u_n)_{n \geq 0}$, $(a_n)_{n \geq 0}$ et $(b_n)_{n \geq 0}$ trois suites
 Alors la suite $(u_n)_{n \geq 0}$ converge et $\dis \lim_{n \rightarrow + \infty} u_n = \ell$.
 \end{thm}
 
-\begin{ex} Ã‰tudier la convergence de la suite dont le terme gÃ©nÃ©ral est donnÃ© pour tout $n \geq 1$ par :
+\begin{ex} Étudier la convergence de la suite dont le terme général est donné pour tout $n \geq 1$ par :
 $$ u_n = \sum_{k=1}^n \frac{1}{\sqrt{k}}$$
 
 \vspace{5cm}
 \end{ex}
 
-\begin{exa} Ã‰tudier la convergence de la suite $(u_n)_{n \geq 0}$ dont le terme gÃ©nÃ©ral est donnÃ© par :
+\begin{exa} Étudier la convergence de la suite $(u_n)_{n \geq 0}$ dont le terme général est donné par :
 $$ u_n = \int_0^1 e^x x^n \dx$$
-%Soient $(u_n)_{n \geq 0}$ une suite rÃ©elle bornÃ©e et $(v_n)_{n \geq 0}$ et une suite rÃ©elle divergeant vers $+ \infty$. Que peut-on dire de la convergence de $(u_n+v_n)_{n \geq 0}$?
+%Soient $(u_n)_{n \geq 0}$ une suite réelle bornée et $(v_n)_{n \geq 0}$ et une suite réelle divergeant vers $+ \infty$. Que peut-on dire de la convergence de $(u_n+v_n)_{n \geq 0}$?
 \end{exa}
 
-\begin{thm}[de la limite monotone] Soit $(u_n)_{n \geq 0}$ une suite \textit{rÃ©elle}.
+\begin{thm}[de la limite monotone] Soit $(u_n)_{n \geq 0}$ une suite \textit{réelle}.
 
 
 \begin{itemize}
-\item Si $(u_n)_{n \geq 0}$ est croissante et majorÃ©e alors elle converge et :
+\item Si $(u_n)_{n \geq 0}$ est croissante et majorée alors elle converge et :
 $$\dis \lim_{n \rightarrow + \infty} u_n = \sup \lbrace u_n \, \vert \, n \in \mathbb{N} \rbrace $$
-\item Si $(u_n)_{n \geq 0}$ est croissante et non majorÃ©e alors elle diverge vers $+ \infty$.
-\item Si $(u_n)_{n \geq 0}$ est dÃ©croissante et minorÃ©e alors elle converge et :
+\item Si $(u_n)_{n \geq 0}$ est croissante et non majorée alors elle diverge vers $+ \infty$.
+\item Si $(u_n)_{n \geq 0}$ est décroissante et minorée alors elle converge et :
 $$\dis \lim_{n \rightarrow + \infty} u_n = \inf \lbrace u_n \, \vert \, n \in \mathbb{N} \rbrace $$
-\item Si $(u_n)_{n \geq 0}$ est dÃ©croissante et non minorÃ©e alors elle diverge vers $- \infty$.
+\item Si $(u_n)_{n \geq 0}$ est décroissante et non minorée alors elle diverge vers $- \infty$.
 \end{itemize}
 \end{thm}
 
 \begin{defin}[Suites adjacentes]
-Deux suites \textit{rÃ©elles} $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ sont dites \textit{adjacentes} lorsque :
+Deux suites \textit{réelles} $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ sont dites \textit{adjacentes} lorsque :
 \begin{itemize}
 \item
 \item 
 \end{itemize}
 % \begin{itemize}
-%  \item \phantom{$(u_n)_{n \geq 0}$ est croissante et $(v_n)_{n \geq 0}$ est dÃ©croissante (ou le contraire).}
+%  \item \phantom{$(u_n)_{n \geq 0}$ est croissante et $(v_n)_{n \geq 0}$ est décroissante (ou le contraire).}
 %  \item \phantom{la suite $(v_n-u_n)_{n \geq 0}$ converge vers $0$.}
 % \end{itemize}
 \end{defin}
 
 \begin{thm}
-Deux suites adjacentes sont convergentes et elles convergent vers la mÃªme limite. De plus, si $\ell$ est la limite et que $(u_n)_{n \geq 0}$ est croissante et $(v_n)_{n \geq 0}$ est dÃ©croissante, alors pour tout $n \geq 0$,
+Deux suites adjacentes sont convergentes et elles convergent vers la même limite. De plus, si $\ell$ est la limite et que $(u_n)_{n \geq 0}$ est croissante et $(v_n)_{n \geq 0}$ est décroissante, alors pour tout $n \geq 0$,
 $$ u_n \leq \ell \leq v_n $$
 \end{thm}
 
-\begin{exa} Montrer que les deux suites $(u_n)_{n \geq 1}$ et $(v_n)_{n \geq 1}$ dÃ©finies pour tout entier $n \geq 1$ par :
+\begin{exa} Montrer que les deux suites $(u_n)_{n \geq 1}$ et $(v_n)_{n \geq 1}$ définies pour tout entier $n \geq 1$ par :
 \[ u_n = \sum_{k=1}^n \frac{1}{k!} \; \hbox{ et } \; v_n = \sum_{k=1}^n \frac{1}{k!} + \frac{1}{n n!} \]
-sont adjacentes. On admet que ces deux suites convergent vers $e$. Comment obtenir une approximation de $e$ Ã  $10^{-3}$ prÃ¨s ?
+sont adjacentes. On admet que ces deux suites convergent vers $e$. Comment obtenir une approximation de $e$ à $10^{-3}$ près ?
 \end{exa}
 
 
 
-\subsection{Comment Ã©tudier la convergence d'une suite complexe ?}
+\subsection{Comment étudier la convergence d'une suite complexe ?}
 
-\begin{prop} Soit $(u_n)_{n \geq 0}$ une suite complexe. Les assertions suivantes sont Ã©quivalentes :
+\begin{prop} Soit $(u_n)_{n \geq 0}$ une suite complexe. Les assertions suivantes sont équivalentes :
 
 \begin{enumerate}
 \item La suite $(u_n)_{n \geq 0}$ est convergente.
@@ -275,10 +275,10 @@ sont adjacentes. On admet que ces deux suites convergent vers $e$. Comment obten
 \noindent Dans ce cas, on a : $\dis \lim_{n \rightarrow + \infty} u_n = \lim_{n \rightarrow + \infty} \Re e(u_n) + i \lim_{n \rightarrow + \infty} \Im m(u_n)$.
 \end{prop}
 
-\begin{rem} Si l'on a une idÃ©e de la limite Ã©ventuelle $\ell$ de la suite, on peut essayer de majorer $\vert u_n- \ell \vert$ (cela permet de se ramener Ã  une suite rÃ©elle).
+\begin{rem} Si l'on a une idée de la limite éventuelle $\ell$ de la suite, on peut essayer de majorer $\vert u_n- \ell \vert$ (cela permet de se ramener à une suite réelle).
 \end{rem}
 
-\begin{ex} Ã‰tudier la convergence de la suite dont le terme gÃ©nÃ©ral est donnÃ© pour tout entier $n \geq 1$ par : 
+\begin{ex} Étudier la convergence de la suite dont le terme général est donné pour tout entier $n \geq 1$ par : 
 $$ z_n = \frac{e^{\frac{i n \pi}{3}} + e^{\frac{i n \pi}{4}}}{n} $$ 
 
 \vspace{4cm}
@@ -286,21 +286,21 @@ $$ z_n = \frac{e^{\frac{i n \pi}{3}} + e^{\frac{i n \pi}{4}}}{n} $$
 
 \subsection{Suites extraites}
 
-\begin{defin} On appelle \textit{suite extraite} (ou \textit{sous-suite}) d'une suite $(u_n)_{n \geq 0}$ toute suite de la forme $(u_{\varphi(n)})_{n \geq 0}$ oÃ¹ \linebreak $\varphi : \mathbb{N} \rightarrow \mathbb{N}$ est une suite strictement croissante.
+\begin{defin} On appelle \textit{suite extraite} (ou \textit{sous-suite}) d'une suite $(u_n)_{n \geq 0}$ toute suite de la forme $(u_{\varphi(n)})_{n \geq 0}$ où \linebreak $\varphi : \mathbb{N} \rightarrow \mathbb{N}$ est une suite strictement croissante.
 \end{defin}
 
-\begin{rem} Une sous-suite d'une suite est une \og sÃ©lection \fg d'une infinitÃ© de termes de cette suite.
+\begin{rem} Une sous-suite d'une suite est une \og sélection \fg d'une infinité de termes de cette suite.
 \end{rem}
 
 \begin{ex} Les suites $(u_{2n})_{n \geq 0}$, $(u_{2n+1})_{n \geq 0}$ et $(u_{6n})_{n \geq 0}$ sont des sous-suites de $(u_n)_{n \geq 0}$. La suite $(u_{6n})_{n \geq 0}$ est aussi une sous-suite de $(u_{2n})_{n \geq 0}$.
 \end{ex}
 
-\begin{prop} Si une suite $(u_n)_{n \geq 0}$ tend vers $\ell \in \overline{\mathbb{R}}$ (ou $\mathbb{C}$) quand $n$ tend vers $+ \infty$, il en est de mÃªme pour toute suite extraite de $(u_n)_{n \geq 0}$.
+\begin{prop} Si une suite $(u_n)_{n \geq 0}$ tend vers $\ell \in \overline{\mathbb{R}}$ (ou $\mathbb{C}$) quand $n$ tend vers $+ \infty$, il en est de même pour toute suite extraite de $(u_n)_{n \geq 0}$.
 \end{prop}
 
 \begin{preuve} 
 
-%Soit $\varphi : \mathbb{N} \rightarrow \mathbb{N}$ est une suite strictement croissante. On montre par une rÃ©currence aisÃ©e que pour tout $n \in \mathbb{N}$, $\varphi(n) \geq n$. Montrons le rÃ©sultat dans le cas oÃ¹ $\ell \in \mathbb{R}$. Soit $\varepsilon>0$. Il existe $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$, $\vert u_n - \ell \vert \leq \varepsilon$.
+%Soit $\varphi : \mathbb{N} \rightarrow \mathbb{N}$ est une suite strictement croissante. On montre par une récurrence aisée que pour tout $n \in \mathbb{N}$, $\varphi(n) \geq n$. Montrons le résultat dans le cas où $\ell \in \mathbb{R}$. Soit $\varepsilon>0$. Il existe $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$, $\vert u_n - \ell \vert \leq \varepsilon$.
 
 %\medskip
 %
@@ -331,7 +331,7 @@ Montrer que $(H_n)_{n \geq 1}$ diverge (\textit{on pourra minorer, pour} $n \geq
 
 
 
-\begin{prop} Soient $(u_n)_{n \geq 0}$ une suite et $\ell \in \overline{\mathbb{R}}$. Les assertions suivantes sont Ã©quivalentes :
+\begin{prop} Soient $(u_n)_{n \geq 0}$ une suite et $\ell \in \overline{\mathbb{R}}$. Les assertions suivantes sont équivalentes :
 
 \begin{enumerate}
 \item $u_n$ tend vers $\ell$ quand $n$ tend vers $+ \infty$.
@@ -339,12 +339,12 @@ Montrer que $(H_n)_{n \geq 1}$ diverge (\textit{on pourra minorer, pour} $n \geq
 \end{enumerate}
 \end{prop}
 
-\begin{ex} Soient $\alpha \in \mathbb{R}_+^*$ et $(u_n)_{n \geq 1}$ la suite dÃ©finie pour tout entier $n \geq 1$ par :
+\begin{ex} Soient $\alpha \in \mathbb{R}_+^*$ et $(u_n)_{n \geq 1}$ la suite définie pour tout entier $n \geq 1$ par :
 $$ u_n = \sum_{k=1}^n \frac{(-1)^k}{k^{\alpha}}$$
 
 \medskip
 
-\noindent Montrer que $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$ sont adjacentes. Qu'en dÃ©duit-on?
+\noindent Montrer que $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$ sont adjacentes. Qu'en déduit-on?
 %
 %\begin{itemize}
 %\item Pour tout $n \geq 1$,
@@ -352,7 +352,7 @@ $$ u_n = \sum_{k=1}^n \frac{(-1)^k}{k^{\alpha}}$$
 %u_{2n+2}-u_{2n} & = \frac{(-1)^{2n+2}}{(2n+2)^{\alpha}} + \frac{(-1)^{2n+1}}{(2n+1)^{\alpha}} \\
 %& = \frac{1}{(2n+2)^{\alpha}} - \frac{1}{(2n+1)^{\alpha}} \leq 0 \\
 %\end{align*}
-%car $2n+2 \geq 2n+1$. Ainsi $(u_{2n})_{n \geq 0}$ est dÃ©croissante.
+%car $2n+2 \geq 2n+1$. Ainsi $(u_{2n})_{n \geq 0}$ est décroissante.
 %\item Pour tout $n \geq 1$,
 %\begin{align*}
 %u_{2n+3}-u_{2n+1} & = \frac{(-1)^{2n+3}}{(2n+3)^{\alpha}} + \frac{(-1)^{2n+2}}{(2n+2)^{\alpha}}\\
@@ -365,13 +365,13 @@ $$ u_n = \sum_{k=1}^n \frac{(-1)^k}{k^{\alpha}}$$
 %
 %\medskip
 %
-%\noindent Ainsi $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$ sont adjacentes et convergent donc vers la mÃªme limite. D'aprÃ¨s la proposition prÃ©cÃ©dente, la suite $(u_n)_{n \geq 0}$ est donc convergente.
+%\noindent Ainsi $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$ sont adjacentes et convergent donc vers la même limite. D'après la proposition précédente, la suite $(u_n)_{n \geq 0}$ est donc convergente.
 \newpage
 \end{ex}
 
 
 
-\subsection{Suites rÃ©currentes}
+\subsection{Suites récurrentes}
 
 \noindent Soient $I$ un intervalle de $\mathbb{R}$ et $f : I \rightarrow \mathbb{R}$ une fonction. On pose :
 $$ \left\lbrace \begin{array}{l}
@@ -382,58 +382,58 @@ u_0 \in I \\
 \noindent Plus questions se posent :
 
 \begin{enumerate}
-\item La suite $(u_n)_{n \geq 0}$ est-elle bien dÃ©finie ?
+\item La suite $(u_n)_{n \geq 0}$ est-elle bien définie ?
 \item Si oui, que peut-on dire de sa convergence ?
 \item Si celle-ci converge, quelle est sa limite ?
 \end{enumerate}
 
 \medskip
 
-\begin{prop} Si $f(I) \subset I$, la suite est bien dÃ©finie.
+\begin{prop} Si $f(I) \subset I$, la suite est bien définie.
 \end{prop}
 
-%\begin{metho} La premiÃ¨re Ã©tape pour Ã©tudier ce type de suite est de dÃ©terminer des intervalles stables par la fonction $f$ (Ã  l'aide d'une Ã©tude de fonction). Bien entendu, si $f$ est dÃ©finie sur $\mathbb{R}$, il n'y a rien Ã  vÃ©rifier.
+%\begin{metho} La première étape pour étudier ce type de suite est de déterminer des intervalles stables par la fonction $f$ (à l'aide d'une étude de fonction). Bien entendu, si $f$ est définie sur $\mathbb{R}$, il n'y a rien à vérifier.
 %\end{metho}
 
 \begin{prop} Supposons que $f(I) \subset I$.
 
 \begin{enumerate}
 \item Si pour tout $x \in I$, $f(x) \geq x$, alors $(u_n)_{n \geq 0}$ est croissante.
-\item Si pour tout $x \in I$, $f(x) \leq x$, alors $(u_n)_{n \geq 0}$ est dÃ©croissante.
+\item Si pour tout $x \in I$, $f(x) \leq x$, alors $(u_n)_{n \geq 0}$ est décroissante.
 \item Si $f$ est croissante sur $I$, $(u_n)_{n \geq 0}$ est monotone.
-\item Si $f$ est dÃ©croissante sur $I$, $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$ sont monotones de variations contraires.
+\item Si $f$ est décroissante sur $I$, $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$ sont monotones de variations contraires.
 \end{enumerate}
 \end{prop}
 
-\noindent \textit{IdÃ©e de la preuve.}
+\noindent \textit{Idée de la preuve.}
 
 \vspace{10cm}
 %\begin{enumerate}
 %\item Pour tout $n \in \mathbb{N}$, $u_n \in I$ donc $f(u_n) \geq u_n$ et ainsi $u_{n+1} \geq u_n$.
-%\item MÃªme raisonnement.
-%\item Simple rÃ©currence. Les variations se dÃ©duisent de l'ordre des deux premiers termes : si $u_0 \leq u_1$, la suite est croissante et si $u_0 \geq u_1$, la suite est dÃ©croissante.
-%\item Si $f$ est dÃ©croissante alors $g= f \circ f$ est croissante sur $I$. Le rÃ©sultat dÃ©coule du rÃ©sultat prÃ©cÃ©dent appliquÃ© aux suites $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$.
+%\item Même raisonnement.
+%\item Simple récurrence. Les variations se déduisent de l'ordre des deux premiers termes : si $u_0 \leq u_1$, la suite est croissante et si $u_0 \geq u_1$, la suite est décroissante.
+%\item Si $f$ est décroissante alors $g= f \circ f$ est croissante sur $I$. Le résultat découle du résultat précédent appliqué aux suites $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$.
 %\end{enumerate}
 
-\begin{prop} Supposons que $f$ est continue sur $I$ et que $f(I) \subset I$. Si la suite $(u_n)_{n \geq 0}$ converge vers un Ã©lÃ©ment $\ell$ de $I$ alors $f(\ell)= \ell$.
+\begin{prop} Supposons que $f$ est continue sur $I$ et que $f(I) \subset I$. Si la suite $(u_n)_{n \geq 0}$ converge vers un élément $\ell$ de $I$ alors $f(\ell)= \ell$.
 \end{prop}
 
-\begin{rem} Ainsi, en cas de convergence, la suite converge vers un point fixe de $f$ \textit{ou} vers une extrÃ©mitÃ© de l'intervalle (ne pas oublier ce cas).
+\begin{rem} Ainsi, en cas de convergence, la suite converge vers un point fixe de $f$ \textit{ou} vers une extrémité de l'intervalle (ne pas oublier ce cas).
 \end{rem}
 
-\begin{thm}[InÃ©galitÃ© des accroissements finis]
-Soit $f$ une fonction dÃ©rivable sur un intervalle $I$. \\
-On suppose qu'il existe deux rÃ©els $m$ et $M$ tels que pour tout $x \in I$, $m \leq f'(x) \leq M$.\\
+\begin{thm}[Inégalité des accroissements finis]
+Soit $f$ une fonction dérivable sur un intervalle $I$. \\
+On suppose qu'il existe deux réels $m$ et $M$ tels que pour tout $x \in I$, $m \leq f'(x) \leq M$.\\
 Alors pour tout $(a,b) \in I^2$ avec $a \leq b$, on a :
  $$ \phantom{m(b-a) \leq f(b)-f(a) \leq M (b-a)}$$
 \end{thm}
 
-\begin{rem} On peut juste supposer l'inÃ©galitÃ© \og  de droite (ou de gauche) \fg et on obtient en conclusion uniquement  l'inÃ©galitÃ© \og  de droite (ou de gauche) \fg .
+\begin{rem} On peut juste supposer l'inégalité \og  de droite (ou de gauche) \fg et on obtient en conclusion uniquement  l'inégalité \og  de droite (ou de gauche) \fg .
 \end{rem}
 
 \begin{cor}
-Soit $f$ une fonction dÃ©rivable sur un intervalle $I$.\\
-On suppose qu'il existe un rÃ©el positif $M$ tel que  pour tout $x \in I$, $ |f'(x)| \leq M$. \\ 
+Soit $f$ une fonction dérivable sur un intervalle $I$.\\
+On suppose qu'il existe un réel positif $M$ tel que  pour tout $x \in I$, $ |f'(x)| \leq M$. \\ 
 Alors pour tout $(a,b) \in I^2$, on a :
 $$\phantom{ |f(b)-f(a)| \leq M |b-a|}$$
 \end{cor}
@@ -442,7 +442,7 @@ $$\phantom{ |f(b)-f(a)| \leq M |b-a|}$$
 
 
 \boxput*(0,1){
-\colorbox{white}{\textit{{\Large Plan d'attaque d'une suite rÃ©currente}}}
+\colorbox{white}{\textit{{\Large Plan d'attaque d'une suite récurrente}}}
 }{
 \setlength{\fboxsep}{6pt}
 \fbox{\begin{minipage}{16cm}\setlength{\parskip}{5mm}
@@ -452,55 +452,55 @@ $$\phantom{ |f(b)-f(a)| \leq M |b-a|}$$
 \medskip
 
 \begin{enumerate}
-\item On justifie que la suite est bien dÃ©finie :
+\item On justifie que la suite est bien définie :
 \begin{itemize}
-\item Si $f$ est dÃ©finie sur $\mathbb{R}$, il n'y a rien Ã  faire.
-\item Si $u_0$ est connu, on cherche un intervalle stable par $f$ contenant $u_0$ (Ã©tude de fonction).
-\item Si $u_0$ est un Ã©lÃ©ment d'un intervalle donnÃ© dans l'Ã©noncÃ©, on regarde si celui-ci est stable par $f$.
+\item Si $f$ est définie sur $\mathbb{R}$, il n'y a rien à faire.
+\item Si $u_0$ est connu, on cherche un intervalle stable par $f$ contenant $u_0$ (étude de fonction).
+\item Si $u_0$ est un élément d'un intervalle donné dans l'énoncé, on regarde si celui-ci est stable par $f$.
 \end{itemize}
-\item On Ã©tudie la croissance de la suite : pour tout $n \geq 0$, 
+\item On étudie la croissance de la suite : pour tout $n \geq 0$, 
 $$ u_{n+1}-u_n = f(u_n)-u_n$$
 \begin{itemize}
-\item Si le signe de cette expression est Ã©vident : il n'y a rien Ã  faire.
-\item Si $f$ est croissante sur $I$ (ou sur un sous-intervalle $J$ stable par $f$ contenant $u_0$), la suite est monotone et les variations sont donnÃ©es par l'ordre des deux premiers termes.
-\item Si $f$ est dÃ©croissante sur $I$ (ou sur un sous-intervalle $J$ stable par $f$ contenant $u_0$), la suite $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$ sont monotones de variations contraires : on peut essayer de montrer que ces suites sont adjacentes.
-\item On peut rÃ©soudre l'Ã©quation $f(x) \geq x$ (ou $f(x) \leq x$) d'inconnue $x \in I$. Si on obtient un intervalle solution $J$, stable par $f$ et contenant $u_0$, la suite est croissante (ou dÃ©croissante).
+\item Si le signe de cette expression est évident : il n'y a rien à faire.
+\item Si $f$ est croissante sur $I$ (ou sur un sous-intervalle $J$ stable par $f$ contenant $u_0$), la suite est monotone et les variations sont données par l'ordre des deux premiers termes.
+\item Si $f$ est décroissante sur $I$ (ou sur un sous-intervalle $J$ stable par $f$ contenant $u_0$), la suite $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$ sont monotones de variations contraires : on peut essayer de montrer que ces suites sont adjacentes.
+\item On peut résoudre l'équation $f(x) \geq x$ (ou $f(x) \leq x$) d'inconnue $x \in I$. Si on obtient un intervalle solution $J$, stable par $f$ et contenant $u_0$, la suite est croissante (ou décroissante).
 \end{itemize}
-\item Si la suite est monotone : celle-ci est convergente ou diverge vers une limite infinie. Si $f$ est continue sur $I$, les limites finies Ã©ventuelles sont les points fixes de $f$ (que l'on obtient en rÃ©solvant $f(x)=x$ d'inconnue $x \in I$) ou les extrÃ©mitÃ©s de $I$. Un raisonnement par l'absurde ici peut Ãªtre efficace (reprÃ©senter graphiquement les premiers termes de la suite a ici un gros intÃ©rÃªt).
-\item Si $f$ est dÃ©rivable sur $I$ et si $\vert f' \vert$ est majorÃ©e par un rÃ©el positif $q<1$ alors si $a$ est un point fixe de $f$ sur $I$, on a pour tout entier $n \geq 0$ d'aprÃ¨s l'inÃ©galitÃ© des accroissements finis :
+\item Si la suite est monotone : celle-ci est convergente ou diverge vers une limite infinie. Si $f$ est continue sur $I$, les limites finies éventuelles sont les points fixes de $f$ (que l'on obtient en résolvant $f(x)=x$ d'inconnue $x \in I$) ou les extrémités de $I$. Un raisonnement par l'absurde ici peut être efficace (représenter graphiquement les premiers termes de la suite a ici un gros intérêt).
+\item Si $f$ est dérivable sur $I$ et si $\vert f' \vert$ est majorée par un réel positif $q<1$ alors si $a$ est un point fixe de $f$ sur $I$, on a pour tout entier $n \geq 0$ d'après l'inégalité des accroissements finis :
 $$ \vert u_{n+1}- a \vert = \vert f(u_n) - f(a) \vert \leq q \vert u_n -a \vert$$
-Et on montre par rÃ©currence que pour tout $n \geq 0$,
+Et on montre par récurrence que pour tout $n \geq 0$,
 $$ 0 \leq \vert u_n - a \vert \leq q^n \vert u_0- a \vert $$
-En utilisant le thÃ©orÃ¨me d'encadrement, on montre que $u_n \underset{n \rightarrow + \infty}{\longrightarrow} a$.
+En utilisant le théorème d'encadrement, on montre que $u_n \underset{n \rightarrow + \infty}{\longrightarrow} a$.
 \end{enumerate}
  \end{minipage}}}
  
 \bigskip
  
-\begin{ex} Ã‰tudions la suite $(u_n)_{n \geq 0}$ dÃ©finie par $u_0 \in \mathbb{R}$ et pour tout $n \in \mathbb{N}$ par $u_{n+1}=e^{u_n}-1$.
+\begin{ex} Étudions la suite $(u_n)_{n \geq 0}$ définie par $u_0 \in \mathbb{R}$ et pour tout $n \in \mathbb{N}$ par $u_{n+1}=e^{u_n}-1$.
 
 %\medskip
 %
-%\noindent $\rhd$ La fonction $x \mapsto e^x-1$ est dÃ©finie sur $\mathbb{R}$ donc la suite est bien dÃ©finie.
+%\noindent $\rhd$ La fonction $x \mapsto e^x-1$ est définie sur $\mathbb{R}$ donc la suite est bien définie.
 %
 %\medskip
 %
-%\noindent $\rhd$ La fonction $x \mapsto e^x-1$ est croissante sur $\mathbb{R}$ donc la suite $(u_n)_{n \geq 0}$ est monotone (dÃ©monstration par rÃ©currence) et on a plus prÃ©cisÃ©ment :
+%\noindent $\rhd$ La fonction $x \mapsto e^x-1$ est croissante sur $\mathbb{R}$ donc la suite $(u_n)_{n \geq 0}$ est monotone (démonstration par récurrence) et on a plus précisément :
 %
 %\begin{itemize}
-%\item La suite est croissante si $u_1 > u_0$ ce qui est Ã©quivalent Ã  $e^{u_0}-1-u_0 > 0$.
+%\item La suite est croissante si $u_1 > u_0$ ce qui est équivalent à $e^{u_0}-1-u_0 > 0$.
 %\item Si $u_1=u_0$, la suite est constante.
-%\item La suite est dÃ©croissante si $u_1 < u_0$ ce qui est Ã©quivalent Ã  $e^{u_0}-1-u_0 <  0$.
+%\item La suite est décroissante si $u_1 < u_0$ ce qui est équivalent à $e^{u_0}-1-u_0 <  0$.
 %\end{itemize}
 %
-%\noindent On Ã©tudie alors le signe de $x \mapsto e^x-1-x$ : cette fonction est dÃ©rivable sur $\mathbb{R}$, de dÃ©rivÃ©e $x \mapsto e^x-1$ donc elle est dÃ©croissante sur $\mathbb{R}_-$ et croissante sur $\mathbb{R}_+$ donc attention un minimum en $x=0$ qui vaut $0$. Cette fonction est donc positive sur $\mathbb{R}$ et s'annule uniquement en $0$. On a alors : 
+%\noindent On étudie alors le signe de $x \mapsto e^x-1-x$ : cette fonction est dérivable sur $\mathbb{R}$, de dérivée $x \mapsto e^x-1$ donc elle est décroissante sur $\mathbb{R}_-$ et croissante sur $\mathbb{R}_+$ donc attention un minimum en $x=0$ qui vaut $0$. Cette fonction est donc positive sur $\mathbb{R}$ et s'annule uniquement en $0$. On a alors : 
 %
 %\begin{itemize}
 %\item Si $u_0=0$, la suite est constante et donc convergente.
 %\item Si $u_0 \neq 0$, la suite est croissante.
 %\end{itemize}
 %
-%\noindent On reprÃ©sente graphiquement la situation pour essayer de conjecturer la limite de la suite.
+%\noindent On représente graphiquement la situation pour essayer de conjecturer la limite de la suite.
 %
 %\begin{center}
 %\textit{Si $u_0 < 0$}
@@ -518,11 +518,11 @@ En utilisant le thÃ©orÃ¨me d'encadrement, on montre que $u_n \underset{n \righta
 %
 %\medskip
 %
-%\noindent $\rhd$ Si $u_0<0$ : on remarque que $f(\mathbb{R}_-) \subset \mathbb{R}_-$ donc, par rÃ©currence, on montre que pour tout $n \geq 0$, $u_n \leq 0$. Ainsi la suite est croissante et majorÃ©e donc elle converge. Le seul point fixe de $f$ sur $\mathbb{R}_+$ est $0$ et $f$ Ã©tant continue, la suite converge donc vers $0$.
+%\noindent $\rhd$ Si $u_0<0$ : on remarque que $f(\mathbb{R}_-) \subset \mathbb{R}_-$ donc, par récurrence, on montre que pour tout $n \geq 0$, $u_n \leq 0$. Ainsi la suite est croissante et majorée donc elle converge. Le seul point fixe de $f$ sur $\mathbb{R}_+$ est $0$ et $f$ étant continue, la suite converge donc vers $0$.
 %
 %\medskip
 %
-%\noindent $\rhd$ Si $u_0>0$ : supposons par l'absurde que la suite converge vers un rÃ©el $\ell$. La fonction $f$ Ã©tant continue sur $\mathbb{R}$, $\ell$ est un point fixe de $\mathbb{R}$ et donc $\ell =0$. C'est impossible car la suite est croissante et $u_0>0$. Ainsi la suite diverge vers $+ \infty$.
+%\noindent $\rhd$ Si $u_0>0$ : supposons par l'absurde que la suite converge vers un réel $\ell$. La fonction $f$ étant continue sur $\mathbb{R}$, $\ell$ est un point fixe de $\mathbb{R}$ et donc $\ell =0$. C'est impossible car la suite est croissante et $u_0>0$. Ainsi la suite diverge vers $+ \infty$.
 
 
 $\phantom{test}$
@@ -535,34 +535,34 @@ $\phantom{test}$
 $\phantom{test}$
 \vspace{10cm}
 
-\begin{exa} Soit $(u_n)_{n \geq 0}$ la suite dÃ©finie par $u_0 \in \mathbb{R}$ et pour tout entier $n \geq 0$ par $u_{n+1}=u_n^2+1$. Ã‰tudier la convergence de cette suite.
+\begin{exa} Soit $(u_n)_{n \geq 0}$ la suite définie par $u_0 \in \mathbb{R}$ et pour tout entier $n \geq 0$ par $u_{n+1}=u_n^2+1$. Étudier la convergence de cette suite.
 \end{exa}
 \section{Suites usuelles}
-\subsection{Suites arithmÃ©tico-gÃ©omÃ©triques}
+\subsection{Suites arithmético-géométriques}
 
 \begin{defin}
-On dit qu'une suite $(u_n)_{n \geq 0}$ est \textit{arithmÃ©tico-gÃ©omÃ©trique} lorsqu'il existe deux nombres complexes $a$ et $b$ tels que pour tout $n \in \mathbb{N}$, $u_{n+1} = a u_n + b$.
+On dit qu'une suite $(u_n)_{n \geq 0}$ est \textit{arithmético-géométrique} lorsqu'il existe deux nombres complexes $a$ et $b$ tels que pour tout $n \in \mathbb{N}$, $u_{n+1} = a u_n + b$.
 \end{defin}
 
-\begin{thm}[Expression d'une suite arithmÃ©tico-gÃ©omÃ©trique]
-Soit $(u_n)_{n \geq 0}$ une suite arithmÃ©tico-gÃ©omÃ©trique dÃ©finie comme ci-dessus.
+\begin{thm}[Expression d'une suite arithmético-géométrique]
+Soit $(u_n)_{n \geq 0}$ une suite arithmético-géométrique définie comme ci-dessus.
 \begin{itemize}
-\item Si $a=1$ alors la suite $(u_n)_{n \geq 0}$ est arithmÃ©tique de raison $b$.
-\item Si $a \neq 1$ et $x$ est le complexe vÃ©rifiant $x=ax+b$, alors la suite $(u_n-x)_{n \geq 0}$ est gÃ©omÃ©trique de raison $a$.
+\item Si $a=1$ alors la suite $(u_n)_{n \geq 0}$ est arithmétique de raison $b$.
+\item Si $a \neq 1$ et $x$ est le complexe vérifiant $x=ax+b$, alors la suite $(u_n-x)_{n \geq 0}$ est géométrique de raison $a$.
 \end{itemize}
 \end{thm}
 
-\begin{ex} DÃ©terminons le terme gÃ©nÃ©ral de la suite $(u_n)_{n \geq 0}$ dÃ©finie par $u_0=4$ et pour tout $n \in \mathbb{N}$ par $u_{n+1}=3u_n-2$.
+\begin{ex} Déterminons le terme général de la suite $(u_n)_{n \geq 0}$ définie par $u_0=4$ et pour tout $n \in \mathbb{N}$ par $u_{n+1}=3u_n-2$.
 
 \newpage
 %\medskip 
 %
-%\noindent On rÃ©sout $x = 3x-2$ d'inconnue $x \in \mathbb{R}$ : l'unique solution est $x=1$. Pour tout $n \geq 0$, on a :
+%\noindent On résout $x = 3x-2$ d'inconnue $x \in \mathbb{R}$ : l'unique solution est $x=1$. Pour tout $n \geq 0$, on a :
 %$$ \left\lbrace \begin{array}{ccl}
 %u_{n+1} & = & 3 u_n - 2 \\
 %1 & = & 3 \times 1 - 2 \\
 %\end{array}\right.$$
-%On soustrait les inÃ©galitÃ©s : $u_{n+1}-1 = 3 (u_n - 1)$. Ainsi la suite $(u_n-1)_{n \geq 0}$ est gÃ©omÃ©trique de raison $2$ et donc pour tout $n \geq 0$,
+%On soustrait les inégalités : $u_{n+1}-1 = 3 (u_n - 1)$. Ainsi la suite $(u_n-1)_{n \geq 0}$ est géométrique de raison $2$ et donc pour tout $n \geq 0$,
 %$$ u_n - 1 = 3^n (u_0-1) = 3\times 2^n $$
 %ou encore :
 %$$ u_n = 3^{n+1} + 1 $$
@@ -570,33 +570,33 @@ Soit $(u_n)_{n \geq 0}$ une suite arithmÃ©tico-gÃ©omÃ©trique dÃ©finie comme ci-d
 \vspace{4cm}
 \end{ex}
 
-\begin{exa} Donner le terme gÃ©nÃ©ral de la suite $(u_n)_{n \geq 0}$ dÃ©finie par $u_0=1$ et pour tout $n \geq 0$ par $u_{n+1} =  2u_n - 4$. \end{exa}
+\begin{exa} Donner le terme général de la suite $(u_n)_{n \geq 0}$ définie par $u_0=1$ et pour tout $n \geq 0$ par $u_{n+1} =  2u_n - 4$. \end{exa}
 
-\subsection{Suites rÃ©currentes linÃ©aires d'ordre deux}
+\subsection{Suites récurrentes linéaires d'ordre deux}
 
 \begin{defin}
-On dit qu'une suite $(u_n)_{n \geq 0}$ est \textit{rÃ©currente linÃ©aire d'ordre 2} lorsqu'il existe deux nombres complexes $a$ et $b$ tels que pour tout $n \in \mathbb{N}, \, u_{n+2} = a u_{n+1}+b u_n$.
+On dit qu'une suite $(u_n)_{n \geq 0}$ est \textit{récurrente linéaire d'ordre 2} lorsqu'il existe deux nombres complexes $a$ et $b$ tels que pour tout $n \in \mathbb{N}, \, u_{n+2} = a u_{n+1}+b u_n$.
 \end{defin}
 
-\begin{rem} Pour calculer un terme d'une suite rÃ©currente linÃ©aire d'ordre 2, on a besoin des deux termes prÃ©cÃ©dents. 
+\begin{rem} Pour calculer un terme d'une suite récurrente linéaire d'ordre 2, on a besoin des deux termes précédents. 
 \end{rem} 
 
 \begin{defin}
-Soit $(u_n)_{n \geq 0}$ une suite rÃ©currente linÃ©aire d'ordre 2 dÃ©finie comme ci-dessus.\\
-On appelle \textit{polynÃ´me caractÃ©ristique} de cette suite le polynÃ´me $X^2-aX-b$.
+Soit $(u_n)_{n \geq 0}$ une suite récurrente linéaire d'ordre 2 définie comme ci-dessus.\\
+On appelle \textit{polynôme caractéristique} de cette suite le polynôme $X^2-aX-b$.
 \end{defin}
 
 \begin{thm}[Cas complexe : $a,b \in \mathbb{C}$]
-Soit $(u_n)_{n \geq 0}$ une suite rÃ©currente linÃ©aire d'ordre 2 dÃ©finie comme ci-dessus avec $b \neq 0.$
+Soit $(u_n)_{n \geq 0}$ une suite récurrente linéaire d'ordre 2 définie comme ci-dessus avec $b \neq 0.$
 \begin{itemize}
-\item Si le le polynÃ´me caractÃ©ristique admet deux racines distinctes $r_1$ et $r_2$ alors le terme gÃ©nÃ©ral de la suite $(u_n)_{n \geq 0}$ est donnÃ© par $u_n=\lambda (r_1)^n+\mu (r_2)^n$ pour tout $n \geq 0$ avec $(\lambda,\mu) \in \mathbb{C}^2$.
-%est l'unique couple solution du systÃ¨me 
+\item Si le le polynôme caractéristique admet deux racines distinctes $r_1$ et $r_2$ alors le terme général de la suite $(u_n)_{n \geq 0}$ est donné par $u_n=\lambda (r_1)^n+\mu (r_2)^n$ pour tout $n \geq 0$ avec $(\lambda,\mu) \in \mathbb{C}^2$.
+%est l'unique couple solution du système 
 %$$\l\{\begin{array}{lllll}
 %\lambda  &+ & \mu & = & u_0\\
 %\lambda r_1 & + &\mu r_2 & = & u_1
 %\end{array}\r.$$
-\item Si le polynÃ´me caractÃ©ristique admet une unique racine $r_0$ alors le terme gÃ©nÃ©ral de la suite $(u_n)_{n \geq 0}$ est donnÃ© par $u_n= (\lam+\mu n)(r_0)^n$ pour tout $n \geq 0$ avec $(\lambda,\mu) \in \mathbb{C}^2$.
-% est l'unique couple solution du systÃ¨me
+\item Si le polynôme caractéristique admet une unique racine $r_0$ alors le terme général de la suite $(u_n)_{n \geq 0}$ est donné par $u_n= (\lam+\mu n)(r_0)^n$ pour tout $n \geq 0$ avec $(\lambda,\mu) \in \mathbb{C}^2$.
+% est l'unique couple solution du système
 %$$\l\{\begin{array}{lll}
 %\lambda   & = & u_0\\
 %(\lambda  + \mu ) r_0 & = & u_1
@@ -604,18 +604,18 @@ Soit $(u_n)_{n \geq 0}$ une suite rÃ©currente linÃ©aire d'ordre 2 dÃ©finie comme
 \end{itemize}
 \end{thm}
 
-\begin{thm}[Cas rÃ©el : $a,b \in \mathbb{R}$]
-Soit $(u_n)_{n \geq 0}$ une suite rÃ©currente linÃ©aire d'ordre 2 dÃ©finie comme ci-dessus avec $b \neq 0.$
+\begin{thm}[Cas réel : $a,b \in \mathbb{R}$]
+Soit $(u_n)_{n \geq 0}$ une suite récurrente linéaire d'ordre 2 définie comme ci-dessus avec $b \neq 0.$
 \begin{itemize}
-\item Si le le polynÃ´me caractÃ©ristique admet deux racines rÃ©elles distinctes $r_1$ et $r_2$ alors le terme gÃ©nÃ©ral de la suite $(u_n)_{n \geq 0}$ est donnÃ© par $u_n=\lambda (r_1)^n+\mu (r_2)^n$ pour tout $n \geq 0$ avec $(\lambda,\mu) \in \mathbb{R}^2$.
-%est l'unique couple solution du systÃ¨me 
+\item Si le le polynôme caractéristique admet deux racines réelles distinctes $r_1$ et $r_2$ alors le terme général de la suite $(u_n)_{n \geq 0}$ est donné par $u_n=\lambda (r_1)^n+\mu (r_2)^n$ pour tout $n \geq 0$ avec $(\lambda,\mu) \in \mathbb{R}^2$.
+%est l'unique couple solution du système 
 %$$\l\{\begin{array}{lllll}
 %\lambda  &+ & \mu & = & u_0\\
 %\lambda r_1 & + &\mu r_2 & = & u_1
 %\end{array}\r.$$
-\item Si le polynÃ´me caractÃ©ristique admet une unique racine $r_0$ alors le terme gÃ©nÃ©ral de la suite $(u_n)_{n \geq 0}$ est donnÃ© par $u_n= (\lam+\mu n)(r_0)^n$ pour tout $n \geq 0$ avec $(\lambda,\mu) \in \mathbb{R}^2$.
-\item Si le polynÃ´me caractÃ©ristique admet deux racines conjuguÃ©s : $r e^{i \theta}$ et $r e^{- i \theta}$ alors le terme gÃ©nÃ©ral de la suite $(u_n)_{n \geq 0}$ est donnÃ© par $u_n=r^n (\lambda \cos(n \theta)+ \mu \sin(n \theta))$ pour tout $n \geq 0$ avec $(\lambda,\mu) \in \mathbb{R}^2$.
-% est l'unique couple solution du systÃ¨me
+\item Si le polynôme caractéristique admet une unique racine $r_0$ alors le terme général de la suite $(u_n)_{n \geq 0}$ est donné par $u_n= (\lam+\mu n)(r_0)^n$ pour tout $n \geq 0$ avec $(\lambda,\mu) \in \mathbb{R}^2$.
+\item Si le polynôme caractéristique admet deux racines conjugués : $r e^{i \theta}$ et $r e^{- i \theta}$ alors le terme général de la suite $(u_n)_{n \geq 0}$ est donné par $u_n=r^n (\lambda \cos(n \theta)+ \mu \sin(n \theta))$ pour tout $n \geq 0$ avec $(\lambda,\mu) \in \mathbb{R}^2$.
+% est l'unique couple solution du système
 %$$\l\{\begin{array}{lll}
 %\lambda   & = & u_0\\
 %(\lambda  + \mu ) r_0 & = & u_1
@@ -623,16 +623,16 @@ Soit $(u_n)_{n \geq 0}$ une suite rÃ©currente linÃ©aire d'ordre 2 dÃ©finie comme
 \end{itemize}
 \end{thm}
 
-\begin{rem} On dÃ©termine $\lambda$ et $\mu$ Ã  l'aide de deux termes de la suite.
+\begin{rem} On détermine $\lambda$ et $\mu$ à l'aide de deux termes de la suite.
 \end{rem}
 
-\begin{ex} Soit $(u_n)_{n \geq 1}$ la suite dÃ©finie par $u_1 = 1$, $u_2 = 0$ et pour tout $n \geq 1$ par $u_{n+2}= u_{n+1} + 2 u_n$. DÃ©terminer son terme gÃ©nÃ©ral.
+\begin{ex} Soit $(u_n)_{n \geq 1}$ la suite définie par $u_1 = 1$, $u_2 = 0$ et pour tout $n \geq 1$ par $u_{n+2}= u_{n+1} + 2 u_n$. Déterminer son terme général.
 
 %\medskip
 %
-%\noindent La suite $(a_n)_{n \geq 1}$ est rÃ©currente linÃ©aire d'ordre 2. Le discriminant du polynÃ´me caractÃ©ristique $X^2-X-2$ vaut 9 et il admet donc deux racines distinctes $-1$ et $2$. Il existe donc deux rÃ©els $\lambda$ et $\mu$ tels que pour tout $n \geq 1$,
+%\noindent La suite $(a_n)_{n \geq 1}$ est récurrente linéaire d'ordre 2. Le discriminant du polynôme caractéristique $X^2-X-2$ vaut 9 et il admet donc deux racines distinctes $-1$ et $2$. Il existe donc deux réels $\lambda$ et $\mu$ tels que pour tout $n \geq 1$,
 %\[ a_n = \lambda (-1)^n + \mu 2^n \]
-%Pour dÃ©terminer $\lambda$ et $\mu$ on utilise les deux premiÃ¨res valeurs de la suite : $a_1=1$ et \linebreak $a_2=2b_1=0$. Pour $n=1$, on a alors
+%Pour déterminer $\lambda$ et $\mu$ on utilise les deux premières valeurs de la suite : $a_1=1$ et \linebreak $a_2=2b_1=0$. Pour $n=1$, on a alors
 %\[ a_1 = \lambda (-1)^1 + \mu 2^1 = -\lambda + 2 \mu \]
 %On a ainsi $- \lambda + 2 \mu = 1$.
 %Pour $n=2$, on a 
@@ -641,7 +641,7 @@ Soit $(u_n)_{n \geq 0}$ une suite rÃ©currente linÃ©aire d'ordre 2 dÃ©finie comme
 %
 %\medskip
 %
-%\noindent En ajoutant les deux Ã©quations on obtient : $6 \mu = 1$ ou encore $\mu = \dis \frac{1}{6} \cdot$ Or $\lambda = - 4 \mu = \dis - \frac{4}{6} = - \frac{2}{3}$ d'aprÃ¨s la deuxiÃ¨me Ã©quation.
+%\noindent En ajoutant les deux équations on obtient : $6 \mu = 1$ ou encore $\mu = \dis \frac{1}{6} \cdot$ Or $\lambda = - 4 \mu = \dis - \frac{4}{6} = - \frac{2}{3}$ d'après la deuxième équation.
 %
 %\medskip
 %
@@ -656,26 +656,26 @@ $\phantom{test}$
 
 \vspace{4cm}
 
-\begin{exa} Donner le terme gÃ©nÃ©ral de la suite $(u_n)_{n \geq 0}$ dÃ©finie par $u_0=0$, $u_1=1$ et pour tout $n \geq 0$ par :  $$u_{n+2} = 2 u_{n+1}-u_n$$
+\begin{exa} Donner le terme général de la suite $(u_n)_{n \geq 0}$ définie par $u_0=0$, $u_1=1$ et pour tout $n \geq 0$ par :  $$u_{n+2} = 2 u_{n+1}-u_n$$
 \end{exa}
 
-\begin{exa} Donner le terme gÃ©nÃ©ral de la suite $(u_n)_{n \geq 0}$ dÃ©finie par $u_0=0$, $u_1=1$ et pour tout $n \geq 0$ par : $$ u_{n+2} =  u_{n+1} - u_n$$ \end{exa}
+\begin{exa} Donner le terme général de la suite $(u_n)_{n \geq 0}$ définie par $u_0=0$, $u_1=1$ et pour tout $n \geq 0$ par : $$ u_{n+2} =  u_{n+1} - u_n$$ \end{exa}
 
 
 \section{Relations de comparaison}
-\subsection{GÃ©nÃ©ralitÃ©s}
-\noindent ConsidÃ©rons $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ deux suites.
+\subsection{Généralités}
+\noindent Considérons $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ deux suites.
 
 \begin{defin}
 
 \begin{itemize}
-\item On dit que la suite $(u_n)_{n \geq 0}$ est \textit{dominÃ©e} par la suite $(v_n)_{n \geq 0}$ si il existe une suite bornÃ©e $(w_n)_{n \geq 0}$ et un entier $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$,
+\item On dit que la suite $(u_n)_{n \geq 0}$ est \textit{dominée} par la suite $(v_n)_{n \geq 0}$ si il existe une suite bornée $(w_n)_{n \geq 0}$ et un entier $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$,
 $$ u_n = w_n v_n$$
 On note $u_n  \underset{+ \infty}{=} O(v_n)$.
-\item On dit que la suite $(u_n)_{n \geq 0}$ est \textit{nÃ©gligeable} devant la suite $(v_n)_{n \geq 0}$ si il existe une suite  $(w_n)_{n \geq 0}$ convergeant vers $0$ et un entier $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$,
+\item On dit que la suite $(u_n)_{n \geq 0}$ est \textit{négligeable} devant la suite $(v_n)_{n \geq 0}$ si il existe une suite  $(w_n)_{n \geq 0}$ convergeant vers $0$ et un entier $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$,
 $$ u_n = w_n v_n$$
 On note $u_n \underset{ + \infty}{=} o(v_n)$.
-\item On dit que la suite $(u_n)_{n \geq 0}$ est \textit{Ã©quivalente} Ã  la suite $(v_n)_{n \geq 0}$ si il existe une suite  $(w_n)_{n \geq 0}$ convergeant vers $1$ et un entier $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$,
+\item On dit que la suite $(u_n)_{n \geq 0}$ est \textit{équivalente} à la suite $(v_n)_{n \geq 0}$ si il existe une suite  $(w_n)_{n \geq 0}$ convergeant vers $1$ et un entier $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$,
 $$ u_n = w_n v_n$$
 On note $u_n  \underset{ + \infty}{\sim} v_n$.
 \end{itemize}
@@ -683,10 +683,10 @@ On note $u_n  \underset{ + \infty}{\sim} v_n$.
 
 \medskip
 
-\noindent Dans la pratique, si les termes de $(v_n)_{n \geq 0}$ sont non nuls Ã  partir d'un certain rang $N$, on a :
+\noindent Dans la pratique, si les termes de $(v_n)_{n \geq 0}$ sont non nuls à partir d'un certain rang $N$, on a :
 %
 %\begin{itemize}
-%\item $u_n = \underset{n \rightarrow + \infty}{O}(v_n)$ si et seulement si la suite $\left( \dfrac{u_n}{v_n} \right)_{n \geq N}$ est bornÃ©e.
+%\item $u_n = \underset{n \rightarrow + \infty}{O}(v_n)$ si et seulement si la suite $\left( \dfrac{u_n}{v_n} \right)_{n \geq N}$ est bornée.
 %\item $u_n = \underset{n \rightarrow + \infty}{o}(v_n)$ si et seulement si $\dis \lim_{n \rightarrow + \infty} \frac{u_n}{v_n} = 0$.
 %\item $u_n  \underset{n \rightarrow + \infty}{\sim} v_n$ si et seulement si $\dis \lim_{n \rightarrow + \infty} \frac{u_n}{v_n} = 1$.
 %\end{itemize}
@@ -696,52 +696,52 @@ On note $u_n  \underset{ + \infty}{\sim} v_n$.
 \newpage
 
 \begin{rems}
-\item $u_n  \underset{+ \infty}{=} O(1)$ signifie que \phantom{$(u_n)_{n \geq 0}$ est bornÃ©e.}
+\item $u_n  \underset{+ \infty}{=} O(1)$ signifie que \phantom{$(u_n)_{n \geq 0}$ est bornée.}
 \item $u_n  \underset{+ \infty}{=} o(1)$ signifie que \phantom{$(u_n)_{n \geq 0}$ converge vers $0$.}
-\item Les seules suites Ã©quivalentes Ã  $0$ sont les suites nulles Ã  partir d'un certain rang.
+\item Les seules suites équivalentes à $0$ sont les suites nulles à partir d'un certain rang.
 \end{rems}
 
-\begin{exa} Donner un Ã©quivalent des expressions suivantes quand $n$ tend vers $+ \infty$ :
+\begin{exa} Donner un équivalent des expressions suivantes quand $n$ tend vers $+ \infty$ :
 $$ 3n+\ln(n)+5, \;  3n+\ln(n^2)+5, \; \dfrac{1}{n} + \dfrac{1}{n^2} \; \hbox{ et } \; \dfrac{3n^3+n^2+1}{n^3+n^2}$$
 \end{exa}
 
-\subsection{PropriÃ©tÃ©s}
+\subsection{Propriétés}
 
-\noindent  ConsidÃ©rons $(u_n)_{n \geq 0}$, $(v_n)_{n \geq 0}$ et $(w_n)_{n \geq 0}$ trois suites et $(\lambda, \mu) \in \mathbb{C}^2$.
+\noindent  Considérons $(u_n)_{n \geq 0}$, $(v_n)_{n \geq 0}$ et $(w_n)_{n \geq 0}$ trois suites et $(\lambda, \mu) \in \mathbb{C}^2$.
 
-\noindent Voici une liste des propriÃ©tÃ©s Ã  retenir :
+\noindent Voici une liste des propriétés à retenir :
 
 \begin{enumerate}
 \item $u_n  \underset{+ \infty}{\sim} v_n $ si et seulement si $u_n \underset{+ \infty}{=} v_n + o(v_n)$.
-\item \textit{TransitivitÃ©} : 
+\item \textit{Transitivité} : 
 \begin{itemize}
 \item Si $u_n   \underset{+ \infty}{=}O(v_n)$ et $v_n   \underset{+ \infty}{=}O(w_n)$ alors $u_n   \underset{+ \infty}{=}O(w_n)$.
 \item Si $u_n   \underset{+ \infty}{=}o(v_n)$ et $v_n   \underset{+ \infty}{=}o(w_n)$ alors $u_n   \underset{+ \infty}{=}o(w_n)$.
 \end{itemize}
-\item \textit{LinÃ©aritÃ©} : 
+\item \textit{Linéarité} : 
 \begin{itemize}
 \item Si $u_n  \underset{+ \infty}{=}O(w_n)$ et $v_n \underset{+ \infty}{=}O(w_n)$ alors $\lambda u_n + \mu v_n  \underset{+ \infty}{=}O(w_n)$.
 \item Si $u_n  \underset{+ \infty}{=}o(w_n)$ et $v_n \underset{+ \infty}{=}o(w_n)$ alors $\lambda u_n + \mu v_n  \underset{+ \infty}{=}o(w_n)$.
 \end{itemize}
-\item On peut multiplier et diviser des Ã©quivalents. On ne peut pas composer des Ã©quivalents par une fonction ou ajouter des Ã©quivalents.
-\item Pour des suites \textit{rÃ©elles}, si $u_n  \underset{+ \infty}{\sim} v_n $ alors Ã  partir d'un certain rang, les termes $u_n$ et $v_n$ sont de mÃªme signe. 
+\item On peut multiplier et diviser des équivalents. On ne peut pas composer des équivalents par une fonction ou ajouter des équivalents.
+\item Pour des suites \textit{réelles}, si $u_n  \underset{+ \infty}{\sim} v_n $ alors à partir d'un certain rang, les termes $u_n$ et $v_n$ sont de même signe. 
 
 \begin{preuve}
 
 \vspace{7cm}
 \end{preuve}
 \item Soit $\ell \neq 0$. Alors $\dis \lim_{n \rightarrow + \infty} u_n = \ell$ si et seulement si $u_n \underset{+ \infty}{\sim} \ell$.
-\item Si deux suites sont Ã©quivalentes, elles ont le mÃªme comportement asymptotique. Autrement dit, si l'une des deux suites tend vers une limite (finie ou infinie), il en est de mÃªme pour l'autre.
+\item Si deux suites sont équivalentes, elles ont le même comportement asymptotique. Autrement dit, si l'une des deux suites tend vers une limite (finie ou infinie), il en est de même pour l'autre.
 \end{enumerate}
 
 
 
 
-\section{DÃ©veloppements limitÃ©s}
+\section{Développements limités}
 
 \noindent Soient $n \in \mathbb{N}$ et $\alpha \in \mathbb{R}$. 
 
-\noindent Voici les dÃ©veloppements limitÃ©s usuels en $0$ qu'il faut connaitre parfaitement\footnote{A chaque erreur sur un dÃ©veloppement limitÃ©, un chaton meurt de votre faute quelque part dans le monde.}.
+\noindent Voici les développements limités usuels en $0$ qu'il faut connaitre parfaitement\footnote{A chaque erreur sur un développement limité, un chaton meurt de votre faute quelque part dans le monde.}.
 
 \bigskip
 
@@ -772,29 +772,29 @@ $$ 3n+\ln(n)+5, \;  3n+\ln(n^2)+5, \; \dfrac{1}{n} + \dfrac{1}{n^2} \; \hbox{ et
 \medskip
 
 \begin{rems}
-\item Les dÃ©veloppements limitÃ©s de l'exponentielle et de $(1+x)^{\alpha}$ s'obtiennent avec la formule de Taylor-Young. Les dÃ©veloppements de sinus, cos, sinus hyperbolique et cosinus hyperbolique s'obtiennent avec le dÃ©veloppement de l'exponentielle (ou Ã  l'aide de la formule de Taylor-Young).  
-\item Les dÃ©veloppements limitÃ©s de $\dfrac{1}{1+x}$ et $\dfrac{1}{1-x}$ proviennent de la formule donnant l'expression d'une somme gÃ©omÃ©trique:
+\item Les développements limités de l'exponentielle et de $(1+x)^{\alpha}$ s'obtiennent avec la formule de Taylor-Young. Les développements de sinus, cos, sinus hyperbolique et cosinus hyperbolique s'obtiennent avec le développement de l'exponentielle (ou à l'aide de la formule de Taylor-Young).  
+\item Les développements limités de $\dfrac{1}{1+x}$ et $\dfrac{1}{1-x}$ proviennent de la formule donnant l'expression d'une somme géométrique:
 \[
 \forall n\in\N,\forall x\in\R \setminus \lbrace 1 \rbrace, \quad \sum_{k=0}^n x^k=\frac{1-x^{n+1}}{1-x}
 \]
-\item Le dÃ©veloppement limitÃ© de $\ln(1+x)$ s'obtient par intÃ©gration du dÃ©veloppement limitÃ© de $\dfrac{1}{1+x}\cdot$
-\item Le dÃ©veloppement limitÃ© de arctan s'obtient par intÃ©gration du dÃ©veloppement limitÃ© de $\dfrac{1}{1+x^2} \cdot$
-%\item  Le dÃ©veloppement limitÃ© de arcsin s'obtient par intÃ©gration du dÃ©veloppement limitÃ© de $(1+x)^{\alpha}$ avec $\alpha=-\frac12$ et $x$ substituÃ© par $-x^2$. 
+\item Le développement limité de $\ln(1+x)$ s'obtient par intégration du développement limité de $\dfrac{1}{1+x}\cdot$
+\item Le développement limité de arctan s'obtient par intégration du développement limité de $\dfrac{1}{1+x^2} \cdot$
+%\item  Le développement limité de arcsin s'obtient par intégration du développement limité de $(1+x)^{\alpha}$ avec $\alpha=-\frac12$ et $x$ substitué par $-x^2$. 
 \end{rems}
 
-\begin{exa} Donner le dÃ©veloppement limitÃ© en $0$ Ã  l'ordre $3$ de $\dfrac{e^x}{1-x} \cdot$
+\begin{exa} Donner le développement limité en $0$ à l'ordre $3$ de $\dfrac{e^x}{1-x} \cdot$
 \end{exa}
 
-\begin{exa} Donner le dÃ©veloppement limitÃ© en $0$ Ã  l'ordre $3$ de $\ln(1+\sin(x)).$
+\begin{exa} Donner le développement limité en $0$ à l'ordre $3$ de $\ln(1+\sin(x)).$
 \end{exa}
 
-%\exo Retrouver le dÃ©veloppement limitÃ© Ã  l'ordre $5$ de la fonction tangente en $0$ (on pourra l'Ã©crire comme un quotient...)
+%\exo Retrouver le développement limité à l'ordre $5$ de la fonction tangente en $0$ (on pourra l'écrire comme un quotient...)
 
 
-\section{Ã‰quivalents et limites usuels}
-\subsection{Ã‰quivalents usuels de fonctions}
+\section{Équivalents et limites usuels}
+\subsection{Équivalents usuels de fonctions}
 
-\noindent Soit $\alpha$ un rÃ©el non nul.
+\noindent Soit $\alpha$ un réel non nul.
 
 \bigskip
 
@@ -819,20 +819,20 @@ $$ 3n+\ln(n)+5, \;  3n+\ln(n^2)+5, \; \dfrac{1}{n} + \dfrac{1}{n^2} \; \hbox{ et
  
  \bigskip
  
- \noindent Les Ã©quivalents usuels redonnent en particulier des limites usuelles Ã  connaitre. 
+ \noindent Les équivalents usuels redonnent en particulier des limites usuelles à connaitre. 
 
 \medskip
- \begin{exa} Donner un Ã©quivalent de $(n+1) \sin \left(\dfrac{1}{\sqrt{n^2+1}} \right)$ en $+ \infty$.
+ \begin{exa} Donner un équivalent de $(n+1) \sin \left(\dfrac{1}{\sqrt{n^2+1}} \right)$ en $+ \infty$.
  \end{exa}
 
-\begin{exa} Donner un Ã©quivalent de $\ln \dis \left( \frac{n+1}{n-1} \right)$ en $+ \infty$.
+\begin{exa} Donner un équivalent de $\ln \dis \left( \frac{n+1}{n-1} \right)$ en $+ \infty$.
 \end{exa}
  
  \subsection{Limites}
  
 
-\begin{thm}[croissances comparÃ©es]
-Soient $\alpha$ et $\beta$ deux rÃ©els strictement positifs et $n \in \N^*$.
+\begin{thm}[croissances comparées]
+Soient $\alpha$ et $\beta$ deux réels strictement positifs et $n \in \N^*$.
 \begin{multicols}{2}
 \begin{itemize}
 \item $\dis \lim_{x \rightarrow +\infty} \frac{e^{\alpha x}}{x^{\beta}}= + \infty$
@@ -853,9 +853,9 @@ $\phantom{}$
 \end{multicols}
 \end{thm}
 
-\section{Des inÃ©galitÃ©s}
+\section{Des inégalités}
 
-\noindent Il est trÃ¨s important en analyse de savoir manipuler des inÃ©galitÃ©s. Voici quelques inÃ©galitÃ©s usuelles (qu'il faut connaitre et savoir redÃ©montrer) : 
+\noindent Il est très important en analyse de savoir manipuler des inégalités. Voici quelques inégalités usuelles (qu'il faut connaitre et savoir redémontrer) : 
 
 \begin{multicols}{2}
 \begin{itemize}
