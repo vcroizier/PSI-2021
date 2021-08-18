@@ -1,83 +1,58 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{tkz-tab}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
 
 \begin{document}
-\everymath{\displaystyle}
-
-%\begin{center}
-% \shadowbox{{\huge TD 1 : Rappels d'analyse}}
-%\end{center}
-
-\begin{center}
-\textit{{ {\huge TD 1 : Rappels d'analyse}}}
-\end{center}
-\bigskip
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 1 : Rappels d'analyse}
 
 
-\begin{center}
-\textit{{ {\large Étude de convergence}}}
-\end{center}
+\subsection{Étude de convergence}
 
 
-
-\setlength{\shadowsize}{2pt} 
-
-
-
-\begin{Exa}
+\begin{Exercice}
 On pose pour tout $n \in \mathbb{N}^*$, 
     \[
     u_n = \sum_{k = 1}^n {\frac{1}{\sqrt k}} - 2\sqrt n \; \hbox{ et } \; v_n = \sum_{k = 1}^n {\frac{1}{\sqrt k}} - 2\sqrt {n + 1}
     \]
  Montrer que les suites $(u_n)_{n \geq 1}$ et $(v_n)_{n \geq 1}$ sont convergentes.
- \end{Exa}
+ \end{Exercice}
  
  
  
-\begin{Exa} Soit $x \in \mathbb{R}$. On pose pour tout $n \geq 1$, 
-$$\dis u_n = \frac{1}{n^2} \sum_{k=1}^n E(kx)$$
+\begin{Exercice} Soit $x \in \mathbb{R}$. On pose pour tout $n \geq 1$, 
+$$u_n = \frac{1}{n^2} \sum_{k=1}^n E(kx)$$
 Étudier la convergence de la suite $(u_n)_{n \geq 1}$.
-\end{Exa}
+\end{Exercice}
 
 
 
-\begin{Exa} Étudier la suite définie par $u_0=1$ et pour tout $n \in \mathbb{N}$ par $u_{n+1}=\ln(1+u_n)$.
-\end{Exa} 
+\begin{Exercice} Étudier la suite définie par $u_0=1$ et pour tout $n \in \mathbb{N}$ par $u_{n+1}=\ln(1+u_n)$.
+\end{Exercice} 
 
 
-\begin{Exa} Déterminer les limites suivantes. 
+\begin{Exercice} Déterminer les limites suivantes. 
 
 \begin{multicols}{2}
 \begin{enumerate}
-\item $\dis \lim_{n \rightarrow + \infty} \left(1+ \frac{1}{n}\right)^n$
-\item $\dis \lim_{n \rightarrow + \infty} \left(1+ \frac{1}{n}\right)^{n^2}$
+\item $\lim_{n \rightarrow + \infty} \left(1+ \frac{1}{n}\right)^n$
+\item $\lim_{n \rightarrow + \infty} \left(1+ \frac{1}{n}\right)^{n^2}$
 \columnbreak
-\item $\dis \lim_{n \rightarrow + \infty} \left(1+ \frac{1}{n}\right)^{-n^2}$
-\item $\dis \lim_{n \rightarrow + \infty} \left(1+ \frac{1}{n}\right)^{\ln(n)}$
+\item $\lim_{n \rightarrow + \infty} \left(1+ \frac{1}{n}\right)^{-n^2}$
+\item $\lim_{n \rightarrow + \infty} \left(1+ \frac{1}{n}\right)^{\ln(n)}$
 \end{enumerate}
 \end{multicols}
 \vspace{0.1cm}
-\end{Exa} 
+\end{Exercice} 
 
 
 
-\medskip
-
-\begin{center}
-\textit{{ {\large Suites usuelles}}}
-\end{center}
-
-\medskip
+\subsection{Suites usuelles}
 
 
-\begin{Exa} Déterminer le terme général de la suite définie par $u_0=2$ et pour tout $n \geq 0$ par $u_{n+1}=3u_n-2$.
-\end{Exa} 
+\begin{Exercice} Déterminer le terme général de la suite définie par $u_0=2$ et pour tout $n \geq 0$ par $u_{n+1}=3u_n-2$.
+\end{Exercice} 
 
 
 
-\begin{Exa} Déterminer le terme général des suites définies de la manière suivante :
+\begin{Exercice} Déterminer le terme général des suites définies de la manière suivante :
     \begin{enumerate}
       \item
         $(u_n)_{n \geq 0}$ définie par $u_0 = 1,u_1 = 0$ et pour tout $n \in \N$, $u_{n + 2} = 4u_{n + 1} - 4u_n$.
@@ -87,26 +62,17 @@ $$\dis u_n = \frac{1}{n^2} \sum_{k=1}^n E(kx)$$
         $(u_n)_{n \geq 0}$ définie par $u_0 = 0,u_1 = \sqrt{3}$ et pour tout $n \in \N$, $u_{n + 2} = -u_{n+1}- u_n$.
 
     \end{enumerate}
-\end{Exa}    
+\end{Exercice}    
 
 
-\begin{Exa} Déterminer les suites $(v_n)_{n \geq 0}$ telles que $v_0>0$, $v_1>0$  et vérifiant pour tout $n \in \mathbb{N}$, 
+\begin{Exercice} Déterminer les suites $(v_n)_{n \geq 0}$ telles que $v_0>0$, $v_1>0$  et vérifiant pour tout $n \in \mathbb{N}$, 
 $$v_{n+2}=\left(\dfrac{v_{n+1}}{v_n}\right)^4$$
-\end{Exa}
+\end{Exercice}
 
 
-\newpage
+\subsection{Développements limités}
 
-
-\begin{center}
-\textit{{ {\large Développements limités}}}
-\end{center}
-
-\medskip
-
-
-
-\begin{Exa}
+\begin{Exercice}
 Déterminer les développements limités suivants :
 
 \begin{multicols}{2}
@@ -117,28 +83,29 @@ Déterminer les développements limités suivants :
 \item $x \mapsto \dfrac{\ln(x)}{x}$ à l'ordre $3$ en $2$.
 \end{enumerate}
 \end{multicols}
-
-\vspace{0.1cm}
-\end{Exa} 
+\end{Exercice} 
  
 
 
 
-\begin{Exa} Déterminer $\dis \lim_{x \rightarrow 0} \frac{1}{x^2} - \frac{1}{\tan(x)^2} \cdot$
-\end{Exa} 
+\begin{Exercice} Déterminer $\lim_{x \rightarrow 0} \frac{1}{x^2} - \frac{1}{\tan(x)^2} \cdot$
+\end{Exercice} 
 
 
 
-\begin{Exa} Déterminer $\dis \lim_{x \rightarrow + \infty}  \cos \left( \frac{1}{x} \right)^{x^2} \cdot$
-\end{Exa}
+\begin{Exercice} Déterminer $\lim_{x \rightarrow + \infty}  \cos \left( \frac{1}{x} \right)^{x^2} \cdot$
+\end{Exercice}
 
 
 
-\begin{Exa}[\ding{80}] Soit $f$ définie sur $\mathbb{R}^*$ par $f(x) = x^3 \cos \left( \frac{1}{x} \right) \cdot$
+\begin{Exercice}[$\bigstar$] Soit $f$ définie sur $\mathbb{R}^*$ par 
+  $f(x) = x^3 \cos \left( \frac{1}{x} \right) \cdot$
 
 \begin{enumerate}
-\item Montrer que $f$ est prolongeable par continuité en $0$. \textit{On notera encore abusivement $f$ ce prolongement.}
-\item Montrer que $f$ admet un développement limité à l'ordre $2$ en $0$. Qu'en déduit-on en terme de dérivabilité ?
+\item Montrer que $f$ est prolongeable par continuité en $0$. 
+\textit{On notera encore abusivement $f$ ce prolongement.}
+\item Montrer que $f$ admet un développement limité à l'ordre $2$ en $0$. 
+Qu'en déduit-on en terme de dérivabilité ?
 \item Montrer que la fonction $\sin$ n'a pas de limite en $+ \infty$. 
 \item 
 \begin{enumerate}
@@ -147,106 +114,98 @@ Déterminer les développements limités suivants :
 \end{enumerate}
 \item Quelle est la moralité de cet exercice ?
 \end{enumerate}
-\end{Exa} 
+\end{Exercice} 
 
 
 
-\medskip
-
-\begin{center}
-\textit{{ {\large Équivalents}}}
-\end{center}
-
-\medskip
+\subsection{Équivalents}
 
 
-\begin{Exa} D\'{e}terminer le signe, au voisinage de l'infini, de 
+\begin{Exercice} D\'{e}terminer le signe, au voisinage de l'infini, de 
 $$u_{n}=\text{sh}\left( \dfrac{1}{n}\right) -\tan \left( \dfrac{1}{n}\right)$$
-\end{Exa}
+\end{Exercice}
 
 
 
 
-\begin{Exa} Soit $k \in \mathbb{N}$. Déterminer un équivalent de $\binom{n}{k}$ quand $n$ tend vers $+ \infty$. 
-\end{Exa}
+\begin{Exercice} Soit $k \in \mathbb{N}$. Déterminer un équivalent de $\binom{n}{k}$ quand $n$ tend vers $+ \infty$. 
+\end{Exercice}
 
 
-\begin{Exa}[\ding{80}] Donner un équivalent simple de $\dis \sum_{k=1}^n k!$ quand $n \rightarrow + \infty$.
-\end{Exa} 
+\begin{Exercice}[$\bigstar$]
+  Donner un équivalent simple de $\sum_{k=1}^n k!$ quand $n \rightarrow + \infty$.
+\end{Exercice} 
 
 
-\begin{Exa} Soient $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ deux suites réelles strictement positives. On suppose que $(v_n)_{n \geq 0}$ admet une limite $\ell$ où $\ell \in \mathbb{R}_+\setminus \lbrace 1 \rbrace$ ou $\ell= + \infty$. Montrer que :
-$$ u_n \underset{+ \infty}{\sim} v_n \; \Longrightarrow  \; \ln(u_n) \underset{+ \infty}{\sim} \ln(v_n)$$
-\end{Exa}
+\begin{Exercice} Soient $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ deux suites réelles strictement positives. On suppose que $(v_n)_{n \geq 0}$ admet une limite $\ell$ où $\ell \in \mathbb{R}_+\setminus \lbrace 1 \rbrace$ ou $\ell= + \infty$. Montrer que :
+$$ u_n \underset{+ \infty}{\sim} v_n \; \Longrightarrow  \; \ln(u_n) \underset{+\infty}{\sim} \ln(v_n)$$
+\end{Exercice}
 
 
-\begin{Exa}[\ding{80}] Donner un équivalent de $\sqrt[n+1]{n+1} - \sqrt[n]{n}$ quand $n$ tend vers $+ \infty$.
-\end{Exa} 
+\begin{Exercice}[$\bigstar$]
+  Donner un équivalent de $\sqrt[n+1]{n+1}-\sqrt[n]{n}$ quand $n$ tend vers $+\infty$.
+\end{Exercice} 
 
 
-\begin{Exa}[\ding{80}] Soit $(u_n)_{n \geq 0}$ une suite réelle. On souhaite étudier la propriété $(\mathcal{P})$ suivante :
-$$ u_n \underset{+ \infty}{\sim} \dfrac{1}{n} \; \Longleftrightarrow \; u_n + u_{n-1} \underset{+ \infty}{\sim} \dfrac{2}{n}$$
+\begin{Exercice}[$\bigstar$]
+  Soit $(u_n)_{n \geq 0}$ une suite réelle. On souhaite étudier la propriété 
+  $(\mathcal{P})$ suivante :
+$$ u_n \underset{+ \infty}{\sim} \dfrac{1}{n} \; \Longleftrightarrow \; u_n + u_{n-1} 
+\underset{+ \infty}{\sim} \dfrac{2}{n}$$
 \begin{enumerate}
 \item Montrer que l'implication directe est toujours vraie.
 \item On suppose que $(u_n)_{n \geq 0}$ est monotone. Montrer que $(\mathcal{P})$ est alors vraie.
 \item Si on retire cette hypothèse, le résultat est-il vrai ?
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 
-\medskip
+\subsection{Suites implicites}
 
-\begin{center}
-\textit{{ {\large Suites implicites}}}
-\end{center}
-
-\medskip
-
-\begin{Exa} Soient $n$ un entier naturel et $E_n $ l'équation $x + \tan x = n$ d'inconnue $x \in \left] { - \pi  / 2,\pi  / 2} \right[$.
+\begin{Exercice} Soient $n$ un entier naturel et $E_n $ l'équation $x + \tan x = n$ d'inconnue $x \in \left] { - \pi  / 2,\pi  / 2} \right[$.
 
 \begin{enumerate}
 \item Montrer que l'équation $E_n$ possède une solution unique notée $x_n$.
 \item Montrer que la suite $(x_n)_{n \geq 0}$ converge et déterminer sa limite.
 \end{enumerate}
-\end{Exa} 
+\end{Exercice} 
 
 
 
-\begin{Exa}
+\begin{Exercice}
 \begin{enumerate}
 \item Montrer, pour tout entier $n \geq 2$,  l'existence d'un unique solution à l'équation $x^n-x-1$ sur $]1, + \infty[$. On note cette solution $x_n$.
 \item Déterminer le sens de variation de la suite $(x_n)_{n \geq 2}$.
 \item Montrer que  $(x_n)_{n \geq 2}$ converge et déterminer sa limite $\ell$.
 \item Déterminer un équivalent de $x_n - \ell$ quand $n$ tend vers $+ \infty$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 
-
-
-\begin{Exa}[\ding{80}] \begin{enumerate}
-\item Montrer que pour tout $n \geq 3$, $e^x=nx$ admet deux solutions $x_n$ et $y_n$ tels que $0 \leq x_n <y_n$.
-\item Étudier la monotonie des suites $(x_n)$ et $(y_n)$ et en déduire qu'elles admettent une limite à déterminer.
-\item Montrer que $x_n \underset{+ \infty}{\sim} \dfrac{1}{n}$, trouver un équivalent de $x_n - \dfrac{1}{n}$ quand $n$ tend vers $+ \infty$ et donner un développement asymptotique de $x_n$ à deux termes.
-\item Soit $\varepsilon >0$. Montrer qu'à partir d'un certain rang, $y_n \leq (1+ \varepsilon) \ln(n)$. En déduire un équivalent de $y_n$ quand $n$ tend vers $+ \infty$.
+\begin{Exercice}[$\bigstar$]
+\begin{enumerate}
+\item Montrer que pour tout $n \geq 3$, $e^x=nx$ admet deux solutions $x_n$ et 
+$y_n$ tels que $0 \leq x_n <y_n$.
+\item Étudier la monotonie des suites $(x_n)$ et $(y_n)$ et en déduire qu'elles 
+admettent une limite à déterminer.
+\item Montrer que $x_n \underset{+ \infty}{\sim} \dfrac{1}{n}$, trouver un 
+équivalent de $x_n - \dfrac{1}{n}$ quand $n$ tend vers $+ \infty$ et donner un 
+développement asymptotique de $x_n$ à deux termes.
+\item Soit $\varepsilon >0$. Montrer qu'à partir d'un certain rang, 
+$y_n \leq (1+ \varepsilon) \ln(n)$. En déduire un équivalent de $y_n$ 
+quand $n$ tend vers $+ \infty$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 
 
-\medskip
+\subsection{Divers}
 
-\begin{center}
-\textit{{ {\large Divers}}}
-\end{center}
-
-\medskip
-
-\begin{Exa} Soit $(u_n)_{n \geq 0}$ une suite complexe telle que $(u_{2n})_{n \geq 0},(u_{2n + 1})_{n \geq 0}{\text{ et }}(u_{3n})_{n \geq 0}$ convergent. Montrer que $(u_n)_{n \geq 0}$ converge.
-\end{Exa} 
+\begin{Exercice} Soit $(u_n)_{n \geq 0}$ une suite complexe telle que $(u_{2n})_{n \geq 0},(u_{2n + 1})_{n \geq 0}{\text{ et }}(u_{3n})_{n \geq 0}$ convergent. Montrer que $(u_n)_{n \geq 0}$ converge.
+\end{Exercice} 
 
 
-\begin{Exa} Soient $\ell>0$ et $(u_n)_{n \geq 0}$ une suite réelle ou complexe (avec des termes non nuls) vérifiant la propriété suivante :
+\begin{Exercice} Soient $\ell>0$ et $(u_n)_{n \geq 0}$ une suite réelle ou complexe (avec des termes non nuls) vérifiant la propriété suivante :
 $$\exists N \in \mathbb{N}, \, \forall n \in \mathbb{N}, \, n \geq N \Longrightarrow \left\vert \frac{u_{n+1}}{u_n} \right\vert   \leq \ell$$
 
 \begin{enumerate}
@@ -254,19 +213,17 @@ $$\exists N \in \mathbb{N}, \, \forall n \in \mathbb{N}, \, n \geq N \Longrighta
 \item Le résultat précédent est-il vrai si $\ell = 1$ ?
 \item Étudier la convergence de la suite définie pour tout $n \geq 0$ par $u_n = \dfrac{z^n}{n!}$ où $z \in \mathbb{C}$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
-\begin{Exa}[\ding{80}] Déterminer toutes les fonctions $f$ continues en $1$ vérifiant :
+\begin{Exercice}[$\bigstar$] Déterminer toutes les fonctions $f$ continues en $1$ vérifiant :
 $$ \forall x \in \mathbb{R}, \, \, f \left( \frac{x+1}{2} \right) =f(x)$$
-\end{Exa}
+\end{Exercice}
 
 
-\begin{Exa}[Lemme de Césaro \ding{80}] Soit $(u_n)_{n \geq 0}$ une suite réelle de limite $\ell \in \mathbb{R}$. Montrer que :
+\begin{Exercice}[Lemme de Césaro $\bigstar$]
+Soit $(u_n)_{n \geq 0}$ une suite réelle de limite $\ell \in \mathbb{R}$. Montrer que :
 $$ \lim_{n \rightarrow + \infty} \frac{1}{n} \sum_{k=1}^n u_k = \ell$$
-\end{Exa}
-
-
-
+\end{Exercice}
 
 
 \end{document}

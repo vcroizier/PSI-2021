@@ -54,3 +54,10 @@
 \\end{Corollaire}{}
 
 
+\\begin\{Exa\}\[(.*)\]
+\\begin{Exercice}{$1}
+\\begin\{Exa\}
+\\begin{Exercice}{}
+\\end\{Exa\}
+\\end{Exercice}
+
