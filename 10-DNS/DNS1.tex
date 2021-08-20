@@ -1,0 +1,74 @@
+\documentclass[a4paper,french,11pt,twoside]{VcCours}
+
+\begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir non surveillé n°1}
+\begin{center}
+\large\bf 
+Pour le lundi 13 septembre 2021
+\end{center}
+\separationTitre
+
+
+\section*{Exercice 1}
+
+\emph{Les questions sont indépendantes.}
+
+\begin{enumerate}
+\item Résoudre sur $\mathbb{R}$ l'inéquation suivante :
+$$ \cos(x) > \cos(x-\pi/6)$$
+%\item Déterminer la forme algébrique de $z^{10}$ où :
+%$$z= \dfrac{1+i \sqrt{3}}{1-i}  $$
+\item Déterminer l'ensemble des entiers relatifs $n$ tels que $(1+i)^n$ 
+soit réel.
+\item Soit $\theta \in \mathbb{R}$. Linéariser $\sin^4(\theta)$ puis calculer 
+la quantité suivante :
+$$ S = \sin^4(\pi/8)+ \sin^4(3\pi/8) + \sin^4(5\pi/8) + \sin^4(7\pi/8)$$
+\item Résoudre dans $\mathbb{C}$ l'équation suivante :
+$$ (E) \quad i z^2+ \sqrt{3}z-1=0$$
+\item Déterminer les racines troisièmes de $Z=-8i$.
+\end{enumerate}
+
+
+\section*{Exercice 2}
+On considère la suite $(u_n)_{n \geq 0}$ définie par $u_0=0$ et pour tout 
+$n \in \mathbb{N}^*$ par :
+$$ u_n=\sqrt[4]{n+\sqrt[4]{(n-1)+\sqrt[4]{\cdots+\sqrt[4]{1}}}}$$
+
+\begin{enumerate}
+\item Établir une relation entre $u_n, u_{n-1}$ et $n,$ pour tout
+$n\in\N^*.$
+\item\begin{enumerate}
+\item Montrer par récurrence que, pour tout $n\in\N, \ u_n\leq
+\sqrt{n}.$
+\item En déduire que $u_n\egal_{+\infty}o(n)$ puis que : 
+$$u_n \equi_{+\infty}\sqrt[4]{n}$$
+\end{enumerate}
+\item On considère alors la suite $(\alpha_n)_{n \geq 0}$
+définie pour tout $n \in \mathbb{N}$ par :
+$$ \alpha_n=u_n-\sqrt[4]{n}$$
+Déduire de la première question un équivalent de $\alpha_n$ puis montrer que :
+$$u_n \egal_{+\infty}n^{1/4}+\frac{1}{4\sqrt{n}}+o\left(\frac{1}{\sqrt{n}}\right) $$
+\end{enumerate}
+
+
+\section*{Exercice 3}
+Soit $f : \mathbb{R} \rightarrow \mathbb{R}$ une fonction continue en $0$ telle que :
+$$ \forall (x,y) \in \mathbb{R}^2, \; f(x+y)=f(x)+f(y) $$
+On pose $a=f(1)$.
+
+\begin{enumerate}
+\item Déterminer $f(0)$.
+\item Montrer que pour tout réel $x$, $f(-x)=-f(x)$. En déduire que $f$ est 
+continue sur $\mathbb{R}$.
+\item Montrer que pour tout entier $n \geq 0$ et tout réel $x$, $f(nx)=nf(x)$ 
+puis que le résultat reste vrai pour $n \in \mathbb{Z}$.
+\item Montrer que pour tout $p \in \mathbb{Z}$ et tout $q \in \mathbb{N}^*$, 
+$f(p/q) = \dfrac{ap}{q}\cdot$
+\item Soit $x \in \mathbb{R}$. On pose pour tout entier $n \geq 1$,
+$$ r_n = \dfrac{\lfloor nx \rfloor}{n}$$
+Montrer que $(r_n)_{n \geq 1}$ converge vers $x$.
+\item En déduire l'expression de $f(x)$ pour tout réel $x$. 
+\end{enumerate}
+
+
+\end{document}
