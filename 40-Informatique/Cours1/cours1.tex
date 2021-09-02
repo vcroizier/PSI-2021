@@ -17,13 +17,13 @@ accumulateur $S$. Quand on a fini de passer en revue tous les éléments de la
 liste, $S$ contient le total souhaité.
 
 \begin{Python}
-def somme(L) :
+def somme(L):
     """Calcule la somme des termes de la liste L."""
     n = len(L) # nombre de terme de la liste
     S = 0
-    for k in range(n) :
+    for k in range(n):
         S = S + L[k]
-    return(S)
+    return S
 \end{Python}
 
 Un exemple d'exécution :
@@ -115,15 +115,15 @@ Quand on a fini de passer en revue tous les éléments de la liste, $M$ contient
 le plus grand de tous.
 
 \begin{Python}
-def maximum(L) :
+def maximum(L):
     """Donne le plus grand des termes de la liste L.
     """
     n = len(L) # nombre de terme de la liste
     M = L[0]
-    for k in range(1,n) :
-        if L[k]>M :
+    for k in range(1,n):
+        if L[k]>M:
             M = L[k]
-    return(M)
+    return M
 \end{Python}
 
 Un exemple d'exécution :
@@ -218,15 +218,15 @@ de $u_{k+1}$ et on répète l'opération jusqu'à obtenir le terme souhaité $u_
 À la fin, $U$ contient la valeur demandée.
 
 \begin{Python}
-def valeurDeU(n) :
+def valeurDeU(n):
     """Donne la valeur de Un.
     """
     U = 5
     k = 0
-    while k<n :
+    while k<n:
         U = 2*U+6/(k+1) # Calcul Uk+1 à partir de Uk
         k = k+1
-    return(U)
+    return U
 \end{Python}
 
 Un exemple d'exécution :
@@ -286,13 +286,13 @@ par leur numéro).
 Voici la même fonction avec une boucle \textalltt{for} qui gère la variable
 \textalltt{k}.
 \begin{Python}
-def valeurDeU(n) :
+def valeurDeU(n):
     """Donne la valeur de Un.
     """
     U = 5
-    for k in range(0,n) :
+    for k in range(0,n):
         U = 2*U+6/(k+1) # Calcul Uk+1 à partir de Uk
-    return(U)
+    return U
 \end{Python}
 
 
