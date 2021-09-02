@@ -1,0 +1,1438 @@
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+% cSpell:disable
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+
+\makeatletter
+\NewEnviron{ptc}[2][]{\@Enonce{Point de cours}{methodes}{#2}{%
+  \draw (mabox.north west) -- (mabox.south west); 
+  \draw[dashed,transform canvas={xshift = 2pt}] (mabox.north west) -- (mabox.south west); 
+  \draw[transform canvas={xshift = 4pt}] (mabox.north west) -- (mabox.south west); 
+}{#1}{\BODY}{MethodeColor}{black!5}}
+\makeatother
+
+% cSpell:enable
+\begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir de vacances de Mathématiques.}
+
+\begin{center}
+  \large\bf
+  Correction
+  \end{center}
+\separationTitre
+
+% cSpell:disable
+\section{Keep calm and do more calculus}
+% cSpell:enable
+
+\subsection{Coefficients binomiaux et formule du binôme}
+
+%\begin{Exercice}{}\end{Exercice}Cours de première année.
+%
+%
+%
+
+\begin{Exercice}{}\end{Exercice}D'après la formule du binôme, on a pour tout $(a,b) \in \mathbb{C}^2$,
+$$ (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^k b^{n-k}$$
+Il suffit de choisir $a=1$ et $b=1$ pour la première somme et $a=-1$ et $b=1$ pour la deuxième somme. On trouve $3^n$ et $0$.
+
+
+\subsection{Nombres complexes, trigonométrie et fonctions associées}
+
+%\begin{Exercice}{}\end{Exercice}Cours de première année.
+%
+% 
+
+\begin{Exercice}{}\end{Exercice}On sait que pour tout $a \in \mathbb{R}$, $\cos(2a)= 2 \cos^2(a)-1$ donc :
+$$ \cos^2(a) = \dfrac{\cos(2a)+1}{2}$$
+et ainsi :
+$$ \cos(\pi/8)^2 = \dfrac{\cos(\pi/4)+1}{2} = \dfrac{\sqrt{2}/2+1}{2} = \dfrac{\sqrt{2}+2}{4}$$
+Sachant que $\cos \left( \dfrac{\pi}{8} \right) \geq 0$ car $ \pi/8 \in [- \pi/2,  \pi/2]$, on trouve :
+
+$$\cos \left(\dfrac{\pi}{8}\right) = \dfrac{\sqrt{\sqrt{2}+2}}{2} $$
+
+
+
+
+\begin{Exercice}{}\end{Exercice}Le nombre complexe $j$ est une des racines $3$-ièmes de l'unité (avec $1$ et $\overline{j}$). Il n'est pas égal à $1$ donc :
+$$ 1+j+j^2= \dfrac{1-j^3}{1-j}= \dfrac{1-1}{1-j}=0$$
+
+
+
+
+
+\begin{Exercice}{}\end{Exercice}On sait que pour tout $a \in \mathbb{R}$, $\sin \left(a + \pi /2 \right) = \cos(a)$. Ainsi, pour tout $x \in \mathbb{R}$, on a l'égalité 
+$$\sin(x + {3\pi} / 4) = \cos(x  + {\pi} / 4)$$
+et il suffit maintenant de savoir résoudre une équation du type $\cos(a)=\cos(b)$. On obtient pour solutions : 
+$$x = \dfrac{7\pi}{12} [2 \pi] \; \hbox{ ou } \; x = \dfrac{\pi}{36} [2\pi/3]$$
+
+
+
+
+\begin{Exercice}{}\end{Exercice}Il suffit d'étudier $x \mapsto \sin(x)-x$ : celle-ci est dérivable sur $\mathbb{R}_+$, de dérivée négative donc elle est décroissante sur $\mathbb{R}_+$ et l'image de $0$ par cette fonction est $0$. Ainsi, pour tout $x \in \mathbb{R}_+$,
+$$ \sin(x) \leq \sin(0)=0$$
+
+
+%
+%
+%\begin{Exercice}{}\end{Exercice}Cours de première année.
+
+
+
+
+\begin{Exercice}{}\end{Exercice}On définit la fonction associée sur $\mathbb{R}^*$. Celle ci est dérivable sur $\mathbb{R}_{-}^*$ et $\mathbb{R}_{+}^*$, de dérivée nulle. La fonction est donc constante sur chacun de ces intervalles (mais \textit{attention} : ce n'est pas nécessairement la même constante). Sachant que $\textrm{arctan}(1)= \pi/4$ et que $\textrm{arctan}(-1)= - \pi/4$, on obtient :
+$$ \textrm{arctan}(x)+ \textrm{arctan}(1/x) = \left\lbrace\begin{array}{cl}
+\dfrac{\pi}{2} & \hbox{ si } x>0 \\[0.3cm]
+-\dfrac{\pi}{2} & \hbox{ si } x<0 \\
+\end{array}\right.$$
+
+
+%
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item La fonction $\arcsin$ est définie sur $[-1,1]$. Pour tout réel $x$, $1+x^2 \neq 0$ et :
+\begin{align*}
+\dfrac{x}{\sqrt {1 + x^{2}}} \in [-1,1] & \Longleftrightarrow \dfrac{\vert x \vert }{\sqrt {1 + x^{2}}} \leq 1\\
+& \Longleftrightarrow \vert x \vert \leq \sqrt{1+x^2} \quad \hbox{(racine carré positive)} \\
+& \Longleftrightarrow x^2 \leq 1+x^2 \quad \hbox{(croissance de la fonction carré sur } \mathbb{R}_+)
+\end{align*}
+La dernière inégalité était vraie pour tout réel $x$, on en déduit que la première inégalité aussi. Ainsi, $f$ est définie sur $\mathbb{R}$.
+\item Les équivalences de la question précédente restent vraies pour l'intervalle $]-1,1[$, intervalle où $\arcsin$ est dérivable. Ainsi, $f$ est dérivable sur $\mathbb{R}$ et on obtient après calculs que pour tout réel $x$,
+$$ f'(x) = \dfrac{1}{1+x^2}$$
+Ainsi, il existe une constante $K$ tel que pour tout réel $x$,
+$$ f(x) = \arctan(x)+ K$$
+En évaluant en $x=0$, on obtient $K=0$ et donc $f = \arctan$.
+\end{enumerate}
+
+\subsection{Sommes}
+%
+%\begin{Exercice}{}\end{Exercice}Cours de première année.
+
+
+
+\begin{Exercice}{}\end{Exercice}Vous l'aviez sûrement oublié.
+
+ 
+
+\begin{Exercice}{}\end{Exercice}Si $\omega=1$, $S_n= n$. Si $\omega \neq 1$, utiliser une des sommes du point de cours précédent sachant que $\omega^n=1$. On trouve dans ce cas $S_n=0$.
+
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Il suffit de faire apparaître l'angle moitié : $e^{i \alpha}-1 = e^{i \frac{\alpha}{2}} (e^{i \frac{\alpha}{2}} - e^{-i \frac{\alpha}{2}})$. Il faut ensuite se rappeler que :
+$$ \forall \theta \in \mathbb{R}, \; \sin(\theta) = \dfrac{e^{i \theta}-e^{-i \theta}}{2i}$$
+\item Les deux sommes sont respectivement la partie réelle et la partie imaginaire de la somme :
+$$ \sum_{k=0}^n e^{ikx} = \sum_{k=0}^n (e^{ix})^k$$
+qu'il est facile de calculer à l'aide d'une des sommes usuelles (on utilisera bien le fait que $x \in ]0, 2\pi [$ pour préciser que $e^{ix}$ est différent de $1$). En utilisant la question 1, il sera alors facile de déterminer la partie réelle et imaginaire. On trouve : 
+$$ \sum_{k=0}^n \cos(kx) = \cos(n x /2) \frac{\sin((n+1)x/2)}{\sin(x/2)} \quad \hbox{ et } \quad \sum_{k=0}^n \sin(kx) = \sin(n x /2) \frac{\sin((n+1)x/2)}{\sin(x/2)}$$
+\end{enumerate}
+
+
+
+\subsection{Dérivées et primitives}
+
+%\begin{Exercice}{}\end{Exercice}Cours de première année.
+%
+%
+
+\begin{Exercice}{}\end{Exercice}On donne uniquement \textit{une} primitive : 
+
+\begin{enumerate}
+\item C'est de la forme $ - \dfrac{1}{2} u'e^u$. Réponse : $x \mapsto - \dfrac{1}{2} e^{-x^2}$.
+\item C'est de la forme $ u'u$. Réponse : $x \mapsto \dfrac{\ln(x)^2}{2} \cdot$
+\item C'est de la forme $\dfrac{u'}{u}\cdot$ Réponse : $x \mapsto \ln( -\ln(x) )$ sur $]0,1[$ et $x \mapsto \ln( \ln(x) )$ sur $]1, + \infty[$.
+\item C'est de la forme $ -\dfrac{u'}{2\sqrt{u}}$. Réponse : $x \mapsto - \sqrt{1-e^{2x}}.$
+\item C'est de la forme $ \dfrac{u'}{\sqrt{u}}$. Réponse : $x \mapsto 2 \sqrt{\tan(x)}.$
+\item On a par linéarisation, pour tout $x \in \mathbb{R}$, $\cos(x)^3 = \dfrac{\cos(3x)+3\cos(x)}{4}$ donc une primitive est la fonction $x \mapsto \dfrac{\sin(3x)}{12} + \dfrac{3\sin(x)}{4}\cdot$
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item $I= 1$.
+\item $J= e-2$.
+\item $K = \dfrac{1}{4} (\pi - \ln(4))$.
+\item $L = 5- \dfrac{\pi}{4}\cdot$
+\item $M = \dfrac{1}{2} (1+e \sin(1)-e \cos(1))$ (double intégration par parties qui permet d'obtenir une équation simple dont $M$ est solution). On peut aussi remarquer que $M$ est la partie imaginaire de l'intégrale :
+$$ \int_{0}^{1} e^{ix+1} \dx$$
+Il suffit ensuite de calculer cette intégrale puis de déterminer sa partie imaginaire.
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item $I=   -1+e+ \ln(2)-\ln(1+e)$ avec le changement de variable $u : t \mapsto e^t$ et en remarquant\footnote{de manière subtile !} que :
+$$ \frac{u}{u+1} = \frac{u+1-1}{u+1} = 1 - \frac{1}{u+1}$$
+\item $J =   \dfrac{\ln(2)}{2}$ avec le changement de variable $u : t \mapsto \ln(t)$.
+\item $K =   1+ \ln(2)-\ln(1+e)$ avec le changement de variable $u : t \mapsto e^{-t}$.
+%\item $L =   - \dfrac{\ln(3-2\sqrt{2})}{2\sqrt{2}}$ avec le changement de variable $u : t \mapsto \cos(t)$ et en remarquant l'égalité suivante : 
+%$$ \frac{2}{1-y^2} = \frac{1}{1-y} + \frac{1}{1+y}$$
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}
+\begin{enumerate}
+\item  $  I_{0}=\int_{1}^{e}x^{2} dx$ existe car $x \rightarrow x^2$ est continue sur $[1,e]$. On a :
+\[ I_0 = \left[ \frac{x^3}{3} \right]_1^e = \frac{e^3}{3} - \frac{1^3}{3} = \frac{e^3-1}{3} \]
+
+\item 
+\begin{enumerate}
+\item Soit $n \geq 0$.
+$$ I_{n+1}-I_n = \int_{1}^e x^2 \ln (x)^{n+1}- x^2\ln (x)^{n} \dx = \int_1^e x^2 \ln(x)^n (\ln(x)-1) \dx$$
+Pour tout $x \in [1,e]$, $0 \leq \ln(x) \leq 1$ donc :
+$$  x^2 \ln(x)^n (\ln(x)-1) \leq 0$$
+Par positivité de l'intégrale (les bornes sont dans le bon sens), on en déduit que :
+$$ I_{n+1}-I_n \leq 0$$
+Ainsi, la suite $(I_{n})_{n\ge 1}$est décroissante.
+
+\item Par positivité de l'intégrale, on en déduit que la suite $(I_n)_{n \geq 0}$ est positive. Cette suite est décroissante et minorée par $0$, donc d'après le théorème de la limite monotone, $(I_n)_{n  \geq 0}$ converge.
+
+\item La première inégalité est évidente ($\ln$ positive sur $[1,+\infty[$). Soit $f$ la fonction définie sur $[1,e]$ par $f(x)=\ln (x)-x/e$. $f$ est dérivable sur $[1,e]$ (somme de fonctions usuelles) et pour tout $x \in [1,e]$, on a : 
+\[ f'(x)={\frac{1}{x}}-{\frac{1}{e}}={\frac{e-x}{ex}} \geq 0\]
+Donc $f$ est croissante sur $[1,e]$. Et comme $f(e)=0$, $f$ est négative sur $[1,e]$. Ainsi, pour tout $x \in [1,e]$, 
+$$0 \leq \ln(x) \leq   \frac{x}{e}$$
+
+\item Comme $x\rightarrow x^{n}$ est croissante sur $[0,+\infty [$ et que $\ln (x)$ et $x/e$ appartiennent à cet intervalle pour $x \in [1,e]$, on a :
+\[ \ln (x)^{n}\le \frac{x^{n}}{e^{n}}\]
+et sachant que $x^2 \geq 0$, on a : 
+\[x^{2}\ln (x)^{n}\le \frac{x^{n+2}}{e^{n}}\]
+Les bornes étant dans le bon sens et les fonctions continues sur l'intervalle $[1,e]$, on a par croissance :
+\[ \int_{1}^{e}x^{2}\ln (x)^{n}dx\le \int_{1}^{e}{\frac{x^{n+2}}{e^{n}}} dx=\left[ {\frac{x^{n+3}}{(n+3)e^{n}}}\right] _{1}^{e}={\frac{e^{3}}{(n+3)}}
+-{\frac{1}{(n+3)e^{n}}}\]
+En utilisant la question 2.b), on a donc :
+\[ 0 \le I_n \leq  {\frac{e^{3}}{(n+3)}}
+-{\frac{1}{(n+3)e^{n}}} \]
+Or, par somme, 
+$$  \lim_{n \rightarrow + \infty} {\frac{e^{3}}{(n+3)}}-{\frac{1}{(n+3)e^{n}}} = 0$$
+donc par encadrement, $(I_n)_{n \geq 0}$ converge et sa limite est $0$.
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Soit $n \geq 0$. On a : $I_{n+1}=   \int_{1}^{e}x^{2}(\ln x)^{n+1} \dx$. Les fonctions $x \mapsto \dfrac{x^3}{3}$ et $x \mapsto \ln(x)^{n+1}$ sont de classe $\mathcal{C}^1$ sur $[1,e]$. Par intégration par parties, on en déduit que :
+
+\[ I_{n+1}=\big{[}\ln (x)^{n+1} x^{3}/3 \big{]}^{e}-\int_{1}^{e}(n+1){\frac{x^{3}\ln (x)^{n}
+}{3x}}\dx={\frac{e^{3}}{3}}-{\frac{(n+1)}{3}}\int_{1}^{e}x^{2}\ln (x)^{n}\dx=
+{\frac{e^{3}}{3}}-{\frac{n+1}{3}}I_{n}
+\]
+\item A l'aide de l'égalité précédente, on sait que pour tout $n \geq 0$, on a :
+\[ 3I_{n+1}=e^3-nI_n - I_n \]
+c'est-à-dire :
+\[ 3I_{n+1} -e^3 + I_n  = -nI_n \]
+et finalement :
+\[ -3I_{n+1}+e^3-I_n = n I_n \]
+Or $  \lim_{n \rightarrow + \infty} I_n = \lim_{n \rightarrow + \infty} I_{n+1} = 0$, donc par somme :
+\[ \lim\limits_{n\rightarrow +\infty }nI_{n}=e^{3}\]
+et ainsi :
+$$ I_n \underset{+ \infty}{\sim} \dfrac{e^3}{n}$$
+\end{enumerate}
+\end{enumerate}
+
+\begin{Exercice}{}\end{Exercice}La fonction $t \mapsto e^{-t^2}$ est continue sur $\mathbb{R}$. Elle admet donc une primitive $F$ de classe $\mathcal{C}^1$ sur $\mathbb{R}$. On a pour tout $x \in \mathbb{R}$,
+$$ H(x) = F(x^2)- F(x)$$
+Par composition de fonctions de classe $\mathcal{C}^1$ sur $\mathbb{R}$, on en déduit que $H$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et on a pour tout réel $x$,
+$$ H'(x) = 2x F'(x^2)-F'(x) = 2x e^{-(x^2)^2} - e^{-x^2} = 2x e^{-x^4} - e^{-x^2}$$
+
+
+
+
+
+\subsection{Équations différentielles}
+
+%\begin{Exercice}{}\end{Exercice}Cours de première année.
+%
+%
+
+\begin{Exercice}{}\end{Exercice}
+\begin{enumerate}
+\item Les solutions sont les fonctions définies sur $\mathbb{R}$ par $x \mapsto ce^{\frac{x^2}{2}}+e^{x^2}$ où $c \in \mathbb{R}$ (variation de la constante pour la solution particulière).
+\item Les solutions sont les fonctions définies sur $]-\pi/2, \pi/2[$ par $x \mapsto c \cos(x)+\sin(x)$ où $c \in \mathbb{R}$ (solution particulière à l'\oe{}il).
+\item Les solutions sont les fonctions définies sur $\mathbb{R}$ par $x \mapsto c e^{-x}+ e^{-x}\ln(e^x+1)$ où $c \in \mathbb{R}$ (variation de la constante pour la solution particulière).
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Les solutions sont les fonctions définies sur $\mathbb{R}$ par $x \mapsto c_1 e^{\frac{x}{2}}+ c_2 e^{-3x}$ où $(c_1,c_2) \in \mathbb{R}^2$.
+\item Les solutions sont les fonctions définies sur $\mathbb{R}$ par $x \mapsto e^{\frac{3x}{2}}\left(c_1 \sin \left( \frac{\sqrt{3}x}{2}\right)+ c_2 \cos \left( \frac{\sqrt{3}x}{2}\right) \right)$ où $(c_1,c_2) \in \mathbb{R}^2$.
+\item Les solutions sont les fonctions définies sur $\mathbb{R}$ par $x \mapsto c_1 e^x+ c_2 xe^x$ où $(c_1,c_2) \in \mathbb{R}^2$.
+\item Les solutions sont les fonctions définies sur $\mathbb{R}$ par $x \mapsto c_1 e^x+ c_2 e^{3x}- \dfrac{xe^x}{2}$ où $(c_1,c_2) \in \mathbb{R}^2$. 
+
+\bigskip
+
+\noindent Rappelons le résultat suivant : si pour une équation différentielle du second ordre à coefficients constants, le second membre est de la forme $t \mapsto t^n e^{\alpha t}$ alors il existe une solution particulière sous la forme :
+\begin{itemize}
+\item $t \mapsto P(t) e^{\alpha t}$ avec $P$ de degré $n$ si $\alpha$ n'est pas solution de l'équation caractéristique.
+\item $t \mapsto P(t) e^{\alpha t}$ avec $P$ de degré $n+1$ si $\alpha$ est racine simple de l'équation caractéristique.
+\item $t \mapsto P(t) e^{\alpha t}$ avec $P$ de degré $n+2$ si $\alpha$ est racine double de l'équation caractéristique.
+\end{itemize}
+Dans notre cas, les solutions de l'équation caractéristique sont $1$ et $3$ donc il suffit de chercher une solution de la forme $t \mapsto P(t) e^{ t}$ avec $P$ de degré $1$.
+\end{enumerate}
+
+\bigskip
+
+\subsection{Développements limités}
+%
+%\begin{Exercice}{}\end{Exercice}Cours de première année.
+%
+%
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item $1- \dfrac{x^4}{6}+o(x^4)$ (par produit).
+\item $\dfrac{x^3}{2}- \dfrac{x^4}{4}$ (par produit)
+\item $x - \dfrac{x^2}{2} + \dfrac{x^3}{6}+ o(x^3)$.
+\item $\sqrt{2} + \dfrac{\sqrt{2}}{4}(x-2) - \dfrac{\sqrt{2}}{32}(x-2)^2+o((x-2)^2)$ (en posant $h=x-2$ qui tend vers $0$ quand $x$ tend vers $2$ puis en factorisant par $\sqrt{2}$).
+\item $\ln(2) +\dfrac{x}{4} - \dfrac{3x^2}{32} + \dfrac{5x^3}{96} + o(x^3)$ (en factorisant par $2$ puis par substitution).
+\item $\dfrac{1}{2}- \dfrac{x^2}{8}+ o(x^3)$ en factorisation par $\dfrac{1}{2}$ puis par substitution.
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Si $x \rightarrow + \infty$, $x^3 + 1 \sim x^3$ puis par composition par la fonction puissance $\dfrac{1}{2}$ :
+$$ \sqrt{x^3+1} \sim x^{\frac{3}{2}}$$
+De plus $\dfrac{1}{x} \rightarrow 0$ donc :
+$$ \sin \left( \frac{1}{x} \right) \sim \frac{1}{x}$$
+Finalement, par produit, l'équivalent cherché est $  \sqrt{x}$.
+\item Il suffit de remarquer que $\cos(x)=1+ \cos(x)-1$ et d'utiliser les équivalents usuels associés aux fonctions $\ln$ et $\cos$ (et ne pas oublier de préciser que $\cos(x)-1$ tend vers $0$ quand $x$ tend vers $0$ pour pouvoir effectuer la substitution). L'équivalent cherché est $  - \frac{x^2}{2} \cdot$
+\item On raisonne ici par intuition : $\ln(x^2)$ semble être le terme prépondérant, il suffit alors de factoriser par $x^2$ l'expression et c'est quasiment fini... L'équivalent cherché est $  2 \ln(x)$.
+\item La fonction a une limite non nulle en $0$ qui vaut $1$ donc l'équivalent cherché est $1$.
+\item $\dfrac{x^5}{60}$ avec un développement limité.
+\item $\ln( \frac{\pi}{2}-x)$ en posant $h=\dfrac{\pi}{2}-x$ et en se ramenant au sinus à l'aide d'une formule de trigonométrie et en composant par la fonction $\ln$ un équivalent (\textit{en justifiant que l'on a droit de le faire dans ce cas})
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}Pour tout entier naturel $n \geq 1$,
+$$ \left( 1 + \frac{1}{n} \right)^n = e^{n \ln \left(1 + \frac{1}{n} \right)}$$
+Or si $n$ tend vers $+ \infty$, $\dfrac{1}{n}$ tend vers $0$ donc :
+$$  \ln \left(1 + \frac{1}{n} \right) \underset{ + \infty}{\sim} \frac{1}{n}$$
+puis par produit :
+$$ n \ln \left(1 + \frac{1}{n} \right) \underset{ + \infty}{\sim} 1$$
+Ainsi :
+$$ \lim_{n \rightarrow + \infty} n \ln \left(1 + \frac{1}{n} \right) = 1$$
+puis par composition\footnote{Attention : on ne compose pas un équivalent avec la fonction exponentielle !} avec la fonction exponentielle qui est continue en $1$ : 
+$$ \lim_{n \rightarrow + \infty} \left( 1 + \frac{1}{n} \right)^n = e$$
+Pour tout entier naturel $n \geq 1$,
+$$ \left( 1 + \frac{1}{n} \right)^{n^2} = e^{n^2 \ln \left(1 + \frac{1}{n} \right)}$$
+Or si $n$ tend vers $+ \infty$, $\dfrac{1}{n}$ tend vers $0$ donc :
+$$  \ln \left(1 + \frac{1}{n} \right) \underset{ + \infty}{\sim} \frac{1}{n}$$
+puis par produit :
+$$ n^2 \ln \left(1 + \frac{1}{n} \right) \underset{ + \infty}{\sim} n$$
+Ainsi :
+$$ \lim_{n \rightarrow + \infty} n^2 \ln \left(1 + \frac{1}{n} \right) = + \infty$$
+puis par composition avec la fonction exponentielle, on a :
+$$ \lim_{n \rightarrow + \infty} \left( 1 + \frac{1}{n} \right)^{n^2} = + \infty$$
+
+\subsection{Suites usuelles}
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item On résout l'équation $x= 5x-6$ d'inconnue $x \in \mathbb{R}$ :
+$$ x=5x-6 \Longleftrightarrow x = \frac{3}{2} $$
+On a donc pour tout entier $n \geq 0$,
+$$ \left\lbrace \begin{array}{ccl}
+u_{n+1} & = & 5 u_n - 6 \\
+  \frac{3}{2} & = & 5 \times \frac{3}{2} - 6 \\
+\end{array}\right. $$
+En soustrayant les égalités, on a alors :
+$$ u_{n+1} - \frac{3}{2} = 5 \left( u_{n} - \frac{3}{2} \right)$$
+Ainsi $\left( u_{n} - \frac{3}{2} \right)_{n \geq 0}$ est géométrique de raison $5$. Pour tout $n \geq 0$, on a alors :
+$$  u_{n} - \frac{3}{2} = \left( u_{0} - \frac{3}{2} \right) \times 5^n = \frac{1}{2} \times 5^n $$
+Ainsi, pour tout $n \geq 0$,
+$$ u_n = \frac{3}{2} + \frac{1}{2} \times 5^n$$
+\item Même raisonnement que dans la question précédente. Pour tout $n \geq 0$,
+$$ v_n = 4 - \frac{3}{2^n}$$
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item On résout, pour $x \in \mathbb{R}$, l'équation :
+$$ x^2-3x+1=0$$
+Cette équation a deux solutions :
+$$ q_1 = \frac{3-\sqrt{5}}{2}  \; \hbox{ et } q_2 = \frac{3+\sqrt{5}}{2}$$
+Il existe donc un couple de réels $(\lambda, \mu)$ tel que pour tout entier $n \geq 0$,
+$$ u_n = \lambda q_1^n + \mu q_2^n$$
+On sait que $u_0=1$ donc $\lambda+\mu=1$. On sait aussi que $u_1=1$ donc $\lambda q_1+ \mu q_2=1$. Une résolution du système nous donne alors le résultat :
+$$\forall n \geq 0, \; u_n =   \frac{\sqrt{5}+1}{2 \sqrt{5}} \left( \frac{3-\sqrt{5}}{2} \right)^n + \frac{\sqrt{5}-1}{2 \sqrt{5}} \left( \frac{3+ \sqrt{5}}{2} \right)^n$$
+\item On résout, pour $x \in \mathbb{R}$, l'équation :
+$$ x^2-2x+1=0$$
+qui est équivalente à $(x-1)^2=0$ donc cette équation a pour unique solution $1$. Il existe donc un couple de réels $(\lambda, \mu)$ tel que pour tout entier $n \geq 0$,
+$$ u_n = (\lambda+ \mu n) 1^n = \lambda + \mu n$$
+On sait que $u_0=1$ donc $\lambda=1$. On sait aussi que $u_1=1$ donc $\lambda+ \mu =1$ donc $\mu =0$. Ainsi, pour tout entier $n \geq 0$, $u_n=1$. On pouvait aussi conjecturer ce résultat et le prouver par récurrence double...
+\item On résout, pour $x \in \mathbb{R}$, l'équation :
+$$ x^2-x+1=0$$
+Cette équation a deux solutions :
+$$ q_1 = \frac{1+i\sqrt{3}}{2}  \; \hbox{ et } q_2 = \overline{q_1}$$
+On a :
+$$ q_1 = 1 \times e^{i \pi/3}$$
+Il existe donc un couple de réels $(\lambda, \mu)$ tel que pour tout entier $n \geq 0$,
+$$ u_n = 1^n (\lambda \cos(n \pi/3) + \mu \sin(n \pi/3))$$
+On sait que $u_0=0$ donc $\lambda=0$. On sait aussi que $u_1=1$ donc $\mu \dfrac{\sqrt{3}}{2}  =1$. Ainsi, pour tout entier $n \geq 0$,
+$$u_n =   \frac{2}{\sqrt{3}} \sin \left( n \frac{\pi}{3} \right) $$
+\end{enumerate}
+
+\section{Études de suites et de fonctions}
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Par composition.
+\item Pour tout $x \in \mathbb{R}^*$,
+$$ 0 \leq \vert f(x) \vert \leq x^2$$
+Il suffit de conclure avec le théorème d'encadrement. Pour l'étude de la dérivabilité, il suffit de procéder de la même manière mais avec le taux d'accroissement : la fonction est dérivable en $0$ et sa dérivée est nulle en ce point.
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}La suite est positive (raisonnement par récurrence), il est facile de déterminer ses variations et d'en déduire sa convergence. Pour la limite, il suffit de passer à la limite dans la relation de récurrence définissant cette suite.
+
+
+
+\begin{Exercice}{}\end{Exercice}Il suffit d'utiliser le théorème des valeurs intermédiaires avec la fonction $x \mapsto f(x)-x$ : Quel est le signe de $f(0)-0$? De $f(1)-1$?
+
+
+
+\begin{Exercice}{}\end{Exercice}Il doit être facile de montrer qu'une telle fonction change de signe sur $\mathbb{R}$ en étudiant les limites en $ \pm \infty$.
+
+
+
+\begin{Exercice}{}\end{Exercice}La fonction $f$ est de classe $\mathcal{C}^1$ (donc continue) sur l'intervalle $\mathbb{R}_+^{*}$. Pour tout $x \in \mathbb{R}_+^{*}$,
+$$ f'(x) = 1 + \dfrac{1}{x}>0$$
+Ainsi, $f$ est continue et strictement croissante sur $\mathbb{R}_+^{*}$ donc $f$ est une bijection de $\mathbb{R}_+^{*}$ sur $J$ où :
+$$ J = f(\mathbb{R}_+^{*}) = f(]0, + \infty[) = ]\lim_{x \rightarrow 0^+} f(x), \lim_{x \rightarrow + \infty} f(x)[ = \mathbb{R}$$
+La dérivée de $f$ est non nulle en tout point donc $f^{-1}$ est dérivable en tout point et on a pour tout $y \in \mathbb{R}$,
+$$ (f^{-1})'(y) = \dfrac{1}{f'(f^{-1}(y))}= \dfrac{1}{1+ \dfrac{1}{f^{-1}(y)}} = \dfrac{f^{-1}(y)}{1+f^{-1}(y)}$$
+
+
+\begin{Exercice}{}\end{Exercice}Soit $x>0$. Remarquons que :
+$$ \ln \left( 1 + \dfrac{1}{x} \right) = \ln \left(\dfrac{x+1}{x} \right)= \ln(x+1)-\ln(x)$$
+et $x+1-x=1$ donc l'inégalité à vérifiée est équivalente à :
+$$ \dfrac{1}{x+1} < \dfrac{\ln(x+1)-\ln(x)}{x+1-x} < \dfrac{1}{x}$$
+La fonction logarithme népérien est continue sur $[x,x+1]$, dérivable sur $]x,x+1[$. Il existe donc un réel $\theta \in ]x,x+1[$ tel que :
+$$ \dfrac{\ln(x+1)-\ln(x)}{x+1-x} = \ln'(\theta) = \dfrac{1}{\theta}$$
+Or $0<x< \theta< x+1$ donc par stricte décroissance de la fonction inverse sur $\mathbb{R}_+^{*}$, on en déduit que :
+$$ \dfrac{1}{x+1}< \dfrac{1}{\theta} < \dfrac{1}{x}$$
+et ainsi :
+$$ \dfrac{1}{x+1} < \dfrac{\ln(x+1)-\ln(x)}{x+1-x} < \dfrac{1}{x}$$
+puis :
+$$ \dfrac{1}{x+1} < \ln \left( 1 + \dfrac{1}{x} \right) < \dfrac{1}{x}$$
+
+ 
+%
+%\begin{Exercice}{}\end{Exercice}Pour la première question : étudier $f$. Pour obtenir l'encadrement de $f'$ : il suffit d'étudier cette fonction. Pour justifier que la suite est bien définie, il suffit de procéder par récurrence et de remarquer que $I$ est stable par $f$. Pour la question 2.(b) : penser à l'inégalité des accroissements finis.
+
+%
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item La fonction $f$ est de classe $\mathcal{C}^{\infty}$ sur $I$ par quotient de deux fonctions qui le sont avec un dénominateur ne s'annulant pas. Pour tout $x \in I$,
+$$ f'(x) = \dfrac{1+\ln(x)- x \times 1/x}{(1+ \ln(x))^2} = \dfrac{\ln(x)}{(1+\ln(x))^2} \geq 0$$
+car $x \geq 1$. Ainsi, $f$ est croissante sur $I$ donc pour tout $x \in I$,
+$$ f(x) \geq f(1) = 1$$
+et ainsi $f(x) \in I$.
+\item Soit $x \in I$.
+\begin{align*}
+f(x)=x & \Longleftrightarrow \dfrac{x}{1+\ln(x)} = x \\
+& \Longleftrightarrow x = x + x \ln(x) \\
+& \Longleftrightarrow 0 = x \ln(x) \\
+& \Longleftrightarrow \ln(x)=0 \quad \hbox{ car } x \geq 1 \\
+& \Longleftrightarrow x = 1 
+\end{align*}
+\item Pour tout $x \in I$,
+\begin{align*}
+f''(x) & = \dfrac{1/x (1+\ln(x))^2 - \ln(x) \times 2 (1/x) (1+\ln(x))}{(1+\ln(x))^4} \\
+& = \dfrac{1+\ln(x)-2 \ln(x)}{x (1+\ln(x))^3}\\
+& = \dfrac{1-\ln(x)}{x (1+\ln(x))^3}
+\end{align*}
+On en déduit que $f'$ est croissante sur $[1,e]$ et décroissante sur $[e, + \infty[$. On a :
+$$ f'(1) = 0, \; f'(e) = \dfrac{1}{4}$$
+et d'après le théorème des croissances comparées :
+$$ \lim_{x \rightarrow + \infty} f'(x) = 0$$
+On en déduit que pour tout $x \in I$,
+$$ 0 \leq f'(x) \leq \dfrac{1}{4}$$
+
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item On sait que $f(I) \subset I$ et $u_0 = 2 \in I$. La suite est donc bien définie.
+\item Soit $n \geq 0$. On a :
+$$ \vert u_{n+1} - 1 \vert = \vert f(u_n)- f(1) \vert $$
+D'après la question précédente, la fonction $\vert f' \vert$ est majorée par $\dfrac{1}{4}$ donc d'après l'inégalité des accroissements finis : 
+$$  \vert f(u_n)- f(1) \vert  \leq \dfrac{1}{4} \vert u_n - 1 \vert$$
+\item Il suffit d'utiliser une raisonnement par récurrence. On en déduit d'après le théorème d'encadrement que la suite $(u_n)_{n \geq 0}$ converge et que :
+$$ \lim_{n \rightarrow + \infty} u_n = 1$$
+\end{enumerate}
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}
+\begin{enumerate}
+\item Voir exercice 26 par exemple (ou utiliser la quantité conjuguée).
+\item D'après la question $1$, on a pour tout entier $n \geq 1$,
+$$ \sum_{k=1}^n \sqrt{k+1} - \sqrt{k} \leq \dfrac{1}{2} \sum_{k=1}^n \dfrac{1}{\sqrt{k}}$$
+Le résultat est alors évident par télescopage.
+\item Par théorème de comparaison, la suite des sommes partielles de la série étudiée diverge vers $+ \infty$ donc la série diverge.
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}\begin{enumerate}
+\item
+$g$ est de classe $C^{\infty}$ sur $\mathbb{R}$ et $h$ est de classe $C^{\infty}$ sur $\mathbb{R}\backslash\left\lbrace-1 \right\rbrace $. Une démonstration par récurrence donne immédiatement :
+$$ \forall k \in \mathbb{N}, \; \forall\:x\in\mathbb{R}, \; g^{(k)}(x)=2^k\mathrm{e}^{2x}$$
+En calculant les premières dérivées de $h$, on conjecture que :
+$$ \forall k \in \mathbb{N}, \forall\:x\in\mathbb{R}\backslash\left\lbrace-1 \right\rbrace, \; h^{(k)}(x)=\dfrac{(-1)^kk!}{(1+x)^{k+1}}$$
+\item $g$ et $h$ sont de classe $C^{\infty}$ sur $\mathbb{R}\backslash\left\lbrace-1 \right\rbrace$ donc, d'après la formule de Leibniz, $f$ est de classe $C^{\infty}$ sur $\mathbb{R}\backslash\left\lbrace-1 \right\rbrace$ et pour tout $x \in \mathbb{R} \backslash\left\lbrace-1 \right\rbrace$,
+\begin{align*}
+f^{(n)}(x) & = playstyle\sum\limits_{k=0}^{n}\dbinom{n}{k}g^{(n-k)}(x)h^{(k)}(x) \\
+&= playstyle\sum\limits_{k=0}^{n}\dbinom{n}{k}2^{n-k}\mathrm{e}^{2x}\dfrac{(-1)^k k!}{(1+x)^{k+1}}\\
+& = n!\mathrm{e}^{2x}\sum\limits_{k = 0}^n \dfrac{{( - 1)^k 2^{n - k} }}{{(n - k)!}(1 + x)^{k + 1}} 
+\end{align*}
+\end{enumerate}
+
+\section{Séries}
+
+
+\begin{Exercice}{}\end{Exercice}Pour tout entier $n \geq 1$,
+\begin{align*}
+\sum_{k=1}^n \ln \left( 1 + \dfrac{1}{k} \right) & = \sum_{k=1}^n \ln \left( \dfrac{k+1}{k} \right) \\
+& = \sum_{k=1}^n \ln(k+1) - \ln(k) \\
+& = \ln(n+1)- \ln(1) \\
+& = \ln(n+1)
+\end{align*}
+Ainsi,
+$$ \lim_{n \rightarrow + \infty} \sum_{k=1}^n \ln \left( 1 + \dfrac{1}{k} \right) = + \infty$$
+La série étudiée est donc divergente.
+
+
+
+\begin{Exercice}{}\end{Exercice}Pour tout entier $n \geq 1$, on a :
+$$ \dfrac{2^n}{3^{n+1}} = \dfrac{1}{3} \left( \dfrac{2}{3} \right)^n $$
+La série de terme général $(2/3)^n$ est une série géométrique convergente car $\vert 2/3 \vert <1$. Ainsi, la série étudiée converge et sa somme vaut :
+\begin{align*}
+\sum_{n=1}^{+ \infty}  \dfrac{2^n}{3^{n+1}} & = \dfrac{1}{3} \sum_{n=1}^{+ \infty}  \left( \dfrac{2}{3} \right)^n  \\
+& = \dfrac{1}{3} \left( \sum_{n=0}^{+ \infty}  \left( \dfrac{2}{3} \right)^n - 1 \right) \\
+& = \dfrac{1}{3} \left( \dfrac{1}{1-2/3} - 1\right) \\
+& = \dfrac{2}{3} 
+\end{align*}
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item La série étudiée est une série à termes positifs. On a :
+$$ u_n \underset{+ \infty}{\sim} \dfrac{1}{n^3}$$
+La série de terme général positif $\dfrac{1}{n^3}$ est convergente (série de Riemann avec $3>1$) donc par critère de comparaison des séries à termes positifs, on en déduit que la série de terme général $u_n$ converge.
+
+\item La série étudiée est une série à termes positifs. On a :
+$$ u_n \underset{+ \infty}{\sim} \dfrac{2n^2}{3n^3} = \dfrac{2}{3} \times \dfrac{1}{n}$$
+La série de terme général positif $\dfrac{1}{n}$ est divergente (série harmonique) donc par critère de comparaison des séries à termes positifs, on en déduit que la série de terme général $u_n$ diverge.
+\item La série étudiée est à termes positifs car la fonction sinus est positive sur $[0, \pi/2]$ et que pour tout entier $n \geq 1$, $0 \leq 1/n \leq 1$. Quand $n$ tend vers $+ \infty$, $\dfrac{1}{n}$ tend vers $0$ donc :
+$$  u_n \underset{+ \infty}{\sim} \dfrac{1}{n} \times \dfrac{1}{n} = \dfrac{1}{n^2}$$
+La série de terme général positif $\dfrac{1}{n^2}$ est convergente (série de Riemann avec $2>1$) donc par critère de comparaison des séries à termes positifs, on en déduit que la série de terme général $u_n$ converge.
+\item La série étudiée n'est pas à termes positifs. Étudions pour commencer la convergence absolue : pour tout entier $n \geq 1$,
+$$ 0 \leq \vert u_n \vert \leq \dfrac{1}{n^2}$$
+La série de terme général positif $\dfrac{1}{n^2}$ est convergente (série de Riemann avec $2>1$) donc par critère de comparaison des séries à termes positifs, on en déduit que la série de terme général $u_n$ converge absolument donc converge.
+\item On a :
+$$ u_n \underset{+ \infty}{=} o  \left( \dfrac{1}{n^2} \right)$$
+car 
+$$ \dfrac{u_n}{1/n^2} = n^4 e^{-n^2} \underset{n \rightarrow + \infty}{\longrightarrow} 0$$
+La série de terme général positif $\dfrac{1}{n^2}$ est convergente (série de Riemann avec $2>1$) donc par critère de comparaison, on en déduit que la série de terme général $u_n$ converge absolument donc converge.
+\item Même démarche que la question précédente. Rappelons que le critère utilisé : Si $u_n \underset{+ \infty}{=} o(v_n)$ où $(u_n)$ est une suite de réels ou de complexes et $(v_n)_{n \geq 0}$ est une suite positive et si la série de terme général $v_n$ converge alors la série de terme général $u_n$ converge absolument.
+\end{enumerate}
+
+\section{Polynômes}
+
+%\begin{Exercice}{}\end{Exercice}On trouve $Q(X) = X^3-2X-1$ et $R(X)=2X$.
+
+\begin{Exercice}{}\end{Exercice}La fonction polynomiale $P^2$ est continue et positive sur $[0,1]$. Si 
+$$ \int_0^1 P(t)^2 \dt = 0 $$
+alors par positivité de l'intégrale (les bornes sont dans le bon sens), on en déduit que $P^2$ est nulle sur $[0,1]$ donc $P$ est nulle sur $[0,1]$. Le polynôme $P$ admet une infinité de racines donc $P$ est le polynôme nul.
+
+
+\begin{Exercice}{}\end{Exercice}Soit $P \in \mathbb{C}[X]$ vérifiant la propriété de l'énoncé. Posons $Q(X)=P(X)-P(0)$. Pour tout entier $n \geq 0$,
+$$ Q(n+1) = P(n+1)-P(0)=P(n)-P(0)= Q(n)$$
+La suite $(Q(n))_{n \geq 0}$ est donc constante et $Q(0)=P(0)-P(0)=0$. Ainsi, pour tout $n \geq 0$,
+$$ Q(n)=0$$
+$Q$ admet une infinité de racines donc $Q$ est le polynôme nul et ainsi $P(X)=P(0)$. Le polynôme $P$ est donc constant. La réciproque est vraie donc l'ensemble des polynômes vérifiant $P(X+1)=P(X)$ est l'ensemble des polynômes constants.
+
+
+
+\begin{Exercice}{}\end{Exercice}
+%Pour tout $n \geq 1$, posons :
+%$$ P_n(X) = n X^{n+2} - (n+2)X^{n+1} + (n+2)X^n -n $$
+\begin{enumerate}
+\item $P_n(1) = P_n'(1) =P_n''(1)=0$.
+\item $1$ est racine au moins triple de $P_n$ donc il existe un polynôme $Q \in \mathbb{R}[X]$ tel que :
+$$ P_n(X)=(X-1)^3 Q(X)$$
+\end{enumerate}
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Il est possible de calculer le discriminant mais il est plus simple de se rappeler que pour tout réel $x$ différent de $1$ :
+$$ 1+x+x^2 = \dfrac{x^3-1}{x-1}$$
+et donc :
+$$ (x-1)(1+x+x^2)= x^3-1$$
+L'égalité est aussi vérifiée pour $x=1$ donc :
+$$ (X-1)(1+X+X^2)= X^3-1$$
+Or les racines de $X^3-1$ sont $1$, $j$ et $\overline{j}$ donc :
+$$ (X-1)(1+X+X^2)=(X-1)(X-j)(X- \overline{j})$$
+On en déduit que :
+$$ 1+X+X^2 = (X-j)(X- \overline{j})$$
+\item D'après la question précédente :
+$$ X^4+X^2+1 = (X^2-j)(X^2-\overline{j})$$
+Or $j=j \times j^3 = j^4$ et $\overline{j}= \overline{j}^4$ donc :
+$$ X^4+X^2+1 = (X^2-j^4)(X^2-\overline{j}^4)= (X-j^2)(X+j^2)(X-\overline{j}^2) (X+\overline{j}^2)$$
+\end{enumerate}
+
+
+
+
+
+
+
+\section{Algèbre linéaire}
+
+\subsection{Sous-espaces vectoriels}
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Le vecteur nul n'appartient pas à $F_1$.
+\item Il n'y a pas stabilité par somme : $(0,1)$ et $(1,0)$ appartiennent à $F_2$ mais la somme de ces deux vecteurs n'appartient pas à $F_2$.
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}Non : la fonction exponentielle est croissante mais $x \mapsto -e^x$ ne l'est pas, il n'y a donc pas stabilité par produit avec un scalaire.
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Procédons avec la méthode des trois points :
+
+\begin{itemize}
+\item $F \subset E$ par définition de $F$.
+\item Le vecteur nul de $E$ (la fonction nulle sur $[0,1]$) appartient à $F$ (évident).
+\item Soient $(f,g) \in F^2$ et $\lambda \in \mathbb{R}$. Montrons que $\lambda f + g \in F$. Tout d'abord, $f$ et $g$ sont continues sur $[0,1]$ (par définition de $F$) donc $\lambda f+g$ l'est aussi. On a par linéarité de l'intégrale :
+\begin{align*}
+\int_{0}^1 \lambda f(t) + g(t) \dt & =\lambda \int_{0}^1 \lambda f(t) \dt+ \int_{0}^1  g(t) \dt  \\
+& = 0 \\
+\end{align*}
+car $(f,g) \in F^2$. Ainsi $\lambda f + g \in F$.
+\end{itemize}
+Ainsi, $F$ est un sous-espace vectoriel de $E$.
+\item Procédons avec la méthode des trois points :
+
+\begin{itemize}
+\item $F \subset E$ par définition de $F$.
+\item Le vecteur nul de $E$ (La matrice nulle carrée d'ordre $n$, notée $0_n$) appartient à $F$ car :
+$$ A 0_n = 0_n = 0_n A $$
+\item Soient $(M,N) \in F^2$ et $\lambda \in \mathbb{R}$. Montrons que $\lambda M+ N  \in F$. On a :
+\begin{align*}
+A(\lambda M + N) & =\lambda AM + AN \\
+& = \lambda MA + NA \quad \hbox{ car } (M,N) \in F^2 \\
+& = (\lambda M + N) A \\
+\end{align*}
+Ainsi $\lambda M + N \in F$.
+\end{itemize}
+Ainsi, $F$ est un sous-espace vectoriel de $E$.
+\end{enumerate}
+
+
+
+
+\noindent \textit{Remarque}. On utilise la méthode des trois points plutôt dans un cadre abstrait. Quand on peut caractériser le sous-ensemble considéré à l'aide d'équations, il est souvent plus intéressant d'écrire celui-ci comme un sous-espace vectoriel engendré ce qui prouve que c'est un sous-espace vectoriel et donne directement une famille génératrice de celui-ci. Par exemple, dans la question 2 de l'exercice précédent, si la matrice $A$ était donnée, il serait facile d'écrire $F$ comme un sous-espace vectoriel engendré.
+
+
+
+
+
+\begin{Exercice}{}\end{Exercice}Notons $E$ l'espace vectoriel des fonctions de $\mathbb{R}$ dans $\mathbb{R}$, $P$ (respectivement $I$) le sous-espace vectoriel de $E$ constitué des fonctions paires (respectivement des fonctions impaires). Montrons que $E= P \oplus I$.
+
+
+
+\noindent \textit{Analyse.} Supposons que $E= F \oplus I$. Soit $f \in E$. Il existe un unique couple $(p,i) \in P \times I$ tel que $f=p + i$. Par définition de l'égalité de fonctions\footnote{Quand on manipule des espaces vectoriels de fonctions sur un intervalle $I$, il faut bien comprendre que $f=g$ signifie \og $\forall x \in I$, $f(x)=g(x)$ \fg.}, cela signifie que pour tout $x \in \mathbb{R}$,
+$$ f(x) = p(x)+i(x)$$
+et en particulier pour tout $x \in \mathbb{R}$,
+$$ f(-x) = p(-x)+i(-x) = p(x)-i(x)$$
+car $p$ est paire et $i$ est impaire. En sommant les deux dernières égalités, on a ainsi pour tout $x \in \mathbb{R}$,
+$$ f(x)+f(-x) = 2p(x) $$
+puis
+$$ p(x) = \frac{f(x)+f(-x)}{2}$$
+et sachant que $f(x)=p(x)+i(x)$, $i(x)=f(x)-p(x) = \dfrac{f(x)-f(-x)}{2}\cdot$
+
+
+
+\noindent \textit{Synthèse.} Soit $f \in E$. Posons pour tout $x \in \mathbb{R}$,
+$$ p(x) = \frac{f(x)+f(-x)}{2} \quad \hbox{ et } \quad i(x) = \frac{f(x)-f(-x)}{2} $$
+On vérifie facilement que $f=p+i$, que $p$ est paire et que $i$ est impaire. Ainsi $E \subset P + I$ et $P + I \subset E$ (car $P$ et $I$ sont des sous-espaces vectoriels de $E$). Finalement $E=P+I$. De plus, d'après l'analyse, pour tout $f \in E$, les fonctions paires et impaires, $p$ et $i$, vérifiant $f=p+i$ sont uniques donc $E = P \oplus I$.
+
+\subsection{Familles libres, génératrices, bases}
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Soit $(x,y,z) \in \mathbb{R}^3$. Alors :
+\begin{align*}
+(x,y,z) \in A & \Longleftrightarrow 2x-y+z=0 \\
+& \Longleftrightarrow y=2x+z \\
+& \Longleftrightarrow (x,y,z) = (x,2x+z,z) \\
+& \Longleftrightarrow (x,y,z) = x(1,2,0) + z(0,1,1) \\
+\end{align*}
+Ainsi $A = \Vect((1,2,0),(0,1,1))$ (et donc $(1,2,0)$ et $(0,1,1)$ forment une famille génératrice de $A$). De plus, $(1,2,0)$ et $(0,1,1)$ sont non colinéaires donc forment une famille libre de $A$ et forment ainsi une base de $A$.
+\item Soit $(x,y,z) \in \mathbb{R}^3$. Alors :
+\begin{align*}
+(x,y,z) \in B & \Longleftrightarrow z+y=0 \\
+& \Longleftrightarrow z=-y\\
+& \Longleftrightarrow (x,y,z) = (x,y,-y) \\
+& \Longleftrightarrow (x,y,z) = x(1,0,0) + y (0,1,-1) \\
+\end{align*}
+Ainsi $B = \Vect((1,0,0),(0,1,-1))$ (et donc $(1,0,0)$ et $(0,1,-1)$ forment une famille génératrice de $B$). De plus, $(1,0,0)$ et $(0,1,-1)$ sont non colinéaires donc forment une famille libre de $B$ et forment ainsi une base de $B$.
+\item Soit $(x,y,z) \in \mathbb{R}^3$. Alors :
+\begin{align*}
+(x,y,z) \in A \cap B & \Longleftrightarrow 2x-y+z=0 \hbox{ et } z+y= 0 \\
+& \Longleftrightarrow 2x=y-z  \hbox{ et } z=-y \\
+& \Longleftrightarrow 2x=2y \hbox{ et } z=-y \\
+& \Longleftrightarrow x=y  \hbox{ et } z=-y \\
+& \Longleftrightarrow (x,y,z)=(y,y,-y) \\
+& \Longleftrightarrow (x,y,z)=y(1,1,-1) \\
+\end{align*}
+Ainsi $A \cap B = \Vect((1,1,-1))$ (et donc $(1,1,-1)$ forme une famille génératrice de $A \cap B$). De plus, $(1,1,-1)$ est non nul donc forme une famille libre de $A \cap B$ et ainsi forme une base de $A \cap B$.
+\item Soit $P \in \mathbb{R}_4[X]$ : il existe $(a,b,c,d,e) \in \mathbb{R}^5$ tel que :
+$$ P(X) = a+bX+cX^2+dX^3+eX^4$$
+Ainsi $P(0)=a$, $P'(0) =b$, $P'(1)=b+2c+3d+4e$. On a :
+\begin{align*}
+P \in D & \Longleftrightarrow a=b=0 \hbox{ et } b+2c+3d+4e = 0 \\
+& \Longleftrightarrow a=b=0 \hbox{ et } 2c=-3d-4e \\
+& \Longleftrightarrow P(X) = (-3d/2-2e)X^2+dX^3+eX^4 \qquad \hbox{ par identification }\\
+& \Longleftrightarrow P(X) = d(-3X^2/2+X^3) + e(-2X^2+X^4) \\
+\end{align*}
+Ainsi $D= \Vect((-3X^2/2+X^3, -2X^2+X^4))$ (et donc $-3X^2/2+X^3$ et $-2X^2+X^4$ forment une famille génératrice de $D$). De plus, $-3X^2/2+X^3$ et $-2X^2+X^4$ forment une famille libre (famille de polynômes non nuls échelonnée en degré) de $D$ donc finalement forment une base de $D$.
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}Soit $(a,b,c) \in \mathbb{R}^3$ tel que :
+$$ a (1,1,0) + b (2,1,-3) + c (1,0,1) = (0,0,0)$$
+Alors :
+$$ \begin{array}{cl}
+& \left\lbrace \begin{array}{ccl}
+a+2b+c & = &0 \\
+a+b & = & 0 \\
+-3b + c & = & 0 \\
+\end{array}\right.  \\
+\underset{L_2 \leftarrow L_2-L_1}{\Longleftrightarrow} & \left\lbrace \begin{array}{ccl}
+a+2b+c & = &0 \\
+-b-c & = & 0 \\
+-3b + c & = & 0 \\
+\end{array}\right.  \\
+\underset{L_3 \leftarrow L_3-3L_2}{\Longleftrightarrow} & \left\lbrace \begin{array}{ccl}
+a+2b+c & = &0 \\
+-b-c & = & 0 \\
+4c & = & 0 \\
+\end{array}\right.  \\
+\end{array}$$
+Et ainsi $a=b=c=0$. La famille $((1,1,0), (2,1,-3),(1,0,1))$ est donc une famille libre de $\mathbb{R}^3$.
+
+
+
+\noindent \textit{Remarque.} Cette famille a pour cardinal $3$ qui est la dimension de $\mathbb{R}^3$. D'après le cours, elle est libre si et seulement si elle est génératrice de $\mathbb{R}^3$ si et seulement si c'est une base de $\mathbb{R}^3$. C'est donc une base de $\mathbb{R}^3$.
+
+
+
+\begin{Exercice}{}\end{Exercice}C'est une famille de polynômes non nuls échelonnée en degré.
+
+
+
+
+
+\begin{Exercice}{}\end{Exercice}Soit $(a,b) \in \mathbb{R}^2$ tel que $a \cos + b \sin = \theta$ (où $\theta$ est la fonction nulle sur $\mathbb{R}$). Alors\footnote{Il est crucial de comprendre que l'égalité de fonctions sur un intervalle $I$ est équivalente à l'égalité des images des éléments de $I$ pour ces deux fonctions.} pour tout $x \in \mathbb{R}$ :
+$$ a \cos(x) + b \sin(x) = 0 $$
+En particulier pour $x=0$, on a $a=0$ puis pour $x = \dfrac{\pi}{2}$, $b=0$. La famille $(\cos, \sin)$ est donc une famille libre de l'espace vectoriel des fonctions de $\mathbb{R}$ dans $\mathbb{R}$.
+
+ 
+
+\begin{Exercice}{}\end{Exercice}Soit $(a,b,c) \in \mathbb{R}^3$ tel que $af+bf^2+cf^3 = \theta$. Alors pour tout $x \in \mathbb{R}$,
+$$ a e^x+ b (e^x)^2 + c(e^x)^3 = 0 $$
+puis sachant que $e^x \neq 0$,
+$$ a + be^x + c (e^x)^2 = 0$$
+Par passage à la limite quand $x$ tend vers $- \infty$, on obtient $a=0$. On recommence pour obtenir $b=0$ puis $c=0$. Ainsi, la famille $(f,f^2,f^3)$ est libre dans l'espace vectoriel des fonctions de $\mathbb{R}$ dans $\mathbb{R}$.
+
+
+
+\noindent \textit{Remarque.} On peut aussi comme dans l'exercice précédent évaluer pour certaines valeurs de $x$ : cela donner un système de trois équations à trois inconnues dont l'unique solution est $(0,0,0)$. Pour montrer la liberté d'une famille de fonctions, il y a donc plusieurs manières de faire :
+
+\begin{itemize}
+\item On peut évaluer pour certaines valeurs de $x$.
+\item On peut utiliser des limites particulières.
+\item On peut utiliser la discontinuité (ou la non dérivabilité) en certaines valeurs de $x$.
+\item Si les fonctions sont dérivables sur l'intervalle considéré, on peut dériver avant d'évaluer.
+\item $\ldots$
+\end{itemize}
+
+\subsection{Dimension finie}
+
+\begin{Exercice}{}\end{Exercice}Les vecteurs $(1,0,0,1)$ et $(0,0,1,0)$ (respectivement $(0,0,0,1)$ et $(0,1,0,1)$) sont non colinéaires donc forment une famille libre et donc une base de $F=\Vect((1,0,0,1), \, (0,0,1,0))$ (respectivement de $G=\Vect((0,0,0,1), \, (0,1,0,1))$). Ainsi $\textrm{dim}(F)= \textrm{dim}(G)=2$. Il suffit alors de vérifier que $F \cap G = \lbrace 0_{\mathbb{R}^4} \rbrace$ pour montrer que $F$ et $G$ sont supplémentaires dans $\mathbb{R}^4$.
+
+
+
+\noindent Soit $X \in F \cap G$ : il existe $(a,b,c,d) \in \mathbb{R}^4$ tel que :
+$$ X= a(1,0,0,1) + b (0,0,1,0) = c (0,0,0,1) + d (0,1,0,1)$$
+et ainsi :
+$$ \left\lbrace \begin{array}{ccl}
+a & = & 0 \\
+d & = &0 \\
+b & = & 0 \\
+a+c+d & = & 0 \\
+\end{array}\right. $$
+et ainsi $a=b=c=d=0$ et donc $X = 0_{\mathbb{R}^4}$. Ainsi $F \cap G \subset \lbrace 0_{\mathbb{R}^4} \rbrace$ et l'autre inclusion est vraie car $F$ et $G$ sont des sous-espaces vectoriels de $\mathbb{R}^4$.
+
+
+
+\noindent Ainsi, $F$ et $G$ sont des sous-espaces vectoriels supplémentaires de $\mathbb{R}^4$.
+
+
+
+\noindent \textit{Remarque.} Soient $F$ et $G$ deux sous-espaces vectoriels d'un espace vectoriel de dimension finie $E$. Les assertions suivantes sont équivalentes :
+
+\begin{itemize}
+\item $F$ et $G$ sont deux espaces supplémentaires de $E$ (c'est-à-dire : $E = F \oplus G$).
+\item $E= F+G$ et $F \cap G = \lbrace 0_E \rbrace$.
+\item $\textrm{dim}(F) + \textrm{dim}(G) = \textrm{dim}(E)$ et  $F \cap G = \lbrace 0_E \rbrace$.
+\item $\textrm{dim}(F) + \textrm{dim}(G) = \textrm{dim}(E)$ et  $F + G = E$.
+\end{itemize}
+
+
+
+\begin{Exercice}{}\end{Exercice}On peut penser à l'exercice 42.
+
+
+
+\begin{Exercice}{}\end{Exercice}Le rang de la famille est la dimension de $\Vect(x_1,x_2,x_3)$. Il est facile de vérifier que la famille $(x_1,x_2,x_3)$ est libre donc le rang est égal à $3$.
+
+
+
+\noindent \textit{Remarque.} Si la famille n'était pas libre, par exemple si $x_1$ était combinaison linéaire de $x_2$ et $x_3$, on aurait alors :
+$$ \Vect(x_1,x_2,x_3) =\Vect(x_2,x_3)$$
+Puis on essaierait de vérifier que $x_2$ et $x_3$ forment une famille libre.
+
+\subsection{Applications linéaires (sans les matrices)}
+
+\begin{Exercice}{}\end{Exercice}Soient $X=(x,y,z),Y=(x',y',z) \in \mathbb{R}^3$ et $\lambda \in \mathbb{R}$. Alors :
+\begin{align*}
+f(\lambda X+Y) & = f((\lambda x+x',\lambda y + y', \lambda z + z')) \\
+& = ((\lambda x + x')+2(\lambda y + y')+(\lambda z +z'),(\lambda y+y')-(\lambda x+x'),2(\lambda x + x')+4(\lambda y +y')+(\lambda z +z') \\
+& = (\lambda (x+2y+z)+(x'+2y'+z'), \lambda (y-x) + y'-x', \lambda(2x+4y+z) + 2x'+4y'+z') \\
+& = \lambda(x+2y+z,y-x,2x+4y+z) + (x'+2y'+z',y'-x',2x'+4y'+z') \\
+& = \lambda f(X) + f(Y) 
+\end{align*}
+Soit $(x,y,z) \in \mathbb{R}^3$. Le vecteur $(x,y,z)$ appartient au noyau de $f$ si et seulement si :
+\begin{align*}
+& \left\lbrace \begin{array}{rl}
+x+2y+z& =0 \\
+y-x & = 0\\
+2x+4y+z & = 0\\
+\end{array}\right. \\
+\Longleftrightarrow & 
+\left\lbrace \begin{array}{rl}
+x+2y+z& =0 \\
+3y+z & = 0 \quad ( L_2 \leftarrow L_2+L_1) \\
+-z & = 0 \quad ( L_3 \leftarrow L_3-2L_1)\\
+\end{array}\right. \\
+%\Longleftrightarrow &  \left\lbrace \begin{array}{rl}
+%x+2y+z& =0 \\
+%3y+z & = 0\\
+% -2z & = 0 \quad ( L_3 \leftarrow 3L_3+L_2)\\
+%\end{array}\right. 
+\end{align*}
+ce qui est équivalent à $(x,y,z)=(0,0,0)$. Ainsi, $\textrm{Ker}(f) = \lbrace (0,0,0) \rbrace$. L'application $f$ est donc un endomorphisme injectif de $\mathbb{R}^3$ qui est de dimension finie donc $f$ est un automorphisme. 
+
+
+\begin{Exercice}{}\end{Exercice}L'application $f$ est un endomorphisme de $\mathbb{R}^3$ (même démarche que dans l'exercice précédent). Soit $(x,y,z) \in \mathbb{R}^3$. Le vecteur $(x,y,z)$ appartient au noyau de $f$ si et seulement si :
+$$ \left\lbrace \begin{array}{rl}
+x+z& =0 \\
+x+y & = 0\\
+\end{array}\right. 
+\Longleftrightarrow z=y=-x \Longleftrightarrow (x,y,z) = x(1,-1,-1) $$
+Ainsi, $\textrm{Ker}(f) = \Vect(x_1)$ où $x_1=(1,-1,-1)$. Le vecteur $x_1$ étant non nul, il forme une base du noyau de $f$ donc le noyau est de dimension $1$. L'espace $\mathbb{R}^3$ est de dimension finie donc d'après le théorème du rang,
+$$ \textrm{rg}(f) = \textrm{dim}(\mathbb{R}^3) - \textrm{dim}(\textrm{Ker}(f)) = 2$$
+On sait que :
+$$ \textrm{Im}(f) = \Vect(f((1,0,0)), f((0,1,0)), f((0,0,1)))$$
+Or $f((1,0,0))= (1,1,1)$, $f((0,1,0))= (0,0,1)$ et $f((0,0,1))=(1,1,0)$. Les deux premiers vecteurs sont non colinéaires donc forment une famille libre à deux éléments de l'image qui est de dimension $2$ donc :
+$$ \textrm{Im}(f) = \Vect((1,1,1),(0,1,0))$$
+
+\begin{Exercice}{}\end{Exercice}
+\begin{enumerate}
+\item C'est évident par linéarité de la dérivation.
+
+\item L'application $\varphi$ n'est pas injective car les fonctions constantes ont toutes la même image : la fonction nulle. L'application $\varphi$ n'est pas surjective car pour tout $f \in \mathcal{C}^1(I, \mathbb{R})$, $\varphi(f)=f'$ est continue sur $I$ et il existe des fonctions définies sur $I$ non continues.
+\item Soit $f \in \mathcal{C}^1(I, \mathbb{R})$. Si $f$ appartient au noyau de $\varphi$ alors $\varphi(f)=f'$ est la fonction nulle définie sur l'intervalle $I$ et $f$ est donc constante. Réciproquement, toute fonction constante définie sur $I$ appartient au noyau de $\varphi$. Ainsi, en notant $\tilde{1}$ la fonction constante égale à $1$, on a :
+$$ \textrm{Ker}(f) = \Vect( \tilde{1} )$$
+Soit $f \in \mathcal{C}^1(I, \mathbb{R})$. Alors $\varphi(f) = f'$ est continue sur $I$. Réciproquement si $f : I \rightarrow \mathbb{R}$ est continue sur $I$, elle admet une primitive $F : I \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ sur $I$ et $\varphi(F)=F'=f$. Ainsi, 
+$$  \textrm{Im}(\varphi) = \mathcal{C}^0(I, \mathbb{R})$$
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}Soient $P,Q \in \mathbb{C}_n[X]$ et $\lambda \in \mathbb{C}$. Alors :
+\begin{align*}
+\varphi(\lambda P + Q ) & = ((\lambda P+Q)(a_{0}),(\lambda P+Q)(a_{1}), \ldots , (\lambda P+Q)(a_{n})) \\
+& = \lambda (P(a_{0}),P(a_{1}), \ldots ,P(a_{n})) + (Q(a_{0}),Q(a_{1}), \ldots ,Q(a_{n})) \\
+& = \lambda \varphi(P) + \varphi(Q)
+\end{align*}
+Ainsi, $\varphi$ est linéaire.
+
+
+
+\noindent Soit $P \in \mathbb{C}_n[X]$. Si $P$ appartient au noyau de $\varphi$ alors :
+$$ P(a_0) = P(a_1) = \cdots = P(a_n) = 0$$
+Ainsi, $P$ admet $n+1$ racines distinctes et a un degré inférieur ou égal à $n$ donc $P$ est le polynôme nul. Ainsi,
+$$ \textrm{Ker}(\varphi) \subset \lbrace \tilde{0} \rbrace$$
+L'autre inclusion est vraie car le noyau de $\varphi$ est un sous-espace vectoriel de $\mathbb{C}_n[X]$. Ainsi, $\varphi$ est injective. Or :
+$$ \textrm{dim}(\mathbb{C}_n[X]) = \textrm{dim}(\mathbb{C}^{n+1}) = n+1$$
+Donc $\varphi$ est un isomorphisme.
+
+
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Soit $x \in \textrm{Ker}(f)$. On a $f(x)=0_E$ puis $f(f(x))=f(0_E)=0_E$ car $f$ est linéaire. Donc $f^2(x)=0_E$ et ainsi $x \in \textrm{Ker}(f^2)$. Finalement, $\textrm{Ker}(f) \subset \textrm{Ker}(f^2)$.
+\item Soit $y \in \textrm{Im}(f^2)$. Par définition, il existe $x \in E$ tel que $y=f^2(x)=f(f(x))$. Or $f \in \mathcal{L}(E)$ donc $f(x) \in E$ donc $y=f(X)$ avec $X = f(x) \in E$ et ainsi $y \in \textrm{Im}(f)$. Finalement, $\textrm{Im}(f^2) \subset \textrm{Im}(f)$.
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Soit $P \in \mathbb{R}_2[X]$. Il est clair que $f(P)$ est un polynôme à coefficients réels. On a :
+\begin{align*}
+\textrm{deg}(f(P)) & =  \textrm{deg}(P-(X+1)P'+X^2 P'')  \\
+& \leq \max( \textrm{deg}(P) , \textrm{deg}((X+1)P'), \textrm{deg}(X^2P'') ) \\
+\end{align*}
+Or le degré de $P'$ est inférieur ou égal à $n-1$ (et celui de $P''$ inférieur ou égal à $n-2$) donc le degré de $(X+1)P'$ est inférieur ou égal à $n$ et de même pour celui de $X^2P''$. Ainsi le degré de $f(P)$ est inférieur ou égal à $2$ donc $\varphi(P)$ appartient à $\mathbb{R}_2[X]$.
+
+
+
+\noindent Montrons la linéarité de $f$. Soient $(P,Q) \in \mathbb{R}_{2}[X]^2$ et $\lambda \in \mathbb{R}$. On a :
+
+\begin{align*}
+f(\lambda P + Q) & = (\lambda P+Q)-(X+1)(\lambda P+Q)'+X^2(\lambda P+Q)'' \\
+& = \lambda P+Q - (X+1)(\lambda P' + Q') + X^2 (\lambda P''+Q'') \quad \hbox{par linéarité de la dérivation} \\
+& = \lambda (P-(X+1)P'+X^2 P'') + (Q-(X+1)Q'+X^2 Q'') \\
+& = \lambda f(P) + f(Q) 
+\end{align*}
+Ainsi, $f$ est linéaire.
+
+
+
+\noindent \textit{Remarque}. Si $P$ et $Q$ sont deux polynômes, on a :
+$$ \textrm{deg}(P+Q) \leq \max ( \textrm{deg}(P),  \textrm{deg}(Q))$$
+On a égalité \textit{si} le degré de $P$ est différent du degré de $Q$.
+
+
+
+
+\item Soit $P \in \mathbb{R}_2[X]$. Il existe $(a,b,c) \in \mathbb{R}^3$ tel que :
+$$ P= aX^2+bX+c$$
+et par simple calcul :
+$$f(P) = aX^2-2aX+c-b$$
+Ainsi, $P$ appartient au noyau de $f$ si et seulement si, par identification, $a=0$ et $c=b$ et donc si et seulement si $P =b(X+1)$. Finalement, on a $\textrm{Ker}(f)= \Vect(X+1)$.
+\item Le noyau de $f$ est de dimension $1$ (car $X+1$ est différent du polynôme nul). La dimension de $\mathbb{R}_2[X]$ est trois donc d'après le théorème du rang, le rang de $f$ vaut $3-1=2$. De plus, on a :
+$$ \textrm{Im}(f) = \Vect(f(1), f(X), f(X^2)) = \Vect(1,-1, X^2-2X) = \Vect(1,X^2-2X)$$
+car $1$ et $-1$ sont colinéaires. Ainsi, $(1,X^2-2X)$ est une famille génératrice de l'image de $f$, de cardinal $2$ qui est la dimension de cette image, c'est donc une base de l'image.
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Soit $P \in \mathbb{K}_{n+1}[X]$. Il est clair que $\varphi(P)$ est un polynôme à coefficients dans $\mathbb{K}$. On a :
+\begin{align*}
+\textrm{deg}((n+1)P -XP') & \leq  \textrm{max}(\textrm{deg}(P), \textrm{deg}(XP')) \\
+& \leq  \textrm{max}(\textrm{deg}(P), 1 +\textrm{deg}(P') ) \\
+ &\leq  \textrm{deg}(P) 
+\end{align*}
+Cet argument n'est pas suffisant pour conclure. Procédons autrement\footnote{Pour justifier qu'une application linéaire entre deux espaces de polynômes est bien définie, on utilise souvent un argument lié au degré : il est très important de connaître les propriétés liées au degré d'une somme, d'un produit, d'une composée... Si cela ne suffit pas : il peut être utile de déterminer explicitement l'expression de l'application.} : Il existe $(a_0, \ldots, a_{n+1}) \in \mathbb{K}^{n+2}$ tel que :
+$$ P = \sum_{k=0}^{n+1} a_k X^k $$
+Ainsi :
+\begin{align*}
+\varphi(P) & = \sum_{k=0}^{n+1} (n+1) a_k X^k - X \sum_{k=1}^{n+1} k a_k X^{k-1}  \\
+& = (n+1)a_0  + \sum_{k=1}^{n+1} (n+1-k)a_k X^k  \\
+& = (n+1)a_0 + \sum_{k=1}^{n} (n+1-k)a_k X^k  
+\end{align*} 
+car le coefficient de $X^{n+1}$ est nul. Ainsi, le degré de $P$ est inférieur ou égal à $n$. Donc $\varphi(P) \in \mathbb{K}_n[X]$ et $\varphi$ est bien définie.
+
+
+
+\noindent Montrons que $\varphi$ est linéaire. Soient $(P,Q) \in \mathbb{K}_{n+1}[X]^2$ et $\lambda \in \mathbb{R}$. On a :
+
+\begin{align*}
+\varphi(\lambda P + Q) & = (n+1)(\lambda P+Q)-X(\lambda P + Q)' \\
+& = \lambda (n+1)P + (n+1)Q - \lambda X P' - XQ' \quad \hbox{par linéarité de la dérivation} \\
+& = \lambda ((n+1)P-XP') + (n+1)Q-XQ' \\
+& = \lambda \varphi(P) + \varphi(Q) 
+\end{align*}
+Ainsi $\varphi$ est linéaire.
+\item Soit $P \in \mathbb{K}_{n+1}[X]$. Il existe $(a_0, \ldots, a_{n+1}) \in \mathbb{K}^{n+2}$ tel que :
+$$ P = \sum_{k=0}^{n+1} a_k X^k $$
+On a, en notant $\theta$ le polynôme nul, et d'après la question précédente : 
+\begin{align*}
+P \in \textrm{Ker}(\varphi) & \Longleftrightarrow  \varphi(P) = \theta \\
+& \Longleftrightarrow (n+1) a_0 + \sum_{k=1}^n (n+1-k) a_k X^k =\theta  \\
+\end{align*}
+Et ainsi, par identification, $P \in \textrm{Ker}(\varphi)$ si et seulement si $a_0 = \cdots = a_n = 0$ (car pour tout $k \in  \iii{0}{n}$, $(n+1-k) \neq 0$). Finalement $P$ appartient au noyau si et seulement si $P = a_{n+1} X^{n+1}$ et donc $\textrm{Ker}(\varphi)= \Vect(X^{n+1})$.
+\item La dimension de $\mathbb{K}_{n+1}[X]$ est $n+2$ et celle du noyau de $\varphi$ est $1$ (d'après la question précédente sachant que $X^{n+1}$ n'est pas nul). D'après le théorème du rang, le rang de $\varphi$ est $n+1$ qui est la dimension de $\mathbb{K}_n[X]$ (l'espace d'arrivée de $\varphi$). Ainsi, $\varphi$ est surjective.
+\end{enumerate}
+
+
+%
+%
+%\begin{Exercice}{}\end{Exercice}C'est du cours.
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Soit $(x,y,z) \in \mathbb{R}^3$. On a :
+$$ (x,y,z) \in F \Longleftrightarrow x=y-z \Longleftrightarrow (x,y,z) = (y-z,y,z) \Longleftrightarrow (x,y,z) = y(1,1,0) + z(-1,0,1)$$
+Ainsi $F = \Vect((1,1,0), (-1,0,1))$ (donc les vecteurs $(1,1,0)$ et $(-1,0,1)$ forment une famille génératrice de $F$). De plus, ces deux vecteurs sont non colinéaires donc forment une famille libre de $F$ et ainsi forment une base de $F$. La dimension de $F$ est donc $2$.
+\item On sait que $\textrm{dim}(F)=2$ et $\textrm{dim}(G)=1$ (car $(1,1,1)$ est non nul). Ainsi $\textrm{dim}(F) + \textrm{dim}(G) = \textrm{dim}(\mathbb{R}^3)$. Il nous suffit alors de montrer que $F \cap G = \lbrace (0,0,0) \rbrace$. Soit $(x,y,z) \in F \cap G$. Il existe $\alpha \in \mathbb{R}$ tel que $(x,y,z) = \alpha (1,1,1)$ et sachant que $x-y+z=0$, on obtient $\alpha = 0$ puis $(x,y,z)=(0,0,0)$. Ainsi $F \cap G \subset \lbrace (0,0,0) \rbrace$ et l'autre inclusion est vérifiée car $F$ et $G$ sont des sous-espaces vectoriels de $\mathbb{R}^3$.
+
+
+
+\noindent Les espaces $F$ et $G$ sont donc des sous-espaces vectoriels supplémentaires de $\mathbb{R}^3$.
+\item D'après la question précédente, $F$ et $G$ sont  des sous-espaces vectoriels supplémentaires de $\mathbb{R}^3$. Soit $(x,y,z) \in \mathbb{R}^3$. Il existe $x_F = (a,b,c) \in F$ et $x_G \in G$ tel que $(x,y,z) = x_F + x_G$. Par définition de $G$, il existe $\alpha \in \mathbb{R}$ tel que $x_G = (\alpha, \alpha, \alpha)$. Ainsi :
+$$ (x,y,z) = (a,b,c) + (\alpha, \alpha, \alpha)$$
+Or $x_F \in F$ donc $a-b+c=0$ et ainsi $x- \alpha- y + \alpha + z - \alpha = 0$ puis finalement :
+$$ \alpha = x-y+z $$
+Ainsi $x_G = (x-y+z) (1,1,1)$ et $x_F = (x,y,z) - x_G = (y-z, -x+2y-z,-x+y)$. Par définition de la projection sur $F$ parallèlement à $G$, on a donc pour tout $(x,y,z) \in \mathbb{R}^3$,
+$$ p((x,y,z)) = (y-z, -x+2y-z,-x+y)$$
+
+
+
+\noindent \textit{Remarque.} On peut avec la méthode proposée ici montrer en une fois que $F$ et $G$ sont des sous-espaces vectoriels supplémentaires de $\mathbb{R}^3$ et d'obtenir la décomposition associée de chaque élément de $\mathbb{R}^3$ : il suffit de raisonner par analyse-synthèse (qui donne la décomposition et l'unicité de celle-ci).
+\item D'après la question précédente, on a pour tout $(x,y,z) \in \mathbb{R}^3$, 
+$$ q((x,y,z)) = (x-y+z) (1,1,1)$$
+
+
+
+\noindent \textit{Remarque.} On a $p+q=\textrm{Id}$.
+\end{enumerate}
+
+
+
+
+
+
+
+\begin{Exercice}{}\end{Exercice}
+\begin{enumerate}
+\item Soit $M = \begin{pmatrix}
+a&b \\
+c & d \\
+\end{pmatrix} \in \mathcal{M}_2(\mathbb{R})$. Alors :
+\begin{align*}
+M \in \textrm{Ker}(f) & \Longleftrightarrow  AM = 0_2 \\
+& \Longleftrightarrow \begin{pmatrix}
+a+2c & b+2d \\
+2a+4c & 2b+4d \\
+\end{pmatrix} = 0_2 \\
+& \Longleftrightarrow \left\lbrace \begin{array}{cl}
+a+2c & = 0 \\
+b+2d & = 0 \\
+\end{array}\right. \\
+& \Longleftrightarrow \left\lbrace \begin{array}{cl}
+a& = -2c \\
+b & = -2d \\
+\end{array}\right. \\
+& \Longleftrightarrow  M = a \begin{pmatrix}
+-2 & 0 \\
+1 & 0 \\
+\end{pmatrix} + d \begin{pmatrix}
+0 & -2 \\
+0 & 1 \\
+\end{pmatrix}
+\end{align*}
+Ainsi,
+$$ \textrm{Ker}(f) = \Vect(M_1,M_2)$$
+où
+$$ M_1 = \begin{pmatrix}
+-2 & 0 \\
+1 & 0 \\
+\end{pmatrix} \quad \hbox{ et } \quad M_2 = \begin{pmatrix}
+0 & -2 \\
+0 & 1 \\
+\end{pmatrix}$$
+Les matrices $M_1$ et $M_2$ étant non colinéaires, on en déduit que $(M_1,M_2)$ est une base de $\textrm{Ker}(f)$.
+
+\item $f$ est un endomorphisme d'un espace vectoriel de dimension finie et non injectif d'après la question précédente donc $f$ n'est pas surjectif.
+\item D'après la question 1. et le théorème du rang, le rang de $f$ vaut $2$. Il suffit de déterminer une famille libre de l'image de $f$ qui contient deux éléments pour déterminer une base. On a :
+$$  f \left( \begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix} \right) = \begin{pmatrix}
+1 & 0 \\
+2 & 0 \\
+\end{pmatrix}$$
+et 
+$$  f \left( \begin{pmatrix}
+0 & 1 \\
+0 & 0
+\end{pmatrix} \right) = \begin{pmatrix}
+0 & 1 \\
+0 & 2 \\
+\end{pmatrix}$$
+Les deux matrices $M_3=\begin{pmatrix}
+1 & 0 \\
+2 & 0 \\
+\end{pmatrix}$ et $M_4=\begin{pmatrix}
+0 & 1 \\
+0 & 2 \\
+\end{pmatrix}$ étant non colinéaires, on en déduit que $(M_3,M_4)$ est une base de $\textrm{Im}(f)$.
+\item D'après le théorème du rang,
+$$ \textrm{dim}(\mathcal{M}_2(\mathbb{R})) = \textrm{dim}(\textrm{Ker}(f)) + \textrm{dim}(\textrm{Im}(f))$$ 
+Montrons que $\textrm{Ker}(f) \cap \textrm{Im}(f) = \lbrace 0_2 \rbrace$ :
+
+\begin{itemize}
+\item $\lbrace 0_2 \rbrace \subset\textrm{Ker}(f) \cap \textrm{Im}(f)$ car le noyau et l'image de $f$ sont des sous-espaces vectoriels de $\mathcal{M}_2(\mathbb{R})$.
+\item Soit $M \in \textrm{Ker}(f) \cap \textrm{Im}(f)$. En utilisant les bases obtenues dans les questions précédentes, on sait l'existence de réels $a$, $b$, $c$ et $d$ tels que :
+$$ M = a \begin{pmatrix}
+-2 & 0 \\
+1 & 0 \\
+\end{pmatrix} + b \begin{pmatrix}
+0 & -2 \\
+0 & 1 \\
+\end{pmatrix} = c \begin{pmatrix}
+1 & 0 \\
+2 & 0 \\
+\end{pmatrix} + d \begin{pmatrix}
+0 & 1 \\
+0 & 2 \\
+\end{pmatrix}$$
+donc :
+$$ M = \begin{pmatrix}
+-2a & -2b \\
+a & b
+\end{pmatrix} =\begin{pmatrix}
+c & d \\
+2c & 2d
+\end{pmatrix}$$
+Ainsi $a=2c$ et $c=-2a$ donc $a=0$ et $c=0$ et de même $b=0$ et $d=0$. On a finalement $M=0_2$ et donc $\textrm{Ker}(f) \cap \textrm{Im}(f) \subset \lbrace 0_2 \rbrace$.
+\end{itemize}
+Ainsi, $\textrm{Ker}(f) \cap \textrm{Im}(f) = \lbrace 0_2 \rbrace$ et on a donc montré que le noyau et l'image de $f$ sont supplémentaires dans $\mathcal{M}_2(\mathbb{R})$.
+\end{enumerate}
+
+\subsection{Calcul matriciel}
+
+\begin{Exercice}{}\end{Exercice}Méthode classique liée à la résolution d'un système. On trouve :
+$$ A^{-1} = \frac{1}{3} \begin{pmatrix}
+3 & 0 & -3 \\
+0 & 1 & 1 \\
+-3 & -1 & 5 \\
+\end{pmatrix}$$
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item $A^2 = 9 A  - 18 I_3$.
+\item D'après la relation précédente, on a $  A \left(\frac{9 I_3-A}{18} \right) =  I_3$. Ainsi, $A$ est inversible et :
+$$ A^{-1} = \frac{9 I_3-A}{18}$$
+\end{enumerate}
+
+
+ 
+ \noindent \textit{Remarque.} Une matrice carrée $A$ d'ordre $n$ est dite inversible si il existe une matrice $B$ carrée d'ordre $n$ telle que $AB=BA= I_n$. Un résultat (que l'on redémontrera probablement dans l'année) nous permet de vérifier uniquement l'égalité $AB=I_n$ ou $BA=I_n$ pour obtenir que $A$ et $B$ sont inversibles et sont les inverses l'une de l'autre. Attention à la factorisation avec des matrices : on a $A^2+A=A(A+I)$ (où $I$ est la matrice identité) et pas $A(A+1)$.
+ 
+ 
+ 
+ \begin{Exercice}{}\end{Exercice}Par simple calcul, $T^2$ est la matrice carrée nulle d'ordre $3$. La matrice $M$ est la somme d'une matrice diagonale et de $T$ : il suffit alors d'appliquer la formule du binôme de Newton (sans oublier qu'il y a une hypothèse importante à vérifier). On obtient :
+$$ \forall n \geq 0, \quad M^n = \begin{pmatrix}
+2^n & 0 & n 2^{n-1} \\
+0 & 1 & 0 \\
+0 & 0 & 2^n 
+\end{pmatrix}$$
+ 
+
+
+\subsection{Applications linéaires (avec les matrices)}
+
+
+\begin{Exercice}{}\end{Exercice}En notant $C_1$, $C_2$ et $C_3$ les colonnes de cette matrice, on remarque que :
+$$C_1+C_2-C_3 = 0_{\mathcal{M}_{3,1}(\mathbb{R})}$$
+Ainsi :
+$$ \begin{pmatrix}
+1 \\
+1 \\
+-1 
+\end{pmatrix} \in \textrm{Ker}(A) $$
+Donc $\textrm{dim}(\textrm{Ker}(A)) \geq 1$. Or le rang de cette matrice est supérieur ou égal à $2$ car $C_1$ et $C_2$ sont non colinéaires. D'après le théorème du rang, on a :
+$$ 3=\textrm{dim}(\mathcal{M}_{3,1}(\mathbb{R})) = \textrm{dim}(\textrm{Ker}(A)) + \textrm{rg}(A)$$
+et ainsi $\textrm{dim}(\textrm{Ker}(A)) = 1$ et $\textrm{rg}(A)=2$. Une base du noyau de $A$ est $\left(  \begin{pmatrix}
+1 \\
+1 \\
+-1 
+\end{pmatrix} \right)$ (c'est un vecteur non nul) et une base de l'image de $A$ est donnée par $(C_1,C_2)$ (car le rang de la matrice est $2$ et que ces deux vecteurs appartiennent à l'image et sont non colinéaires).
+
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item La base canonique de $\mathbb{R}_2[X]$ est $\mathcal{B}=(1,X,X^2)$. On a :
+\begin{itemize}
+\item $\varphi(1) = (1,0,1)$.
+\item $\varphi(X) = (0, 1, 1)$. 
+\item $\varphi(X^2) = (0, 0, 1)$.
+\end{itemize}
+Ainsi, en notant $\mathcal{C}$ la base canonique de $\mathbb{R}^3$,
+$$ \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(\varphi) = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+1 & 1 & 1 
+\end{pmatrix}$$
+\item La matrice de $\varphi$ dans les bases canoniques est inversible (matrice triangulaire inférieure avec des coefficients diagonaux non nuls) donc $\varphi$ est un isomorphisme d'espaces vectoriels. 
+
+\item On sait que :
+$$ \textrm{Mat}_{\mathcal{C}, \mathcal{B}}(\varphi^{-1}) = (\textrm{Mat}_{\mathcal{B}, \mathcal{C}}(\varphi))^{-1}$$
+Par la méthode classique pour inverser une matrice, on a :
+$$\textrm{Mat}_{\mathcal{C}, \mathcal{B}}(\varphi^{-1}) = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & -1 & 1 
+\end{pmatrix}$$
+Soit $Z=(x,y,z) \in \mathbb{R}^3$. On sait que :
+$$ \textrm{Mat}_{\mathcal{B}}(\varphi^{-1}(Z)) = \textrm{Mat}_{\mathcal{C}, \mathcal{B}}(\varphi^{-1}) \textrm{Mat}_{\mathcal{C}}(Z)$$
+et ainsi :
+$$ \textrm{Mat}_{\mathcal{B}}(\varphi^{-1}(Z)) = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-1 & -1 & 1 
+\end{pmatrix} \begin{pmatrix}
+x \\
+y \\
+z \\
+\end{pmatrix} = \begin{pmatrix}
+x \\
+y \\
+-x-y+z \\
+\end{pmatrix}$$
+En se rappelant que $\mathcal{B}=(1,X,X^2)$, on a donc :
+$$ \varphi^{-1}((x,y,z)) = x + y X + (-x-y+z)X^2$$
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice} 
+\begin{enumerate}
+\item Il suffit de l'écrire. 
+\item Déterminons la matrice de $f$ dans la base canonique $\mathcal{B}$ de $\mathbb{R}_2[X]$ : $f(1) =0$, $f(X) = X+1$ et $f(X^2) = 2X+2X^2$. On a ainsi :
+$$ M= \textrm{Mat}_{\mathcal{B}}(f) =\begin{pmatrix}
+0 & 1 & 0 \\
+0 & 1 & 2 \\
+0 & 0 & 2 \\
+\end{pmatrix}$$
+
+\item Cette famille de polynômes non nuls est échelonnée en degré et de cardinal $3$ qui est la dimension de $\mathbb{R}_2[X]$. Ainsi $\mathcal{B}'$ est une base de $\mathbb{R}_2[X]$. Par simple calcul, on a : $f(X+1)=(X+1)$ et $f((X+1)^2)=2(X+1)^2$ et ainsi :
+$$ \textrm{Mat}_{\mathcal{B}'}(f) =\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2 \\
+\end{pmatrix}$$
+\item $M$ et $N$ sont deux matrices représentant le même endomorphisme $f$ dans deux bases de $\mathbb{R}_2[X]$. Elles sont donc semblables. D'après la formule de changement de base, on sait que :
+$$ \textrm{Mat}_{\mathcal{B}}(f) = P_{\mathcal{B}, \mathcal{B}'} \textrm{Mat}_{\mathcal{B}'}(f) P_{\mathcal{B}', \mathcal{B}}$$
+où $P_{\mathcal{B}, \mathcal{B}'}$ est la matrice de passage de $\mathcal{B}$ dans $\mathcal{B}'$. Par définition de la matrice de passage, on a :
+$$ P_{\mathcal{B}, \mathcal{B}'} = \begin{pmatrix}
+1 & 1 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 1 
+\end{pmatrix}$$
+On sait que $P_{\mathcal{B}', \mathcal{B}} = \left(P_{\mathcal{B}', \mathcal{B}} \right)^{-1}$ donc en résolvant un système (ou en remarquant que $X= -1 + (X+1)$ et $X^2 = (X+1)^2 - 2(X+1) + 1$), on a :
+$$ P_{\mathcal{B}', \mathcal{B}}  = \begin{pmatrix}
+1 & -1 & 1 \\
+0 & 1 & -2 \\
+0 & 0 & 1 
+\end{pmatrix}$$
+\item L'intérêt de changer de base est que dans la base $\mathcal{B}'$, la matrice de $f$ est diagonale ce qui permet d'obtenir facilement la matrice de $f^n$ pour tout $n \in \mathbb{N}^*$ :
+$$ \textrm{Mat}_{\mathcal{B}'}(f^n) = \textrm{Mat}_{\mathcal{B}'}(f)^n = \begin{pmatrix}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2^n \\
+\end{pmatrix}$$
+Or, par changement de base, on a :
+$$  \textrm{Mat}_{\mathcal{B}}(f^n) = P_{\mathcal{B}, \mathcal{B}'} \textrm{Mat}_{\mathcal{B}'}(f^n) P_{\mathcal{B}', \mathcal{B}}$$
+ou encore :
+$$ \textrm{Mat}_{\mathcal{B}}(f) ^n= P_{\mathcal{B}, \mathcal{B}'} \textrm{Mat}_{\mathcal{B}'}(f)^n P_{\mathcal{B}', \mathcal{B}}$$
+et donc 
+$$ M^n=  P_{\mathcal{B}, \mathcal{B}'}N^n P_{\mathcal{B}', \mathcal{B}}$$
+Il suffit de terminer le calcul.
+\end{enumerate}
+
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Soit $P \in \mathbb{R}_n[X]$. Il est clair que $\Phi(P)$ appartient à $\mathbb{R}[X]$. Le degré de $P(X+1)$ et celui de $P(X-1)$ reste le même que celui de $P$ donc par différence, $\Phi(P) \in \mathbb{R}_n[X]$. La linéarité de $\Phi$ est évidente.
+\item Soit $k \in  \iii{0}{n}$. On a (en utilisant la formule du binôme de Newton pour la deuxième égalité) : 
+
+\begin{align*}
+\Phi(X^k) & = (X+1)^k - (X-1)^k \\
+& = \sum_{i=0}^k \binom{k}{i} X^i - \sum_{i=0}^k \binom{k}{i} X^i (-1)^{k-i} \\
+& =\sum_{i=0}^k \binom{k}{i} X^i  (1-(-1)^{k-i}) \\
+& =\sum_{i=0}^{k-1} \binom{k}{i} X^i  (1-(-1)^{k-i}) 
+\end{align*}
+car pour $i=k$, $1-(-1)^{k-i}=0$. Donnons la matrice de $\Phi$ dans la base canonique de $\mathbb{R}_n[X]$ que nous noterons $\mathcal{B}$ :
+$$ \textrm{Mat}_{\mathcal{B}}(\Phi) = \begin{pmatrix}
+0 &   2 & 0 &  \cdots & 1-(-1)^n  \\
+0 &  0  & 4 & \cdots &  (n-1) (1-(-1)^{n-1}) \\
+\vdots & \vdots & \vdots & \cdots &  \vdots \\
+0 &  0 & 0 &  \cdots & 2n  \\
+0 &  0 & 0 &  \cdots& 0 \\
+\end{pmatrix}$$
+
+\end{enumerate}
+
+\begin{Exercice}{}\end{Exercice}
+\begin{enumerate}
+\item Il suffit de montrer que $P$ et $D$ sont supplémentaires dans $\mathbb{R}^3$. Voir exercice 48 ou 58.
+\item Commencer par déterminer, pour tout $(x,y,z) \in \mathbb{R}^3$, $p((x,y,z))$ (voir exercice 58) : la matrice s'en déduit alors directement.
+\item Notons $q$ et $s$ la projection et la symétrie souhaitée. On sait que $p+q=\textrm{Id}$. Pour la symétrie : trouver le lien entre l'identité, $p$ et $s$ (sûrement donné dans votre cours de première année avec un joli dessin).
+\end{enumerate}
+
+\begin{Exercice}{}\end{Exercice}
+\begin{enumerate}
+\item Pour tout $P\in \R_n[X]$, $P' \in \R_n[X]$ donc $\varphi_n(P) \in \R_n[X]$. Soient $P,Q \in  \R_n[X]$ et $\lambda \in \mathbb{R}$. Alors :
+\begin{align*}
+\varphi_n(\lambda P+Q) & = \lambda P + Q - (\lambda P+Q)' \\
+& = \lambda P + Q - \lambda P' - Q' \quad \hbox{(linéarité de la dérivation)} \\
+& = \lambda(P-P') + Q-Q' \\
+& = \lambda \varphi_n(P) + \varphi_n(Q) 
+\end{align*}
+Ainsi, l'application $\varphi_n$ est linéaire. Finalement, $\varphi_n$ est un endomorphisme de $\R_n[X]$.
+\item On a $\varphi_n(1)=1$ et pour tout  $i \in  \iii{1}{n}$, $\varphi_n(X^i)=X^i-iX^{i-1}$. Ainsi, la matrice de $\varphi_n$ dans la base canonique de $\R_n[X]$ est :
+$$\begin{pmatrix}
+1&-1&0&\cdots&0\\0&1&-2&\ddots&\vdots\\ \vdots&\ddots&\ddots&\ddots&0\\\vdots&&\ddots&\ddots&-n\\0&\cdots&\cdots&0&1
+\end{pmatrix}$$
+
+\item Proposons plusieurs méthodes :
+\begin{itemize} 
+\item \textit{Première méthode.} D'après la question précédente, la matrice de l'endomorphisme $\varphi _n$ dans la base canonique de $\R_n[X]$ est triangulaire supérieure avec des éléments diagonaux non nuls, elle est donc inversible. Ainsi, $\varphi _n$ est un automorphisme de $\R_n[X]$.
+\item \textit{Deuxième méthode.} Soit $P \in \R_n[X]$. Alors :
+$$ \varphi_n(P) = \tilde{\theta} \Longleftrightarrow P=P' \Longleftrightarrow P = \tilde{\theta}$$
+car pour des raisons de degré, le seul polynôme égal à sa dérivée est le polynôme nul. Ainsi le noyau de $\varphi_n$ est réduit au vecteur nul et donc $\varphi_n$ est un endomorphisme d'un espace vectoriel de dimension finie injectif et donc bijectif. Ainsi, $\varphi _n$ est un automorphisme de $\R_n[X]$.
+\end{itemize}
+
+\item
+$\varphi _n$ étant une bijection de $\R_n[X]$ dans $\R_n[X]$, tout vecteur de $\R_n[X]$ admet un unique antécédent dans $\R_n[X]$ par $\varphi_n$. Ainsi, il existe une unique famille de polynômes $s_0,s_1,\cdots,s_n$ telle que : 
+$$\forall i\in  \iii{0}{n}, \; \varphi _n(s_i)=\dfrac{X^i}{i!}$$
+De plus, la famille $\left(1,\dfrac X{1!},\cdots, \dfrac{X^n}{n!}\right)$ est une base de $\R_n[X]$ car constituée de $n+1$ éléments (qui est la dimension de $\R_n[X]$) et est une famille de polynômes non nuls échelonnée en degrés. Son image par l'automorphisme 
+${\varphi_n}^{-1}$ est donc aussi une base de $\R_n[X]$ et ainsi $(s_0,s_1,\cdots,s_n)$ est une base de $\R_n[X]$.
+
+\item On développe l'expression et on simplifie les termes pour obtenir :
+$$(\textrm{Id}-\delta )\circ(\textrm{Id}+\delta +\cdots+\delta ^n)=\textrm{Id}-\delta^{n+1}$$
+Or $\delta^{n+1}$ est l'endomorphisme nul de $\R_n[X]$ car tout polynôme de $\R_n[X]$ dérivé $n+1$ fois est le polynôme nul. Ainsi, 
+$$(\textrm{Id}-\delta )\circ(\textrm{Id}+\delta +\cdots+\delta ^n)=\textrm{Id}$$
+
+\item La relation précédente s'écrit aussi :
+$$ \varphi_n\circ(\textrm{Id}+\delta +\cdots+\delta ^n)=\textrm{Id}$$ 
+et ainsi en composant $\varphi_n^{-1}$ à gauche :
+$$ \textrm{Id}+\delta +\cdots+\delta ^n= \varphi_n^{-1}$$
+Pour tout entier $i$ dans $ \iii{0}{n}$, on a ainsi :
+\begin{align*}
+s_i & =\varphi_n^{-1}\left(\dfrac{X^i}{i!}\right) \\
+& =(\textrm{Id}+\delta +\cdots+\delta ^n)\left(\dfrac{X^i}{i!}\right) \\
+& =\dfrac{X^i}{i!}+\dfrac{X^{i-1}}{(i-1)!}+\cdots+\dfrac{X}{1!}+1 \\
+& =\sum_{k=0}^i\dfrac{X^k}{k!}
+\end{align*}
+Finalement, pour tout $i$ dans $ \iii{0}{n}$,
+$$s_i=  \sum_{k=0}^i\dfrac{X^k}{k!}$$
+
+\end{enumerate}
+
+
+
+\subsection{Déterminants}
+
+\begin{Exercice}{}\end{Exercice}Une manière simple de faire pour obtenir une forme factorisée : $C_1 \leftarrow C_1+C_2+C_3$ donne :
+$$\begin{vmatrix}
+      a & b & c \\
+      c & a & b \\
+      b & c & a
+    \end{vmatrix} = \begin{vmatrix}
+      a +b+c& b & c \\
+      c+a+b & a & b \\
+      b+c+a & c & a
+    \end{vmatrix} = (a+b+c) \begin{vmatrix}
+      1 & b & c \\
+      1 & a & b \\
+      1 & c & a
+    \end{vmatrix}$$
+par linéarité par rapport à la première colonne. On utilise ensuite les opérations : $L_2 \leftarrow L_2-L_1$ et $L_3 \leftarrow L_3 - L_1$, ce qui donne :
+$$\begin{vmatrix}
+      a & b & c \\
+      c & a & b \\
+      b & c & a
+    \end{vmatrix} = (a+b+c) \begin{vmatrix}
+      1 & b & c \\
+      0 & a -b& b-c \\
+      0 & c-b & a-c
+    \end{vmatrix}$$
+puis finalement en développant par rapport à la première colonne, le déterminant cherché vaut :
+$$ (a+b+c)((a-b)(a-c)+(c-b)^2) = (a+b+c)(a^2+b^2+c^2-ac-ab-bc)$$
+
+
+
+\begin{Exercice}{}\end{Exercice}
+
+\begin{enumerate}
+\item Une manière simple pour obtenir une forme factorisée est $L_3 \leftarrow L_3+L_2$ puis on utilise la linéarité par rapport à la dernière ligne puis on soustrait à la colonne 2 la colonne 3 puis il reste à développer suivant la dernière ligne ce qui donne :
+$$ \textrm{det}(A- \lambda I_3) = (4-\lambda)(\lambda ^2-3\lambda +2) = (4 - \lambda)(\lambda-1)(\lambda-2) $$
+Donc les valeurs cherchées sont $1$, $2$ et $4$.
+\item Pour justifier que la concaténation est bien une base de $E$, il suffit de remarquer que la famille a $3$ éléments qui est la dimension de $\mathbb{R}^3$ : il suffit donc de montrer que cette famille est libre. La matrice de $f$ dans cette nouvelle base est diagonale et les éléments de la diagonale sont (dans l'ordre) $1$, $2$ et $4$. Justifions pour le premier coefficient : en notant $(x_1)$ une base du noyau de $\textrm{Ker}(f-\textrm{Id}_E)$, on a :
+$$ f(x_1)- x_1 = 0_E$$
+c'est-à-dire $f(x_1)=x_1$. Il suffit de procéder de la même manière pour les autres coefficients.
+\end{enumerate}
+
+
+
+\begin{Exercice}{}\end{Exercice}Les opérations élémentaires (dans cet ordre) $C_n \leftarrow C_n - C_{n-1}$, $C_{n-1} \leftarrow C_{n-1} - C_{n-2}$, $\ldots$, $C_2 \leftarrow C_2- C_1$ permettent d'obtenir un déterminant triangulaire valant $n!$.
+
+\end{document}

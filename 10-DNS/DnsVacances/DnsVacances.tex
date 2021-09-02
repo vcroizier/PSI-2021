@@ -568,7 +568,7 @@ En utilisant la formule de Leibniz, concernant la dérivée $n^{\text{ème}}$ d'
 	Soit $E$ un $\mathbb{K}$-espace vectoriel, $F \subset E$ et $x_1$, $\ldots$, $x_p$ des vecteurs de $E$ ($p \geq 1$). Connaître parfaitement :
 \begin{itemize}
 \item La définition de sous-espace vectoriel de $F$.
-\item La définition de $\textrm{Vect}(x_1, \ldots, x_p)$ et la preuve que c'est un sous-espace vectoriel de $E$.
+\item La définition de $\Vect(x_1, \ldots, x_p)$ et la preuve que c'est un sous-espace vectoriel de $E$.
 \end{itemize}
 \end{ptc}
 
@@ -676,7 +676,7 @@ En utilisant la formule de Leibniz, concernant la dérivée $n^{\text{ème}}$ d'
 \end{ptc}
 
 \begin{Exercice}{}
-Montrer que $F=\textrm{Vect}((1,0,0,1), \, (0,0,1,0))$ et $G=\textrm{Vect}((0,0,0,1), \, (0,1,0,1))$ sont deux sous-espaces supplémentaires de $\mathbb{R}^4$.
+Montrer que $F=\Vect((1,0,0,1), \, (0,0,1,0))$ et $G=\Vect((0,0,0,1), \, (0,1,0,1))$ sont deux sous-espaces supplémentaires de $\mathbb{R}^4$.
 \end{Exercice} 
 
 \begin{Exercice}{}
@@ -698,7 +698,7 @@ Soient $\mathbb{K}= \mathbb{R}$ ou $\mathbb{C}$ et $E, F$ deux $\mathbb{K}$-espa
 \item Connaître la définition d'application linéaire, d'endomorphisme, d'isomorphisme, d'automorphisme.
 \item Soit $f \in \mathcal{L}(E,F)$. Connaître la définition du noyau et de l'image de $f$. Savoir montrer que ce sont des sous-espaces vectoriels (de $E$ pour le noyau, de $F$ pour l'image).
 \item Soit $f \in \mathcal{L}(E,F)$. Si $(e_1, \ldots, e_n)$ est une base de $E$,
-$$ \textrm{Im}(f) = \textrm{Vect}(f(e_1), \ldots, f(e_n))$$
+$$ \textrm{Im}(f) = \Vect(f(e_1), \ldots, f(e_n))$$
 \item Connaître la définition de rang d'une application linéaire et le théorème du rang.
 \end{itemize} 
 \end{ptc}
@@ -774,7 +774,7 @@ $$ \textrm{Im}(f) = \textrm{Vect}(f(e_1), \ldots, f(e_n))$$
 
 \begin{Exercice}{}
   Soient $E= \mathbb{R}^3$ et $F$, $G$ les ensembles définis par :
-  $$ F = \lbrace (x,y,z) \in \mathbb{R}^3, \, x-y+z=0 \rbrace \quad \hbox{ et }  \quad G = \textrm{Vect}((1,1,1)) $$
+  $$ F = \lbrace (x,y,z) \in \mathbb{R}^3, \, x-y+z=0 \rbrace \quad \hbox{ et }  \quad G = \Vect((1,1,1)) $$
   
   \begin{enumerate}
     \item Donner une base de $F$ et préciser sa dimension.
@@ -899,7 +899,7 @@ $$ \textrm{Im}(f) = \textrm{Vect}(f(e_1), \ldots, f(e_n))$$
 \begin{Exercice}{}
   On considère les sous-espaces vectoriels de $\mathbb{R}^3 $ suivants :
   
-  $P = \left\{ {(x,y,z) \in \mathbb{R}^3 \mid x + 2y - z = 0} \right\}$ et $D = \textrm{Vect} (w){\text{ o\`u }}w = (1,0, - 1)$. On note $\mathcal{B}$ la base canonique de $\mathbb{R}^3 $.
+  $P = \left\{ {(x,y,z) \in \mathbb{R}^3 \mid x + 2y - z = 0} \right\}$ et $D = \Vect (w){\text{ o\`u }}w = (1,0, - 1)$. On note $\mathcal{B}$ la base canonique de $\mathbb{R}^3 $.
   
   \begin{enumerate}
     \item Justifier l'existence de la projection vectorielle sur $P$ parallèlement à $D$. Notons $p$ ce projecteur.
@@ -1103,7 +1103,7 @@ $$ \textrm{Im}(f) = \textrm{Vect}(f(e_1), \ldots, f(e_n))$$
 %%\end{metho}
 %%
 %%
-%%\textbf{Exemple.} On considère les sous-espaces vectoriels de $\mathbb{R}^3 $ suivants : $P = \left\{ {(x,y,z) \in \mathbb{R}^3 \mid x + 2y - z = 0} \right\}$ et $D = \textrm{Vect} (w){\text{ o\`u }}w = (1,0, - 1)$. Justifier l'existence de la projection vectorielle, notée $p$, sur $P$ parallèlement à $D$ puis donner son expression.
+%%\textbf{Exemple.} On considère les sous-espaces vectoriels de $\mathbb{R}^3 $ suivants : $P = \left\{ {(x,y,z) \in \mathbb{R}^3 \mid x + 2y - z = 0} \right\}$ et $D = \Vect (w){\text{ o\`u }}w = (1,0, - 1)$. Justifier l'existence de la projection vectorielle, notée $p$, sur $P$ parallèlement à $D$ puis donner son expression.
 %%
 %%%%
 %%\textbf{\textit{Première idée :}}
@@ -1133,7 +1133,7 @@ $$ \textrm{Im}(f) = \textrm{Vect}(f(e_1), \ldots, f(e_n))$$
 %%\textbf{\textit{Deuxième idée :}} si l'on souhaite juste montrer que $P$ et $D$ sont supplémentaires, on peut raisonner autrement.
 %%
 %%\begin{itemize}
-%%\item Soit $(x,y,z) \in \mathbb{R}^3$. On a $(x,y,z) \in P$ si et seulement si $x+2y-z=0$ ou encore $x=-2y+z$ et finalement si et seulement si $(x,y,z) = (-2y+z,y,z) = y(-2,1,0)+z(1,0,1)$. Ainsi $P = \textrm{Vect}((-2,1,0),(1,0,1))$ et $P$ est de dimension $2$ car les des vecteurs sont non colinéaires. De plus, $D$ est de dimension $1$ (car $(1,0,-1)$ est non nul). Ainsi :
+%%\item Soit $(x,y,z) \in \mathbb{R}^3$. On a $(x,y,z) \in P$ si et seulement si $x+2y-z=0$ ou encore $x=-2y+z$ et finalement si et seulement si $(x,y,z) = (-2y+z,y,z) = y(-2,1,0)+z(1,0,1)$. Ainsi $P = \Vect((-2,1,0),(1,0,1))$ et $P$ est de dimension $2$ car les des vecteurs sont non colinéaires. De plus, $D$ est de dimension $1$ (car $(1,0,-1)$ est non nul). Ainsi :
 %%$$ \boxed{\textrm{dim}(\mathbb{R}^3) = \textrm{dim}(P) + \textrm{dim}(D)}$$
 %%\item $D$ est de dimension $1$ (car $(1,0,-1)$ est non nul).
 %%\item Soit $(x,y,z) \in D \cap P$. Par définition, il existe $\alpha \in \mathbb{R}$ tel que $(x,y,z)= \alpha (1,0,-1)$ et $x+2y-z=0$
