@@ -1,0 +1,317 @@
+\documentclass[french,11pt,twoside]{VcCours}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Informatique}{Algorithmes incontournables.}
+
+\subsection{Calcul d'une somme.}
+\subsubsection{L'algorithme.}
+
+On a une liste $L$, on veut calculer la somme des termes de la liste.
+
+L'idée principale est d'avoir une variable $S$ (l'accumulateur) contenant la
+somme des termes déjà lus.
+
+Au départ $S$ vaut $0$, puis on rajoute chacun des éléments de la liste à cet
+accumulateur $S$. Quand on a fini de passer en revue tous les éléments de la
+liste, $S$ contient le total souhaité.
+
+\begin{Python}
+def somme(L) :
+    """Calcule la somme des termes de la liste L."""
+    n = len(L) # nombre de terme de la liste
+    S = 0
+    for k in range(n) :
+        S = S + L[k]
+    return(S)
+\end{Python}
+
+Un exemple d'exécution :
+\begin{Python*}
+somme([5,9,-2,5])
+\end{Python*}
+
+Le tableau suivant retrace l'exécution de la fonction \textalltt{somme}.
+
+Il donne l'état des variables après l'exécution de chacune des lignes (donnée
+par leur numéro).
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+  N°
+  ligne&\makebox[2cm]{S}&\makebox[1cm]{k}&\makebox[1cm]{n}&\makebox[8cm]{commentaires}\\
+  \hline
+  1 &&&&\\
+  \hline
+  3 &&&&\\
+  \hline
+  4 &&&&\\
+  \hline
+  5 &&&&\\
+  \hline
+  6 &&&&\\
+  \hline
+  5 &&&&\\
+  \hline
+  6 &&&&\\
+  \hline
+  5 &&&&\\
+  \hline
+  6 &&&&\\
+  \hline
+  5 &&&&\\
+  \hline
+  6 &&&&\\
+  \hline
+  5 &&&&\\
+  \hline
+  7 &&\multicolumn{3}{c|}{}\\
+  \hline
+\end{tabular}
+\end{center}
+
+\pagebreak
+\subsubsection{Variantes.}
+\begin{Exercice}{}
+Écrire une fonction \textalltt{somme(n)} qui, pour $n\in\N$, donne
+$\sum_{k=1}^n\frac{1}{k^2}$.
+\end{Exercice}
+
+\begin{Exercice}{}
+Écrire une fonction \textalltt{produit(L)} qui, pour une liste $L$, donne
+le produit de tous ses éléments.
+\end{Exercice}
+
+\begin{Exercice}{}
+Écrire une fonction \textalltt{sommeTermesPositifs(L)} qui, pour une
+liste $L$, donne le somme des éléments positifs de la liste.
+\end{Exercice}
+
+\begin{Exercice}{}
+Écrire une fonction \textalltt{somme(T)} qui, pour un
+tableau $T$ à deux dimensions, donne le somme des éléments du tableau.
+\end{Exercice}
+
+\begin{Exercice}{}
+Écrire une fonction \textalltt{sommesParLignes(T)} qui, pour un
+tableau $T$ à deux dimensions, donne la liste contenant la somme de
+chacune des lignes du tableau.
+\end{Exercice}
+
+\newpage
+\subsection{Calcul du maximum.}
+\subsubsection{L'algorithme.}
+On a une liste $L$, on veut déterminer le plus grand des termes
+de la liste.
+
+L'idée principale est d'avoir une variable $M$ (la mémoire)
+contenant le plus grand terme rencontré jusque là.
+
+Au départ $M$ prend la valeur du premier terme de la liste, puis on compare
+chacun des autres termes à $M$ et, s'il est plus grand, on met à jour $M$ avec
+cette valeur.
+Quand on a fini de passer en revue tous les éléments de la liste, $M$ contient
+le plus grand de tous.
+
+\begin{Python}
+def maximum(L) :
+    """Donne le plus grand des termes de la liste L.
+    """
+    n = len(L) # nombre de terme de la liste
+    M = L[0]
+    for k in range(1,n) :
+        if L[k]>M :
+            M = L[k]
+    return(M)
+\end{Python}
+
+Un exemple d'exécution :
+\begin{Python*}
+maximum([5,2,9,-2,11,5])
+\end{Python*}
+
+Le tableau suivant retrace l'exécution de la fonction \textalltt{maximum}.
+
+Il donne l'état des variables après l'exécution de chacune des lignes (donnée
+par leur numéro).
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+  N° ligne&\makebox[2cm]{M}&\makebox[2cm]{k}&\makebox[2cm]{n}&\makebox[5cm]{L}\\
+  \hline
+  1 &&&&\\
+  \hline
+  4 &&&&\\
+  \hline
+  5 &&&&\\
+  \hline
+  6 &&&&\\
+  \hline
+  7 &&\multicolumn{3}{l|}{Le test \textalltt{L[k]>M} est}\\
+  \hline
+  6 &&&&\\
+  \hline
+  7 &&\multicolumn{3}{l|}{Le test \textalltt{L[k]>M} est}\\
+  \hline
+  8 &&&&\\
+  \hline
+  6 &&&&\\
+  \hline
+  7 &&\multicolumn{3}{l|}{Le test \textalltt{L[k]>M} est}\\
+  \hline
+  6 &&&&\\
+  \hline
+  7 &&\multicolumn{3}{l|}{Le test \textalltt{L[k]>M} est}\\
+  \hline
+  8 &&&&\\
+  \hline
+  6 &&&&\\
+  \hline
+  7 &&\multicolumn{3}{l|}{Le test \textalltt{L[k]>M} est}\\
+  \hline
+  6 &&&&\\
+  \hline
+  9 &&\multicolumn{3}{c|}{}\\
+  \hline
+\end{tabular}
+\end{center}
+
+%\pagebreak
+\subsubsection{Variantes.}
+\begin{Exercice}{}
+Écrire une fonction \textalltt{positionDuMax(L)} qui, pour une liste $L$, donne
+la/une position du plus grand des éléments de la liste.
+\end{Exercice}
+
+\begin{Exercice}{}
+Écrire une fonction \textalltt{positionsDuMax(L)} qui, pour une liste $L$,
+donne la liste des positions du plus grand des éléments de la liste.
+\end{Exercice}
+
+\begin{Exercice}{}
+Écrire une fonction \textalltt{maximum(T)} qui, pour un
+tableau $T$ à deux dimensions, donne le plus grand des éléments du tableau.
+\end{Exercice}
+
+\begin{Exercice}{}
+Écrire une fonction \textalltt{maximumParLigne(T)} qui, pour un
+tableau $T$ à deux dimensions, donne la liste contenant le maximum de chacune
+des lignes du tableau.
+\end{Exercice}
+
+\newpage
+\subsection{Termes d'une suite.}
+\subsubsection{L'algorithme.}
+On a une suite $(u_n)_{n\in\N}$, définie par :
+\[\sys{u_0=5\\\forall n\in\N,\ u_{n+1}=2u_n+\frac{6}{n+1}}\]
+
+On veut calculer le terme $u_n$ pour un $n$ donné.
+
+L'idée principale est d'avoir deux variables $U$ et $k$ qui à elles deux
+représente $u_k$.
+
+Au départ $U$ prend la valeur du premier terme de la suite et $k$ la valeur de
+l'indice correspondant. Puis, on remplace $U$ et $k$ par la valeur et l'indice
+de $u_{k+1}$ et on répète l'opération jusqu'à obtenir le terme souhaité $u_n$.
+À la fin, $U$ contient la valeur demandée.
+
+\begin{Python}
+def valeurDeU(n) :
+    """Donne la valeur de Un.
+    """
+    U = 5
+    k = 0
+    while k<n :
+        U = 2*U+6/(k+1) # Calcul Uk+1 à partir de Uk
+        k = k+1
+    return(U)
+\end{Python}
+
+Un exemple d'exécution :
+\begin{Python*}
+valeurDeU(4)
+\end{Python*}
+
+Le tableau suivant retrace l'exécution de la fonction \textalltt{valeurSuiteU}.
+
+Il donne l'état des variables après l'exécution de chacune des lignes (donnée
+par leur numéro).
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+  N°
+  ligne&\makebox[2cm]{U}&\makebox[2cm]{k}&\makebox[2cm]{n}&\makebox[5cm]{Commentaire}\\
+  \hline
+  1 &&&&\\
+  \hline
+  4 &&&&\\
+  \hline
+  5 &&&&\\
+  \hline
+  6 &&&&\multicolumn{1}{l|}{Le test \textalltt{k<n} est}\\
+  \hline
+  7 &&&&\\
+  \hline
+  8 &&&&\\
+  \hline
+  6 &&&&\multicolumn{1}{l|}{Le test \textalltt{k<n} est}\\
+  \hline
+  7 &&&&\\
+  \hline
+  8 &&&&\\
+  \hline
+  6 &&&&\multicolumn{1}{l|}{Le test \textalltt{k<n} est}\\
+  \hline
+  7 &&&&\\
+  \hline
+  8 &&&&\\
+  \hline
+  6 &&&&\multicolumn{1}{l|}{Le test \textalltt{k<n} est}\\
+  \hline
+  7 &&&&\\
+  \hline
+  8 &&&&\\
+  \hline
+  6 &&&&\multicolumn{1}{l|}{Le test \textalltt{k<n} est}\\
+  \hline
+  9 &&\multicolumn{3}{c|}{}\\
+  \hline
+\end{tabular}
+\end{center}
+
+\pagebreak
+Voici la même fonction avec une boucle \textalltt{for} qui gère la variable
+\textalltt{k}.
+\begin{Python}
+def valeurDeU(n) :
+    """Donne la valeur de Un.
+    """
+    U = 5
+    for k in range(0,n) :
+        U = 2*U+6/(k+1) # Calcul Uk+1 à partir de Uk
+    return(U)
+\end{Python}
+
+
+
+\subsubsection{Variantes.}
+\begin{Exercice}{}% cspell:ignore depasse
+Écrire une fonction \textalltt{depasse(M)} qui donne le plus petit indice $n$
+pour lequel $u_n\geqslant M$, $M$ étant un réel donné. (La suite tendant vers
+$+\infty$, on peut toujours trouver un tel $n$).
+\end{Exercice}
+
+\begin{Exercice}{}
+Écrire une fonction \textalltt{ListeDesTermesDeU(n)} qui, pour un
+$n\in\N$, donne la liste des $[u_0,\ldots,u_n]$.
+\end{Exercice}
+
+\begin{Exercice}{}
+Écrire une fonction \textalltt{sommeU(n)} qui, pour un
+$n\in\N$, donne la liste des $u_0+\ldots+u_n$.
+\end{Exercice}
+
+\end{document}
