@@ -332,7 +332,8 @@ Cela provient du fait qu'une suite complexe est convergente si et seulement si s
 
 \begin{Exemple} Montrons que $\Sum{n \geq 0}{} \dfrac{\cos(n \pi/3)}{2^n}$ converge et donnons sa somme.
 
-\vspace{9.5cm}
+	\newpage
+\vspace*{3cm}
 \end{Exemple}
 
 \section{Comparaison série-intégrale}
@@ -368,7 +369,7 @@ Donnons le principe :
 %
 %\vspace{0.3cm}
 
-\newpage
+\vspace*{10cm}
 
 \textbf{Application : la série harmonique.} 
 
@@ -384,14 +385,13 @@ Donnons le principe :
 %Or $\ln(n+1) \underset{+ \infty}{\sim} \ln(n)$ (on a $\ln(n+1) = \ln(n) + \ln \left(1+ \frac{1}{n}\right)$ et $\ln \left(1+ \frac{1}{n}\right) = o(1)$) et $1 + \frac{1}{\ln(n)}$ tend vers $1$ quand $n$ tend vers $\infty$. Par Théorème d'encadrement, on a alors par (\ref{Serihar}) :
 %$$ \sum_{k=1}^n \frac{1}{k} \underset{+ \infty}{\sim} \ln(n)$$
 
-\vspace{14.5cm}
 
-%\newpage
+\newpage
 %
 %$\phantom{test}$
-%\vspace{5cm}
+\vspace*{5cm}
 
-\begin{Methode} Une comparaison série-intégrale peut permettre d'étudier la nature d'une série et d'obtenir un équivalent des sommes partielles.
+\begin{Methode}{} Une comparaison série-intégrale peut permettre d'étudier la nature d'une série et d'obtenir un équivalent des sommes partielles.
 \end{Methode}
 %
 %\medskip
@@ -451,6 +451,7 @@ $$ \sum_{k=0}^{ + \infty} u_k \leq  \sum_{k=0}^{+ \infty} v_k $$
 
 
 \begin{Demonstration}{}
+\newpage
 \vspace{14.5cm}
 %\begin{enumerate}
 %\item Supposons que pour tout $n \in \mathbb{N}$, $u_n \leq v_n$.
@@ -482,7 +483,7 @@ $$ \sum_{k=0}^{ + \infty} u_k \leq  \sum_{k=0}^{+ \infty} v_k $$
 
 \subsection{Quelques exemples}
 
-\newpage
+
 \begin{Exemples}
 \begin{enumerate}
 	\item Étudions la nature de $\Sum{n \geq 1}{} \dfrac{1}{(n+1)^2}\cdot$
@@ -535,7 +536,6 @@ $\rhd$ Si $\alpha \leq 1$ :
 
 \vspace{3cm}
 
-\newpage
 $\rhd$ Si $\alpha>1$ :
 % La fonction $x \mapsto \frac{1}{x^{\alpha}}$ est continue et strictement décroissante sur $[1, + \infty[$. Par comparaison série-intégrale, on a pour tout $n \in \mathbb{N}^*$,
 %
@@ -632,6 +632,7 @@ On suppose que $\left( \dfrac{u_{n+1}}{u_n} \right)_{n \geq 0}$ possède une lim
 	\end{itemize}
 \end{Remarques}
 
+\newpage
 \begin{Exemple} Étudions la nature de la série $\Sum{n \geq 0}{} \dfrac{a^n}{n!}$ où $a \in \mathbb{R}_+^{*}$.
 
 \vspace{3cm}
@@ -677,8 +678,10 @@ $$ \left\vert \sum_{k=0}^{+ \infty} u_k \right\vert \leq \sum_{k=0}^{+ \infty} \
 %et ainsi pour tout $n \in \mathbb{N}$,
 %$$ 0 \leq \vert \Re(u_n) \vert \leq \vert u_n \vert \quad \hbox{ et }  \vert \Im(u_n) \vert \leq \vert u_n \vert$$
 %Par comparaison de série à termes positifs, les séries $\Sum{n \geq 0}{} \vert \Re(u_n) \vert$ et $\Sum{n \geq 0}{} \vert \Im(u_n) \vert$ sont convergentes. D'après la première partie de la preuve, les séries $\Sum{n \geq 0}{}  \Re(u_n) $ et $\Sum{n \geq 0}{}  \Im(u_n) $ sont donc convergentes et donc d'après la proposition \ref{ConvSerCompl}, la série $\Sum{n \geq 0}{} u_n$ converge.
+\newpage
 
-\vspace{12.5cm}
+\vspace*{5cm}
+
 \end{Demonstration}
 
 \begin{Remarque}{} La réciproque est fausse : la série harmonique alternée converge mais la série harmonique diverge.
@@ -708,7 +711,7 @@ $$ \left\vert \sum_{k=0}^{+ \infty} u_k \right\vert \leq \sum_{k=0}^{+ \infty} \
 
 \begin{Demonstration}{}
 
-\vspace{6cm}
+%\vspace{6cm}
 %
 %$\rhd$ Supposons que $u_n =O(v_n)$. Par définition, il existe une suite réelle $(\theta_n)_{n \geq 0}$ bornée et un rang $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$,
 %$$ u_n = \theta_n v_n $$
@@ -721,8 +724,10 @@ $$ \left\vert \sum_{k=0}^{+ \infty} u_k \right\vert \leq \sum_{k=0}^{+ \infty} \
 %$\rhd$ Si $u_n = o(v_n)$ alors $u_n = O(v_n)$.
 
 
+\newpage
 
-\vspace{6cm}
+\vspace*{6cm}
+
 \end{Demonstration}
 
 \begin{Exemple} Étudions la convergence de la série $\Sum{n\geq 1}{} \ln \left( 1 + \dfrac{(-1)^{n-1}}{n} \right) \cdot$
@@ -796,14 +801,12 @@ $\rhd$ Démontrons la deuxième partie du théorème : l'estimation et le signe 
 %Or la série de terme général $(-1)^k u_{m+k}$ est alternée donc d'après le résultat obtenu précédemment, $\Sum{k=0}{+ \infty} (-1)^k u_{m+k}$ est du signe de $u_{m}$ et ainsi $\Sum{k=m}{+ \infty} (-1)^k u_k$ est du signe de $(-1)^m u_m$. Toujours d'après le cas précédent, on a :
 %$$   \left\vert \sum_{k=m}^{+ \infty} (-1)^k u_k \right\vert = \left\vert \sum_{k=0}^{+ \infty} (-1)^k u_{m+k} \right\vert \leq \vert u_m \vert$$
 
-\vspace{9cm}
-\end{Demonstration}
-
 \newpage
 
-$\phantom{}$
+\vspace*{6cm}
+\end{Demonstration}
 
-\vspace{7cm}
+
 %\begin{retenir} Si la suite $(u_n)_{n \geq 0}$ est positive dans le théorème précédent, on a pour tout $n \geq 0$,
 %$$S_{2n+1} \leq \sum_{k=0}^{+ \infty} (-1)^k u_k \leq S_{2n}$$
 %\end{retenir}
@@ -881,7 +884,9 @@ On vient de montrer que la série exponentielle est absolument convergente pour 
 %$$ \left( \sum_{k=0}^{+ \infty} \frac{z^k}{k!} \right)\left( \sum_{k=0}^{+ \infty}  \frac{(z')^k}{k!} \right) = \sum_{n=0}^{+ \infty} \frac{(z+z')^n}{n!} $$
 %ou encore $\exp(z)\exp(z')=\exp(z+z')$.
 
-\vspace{7cm}
+\newpage
+
+\vspace*{7cm}
 
 \begin{ApplicationDirecte}
 Calculer pour $n \geq 0$, $\Sum{k=0}{n}  \left( \frac{1}{3} \right)^k \left( \frac{1}{3} \right)^{n-k}$. En déduire que la série $\Sum{n \geq 0}{}  (n+1)3^{-n}$ converge et donner sa somme.
@@ -918,7 +923,7 @@ Soient $(\alpha, \beta) \in \mathbb{R}^2$. La série $\Sum{n \geq 2}{} \dfrac{1}
 
 \begin{Demonstration}{} On distingue plusieurs cas.
 
-\vspace*{10.5cm}
+\vspace*{15cm}
 %\begin{itemize}
 %\item Supposons $\alpha>1$ et choisissons $\gamma \in ]1, \alpha[$. Alors :
 %$$ \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} = o \left( \frac{1}{n^{\gamma}} \right) $$
