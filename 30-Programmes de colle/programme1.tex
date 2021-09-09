@@ -1,0 +1,87 @@
+\documentclass[twoside,a4paper,french,10pt]{VcCours}
+\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\newcommand{\Int}[2]{\ensuremath{\mathchoice%
+	{{playstyle\int_{#1}^{#2}}}
+	{{playstyle\int_{#1}^{#2}}}
+	{\int_{#1}^{#2}}
+	{\int_{#1}^{#2}}
+	}}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{\vspace{-1.5em}}
+
+\begin{center}
+\large\bf
+Programme de colles\hspace{\stretch{1}}Semaine n\degres1 : du 13/09 au 17/09/2021
+\end{center}
+\separationTitre
+
+
+Pour cette khôlle, chaque étudiant aura :
+\begin{itemize}
+\item Un ou deux développements limités à donner.
+\item Une question de cours.
+\item Une démonstration \textbf{(D)} ou un exercice à retravailler.
+\end{itemize}
+
+
+\medskip 
+
+\section*{Chapitre 1 : Rappels d'analyse.}
+
+
+\begin{enumerate}
+\item Suites.
+\begin{itemize}
+\item \textbf{Convergence d'une suite}. Unicité de la limite \textbf{(D)}. Divergence. Divergence d'une suite réelle vers $\pm \infty$. Toute suite convergente est bornée. Limites et inégalités larges. 
+\item Théorèmes de convergence pour les suites réelles (comparaison, encadrement, suites monotones, suites adjacentes).
+\item Convergence d'une suite complexe.
+\item Suites extraites.
+\item Suites récurrentes. Quelques propriétés. \textbf{Inégalité des accroissements finis et corollaire}. Plan d'attaque d'une suite récurrente.
+\end{itemize}
+\item Suites usuelles.
+\begin{itemize}
+\item Suites arithmético-géométriques.
+\item Suites récurrentes linéaires d'ordre deux.
+\end{itemize} 
+\item Relations de comparaisons.
+\begin{itemize}
+\item \textbf{Domination, négligeabilité et équivalences} (pour les suites).
+\item Quelques propriétés : transitivité, linéarité, multiplication et division d'équivalents.
+\item Pour des suites réelles : si $u_n  \underset{n \rightarrow + \infty}{\sim} v_n $ alors à partir d'un certain rang, les termes $u_n$ et $v_n$ sont de même signe \textbf{(D)}.
+\end{itemize}
+\item\textbf{Développements limités usuels en 0}.
+\item Équivalents et limites usuelles.
+\begin{itemize}
+\item \textbf{Équivalents usuels.}
+\item Théorème des croissances comparées.
+\end{itemize}
+\item Quelques inégalités usuelles.
+\end{enumerate}
+
+
+\begin{Exercice}{}
+  Étudier la suite $(u_n)_{n \geq 0}$ définie par $u_0 \in \mathbb{R}$ et pour tout $n \in \mathbb{N}$ par $u_{n+1}=e^{u_n}-1$.
+\end{Exercice}
+
+\begin{Exercice}{}
+  Déterminer le terme général d'une suite arithmético-géométrique ou d'une suite récurrente linéaire d'ordre deux.
+\end{Exercice}
+
+\begin{Exercice}{}
+  On note $E$ la fonction partie entière. Soit $x \in \mathbb{R}$. On pose pour tout $n \geq 1$, 
+  $$ u_n = \frac{1}{n^2} \sum_{k=1}^n E(kx)$$
+  Étudier la convergence de la suite $(u_n)_{n \geq 1}$.
+\end{Exercice}
+
+\begin{Exercice}{}
+  Soient $n$ un entier naturel et $E_n $ l'équation $x + \tan x = n$ d'inconnue $x \in \left] { - \pi  / 2,\pi  / 2} \right[$.
+  \begin{enumerate}
+  \item Montrer que l'équation $E_n$ possède une solution unique notée $x_n $.
+  \item Montrer que la suite $(x_n)$ converge et déterminer sa limite.
+  \end{enumerate}
+\end{Exercice}
+
+
+\end{document}
