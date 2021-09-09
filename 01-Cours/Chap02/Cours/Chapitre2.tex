@@ -26,32 +26,33 @@ Dans tout le chapitre, $\mathbb{K}$ désigne $\mathbb{R}$ ou $\mathbb{C}$ et $(u
 
 \section{Généralités}
 \subsection{Convergence d'une série et premières propriétés}
-\begin{defin}
+\begin{Definition}{}
 Soit $(u_n)_{n \geq 0}$ une suite d'éléments de $\mathbb{K}$. On pose pour tout $n \in \mathbb{N}$,
 $$ S_n =  u_0 + u_1 + \cdots + u_n = \sum_{k=0}^n u_k $$
 
 \begin{itemize}
-\item La suite $(S_n)_{n \geq 0}$ est appelée \textit{série} de terme général $u_n$. On la note $\dis \Sum{n \geq 0}{} u_n$, $\dis \Sum{n \in \mathbb{N}}{} u_n$ ou $\dis \Sum{}{} u_n$.
-\item L'élément $S_n$ (appartenant à $\mathbb{K}$) est appelé \textit{somme partielle} d'ordre $n$ de la série.
+\item La suite $(S_n)_{n \geq 0}$ est appelée \emph{série} de terme général $u_n$. On la note $\Sum{n \geq 0}{} u_n$, $\Sum{n \in \mathbb{N}}{} u_n$ ou $\Sum{}{} u_n$.
+\item L'élément $S_n$ (appartenant à $\mathbb{K}$) est appelé \emph{somme partielle} d'ordre $n$ de la série.
 \end{itemize}
-\end{defin}
+\end{Definition}
 
-\begin{ex} \textbf{Séries géométriques.}
+\begin{Exemple} \textbf{Séries géométriques.}
 
 %
-%Soit $z$ un nombre complexe. On appelle \textit{série géométrique} de raison $z$, la série $\dis \Sum{n \geq 0}{} z^n$. 
+%Soit $z$ un nombre complexe. On appelle \emph{série géométrique} de raison $z$, la série $\Sum{n \geq 0}{} z^n$. 
 %
 %Pour tout $n \in \mathbb{N}$, on a :
 %$$ S_n = \sum_{k=0}^n z^k = \left\lbrace \begin{array}{cl}
-%\dis \frac{1-z^{n+1}}{1-z} & \hbox{ si }  z \neq 1 \\[0.3cm]
+%\frac{1-z^{n+1}}{1-z} & \hbox{ si }  z \neq 1 \\[0.3cm]
 %n + 1 & \hbox{ sinon} \\
 %\end{array}\right.$$
 
 \vspace{5cm}
-\end{ex}
+\end{Exemple}
 
-\begin{rems}
-\item Si une suite a pour premier indice $n_0 \in \mathbb{N}$, la série de terme général $u_n$ a aussi pour premier indice $n_0$ et on note cette série $\dis \Sum{n \geq n_0}{} u_n$. Ainsi les sommes partielles $S_n$ ne sont définies que pour $n \geq n_0$. 
+\begin{Remarques}{}
+	\begin{itemize}
+\item Si une suite a pour premier indice $n_0 \in \mathbb{N}$, la série de terme général $u_n$ a aussi pour premier indice $n_0$ et on note cette série $\Sum{n \geq n_0}{} u_n$. Ainsi les sommes partielles $S_n$ ne sont définies que pour $n \geq n_0$. 
 
 \medskip
 
@@ -64,33 +65,36 @@ Dans la suite du chapitre, on considérera dans les résultats uniquement le cas
 %par télescopage. Ainsi toute suite peut être vue comme une série.
 
 \vspace{4cm}
-\end{rems}
+\end{itemize}
+\end{Remarques}
 
-\begin{defin}
-La série de terme général $u_n$ est dite \textit{convergente} si la suite des sommes partielles $(S_n)_{n \geq 0}$ est convergente. Autrement dit, si il existe $S \in \mathbb{K}$ tel que :
+\begin{Definition}{}
+La série de terme général $u_n$ est dite \emph{convergente} si la suite des sommes partielles $(S_n)_{n \geq 0}$ est convergente. Autrement dit, si il existe $S \in \mathbb{K}$ tel que :
 $$ \lim_{n \rightarrow + \infty} \sum_{k=0}^n u_k = S $$
-En cas de convergence, la limite $S$ est notée $\Sum{k=0}{+ \infty} u_k$ et est appelée \textit{somme} de la série.
-\end{defin}
+En cas de convergence, la limite $S$ est notée $\Sum{k=0}{+ \infty} u_k$ et est appelée \emph{somme} de la série.
+\end{Definition}
 
-\begin{defin} Si une série ne converge pas, on dit qu'elle est \textit{divergente}.
-\end{defin}
+\begin{Definition}{} Si une série ne converge pas, on dit qu'elle est \emph{divergente}.
+\end{Definition}
 
-\begin{rems}
+\begin{Remarques}{}
+	\begin{itemize}
 \item La somme d'une série (quand elle existe) est unique (par unicité de la limite de la suite des sommes partielles).
-\item Déterminer la \textit{nature} d'une série revient à étudier la convergence ou la divergence de celle-ci.
-\end{rems}
+\item Déterminer la \emph{nature} d'une série revient à étudier la convergence ou la divergence de celle-ci.
+\end{itemize}
+\end{Remarques}
 
-\begin{exa} Donner les sommes partielles de $\dis \Sum{n \geq 0}{} n^3$ et préciser la nature de cette série.
-\end{exa} 
+\begin{ApplicationDirecte} Donner les sommes partielles de $\Sum{n \geq 0}{} n^3$ et préciser la nature de cette série.
+\end{ApplicationDirecte} 
 
 \textbf{Extrait du rapport de Mines-Pont 2003.} \og De trop nombreux étudiants confondent la notion de série et la somme d'une telle série quand elle converge.  Plus généralement, on déplore un amalgame entre les notations : $\Sum{}{} u_n, \,  \Sum{n \geq 0}{} u_n,  \, \Sum{k = 0}{n} u_k$ et $\Sum{k =0}{+ \infty} u_k$ \fg 
 
 \medskip
 
 
-\begin{thm} Si une série de terme général $u_n$ converge alors $(u_n)_{n \geq 0}$ converge vers $0$. La réciproque est fausse. \end{thm}
+\begin{Theoreme}{} Si une série de terme général $u_n$ converge alors $(u_n)_{n \geq 0}$ converge vers $0$. La réciproque est fausse. \end{Theoreme}
 
-\begin{preuve} 
+\begin{Demonstration}{} 
 
 \vspace{4cm}
 %En notant $(S_n)_{n \geq 0}$ la suite des sommes partielles de cette série, on a pour tout entier $n \geq 1$ :
@@ -110,43 +114,46 @@ En cas de convergence, la limite $S$ est notée $\Sum{k=0}{+ \infty} u_k$ et est
 %et ainsi par (\ref{Harmonique}), on a :
 %\begin{equation}\label{Harmonique2} H_{2n}-H_n \geq  \sum_{k=n+1}^{2n} \frac{1}{2n} = (2n-(n+1)+1) \frac{1}{2n} = \frac{1}{2}
 %\end{equation}
-\end{preuve}
+\end{Demonstration}
 
-\begin{exa} Montrer que $\Sum{n\geq 1}{} \ln \left(1 + \frac{1}{n} \right)$ diverge (\textit{cela fournit une série divergente dont le terme général tend vers $0$}).
-\end{exa}
+\begin{ApplicationDirecte} Montrer que $\Sum{n\geq 1}{} \ln \left(1 + \frac{1}{n} \right)$ diverge.
+	
+	(\emph{cela fournit une série divergente dont le terme général tend vers $0$}.)
+\end{ApplicationDirecte}
 
 
-\begin{att} Le résultat précédent est uniquement une condition nécessaire de convergence ! Autrement dit, si le terme général d'une série converge vers $0$, on ne peut rien conclure pour la convergence de cette série. 
-\end{att}
+\begin{Remarque}{}
+	\warning{} Le résultat précédent est uniquement une condition nécessaire de convergence ! Autrement dit, si le terme général d'une série converge vers $0$, on ne peut rien conclure pour la convergence de cette série. 
+\end{Remarque}
 
-\begin{cor}
-Si le terme général d'une série ne converge pas vers $0$, la série est divergente. On dit qu'elle est \textit{grossièrement divergente}.
-\end{cor}
+\begin{Corollaire}{}
+Si le terme général d'une série ne converge pas vers $0$, la série est divergente. On dit qu'elle est \emph{grossièrement divergente}.
+\end{Corollaire}
 
-%\begin{ex} Reprenons l'exemple de la série géométrique de raison $z$. Distinguons trois cas :
+%\begin{Exemple} Reprenons l'exemple de la série géométrique de raison $z$. Distinguons trois cas :
 %
 %\begin{itemize}
 %\item Si $\vert z \vert < 1$, $(z^{n+1})_{n \geq 0}$ converge vers $0$ et ainsi $\Sum{n\geq 0}{} z^n$ converge et sa somme est égale à :
 %$$ \sum_{k=0}^{+ \infty} z^k = \frac{1}{1-z}$$
-%\item Si $z=1$, $\dis \lim_{n \rightarrow + \infty} S_n = \lim_{n \rightarrow + \infty} n+1 = +\infty $ donc la série diverge.
+%\item Si $z=1$, $\lim_{n \rightarrow + \infty} S_n = \lim_{n \rightarrow + \infty} n+1 = +\infty $ donc la série diverge.
 %\item Si $\vert z \vert \geq 1$ avec $z \neq 1$ alors $(z^{n+1})_{n \geq 0}$ diverge et il en est alors de même de la suite des sommes partielles. Dans ce cas, la série diverge.
 %\end{itemize}
-%\end{ex}
+%\end{Exemple}
 
-\begin{defip}
+\begin{TheoremeDefinition}{}
 Soit $\Sum{n\geq 0}{} u_n$ une série.
 \begin{itemize}
 \item Pour tout $m \in \mathbb{N}$, $\Sum{n\geq 0}{}u_n$ et $\Sum{n\geq m+1}{}u_n$ sont de même nature.
 \item En cas de convergence, la somme de $\Sum{n\geq m+1}{}u_n$, que l'on note :
 $$ R_m = \sum_{k= m+1}^{+\infty}u_k$$
-est appelé \textit{reste} d'ordre d'ordre $m$ de la série. 
+est appelé \emph{reste} d'ordre d'ordre $m$ de la série. 
 \item La suite $(R_m)_{m \geq 0}$ converge vers $0$.
 \end{itemize}
-\end{defip}
+\end{TheoremeDefinition}
 %
-\begin{preuve}
+\begin{Demonstration}{}
 
-\vspace{6cm}
+\vspace{10cm}
 %Pour tout $n \geq m+1$, on a par la relation de Chasles :
 %\begin{equation}\label{reste}
 %\sum_{k=0}^{n} u_k = \sum_{k=0}^{m} u_k + \sum_{k=m+1}^{n} u_k
@@ -159,29 +166,29 @@ est appelé \textit{reste} d'ordre d'ordre $m$ de la série.
 %$$ R_m = \sum_{k=0}^{+ \infty} u_k - \sum_{k=0}^{m} u_k$$
 %On a alors :
 %$$ \lim_{n \rightarrow + \infty} R_m = \sum_{k=0}^{+ \infty} u_k - \sum_{k=0}^{+ \infty} u_k = 0$$
-\end{preuve}
+\end{Demonstration}
 %
-%\begin{ex} Si $\vert z \vert <1$, le reste d'ordre $m$ de la série géométrique de raison $z$ vaut :
+%\begin{Exemple} Si $\vert z \vert <1$, le reste d'ordre $m$ de la série géométrique de raison $z$ vaut :
 %$$R_m  = \sum_{k = m+1}^{+ \infty} z^k = \sum_{k = 0}^{+ \infty} z^k - \sum_{k = 0}^{m} z^k = \dfrac{1}{1-z} - \dfrac{1-z^{m+1}}{1 - z} = \dfrac{z^{m+1}}{1-z} $$
-%\end{ex}
+%\end{Exemple}
 
 %Les séries géométriques interviennent de manière important dans plusieurs chapitres. Le Théorème suivant (prouvé en plusieurs parties ci-dessus) est donc crucial : 
 
-
+\newpage
 \subsection{Quelques exemples}
 \subsubsection{Séries géométriques}
 
-\begin{thm} 
-Soit $z \in \mathbb{C}$. La série géométrique $\dis \Sum{n \geq 0}{} z^n$ converge si et seulement si $\vert z \vert <1$. On a dans ce cas : 
+\begin{Theoreme}{} 
+Soit $z \in \mathbb{C}$. La série géométrique $\Sum{n \geq 0}{} z^n$ converge si et seulement si $\vert z \vert <1$. On a dans ce cas : 
 $$ \sum_{k=0}^{+ \infty} z^k = \phantom{\frac{1}{1-z}}$$
 Les expressions des restes sont données pour tout $m \in \mathbb{N}$ par :
 $$ \sum_{k=m+1}^{+ \infty} z^k = \phantom{\frac{z^{m+1}}{1-z}}$$
-\end{thm}
+\end{Theoreme}
 
-\begin{preuve}  
+\begin{Demonstration}{}  
 %Soit $z$ un nombre complexe. On sait que pour tout $n \in \mathbb{N}$, on a :
 %$$ S_n = \sum_{k=0}^n z^k = \left\lbrace \begin{array}{cl}
-%\dis \frac{1-z^{n+1}}{1-z} & \hbox{ si }  z \neq 1 \\[0.3cm]
+%\frac{1-z^{n+1}}{1-z} & \hbox{ si }  z \neq 1 \\[0.3cm]
 %n + 1 & \hbox{ sinon} \\
 %\end{array}\right.$$
 %\begin{itemize}
@@ -193,29 +200,29 @@ $$ \sum_{k=m+1}^{+ \infty} z^k = \phantom{\frac{z^{m+1}}{1-z}}$$
 %$$R_m  = \sum_{k = m+1}^{+ \infty} z^k = \sum_{k = 0}^{+ \infty} z^k - \sum_{k = 0}^{m} z^k = \dfrac{1}{1-z} - \dfrac{1-z^{m+1}}{1 - z} = \dfrac{z^{m+1}}{1-z} $$
 
 \vspace{9cm}
-\end{preuve}
+\end{Demonstration}
 
 \subsubsection{Série harmonique}
 
-On appelle \textit{série harmonique} la série $\dis \Sum{n \geq 1}{} \dfrac{1}{n} \cdot$
+On appelle \emph{série harmonique} la série $\Sum{n \geq 1}{} \dfrac{1}{n} \cdot$
 
-\begin{thm} La série harmonique diverge.
-\end{thm}
+\begin{Theoreme}{} La série harmonique diverge.
+\end{Theoreme}
 
-\begin{preuve} Voir application directe du cours 3 du chapitre 1.
+\begin{Demonstration}{} Voir application directe du cours 3 du chapitre 1.
 %
 %\vspace{4cm}
 %Raisonnons par l'absurde : si la série harmonique converge, la suite $(H_n)_{n \geq 1}$ est convergente donc la suite extraite de celle-ci $(H_{2n})_{n \geq 1}$ est aussi convergente et de même limite. Ainsi :
 %$$ \lim_{n \rightarrow + \infty} H_{2n}-H_n = 0$$
 %Mais d'après (\ref{Harmonique2}), la suite $(H_{2n}-H_n)_{n \geq 1}$ est minorée par $\dfrac{1}{2}$ et ne peut donc pas converger vers $0$. On obtient ainsi une absurdité et ainsi la série harmonique diverge.
-\end{preuve}
+\end{Demonstration}
 
-\begin{rem} La série harmonique diverge grossièrement.
-\end{rem}
+\begin{Remarque}{} La série harmonique diverge grossièrement.
+\end{Remarque}
 
 \subsubsection{Série harmonique alternée}
 
-On appelle \textit{série harmonique alternée} la série $ \Sum{n \geq 1}{} \dfrac{(-1)^{n-1}}{n} \cdot$
+On appelle \emph{série harmonique alternée} la série $ \Sum{n \geq 1}{} \dfrac{(-1)^{n-1}}{n} \cdot$
 
 \medskip
 
@@ -247,30 +254,30 @@ Notons $(S_n)_{n \geq 1}$ les sommes partielles de cette série.
 
 \subsubsection{Séries télescopiques}
 
-On appelle \textit{série télescopique} toute série de la forme $\Sum{n\geq 0}{} a_{n+1}-a_n$ où $(a_n)_{n \geq 0}$ est une suite d'éléments de $\mathbb{K}$.
+On appelle \emph{série télescopique} toute série de la forme $\Sum{n\geq 0}{} a_{n+1}-a_n$ où $(a_n)_{n \geq 0}$ est une suite d'éléments de $\mathbb{K}$.
 
-\begin{prop}
+\begin{Proposition}{}
 La série télescopique $\Sum{n\geq 0}{} a_{n+1}-a_n$ converge si et seulement si la suite $(a_n)_{n \geq 0}$ converge.
-\end{prop}
+\end{Proposition}
 
-\begin{preuve} 
+\begin{Demonstration}{} 
 \vspace{3cm}
 %Pour tout $n \in \mathbb{N}$, on a :
 %$$ \sum_{k=0}^{n} a_{k+1}-a_k = a_{n+1}-a_0$$
 %par télescopage et le résultat est alors évident.
-\end{preuve}
+\end{Demonstration}
 
 \medskip
 
-\begin{exa} Étudier la nature de $\dis \Sum{n\geq 1}{} \dfrac{1}{n(n+1)}$ et donner la somme en cas de convergence.
+\begin{ApplicationDirecte} Étudier la nature de $\Sum{n\geq 1}{} \dfrac{1}{n(n+1)}$ et donner la somme en cas de convergence.
 
 %
 %Pour tout $n \in \mathbb{N}$, on a :
 %$$ \sum_{k=1}^{n} \frac{1}{k(k+1)} =   \sum_{k=1}^{n} \frac{1+k-k}{k(k+1)} =   \sum_{k=1}^{n} \frac{1}{k} - \frac{1}{k+1} = 1- \frac{1}{n+1}$$
 %par télescopage. On a donc :
 %$$ \lim_{n \rightarrow + \infty} 1- \frac{1}{n+1} = 1$$
-%La série $\dis \Sum{n\geq 1}{} \dfrac{1}{n(n+1)}$ est donc convergente et $\dis \Sum{k=1}{+\infty} \dfrac{1}{k(k+1)}  = 1.$
-\end{exa}
+%La série $\Sum{n\geq 1}{} \dfrac{1}{n(n+1)}$ est donc convergente et $\Sum{k=1}{+\infty} \dfrac{1}{k(k+1)}  = 1.$
+\end{ApplicationDirecte}
 
 
 \section{Quelques propriétés}
@@ -283,32 +290,32 @@ On munit l'ensemble des séries numériques d'une loi de composition interne $+$
 
 
 
-\begin{prop}
+\begin{Proposition}{}
 L'ensemble des séries convergentes est un $\mathbb{K}$-espace vectoriel.
 
 Autrement dit, si $\Sum{n \geq 0}{} u_n$ et $\Sum{n \geq 0}{} v_n$ sont deux séries convergentes et si $\lambda \in \mathbb{R}$ alors la série $\Sum{n \geq 0}{} (\lambda u_n +v_n)$ est convergente. On a de plus : 
 $$ \sum_{k=0}^{+ \infty} (\lambda u_k + v_k) = \lambda  \sum_{k=0}^{+ \infty}  u_k +  \sum_{k=0}^{+ \infty}  v_k$$
-\end{prop}
+\end{Proposition}
 
-\begin{preuve}
+\begin{Demonstration}{}
 Il suffit d'utiliser la linéarité de la somme (finie) et le fait que l'ensemble des suites convergentes est un $\mathbb{K}$-espace vectoriel.
-\end{preuve}
+\end{Demonstration}
 
-\begin{rem} La somme de deux séries convergentes est donc convergente. Il faut faire attention à ne pas dire n'importe quoi dans les autres cas :
+\begin{Remarque}{} La somme de deux séries convergentes est donc convergente. Il faut faire attention à ne pas dire n'importe quoi dans les autres cas :
 \begin{itemize}
 \item La somme d'une série convergente et d'une série divergente est divergente (sinon la série divergente s'écrirait comme la différence de deux séries convergentes donc serait convergente).
 \item La somme de deux séries divergentes peut être divergente (somme de la série harmonique avec elle-même) ou convergente :  $\Sum{n \geq 0}{} - 1 +  \Sum{n \geq 0}{} 1 = \Sum{n \geq 0}{} 0.$
 \end{itemize}
-\end{rem}
+\end{Remarque}
 
-\begin{prop} Si deux suites ont les mêmes termes à partir d'un certain rang, les séries associées sont de même nature.
-\end{prop}
+\begin{Proposition}{} Si deux suites ont les mêmes termes à partir d'un certain rang, les séries associées sont de même nature.
+\end{Proposition}
 
-\begin{preuve}
+\begin{Demonstration}{}
 A partir d'un certain rang, les sommes partielles ne différeront qu'une d'une constante fixe.
-\end{preuve}
+\end{Demonstration}
 
-\begin{prop}\label{ConvSerCompl}
+\begin{Proposition}{}\label{ConvSerCompl}
 Soit $(u_n)_{n \geq 0}$ une suite complexe. Les assertions suivantes sont équivalentes :
 
 \begin{enumerate}
@@ -317,16 +324,16 @@ Soit $(u_n)_{n \geq 0}$ une suite complexe. Les assertions suivantes sont équiv
 \end{enumerate}
 Si l'une des deux assertions précédentes est vérifiée, on a alors :
 $$ \sum_{k=0}^{+ \infty} u_k = \sum_{k=0}^{+ \infty} \Re e(u_k) + i \sum_{k=0}^{+ \infty} \Im m(u_k)$$
-\end{prop}
+\end{Proposition}
 
-\begin{preuve} 
+\begin{Demonstration}{} 
 Cela provient du fait qu'une suite complexe est convergente si et seulement si sa partie réelle et sa partie imaginaire convergent.
-\end{preuve}
+\end{Demonstration}
 
-\begin{ex} Montrons que $\Sum{n \geq 0}{} \dfrac{\cos(n \pi/3)}{2^n}$ converge et donnons sa somme.
+\begin{Exemple} Montrons que $\Sum{n \geq 0}{} \dfrac{\cos(n \pi/3)}{2^n}$ converge et donnons sa somme.
 
 \vspace{9.5cm}
-\end{ex}
+\end{Exemple}
 
 \section{Comparaison série-intégrale}
 
@@ -384,8 +391,8 @@ Donnons le principe :
 %$\phantom{test}$
 %\vspace{5cm}
 
-\begin{retenir} Une comparaison série-intégrale peut permettre d'étudier la nature d'une série et d'obtenir un équivalent des sommes partielles.
-\end{retenir}
+\begin{Methode} Une comparaison série-intégrale peut permettre d'étudier la nature d'une série et d'obtenir un équivalent des sommes partielles.
+\end{Methode}
 %
 %\medskip
 %
@@ -401,31 +408,31 @@ Donnons le principe :
 %En utilisant que $\ln(n+1) \underset{+ \infty}{\sim} \ln(n)$ donc $\ln(n+1)^2 \underset{+ \infty}{\sim} \ln(n)^2$ (par produit) et en divisant l'inégalité précédente par $\dfrac{\ln(n)^2}{2}$, on obtient par Théorème d'encadrement que :
 %$$  \sum_{k=1}^n \frac{\ln(k)}{k} \underset{+ \infty}{\sim} \frac{\ln(n)^2}{2}$$
 
-\begin{exa} Étudier la nature de $\dis \Sum{n \geq 2}{}  \dfrac{1}{n\ln(n)}$ à l'aide d'une comparaison série-intégrale.
-\end{exa}
+\begin{ApplicationDirecte} Étudier la nature de $\Sum{n \geq 2}{}  \dfrac{1}{n\ln(n)}$ à l'aide d'une comparaison série-intégrale.
+\end{ApplicationDirecte}
 \section{Séries à termes positifs}
 \subsection{Critères de comparaison}
-\begin{prop}\label{SATP} Soit $\Sum{n \geq 0}{} u_n$ une série à \textit{termes positifs}. Alors :
+\begin{Proposition}{}\label{SATP} Soit $\Sum{n \geq 0}{} u_n$ une série à \emph{termes positifs}. Alors :
 \begin{enumerate}
 \item La suite des sommes partielles est croissante.
 \item La série est convergente si et seulement si la suite des sommes partielles est majorée.
 \end{enumerate}
-\end{prop}
+\end{Proposition}
 
 
-\begin{preuve}
+\begin{Demonstration}{}
 %En notant $(S_n)_{n \geq 0}$ la suite des sommes partielles, on a pour tout $n \geq 0$,
 %$$ S_{n+1}-S_n = u_{n+1} \geq 0$$
 %Ainsi $(S_n)_{n \geq 0}$ est une suite croissante et converge si et seulement si elle est majorée (d'après le Théorème de la limite monotone).
 
 \vspace{3cm}
-\end{preuve}
+\end{Demonstration}
 
-\begin{rem} Si la suite des sommes partielles n'est pas majorée, elle tend donc vers $+ \infty$. Ainsi, une série à termes positifs divergente a nécessairement une suite des sommes partielles divergente vers $+ \infty$.
-\end{rem}
+\begin{Remarque}{} Si la suite des sommes partielles n'est pas majorée, elle tend donc vers $+ \infty$. Ainsi, une série à termes positifs divergente a nécessairement une suite des sommes partielles divergente vers $+ \infty$.
+\end{Remarque}
 
-\begin{thm}[CCSATP]
-Soient $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ deux suites à \textit{termes positifs}.
+\begin{Theoreme}{CCSATP}
+Soient $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ deux suites à \emph{termes positifs}.
 
 \begin{enumerate}
 \item Supposons que pour tout $n \in \mathbb{N}$, $u_n \leq v_n$. Alors :
@@ -437,13 +444,13 @@ $$ \sum_{k=0}^{ + \infty} u_k \leq  \sum_{k=0}^{+ \infty} v_k $$
 \end{itemize}
 \item Si $u_n \underset{+\infty}{\sim} v_n$ alors \phantom{les séries $\Sum{n \geq 0}{} u_n$ et $\Sum{n \geq 0}{} v_n$ sont de même nature.}
 \end{enumerate}
-\end{thm}
+\end{Theoreme}
 
-\begin{rem} Le résultat lié à l'équivalence reste vrai pour des séries à termes généraux négatifs. De plus, si les termes généraux sont équivalents, la positivité (ou la négativité) d'un des termes généraux implique la positivité (ou la négativité) de l'autre (à partir d'un certain rang).
-\end{rem}
+\begin{Remarque}{} Le résultat lié à l'équivalence reste vrai pour des séries à termes généraux négatifs. De plus, si les termes généraux sont équivalents, la positivité (ou la négativité) d'un des termes généraux implique la positivité (ou la négativité) de l'autre (à partir d'un certain rang).
+\end{Remarque}
 
 
-\begin{preuve}
+\begin{Demonstration}{}
 \vspace{14.5cm}
 %\begin{enumerate}
 %\item Supposons que pour tout $n \in \mathbb{N}$, $u_n \leq v_n$.
@@ -467,17 +474,18 @@ $$ \sum_{k=0}^{ + \infty} u_k \leq  \sum_{k=0}^{+ \infty} v_k $$
 %
 %Ainsi les deux séries sont de même nature.
 %\end{enumerate}
-\end{preuve}
+\end{Demonstration}
 
-\begin{rem} La première partie du théorème précédent reste vraie si les inégalités sont vérifiées à partir d'un certain rang mais dans ce cas l'inégalité liée aux sommes est vraie à partir de ce rang.
-\end{rem}
+\begin{Remarque}{} La première partie du théorème précédent reste vraie si les inégalités sont vérifiées à partir d'un certain rang mais dans ce cas l'inégalité liée aux sommes est vraie à partir de ce rang.
+\end{Remarque}
 
 
 \subsection{Quelques exemples}
 
 \newpage
-\begin{exems}
-\item Étudions la nature de $\Sum{n \geq 1}{} \dfrac{1}{(n+1)^2}\cdot$
+\begin{Exemples}
+\begin{enumerate}
+	\item Étudions la nature de $\Sum{n \geq 1}{} \dfrac{1}{(n+1)^2}\cdot$
 
 \vspace{3cm}
 %On a pour tout $n \in \mathbb{N}*$, 
@@ -498,23 +506,24 @@ $$ \sum_{k=0}^{ + \infty} u_k \leq  \sum_{k=0}^{+ \infty} v_k $$
 %Pour tout $n \in \mathbb{N}^*$, $\dfrac{1}{n} \in ]0,1]$ et donc $\sin \left(\frac{1}{n^2}\right) \geq 0$ et la série étudiée à termes positifs. On a :
 %$$ n \sin \left(\frac{1}{n^2}\right) \underset{+ \infty}{\sim} \frac{n}{n^2} = \frac{1}{n}$$
 %car $\dfrac{1}{n^2}$ tend vers $0$ quand $n$ tend vers $+ \infty$. On sait que la série harmonique $\Sum{n\geq 1}{} \dfrac{1}{n}$ est divergente est à termes positifs. Par critère de comparaison de séries à termes positifs, $\Sum{n\geq 1}{} n \sin \left(\dfrac{1}{n^2}\right) $ est donc divergente.
-\end{exems}
+\end{enumerate}
+\end{Exemples}
 
-\begin{exa} Donner la nature de $ \dis \Sum{n \geq 0}{}  e^{-n^2}$ en la comparant à une série géométrique.
-\end{exa}
+\begin{ApplicationDirecte} Donner la nature de $ \Sum{n \geq 0}{}  e^{-n^2}$ en la comparant à une série géométrique.
+\end{ApplicationDirecte}
 
 Dans de nombreux cas, on utilise les critères précédents en comparant avec des séries usuelles : les séries de Riemann.
 
 
-\begin{defin}
-On appelle \textit{série de Riemann} de paramètre $\alpha \in \mathbb{R}$ la série $\Sum{n \geq 1}{} \dfrac{1}{n^{\alpha}} \cdot$
-\end{defin}
+\begin{Definition}{}
+On appelle \emph{série de Riemann} de paramètre $\alpha \in \mathbb{R}$ la série $\Sum{n \geq 1}{} \dfrac{1}{n^{\alpha}} \cdot$
+\end{Definition}
 
-\begin{thm}
+\begin{Theoreme}{}
 La série de Riemann de paramètre $\alpha \in \mathbb{R}$ converge si et seulement si $\alpha >1$.
-\end{thm}
+\end{Theoreme}
 
-\begin{preuve} Distinguons deux cas :
+\begin{Demonstration}{} Distinguons deux cas :
 
 $\rhd$ Si $\alpha \leq 1$ :
 
@@ -526,6 +535,7 @@ $\rhd$ Si $\alpha \leq 1$ :
 
 \vspace{3cm}
 
+\newpage
 $\rhd$ Si $\alpha>1$ :
 % La fonction $x \mapsto \frac{1}{x^{\alpha}}$ est continue et strictement décroissante sur $[1, + \infty[$. Par comparaison série-intégrale, on a pour tout $n \in \mathbb{N}^*$,
 %
@@ -540,15 +550,16 @@ $\rhd$ Si $\alpha>1$ :
 %$$ \frac{n^{1-\alpha}-1}{1 - \alpha} + 1 = \frac{1-n^{1-\alpha}}{\alpha-1} + 1 \leq \frac{1}{\alpha-1} + 1 = \frac{\alpha}{\alpha-1}$$
 %Ainsi, la suite des sommes partielles de la série à termes positifs $\Sum{n \geq 1}{} \dfrac{1}{n^{\alpha}}$ est majorée donc la série converge.
 
-\vspace{8cm}
+\vspace*{8cm}
 
 $\phantom{test}$ 
 
-\vspace{7cm}
-\end{preuve}
+\vspace*{7cm}
+\end{Demonstration}
 
-\begin{rems}
-\item Par passage à la limite dans le raisonnement précédent, si $\alpha>1$, on a :
+\begin{Remarques}{}
+	\begin{itemize}
+		\item Par passage à la limite dans le raisonnement précédent, si $\alpha>1$, on a :
 $$ \frac{1}{\alpha-1} \leq \sum_{k=1}^{+ \infty} \frac{1}{k^{\alpha}} \leq  \frac{\alpha}{\alpha-1}$$
 \item Soient $\alpha >1$ et $m \in \mathbb{N}$. On peut obtenir un équivalent des restes de la série de Riemann de paramètre $\alpha$ par comparaison série-intégrale :
 %
@@ -568,24 +579,25 @@ $$ \frac{1}{\alpha-1} \leq \sum_{k=1}^{+ \infty} \frac{1}{k^{\alpha}} \leq  \fra
 %$$ R_m \underset{+ \infty}{\sim}  \frac{1}{(\alpha-1)(m+1)^{\alpha-1}} \underset{+ \infty}{\sim}  \frac{1}{(\alpha-1)m^{\alpha-1}}$$
 
 \vspace{13cm}
-\end{rems}
+\end{itemize}
+\end{Remarques}
 
-\begin{ex} Étudions la nature de $\Sum{n \geq 1}{} \dfrac{1}{n^3+n} \cdot$
+\begin{Exemple} Étudions la nature de $\Sum{n \geq 1}{} \dfrac{1}{n^3+n} \cdot$
 
 \vspace{3cm}
 %Cette série est à termes positifs. On a :
 %$$ \frac{1}{n^3+n} \underset{+ \infty}{\sim} \frac{1}{n^3}$$
 %Or la série $\Sum{n \geq 1}{} \dfrac{1}{n^3}$ est à termes positifs et est convergente (série de Riemann de paramètre $2>1$). Par critère de comparaison de séries à termes positifs, la série $\Sum{n \geq 1}{} \dfrac{1}{n^3+n}$ est donc convergente.
-\end{ex}
+\end{Exemple}
 
-\begin{exa} Donner la nature des séries suivantes :
+\begin{ApplicationDirecte} Donner la nature des séries suivantes :
 $$ \Sum{n \geq 0}{} \dfrac{n^4+n^3+1}{n^7+n+1}, \;  \Sum{n \geq 2}{}\ln \left( 1 - \dfrac{1}{\sqrt{n}} \right) \; \hbox{ et } \;  \Sum{n \geq 1}{} \dfrac{1}{n^n}$$
-\end{exa}
+\end{ApplicationDirecte}
 
 \subsection{Règle de D'Alembert}
 
-\begin{thm}
-Soit $\Sum{n \geq 0}{} u_n$ une série à termes \textit{strictement} positifs. 
+\begin{Theoreme}{}
+Soit $\Sum{n \geq 0}{} u_n$ une série à termes \emph{strictement} positifs. 
 
 On suppose que $\left( \dfrac{u_{n+1}}{u_n} \right)_{n \geq 0}$ possède une limite $\ell$ (éventuellement $\ell = + \infty$). Alors :
 
@@ -594,9 +606,9 @@ On suppose que $\left( \dfrac{u_{n+1}}{u_n} \right)_{n \geq 0}$ possède une lim
 \item Si $\ell >1$ ou $\ell = + \infty$, \phantom{ la série $\Sum{n \geq 0}{} u_n$ diverge grossièrement.}
 \item Si $\ell =1$, \phantom{on ne peut rien conclure.}
 \end{itemize}
-\end{thm}
+\end{Theoreme}
 
-\begin{preuve}
+\begin{Demonstration}{}
 
 \vspace{11cm}
 %\begin{itemize}
@@ -611,37 +623,39 @@ On suppose que $\left( \dfrac{u_{n+1}}{u_n} \right)_{n \geq 0}$ possède une lim
 %$$ u_n \geq \dfrac{u_{N}}{q^N} q^n  $$
 %Or $q^n$ tend vers $+ \infty$ quand $n$ tend vers $+  \infty$. Par Théorème de comparaison, $u_n$ tend vers $+ \infty$ et donc la série de terme général $u_n$ diverge grossièrement.
 %\end{itemize}
-\end{preuve}
+\end{Demonstration}
 
-\begin{rems}
+\begin{Remarques}{}
+	\begin{itemize}
 \item Les séries de Riemann justifient bien que dans le cas où $\ell=1$, on ne peut rien conclure.
 \item La règle de d'Alembert peut être efficace quand le terme général de la série fait intervenir des puissances ou des factorielles.
-\end{rems}
+	\end{itemize}
+\end{Remarques}
 
-\begin{ex} Étudions la nature de la série $\Sum{n \geq 0}{} \dfrac{a^n}{n!}$ où $a \in \mathbb{R}_+^{*}$.
+\begin{Exemple} Étudions la nature de la série $\Sum{n \geq 0}{} \dfrac{a^n}{n!}$ où $a \in \mathbb{R}_+^{*}$.
 
 \vspace{3cm}
 %Soit $a \in \mathbb{R}_{+}^*$. La série étudiée est à termes strictement positifs. On a pour tout $n \in \mathbb{N}$,
 %$$ \dfrac{\dfrac{a^{n+1}}{(n+1)!}}{\dfrac{a^n}{n!}} = \frac{a^{n+1}n!}{a^n(n+1)!}= \frac{a}{n+1} \underset{n \rightarrow + \infty}{\longrightarrow} 0 <1$$
 %D'après la règle de d'Alembert, la série $\Sum{n \geq 1}{} \dfrac{a^n}{n!}$ est donc convergente. On montrera plus tard dans l'année que :
 %$$ \sum_{k=0}^{+\infty} \frac{a^k}{k!} = e^a$$
-\end{ex}
+\end{Exemple}
 
-\begin{exa} Étudier la nature de $\Sum{n \geq 0}{} \dfrac{n!}{2^{2n}}\cdot$
-\end{exa}
+\begin{ApplicationDirecte} Étudier la nature de $\Sum{n \geq 0}{} \dfrac{n!}{2^{2n}}\cdot$
+\end{ApplicationDirecte}
 \subsection{Convergence absolue}
 
 Dans cette section, la suite est réelle ou complexe.
 
-\begin{defin} Une série de terme général $u_n$ est dite \textit{absolument convergente} si la série de terme général $\vert u_n \vert$ est convergente.
-\end{defin}
+\begin{Definition}{} Une série de terme général $u_n$ est dite \emph{absolument convergente} si la série de terme général $\vert u_n \vert$ est convergente.
+\end{Definition}
 
-\begin{thm} Si $\Sum{n \geq 0}{} u_n$ est absolument convergente alors elle est convergente. On a de plus dans ce cas l'inégalité triangulaire :
+\begin{Theoreme}{} Si $\Sum{n \geq 0}{} u_n$ est absolument convergente alors elle est convergente. On a de plus dans ce cas l'inégalité triangulaire :
 $$ \left\vert \sum_{k=0}^{+ \infty} u_k \right\vert \leq \sum_{k=0}^{+ \infty} \vert u_k \vert$$
-\end{thm}
+\end{Theoreme}
 
 
-\begin{preuve} 
+\begin{Demonstration}{} 
 %Distinguons deux cas :
 %
 %$\rhd$ Supposons que la suite $(u_n)_{n \geq 0}$ soit réelle et que $\Sum{n \geq 0}{} u_n$ converge absolument. Posons pour tout entier $n \geq 0$,
@@ -665,34 +679,34 @@ $$ \left\vert \sum_{k=0}^{+ \infty} u_k \right\vert \leq \sum_{k=0}^{+ \infty} \
 %Par comparaison de série à termes positifs, les séries $\Sum{n \geq 0}{} \vert \Re(u_n) \vert$ et $\Sum{n \geq 0}{} \vert \Im(u_n) \vert$ sont convergentes. D'après la première partie de la preuve, les séries $\Sum{n \geq 0}{}  \Re(u_n) $ et $\Sum{n \geq 0}{}  \Im(u_n) $ sont donc convergentes et donc d'après la proposition \ref{ConvSerCompl}, la série $\Sum{n \geq 0}{} u_n$ converge.
 
 \vspace{12.5cm}
-\end{preuve}
+\end{Demonstration}
 
-\begin{rem} La réciproque est fausse : la série harmonique alternée converge mais la série harmonique diverge.
-\end{rem}
+\begin{Remarque}{} La réciproque est fausse : la série harmonique alternée converge mais la série harmonique diverge.
+\end{Remarque}
 
-\begin{ex} Étudions la nature de $\Sum{n \geq 1}{} \dfrac{\sin(n)}{n^2} \cdot$
+\begin{Exemple} Étudions la nature de $\Sum{n \geq 1}{} \dfrac{\sin(n)}{n^2} \cdot$
 
 \vspace{3cm}
 %
 %Pour tout $n \geq 1$, on a :
 %$$ 0 \leq \left\vert \frac{\sin(n)}{n^2} \right\vert \leq \frac{1}{n^2}$$
 %et la série $\Sum{n \geq 1}{} \dfrac{1}{n^2}$ est convergente (série de Riemann avec $2>1$). Par critère de comparaison de séries à termes positifs, la série $\Sum{n \geq 1}{} \dfrac{\sin(n)}{n^2}$ est donc absolument convergente donc convergente.
-\end{ex}
+\end{Exemple}
 
-\begin{defin} On dit qu'une série est \textit{semi-convergente} si elle est convergente mais pas absolument convergente.
-\end{defin}
+\begin{Definition}{} On dit qu'une série est \emph{semi-convergente} si elle est convergente mais pas absolument convergente.
+\end{Definition}
 
 
 
-\begin{thm} Soient $\Sum{n \geq 0}{} u_n$ une série de nombres réels ou complexes et $\Sum{n \geq 0}{} v_n$ une série à \textit{termes positifs} convergente.
+\begin{Theoreme}{} Soient $\Sum{n \geq 0}{} u_n$ une série de nombres réels ou complexes et $\Sum{n \geq 0}{} v_n$ une série à \emph{termes positifs} convergente.
 
 \begin{enumerate}
 \item Si $u_n \underset{+ \infty}{=} O(v_n)$ alors $\Sum{n \geq 0}{} u_n$ converge absolument donc converge.
 \item Si $u_n \underset{+ \infty}{=} o(v_n)$ alors $\Sum{n \geq 0}{} u_n$ converge absolument donc converge.
 \end{enumerate}
-\end{thm}
+\end{Theoreme}
 
-\begin{preuve}
+\begin{Demonstration}{}
 
 \vspace{6cm}
 %
@@ -709,9 +723,9 @@ $$ \left\vert \sum_{k=0}^{+ \infty} u_k \right\vert \leq \sum_{k=0}^{+ \infty} \
 
 
 \vspace{6cm}
-\end{preuve}
+\end{Demonstration}
 
-\begin{ex} Étudions la convergence de la série $\Sum{n\geq 1}{} \ln \left( 1 + \dfrac{(-1)^{n-1}}{n} \right) \cdot$
+\begin{Exemple} Étudions la convergence de la série $\Sum{n\geq 1}{} \ln \left( 1 + \dfrac{(-1)^{n-1}}{n} \right) \cdot$
 %
 %La série n'est pas à termes positifs. Par développement asymptotique, on a :
 %$$ \ln \left( 1 + \dfrac{(-1)^{n-1}}{n} \right) = \dfrac{(-1)^{n-1}}{n} - \frac{1}{2n^2} + o \left( \frac{1}{n^2} \right)$$ 
@@ -724,33 +738,33 @@ $$ \left\vert \sum_{k=0}^{+ \infty} u_k \right\vert \leq \sum_{k=0}^{+ \infty} \
 %Par somme de séries convergentes, la série de terme général $\ln \left( 1 + \dfrac{(-1)^{n-1}}{n} \right)$ est convergente.
 
 \vspace{6cm}
-\end{ex}
+\end{Exemple}
 
-\begin{exa} Soit $(a,b,c) \in \mathbb{R}^3$. Étudier la convergence de :
+\begin{ApplicationDirecte} Soit $(a,b,c) \in \mathbb{R}^3$. Étudier la convergence de :
 $$ \Sum{n \geq 1}{} a n \ln \left(1 + \frac{1}{n} \right) - b \cos \left( \frac{1}{n} \right) + c \sin \left( \frac{1}{n} \right)$$
-\end{exa}
+\end{ApplicationDirecte}
 
 \section{Séries alternées}
 
-\begin{defin} On appelle \textit{série alternée} toute série dont le terme général est de la forme $(-1)^n u_n$ où $(u_n)$ est une suite de nombres réels de signe constant.
-\end{defin}
+\begin{Definition}{} On appelle \emph{série alternée} toute série dont le terme général est de la forme $(-1)^n u_n$ où $(u_n)$ est une suite de nombres réels de signe constant.
+\end{Definition}
 
-\begin{ex} La série harmonique alternée est une série alternée.
-\end{ex}
+\begin{Exemple} La série harmonique alternée est une série alternée.
+\end{Exemple}
 
-\begin{thm}[Critère spécial]
+\begin{Theoreme}{Critère spécial}
 Soit $\Sum{n \geq 0}{} (-1)^n u_n$ une série alternée telle que $(\vert u_n \vert)_{n \geq 0}$ soit décroissante et convergente vers $0$. Alors :
 \begin{enumerate}
 \item La série $\Sum{n \geq 0}{} (-1)^n u_n$ converge.
 \item Pour tout $m \in \mathbb{N}$, $\Sum{k=m}{+ \infty} (-1)^k u_k$ est du signe de $(-1)^m u_m$ et on a :
 $$ \left\vert \sum_{k=m}^{+ \infty} (-1)^k u_k \right\vert \leq \vert u_m \vert$$
 \end{enumerate}
-\end{thm}
+\end{Theoreme}
 
-\begin{rem} En particulier, pour tout $m \in \mathbb{N}$, $\vert R_m \vert \leq \vert u_{n+1} \vert$.
-\end{rem}
+\begin{Remarque}{} En particulier, pour tout $m \in \mathbb{N}$, $\vert R_m \vert \leq \vert u_{n+1} \vert$.
+\end{Remarque}
 
-\begin{preuve} Nous démontrons le résultat dans le cas où $(u_n)_{n \geq 0}$ est positive (l'autre cas se fait de manière analogue). D'après l'hypothèse, la suite $(u_n)_{n \geq 0}$ est donc décroissante et convergente vers $0$.
+\begin{Demonstration}{} Nous démontrons le résultat dans le cas où $(u_n)_{n \geq 0}$ est positive (l'autre cas se fait de manière analogue). D'après l'hypothèse, la suite $(u_n)_{n \geq 0}$ est donc décroissante et convergente vers $0$.
 
 \medskip
 
@@ -783,7 +797,7 @@ $\rhd$ Démontrons la deuxième partie du théorème : l'estimation et le signe 
 %$$   \left\vert \sum_{k=m}^{+ \infty} (-1)^k u_k \right\vert = \left\vert \sum_{k=0}^{+ \infty} (-1)^k u_{m+k} \right\vert \leq \vert u_m \vert$$
 
 \vspace{9cm}
-\end{preuve}
+\end{Demonstration}
 
 \newpage
 
@@ -794,7 +808,7 @@ $\phantom{}$
 %$$S_{2n+1} \leq \sum_{k=0}^{+ \infty} (-1)^k u_k \leq S_{2n}$$
 %\end{retenir}
 
-\begin{ex} Les séries $\Sum{n \geq 1}{} \dfrac{(-1)^n}{n^{\alpha}}$ où $\alpha \in \mathbb{R}_+^{*}$ sont des séries alternées.
+\begin{Exemple} Les séries $\Sum{n \geq 1}{} \dfrac{(-1)^n}{n^{\alpha}}$ où $\alpha \in \mathbb{R}_+^{*}$ sont des séries alternées.
 
 Pour tout $n \in \mathbb{N}^*$, $\dfrac{1}{n^{\alpha}} \geq 0$ et $\lim_{n \rightarrow + \infty} \dfrac{1}{n^{\alpha}} = 0$ et la suite de terme général $\dfrac{1}{n^{\alpha}}$ est décroissante. 
 
@@ -805,43 +819,43 @@ D'après le critère spécial des séries alternées, les séries $\Sum{n \geq 1
 Par exemple, si $\alpha = 2$, le critère spécial précise que pour tout $m \geq 1$,
 $$ \left\vert \sum_{k=m}^{+ \infty}\dfrac{(-1)^k}{k^{2}}  \right\vert \leq \frac{1}{m^2}$$
 et que le signe de cette somme est celui de $(-1)^m$.
-\end{ex}
+\end{Exemple}
 
-\begin{exa} Montrer que :
+\begin{ApplicationDirecte} Montrer que :
 $$ 0 \leq \sum_{k=2}^{+ \infty}\dfrac{(-1)^k}{\sqrt{k}} \leq \frac{1}{\sqrt{2}}$$
-\end{exa}
+\end{ApplicationDirecte}
 
-%\begin{exa} Montrer que la série $\dis \Sum{n \geq 1}{}  \frac{(-1)^n}{\ln(\sqrt{n}+1)}$ est convergente. Quel est le signe de son reste d'ordre $2$ ?
-%\end{exa}
+%\begin{ApplicationDirecte} Montrer que la série $\Sum{n \geq 1}{}  \frac{(-1)^n}{\ln(\sqrt{n}+1)}$ est convergente. Quel est le signe de son reste d'ordre $2$ ?
+%\end{ApplicationDirecte}
 
 \section{Produit de deux séries}
 
-\begin{defin} On appelle \textit{produit de Cauchy} des séries $\Sum{n \geq 0}{} u_n$ et $\Sum{n \geq 0}{} v_n$, la série $\Sum{n \geq 0}{} w_n$ où pour tout $n \geq 0$, le terme $w_n$ est défini par :
+\begin{Definition}{} On appelle \emph{produit de Cauchy} des séries $\Sum{n \geq 0}{} u_n$ et $\Sum{n \geq 0}{} v_n$, la série $\Sum{n \geq 0}{} w_n$ où pour tout $n \geq 0$, le terme $w_n$ est défini par :
 $$w_n = \sum_{k=0}^n u_k v_{n-k}$$
-\end{defin}
+\end{Definition}
 
 
-\begin{rem} On a aussi :
+\begin{Remarque}{} On a aussi :
 $$ w_n = \sum_{p+q=n} u_p v_q =  \sum_{k=0}^n u_{n-k} v_{k}$$
 L'idée est de regrouper dans le produit, les termes dont la somme des indices vaut $n$ :
 $$ (u_0 + u_1 + u_2 + \cdots) \times (v_0 + v_1 + v_2 + \cdots) = (u_0 v_0) + (u_0 v_1 + u_1 v_0) + (u_0 v_2 + u _1 v_1 + u_2 v_0) + \cdots$$
-\end{rem}
+\end{Remarque}
 
 \medskip
 
-\begin{thm}[admis]
-Soient $\Sum{n \geq 0}{} u_n$ et $\Sum{n \geq 0}{} v_n$ deux séries \textit{absolument convergentes}. Alors le produit de Cauchy de ces deux séries est absolument convergent et on a :
+\begin{Theoreme}{admis}
+Soient $\Sum{n \geq 0}{} u_n$ et $\Sum{n \geq 0}{} v_n$ deux séries \emph{absolument convergentes}. Alors le produit de Cauchy de ces deux séries est absolument convergent et on a :
 $$ \left( \sum_{k=0}^{+ \infty} u_k \right)\left( \sum_{k=0}^{+ \infty} v_k \right) =  \sum_{n=0}^{+ \infty} \sum_{k=0}^n u_k v_{n-k} = \sum_{n=0}^{+ \infty} \sum_{k=0}^n u_{n-k} v_{k}$$
-\end{thm}
+\end{Theoreme}
 
 \textbf{Application : la série exponentielle.}
 
-\begin{defip} Pour tout $z \in \mathbb{C}$, on pose :
+\begin{TheoremeDefinition}{} Pour tout $z \in \mathbb{C}$, on pose :
 $$ \exp(z) = \sum_{k=0}^{+\infty} \frac{z^k}{k!} $$
-La fonction \textit{exponentielle} est la fonction qui à tout $z \in \mathbb{C}$ associe $\exp(z)$. Elle est bien définie sur $\mathbb{C}$ et la série associée est absolument convergente.
-\end{defip}
+La fonction \emph{exponentielle} est la fonction qui à tout $z \in \mathbb{C}$ associe $\exp(z)$. Elle est bien définie sur $\mathbb{C}$ et la série associée est absolument convergente.
+\end{TheoremeDefinition}
 
-\begin{preuve} 
+\begin{Demonstration}{} 
 
 \vspace{6.5cm}
 %
@@ -852,10 +866,10 @@ La fonction \textit{exponentielle} est la fonction qui à tout $z \in \mathbb{C}
 %$\rhd$ Si $z \neq 0$, on pose pour tout $n \in \mathbb{N}$, $u_n = \left\vert \dfrac{z^n}{n!} \right\vert > 0$. On a :
 %$$ \frac{u_{n+1}}{u_n} = \frac{\vert z \vert }{n+1} \underset{ n \rightarrow + \infty}{\longrightarrow} 0$$
 %D'après la règle de D'alembert pour des séries à termes strictement positifs, la série $\Sum{n \geq 0}{} u_n$ converge donc $\Sum{n \geq 0}{}  \dfrac{z^n}{n!} $ converge absolument et donc converge.
-\end{preuve}
+\end{Demonstration}
 
-\begin{rem} On montrera plus tard que cette fonction définie sur $\mathbb{C}$ coïncide sur $\mathbb{R}$ avec la fonction exponentielle usuelle.
-\end{rem}
+\begin{Remarque}{} On montrera plus tard que cette fonction définie sur $\mathbb{C}$ coïncide sur $\mathbb{R}$ avec la fonction exponentielle usuelle.
+\end{Remarque}
 
 On vient de montrer que la série exponentielle est absolument convergente pour tout $z \in \mathbb{C}$. D'après le théorème précédent, on a pour tout $(z,z') \in \mathbb{C}^2$,
 %$$ \left( \sum_{k=0}^{+ \infty} \frac{z^k}{k!} \right)\left( \sum_{k=0}^{+ \infty}  \frac{(z')^k}{k!} \right) = $$
@@ -869,28 +883,28 @@ On vient de montrer que la série exponentielle est absolument convergente pour 
 
 \vspace{7cm}
 
-\begin{exa}
-Calculer pour $n \geq 0$, $\dis \Sum{k=0}{n}  \left( \frac{1}{3} \right)^k \left( \frac{1}{3} \right)^{n-k}$. En déduire que la série $\dis \Sum{n \geq 0}{}  (n+1)3^{-n}$ converge et donner sa somme.
-\end{exa}
+\begin{ApplicationDirecte}
+Calculer pour $n \geq 0$, $\Sum{k=0}{n}  \left( \frac{1}{3} \right)^k \left( \frac{1}{3} \right)^{n-k}$. En déduire que la série $\Sum{n \geq 0}{}  (n+1)3^{-n}$ converge et donner sa somme.
+\end{ApplicationDirecte}
 
 \section{Quelques applications et compléments}
 \subsection{Formule de Stirling}
 
-\begin{thm}
+\begin{Theoreme}{}
 \begin{center}
 $n! \underset{ + \infty}{\sim} \left( \dfrac{n}{e}\right)^n \sqrt{2 \pi n}$
 \end{center}
-\end{thm}
+\end{Theoreme}
 \subsection{Séries de Bertrand}
-\begin{ex} Étudions la série de terme général $\dis \frac{\ln(n)}{n^2}\cdot$
+\begin{Exemple} Étudions la série de terme général $\frac{\ln(n)}{n^2}\cdot$
 
 \vspace{3cm}
-\end{ex}
+\end{Exemple}
 
-\begin{ex} Étudions la série de terme général $\dis \frac{1}{\sqrt{n} \ln(n)}\cdot$
+\begin{Exemple} Étudions la série de terme général $\frac{1}{\sqrt{n} \ln(n)}\cdot$
 
 \vspace{3cm}
-\end{ex}
+\end{Exemple}
 
 
 
@@ -898,13 +912,13 @@ $n! \underset{ + \infty}{\sim} \left( \dfrac{n}{e}\right)^n \sqrt{2 \pi n}$
 
 Les séries de Bertrand ne sont pas au programme mais il est important de savoir retrouver le résultat suivant.
 
-\begin{prop}[\textit{Hors-programme}] 
+\begin{Proposition}{\emph{Hors-programme}} 
 Soient $(\alpha, \beta) \in \mathbb{R}^2$. La série $\Sum{n \geq 2}{} \dfrac{1}{n^{\alpha} \ln(n)^{\beta}}$ converge si et seulement si $(\alpha > 1)$ ou $(\alpha = 1$ et $\beta >1$).
-\end{prop}
+\end{Proposition}
 
-\begin{preuve} On distingue plusieurs cas.
+\begin{Demonstration}{} On distingue plusieurs cas.
 
-\vspace{10.5cm}
+\vspace*{10.5cm}
 %\begin{itemize}
 %\item Supposons $\alpha>1$ et choisissons $\gamma \in ]1, \alpha[$. Alors :
 %$$ \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} = o \left( \frac{1}{n^{\gamma}} \right) $$
@@ -925,17 +939,17 @@ Soient $(\alpha, \beta) \in \mathbb{R}^2$. La série $\Sum{n \geq 2}{} \dfrac{1}
 %\end{itemize}
 
 %\vspace{10cm}
-\end{preuve}
+\end{Demonstration}
 
 
 
 %\vspace{5.5cm}
 
-\begin{exa} Donner la nature de $\Sum{n \geq 2}{} \dfrac{1}{n^{1/3} \ln(n)^2} \cdot$
-\end{exa} 
+\begin{ApplicationDirecte} Donner la nature de $\Sum{n \geq 2}{} \dfrac{1}{n^{1/3} \ln(n)^2} \cdot$
+\end{ApplicationDirecte} 
 
-\begin{exa} Donner la nature de $\Sum{n \geq 2}{} \dfrac{\ln(n)^{10}}{n^{3}} \cdot$
-\end{exa} 
+\begin{ApplicationDirecte} Donner la nature de $\Sum{n \geq 2}{} \dfrac{\ln(n)^{10}}{n^{3}} \cdot$
+\end{ApplicationDirecte} 
 
 
 %
@@ -957,20 +971,20 @@ Soient $(\alpha, \beta) \in \mathbb{R}^2$. La série $\Sum{n \geq 2}{} \dfrac{1}
 %
 %On montre le résultat suivant :
 %
-%\begin{thm} Tout réel positif $x$ s'écrit de manière unique sous la forme :
+%\begin{Theoreme}{} Tout réel positif $x$ s'écrit de manière unique sous la forme :
 %$$ x = \sum_{k=0}^{+ \infty} \frac{u_k}{10^k}$$
 %où $(u_k)_{k \geq 1}$ est une suite d'éléments de $\Interv{0}{9}$ qui prend une infinité de fois des valeurs différentes de $9$ et où $u_0$ est la partie entière de $x$.
-%\end{thm}
+%\end{Theoreme}
 %
-%\begin{rem} 
+%\begin{Remarque}{} 
 %La suite $(u_k)_{k \geq 1}$ est appelé le développement décimal illimité propre de $x$. On peut montrer que ce développement est est périodique (c'est-à-dire : $\exists (p,n) \in \mathbb{N}^* \times \mathbb{N}$, $\forall n \geq n_0$, $u_n=u_{n+p}$) si et seulement si $x$ est rationnel.
-%\end{rem}
+%\end{Remarque}
 %
-%\begin{ex} Posons $x=0.2017111111 \cdots$.
+%\begin{Exemple} Posons $x=0.2017111111 \cdots$.
 %
 %En posant $y=0.111111 \cdots$, on a $10y=1+y$ ou encore $y=\dfrac{1}{9}$ et ainsi $x= 0.2017 + \dfrac{y}{10^5}$ et finalement :
 %$$ x=\frac{2017}{10^4} + \dfrac{1}{9 \times 10^5}$$
-%\end{ex}
+%\end{Exemple}
 
 
 

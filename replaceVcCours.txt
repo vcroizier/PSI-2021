@@ -24,9 +24,9 @@
 \\begin{Remarque}{}
 \\end\{rem\}
 \\end{Remarque}
-\\begin{rems}
+\\begin\{rems\}
 \\begin{Remarques}{}
-\\end{rems}
+\\end\{rems\}
 \\end{Remarques}{}
 \\begin\{thm\}\[(.*)\]
 \\begin{Theoreme}{$1}
@@ -51,7 +51,7 @@
 \\begin\{cor\}
 \\begin{Corollaire}{}
 \\end\{cor\}
-\\end{Corollaire}{}
+\\end{Corollaire}
 
 
 \\begin\{Exa\}\[(.*)\]
