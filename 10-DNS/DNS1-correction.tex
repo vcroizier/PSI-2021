@@ -1,0 +1,264 @@
+\documentclass[a4paper,twoside,french,10pt]{VcCours}
+
+\begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir non surveillé n\degres1}
+
+\begin{center}
+\large\bf
+Correction
+\end{center}
+\separationTitre
+
+
+\section*{Exercice 1}
+
+\begin{enumerate}
+\item Rappelons que pour tout $(p,q) \in \mathbb{R}^2$,
+$$ \cos(p)-\cos(q) = -2 \sin((p+q)/2)\sin((p-q)/2)$$
+Pour tout réel $x$, on a :
+\begin{align*}
+ \cos(x) > \cos(x-\pi/6) & \Longleftrightarrow  \cos(x) - \cos(x-\pi/6) >0 \\
+ & \Longleftrightarrow  -2 \sin(x-\pi/12) \sin(\pi/12) > 0 \\
+ & \Longleftrightarrow \sin(x-\pi/12) < 0 
+\end{align*}
+car $ \sin(\pi/12) >0$. La fonction sinus est strictement négative sur les intervalles de la forme \newline $](2k+1)\pi,(2k+2) \pi[$ où $k \in \mathbb{Z}$ donc :
+\begin{align*}
+ \cos(x) > \cos(x-\pi/6) & \Longleftrightarrow \exists k \in \mathbb{Z} \, \vert \, x-\pi/12 \in ](2k+1)\pi,(2k+2) \pi[ \\
+ & \Longleftrightarrow \exists k \in \mathbb{Z} \, \vert \, x \in ]\pi/12+(2k+1)\pi,\pi/12+(2k+2) \pi[
+\end{align*}
+L'ensemble $\mathcal{S}$ des solutions est donné par :
+$$\boxed{\mathcal{S} = \bigcup_{k \in \mathbb{Z}}  ]\pi/12+(2k+1)\pi,\pi/12+(2k+2) \pi[}$$
+%\item Le module de $1+i \sqrt{3}$ vaut $2$ et on a :
+%$$ 1+i \sqrt{3} = 2 \left( \dfrac{1}{2}+i \dfrac{\sqrt{3}}{2} \right) = 2 e^{i \pi/3}$$
+%Le module de $1-i$ vaut $\sqrt{2}$ et on a :
+%$$ 1-i = \sqrt{2} \left( \dfrac{1}{\sqrt{2}}- i \dfrac{1}{\sqrt{2}} \right) = \sqrt{2} \left( \dfrac{\sqrt{2}}{2}- i \dfrac{\sqrt{2}}{2} \right) =\sqrt{2} e^{-i \pi/4}$$
+%On en déduit que :
+%$$ z = \dfrac{2 e^{i \pi/3}}{\sqrt{2} e^{-i \pi/4}} = \sqrt{2}e^{i \pi/3+i \pi/4} = \sqrt{2} e^{7i\pi/12}$$
+%et ainsi :
+%\begin{align*}
+%z^{10} & = \sqrt{2}^{10}  e^{70i\pi/12} \\
+%& = 2^5 e^{72i\pi/12-2i \pi/12} \\
+%& = 32 e^{6i \pi -i \pi/6} \\
+%& = 32 e^{-i \pi/6} \quad (2\pi\hbox{ périodicité})\\
+%& = 32 (\cos(-\pi/6) + i \sin(-\pi/6)) \\
+%& = 32 \times \dfrac{\sqrt{3}}{2} -32i \times \dfrac{1}{2} \\
+%& = 16 \sqrt{3}- 16i 
+%\end{align*}
+%Finalement,
+%$$ \boxed{z^{10} = 16 \sqrt{3}- 16i }$$
+\item Le module de $1+i$ vaut $\sqrt{2}$. On a :
+$$ 1+i = \sqrt{2} \left( \dfrac{1}{\sqrt{2}}+ i \dfrac{1}{\sqrt{2}} \right) = \sqrt{2} \left( \dfrac{\sqrt{2}}{2}+ i \dfrac{\sqrt{2}}{2} \right) =\sqrt{2} e^{i \pi/4}$$
+Pour tout entier $n \in \mathbb{Z}$, on a :
+$$ (1+i)^n = (\sqrt{2})^n e^{i n\pi/4} = (\sqrt{2})^n \cos(n\pi/4) + i (\sqrt{2})^n \sin(n\pi/4)$$
+On en déduit que $(1+i)^n$ est un réel si et seulement si $\sin(n\pi/4)$ est nul ou encore si et seulement si $n \pi/4$ est égal à $0$ modulo $\pi$. Ainsi, l'ensemble $\mathcal{S}$ des solutions est :
+$$ \boxed{\mathcal{S} = \lbrace n \in \mathbb{Z} \, \vert \, n/4 \in \mathbb{Z} \rbrace = \lbrace 4k \, \vert \, k \in \mathbb{Z} \rbrace }$$
+\item Soit $\theta \in \mathbb{R}$. Alors :
+\begin{align*}
+\sin(\theta)^4 & = \dfrac{1}{(2i)^4} (e^{i \theta}-e^{-i \theta})^4 \\
+& = \dfrac{1}{16} (e^{4i \theta}-4 e^{2i \theta} + 6 -4 e^{-2i \theta} + e^{-4i \theta}) \\
+& = \dfrac{1}{16} ((e^{4i \theta}+ e^{-4i \theta})-4 (e^{2i \theta}+e^{-2i \theta}) + 6 ) \\
+& = \dfrac{1}{16}(2 \cos(4 \theta) - 8 \cos(2 \theta)+ 6)
+\end{align*}
+Ainsi,
+$$ \boxed{\sin(\theta)^4 = \dfrac{1}{8} \cos(4 \theta)- \dfrac{1}{2} \cos(2 \theta) + \dfrac{3}{8}}$$
+D'après cette formule, on a :
+$$ \sin(\pi/8)^4 =  \dfrac{1}{8} \cos(\pi/2)- \dfrac{1}{2} \cos(\pi/4) + \dfrac{3}{8} = - \dfrac{\sqrt{2}}{4} + \dfrac{3}{8}$$
+De la même manière, on obtient :
+$$ \sin(3\pi/8)^4 = \dfrac{\sqrt{2}}{4} + \dfrac{3}{8}, \; \sin(5\pi/8)^4 = \dfrac{\sqrt{2}}{4} + \dfrac{3}{8} \; \hbox{ et } \sin(7\pi/8)^4 = -\dfrac{\sqrt{2}}{4} + \dfrac{3}{8}$$
+En sommant, on obtient :
+$$ \boxed{S = \dfrac{3}{2}}$$
+\item Le discriminant associé à l'équation vaut :
+$$ \Delta = 3-4i(-1)=3+4i$$
+On cherche $(x,y) \in \mathbb{R}^2$ tel que :
+$$ (x+iy)^2=3+4i$$
+C'est équivalent à :
+$$ x^2-y^2 +2ixy = 3+4i$$
+puis par identification :
+$$ \left\lbrace \begin{array}{rcl}
+x^2-y^2 & =& 3 \\
+2xy & = & 4\\
+\end{array}\right.$$
+On a aussi :
+$$ \vert x+iy \vert^2=\vert 3+4i \vert$$
+donc 
+$$ x^2+y^2 = 5$$
+La première ligne du système précédent et celle-ci impliquent que :
+$$ 2x^2 = 8$$
+donc $x^2=4$ et $x = \pm 2$. On obtient ensuite que $y= \pm 1$. Or on sait que $xy=2$ donc $x$ et $y$ sont du même signe. Ainsi,
+$$ (2+i)^2 = (-2-i)^2 = 3+4i$$
+Les solutions de l'équation sont donc :
+$$ z_1 = \dfrac{- \sqrt{3}- (2+i)}{2i} = \dfrac{-\sqrt{3}-2-i}{2i} = \boxed{\dfrac{\sqrt{3}i + 2i-1}{2}}$$
+et :
+$$ z_2 = \dfrac{- \sqrt{3}- (-2-i)}{2i} = \dfrac{-\sqrt{3}+2+i}{2i} = \boxed{\dfrac{\sqrt{3}i - 2i+1}{2}}$$
+\item On a :
+$$ Z = 8 e^{-i \pi/2}$$
+Soit $z \in \mathbb{C}$. Alors :
+\begin{align*}
+z^3 = Z & \Longleftrightarrow z^3 = 8 e^{-i \pi/2} \\
+& \Longleftrightarrow z^3 = (2e^{-i \pi/6})^3 \\
+& \Longleftrightarrow \left( \dfrac{z}{2e^{-i \pi/6}} \right)^3 = 1 \\
+& \Longleftrightarrow  \dfrac{z}{2e^{-i \pi/6}} = 1 \; \hbox{ ou }  \; \dfrac{z}{2e^{-i \pi/6}} = e^{2i \pi/3}  \; \hbox{ ou }  \; \dfrac{z}{2e^{-i \pi/6}} = e^{4i \pi/3} 
+%& \Longleftrightarrow z = 2e^{-i \pi/6}\; \hbox{ ou }  \;  z =  2e^{\pi/2} \; \hbox{ ou }  \; z= 2 e^{7i \pi/6}
+\end{align*}
+Ainsi,
+\fbox{les racines troisièmes de $Z$ sont $2e^{-i \pi/6}$, $2e^{i\pi/2}$ et $2 e^{7i \pi/6}$}
+\end{enumerate}
+
+\medskip
+
+\section*{Exercice 2}
+\begin{enumerate}
+
+\item On a pour tout $n\in\N^*,$ 
+\fbox{$u_n^4=n+u_{n-1}$}
+
+\item
+
+\begin{enumerate}
+
+\item Remarquons pour commencer que la suite est positive.
+
+\medskip
+
+\noindent Montrons par r\'ecurrence que pour tout $n\in\N, \ u_n\leq
+\sqrt{n}.$
+
+\begin{itemize}
+\item La propriété est vraie au rang $0$ car $u_0=0 \leq \sqrt{0}$.
+\item Soit $n \in \mathbb{N}$ tel que $u_n \leq \sqrt{n}$. On souhaite montrer que :
+$$ u_{n+1} \leq \sqrt{n+1}$$
+ou encore par positivité des termes et croissance de de la fonction $x \mapsto x^4$ sur $\mathbb{R}_+$ :
+$$ u_{n+1}^4 \leq (n+1)^2$$
+D'après la question précédente, il suffit donc de montrer que :
+$$ (n+1) + u_n \leq (n+1)^2$$
+ce qui est équivalent à :
+$$ u_n \leq (n+1)^2-(n+1) = n(n+1)$$
+D'après l'hypothèse de récurrence, $u_n \leq \sqrt{n}$ et sachant que $n$ est un entier, 
+$$\sqrt{n} \leq n \leq n(n+1)$$
+Ainsi,
+$$ u_n \leq n(n+1)$$
+et on a bien montré que :
+$$ u_{n+1}^4 \leq (n+1)^2$$
+\item La propriété étudiée est vérifiée au rang $0$ et est héréditaire. Par principe de récurrence, elle est vraie pour tout $n \geq 0$. 
+\end{itemize}
+Ainsi, pour tout entier $n \geq 0$,
+\fbox{$u_n \leq \sqrt{n}$}
+\item Pour tout entier $n \geq 0$, $u_n \leq \sqrt{n}$ donc pour tout entier $n \geq 1$,
+$$ 0 \leq \dfrac{u_n}{n} \leq \dfrac{1}{\sqrt{n}}$$
+Par théorème d'encadrement, on en déduit que la suite de terme général $\dfrac{u_n}{n}$ converge vers $0$ donc :
+$$\boxed{u_n\underset{+ \infty}{=}o(n)}$$
+On a donc 
+$$ u_{n-1} \underset{+ \infty}{=}o(n)$$
+On en déduit que :
+$$ u_n^4 = n+ u_{n-1} = n+ o(n) \underset{+ \infty}{\sim} n$$
+et ainsi (la suite $(u_n)_{n \geq 0}$ est positive) : 
+$$ \boxed{u_n \underset{+ \infty}{\sim}\sqrt[4]{n}}$$
+\end{enumerate}
+\item On a pour tout entier $n \geq 0$,
+\begin{align*}
+\alpha_n & =u_n-\sqrt[4]{n}=\sqrt[4]{n+u_{n-1}}-\sqrt[4]{n} \\
+& =\sqrt[4]{n}\left(\sqrt[4]{1+\frac{u_{n-1}}{n}}-1\right)
+\end{align*}
+D'après la question précédente, on sait que :
+$$\lim_{n\to+\infty}\frac{u_{n-1}}{n}=0$$
+donc 
+$$\left(\sqrt[4]{1+\frac{u_{n-1}}{n}}-1\right)\mathop{\sim}\limits_{+\infty}\frac{u_{n-1}}{4n}
+\mathop{\sim}\limits_{+\infty}\frac{\sqrt[4]{n-1}}{4n}\mathop{\sim}\limits_{+\infty}\frac{\sqrt[4]{n}}{4n}$$
+Ceci implique que :
+$$\alpha_n\mathop{\sim}\limits_{+\infty}\sqrt[4]{n}\frac{\sqrt[4]{n}}{4n}=\frac{1}{4\sqrt{n}}$$
+donc
+$$ \alpha_n \underset{+ \infty}{=} \frac{1}{4\sqrt{n}} + o \left( \dfrac{1}{\sqrt{n}} \right)$$
+Finalement,
+$$\boxed{u_n \underset{+ \infty}{=} n^{1/4}+\frac{1}{4\sqrt{n}}+o\left(\frac{1}{\sqrt{n}}\right) }$$
+
+
+\end{enumerate}
+
+
+\medskip
+
+\section*{Exercice 3}
+\begin{enumerate}
+\item D'après l'hypothèse, on a :
+$$ f(0+0)=f(0)+f(0)$$
+donc $f(0)=2f(0)$ et ainsi,
+\fbox{$f(0)=0$}
+\item Soit $x \in \mathbb{R}$. D'après l'hypothèse, on a :
+$$ f(x+(-x))=f(x)+f(-x)$$
+donc :
+$$ f(0) = f(x)+f(-x)$$
+et d'après la question précédente,
+$$ 0=f(x)+f(-x)$$
+On en déduit que $f(-x)=-f(x)$. Ainsi, pour tout réel $x$,
+\fbox{$f(-x)=-f(x)$}
+
+D'après l'hypothèse, on a pour tout $(x, a) \in \mathbb{R}^2$,
+$$ f(x)=f(x-a+a)=f(x-a)+f(a)$$
+
+$\lim_{x\to a}(x-a)=0$ et $f$ est continue en $0$, donc $\lim_{x\to a}f(x-a)=f(0)=0$.
+
+Donc $\lim_{x\to a}(f(x-a)+f(a))=f(a)$ donc $\lim_{x\to a}f(x)=f(a)$.
+Ainsi, $f$ est continue en $a$ pour tout réel $a$ donc
+\fbox{$f$ est continue sur $\mathbb{R}$}
+
+\emph{Beaucoup d'autres variantes de ce calcul font intervenir $f(-x)=-f(x)$.}
+\item Montrons par récurrence que pour tout entier $n \geq 0$ et tout réel $x$, $f(nx)=nf(x)$.
+\begin{itemize}
+\item Pour tout réel $x$,
+$$ f(0 \times x)= f(0)=0 = 0 \times f(x)$$
+La propriété est vraie au rang $0$.
+\item Soit $n \in \mathbb{N}$ tel que pour tout réel $x$, $f(nx)=nf(x)$. Pour tout réel $x$, on a alors :
+\begin{align*}
+f((n+1)x) & = f(nx+x) \\
+& = f(nx)+f(x) \quad \hbox{(par hypothèse)} \\
+& = nf(x)+f(x) \quad \hbox{(par hypothèse de récurrence)} \\
+& = (n+1)f(x)
+\end{align*}
+La propriété est donc vraie au rang $n+1$.
+\item La propriété est vraie au rang $0$ et est héréditaire donc par principe de récurrence, elle est vraie pour tout entier $n \geq 0$.
+\end{itemize}
+Ainsi,
+$$ \boxed{\forall n \in \mathbb{N}, \; \forall x \in \mathbb{R}, \; f(nx)=nf(x)}$$
+Soit $n \in \mathbb{Z}$ tel que $n<0$. Alors pour tout réel $x$,
+$$ f(nx)=f((-n)(-x)) = -n f(-x)$$
+car $-n \in \mathbb{N}$. Or $f(-x)=-f(x)$ donc :
+$$ f(nx)=nf(x)$$
+Ainsi,
+$$ \boxed{\forall n \in \mathbb{Z}, \; \forall x \in \mathbb{R}, \; f(nx)=nf(x)}$$
+\item Soit $(p,q) \in \mathbb{Z} \times \mathbb{N}^*$. Alors :
+$$ f(p) = f \left( q \times \dfrac{p}{q} \right) = 	q f \left( \dfrac{p}{q} \right)$$
+d'après la question précédente car $q \in \mathbb{N}^*$. On sait aussi que :
+$$ f(p)= f(p \times 1)= p f(1)=pa$$
+Ainsi,
+$$ pa = q f \left( \dfrac{p}{q} \right)$$
+et sachant que $q$ est non nul, on en déduit que :
+$$ \boxed{f \left( \dfrac{p}{q} \right) = \dfrac{ap}{q}}$$
+\item Pour tout réel $y$,
+$$ \lfloor y \rfloor \leq y < \lfloor y \rfloor + 1$$
+donc 
+$$ y-1<  \lfloor y \rfloor \leq y$$
+Ainsi, pour tout entier $n \geq 1$,
+$$  nx-1<  \lfloor nx \rfloor \leq nx$$
+et donc :
+$$ x- \dfrac{1}{n} < r_n \leq x$$
+On sait que :
+$$ \lim_{n \rightarrow + \infty} x- \dfrac{1}{n} =  \lim_{n \rightarrow + \infty} x=x$$
+Par théorème d'encadrement, on en déduit que $(r_n)_{n \geq 1}$ converge et que :
+$$ \boxed{\lim_{n \rightarrow + \infty} r_n = x}$$
+\item Soit $x \in \mathbb{R}$. D'après la question précédente, il existe une suite de rationnels $(r_n)_{n \geq 1}$ telle que :
+$$ \lim_{n \rightarrow + \infty} r_n = x$$
+Pour tout entier $n \geq 1$, $r_n$ est rationnel donc d'après la question $4$, on a :
+$$ f(r_n) = a r_n$$
+On a :
+$$  \lim_{n \rightarrow + \infty} a r_n =a x$$
+La fonction $f$ est continue en $x$ donc sachant que :
+$$  \lim_{n \rightarrow + \infty} r_n = x$$
+On a :
+$$  \lim_{n \rightarrow + \infty} f(r_n) = f(x)$$
+Par unicité de la limite, on en déduit que $f(x)=ax$. Ainsi, pour tout réel $x$,
+\fbox{$f(x)=ax$}
+\end{enumerate}
+
+
+
+\end{document}

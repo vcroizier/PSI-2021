@@ -1,0 +1,168 @@
+\documentclass[a4paper,french,11pt,twoside]{VcCours}
+
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+
+\begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir non surveillé n°2}
+\begin{center}
+\large\bf 
+Pour le vendredi 17 septembre 2021
+\end{center}
+\separationTitre
+
+
+\section*{Problème -- Analyse}
+
+
+\subsection*{Partie 1}
+
+
+\medskip
+
+\noindent On considère la fonction $f$ définie par :
+$$f\left(  x\right)=\dfrac{\ln\left(  1+x\right)}{x}$$
+
+\medskip
+
+\begin{enumerate}
+\item Déterminer l'ensemble de définition, notée $\mathcal{D}$, de $f$.
+\item Donner le développement limité de $\ln\left(  1+x\right)  $ au voisinage
+de $0$ à l'ordre $2$.
+
+\noindent Montrer que $f$ admet en $0$ un prolongement par continuité. On précisera par
+quelle valeur $f$ est alors prolongée et on continuera à appeler $f$ le prolongement ainsi obtenu. On appellera $\mathcal{D}'$ le nouvel ensemble de définition de $f$.
+
+\item $f$ est-elle dérivable en $0$? Si oui, préciser $f'(0)$.
+
+\noindent Calculer $f'(x)$ pour $x$ appartenant à $\mathcal{D}$ puis prouver que $f$ est de
+classe $C^{1}$ sur $\mathcal{D}^{\prime}$.
+
+\item Étudier les variations de $f$. On dressera son tableau de variations.
+
+\noindent On pourra utiliser la fonction auxiliaire $k$ définie par : 
+$$k\left(x\right)  =x-\left(  1+x\right)  \ln\left(  1+x\right)$$
+\end{enumerate}
+
+\medskip
+
+\subsection*{Partie 2}
+
+\medskip
+
+\noindent Dans la suite, on s'intéressera à l'intégrale suivante : $%
+%TCIMACRO{\dint _{0}^{1}}%
+%BeginExpansion
+{\int_{0}^{1}}
+%EndExpansion
+f\left(  t\right)  \dt.$
+
+\medskip
+
+\noindent On notera $L$ la valeur de cette intégrale mais on ne cherchera pas à calculer
+cette valeur.
+
+\medskip
+
+\noindent Pour tout entier naturel $n$ non nul, on définit les polyn\^omes $P_n$ et $Q_n$ par :
+
+$$ \left\lbrace \begin{array}{ll}
+P_{n}\left(  X\right)  & =X-\dfrac{X^{2}}{2}+\dfrac{X^{3}}{3}-\dfrac{X^{4}}
+{4}+\cdots+\left(  -1\right)  ^{n-1}\dfrac{X^{n}}{n} \\[0.3cm]
+Q_{n}\left(  X\right)  &=X-\dfrac{X^{2}}{2^{2}}+\dfrac{X^{3}}{3^{2}}
+-\dfrac{X^{4}}{4^{2}}+\cdots+\left(  -1\right)  ^{n-1}\dfrac{X^{n}}{n^{2}}\\
+\end{array}\right.$$
+
+\medskip
+
+\begin{enumerate}
+\item Préciser pourquoi l'intégrale précédente est bien définie.
+
+\item Calculer, pour tout $t \in [0,1]$, 
+$$1-t+t^{2}-t^{3}+\cdots+\left(  -1\right)  ^{n-1}t^{n-1}$$
+
+\item En déduire que pour tout $x \in [0,1]$,
+$$P_{n}\left(
+x\right)  =\ln\left(  1+x\right)  -%
+%TCIMACRO{\dint _{0}^{x}}%
+%BeginExpansion
+{\int_{0}^{x}}
+%EndExpansion
+\dfrac{\left(  -t\right)  ^{n}}{1+t}\dt$$
+
+\medskip
+
+\noindent Dans toute la suite on notera pour tout $n\in\mathbb{N}$ et tout $x\in\left[  0,1\right]$,
+$$ R_{n}\left(  x\right)  =%
+%TCIMACRO{\dint _{0}^{x}}%
+%BeginExpansion
+{\int_{0}^{x}}
+%EndExpansion
+\dfrac{\left(  -t\right)  ^{n}}{1+t}\dt$$
+
+\item Établir que pour tout entier $n \geq 0$ et tout $x \in [0,1]$,
+$$ \left\vert R_{n}\left(  x\right)  \right\vert \leq
+\dfrac{x^{n+1}}{n+1}$$
+
+\item Comparer pour tout $x\in\left]  0,1\right]  :Q_{n}' \left(
+x\right)  $ et $\dfrac{P_{n}\left(  x\right)  }{x} \cdot$
+
+\item Soit $n \geq 0$. On définit l'application $g_n : ]0,1] \rightarrow \mathbb{R}$ par :
+$$ g_n\left(  x\right)  = \left\lbrace \begin{array}{ll}
+\dfrac{P_{n}\left(  x\right)  }%
+{x}-\dfrac{\ln\left(  1+x\right)  }{x} & \hbox{ si } x \in ]0,1] \\
+ 0 & \hbox{ si } x = 0 \\
+ \end{array}\right.$$
+Montrer que :
+
+\[
+\left\vert Q_{n}\left(  1\right)  -L\right\vert \leq\int_{0}^{1}\left\vert
+g_{n}\left(  x\right)  \right\vert \dx\leq\dfrac{1}{\left(  n+1\right)  ^{2}}%
+\]
+En déduire $\lim\limits_{n\rightarrow+\infty}Q_{n}\left(  1\right).$
+
+\item Déterminer un entier naturel $N$ tel que $Q_{N}\left(  1\right)  $ donne
+une valeur approchée de $L$ à $10^{-4}$ près.
+\item Écrire une fonction {\tt Appr} en python prenant en argument un réel $\varepsilon>0$ et renvoyant une valeur approchée de $L$ à $\varepsilon$ près.
+\end{enumerate}
+
+\medskip
+
+\subsection*{Partie 3}
+
+\medskip
+
+\noindent On s'intéresse à présent aux dérivées successives de $f$ que l'on note
+$f^{\left(  n\right)  }$, $n\in\mathbb{N}^*$.
+
+\begin{enumerate}
+\item Montrer que $f$ est indéfiniment dérivable $\left]  0,+\infty\right[  $
+
+\item Déterminer $f''$.
+
+\item Montrer que pour tout entier naturel $n$ non nul il existe un polyn\^ome
+$T_{n}$ à coefficients réels et un réel $a_{n}$ tels que :%
+\[
+\forall x\in\mathbb{R}_{+}^{*},\quad f^{\left(  n\right)  }\left(
+x\right)  =\dfrac{T_{n}\left(  x\right)  }{\left(  1+x\right)  ^{n}x^{n}%
+}+a_{n}\dfrac{\ln\left(  1+x\right)  }{x^{n+1}}%
+\]
+
+
+\item Montrer que tous les coefficients de $T_{n}$ sont des entiers.
+
+\item En utilisant la formule de Leibniz déterminer $f^{\left(  n\right)
+}\left(  x\right)  $ et en déduire l'expression de $T_{n}$.
+
+On ne cherchera pas à expliciter une expression de chacun des coefficients de
+$x^{k}$ $\left(  k\in\mathbb{N}\right)  $ de ce polyn\^ome.
+
+Vérifier  cette expression pour $n=2$.
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
