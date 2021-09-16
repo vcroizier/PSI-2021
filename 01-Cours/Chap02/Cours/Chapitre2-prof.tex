@@ -545,12 +545,6 @@ et finalement :
 On remarque maintenant en utilisant que $\alpha>1$ :
 $$ \frac{n^{1-\alpha}-1}{1 - \alpha} + 1 = \frac{1-n^{1-\alpha}}{\alpha-1} + 1 \leq \frac{1}{\alpha-1} + 1 = \frac{\alpha}{\alpha-1}$$
 Ainsi, la suite des sommes partielles de la série à termes positifs $\Sum{n \geq 1}{} \dfrac{1}{n^{\alpha}}$ est majorée donc la série converge.
-
-\vspace*{8cm}
-
-$\phantom{test}$ 
-
-\vspace*{7cm}
 \end{Demonstration}
 
 \begin{Remarques}{}
@@ -653,27 +647,27 @@ $$ \left\vert \sum_{k=0}^{+ \infty} u_k \right\vert \leq \sum_{k=0}^{+ \infty} \
 
 
 \begin{Demonstration}{} 
-%Distinguons deux cas :
-%
-%$\rhd$ Supposons que la suite $(u_n)_{n \geq 0}$ soit réelle et que $\Sum{n \geq 0}{} u_n$ converge absolument. Posons pour tout entier $n \geq 0$,
-%$$ u_n^{+} = \left\lbrace \begin{array}{cl}
-%u_n & \hbox{ si }  u_n \geq 0 \\
-%0 & \hbox{ sinon}   \\
-%\end{array}\right. \quad \hbox{ et } \quad u_n^{-} = \left\lbrace \begin{array}{cl}
-%-u_n & \hbox{ si }  u_n \leq 0 \\
-%0 & \hbox{ sinon}   \\
-%\end{array}\right.$$
-%et on a alors $u_n = u_n^+ -u_n^{-}$ et $\vert u_n \vert = u_n^+ + u_n^{-}$. On a clairement pour tout $n \geq 0$,
-%$$ 0 \leq u_n^+ \leq \vert u_n \vert \quad \hbox{ et } \quad 0 \leq u_n^{-} \leq \vert u_n \vert $$
-%Par critère de comparaison de série à termes positifs, les séries $\Sum{n \geq 0}{} u_n^+$ et $\Sum{n \geq 0}{} u_n^{-}$ sont donc convergentes puis par différence de séries convergentes, $\Sum{n \geq 0}{} u_n$ converge.
-%
-%\medskip
-%
-%$\rhd$ Supposons que $\Sum{n \geq 0}{} u_n$ est absolument convergente. Rappelons que pour tout $z \in \mathbb{C}$,
-%$$ \vert \Re(z) \vert \leq \vert z \vert \quad \hbox{ et }  \vert \Im(z) \vert \leq \vert z \vert$$
-%et ainsi pour tout $n \in \mathbb{N}$,
-%$$ 0 \leq \vert \Re(u_n) \vert \leq \vert u_n \vert \quad \hbox{ et }  \vert \Im(u_n) \vert \leq \vert u_n \vert$$
-%Par comparaison de série à termes positifs, les séries $\Sum{n \geq 0}{} \vert \Re(u_n) \vert$ et $\Sum{n \geq 0}{} \vert \Im(u_n) \vert$ sont convergentes. D'après la première partie de la preuve, les séries $\Sum{n \geq 0}{}  \Re(u_n) $ et $\Sum{n \geq 0}{}  \Im(u_n) $ sont donc convergentes et donc d'après la proposition \ref{ConvSerCompl}, la série $\Sum{n \geq 0}{} u_n$ converge.
+Distinguons deux cas :
+
+$\rhd$ Supposons que la suite $(u_n)_{n \geq 0}$ soit réelle et que $\Sum{n \geq 0}{} u_n$ converge absolument. Posons pour tout entier $n \geq 0$,
+$$ u_n^{+} = \left\lbrace \begin{array}{cl}
+u_n & \hbox{ si }  u_n \geq 0 \\
+0 & \hbox{ sinon}   \\
+\end{array}\right. \quad \hbox{ et } \quad u_n^{-} = \left\lbrace \begin{array}{cl}
+-u_n & \hbox{ si }  u_n \leq 0 \\
+0 & \hbox{ sinon}   \\
+\end{array}\right.$$
+et on a alors $u_n = u_n^+ -u_n^{-}$ et $\vert u_n \vert = u_n^+ + u_n^{-}$. On a clairement pour tout $n \geq 0$,
+$$ 0 \leq u_n^+ \leq \vert u_n \vert \quad \hbox{ et } \quad 0 \leq u_n^{-} \leq \vert u_n \vert $$
+Par critère de comparaison de série à termes positifs, les séries $\Sum{n \geq 0}{} u_n^+$ et $\Sum{n \geq 0}{} u_n^{-}$ sont donc convergentes puis par différence de séries convergentes, $\Sum{n \geq 0}{} u_n$ converge.
+
+\medskip
+
+$\rhd$ Supposons que $\Sum{n \geq 0}{} u_n$ est absolument convergente. Rappelons que pour tout $z \in \mathbb{C}$,
+$$ \vert \Re(z) \vert \leq \vert z \vert \quad \hbox{ et }  \vert \Im(z) \vert \leq \vert z \vert$$
+et ainsi pour tout $n \in \mathbb{N}$,
+$$ 0 \leq \vert \Re(u_n) \vert \leq \vert u_n \vert \quad \hbox{ et }  \vert \Im(u_n) \vert \leq \vert u_n \vert$$
+Par comparaison de série à termes positifs, les séries $\Sum{n \geq 0}{} \vert \Re(u_n) \vert$ et $\Sum{n \geq 0}{} \vert \Im(u_n) \vert$ sont convergentes. D'après la première partie de la preuve, les séries $\Sum{n \geq 0}{}  \Re(u_n) $ et $\Sum{n \geq 0}{}  \Im(u_n) $ sont donc convergentes et donc d'après la proposition \ref{ConvSerCompl}, la série $\Sum{n \geq 0}{} u_n$ converge.
 \newpage
 
 \vspace*{5cm}
@@ -685,11 +679,9 @@ $$ \left\vert \sum_{k=0}^{+ \infty} u_k \right\vert \leq \sum_{k=0}^{+ \infty} \
 
 \begin{Exemple} Étudions la nature de $\Sum{n \geq 1}{} \dfrac{\sin(n)}{n^2} \cdot$
 
-\vspace{3cm}
-%
-%Pour tout $n \geq 1$, on a :
-%$$ 0 \leq \left\vert \frac{\sin(n)}{n^2} \right\vert \leq \frac{1}{n^2}$$
-%et la série $\Sum{n \geq 1}{} \dfrac{1}{n^2}$ est convergente (série de Riemann avec $2>1$). Par critère de comparaison de séries à termes positifs, la série $\Sum{n \geq 1}{} \dfrac{\sin(n)}{n^2}$ est donc absolument convergente donc convergente.
+Pour tout $n \geq 1$, on a :
+$$ 0 \leq \left\vert \frac{\sin(n)}{n^2} \right\vert \leq \frac{1}{n^2}$$
+et la série $\Sum{n \geq 1}{} \dfrac{1}{n^2}$ est convergente (série de Riemann avec $2>1$). Par critère de comparaison de séries à termes positifs, la série $\Sum{n \geq 1}{} \dfrac{\sin(n)}{n^2}$ est donc absolument convergente donc convergente.
 \end{Exemple}
 
 \begin{Definition}{} On dit qu'une série est \emph{semi-convergente} si elle est convergente mais pas absolument convergente.
@@ -707,38 +699,29 @@ $$ \left\vert \sum_{k=0}^{+ \infty} u_k \right\vert \leq \sum_{k=0}^{+ \infty} \
 
 \begin{Demonstration}{}
 
-%\vspace{6cm}
-%
-%$\rhd$ Supposons que $u_n =O(v_n)$. Par définition, il existe une suite réelle $(\theta_n)_{n \geq 0}$ bornée et un rang $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$,
-%$$ u_n = \theta_n v_n $$
-%Il existe un réel positif $M$ tel que pour tout $n \geq N$, $\vert \theta_n \vert \leq M$ et ainsi :
-%$$ 0 \leq \vert u_n \vert \leq M v_n$$
-%car $(v_n)$ est une suite de termes positifs. Par critère de comparaison de séries à termes positifs, la série de terme général $u_n$ est donc absolument convergente donc convergente.
-%
-%\medskip
-%
-%$\rhd$ Si $u_n = o(v_n)$ alors $u_n = O(v_n)$.
+$\rhd$ Supposons que $u_n =O(v_n)$. Par définition, il existe une suite réelle $(\theta_n)_{n \geq 0}$ bornée et un rang $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$,
+$$ u_n = \theta_n v_n $$
+Il existe un réel positif $M$ tel que pour tout $n \geq N$, $\vert \theta_n \vert \leq M$ et ainsi :
+$$ 0 \leq \vert u_n \vert \leq M v_n$$
+car $(v_n)$ est une suite de termes positifs. Par critère de comparaison de séries à termes positifs, la série de terme général $u_n$ est donc absolument convergente donc convergente.
 
+\medskip
 
-\newpage
-
-\vspace*{6cm}
-
+$\rhd$ Si $u_n = o(v_n)$ alors $u_n = O(v_n)$.
 \end{Demonstration}
 
 \begin{Exemple} Étudions la convergence de la série $\Sum{n\geq 1}{} \ln \left( 1 + \dfrac{(-1)^{n-1}}{n} \right) \cdot$
-%
-%La série n'est pas à termes positifs. Par développement asymptotique, on a :
-%$$ \ln \left( 1 + \dfrac{(-1)^{n-1}}{n} \right) = \dfrac{(-1)^{n-1}}{n} - \frac{1}{2n^2} + o \left( \frac{1}{n^2} \right)$$ 
-%On a :
-%\begin{itemize}
-%\item La série de terme général $\dfrac{(-1)^{n-1}}{n}$ est convergente (série harmonique alternée).
-%\item La série de terme général $- \dfrac{1}{2n^2}$ est convergente (multiple d'une série de Riemann convergente car $2>1$).
-%\item La série de terme général $O \left( \frac{1}{n^2} \right)$ est absolument convergente (comparaison à une série de Riemann convergente car $2>1$) donc convergente.
-%\end{itemize}
-%Par somme de séries convergentes, la série de terme général $\ln \left( 1 + \dfrac{(-1)^{n-1}}{n} \right)$ est convergente.
 
-\vspace{6cm}
+La série n'est pas à termes positifs. Par développement asymptotique, on a :
+$$ \ln \left( 1 + \dfrac{(-1)^{n-1}}{n} \right) = \dfrac{(-1)^{n-1}}{n} - \frac{1}{2n^2} + o \left( \frac{1}{n^2} \right)$$ 
+On a :
+\begin{itemize}
+\item La série de terme général $\dfrac{(-1)^{n-1}}{n}$ est convergente (série harmonique alternée).
+\item La série de terme général $- \dfrac{1}{2n^2}$ est convergente (multiple d'une série de Riemann convergente car $2>1$).
+\item La série de terme général $O \left( \frac{1}{n^2} \right)$ est absolument convergente (comparaison à une série de Riemann convergente car $2>1$) donc convergente.
+\end{itemize}
+Par somme de séries convergentes, la série de terme général $\ln \left( 1 + \dfrac{(-1)^{n-1}}{n} \right)$ est convergente.
+
 \end{Exemple}
 
 \begin{ApplicationDirecte} Soit $(a,b,c) \in \mathbb{R}^3$. Étudier la convergence de :
@@ -770,36 +753,30 @@ $$ \left\vert \sum_{k=m}^{+ \infty} (-1)^k u_k \right\vert \leq \vert u_m \vert$
 \medskip
 
 $\rhd$ Pour montrer que la série converge, nous allons montrer que la suite des sommes partielles $(S_n)_{n \geq 0}$ converge en prouvant que ses deux suites extraites $(S_{2n})_{n \geq 0}$ et $(S_{2n+1})_{n \geq 0}$ convergent vers la même limite. 
-%
-%Pour tout $n \in \mathbb{N}$, on a :
-%$$ S_{2n+2} - S_{2n} = (-1)^{2n+2} u_{n+2} + (-1)^{2n+1} u_{n+1} = u_{n+2} - u_{n+1} \leq 0$$ 
-%car $(u_n)_{n \geq 0}$ est décroissante. De même, on a pour tout $n \in \mathbb{N}$,
-%$$ S_{2n+3} - S_{2n+1} = (-1)^{2n+3} u_{n+3} + (-1)^{2n+2} u_{n+2} = -u_{n+3} + u_{n+2} \geq  0$$ 
-%car $(u_n)_{n \geq 0}$ est décroissante. Remarquons pour finir que :
-%$$ S_{2n+1} - S_{2n} = (-1)^{2n+1}u_{2n+1} = - u_{2n+1} \underset{n \rightarrow + \infty}{\longrightarrow} 0$$
-%Ainsi $(S_{2n})_{n \geq 0}$ et $(S_{2n+1})_{n \geq 0}$ sont deux suites adjacentes et sont donc bien deux suites convergentes vers la même limite.
 
+Pour tout $n \in \mathbb{N}$, on a :
+$$ S_{2n+2} - S_{2n} = (-1)^{2n+2} u_{n+2} + (-1)^{2n+1} u_{n+1} = u_{n+2} - u_{n+1} \leq 0$$ 
+car $(u_n)_{n \geq 0}$ est décroissante. De même, on a pour tout $n \in \mathbb{N}$,
+$$ S_{2n+3} - S_{2n+1} = (-1)^{2n+3} u_{n+3} + (-1)^{2n+2} u_{n+2} = -u_{n+3} + u_{n+2} \geq  0$$ 
+car $(u_n)_{n \geq 0}$ est décroissante. Remarquons pour finir que :
+$$ S_{2n+1} - S_{2n} = (-1)^{2n+1}u_{2n+1} = - u_{2n+1} \underset{n \rightarrow + \infty}{\longrightarrow} 0$$
+Ainsi $(S_{2n})_{n \geq 0}$ et $(S_{2n+1})_{n \geq 0}$ sont deux suites adjacentes et sont donc bien deux suites convergentes vers la même limite.
 
-\vspace{7cm}
 
 \medskip
 
 $\rhd$ Démontrons la deuxième partie du théorème : l'estimation et le signe des restes. 
 
-%Les deux suites $(S_{2n})_{n \geq 0}$ et $(S_{2n+1})_{n \geq 0}$ étant adjacentes et convergentes vers la somme de la série, on a pour tout $n \in \mathbb{N}$,
-%$$ S_{2n+1} \leq \sum_{k=0}^{+ \infty} (-1)^k u_k \leq S_{2n}$$
-%et en particulier pour $n =0$,
-%$$ u_0 - u_1 \leq \sum_{k=0}^{+ \infty} (-1)^k u_k \leq u_0 $$
-%Or $u_0 - u_1 \geq 0$ (décroissance de $(u_n)_{n \geq 0}$) donc la somme $\Sum{k=0}{+ \infty} (-1)^k u_k$ est positive et est donc bien du signe de $u_0$. L'inégalité précédente démontrant en même temps que :
-%$$ \left\vert \sum_{k=0}^{+ \infty} (-1)^k u_k \right\vert \leq \vert u_0 \vert $$
-%Maintenant, remarquons que pour tout $m \in \mathbb{N}$ et par linéarité, 
-%$$\sum_{k=m}^{+ \infty} (-1)^k u_k = (-1)^m \sum_{k=0}^{+ \infty} (-1)^k u_{m+k}$$
-%Or la série de terme général $(-1)^k u_{m+k}$ est alternée donc d'après le résultat obtenu précédemment, $\Sum{k=0}{+ \infty} (-1)^k u_{m+k}$ est du signe de $u_{m}$ et ainsi $\Sum{k=m}{+ \infty} (-1)^k u_k$ est du signe de $(-1)^m u_m$. Toujours d'après le cas précédent, on a :
-%$$   \left\vert \sum_{k=m}^{+ \infty} (-1)^k u_k \right\vert = \left\vert \sum_{k=0}^{+ \infty} (-1)^k u_{m+k} \right\vert \leq \vert u_m \vert$$
-
-\newpage
-
-\vspace*{6cm}
+Les deux suites $(S_{2n})_{n \geq 0}$ et $(S_{2n+1})_{n \geq 0}$ étant adjacentes et convergentes vers la somme de la série, on a pour tout $n \in \mathbb{N}$,
+$$ S_{2n+1} \leq \sum_{k=0}^{+ \infty} (-1)^k u_k \leq S_{2n}$$
+et en particulier pour $n =0$,
+$$ u_0 - u_1 \leq \sum_{k=0}^{+ \infty} (-1)^k u_k \leq u_0 $$
+Or $u_0 - u_1 \geq 0$ (décroissance de $(u_n)_{n \geq 0}$) donc la somme $\Sum{k=0}{+ \infty} (-1)^k u_k$ est positive et est donc bien du signe de $u_0$. L'inégalité précédente démontrant en même temps que :
+$$ \left\vert \sum_{k=0}^{+ \infty} (-1)^k u_k \right\vert \leq \vert u_0 \vert $$
+Maintenant, remarquons que pour tout $m \in \mathbb{N}$ et par linéarité, 
+$$\sum_{k=m}^{+ \infty} (-1)^k u_k = (-1)^m \sum_{k=0}^{+ \infty} (-1)^k u_{m+k}$$
+Or la série de terme général $(-1)^k u_{m+k}$ est alternée donc d'après le résultat obtenu précédemment, $\Sum{k=0}{+ \infty} (-1)^k u_{m+k}$ est du signe de $u_{m}$ et ainsi $\Sum{k=m}{+ \infty} (-1)^k u_k$ est du signe de $(-1)^m u_m$. Toujours d'après le cas précédent, on a :
+$$   \left\vert \sum_{k=m}^{+ \infty} (-1)^k u_k \right\vert = \left\vert \sum_{k=0}^{+ \infty} (-1)^k u_{m+k} \right\vert \leq \vert u_m \vert$$
 \end{Demonstration}
 
 
@@ -856,33 +833,29 @@ La fonction \emph{exponentielle} est la fonction qui à tout $z \in \mathbb{C}$ 
 
 \begin{Demonstration}{} 
 
-\vspace{6.5cm}
-%
-%$\rhd$ Si $z=0$, le terme général de la série est nul excepté pour $k=0$ où le terme vaut $1$. Dans ce cas la série est bien absolument convergente.
-%
-%\medskip
-%
-%$\rhd$ Si $z \neq 0$, on pose pour tout $n \in \mathbb{N}$, $u_n = \left\vert \dfrac{z^n}{n!} \right\vert > 0$. On a :
-%$$ \frac{u_{n+1}}{u_n} = \frac{\vert z \vert }{n+1} \underset{ n \rightarrow + \infty}{\longrightarrow} 0$$
-%D'après la règle de D'alembert pour des séries à termes strictement positifs, la série $\Sum{n \geq 0}{} u_n$ converge donc $\Sum{n \geq 0}{}  \dfrac{z^n}{n!} $ converge absolument et donc converge.
+
+$\rhd$ Si $z=0$, le terme général de la série est nul excepté pour $k=0$ où le terme vaut $1$. Dans ce cas la série est bien absolument convergente.
+
+\medskip
+
+$\rhd$ Si $z \neq 0$, on pose pour tout $n \in \mathbb{N}$, $u_n = \left\vert \dfrac{z^n}{n!} \right\vert > 0$. On a :
+$$ \frac{u_{n+1}}{u_n} = \frac{\vert z \vert }{n+1} \underset{ n \rightarrow + \infty}{\longrightarrow} 0$$
+D'après la règle de D'alembert pour des séries à termes strictement positifs, la série $\Sum{n \geq 0}{} u_n$ converge donc $\Sum{n \geq 0}{}  \dfrac{z^n}{n!} $ converge absolument et donc converge.
 \end{Demonstration}
 
 \begin{Remarque}{} On montrera plus tard que cette fonction définie sur $\mathbb{C}$ coïncide sur $\mathbb{R}$ avec la fonction exponentielle usuelle.
 \end{Remarque}
 
 On vient de montrer que la série exponentielle est absolument convergente pour tout $z \in \mathbb{C}$. D'après le théorème précédent, on a pour tout $(z,z') \in \mathbb{C}^2$,
-%$$ \left( \sum_{k=0}^{+ \infty} \frac{z^k}{k!} \right)\left( \sum_{k=0}^{+ \infty}  \frac{(z')^k}{k!} \right) = $$
+$$ \left( \sum_{k=0}^{+ \infty} \frac{z^k}{k!} \right)\left( \sum_{k=0}^{+ \infty}  \frac{(z')^k}{k!} \right) = $$
 
-% \sum_{n=0}^{+ \infty} \sum_{k=0}^n  \frac{z^k}{k!}  \frac{(z')^{n-k}}{(n-k)!}$$
-%Or pour tout $n \in \mathbb{N}$,
-%$$ \sum_{k=0}^n  \frac{z^k}{k!}  \frac{(z')^{n-k}}{(n-k)!} =  \phantom{\sum_{k=0}^n \frac{1}{n!} \binom{n}{k} z^k (z')^{n-k} = \frac{1}{n!} (z+z')^n}$$
-%par linéarité et d'après la formule du binôme de Newton. Ainsi :
-%$$ \left( \sum_{k=0}^{+ \infty} \frac{z^k}{k!} \right)\left( \sum_{k=0}^{+ \infty}  \frac{(z')^k}{k!} \right) = \sum_{n=0}^{+ \infty} \frac{(z+z')^n}{n!} $$
-%ou encore $\exp(z)\exp(z')=\exp(z+z')$.
+$$\sum_{n=0}^{+ \infty} \sum_{k=0}^n  \frac{z^k}{k!}  \frac{(z')^{n-k}}{(n-k)!}$$
+Or pour tout $n \in \mathbb{N}$,
+$$ \sum_{k=0}^n  \frac{z^k}{k!}  \frac{(z')^{n-k}}{(n-k)!} =  \phantom{\sum_{k=0}^n \frac{1}{n!} \binom{n}{k} z^k (z')^{n-k} = \frac{1}{n!} (z+z')^n}$$
+par linéarité et d'après la formule du binôme de Newton. Ainsi :
+$$ \left( \sum_{k=0}^{+ \infty} \frac{z^k}{k!} \right)\left( \sum_{k=0}^{+ \infty}  \frac{(z')^k}{k!} \right) = \sum_{n=0}^{+ \infty} \frac{(z+z')^n}{n!} $$
+ou encore $\exp(z)\exp(z')=\exp(z+z')$.
 
-\newpage
-
-\vspace*{7cm}
 
 \begin{ApplicationDirecte}
 Calculer pour $n \geq 0$, $\Sum{k=0}{n}  \left( \frac{1}{3} \right)^k \left( \frac{1}{3} \right)^{n-k}$. En déduire que la série $\Sum{n \geq 0}{}  (n+1)3^{-n}$ converge et donner sa somme.
@@ -919,27 +892,25 @@ Soient $(\alpha, \beta) \in \mathbb{R}^2$. La série $\Sum{n \geq 2}{} \dfrac{1}
 
 \begin{Demonstration}{} On distingue plusieurs cas.
 
-\vspace*{15cm}
-%\begin{itemize}
-%\item Supposons $\alpha>1$ et choisissons $\gamma \in ]1, \alpha[$. Alors :
-%$$ \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} = o \left( \frac{1}{n^{\gamma}} \right) $$
-%car 
-%$$ \dfrac{n^{\gamma}}{n^{\alpha} \ln(n)^{\beta}} = \dfrac{1}{n^{\alpha- \gamma} \ln(n)^{\beta}} \underset{n \rightarrow + \infty}{\rightarrow} 0$$
-%car $\alpha> \gamma$. Or la série de terme général (positif) $\dfrac{1}{n^{\gamma}}$ converge car $\gamma>1$ donc par critère de comparaison la série de terme général $\dfrac{1}{n^{\alpha} \ln(n)^{\beta}}$ converge absolument et donc converge.
-%\item Supposons $\alpha<1$. Alors :
-%$$ n \times \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} = \dfrac{n^{1-\alpha}}{\ln(n)^{\beta}}  \underset{n \rightarrow + \infty}{\rightarrow} + \infty$$
-%car $1- \alpha>0$. Ainsi, à partir d'un certain rang $N$, on a pour tout $n \geq N$,
-%$$ n \times \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} \geq 1$$
-%et donc :
-%$$ \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} \geq \frac{1}{n}$$
-%On conclut alors par comparaison de séries à termes positifs et en utilisant que la série harmonique diverge.
-%\item Si $\alpha = 1$ et $\beta \leq 0$ alors pour tout $n \geq 2$,
-%$$ \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} \geq \dfrac{\ln(2)^{- \beta}}{n}$$
-%On conclut alors par comparaison de séries à termes positifs et en utilisant que la série harmonique diverge.
-%\item Si $\alpha =1$ et $\beta >0$ : on conclut à l'aide d'une comparaison série-intégrale.
-%\end{itemize}
+\begin{itemize}
+\item Supposons $\alpha>1$ et choisissons $\gamma \in ]1, \alpha[$. Alors :
+$$ \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} = o \left( \frac{1}{n^{\gamma}} \right) $$
+car 
+$$ \dfrac{n^{\gamma}}{n^{\alpha} \ln(n)^{\beta}} = \dfrac{1}{n^{\alpha- \gamma} \ln(n)^{\beta}} \underset{n \rightarrow + \infty}{\rightarrow} 0$$
+car $\alpha> \gamma$. Or la série de terme général (positif) $\dfrac{1}{n^{\gamma}}$ converge car $\gamma>1$ donc par critère de comparaison la série de terme général $\dfrac{1}{n^{\alpha} \ln(n)^{\beta}}$ converge absolument et donc converge.
+\item Supposons $\alpha<1$. Alors :
+$$ n \times \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} = \dfrac{n^{1-\alpha}}{\ln(n)^{\beta}}  \underset{n \rightarrow + \infty}{\rightarrow} + \infty$$
+car $1- \alpha>0$. Ainsi, à partir d'un certain rang $N$, on a pour tout $n \geq N$,
+$$ n \times \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} \geq 1$$
+et donc :
+$$ \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} \geq \frac{1}{n}$$
+On conclut alors par comparaison de séries à termes positifs et en utilisant que la série harmonique diverge.
+\item Si $\alpha = 1$ et $\beta \leq 0$ alors pour tout $n \geq 2$,
+$$ \dfrac{1}{n^{\alpha} \ln(n)^{\beta}} \geq \dfrac{\ln(2)^{- \beta}}{n}$$
+On conclut alors par comparaison de séries à termes positifs et en utilisant que la série harmonique diverge.
+\item Si $\alpha =1$ et $\beta >0$ : on conclut à l'aide d'une comparaison série-intégrale.
+\end{itemize}
 
-%\vspace{10cm}
 \end{Demonstration}
 
 
