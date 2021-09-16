@@ -1,0 +1,106 @@
+\documentclass[a4paper,french,11pt,twoside]{VcCours}
+
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+
+\begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir non surveillé n°3}
+\begin{center}
+\large\bf 
+Facultatif, pour le vendredi 24 septembre 2021
+\end{center}
+\separationTitre
+
+
+\section*{Problème -- développement asymptotique de la série harmonique}
+
+Dans ce problème, pour tout $n\in\N^*,$ on pose :
+$$S_n=\sum_{k=1}^n\frac{1}{k} $$
+
+\medskip
+
+\begin{enumerate}
+
+\item \textit{Question préliminaire :}\\
+Soient $\sum_{n \geq 0} a_n$ et $\sum_{n \geq 0} b_n$ deux séries à termes strictement positifs et convergentes. On note pour tout $n \geq 0$, $R_n$ et $T_n$ leurs restes partiels d'ordre $n$ :
+$$R_n=\sum_{k=n+1}^{+\infty} a_k \; \et \; T_n=\sum_{k=n+1}^{+\infty} b_k$$ 
+On souhaite montrer que :
+$$a_n \mathop{\sim}\limits_{+\infty} b_n \quad \Longrightarrow \quad R_n \mathop{\sim}\limits_{+\infty} T_n.$$
+Supposons donc que $a_n \mathop{\sim}\limits_{+\infty} b_n.$
+	
+	
+	\begin{enumerate}
+		\item Soit $\varepsilon>0$. Démontrer qu'il existe un rang $n_0\in\N$ tel que :
+		$$\forall n\geq n_0,\qquad |a_n-b_n|\leq \varepsilon b_n$$
+		
+		\item En déduire que pour tout entier $n\geq n_0$, on a $|R_n-T_n|\leq \varepsilon T_n.$
+		
+		\item Conclure enfin que $R_n \mathop{\sim}\limits_{+\infty} T_n.$
+	\end{enumerate}
+	
+	
+	\item \textit{Question de cours.} Déterminer la nature de la série harmonique. En déduire $\lim_{n\to+\infty}S_n.$
+	
+	
+	
+	\item
+	\begin{enumerate}
+		\item  On pose pour tout entier $n \geq 1$, $u_n=S_n-\ln(n)$ et $v_n=u_n-\frac{1}{n} \cdot$
+		\\
+	Démontrer que les suites $(u_n)_{n\in\N^*}$ et $(v_n)_{n\in\N^*}$ sont adjacentes.\\
+	Elles convergent donc vers une même limite, notée $\gamma$ et appelée \textit{constante d'Euler}.
+	
+	\item Démontrer que $\gamma>0.$
+	
+	
+	
+\end{enumerate}
+	
+	
+	
+	\item D'après ce qui précède, on a $S_n \underset{+ \infty}{=} \ln(n)+\gamma+ o(1).$ 
+	
+	
+	\begin{enumerate}
+	
+	\item Pour $n\in\N^*,$ on pose $r_n=\sum_{k=n+1}^{+\infty}\frac{1}{k^2} \cdot$
+	
+	
+	\begin{enumerate}
+	
+	\item Justifier l'existence de $r_n.$
+	
+	\item Démontrer que $r_n\mathop{\sim}\limits_{+ \infty}\frac{1}{n}.$
+	\end{enumerate} 
+	
+		\item On pose pour tout entier $n \geq 1$, $t_n=u_n-\gamma.$
+		\begin{enumerate}
+			\item  Déterminer un équivalent simple de $a_n=t_n-t_{n-1}$ quand $n$ tend vers $+ \infty$. 
+			
+			\item En utilisant la question préliminaire, démontrer que $t_n\mathop{\sim}\limits_{+\infty}\frac{1}{2n} \cdot$ 
+			
+		\end{enumerate}
+		
+		\item En déduire un développement asymptotique de $S_n$ à trois termes.
+	\end{enumerate}
+	
+	
+	
+	\item On pose enfin pour tout entier $n \geq 1$, $w_n=u_n-\gamma-\frac{1}{2n} \cdot$
+	
+	
+	\begin{enumerate}
+		\item Déterminer une constante $\alpha$ réelle telle que :
+		 $$w_n-w_{n-1}\mathop{\sim}\limits_{+\infty}\frac{\alpha}{n^3}$$
+		
+		\item A l'aide d'un raisonnement analogue à celui de la question précédente, démontrer que :
+		$$w_n\mathop{\sim}\limits_{+\infty}-\frac{\alpha}{2n^2}.$$
+		
+		
+		\item En déduire un développement asymptotique de $S_n$ à quatre termes.
+		
+	\end{enumerate}
+	\end{enumerate}
+
+
+\end{document}
