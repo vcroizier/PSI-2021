@@ -1,81 +1,29 @@
-\documentclass[a4paper,11pt]{report}
-\usepackage{Cours}
-\usepackage[procnames]{listings}
+\documentclass[a4paper,twoside,french,10pt]{VcCours}
 
-\definecolor{keywords}{RGB}{250,50,000}
-\definecolor{comments}{RGB}{0,130,000}
-\definecolor{definitions}{RGB}{0,0,130}
-\definecolor{red}{RGB}{160,0,0}
-\definecolor{green}{RGB}{0,150,0}
-\definecolor{lblue}{RGB}{173,216,230}
-\definecolor{mygray}{rgb}{0.93,0.93,0.99}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
-\definecolor{colorstring}{rgb}{0.55,0.35,0.3}
-
-\lstset{language=Python, 
-		backgroundcolor=\color{mygray},	%Rajoute une couleur en fond
-        basicstyle=\ttfamily\small, 			%Fonte et style de base
-        keywordstyle=\color{keywords},		%Coloration des mots-cles
-        morekeywords={False, True},			%On rajoute des mots-cles
-		ndkeywordstyle=\color{mymauve},      %D'autres types de mots-cles de couleur différente
-        ndkeywords={input, range, len, print, open},    %Les mots-cles en question  	
-        commentstyle=\color{comments},		%Couleur des commentaires
-        stringstyle=\color{colorstring},			%Couleur des chaines de caracteres
-        showstringspaces=false,				%Visualisation des espaces dans les chaines
-        breaklines=true,						%Permet le passage à la ligne (code wrap)
-        numbers=left,                   		%Position de la numerotation des lignes
-  		numbersep=8pt,                  	%La distance entre la numerotation des lignes et le code
-  		numberstyle=\tiny\color{gray}, 	%Le style utilise pour la numerotation
-  		rulecolor=\color{black},         	%A forcer sinon probleme de couleur lors des chgts de lignes avec du texte autre que noirs (commentaires par ex)
-  		showspaces=false,                	%Visualise les espaces partout en rajoutant des _ partout. Ceci écrase 'showstringspaces'
-  		showstringspaces=false,          	%Un _ n'est rajoute que pour les chaines
-  		showtabs=false,                  	%Montre les tab dans les chaines ajoutant un _ particulier
-  		stepnumber=1,                    	%Le pas entre chaque ligne numerotee, si c'est 1, elles le sont toutes.
-  		tabsize=2,   		   				%Taille d'un tab
-  		xleftmargin=2pt,  					%Marge gauche
-        identifierstyle=\color{black},		%Couleur des identifiants
-        procnamekeys={def,class},			%Ce qui définit les fonctions
-        procnamestyle=\color{blue}\textbf,	%Couleur affectee aux fonctions et mise en gras
-        %framexleftmargin=5mm, 
-        %frame=shadowbox, 					%Type de cadre (effet d'ombre)
-        rulesepcolor=\color{gray}}
-
-\usepackage{tikz,tkz-tab}
-\newcommand{\enc}[1]{\begin{center}\fbox{#1}\end{center}}
-\newcommand{\mat}
-{\end{array}\right )}
-\newcommand{\Acc}
-{
-\left \{
-\begin{array}}
-\newcommand{\Mat}
-{
-\left (
-\begin{array}}
-\newcommand{\acC}
-{\end{array}\right.}
-\title{test}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
 
 \begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir non surveillé n\degres2}
 
 \begin{center}
-\textit{{ {\huge Corrigé DM2}}}
+\large\bf
+Correction
 \end{center}
+\separationTitre
 
-\bigskip
 
-\begin{center}
- \shadowbox{Partie 1}
-\end{center}
+\section*{Problème -- Analyse}
 
-\medskip
+
+\subsection*{Partie 1}
 
 
 \begin{enumerate}
-\item Soit $x \in \mathbb{R}$. Alors $f(x)$ existe si et seulement si $1+x>0$ et $x \neq 0$. Ainsi, 
-\enc{$f$ est définie sur $\mathcal{D} = ]-1, 0[ \cup ]0 , + \infty[$}
+\item Soit $x \in \mathbb{R}$. Alors $f(x)$ existe si et seulement si $1+x>0$ et $x \neq 0$.
+
+Ainsi, 
+\fbox{$f$ est définie sur $\mathcal{D} = ]-1, 0[ \cup ]0 , + \infty[$}
 
 \item On a :
 $$ \boxed{ \ln(1+x) \underset{0}{=} x- \dfrac{x^2}{2} + o(x^2)}$$
@@ -84,7 +32,7 @@ $$ f(x)\underset{0}{=} 1 - \dfrac{x}{2} + o(x)$$
 On en déduit que :
 $$ \lim_{x \rightarrow 0} f(x) = 1$$
 Ainsi,
-\enc{$f$ est prolongeable par continuité en $0$ en posant $f(0)=1$}
+\fbox{$f$ est prolongeable par continuité en $0$ en posant $f(0)=1$}
 \item Pour tout réel $x$ appartenant à $\mathcal{D}$, on a :
 \begin{align*}
 \dfrac{f(x)-f(0)}{x-0} & = \dfrac{f(x)-1}{x} \\
@@ -94,7 +42,8 @@ Ainsi,
 On en déduit que :
 $$ \lim_{x \rightarrow 0} \dfrac{f(x)-f(0)}{x-0} = - \dfrac{1}{2}$$
 Ainsi,
-\enc{$f$ est d\'erivable en $0$ et $f'(0)= - \dfrac{1}{2}$}
+\fbox{$f$ est dérivable en $0$ et $f'(0)= - \dfrac{1}{2}$}
+
 La fonction $f$ est dérivable sur $\mathcal{D}$ par quotient de deux fonctions qui le sont avec un dénominateur ne s'annulant pas sur $\mathcal{D}$. Pour tout $x \in \mathcal{D}$, on a :
 \begin{align*}
 f'(x) & = \dfrac{1/(x+1) \times x - \ln(x+1) \times 1}{x^2} \\
@@ -111,7 +60,7 @@ f'(x)&  \underset{0}{=} \dfrac{x-(x+1)(x-x^2/2+o(x^2))}{(x+1)x^2} \\
 Ainsi,
 $$ \lim_{x \rightarrow 0} f'(x) = - \dfrac{1}{2}= f'(0)$$
 Ainsi, $f$ est dérivable sur $\mathcal{D}'$ (car dérivable sur $\mathcal{D}$ et en $0$) et $f'$ est continue sur $\mathcal{D}'$ (d'après les règles usuelles sur $\mathcal{D}$ et d'après la limite précédente en $0$). Finalement,
-\enc{$f$ est de classe $C^{1}$ sur $\mathcal{D}^{\prime}$}
+\fbox{$f$ est de classe $C^{1}$ sur $\mathcal{D}^{\prime}$}
 
 \item Pour tout $x \in \mathcal{D}$, on a :
 $$ f'(x) = \dfrac{k(x)}{(x+1)x^2}$$
@@ -139,18 +88,12 @@ On en déduit le tableau de variations suivant :
 \end{center}
 \end{enumerate}
 
-\medskip
-
-\begin{center}
- \shadowbox{Partie 2}
-\end{center}
-
-\medskip
+\subsection*{Partie 2}
 
 
 \begin{enumerate}
 \item La fonction $f$ est continue sur $[0,1]$ donc
-\enc{$L$ est bien définie}
+\fbox{$L$ est bien définie}
 
 \item Soit $t \in [0,1]$. Par somme des termes d'une suite géométrique et sachant que $-t$ est différent de $1$, on a :
 \begin{align*}
@@ -223,7 +166,7 @@ D'après l'inégalité triangulaire (les bornes sont dans le bon sens), on en d�
 \left\vert Q_{n}\left(  1\right)  -L\right\vert & =\left\vert \int_{0}^{1}g_{n}\left(  x\right)  \dx\right\vert\\
 &  \leq\int_{0}^{1}\left\vert g_{n}\left(x\right)  \right\vert \dx
 \end{align*}
-Il reste \`a majorer $\left\vert g_{n}\left(  x\right)  \right\vert$ pour majorer ensuite l'int\'egrale de l'inégalité précédente. D'après la question 3, on a pour tout $x\in[0,1]$,
+Il reste \`a majorer $\left\vert g_{n}\left(  x\right)  \right\vert$ pour majorer ensuite l'intégrale de l'inégalité précédente. D'après la question 3, on a pour tout $x\in[0,1]$,
 $$P_{n}\left(  x\right)  =\ln\left(  1+x\right)  -%
 %TCIMACRO{\dint _{0}^{x}}%
 %BeginExpansion
@@ -260,7 +203,7 @@ On sait que :
 $$ \lim_{n \rightarrow + \infty} \dfrac{1}{(n+1)^2} = 0$$
 Par théorème d'encadrement, on en déduit que la suite de terme général $\vert Q_{n}\left(  1\right)  -L\vert$ converge vers $0$ et ainsi :
 $$\boxed{\lim\limits_{n\rightarrow+\infty}Q_{n}\left(  1\right) = L}$$
-\item Soit $N \geq 0$. $Q_{N}\left(  1\right) $ donne une valeur approch\'ee de $L$ \`a $10^{-4}$ près si :
+\item Soit $N \geq 0$. $Q_{N}\left(  1\right) $ donne une valeur approchée de $L$ \`a $10^{-4}$ près si :
 $$\left\vert Q_{N}\left(  1\right)  -L\right\vert \leq10^{-4}$$
 Il suffit que :
 $$\dfrac{1}{\left(  N+1\right)  ^{2}}\leq10^{-4}$$
@@ -271,8 +214,9 @@ pour que l'inégalité précédente soit vérifiée. Raisonnons par équivalence
 & \Longleftrightarrow 99 \leq N
 \end{align*}
 Ainsi,
-\enc{La valeur approch\'ee est obtenue pour $N=99$}
+\fbox{La valeur approchée est obtenue pour $N=99$}
 \item Voici une proposition de solution :
+% cSpell:ignore Appr
 \begin{lstlisting}
 def Appr(eps):
     N=1
@@ -284,18 +228,12 @@ def Appr(eps):
 \end{lstlisting}
 \end{enumerate}
 
-\medskip
-
-\begin{center}
- \shadowbox{Partie 3}
-\end{center}
-
-\medskip
+\subsection*{Partie 3}
 
 \begin{enumerate}
 \item La fonction $f$ est le quotient de deux fonctions de classe $\mathcal{C}^{\infty}$ sur $]0, + \infty[$ avec un dénominateur ne s'annulant pas donc 
 
-\enc{$f$ est ind\'efiniment d\'erivable $\left]  0,+\infty\right[$}
+\fbox{$f$ est indéfiniment dérivable $\left]  0,+\infty\right[$}
 
 \item On sait que pour tout réel $x>0$,
 
@@ -308,7 +246,7 @@ $$f^{\prime}\left(  x\right)  =\dfrac{x-\left(  1+x\right)  \ln\left(
 %^{2}}-\dfrac{2}{x^{3}}\dfrac{x-\left(  \ln\left(  x+1\right)  \right)  \left(
 %x+1\right)  }{x+1}-\allowbreak\dfrac{1}{x^{2}}\dfrac{\ln\left(  x+1\right)
 %}{x+1}$ donc (on regroupe les termes en $\ln\left(  1+x\right)  $ pour
-%r\'epondre \`a la question suivante)
+%répondre \`a la question suivante)
 On en déduit que pour tout réel $x>0$,
 \begin{align*}
 f^{\prime\prime}\left(  x\right)   & =\dfrac{k^{\prime}\left(  x\right)
@@ -369,8 +307,8 @@ L'hérédité est donc vérifiée. Ainsi, la propriété est vérifiée au rang 
 
 \medskip
 
-\noindent Finalement, pour tout entier naturel $n$ non nul il existe un polyn\^ome
-$T_{n}$ \`a coefficients r\'eels et un r\'eel $a_{n}$ tels que :%
+\noindent Finalement, pour tout entier naturel $n$ non nul il existe un polynôme
+$T_{n}$ \`a coefficients réels et un réel $a_{n}$ tels que :%
 \[
 \boxed{\forall x\in\mathbb{R}_{+}^{*},\quad f^{\left(  n\right)  }\left(
 x\right)  =\dfrac{T_{n}\left(  x\right)  }{\left(  1+x\right)  ^{n}x^{n}%
@@ -387,7 +325,7 @@ $$T_{n+1}  =X\left(  1+X\right)  T_{n}'\  -n\left(  1+2X\right)  T_{n}+a_{n}\lef
 est aussi un polynôme à coefficients entiers.  La propriété est donc vérifiée au rang $1$ et est héréditaire donc par principe de récurrence, elle est vraie pour tout entier $n \geq 1$.
 \end{itemize}
 Ainsi, 
-\enc{pour tout entier $n \geq 1$, les coefficients de $T_{n}$ sont des entiers}
+\fbox{pour tout entier $n \geq 1$, les coefficients de $T_{n}$ sont des entiers}
 \item Pour utiliser la formule de Leibniz, on remarque que $f= g \times h$ où pour tout réel $x>0$,
 $$g\left(
 x\right)  =\dfrac{1}{x} \; \hbox{ et } \; h\left(  x\right)  =\ln\left(  1+x\right)  $$
@@ -408,7 +346,7 @@ x\right) \\
 ^{k-1}}{\left(  1+x\right)  ^{k}}\dfrac{\left(  n-k\right)  !\left(
 -1\right)  ^{n-k}}{x^{n-k+1}}%
 \end{align*}
-En utilisant l'expression de $\dis \binom{n}{k}$ avec les factorielles et en sortant les constantes de la somme, on a :
+En utilisant l'expression de $\binom{n}{k}$ avec les factorielles et en sortant les constantes de la somme, on a :
 \begin{align*}
  \sum_{k=1}^{n}\binom{n}{k}\dfrac{\left(  k-1\right)  !\left(  -1\right)
 ^{k-1}}{\left(  1+x\right)  ^{k}}\dfrac{\left(  n-k\right)  !\left(
