@@ -4,15 +4,10 @@
 
 }{}
 \newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
 \DeclareMathOperator{\e}{e}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\newcommand{\Int}[2]{\ensuremath{\mathchoice%
-	{{\displaystyle\int_{#1}^{#2}}}
-	{{\displaystyle\int_{#1}^{#2}}}
-	{\int_{#1}^{#2}}
-	{\int_{#1}^{#2}}
-}}
-
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
 
 \begin{document}
 
@@ -80,7 +75,7 @@ Soit $E$ un $\mathbb{K}$-espace vectoriel.
 \begin{enumerate}
 \item $\mathbb{K}^n$, $\mathbb{K}[X]$, $\mathcal{M}_{n,p}(\mathbb{K})$, $\mathcal{F}(X,E)$ (ensemble des fonctions définies sur un ensemble $X$ à valeurs dans un espace vectoriel $E$), $\mathcal{C}^k(I, \mathbb{K})$ sont des $\mathbb{K}$-espaces vectoriels.
 \item $\mathbb{C}$ est un $\mathbb{R}-$espace vectoriel.
-\end{itemize}
+\end{enumerate}
 \end{Exemples}
 
 \medskip
@@ -101,7 +96,7 @@ $$ \phantom{x = \sum_{k=1}^p \lambda_k e_k = \lambda_1 e_1 + \lambda_2 e_2 + \cd
 \item Dans $\mathcal{F}(\mathbb{R},\mathbb{R})$, La fonction $x \mapsto \cos(2x)$ est combinaison linéaire de la fonction constante égale à $1$ et de $x \mapsto \sin^2(x)$ :
 $$ \forall x \in \mathbb{R}, \, \cos(2x) = 1 - 2 \sin^2(x)$$
 Remarquons que dans cet espace vectoriel, $f=g$ signifie : $\forall x \in \mathbb{R}$, $f(x)=g(x)$.
-\end{itemize}
+\end{enumerate}
 \end{Exemples}
 
 
@@ -138,7 +133,7 @@ $F$ est un sous-espace vectoriel de $E$ si et seulement si c'est un sous-ensembl
 %$$ \textrm{deg}(\lambda P+ Q) \leq \max (\textrm{deg}(\lambda P), \textrm{deg}(Q)) \leq n$$
 donc $\lambda P + Q \in \mathbb{K}_n[X]$.
 \end{itemize}
-\end{itemize}
+\end{enumerate}
 \end{Exemples}
 
 \begin{ApplicationDirecte} Montrer que l'ensemble des matrices symétriques de $\mathcal{M}_n(\mathbb{R})$ est un sous-espace vectoriel de $\mathcal{M}_n(\mathbb{R})$. \end{ApplicationDirecte}
@@ -199,7 +194,7 @@ L'espace vectoriel engendré par $\mathcal{F}$ est un sous-espace vectoriel de $
 \subsection{Produit de sous-espaces vectoriels}
 
 Soient $E$ un $\mathbb{K}$-espace vectoriel et $E_1$, $E_2$, $\ldots, E_p$ des sous-espaces vectoriels de $E$. Rappelons que le produit cartésien de ces sous-espaces est défini par :
-$$ E_1 \times E_2 \times \cdots \times E_p = \left\lbrace (x_1, x_2, \ldots, x_p) \, \vert \, \forall i \in \Interv{1}{p}, \, x_i \in E_i \right\rbrace$$
+$$ E_1 \times E_2 \times \cdots \times E_p = \left\lbrace (x_1, x_2, \ldots, x_p) \, \vert \, \forall i \in \iii{1}{p}, \, x_i \in E_i \right\rbrace$$
 
 On munit le produit cartésien de deux lois de compositions :
 
@@ -232,12 +227,12 @@ La somme de ces sous-espaces vectoriels est un sous-espace vectoriel de $E$.
 %On vérifie les trois points :
 %\begin{itemize}
 %\item $\Sum{k=1}{p} E_k \subset E$.
-%\item $0_E = \Sum{k=1}{p} 0_E$ et pour tout $k \in \Interv{1}{p}$, $0_E \in E_k$ (car $E_k$ est un sous-espace vectoriel de $E$) donc $O_E \in \Sum{k=1}{p} E_k$.
+%\item $0_E = \Sum{k=1}{p} 0_E$ et pour tout $k \in \iii{1}{p}$, $0_E \in E_k$ (car $E_k$ est un sous-espace vectoriel de $E$) donc $O_E \in \Sum{k=1}{p} E_k$.
 %\item Soient $\lambda \in \mathbb{K}$ et $(x,y) \in \left(\Sum{k=1}{p} E_k\right)^2$. Par définition, il existe $(x_1, x_2, \ldots, x_p) \in E_1 \times E_2 \times \cdots E_p$ et $(y_1, y_2, \ldots, y_p) \in E_1 \times E_2 \times \cdots E_p$ tels que :
 %$$ x = \sum_{k=1}^p x_k \quad \hbox{ et } y = \sum_{k=1}^p y_k $$
 %Ainsi :
 %$$ x+ \lambda y =  \sum_{k=1}^p x_k+ \lambda y_k $$
-%Or pour tout $k \in \Interv{1}{p}$, $x_k+ \lambda y_k  \in E_k$ (car $E_k$ est un sous-espace vectoriel de $E$) donc $x+ \lambda y \in \Sum{k=1}{p} E_k$.
+%Or pour tout $k \in \iii{1}{p}$, $x_k+ \lambda y_k  \in E_k$ (car $E_k$ est un sous-espace vectoriel de $E$) donc $x+ \lambda y \in \Sum{k=1}{p} E_k$.
 %\end{itemize}
 
 \vspace{6cm}
@@ -261,7 +256,7 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel et $E_1$, $E_2$, $\ldots, E_p$ des s
 \vspace{1cm}
 %
 %pour tout $(x_1, x_2, \ldots, x_p) \in E_1 \times E_2 \times \cdots \times E_p$, on a :
-%$$ \sum_{k=1}^p x_k =0_E \Longrightarrow \forall k \in \Interv{1}{p}, \, x_k = 0_E$$
+%$$ \sum_{k=1}^p x_k =0_E \Longrightarrow \forall k \in \iii{1}{p}, \, x_k = 0_E$$
 Dans ce cas, la somme se note $\bigoplus_{k=1}^p E_k = E_1 \oplus \cdots \oplus E_p$.
 \end{Definition}
 
@@ -269,7 +264,7 @@ Dans ce cas, la somme se note $\bigoplus_{k=1}^p E_k = E_1 \oplus \cdots \oplus 
 Soient $E$ un $\mathbb{K}$-espace vectoriel et $E_1$, $E_2$, $\ldots, E_p$ des sous-espaces vectoriels de $E$. Les assertions suivantes sont équivalentes :
 \begin{enumerate}
 \item La somme $\Sum{k=1}{p} E_k$ est directe.
-\item Tout élément $x$ de $\Sum{k=1}{p} E_k$ se décompose de manière \emph{unique} sous la forme $x = x_1 + x_2 + \ldots + x_p$ où pour tout $k \in \Interv{1}{p}$, $x_k \in E_k$.
+\item Tout élément $x$ de $\Sum{k=1}{p} E_k$ se décompose de manière \emph{unique} sous la forme $x = x_1 + x_2 + \ldots + x_p$ où pour tout $k \in \iii{1}{p}$, $x_k \in E_k$.
 \end{enumerate}
 \end{Proposition}
 
@@ -288,7 +283,7 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel et $E_1$, $E_2$, $\ldots, E_p$ des s
 %$$ x = \sum_{k=1}^p x_k  = \sum_{k=1}^p y_k$$
 %et ainsi :
 %$$ \sum_{k=1}^p x_k -y_k = 0_E $$
-%Or, pour tout $k \in \Interv{1}{p}$, $x_k-y_k \in E_k$ (car $E_k$ est un sous-espace vectoriel de $E$). Sachant que ma somme est directe, on a donc pour $k \in \Interv{1}{p}$, $x_k-y_k = 0_E$ ou encore $x_k=y_k$. On obtient ainsi l'unicité de la décomposition.
+%Or, pour tout $k \in \iii{1}{p}$, $x_k-y_k \in E_k$ (car $E_k$ est un sous-espace vectoriel de $E$). Sachant que ma somme est directe, on a donc pour $k \in \iii{1}{p}$, $x_k-y_k = 0_E$ ou encore $x_k=y_k$. On obtient ainsi l'unicité de la décomposition.
 %
 %\medskip
 %
@@ -296,7 +291,7 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel et $E_1$, $E_2$, $\ldots, E_p$ des s
 %$$ \sum_{k=1}^p x_k = 0_E $$
 %On a alors :
 %$$ \sum_{k=1}^p x_k = \sum_{k=1}^p 0_E$$
-%Sachant que le vecteur appartient à tous les espaces vectoriels $E_k$ ($1 \leq k \leq p$), on a par unicité de la décomposition que pour tout $k \in \Interv{1}{p}$, $x_k=0_E$. Ainsi, la somme est directe.
+%Sachant que le vecteur appartient à tous les espaces vectoriels $E_k$ ($1 \leq k \leq p$), on a par unicité de la décomposition que pour tout $k \in \iii{1}{p}$, $x_k=0_E$. Ainsi, la somme est directe.
 \end{Demonstration}
  
  Dans le cas de deux sous-espaces vectoriels, on a un critère rapide pour démontrer qu'une somme est directe.
@@ -330,7 +325,7 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel et $E_1$, $E_2$, $\ldots, E_p$ des s
 \end{Definition}
 \medskip
 
-\begin{Exemple} Soient $F = \left\lbrace f \in \mathcal{C}([-1,1], \mathbb{R}) \, \big{\vert} \, \Int{ - 1}{1} f(t) \dt = 0\right\rbrace$ et $G = \left\lbrace  f \in \mathcal{C}([-1,1], \mathbb{R})\, \vert \, f \, \hbox{ est constante} \right\rbrace$
+\begin{Exemple} Soient $F = \left\lbrace f \in \mathcal{C}([-1,1], \mathbb{R}) \, \big{\vert} \, \int_{ - 1}^{1} f(t) \dt = 0\right\rbrace$ et $G = \left\lbrace  f \in \mathcal{C}([-1,1], \mathbb{R})\, \vert \, f \, \hbox{ est constante} \right\rbrace$
 Montrons que $F$ et $G$ sont des sous-espaces vectoriels supplémentaires de $\mathcal{C}([-1,1], \mathbb{R})$.
 \begin{enumerate}
 \item $F$ et $G$ sont des sous-espaces vectoriels de $\mathcal{C}([-1,1], \mathbb{R})$.
@@ -388,7 +383,7 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel et $\mathcal{F} = (e_1, e_2, \ldots,
 \vspace{1cm}
 %
 %pour pour tout $(\lambda_1, \lambda_2, \ldots, \lambda_p) \in \mathbb{K}^p$,
-%$$ \sum_{k=1}^p \lambda_k e_k = 0_E \Rightarrow \forall k \in \Interv{1}{p}, \, \lambda_k = 0$$
+%$$ \sum_{k=1}^p \lambda_k e_k = 0_E \Rightarrow \forall k \in \iii{1}{p}, \, \lambda_k = 0$$
 On dit que les vecteurs $e_1$, $e_2$, $\ldots$, $e_p$ sont \emph{linéairement indépendants}.
 \item On dit que $\mathcal{F}$ est \emph{liée} si elle n'est pas libre ce qui équivaut à l'existence d'un $p$-uplet \newline $(\lambda_1, \lambda_2, \ldots, \lambda_p) \in \mathbb{K}^p \setminus \lbrace (0,0, \ldots,0) \rbrace$ tel que :
 $$ \sum_{k=1}^p \lambda_k e_k = 0_E$$
@@ -405,8 +400,11 @@ On dit que les vecteurs $e_1$, $e_2$, $\ldots$, $e_p$ \emph{engendrent} $E$.
 \end{itemize}
 \end{Definition}
 
-\begin{att} Il faut se méfier de la négation d'être une famille libre : une famille est liée si il existe des scalaires \emph{non tous nuls} (et non pas tous non nuls) donnant une combinaison linéaire nulle.
-\end{att}
+\begin{Remarque}{}
+	\warning{} Il faut se méfier de la négation d'être une famille libre : 
+	une famille est liée si il existe des scalaires \emph{non tous nuls} 
+	(et non pas tous non nuls) donnant une combinaison linéaire nulle.
+\end{Remarque}
 
 \medskip
 
@@ -451,7 +449,7 @@ On dit que la famille est \emph{échelonnée en degré} (et qu'elle ne contient 
 %Soit $(\lambda_1, \lambda_2, \ldots, \lambda_n) \in \mathbb{K}^n$ tel que :
 %$$ \sum_{k=1}^n \lambda_k P_k = 0_{\mathbb{K}[X]}$$
 %Supposons par l'absurde que $(\lambda_1, \lambda_2, \ldots, \lambda_n)$ n'est pas nul. On pose alors :
-%$$ j = \max \lbrace k \in \Interv{1}{n}, \, \vert \, \lambda_k \neq 0 \rbrace$$
+%$$ j = \max \lbrace k \in \iii{1}{n}, \, \vert \, \lambda_k \neq 0 \rbrace$$
 %Notons que $j$ existe car c'est le maximum d'un ensemble fini non vide. On a alors :
 %$$ \sum_{k=1}^j \lambda_k P_k = O_{\mathbb{K}[X]}$$
 %ou encore :
@@ -491,6 +489,7 @@ En particulier, tout espace vectoriel, non réduit au vecteur nul et de dimensio
 % \begin{Remarque}{} L'idée de la preuve du théorème est de montrer que toute sous-famille libre de la famille génératrice de l'espace peut être complété en une base de $E$ à l'aide d'éléments de la famille génératrice.
 % \end{Remarque}
 % 
+
  \begin{Theoreme}{} Toutes les bases d'un $\mathbb{K}$-espace vectoriel $E$ non réduit au vecteur nul de dimension finie ont le même cardinal. Ce nombre est appelé \emph{dimension} de $E$ et on le note $\textrm{dim}_{\mathbb{K}}(E)$ ou $\textrm{dim}(E)$ (si il n'y a pas d'ambiguïté sur le corps de base). Par convention, si $E$ est réduit au vecteur nul, sa dimension est nulle.
  \end{Theoreme}
  
@@ -510,7 +509,7 @@ En particulier, tout espace vectoriel, non réduit au vecteur nul et de dimensio
  
 % $(1,X,X^2, \ldots, X^n)$. On a ainsi $\textrm{dim}(\mathbb{K}_n[X])=n+1$.
  \item $\mathbb{C}$ est $\mathbb{C}-$espace vectoriel, $(1)$ est une base et $\textrm{dim}_{\mathbb{C}}(\mathbb{C})=1$ alors que $\mathbb{C}$ est $\mathbb{R}-$espace vectoriel, $(1,i)$ est une base et $\textrm{dim}_{\mathbb{R}}(\mathbb{C})=2$.
- \end{itemize}
+ \end{enumerate}
 \end{Exemples}
  
  \begin{Proposition}{}
@@ -518,7 +517,7 @@ En particulier, tout espace vectoriel, non réduit au vecteur nul et de dimensio
 $$ \phantom{\mathcal{F} \hbox{ est une base de E} \Longleftrightarrow \mathcal{F} \hbox{ est libre } \Longleftrightarrow \mathcal{F} \hbox{ est génératrice de E }}$$
 \end{Proposition}
 
-\begin{Exemple} Soient $n \in \mathbb{N}^*$ et $(P_0,P_1, \ldots, P_n)$ une famille de polynômes de $\mathbb{K}[X]$ tels que pour tout $k \in \Interv{0}{n}$, $\textrm{deg}(P) = k$. Alors $(P_0,P_1, \ldots, P_n)$ est une base de $\mathbb{K}_n[X]$.
+\begin{Exemple} Soient $n \in \mathbb{N}^*$ et $(P_0,P_1, \ldots, P_n)$ une famille de polynômes de $\mathbb{K}[X]$ tels que pour tout $k \in \iii{0}{n}$, $\textrm{deg}(P) = k$. Alors $(P_0,P_1, \ldots, P_n)$ est une base de $\mathbb{K}_n[X]$.
 
 En effet, la famille est échelonné en degrés, ne contient pas le vecteur nul et donc est libre dans $\mathbb{K}_n[X]$. Or la dimension de $\mathbb{K}_n[X]$ est $n+1$ qui est le cardinal de $\mathbb{K}_n[X]$ donc c'est une base de $\mathbb{K}_n[X]$.
 \end{Exemple}
@@ -553,14 +552,23 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel et $E_1$, $E_2$, $\ldots, E_p$ des s
 $$ \textrm{dim}(E_1 \times E_2 \times \cdots \times E_p) = \sum_{k=1}^p \textrm{dim} (E_k)$$
 \end{Proposition}
 
-\begin{Demonstration}{} On pose pour tout $k \in \Interv{1}{p}$, $n_k = \textrm{dim} (E_k)$ et $(e_{k,1}, \, e_{k,2}, \, \ldots, \, e_{k,n_k})$ une base de $E_k$. On montre alors que la famille $((e_{1,1}, 0_{E_2}, \ldots, 0_{E_p}), \ldots (e_{1,n_1}, 0_{E_2}, \ldots, 0_{E_p}), \ldots (0_{E_1},e_{2,1}, 0_{E_2}, \ldots, 0_{E_p}), \ldots,(0_{E_1},e_{2,n_2}, 0_{E_2}, \ldots,0_{E_p}),$
+\begin{Demonstration}{} On pose pour tout $k \in \iii{1}{p}$, 
+	$n_k = \textrm{dim} (E_k)$ et $(e_{k,1}, \, e_{k,2}, \, \ldots, \, e_{k,n_k})$ 
+	une base de $E_k$. On montre alors que la famille 
+	$((e_{1,1}, 0_{E_2}, \ldots, 0_{E_p})$, $\ldots$, 
+	$(e_{1,n_1}, 0_{E_2}, \ldots, 0_{E_p})$, $\ldots$, 
+	$(0_{E_1},e_{2,1}, 0_{E_2}, \ldots, 0_{E_p})$, $\ldots$,
+	$(0_{E_1},e_{2,n_2}, 0_{E_2}, \ldots,0_{E_p}),$
 
-$(0_{E_1},e_{2,n_2}, 0_{E_2}, \ldots,0_{E_p}), \ldots, (0_{E_1},\ldots, 0_{E_{p-1}}, e_{p,1}), (0_{E_1},\ldots, 0_{E_{p-1}}, e_{p,n_p}))$ est une base de $\textrm{dim}(E_1 \times E_2 \times \cdots \times E_p)$ ce qui donne le résultat.
+$(0_{E_1},e_{2,n_2}, 0_{E_2}, \ldots,0_{E_p}), \ldots, 
+(0_{E_1},\ldots, 0_{E_{p-1}}, e_{p,1}), (0_{E_1},\ldots, 
+0_{E_{p-1}}, e_{p,n_p}))$ est une base de $E_1 \times E_2 \times \cdots \times E_p$
+ce qui donne le résultat.
 \end{Demonstration}
 
 \medskip
 %\begin{lem}
-%Soient $E$ un espace vectoriel, $p \in \mathbb{N}^*$ tel que $p \geq 2$ et $(x_1, x_2, \ldots, x_p)$ une famille libre. Alors pour tout $i \in \Interv{1}{p-1}$,
+%Soient $E$ un espace vectoriel, $p \in \mathbb{N}^*$ tel que $p \geq 2$ et $(x_1, x_2, \ldots, x_p)$ une famille libre. Alors pour tout $i \in \iii{1}{p-1}$,
 %$$ \Vect(x_1, x_2, \ldots, x_p) = \Vect(x_1, \ldots, x_i) \oplus \Vect(x_{i+1}, \ldots, x_p)$$
 %\end{lem}
 
@@ -573,29 +581,29 @@ $(0_{E_1},e_{2,n_2}, 0_{E_2}, \ldots,0_{E_p}), \ldots, (0_{E_1},\ldots, 0_{E_{p-
 %$$y = \sum_{k=1}^i \lambda_k x_k \quad \hbox{ et } \quad z = \sum_{k=i+1}^p \lambda_k x_k $$
 %et ainsi :
 %$$ \sum_{k=1}^p\lambda_k x_k =  0_E $$
-%Or $(x_1, x_2, \ldots, x_p)$ est libre donc pour tout $k \in \Interv{1}{p}$, $\lambda_k$ et donc $y=z=0_E$ et ainsi la somme est directe.
+%Or $(x_1, x_2, \ldots, x_p)$ est libre donc pour tout $k \in \iii{1}{p}$, $\lambda_k$ et donc $y=z=0_E$ et ainsi la somme est directe.
 %\end{Demonstration}
 
 \begin{Proposition}{Fractionnement d'une base}\label{UnionBase} Soient $E$ un $\mathbb{K}$-espace vectoriel de dimension finie, $p \in \mathbb{N}^*$ avec $p \geq 2$ et $E_1$, $E_2$, $\ldots$, $E_p$ des sous-espaces vectoriels de $E$ munis de bases $\mathcal{B}_1$, $\mathcal{B}_2$, $\ldots$, $\mathcal{B}_p$. Alors :
 $$ E= E_1 \oplus E_2 \oplus \cdots \oplus E_p \Longleftrightarrow  \bigcup_{k=1}^p \mathcal{B}_k \hbox{ est une base de } E$$
 \end{Proposition}
 
-\begin{Demonstration}{} On procède par double implications. On note pour tout $k \in \Interv{1}{p}$, $n_k$ la dimension de $E_k$ et $(e_{k,1}, e_{k,2}, \ldots, e_{k,n_k})$ la base $\mathcal{B}_k$.
+\begin{Demonstration}{} On procède par double implications. On note pour tout $k \in \iii{1}{p}$, $n_k$ la dimension de $E_k$ et $(e_{k,1}, e_{k,2}, \ldots, e_{k,n_k})$ la base $\mathcal{B}_k$.
 
 \medskip
 %
 %$\rhd$ Supposons que $E= E_1 \oplus E_2 \oplus \cdots \oplus E_p$. Soit $x \in E$. Il existe alors $(x_1, x_2, \ldots, x_p) \in E_1 \times E_2 \times \cdots \times E_p$ tel que :
 %$$ x = \sum_{k=1}^p x_k $$
-%Or, pour tout $k \in \Interv{1}{p}$, $x_k$ s'écrit comme une combinaison linéaire d'éléments de $\mathcal{B}_k$ (car c'est une base de $E_k$) et ainsi s'écrit comme une combinaison linéaire d'éléments de $\bigcup_{k=1}^p \mathcal{B}_k$ qui est ainsi génératrice. 
+%Or, pour tout $k \in \iii{1}{p}$, $x_k$ s'écrit comme une combinaison linéaire d'éléments de $\mathcal{B}_k$ (car c'est une base de $E_k$) et ainsi s'écrit comme une combinaison linéaire d'éléments de $\bigcup_{k=1}^p \mathcal{B}_k$ qui est ainsi génératrice. 
 %
 %\medskip 
 %
-%Montrons maintenant que $\bigcup_{k=1}^p \mathcal{B}_k$ est libre. Pour tout $k \in \Interv{1}{p}$, considérons une famille de scalaire $(\lambda_{k,j})_{1 \leq j \leq n_k}$. Supposons que :
+%Montrons maintenant que $\bigcup_{k=1}^p \mathcal{B}_k$ est libre. Pour tout $k \in \iii{1}{p}$, considérons une famille de scalaire $(\lambda_{k,j})_{1 \leq j \leq n_k}$. Supposons que :
 %$$ \sum_{k=1}^p \sum_{i=1}^{n_i} \lambda_{k,i} e_{k,i} = 0_E$$
-%Or pour tout $k \in \Interv{1}{p}$, $\Sum{i=1}{n_i} \lambda_{k,i} e_{k,i}$ appartient à $E_k$. La somme des $E_k$ étant directe, on a alors que pour tout $k \in \Interv{1}{p}$,
+%Or pour tout $k \in \iii{1}{p}$, $\Sum{i=1}{n_i} \lambda_{k,i} e_{k,i}$ appartient à $E_k$. La somme des $E_k$ étant directe, on a alors que pour tout $k \in \iii{1}{p}$,
 %$$ \sum_{i=1}^{n_i} \lambda_{k,i} e_{k,i}$$
 %et sachant que $\mathcal{B}_k$ est une base et en particulier une famille libre :
-%$$ \forall i \in \Interv{1}{n_i}, \, \lambda_{k,i} = 0$$
+%$$ \forall i \in \iii{1}{n_i}, \, \lambda_{k,i} = 0$$
 %et donc $\mathcal{B}$ est bien libre.
 %
 %\medskip
@@ -606,7 +614,7 @@ $$ E= E_1 \oplus E_2 \oplus \cdots \oplus E_p \Longleftrightarrow  \bigcup_{k=1}
 %\begin{equation}\label{Frac} 
 %\sum_{k=1}^p x_k = 0
 %\end{equation}
-%Pour tout $k \in \Interv{1}{p}$, $x_k \in E_k$ et $\mathcal{B}_k$ est une base de $E_k$ donc il existe une famille de scalaires $(\lambda_{k,j})_{1 \leq j \leq n_k}$ tel que :
+%Pour tout $k \in \iii{1}{p}$, $x_k \in E_k$ et $\mathcal{B}_k$ est une base de $E_k$ donc il existe une famille de scalaires $(\lambda_{k,j})_{1 \leq j \leq n_k}$ tel que :
 %$$ x_k = \sum_{i=1}^{n_i} \lambda_{k,i} e_{k,i}$$
 %Et donc d'après (\ref{Frac}), 
 %$$ \sum_{k=1}^p \sum_{i=1}^{n_i} \lambda_{k,i} e_{k,i} = 0_E$$
@@ -643,7 +651,9 @@ $\rhd$ $F$ est un sous-espace vectoriel de $E$ qui est de dimension finie et non
 
 \medskip
 
-\begin{att} Un supplémentaire n'est pas unique. Par exemple, dans $\mathbb{R}^2$, on a :
+\begin{Remarque}{} 
+	\warning{} Un supplémentaire n'est pas unique. 
+	Par exemple, dans $\mathbb{R}^2$, on a :
 $$ \mathbb{R}^2 = \Vect((1,0)) \oplus \Vect((0,1)) = \Vect((1,0)) \oplus \Vect((1,1))$$
 
 \medskip
@@ -655,7 +665,7 @@ $$ \mathbb{R}^2 = \Vect((1,0)) \oplus \Vect((0,1)) = \Vect((1,0)) \oplus \Vect((
 \begin{center}
 \includegraphics[scale=0.3]{Supp}
 \end{center}
-\end{att}
+\end{Remarque}
 
 \begin{Proposition}{} 
 Soient $E$ un $\mathbb{K}$-espace vectoriel de dimension finie, $p \in \mathbb{N}^*$ tel que $p \geq 2$ et $(E_1, E_2, \ldots, E_p)$ des sous-espaces vectoriels de $E$. Si les espaces $E_1, E_2, \ldots, E_p$ sont en somme directe alors :
