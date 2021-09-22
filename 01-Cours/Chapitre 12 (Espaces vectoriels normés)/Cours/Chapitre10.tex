@@ -341,7 +341,8 @@ et $f : X \rightarrow E$ est bornée si et seulement si :
 
 \medskip
 
-\begin{exems}
+\begin{Exemples}
+\begin{enumerate}
 \item Une boule ouverte d'un espace vectoriel normé $(E, \Vert \cdot \Vert)$ est bornée : pour $a \in E$ et $r \in \mathbb{R}_+$, on a pour tout $x \in B(a,r)$, par l'inégalité triangulaire,
 %$$ \Vert x \Vert = \Vert x-a + a \Vert \leq \Vert x - a \Vert + \Vert a \Vert \leq r+ \Vert a \Vert$$
 %En posant $M = r+ \Vert a \Vert$, la définition est vérifiée.
@@ -366,7 +367,8 @@ Montrons que $f$ n'est pas bornée :
 %pour tout $x \in ]0,1[$, $f(x,1) = (\ln(x),\cos(x) + \sin(1))$ donc :
 %$$ \Vert f(x,1) \Vert_1 = \vert \ln(x) \vert + \vert \cos(x) + \sin(1) \vert \geq -\ln(x) -1  + \sin(1)$$
 %Or $\lim_{x \rightarrow 0}  -\ln(x) -1  + \sin(1) = + \infty$ donc la définition de $f$ bornée ne peut être vérifiée pour aucun réel positif $M$.
-\end{exems}
+\end{itemize}
+\end{Exemples}
 
 \begin{ApplicationDirecte} Montrer que $A = \lbrace (x,y)\in\R^2 \, \vert \, x^2+y^4=1 \rbrace$ est bornée dans $\mathbb{R}^2$.
 \end{ApplicationDirecte}
@@ -597,11 +599,13 @@ $$ \phantom{\forall a \in A, \, \exists r>0 \, \vert \, B(a,r) \subset A}$$
 %\begin{Proposition}{} On admet que si $E$ est de dimension finie, la notion de point intérieur et la notion d'ouverts ne dépend pas de la norme choisie. On ne précisera donc pas la norme.
 %\end{Proposition}
 
-\begin{exems}
+\begin{Exemples}
+\begin{enumerate}
 \item $E$ et $\varnothing$ sont des ouverts de $E$.
 \item Les intervalles ouverts de $\mathbb{R}$ sont des ouverts de $\mathbb{R}$.
 \item On admet que le produit cartésien d'ouverts est un ouvert. Par exemple $]-1,1[ \times \mathbb{R}_{+}^*$ est un ouvert de $\mathbb{R}^2$.
-\end{exems}
+\end{itemize}
+\end{Exemples}
 
 \medskip
 
@@ -701,10 +705,12 @@ Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé, $A$ une partie de $E
 \begin{Definition}{} Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé et $A$ une partie de $E$. On dit que $A$ est \emph{fermé} si tous les points adhérents de $A$ appartiennent à $A$. Autrement dit, $A$ est fermé si $\overline{A}=A$.
 \end{Definition}
 
-\begin{exems}
+\begin{Exemples}
+\begin{enumerate}
 \item L'ensemble $[-1,1[$ n'est pas un fermé.
 \item Pour tout $A \subset E$, $\overline{A}$ est un fermé.
-\end{exems}
+\end{itemize}
+\end{Exemples}
 
 \begin{Proposition}{} Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé et $A$ une partie de $E$. Les propositions suivantes sont équivalentes :
 \begin{enumerate}
@@ -995,7 +1001,8 @@ On dit que $f$ est \emph{lipschitzienne} si il existe $k \in \mathbb{R}_+$ tel q
 
 \medskip
 
-\begin{exems}
+\begin{Exemples}
+\begin{enumerate}
 \item Montrons que $\ln$ est $1$-lipschitzienne sur $[1, + \infty[$.
 
 \medskip
@@ -1008,7 +1015,8 @@ On dit que $f$ est \emph{lipschitzienne} si il existe $k \in \mathbb{R}_+$ tel q
 %$$ \vert \ln(x) - \ln(y) \vert \leq \vert x-y \vert $$
 \item Soit $\Vert \cdot \Vert$ est une norme sur $E$. Alors l'application de $E$ dans $\mathbb{R}$ définie par $x \mapsto \Vert x \Vert$ est $1$-lipschitzienne. En effet, d'après une forme de l'inégalité triangulaire :
 $$ \forall (x,y) \in E^2, \quad \vert \Vert x \Vert - \Vert y \Vert \vert \leq \Vert x -y \Vert $$
-\end{exems}
+\end{itemize}
+\end{Exemples}
 
 \begin{Theoreme}{} Toute fonction lipschitzienne est continue. 
 \end{Theoreme}

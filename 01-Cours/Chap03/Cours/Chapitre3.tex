@@ -1,21 +1,27 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{Cours}
-\usepackage{delarray}
-\usepackage{fancybox}
+\documentclass[french,11pt,twoside]{VcCours}
+
+\newenvironment{ApplicationDirecte}{\textbf{Application directe du cours :}
+
+}{}
+\newcommand{\dx}{\text{d}x}
+\DeclareMathOperator{\e}{e}
 \newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
 \newcommand{\Int}[2]{\ensuremath{\mathchoice%
 	{{\displaystyle\int_{#1}^{#2}}}
 	{{\displaystyle\int_{#1}^{#2}}}
 	{\int_{#1}^{#2}}
 	{\int_{#1}^{#2}}
-	}}
+}}
 
 
 \begin{document}
-% \everymath{\displaystyle}
 
-\maketitle{Chapitre 3}{Espaces vectoriels}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Chapitre 3 : Espaces vectoriels}
 
+\tableofcontents
+\separationTitre
+
+\newpage
 Dans tout le chapitre, $n$, $k$ et $p$ seront des entiers naturels non nuls et $\mathbb{K}$ sera $\mathbb{R}$ ou $\mathbb{C}$.
 
 \section{Espaces et sous-espaces vectoriels}
@@ -70,10 +76,12 @@ Soit $E$ un $\mathbb{K}$-espace vectoriel.
 
 \medskip
 
-\begin{exems}
+\begin{Exemples}
+\begin{enumerate}
 \item $\mathbb{K}^n$, $\mathbb{K}[X]$, $\mathcal{M}_{n,p}(\mathbb{K})$, $\mathcal{F}(X,E)$ (ensemble des fonctions définies sur un ensemble $X$ à valeurs dans un espace vectoriel $E$), $\mathcal{C}^k(I, \mathbb{K})$ sont des $\mathbb{K}$-espaces vectoriels.
 \item $\mathbb{C}$ est un $\mathbb{R}-$espace vectoriel.
-\end{exems}
+\end{itemize}
+\end{Exemples}
 
 \medskip
 
@@ -85,14 +93,16 @@ $$ \phantom{x = \sum_{k=1}^p \lambda_k e_k = \lambda_1 e_1 + \lambda_2 e_2 + \cd
 
 \newpage
 
-\begin{exems}
+\begin{Exemples}
+\begin{enumerate}
 \item Tout élément $(x,y)$ de $\mathbb{K}^2$ est combinaison linéaire de $e_1=(1,0)$ et $e_2=(0,1)$ :
 
 \phantom{$(x,y) = x(1,0)+ y(0,1)= xe_1 + y e_2$}
 \item Dans $\mathcal{F}(\mathbb{R},\mathbb{R})$, La fonction $x \mapsto \cos(2x)$ est combinaison linéaire de la fonction constante égale à $1$ et de $x \mapsto \sin^2(x)$ :
 $$ \forall x \in \mathbb{R}, \, \cos(2x) = 1 - 2 \sin^2(x)$$
 Remarquons que dans cet espace vectoriel, $f=g$ signifie : $\forall x \in \mathbb{R}$, $f(x)=g(x)$.
-\end{exems}
+\end{itemize}
+\end{Exemples}
 
 
 
@@ -114,7 +124,8 @@ $\phantom{jj}$
 $F$ est un sous-espace vectoriel de $E$ si et seulement si c'est un sous-ensemble de $E$ non vide et stable par combinaison linéaire.
 \end{Remarque}
 
-\begin{exems}
+\begin{Exemples}
+\begin{enumerate}
 \item $\lbrace 0_E \rbrace$ et $E$ sont des sous-espaces vectoriels de $E$.
 \item Soit $n \in \mathbb{N}$. Alors $\mathbb{K}_n[X]$ est un sous-espace vectoriel de $\mathbb{K}[X]$. En effet :
 \begin{itemize}
@@ -127,7 +138,8 @@ $F$ est un sous-espace vectoriel de $E$ si et seulement si c'est un sous-ensembl
 %$$ \textrm{deg}(\lambda P+ Q) \leq \max (\textrm{deg}(\lambda P), \textrm{deg}(Q)) \leq n$$
 donc $\lambda P + Q \in \mathbb{K}_n[X]$.
 \end{itemize}
-\end{exems}
+\end{itemize}
+\end{Exemples}
 
 \begin{ApplicationDirecte} Montrer que l'ensemble des matrices symétriques de $\mathcal{M}_n(\mathbb{R})$ est un sous-espace vectoriel de $\mathcal{M}_n(\mathbb{R})$. \end{ApplicationDirecte}
 
@@ -146,25 +158,25 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel, $I$ un ensemble et $(E_i)_{i \in I}
 \end{Demonstration}
 
 \begin{TheoremeDefinition}{}
-Soient $E$ un $\mathbb{K}$-espace vectoriel, $n \in \mathbb{N}^*$ et $\mathcal{F}=(e_1, e_2, \ldots, e_n)$ une famille de vecteurs de $E$. On appelle \emph{espace vectoriel engendré} par $\mathcal{F}$, et on note $\textrm{Vect}(\mathcal{F})$ ou $\textrm{Vect}(e_1, e_2, \ldots, e_n)$, l'ensemble des combinaisons linéaires de $e_1, e_2, \ldots e_n$. Autrement dit :
-$$ \textrm{Vect}(\mathcal{F}) = \left\lbrace \sum_{k=1}^n \lambda_k e_k \, \big{\vert} \,  (\lambda_1, \lambda_2, \ldots, \lambda_n) \in \mathbb{K}^n \right\rbrace$$
+Soient $E$ un $\mathbb{K}$-espace vectoriel, $n \in \mathbb{N}^*$ et $\mathcal{F}=(e_1, e_2, \ldots, e_n)$ une famille de vecteurs de $E$. On appelle \emph{espace vectoriel engendré} par $\mathcal{F}$, et on note $\Vect(\mathcal{F})$ ou $\Vect(e_1, e_2, \ldots, e_n)$, l'ensemble des combinaisons linéaires de $e_1, e_2, \ldots e_n$. Autrement dit :
+$$ \Vect(\mathcal{F}) = \left\lbrace \sum_{k=1}^n \lambda_k e_k \, \big{\vert} \,  (\lambda_1, \lambda_2, \ldots, \lambda_n) \in \mathbb{K}^n \right\rbrace$$
 L'espace vectoriel engendré par $\mathcal{F}$ est un sous-espace vectoriel de $E$.
 \end{TheoremeDefinition}
 
 \begin{Demonstration}{}
 %On vérifie les trois points :
 %\begin{itemize}
-%\item $\textrm{Vect}(\mathcal{F}) \subset E$.
-%\item $0 e_1 + 0 e_2 + \cdots 0 e_n = 0_E$ et ainsi $0_E \in \textrm{Vect}(\mathcal{F})$.
-%\item Soient $\lambda \in \mathbb{K}$ et $(x,y) \in \textrm{Vect}(\mathcal{F})$. Par définition, il existe $(\lambda_1, \lambda_2, \ldots, \lambda_n) \in \mathbb{K}^n$ et $(\mu_1, \mu_2, \ldots, \mu_n) \in \mathbb{K}^n$ tel que :
+%\item $\Vect(\mathcal{F}) \subset E$.
+%\item $0 e_1 + 0 e_2 + \cdots 0 e_n = 0_E$ et ainsi $0_E \in \Vect(\mathcal{F})$.
+%\item Soient $\lambda \in \mathbb{K}$ et $(x,y) \in \Vect(\mathcal{F})$. Par définition, il existe $(\lambda_1, \lambda_2, \ldots, \lambda_n) \in \mathbb{K}^n$ et $(\mu_1, \mu_2, \ldots, \mu_n) \in \mathbb{K}^n$ tel que :
 %$$ x=\sum_{k=1}^n \lambda_k e_k \quad \hbox{ et } \quad y=\sum_{k=1}^n \mu_k e_k$$
 %et ainsi :
-%$$ x+ \lambda y = \sum_{k=1}^n (\lambda_k+ \lambda \mu_k) e_k \in \textrm{Vect}(\mathcal{F})$$
+%$$ x+ \lambda y = \sum_{k=1}^n (\lambda_k+ \lambda \mu_k) e_k \in \Vect(\mathcal{F})$$
 %\end{itemize}
 \vspace{6cm}
 \end{Demonstration}
 
-\begin{Remarque}{} On peut montrer que $\textrm{Vect}(\mathcal{F})$ est en fait l'intersection de tous les espaces vectoriels de $E$ contenant $e_1, e_2, \ldots e_n$. C'est le plus petit sous-espace vectoriel (au sens de l'inclusion) contenant ces vecteurs.
+\begin{Remarque}{} On peut montrer que $\Vect(\mathcal{F})$ est en fait l'intersection de tous les espaces vectoriels de $E$ contenant $e_1, e_2, \ldots e_n$. C'est le plus petit sous-espace vectoriel (au sens de l'inclusion) contenant ces vecteurs.
 \end{Remarque}
 
 \medskip
@@ -178,7 +190,7 @@ L'espace vectoriel engendré par $\mathcal{F}$ est un sous-espace vectoriel de $
 
 %Pour tout $(x,y,z) \in \mathbb{R}^3$, on a :
 %$$ (x,y,z) \in F \Longleftrightarrow x=-y-z \Longleftrightarrow (x,y,z) = (-y-z,y,z) \Longleftrightarrow (x,y,z) = y(-1,1,0)+z(-1,0,1)$$
-%et ainsi $F = \textrm{Vect}((-1,1,0), (-1,0,1))$.
+%et ainsi $F = \Vect((-1,1,0), (-1,0,1))$.
 \end{Exemple}
 
 \begin{ApplicationDirecte} Montrer que $\lbrace (x,y,z)  \in \mathbb{R}^3 \, \vert \, x+y+z=0 \hbox{ et } x+2y=0\rbrace$ est un sous-espace vectoriel engendré de $\mathbb{R}^3$.
@@ -233,13 +245,13 @@ La somme de ces sous-espaces vectoriels est un sous-espace vectoriel de $E$.
 
 \end{Demonstration}
 
-\begin{Exemple} $\mathbb{K}_n[X] = \Sum{k=0}{n} \textrm{Vect}(X^k)$.
+\begin{Exemple} $\mathbb{K}_n[X] = \Sum{k=0}{n} \Vect(X^k)$.
 \end{Exemple}
 
 \begin{Remarques}{}
 \begin{itemize} 
 \item On peut montrer que $\Sum{k=1}{p} E_k$ est le plus petit sous-espace vectoriel (au sens de l'inclusion) contenant les espaces $E_1$, $\ldots$, $E_p$. 
-\item Si $F$ et $G$ sont des sous-espaces vectoriels de $E$, $F+G = \textrm{Vect}(F \cup G) = \lbrace f+g \, \vert \, (f,g) \in F \times G\rbrace$.
+\item Si $F$ et $G$ sont des sous-espaces vectoriels de $E$, $F+G = \Vect(F \cup G) = \lbrace f+g \, \vert \, (f,g) \in F \times G\rbrace$.
 \end{itemize}
 \end{Remarques}{}
 
@@ -306,7 +318,7 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel et $E_1$, $E_2$, $\ldots, E_p$ des s
 \end{Demonstration}
 
 \begin{Remarque}{} Le critère précédent ne se généralise pas dans le cas $n$ sous-espaces vectoriels avec $n \geq 3$. Par exemple :
-$$ \textrm{Vect}((1,0)) + \textrm{Vect}((0,1)) + \textrm{Vect}((1,1)) $$
+$$ \Vect((1,0)) + \Vect((0,1)) + \Vect((1,1)) $$
 n'est pas directe car $(1,1)= (1,0) + (0,1)$ (on a donc deux décompositions différentes pour le même vecteur) mais pourtant l'intersection de deux sous-espaces vectoriels parmi les trois précédents est toujours réduite au vecteur nul.
 \end{Remarque}
 
@@ -348,7 +360,7 @@ Montrons que $F$ et $G$ sont des sous-espaces vectoriels supplémentaires de $\m
 %\end{ApplicationDirecte}
 
 \begin{ApplicationDirecte}\label{Exo}  En raisonnant par analyse-synthèse, montrer que les espaces 
-$$ F = \lbrace (x_1, \ldots, x_n) \, \vert \, x_1 + \cdots + x_n = 0 \rbrace \; \hbox{ et } \; G= \textrm{Vect}((1, \ldots, 1)) $$
+$$ F = \lbrace (x_1, \ldots, x_n) \, \vert \, x_1 + \cdots + x_n = 0 \rbrace \; \hbox{ et } \; G= \Vect((1, \ldots, 1)) $$
 sont supplémentaires dans $\mathbb{R}^n$.
 \end{ApplicationDirecte}
 
@@ -386,7 +398,7 @@ On dit que les vecteurs $e_1$, $e_2$, $\ldots$, $e_p$ sont \emph{linéairement d
 
 \vspace{1cm}
 
-ou de manière équivalente si $E = \textrm{Vect}(\mathcal{F})$.
+ou de manière équivalente si $E = \Vect(\mathcal{F})$.
 
 On dit que les vecteurs $e_1$, $e_2$, $\ldots$, $e_p$ \emph{engendrent} $E$.
 \item On dit que $\mathcal{F}$ est une \emph{base} de $E$ si elle est à la fois libre et génératrice.
@@ -488,7 +500,8 @@ En particulier, tout espace vectoriel, non réduit au vecteur nul et de dimensio
  
  \medskip
  
- \begin{exems}
+ \begin{Exemples}
+\begin{enumerate}
  \item Base canonique de $\mathbb{K}^n$ : 
  
 % $e_1 = (1, 0 , \ldots , 0)$, $\ldots$, $e_n = (0, 0, \ldots, 1)$. On a ainsi $\textrm{dim}(\mathbb{K}^n)=n$.
@@ -497,7 +510,8 @@ En particulier, tout espace vectoriel, non réduit au vecteur nul et de dimensio
  
 % $(1,X,X^2, \ldots, X^n)$. On a ainsi $\textrm{dim}(\mathbb{K}_n[X])=n+1$.
  \item $\mathbb{C}$ est $\mathbb{C}-$espace vectoriel, $(1)$ est une base et $\textrm{dim}_{\mathbb{C}}(\mathbb{C})=1$ alors que $\mathbb{C}$ est $\mathbb{R}-$espace vectoriel, $(1,i)$ est une base et $\textrm{dim}_{\mathbb{R}}(\mathbb{C})=2$.
- \end{exems}
+ \end{itemize}
+\end{Exemples}
  
  \begin{Proposition}{}
  Soient $E$ un $\mathbb{K}$-espace vectoriel de dimension finie $n \geq 1$. Si $\mathcal{F}$ est une famille de $n$ vecteurs de $E$ alors on a les équivalences suivantes : 
@@ -531,7 +545,7 @@ Montrer que $\mathcal{B}' = (\varepsilon_{1} ,\varepsilon_{2} ,\varepsilon_{3})$
 \end{itemize}
 \end{Proposition}
 
-\begin{ApplicationDirecte} Montrer que, dans $\mathbb{R}^3$, $\textrm{Vect}((1,1,0), (-1,2,1))= \textrm{Vect}((0,3,1), (3,0,-1))$.
+\begin{ApplicationDirecte} Montrer que, dans $\mathbb{R}^3$, $\Vect((1,1,0), (-1,2,1))= \Vect((0,3,1), (3,0,-1))$.
 \end{ApplicationDirecte}
 
 \begin{Proposition}{}
@@ -547,15 +561,15 @@ $(0_{E_1},e_{2,n_2}, 0_{E_2}, \ldots,0_{E_p}), \ldots, (0_{E_1},\ldots, 0_{E_{p-
 \medskip
 %\begin{lem}
 %Soient $E$ un espace vectoriel, $p \in \mathbb{N}^*$ tel que $p \geq 2$ et $(x_1, x_2, \ldots, x_p)$ une famille libre. Alors pour tout $i \in \Interv{1}{p-1}$,
-%$$ \textrm{Vect}(x_1, x_2, \ldots, x_p) = \textrm{Vect}(x_1, \ldots, x_i) \oplus \textrm{Vect}(x_{i+1}, \ldots, x_p)$$
+%$$ \Vect(x_1, x_2, \ldots, x_p) = \Vect(x_1, \ldots, x_i) \oplus \Vect(x_{i+1}, \ldots, x_p)$$
 %\end{lem}
 
 %\begin{Demonstration}{}
 %Les inclusions 
-%$$ \textrm{Vect}(x_1, x_2, \ldots, x_p) \subset \textrm{Vect}(x_1, \ldots, x_i) + \textrm{Vect}(x_{i+1}, \ldots, x_p)$$
+%$$ \Vect(x_1, x_2, \ldots, x_p) \subset \Vect(x_1, \ldots, x_i) + \Vect(x_{i+1}, \ldots, x_p)$$
 %et 
-%$$ \textrm{Vect}(x_1, \ldots, x_i) + \textrm{Vect}(x_{i+1}, \ldots, x_p) \subset \textrm{Vect}(x_1, x_2, \ldots, x_p) $$
-%sont claires. Montrons que $\textrm{Vect}(x_1, \ldots, x_i) + \textrm{Vect}(x_{i+1}, \ldots, x_p)$ est directe : soit $(y,z) \in \textrm{Vect}(x_1, \ldots, x_i) \times \textrm{Vect}(x_{i+1}, \ldots, x_p)$ tel que $y+z = 0_E$. Par définition, il existe des scalaires $\lambda_1, \lambda_2, \ldots, \lambda_p$ tels que 
+%$$ \Vect(x_1, \ldots, x_i) + \Vect(x_{i+1}, \ldots, x_p) \subset \Vect(x_1, x_2, \ldots, x_p) $$
+%sont claires. Montrons que $\Vect(x_1, \ldots, x_i) + \Vect(x_{i+1}, \ldots, x_p)$ est directe : soit $(y,z) \in \Vect(x_1, \ldots, x_i) \times \Vect(x_{i+1}, \ldots, x_p)$ tel que $y+z = 0_E$. Par définition, il existe des scalaires $\lambda_1, \lambda_2, \ldots, \lambda_p$ tels que 
 %$$y = \sum_{k=1}^i \lambda_k x_k \quad \hbox{ et } \quad z = \sum_{k=i+1}^p \lambda_k x_k $$
 %et ainsi :
 %$$ \sum_{k=1}^p\lambda_k x_k =  0_E $$
@@ -610,7 +624,7 @@ Soient $E$ est un $\mathbb{K}$-espace vectoriel de dimension finie $n \in \mathb
 \medskip
 
 \begin{Exemple} Soient $E$ un $\mathbb{K}$-espace vectoriel de dimension $3$ et $(e_1,e_2,e_3)$ une base de $E$. Alors par fractionnement :
-$$ E = \textrm{Vect}(e_1) \oplus \textrm{Vect}(e_2,e_3) = \textrm{Vect}(e_1,e_2) \oplus \textrm{Vect}(e_3) = \textrm{Vect}(e_1,e_3) \oplus \textrm{Vect}(e_2) $$
+$$ E = \Vect(e_1) \oplus \Vect(e_2,e_3) = \Vect(e_1,e_2) \oplus \Vect(e_3) = \Vect(e_1,e_3) \oplus \Vect(e_2) $$
 \end{Exemple}
 
 \medskip
@@ -624,13 +638,13 @@ $\rhd$ Si $F$ est réduit au vecteur nul, c'est évident ($E$ est un supplément
 
 \medskip
 
-$\rhd$ $F$ est un sous-espace vectoriel de $E$ qui est de dimension finie et non réduit au vecteur nul donc $F$ est de dimension finie et admet donc une base, notée $\mathcal{F}$. D'après le théorème de la base incomplète, on peut déterminer une famille $\mathcal{G}$ (d'éléments n'appartenant pas à $\mathcal{F}$ et appartenant à une famille génératrice de $E$) telle que $\mathcal{F} \cup \mathcal{G}$ soit une base de $E$. Par fractionnement d'une base, $\textrm{Vect}(\mathcal{G})$ est un supplémentaire de $F$ dans $E$.
+$\rhd$ $F$ est un sous-espace vectoriel de $E$ qui est de dimension finie et non réduit au vecteur nul donc $F$ est de dimension finie et admet donc une base, notée $\mathcal{F}$. D'après le théorème de la base incomplète, on peut déterminer une famille $\mathcal{G}$ (d'éléments n'appartenant pas à $\mathcal{F}$ et appartenant à une famille génératrice de $E$) telle que $\mathcal{F} \cup \mathcal{G}$ soit une base de $E$. Par fractionnement d'une base, $\Vect(\mathcal{G})$ est un supplémentaire de $F$ dans $E$.
 \end{Demonstration}
 
 \medskip
 
 \begin{att} Un supplémentaire n'est pas unique. Par exemple, dans $\mathbb{R}^2$, on a :
-$$ \mathbb{R}^2 = \textrm{Vect}((1,0)) \oplus \textrm{Vect}((0,1)) = \textrm{Vect}((1,0)) \oplus \textrm{Vect}((1,1))$$
+$$ \mathbb{R}^2 = \Vect((1,0)) \oplus \Vect((0,1)) = \Vect((1,0)) \oplus \Vect((1,1))$$
 
 \medskip
 
@@ -689,7 +703,7 @@ E = F \oplus G & \Longleftrightarrow & \phantom{ F \cap G = \lbrace 0_E \rbrace 
 \subsection{Rang d'une famille de vecteurs}
 
 \begin{Definition}{} Soient $E$ un $\mathbb{K}$-espace vectoriel et $\mathcal{F} = (e_1, e_2, \ldots, e_p)$ une famille de vecteurs de $E$. On appelle \emph{rang} de $\mathcal{F}$, et on note $\textrm{rg}(\mathcal{F})$, l'entier suivant :
-$$ \textrm{rg}(\mathcal{F}) = \phantom{\textrm{dim}(\textrm{Vect}(e_1, e_2, \ldots, e_p))}$$
+$$ \textrm{rg}(\mathcal{F}) = \phantom{\textrm{dim}(\Vect(e_1, e_2, \ldots, e_p))}$$
 \end{Definition}
 
 \begin{ApplicationDirecte} Déterminer le rang de $(x_{1} ,x_{2} ,x_{3})$ où $x_{1} = (1,1,0,1),x_{2} = (1, - 1,1,0)$ et $x_{3} = (2,0,1,1)$. \end{ApplicationDirecte}
@@ -708,10 +722,10 @@ Déterminer, si il existe, le rang de la famille $(f_1,f_2,f_3,f_4)$.
 %
 %\exo Montrer que $\lbrace (x,y,z)  \in \mathbb{R}^3 \, \vert \, x+y+z=0\rbrace$ est un sous-espace vectoriel engendré de $\mathbb{R}^3$ et donner-en une famille génératrice.
 %
-%\exo Montrer que, dans $\mathbb{R}^3$, $\textrm{Vect}((1,1,0), (-1,2,1))= \textrm{Vect}((0,3,1), (3,0,-1))$.
+%\exo Montrer que, dans $\mathbb{R}^3$, $\Vect((1,1,0), (-1,2,1))= \Vect((0,3,1), (3,0,-1))$.
 %
 %\exo\label{Exo1} En raisonnant par analyse-synthèse, montrer que dans $\mathbb{R}^n$, les espaces 
-%$$ F = \lbrace (x_1, \ldots, x_n) \, \vert \, x_1 + \cdots + x_n = 0 \rbrace \quad \hbox{ et } \quad G= \textrm{Vect}((1, \ldots, 1)) $$
+%$$ F = \lbrace (x_1, \ldots, x_n) \, \vert \, x_1 + \cdots + x_n = 0 \rbrace \quad \hbox{ et } \quad G= \Vect((1, \ldots, 1)) $$
 %sont supplémentaires.
 %
 %\exo\label{Exo2} Étudier dans $\mathbb{R}^3$ la liberté de la famille $((1,2,1), (1,-1,1), (1,1,0))$.
@@ -720,7 +734,7 @@ Déterminer, si il existe, le rang de la famille $(f_1,f_2,f_3,f_4)$.
 %
 %\exo La famille de l'exercice \ref{Exo2} est-elle une base de $\mathbb{R}^3$?
 %
-%\exo Soit $f$ la fonction constante égale à $1$. Donner une base de $\textrm{Vect}(f,\cos,\sin)$ (vu comme un sous-espace vectoriel de $\mathcal{F}(\mathbb{R}, \mathbb{R})$.
+%\exo Soit $f$ la fonction constante égale à $1$. Donner une base de $\Vect(f,\cos,\sin)$ (vu comme un sous-espace vectoriel de $\mathcal{F}(\mathbb{R}, \mathbb{R})$.
 %
 %\exo Redémontrer le résultat de l'exercice \ref{Exo1} avec un argument de dimension.
 %
