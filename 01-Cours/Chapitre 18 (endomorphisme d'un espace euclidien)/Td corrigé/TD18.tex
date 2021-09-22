@@ -20,14 +20,14 @@
 
 \medskip
 
-\begin{Exa} 
+\begin{Exercice}{} 
 \begin{enumerate}
 \item Montrer que $(P,Q) \mapsto <P,Q> = P(0)Q(0)+ P'(0)Q'(0)+P''(0)Q''(0)$ définit un produit scalaire sur $\mathbb{R}_2[X]$.
 \item Montrer que la famille $(1,X,X^2)$ est orthogonale.
 \item Orthonormaliser cette famille.
 \item Soit $f$ l'application définie pour tout $P \in \mathbb{R}_2[X]$ par $f(P)=P(1-X)$. Montrer que $f$ est un automorphisme et expliciter $f^{-1}$. L'application $f$ est-elle une isométrie ?
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \begin{corr} 
 \begin{enumerate}
@@ -79,13 +79,13 @@ Donc $1-X$ n'est pas unitaire donc $(f(1),f(X), f(X^2/2))$ n'est pas une base or
 \end{enumerate}
 \end{corr}
 
-\begin{Exa} Soit $f \in \mathcal{O}(E)$ diagonalisable. Montrer que $f$ est une symétrie.
-\end{Exa} 
+\begin{Exercice}{} Soit $f \in \mathcal{O}(E)$ diagonalisable. Montrer que $f$ est une symétrie.
+\end{Exercice} 
 
 \corr Une isométrie admet comme valeur propres éventuelles $1$ et $-1$. Soit $A$ une matrice représentant $f$. On sait que $f$ est diagonalisable donc $A$ est semblable a une matrice diagonale dont les coefficients diagonaux sont $1$ ou $-1$. Ainsi, $A^2$ est semblable a la matrice identité donc est égale à l'identité. On en déduit que la matrice de $f^2$ a pour matrice l'identité dans une base de $E$. Ainsi, $f^2= \textrm{Id}$ donc $f$ est une symétrie.
 
-\begin{Exa} Déterminer les matrices orthogonales triangulaires supérieures de $\mathcal{M}_n(\mathbb{R})$.
-\end{Exa}
+\begin{Exercice}{} Déterminer les matrices orthogonales triangulaires supérieures de $\mathcal{M}_n(\mathbb{R})$.
+\end{Exercice}
 
 \corr Soit $A$ une telle matrice. $A$ est de la forme :
 $$ A = \begin{pmatrix}
@@ -99,7 +99,7 @@ donc $a_{1,2}=0$. La norme de la deuxième colonne vaut $1$ donc $a_{2,2} = \pm 
 $$ A= \textrm{diag}(\pm 1, \pm 1, \ldots, \pm 1)$$
 Réciproquement, les matrices de cette forme sont orthogonales et triangulaires supérieures.
 
-\begin{Exa} Soit $A \in \mathcal{M}_n(\mathbb{R})$.
+\begin{Exercice}{} Soit $A \in \mathcal{M}_n(\mathbb{R})$.
 
 \begin{enumerate}
 \item Déterminer une expression simple de $~^tX A X$ où $X$ est le vecteur colonne de $\mathcal{M}_{n,1}(\mathbb{R})$ dont tous les coefficients valent $1$.  
@@ -109,7 +109,7 @@ Réciproquement, les matrices de cette forme sont orthogonales et triangulaires 
 \item Montrer que : $\dis  \sum_{1 \leq i,j \leq n} \vert a_{i,j} \vert  \leq n \sqrt{n}$.
 \end{enumerate}
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr
 
@@ -143,9 +143,9 @@ $$ \dis \left\vert \sum_{1 \leq i,j \leq n} a_{i,j} \right\vert \leq \sum_{i=1}^
 \end{enumerate}
 
 
-\begin{Exa} Montrer que si $u$ est une isométrie de $E$, espace euclidien, alors $\textrm{Ker}(u-\textrm{Id})$ et $\textrm{Im}(u-\textrm{Id})$ sont supplémentaires et orthogonaux. Calculer pour tout $x \in E$,
+\begin{Exercice}{} Montrer que si $u$ est une isométrie de $E$, espace euclidien, alors $\textrm{Ker}(u-\textrm{Id})$ et $\textrm{Im}(u-\textrm{Id})$ sont supplémentaires et orthogonaux. Calculer pour tout $x \in E$,
 $$  \lim_{n \rightarrow + \infty} \dfrac{1}{n} \sum_{k=1}^n u^k(x)$$
-\end{Exa}
+\end{Exercice}
 
 \corr Soit $u$ une isométrie de $E$. D'après le théorème du rang,
 $$ \textrm{dim}(E) = \textrm{dim}(\textrm{Ker}(u-\textrm{Id})) + \textrm{dim}(\textrm{Im}(u-\textrm{Id}))$$
@@ -196,7 +196,7 @@ $$ \lim_{n \rightarrow + \infty} \dfrac{1}{n} \sum_{k=1}^n u^k(x) =  p(x)$$
 
 \medskip
 
-\begin{Exa} Soit un entier $n\geq 1.$ On consid\`{e}re la matrice carr\'{e}e d'ordre $n$ \`{a} coefficients r\'{e}els :
+\begin{Exercice}{} Soit un entier $n\geq 1.$ On consid\`{e}re la matrice carr\'{e}e d'ordre $n$ \`{a} coefficients r\'{e}els :
 \begin{equation*}
 A_n=\begin{pmatrix}
 2 & -1 & 0 & \cdots & 0 \\ 
@@ -212,7 +212,7 @@ Pour $n\geq 1$, on d\'{e}signe par $D_{n}$ le d\'{e}terminant de $A_n$.
 \item D\'{e}terminer $D_{n}$ en fonction de $n$.
 \item Justifier que la matrice $A$ est diagonalisable. Le r\'{e}el $0$ est-il valeur propre de $A$?
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \newpage
 
@@ -239,7 +239,7 @@ On sait que $D_n=n+1\neq 0$ donc $A_n$ est inversible. Ainsi, l'endomorphisme ca
 On en déduit que $0$ n'est pas valeur propre de $A_n$.
 \end{enumerate}
 
-\begin{Exa} Soit la matrice $A=\begin{pmatrix}
+\begin{Exercice}{} Soit la matrice $A=\begin{pmatrix}
 1 & -1 & 1 \\ 
 -1 & 1 & -1 \\ 
 1 & -1 & 1
@@ -248,7 +248,7 @@ On en déduit que $0$ n'est pas valeur propre de $A_n$.
 \item Montrer que $A$ est diagonalisable.
 \item On suppose que $A$ est la matrice d'un endomorphisme $u$ d'un espace euclidien dans une base orthonormée. Trouver une base orthonormée dans laquelle la matrice de $u$ est diagonale.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -269,12 +269,12 @@ $$\vec{v} = \dfrac{1}{{\sqrt 2 }}(\vec{i} + \vec{j}) \; \hbox{ et } \; \vec{w} =
 Alors $\left( \vec{v} ,\vec{w} \right) $ une base orthonormée de $E_0(f)$. On en déduit que $\left( \vec{u},\vec{v},\vec{w}\right) $ est une base orthonormée de vecteurs propres de $f$.
 \end{enumerate}
 
-\begin{Exa}
+\begin{Exercice}{}
 \begin{enumerate}
 \item Soit $S \in \mathcal{S}_n(\mathbb{R})$. Montrer que si $S$ est nilpotente alors $S$ est la matrice nulle.
 \item Soit $A \in \mathcal{M}_n(\mathbb{R})$ une matrice commutant avec sa transposée. Montrer que si $A$ est nilpotente alors $A$ est la matrice nulle. 
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr
 
@@ -289,9 +289,9 @@ $$ \textrm{Tr}({}^t A A) = 0$$
 On reconnait le produit scalaire usuel sur $\mathcal{M}_n(\mathbb{R})$ donc par défini-positivité, on en déduit que $A=0_n$.
 \end{enumerate}
 
-\begin{Exa} Soient $f$ un endomorphisme symétrique d'un espace euclidien $E$ et $(a,b) \in \mathbb{R}^2$ tel que $a \leq b$. Montrer que :
+\begin{Exercice}{} Soient $f$ un endomorphisme symétrique d'un espace euclidien $E$ et $(a,b) \in \mathbb{R}^2$ tel que $a \leq b$. Montrer que :
 $$ \textrm{Sp}(f) \cap ]a,b[ = \varnothing \; \Longrightarrow \; \forall x \in E, \; <f(x)-ax,f(x)-bx> \geq 0$$
-\end{Exa}
+\end{Exercice}
 
 \corr D'après le théorème spectral, $f$ est diagonalisable. En notant $n$ la dimension de $E$, il existe une base orthonormée de vecteurs propres $(e_1, \ldots, e_n)$ de $f$ (on note $\lambda_1$, $\ldots$, $\lambda_n$ les valeurs propres associées). Soit $x \in E$. Il existe des réels $x_1$, $\ldots$, $x_n$ tels que :
 $$ x=  x_1 e_1 + \cdots +  x_n e_n$$ 
@@ -313,8 +313,8 @@ $$ (\lambda_i - a)(\lambda_i-b) \geq 0$$
 et finalement :
 $$ <f(x)-ax,f(x)-bx> \geq 0$$
 
-\begin{Exa} Résoudre l'équation $X ~^tX X= I_n$ d'inconnue $X \in \mathcal{M}_n(\mathbb{R})$.
-\end{Exa}
+\begin{Exercice}{} Résoudre l'équation $X ~^tX X= I_n$ d'inconnue $X \in \mathcal{M}_n(\mathbb{R})$.
+\end{Exercice}
 
 \corr Raisonnons par analyse-synthèse.
 
@@ -341,12 +341,12 @@ Ainsi, $D^3$ est semblable à $I_n$ donc égale à $I_n$. On en déduit que que 
 \noindent \textit{Synthèse.} La matrice $I_n$ est solution de l'équation.
 
 
-\begin{Exa} Soit $f$ un endomorphisme symétrique d'un espace euclidien $E$. Posons :
+\begin{Exercice}{} Soit $f$ un endomorphisme symétrique d'un espace euclidien $E$. Posons :
   \[
   k = \max_{\lambda \in \textrm{Sp}(f)} \vert \lambda \vert
   \]
 Montrer que pour tout $x \in E$, $\Vert f(x) \Vert \leq k \Vert x \Vert$.
-\end{Exa}
+\end{Exercice}
 
 \corr D'après le théorème spectral, il existe une base orthonormée de $E$ formée de vecteurs propres de $f$. En particulier, $k$ est bien défini (maximum d'un ensemble fini de réels car $f$ admet au plus $n$ valeurs propres si l'on pose $n$ la dimension de $E$). Notons $(e_1, \ldots, e_n)$ cette base orthonormée (et $\lambda_1$, $\ldots$, $\lambda_n$ les valeurs propres associées). Soit $x \in E$. Il existe des réels $x_1$, $\ldots$, $x_n$ tels que :
 $$ x=  x_1 e_1 + \cdots +  x_n e_n$$ 
@@ -362,8 +362,8 @@ car $(e_1, \ldots, e_n)$ est orthonormée. Par croissance de la fonction racine 
 $$ \Vert f(x) \Vert \leq k \Vert x \Vert$$
 
 
-\begin{Exa} Soit $M \in  \mathcal{S}_{n}(\mathbb{R})$ vérifiant $M^{p}= I_{n}$ où $p \in \N^{*}$. Déterminer $M^2$.
-\end{Exa}
+\begin{Exercice}{} Soit $M \in  \mathcal{S}_{n}(\mathbb{R})$ vérifiant $M^{p}= I_{n}$ où $p \in \N^{*}$. Déterminer $M^2$.
+\end{Exercice}
 
 \corr D'après le théorème spectral, $M$ est diagonalisable dans une base orthonormée de vecteurs propres donc il existe une matrice orthogonale $P$ et une matrice diagonale $D$ telles que :
 $$ M = PD ~^tP$$
@@ -373,7 +373,7 @@ Ainsi, $D^p$ est semblable à $I_n$ donc égale à $I_n$. On en déduit que que 
 $$ M^2= (PD ~^tP)^2 = PD^2 ~^tP = P~^tP= I_2$$
 
 
-\begin{Exa} Soit $S \in \mathcal{S}_n(\mathbb{R})$. On dit que $S$ est \textit{positive} si
+\begin{Exercice}{} Soit $S \in \mathcal{S}_n(\mathbb{R})$. On dit que $S$ est \textit{positive} si
 $$ \forall X \in \mathcal{M}_{n,1}(\mathbb{R}), \; ~^tX S X \geq 0$$
 et que $S$ est \textit{définie positive} si :
 $$ \forall X \in \mathcal{M}_{n,1}(\mathbb{R}) \setminus \lbrace 0_{\mathcal{M}_{n,1}(\mathbb{K})} \rbrace, \; ~^tX S X > 0$$
@@ -388,7 +388,7 @@ On note $\mathcal{S}_n(\mathbb{R})^+$ (resp. $\mathcal{S}_n(\mathbb{R})^{++}$) l
 \item Soient $p \geq 1$ et $S_1, \ldots, S_p$ des matrices symétriques positives. Montrer que :
 $$ \sum_{k=1}^p S_k = 0_n  \, \Longleftrightarrow \;  \forall k \in \Interv{1}{p}, \, S_k = 0_n $$
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -453,13 +453,13 @@ Or pour tout $k \in \Interv{1}{p}$, la trace de $S_k$ est la somme de ses valeur
 
 \medskip
 
-\begin{Exa} Montrer qu'il existe une infinité de matrices $R \in \mathcal{M}_3(\mathbb{R})$ telles que
+\begin{Exercice}{} Montrer qu'il existe une infinité de matrices $R \in \mathcal{M}_3(\mathbb{R})$ telles que
 $$  R^2 = \begin{pmatrix}
 1 & 0 & 0 \\
 0 & 4 & 0 \\
 0 & 0 & 4 \\
 \end{pmatrix}$$
-\end{Exa}
+\end{Exercice}
 
 \corr On sait que pour tout réel $\theta$,
 $$ \begin{pmatrix}
@@ -478,12 +478,12 @@ $$ \begin{pmatrix}
 \end{pmatrix}$$
 On a donc répondu à la question.
 
-\begin{Exa}
+\begin{Exercice}{}
 \begin{enumerate}
 \item Une matrice $M \in \mathcal{M}_2(\mathbb{R})$ vérifie $M^2+4I_2=0_2$ et $S=~^tM M = M ~^tM$. Trouver un polynôme annulateur de degré $2$ de $S$. En déduire que $\dfrac{1}{2}M$ est orthogonale.
 \item Trouver toutes les matrices $M \in \mathcal{M}_2(\mathbb{R})$ vérifiant $M^2+4I_2=0_2$ et $~^tM M = M ~^tM$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item On a :
@@ -516,7 +516,7 @@ $$ M = 2 \begin{pmatrix}
 Réciproquement, on vérifie que ces deux matrices sont solutions.
 \end{enumerate}
 
-\begin{Exa} Soit $\theta \in \mathbb{R} \setminus \lbrace p \pi \, \vert \, p \in \mathbb{Z} \rbrace \cdot$
+\begin{Exercice}{} Soit $\theta \in \mathbb{R} \setminus \lbrace p \pi \, \vert \, p \in \mathbb{Z} \rbrace \cdot$
 \begin{enumerate}
 \item Calculer pour tout $n \geq 1$,
 $$ S_n = \dfrac{1}{n} \sum_{k=1}^n \cos(k \theta) \hbox{ et } T_n =\dfrac{1}{n} \sum_{k=1}^n \sin(k \theta)$$
@@ -524,7 +524,7 @@ Déterminer les limites de $S_n$ et $T_n$ en $+ \infty$.
 \item On note $r$ une rotation d'angle $\theta$ sur un espace euclidien de dimension $2$ ou $3$. Déterminer :
 $$ \lim_{n \rightarrow + \infty} \dfrac{1}{n} \sum_{k=1}^n r^k(x)$$
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \newpage
 
@@ -611,14 +611,14 @@ Autrement dit, $(r_n(x))_{n \geq 1}$ converge vers le projeté orthogonal de $x$
 
 
 
-\begin{Exa} Trouver $(a,b,c) \in \mathbb{R}^3$ pour que la matrice $A$ définie par :
+\begin{Exercice}{} Trouver $(a,b,c) \in \mathbb{R}^3$ pour que la matrice $A$ définie par :
 $$ A = \dfrac{1}{3} \begin{pmatrix}
 2 & - 1 & a \\
 2 & 2 & b \\
 -1 & 2 & c
 \end{pmatrix}$$
 appartienne à $\mathcal{SO}_3(\mathbb{R})$.
-\end{Exa}
+\end{Exercice}
 
 \corr Les deux premières colonnes de $A$ sont de norme $1$ et orthogonales. La matrice appartient à $\mathcal{SO}_3(\mathbb{R})$ si et seulement si la troisième colonne est le produit vectoriel des deux premières. Autrement dit, si et seulement si :
 $$ \begin{pmatrix}
@@ -643,13 +643,13 @@ c \\
 2
 \end{pmatrix}$$
 
-\begin{Exa} Soit $E$ un espace euclidien de dimension $2$. On suppose que :
+\begin{Exercice}{} Soit $E$ un espace euclidien de dimension $2$. On suppose que :
 $$ M = \dfrac{1}{5} \begin{pmatrix}
 3 & -4 \\
 4 & 3 \\
 \end{pmatrix}$$
 est la matrice d'un endomorphisme $u$ de $E$ dans une base orthonormée directe de $E$. Déterminer la nature de $u$.
-\end{Exa}
+\end{Exercice}
 
 \corr Les deux colonnes de $M$ sont de norme $1$ et orthogonales donc $M$ est orthogonale. On vérifie que son déterminant vaut $1$ donc $M \in \mathcal{SO}_2(\mathbb{R})$. On en déduit que $u$ est une rotation. Soit $\theta$ l'angle de la rotation (unique modulo $2 \pi$). $M$ étant la matrice de $u$ dans une base orthonormée directe, on a :
 $$ \cos(\theta)= \dfrac{3}{5}$$
@@ -658,13 +658,13 @@ $$ \sin(\theta) = \dfrac{4}{5}>0$$
 donc
 $$ \theta = \arccos\left( \dfrac{3}{5} \right) [2 \pi]$$
 
-\begin{Exa} Soit $E$ un espace euclidien de dimension $2$. On suppose que :
+\begin{Exercice}{} Soit $E$ un espace euclidien de dimension $2$. On suppose que :
 $$ M = \dfrac{1}{5} \begin{pmatrix}
 3 & 4 \\
 4 & -3 \\
 \end{pmatrix}$$
 est la matrice d'un endomorphisme $u$ de $E$ dans une base orthonormée directe de $E$. Déterminer la nature de $u$.
-\end{Exa}
+\end{Exercice}
 
 \corr Les deux colonnes de $M$ sont de norme $1$ et orthogonales donc $M$ est orthogonale. On vérifie que son déterminant vaut $-1$. On en déduit que $u$ est la symétrie orthogonale par rapport à $\textrm{Ker}(u- \textrm{Id})$ (qui est de dimension $1$ car $u$ n'est pas l'identité). On a :
 $$ M- I_2 = \dfrac{1}{5} \begin{pmatrix}
@@ -684,7 +684,7 @@ $$  \textrm{Ker}(u- \textrm{Id})^{\perp} =  \textrm{Vect}(-e_1+2e_2)$$
 
 
 
-\begin{Exa} Soit $E$ un espace vectoriel euclidien de dimension 3, orienté par la base orthonormée $(i,j,k)$. Soit $f$ l'endomorphisme de $E$ dont la matrice dans la base $(i,j,k)$ est :
+\begin{Exercice}{} Soit $E$ un espace vectoriel euclidien de dimension 3, orienté par la base orthonormée $(i,j,k)$. Soit $f$ l'endomorphisme de $E$ dont la matrice dans la base $(i,j,k)$ est :
 $$A=\dfrac{1}{4}\begin{pmatrix}
 3&1&\sqrt{6}\\
 1&3&-\sqrt{6}\\
@@ -701,7 +701,7 @@ Déterminer l'ensemble des vecteurs invariants par $f$.
 \item
 En déduire la nature de $f$ ainsi que ses éléments caractéristiques.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item
@@ -783,14 +783,14 @@ $$\theta=\dfrac{\pi}{3} \, [2\pi]$$
 \end{enumerate}
 
 
-\begin{Exa} Soit $E$ un espace euclidien de dimension $3$. On suppose que :
+\begin{Exercice}{} Soit $E$ un espace euclidien de dimension $3$. On suppose que :
 $$ M = \dfrac{1}{3} \begin{pmatrix}
 2 & -2 & -1 \\
 2 & 1 & 2 \\
 -1 & -2 & 2 \\
 \end{pmatrix}$$
 est la matrice d'un endomorphisme $u$ de $E$ dans une base orthonormée directe de $E$. Déterminer la nature de $u$.
-\end{Exa}
+\end{Exercice}
 
 \corr Les trois colonnes de $M$ sont de norme $1$ et deux à deux orthogonales donc $M$ est orthogonale. On vérifie que son déterminant vaut $1$ (ou que $C_1 \wedge C_2 = C_3)$ donc $M \in \mathcal{S}\mathcal{O}_3(\mathbb{R})$. Sachant que $M$ est la matrice de $u$ dans une base orthonormée directe $\mathcal{B}=(e_1,e_2,e_3)$, on en déduit que $u \in   \mathcal{S}\mathcal{O}(E)$. Clairement $u$ n'est pas l'identité. Alors $D=\textrm{Ker}(u - \textrm{Id})$ est une droite vectorielle. On a :
 $$ M - I_3 = \dfrac{1}{3} \begin{pmatrix}

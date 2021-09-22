@@ -18,7 +18,7 @@
 \medskip
 
 
-\begin{Exa} 
+\begin{Exercice}{} 
 On munit $\mathbb{R}_n[X]$ du produit scalaire suivant :
 $$ \forall (P,Q) \in \mathbb{R}_n[X]^2, \; <P,Q> = \sum_{k=0}^{n} P^{(k)}(1)Q^{(k)}(1)$$
 \begin{enumerate}
@@ -28,7 +28,7 @@ $$ \forall (P,Q) \in \mathbb{R}_n[X]^2, \; <P,Q> = \sum_{k=0}^{n} P^{(k)}(1)Q^{(
 \noindent Montrer que $E$ est un sous-espace vectoriel de $\mathbb{R}_n[X]$ et donner sa dimension.
 \item Déterminer $\textrm{d}(1,E)$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item Vérifions les différents points de la définition.
@@ -54,7 +54,7 @@ $$ d(1,E) = \dfrac{\vert <1,1> \vert }{\Vert 1 \Vert} = \Vert 1 \Vert = 1$$
 \end{enumerate}
 
 
-\begin{Exa} On pose pour tout $(P,Q) \in \mathbb{R}_n[X]^2$,
+\begin{Exercice}{} On pose pour tout $(P,Q) \in \mathbb{R}_n[X]^2$,
 $$ <P,Q> = \sum_{k=0}^n P(a_k) Q(a_k)$$
 où $a_0$, $\ldots$, $a_n$ sont $n$ réels distincts deux à deux $(n \geq 2)$.
 \begin{enumerate}
@@ -62,7 +62,7 @@ où $a_0$, $\ldots$, $a_n$ sont $n$ réels distincts deux à deux $(n \geq 2)$.
 \item Montrer brièvement que $F= \dis \left\lbrace P \in \mathbb{R}_n[X] \, \vert \, \sum_{k=0}^n P(a_k)=0 \right\rbrace$ est un espace vectoriel. Donner sa dimension et son orthogonal.
 \item Déterminer la distance de $X^n$ à $F$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item Remarquons pour commencer que pour tout $(P,Q) \in \mathbb{R}_n[X]^2$, $<P,Q> \in \mathbb{R}$.
@@ -93,8 +93,8 @@ $$ F^{\perp} = (\textrm{Vect}(1)^{\perp})^{\perp} = \textrm{Vect}(1)$$
 \end{align*}
 \end{enumerate}
 
-\begin{Exa} Donner la matrice de la projection orthogonale sur le plan d'équation $x-2y+z=0$ dans la base canonique de $\mathbb{R}^3$ munit du produit scalaire usuel.
-\end{Exa}
+\begin{Exercice}{} Donner la matrice de la projection orthogonale sur le plan d'équation $x-2y+z=0$ dans la base canonique de $\mathbb{R}^3$ munit du produit scalaire usuel.
+\end{Exercice}
 
 \corr Notons $F$ le plan d'équation $x-2y+z=0$. Le vecteur $(1,-2,1)$ est un vecteur normal à $F$ et sachant que $F^{\perp}$ est de dimension $1$ ($\mathbb{R}^3$ est évidemment de dimension $3$), on en déduit que :
 $$ n = \dfrac{1}{\sqrt{6}} (1,-2,1)$$
@@ -123,10 +123,10 @@ $$ \textrm{Mat}_{\mathcal{B}}(p) = \dfrac{1}{6} \begin{pmatrix}
 
 
 
-\begin{Exa} On pose pour tout $(P,Q) \in \mathbb{R}[X]^2$,
+\begin{Exercice}{} On pose pour tout $(P,Q) \in \mathbb{R}[X]^2$,
 $$ <P,Q> = \sum_{n=0}^{+ \infty} P(n) Q(n) e^{-n} $$
 Justifier que cela définit un produit scalaire sur $\mathbb{R}[X]$.
-\end{Exa}
+\end{Exercice}
 
 \corr Commençons par justifier que l'application est bien définie. Soit $(P,Q) \in \mathbb{R}[X]^2$. D'après le théorème des croissances comparées, on a :
 $$ \lim_{n \rightarrow + \infty} n^2 P(n)Q(n) e^{-n} = 0$$
@@ -153,10 +153,10 @@ Ainsi, cela définit un produit scalaire sur $\mathbb{R}[X]$.
 
 
 
-\begin{Exa}\label{PS} On pose pour tout $(P,Q) \in \mathbb{R}[X]^2$,
+\begin{Exercice}{}\label{PS} On pose pour tout $(P,Q) \in \mathbb{R}[X]^2$,
 $$ <P,Q> = \int_{0}^1 \dfrac{P(t)Q(t)}{\sqrt{1-t}} \dt $$
 Justifier que cela définit un produit scalaire sur $\mathbb{R}[X]$.
-\end{Exa}
+\end{Exercice}
 
 \corr Commençons par justifier que l'application est bien définie. Soit $(P,Q) \in \mathbb{R}[X]^2$. Le polynôme $PQ$ est continue sur le segment $[0,1]$\footnote{On confond polynôme et fonction polynomiale.} donc est bornée sur ce segment : il existe un réel positif $M$ tel que pour tout $x \in [0,1]$,
 $$ \vert P(x)Q(x) \vert \leq M$$
@@ -187,10 +187,10 @@ et donc, $P(t)=0$. Le polynôme $P$ admet donc une infinité de racines et est d
 Ainsi, cela définit un produit scalaire sur $\mathbb{R}[X]$.
 
 
-\begin{Exa} \label{PS2} On pose pour tout $(f,g) \in \mathcal{C}^1([0,1],\mathbb{R})^2$,
+\begin{Exercice}{} \label{PS2} On pose pour tout $(f,g) \in \mathcal{C}^1([0,1],\mathbb{R})^2$,
 $$ <f,g> = \int_{0}^1 f'(x)g'(x)+f(x)g(x) \dx$$
 Justifier que cela définit un produit scalaire sur $\mathcal{C}^1([0,1],\mathbb{R})$.
-\end{Exa} 
+\end{Exercice} 
 
 \corr 
 
@@ -206,10 +206,10 @@ et donc, $f'(t)=f(t)=0$. On en déduit que $f$ est la fonction nulle.
 \end{itemize}
 Ainsi, cela définit un produit scalaire sur $\mathcal{C}^1([0,1],\mathbb{R})$.
 
-\begin{Exa} Soit $H$ un espace préhilbertien et $f : H \rightarrow H$ une application telle que :
+\begin{Exercice}{} Soit $H$ un espace préhilbertien et $f : H \rightarrow H$ une application telle que :
 $$ \forall (x,y) \in H^2, \; <f(x),y>=<x,f(y)>$$
 Montrer que $f \in \mathcal{L}(E)$.
-\end{Exa} 
+\end{Exercice} 
 
 \corr Soient $\lambda \in \mathbb{R}$ et $(x,y) \in H^2$. Pour tout $z \in H$, on a :
 \begin{align*}
@@ -226,10 +226,10 @@ et finalement,
 $$ f(\lambda x +y)= \lambda f(x)+f(y)$$
 On en déduit que $f \in \mathcal{L}(E)$.
 
-\begin{Exa} Considérons $\mathbb{R}^5$ muni du produit scalaire usuel. Soit $F= \textrm{Vect}(x_1,x_2)$ où
+\begin{Exercice}{} Considérons $\mathbb{R}^5$ muni du produit scalaire usuel. Soit $F= \textrm{Vect}(x_1,x_2)$ où
 $$ x_1 = (1,1,1,1,1) \et x_2 = (1,2,3,4,5)$$
 Déterminer une base de $F^{\perp}$.
-\end{Exa} 
+\end{Exercice} 
 
 \corr Soit $x= (x_1,x_2,x_3,x_4,x_5) \in \mathbb{R}^5$. Alors :
 \begin{align*}
@@ -249,10 +249,10 @@ Ainsi,
 $$ F^{\perp} = \textrm{Vect}(u,v,w)$$
 On montre facilement (à faire) que la famille $(u,v,w)$ est libre donc c'est une base de $F^{\perp}$.
 
-\begin{Exa} Soient $x$ et $y$ deux vecteurs d'un espace préhilbertien réel tels que :
+\begin{Exercice}{} Soient $x$ et $y$ deux vecteurs d'un espace préhilbertien réel tels que :
 $$ \forall \lambda \in \mathbb{R}, \; \Vert x+\lambda y \Vert \geq \Vert x \Vert$$
 Montrer que $x$ et $y$ sont orthogonaux.
-\end{Exa}
+\end{Exercice}
 
 \corr Par croissance de la fonction carré sur $\mathbb{R}_{+}$, on a pour tout $\lambda \in \mathbb{R}$,
 $$ \Vert x+\lambda y \Vert^2 \geq \Vert x \Vert^2$$
@@ -265,7 +265,7 @@ $$ \lambda (2<x,y> + \lambda \Vert y \Vert^2) \geq 0$$
 Si $y$ est le vecteur nul, le résultat souhaité est évident. Supposons maintenant que $y$ n'est pas le vecteur nul. Alors $\Vert y \Vert^2$ est non nul et le polynôme $X(2<x,y>+ X \Vert y \Vert^2)$ est donc un polynôme de degré $2$ positif et ayant $0$ pour racine. On sait alors que $0$ est racine double donc $2<x,y>+0=0$ donc $x$ et $y$ sont orthogonaux.
 
 
-\begin{Exa} Soient $F, G$ deux sous-espaces vectoriels d'un espace euclidien $E.$ Montrer que :
+\begin{Exercice}{} Soient $F, G$ deux sous-espaces vectoriels d'un espace euclidien $E.$ Montrer que :
 
 \begin{multicols}{2}
 \begin{enumerate}
@@ -276,7 +276,7 @@ Si $y$ est le vecteur nul, le résultat souhaité est évident. Supposons mainte
 \item $E=F\oplus G \ \Longleftrightarrow \ E=G^{\perp}\oplus F^{\perp}$
 \end{enumerate}
 \end{multicols}
-\end{Exa}
+\end{Exercice}
 
 \corr
 
@@ -352,7 +352,7 @@ $$ E= G \oplus F$$
 On a donc montré l'équivalence souhaitée.
 \end{enumerate}
 
-\begin{Exa} Soit $H= \mathcal{C}([0,1],\mathbb{R})$ muni du produit scalaire suivant :
+\begin{Exercice}{} Soit $H= \mathcal{C}([0,1],\mathbb{R})$ muni du produit scalaire suivant :
 $$ \forall (f,g) \in H^2, \, <f,g> = \int_{0}^1 f(t) g(t) \dt $$
 Considérons $F= \lbrace f \in H, \, f(0)=0 \rbrace \cdot$
 
@@ -360,7 +360,7 @@ Considérons $F= \lbrace f \in H, \, f(0)=0 \rbrace \cdot$
 \item Montrer que $F$ est un sous-espace vectoriel de $H$ et déterminer son orthogonal.
 \item Que peut-on dire de $(F^{\perp})^{\perp}$? Qu'en déduit-on ?
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -389,9 +389,9 @@ Par continuité de $g$ sur $[0,1]$, n en déduit que $g$ est la fonction nulle s
 \item D'après la question précédente, $(F^{\perp})^{\perp}$ est égal à $H$ qui est différent de $F$ car il existe des fonctions de $H$ ne s'annulant pas en $0$. Il faut donc se méfier de l'orthogonal de l'orthogonal d'un sous-espace vectoriel ...
 \end{enumerate}
 
-\begin{Exa} Soit $E$ un espace vectoriel euclidien de dimension supérieure à $2$.  Soient $x$ et $y$ deux vecteurs distincts de $E$ tels que $$< x, y> =\Vert y \Vert^{2}$$
+\begin{Exercice}{} Soit $E$ un espace vectoriel euclidien de dimension supérieure à $2$.  Soient $x$ et $y$ deux vecteurs distincts de $E$ tels que $$< x, y> =\Vert y \Vert^{2}$$
  Montrer qu'il existe un unique hyperplan $H$ de $E$ tel que $y = p_{H}(x)$ où $p_H$ est la projection orthogonale sur $H$.
- \end{Exa}
+ \end{Exercice}
  
  \corr Raisonnons par analyse-synthèse.
  
@@ -413,7 +413,7 @@ Par continuité de $g$ sur $[0,1]$, n en déduit que $g$ est la fonction nulle s
  avec $x-y \in H^{\perp}$ (car $E$ est euclidien) et $y \in H$. On a donc bien que $y = p_H(x)$.
 \end{itemize}
 
-\begin{Exa} Considérons $H= \mathbb{R}[X]$ muni du produit scalaire :
+\begin{Exercice}{} Considérons $H= \mathbb{R}[X]$ muni du produit scalaire :
 $$ \forall (P,Q) \in H^2, \; <P,Q> = \int_{0}^1 P(t) Q(t) \dt $$
 On pose pour tout $n \in \mathbb{N}$, $P_n(X)= ((X^2-X)^n)^{(n)}$.
 
@@ -424,7 +424,7 @@ $$ <P_n,Q> = (-1)^n \int_{0}^1 (t^2-t)^n Q^{(n)}(t) \dt $$
 \item Montrer que $(P_n)_{n \geq 0}$ est une famille orthogonale.
 \item Déterminer pour tout $(n,m) \in \mathbb{N}^2$, $I_{n,m} = \int_{0}^1 t^n(1-t)^m \dt$. En déduire pour tout $n \geq 0$ la norme de $P_n$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -468,14 +468,14 @@ Par positivité de la norme, on en déduit que :
 $$ \Vert P_n \Vert = \sqrt{\dfrac{n!}{2n+1}}$$
 \end{enumerate}
 
-\begin{Exa} Considérons $\R^4$ muni de son produit scalaire usuel. Soient $e_1=(1,0,1,0)$ et $e_2=(1,-1,1,-1)$ et $F=\textrm{Vect}(e_1,e_2)$.
+\begin{Exercice}{} Considérons $\R^4$ muni de son produit scalaire usuel. Soient $e_1=(1,0,1,0)$ et $e_2=(1,-1,1,-1)$ et $F=\textrm{Vect}(e_1,e_2)$.
 \begin{enumerate}
     \item  D\'eterminer une base orthonormale de $F.$
     \item  D\'eterminer la matrice dans la base canonique de $\R^4$ du projecteur orthogonal
 sur $F.$
     \item  D\'eterminer la distance du vecteur $(1,1,1,1)$ au sous-espace vectoriel  $F.$
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -521,7 +521,7 @@ $$ \textrm{d}((1,1,1,1),F) = \Vert (1,1,1,1)-p_F((1,1,1,1) \Vert$$
 et $p_F((1,1,1,1))=(1,1,1,0)$ et on retrouve que la distance est nulle.
 \end{enumerate}
 
-\begin{Exa} Considérons $\mathcal{M}_2(\mathbb{R})$ muni du produit scalaire usuel. On pose :
+\begin{Exercice}{} Considérons $\mathcal{M}_2(\mathbb{R})$ muni du produit scalaire usuel. On pose :
 $$A_1 = I_2, \; A_2 = \begin{pmatrix}
 1 & 1 \\
 1 & 1 \\
@@ -530,7 +530,7 @@ $$A_1 = I_2, \; A_2 = \begin{pmatrix}
 0 & 0
 \end{pmatrix}$$
 Montrer que $(A_1,A_2,A_3)$ est une famille libre de $\mathcal{M}_2(\mathbb{R})$ et orthonormaliser cette famille.
-\end{Exa}
+\end{Exercice}
 
 \corr Soient $a,b,c$ trois réels tels que :
 $$ a A_1+bA_2+cA_2= 0_2$$
@@ -608,10 +608,10 @@ En posant pour tout $i \in \lbrace 1,2,3 \rbrace$,
 $$ \varepsilon_i = \dfrac{X_i}{\Vert X_i \Vert}$$
 On a alors que $(\varepsilon_1, \varepsilon_2, \varepsilon_3)$ est une famille orthonormée de $\mathcal{M}_(\mathbb{R})$.
 
-\begin{Exa} Soit $H$ un espace préhilbertien. On suppose qu'il existe une famille $\mathcal{F}=(e_1, \ldots, e_n)$ ($n \geq 1$) de vecteurs unitaires de $H$ telle que :
+\begin{Exercice}{} Soit $H$ un espace préhilbertien. On suppose qu'il existe une famille $\mathcal{F}=(e_1, \ldots, e_n)$ ($n \geq 1$) de vecteurs unitaires de $H$ telle que :
 $$ \forall x \in H, \; \Vert x \Vert^2= \sum_{k=1}^n <x,e_k>^2 $$
 Montrer que $\mathcal{F}$ est une base orthonormée de $H$.
-\end{Exa}
+\end{Exercice}
 
 \corr Soit $i \in \Interv{1}{n}$. Par hypothèse, on a :
 $$ \Vert e_i \Vert^2= \sum_{k=1}^n <e_i,e_k>^2 = <e_i,e_i>^2 + \sum_{k \neq i}^n <e_i,e_k>^2 $$
@@ -635,7 +635,7 @@ $$ (F^{\perp})^{\perp} = F$$
 donc $F=H$. Ainsi, $\mathcal{F}$ est une famille libre orthogonal qui génère $H$ donc c'est une base orthonormée de $H$.
 
 
-\begin{Exa} \begin{enumerate}
+\begin{Exercice}{} \begin{enumerate}
 	\item Rappeler le produit scalaire usuel sur ${\cal M}_n(\R)$.
 	
 \item Montrer que la base canonique est orthonormée pour ce produit scalaire.
@@ -647,7 +647,7 @@ donc $F=H$. Ainsi, $\mathcal{F}$ est une famille libre orthogonal qui génère $
 \item Déterminer $\dis\inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2$ pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donn\'ee.
 \item Soit $A\in{\cal M}_n(\R)$. Montrer que $\textrm{Ker}(A)^{\perp}= \textrm{Im}(^t\!A)$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -685,10 +685,10 @@ On sait que $\mathcal{S}_n(\mathbb{R})$ est un sous-espace vectoriel de dimensio
  $$  \inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 = \dfrac{1}{4} \sum_{1 \leq i,j \leq n} (a_{i,j}-a_{j,i})^2$$
 \end{enumerate}
 
-\begin{Exa} Reprenons le produit scalaire de l'exercice \ref{PS2} en posant $E= \mathcal{C}^1([0,1],\mathbb{R})$. On pose :
+\begin{Exercice}{} Reprenons le produit scalaire de l'exercice \ref{PS2} en posant $E= \mathcal{C}^1([0,1],\mathbb{R})$. On pose :
 $$ F = \lbrace f \in E \, \vert \, f(0)=f(1)=0\rbrace \et G= \lbrace f \in \mathcal{C}^2([0,1],\mathbb{R}) \, \vert \, f''=f \rbrace$$
 Montrer que $F$ et $G$ sont des sous-espaces supplémentaires orthogonaux  de $E$.
-\end{Exa}
+\end{Exercice}
 
 \corr Le fait que $F$ et $G$ soient des espaces vectoriels est facile à vérifier avec la méthode des trois points. Montrons pour commencer que ces deux espaces sont orthogonaux. Soit $(f,g) \in F \times G$. On a :
 $$<f,g>= \int_{0}^1 f'(x)g'(x)+f(x)g(x) \dx$$
@@ -747,14 +747,14 @@ Or $g$ appartient à $G$ donc $g$ est de classe $\mathcal{C}^2$ sur $[0,1]$ et $
  
  
  
- \begin{Exa} On munit $\mathcal{M}_2(\mathbb{R})$ de son produit scalaire usuel.
+ \begin{Exercice}{} On munit $\mathcal{M}_2(\mathbb{R})$ de son produit scalaire usuel.
 \begin{enumerate}
 %\item Rappeler le produit scalaire usuel sur $\mathcal{M}_{2}(\mathbb{R})$. 
 \item Montrer que $F=\left\{\left(\begin{array}{cc} a & b\\ -b & a \end{array}\right),\ (a,b)\in\R^2\right
 \}$ est un sous-espace vectoriel de ${\cal M}_2(\R).$
 \item Trouver une base de $F^{\perp}$ et d\'eterminer le projet\'e orthogonal de $N=\left(\begin{array}{cc} 1&1\\ 1&1 \end{array}\right)$ sur $F^{\perp}$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -818,7 +818,7 @@ $$ N= M_1+M_4$$
 avec $M_1 \in F$ et $M_2 \in F^{\perp}$. L'espace $F$ est de dimension finie donc $F$ et $F^{\perp}$ sont supplémentaires orthogonaux. On en déduit que le projeté de $N$ sur $F^{\perp}$ est $M_4$.
 \end{enumerate}
 
-\begin{Exa} On définit une application $< \cdot \, , \, \cdot> : \R[X]^2 \rightarrow \R$ par :
+\begin{Exercice}{} On définit une application $< \cdot \, , \, \cdot> : \R[X]^2 \rightarrow \R$ par :
   \[
  <P,Q> = \int_{0}^{ + \infty} P(t)Q(t)\e^{ - t} \dt
   \]
@@ -830,7 +830,7 @@ avec $M_1 \in F$ et $M_2 \in F^{\perp}$. L'espace $F$ est de dimension finie don
     \inf_{(a,b) \in \R^{2}} \int_{0}^{ + \infty} \e^{ - t}(t^{2} - (at + b))^{2} \dt
     \]
   \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 

@@ -17,13 +17,13 @@
 
 \medskip
 
-\begin{Exa} Soit $f$ définie par 
+\begin{Exercice}{} Soit $f$ définie par 
 $$f(x) = \int_{1/x}^{3x}\frac{1}{\sqrt{t^6+1}}\dt$$ 
 \begin{enumerate}
 \item Déterminer l'ensemble de définition $\mathcal{D}$ de $f$.
 \item Étudier la dérivabilité de $f$ sur $\mathcal{D}$ et donner l'expression de sa dérivée.
 \end{enumerate}
-\end{Exa} 
+\end{Exercice} 
 
 \corr 
 
@@ -38,10 +38,10 @@ f'(x) & = 3 H'(3x)  + \dfrac{1}{x^2} H'(1/x) \\
 \end{align*}
 \end{enumerate}
 
-\begin{Exa} Justifier que la fonction $H$ définie par 
+\begin{Exercice}{} Justifier que la fonction $H$ définie par 
 $$H(x) = \int_{-x}^{x^2} \ln(1+t^4) \dt$$
 est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et donner l'expression de sa dérivée.
-\end{Exa}
+\end{Exercice}
 
 \corr La fonction $t \mapsto \ln(1+t^4)$ est continue sur $\mathbb{R}$ (car $t \mapsto 1+t^4$ est continue sur $\mathbb{R}$ et à valeurs strictement positives sur $\mathbb{R}$ et que $\ln$ est continue sur $\mathbb{R}_+^{*}$). Les fonctions $x \mapsto x$ et $x \mapsto x^2$ étant définies sur $\mathbb{R}$, pour tout réel $x$,
 $$ H(x) = \int_{-x}^{x^2} \ln(1+t^4) \dt$$
@@ -51,9 +51,9 @@ Par composition de fonctions de classe $\mathcal{C}^1$ sur $\mathbb{R}$, $H$ est
 $$ H'(x) = 2x F'(x^2)-(-F'(-x)) = 2x \ln(1+x^8)+ \ln(1+x^4)$$
 
 
-\begin{Exa} Trouver toutes les fonctions $f$ continues sur $\mathbb{R}$ telles que pour tout $x \in \mathbb{R}$,
+\begin{Exercice}{} Trouver toutes les fonctions $f$ continues sur $\mathbb{R}$ telles que pour tout $x \in \mathbb{R}$,
 $$ f(x) + \int_{0}^x (x-t)f(t) \dt =1$$
-\end{Exa} 
+\end{Exercice} 
 
 \corr Raisonnons par analyse-synthèse.
 
@@ -89,7 +89,7 @@ Ainsi,
 \end{align*}
 Ainsi, la fonction cosinus est bien solution du problème posé et c'est donc l'unique solution d'après l'analyse.
 
-\begin{Exa} Soit $g : \mathbb{R} \rightarrow \mathbb{R}$ une fonction continue. On pose, pour tout $x \in \mathbb{R}$,
+\begin{Exercice}{} Soit $g : \mathbb{R} \rightarrow \mathbb{R}$ une fonction continue. On pose, pour tout $x \in \mathbb{R}$,
     \[
     f(x) = \int_0^x {\sin(x - t)g(t) \dt}
     \]
@@ -98,7 +98,7 @@ Ainsi, la fonction cosinus est bien solution du problème posé et c'est donc l'
       \item Montrer que $f$ est solution de l'équation différentielle $y'' + y = g(x)$.
       \item Résoudre cette équation différentielle.
     \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item Soit $x \in \mathbb{R}$. On a :
@@ -140,8 +140,8 @@ où $(A,B) \in \mathbb{R}^2$.
 
 \medskip
 
-\begin{Exa} Étudier la continuité sur $\mathbb{R}$ de $\dis x \mapsto \int_{0}^1 \sin(xt^2) \dt$.
-\end{Exa}
+\begin{Exercice}{} Étudier la continuité sur $\mathbb{R}$ de $\dis x \mapsto \int_{0}^1 \sin(xt^2) \dt$.
+\end{Exercice}
 
 \corr Vérifions les hypothèses du théorème de dérivation sous le signe intégrale.
 
@@ -155,10 +155,10 @@ et $t \mapsto 1$ est intégrable sur $[0,1]$ car continue.
 D'après le théorème de continuité sous le signe intégrale, on en déduit que $f$ est continue sur $\mathbb{R}$.
 
 
-\begin{Exa} Déterminer l'ensemble de définition de la fonction $f$ définie par :
+\begin{Exercice}{} Déterminer l'ensemble de définition de la fonction $f$ définie par :
 $$ f(x) = \int_{0}^{+ \infty} \dfrac{\dt}{t^x(1+t)}$$
 Étudier ensuite la continuité de $f$ sur cet ensemble de définition.
-\end{Exa}
+\end{Exercice}
 
 \corr Déterminons l'ensemble de définition de $f$. Soit $x \in \mathbb{R}$. La fonction :
 $$ t \mapsto  \dfrac{1}{t^x(1+t)}$$
@@ -199,14 +199,14 @@ Par théorème de continuité sous le signe intégrale, on en déduit que $f$ es
 
 
 
-\begin{Exa} 
+\begin{Exercice}{} 
 \begin{enumerate}
 \item Montrer que l'ensemble de définition de $g$, définie par 
 $$ g(x) = \int_{0}^1 \dfrac{\ln(1+xt)}{t} \dt$$
 contient $]-1,1[$.
 \item Montrer que $g$ est de classe $\mathcal{C}^1$ sur $]0,1[$ et déterminer $g'$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 \begin{enumerate}
@@ -228,13 +228,13 @@ et ainsi :
 $$ g'(x) = \dfrac{1}{x} [ \ln(1+xt) ]_0^1 = \dfrac{\ln(1+x)}{x}$$
 \end{enumerate}
 
-\begin{Exa} Soit $f : \dis x \mapsto \int_{0}^{+ \infty} \dfrac{\arctan(xt)}{t(1+t^2)} \dt$.
+\begin{Exercice}{} Soit $f : \dis x \mapsto \int_{0}^{+ \infty} \dfrac{\arctan(xt)}{t(1+t^2)} \dt$.
 \begin{enumerate}
 \item Déterminer l'ensemble de définition de $f$, notée $\mathcal{D}$.
 \item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathcal{D}$.
 \item Donner l'expression de $f$ à l'aide de fonctions usuelles.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr  
 \begin{enumerate}
@@ -280,13 +280,13 @@ $$ f(x) = - f(-x) = -\dfrac{\pi}{2} \ln(1-x)$$
 \end{enumerate}
 
 
-\begin{Exa}
+\begin{Exercice}{}
 \begin{enumerate}
 \item Déterminer l'ensemble de définition de la fonction $f$ définie par :
 $$ f(x) = \int_{0}^{+ \infty} e^{-t^2} \cos(xt) \dt$$
 \item Déterminer $f$ en vérifiant que celle-ci est solution d'une équation différentielle d'ordre $1$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item Pour tout réel $x$, la fonction :
@@ -322,7 +322,7 @@ Or $f(0)= \dis \int_{0}^{+ \infty} e^{-t^2} \dt = \dfrac{\sqrt{\pi}}{2}$ (intég
 $$ f(x) = \dfrac{\sqrt{\pi}}{2 } e^{- \dfrac{x^2}{4}}$$
 \end{enumerate}
 
-\begin{Exa} Soit $f$ la fonction d\'efinie par 
+\begin{Exercice}{} Soit $f$ la fonction d\'efinie par 
 $$f(x)=\int_0^1 \frac{t^x}{1+t} \dt$$
 	\begin{enumerate}
 	\item Montrer que $f$ est bien d\'efinie et continue sur $I=]-1, + \infty[$.
@@ -340,7 +340,7 @@ $$\forall x\in]0,+\infty[,\quad \frac1{2(x+1)} \leq f(x) \leq \frac1{2x}$$
 
 	\item Donner, en le justifiant, un \'equivalent simple de $f(x)$ au voisinage de $+\infty$.
 	\end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -396,13 +396,13 @@ $$ f(x) \underset{+\infty}\sim \frac1{2x}$$
 
 
 
-\begin{Exa} On considère la fonction $f : x \mapsto \int_0^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}} \dt$.
+\begin{Exercice}{} On considère la fonction $f : x \mapsto \int_0^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}} \dt$.
 \begin{enumerate}
 \item Déterminer l'ensemble de définition de $f$. On le notera $\mathcal{D}$.
 \item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathcal{D}$ et est solution d'équation différentielle linéaire que l'on précisera.
 \item Déterminer les limites de $f$ aux bornes de $\mathcal{D}$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -502,7 +502,7 @@ $$ \lim_{A \rightarrow + \infty} 2 \sqrt{1+A}-2 = + \infty$$
 C'est absurde. Ainsi, $f$ admet pour limite $+ \infty$ en $0$.
 \end{enumerate}
 
-\begin{Exa} Pour tout $x \in \mathbb{R}_+$, on pose :
+\begin{Exercice}{} Pour tout $x \in \mathbb{R}_+$, on pose :
  $$ F(x) = \int_{0}^1 \frac{e^{-x^2(t^2+1)}}{t^2+1} \dt, \; G(x) = \left( \int_{0}^x e^{-t^2} \dt \right)^2, \; H(x)=F(x)+G(x)$$
  
  \begin{enumerate}
@@ -511,7 +511,7 @@ C'est absurde. Ainsi, $f$ admet pour limite $+ \infty$ en $0$.
  \item Justifier que $H$ est une fonction constante et déterminer celle-ci.
  \item En déduire la valeur de l'intégrale de Gauss $\dis \int_{0}^{+ \infty} e^{-t^2} \dt$.
  \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 

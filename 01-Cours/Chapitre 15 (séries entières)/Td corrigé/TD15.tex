@@ -18,7 +18,7 @@
 
 \medskip
 
-\begin{Exa} Déterminer le rayon de convergence $R$ des séries entières suivantes :
+\begin{Exercice}{} Déterminer le rayon de convergence $R$ des séries entières suivantes :
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -41,7 +41,7 @@
 
 \medskip
 
-\end{Exa}
+\end{Exercice}
 
 
 \corr
@@ -99,12 +99,12 @@ Alors pour tout $z \in \mathbb{C}$ non nul,
 D'après le critère de d'Alembert, la série $\Sum{n \geq 0}{} \left(\dis \prod_{k=0}^n\frac{1}{(2k+1)}\right)z^n$ converge absolument pour tout $z\in\mathbb{C}^*$ donc $R=+\infty$. 
 \end{enumerate}
 
-\begin{Exa} Déterminer le rayon de convergence $R$ de la série entière $\Sum{n\geq 1}{} a_n z^n$, où $a_n$ désigne : 
+\begin{Exercice}{} Déterminer le rayon de convergence $R$ de la série entière $\Sum{n\geq 1}{} a_n z^n$, où $a_n$ désigne : 
 \begin{itemize}
 \item Le nombre de diviseurs de $n$ pour tout entier $n\geq 1$.
 \item Le terme général d'une suite périodique quelconque. 
 \end{itemize}
-\end{Exa}
+\end{Exercice}
 
 \newpage
 
@@ -122,9 +122,9 @@ Or les séries $\Sum{n\geq 1}{} z^n$ et $\Sum{n\geq 1}{}n z^n$ ont pour rayon de
 \end{itemize}
 \end{itemize}
 
-\begin{Exa}
+\begin{Exercice}{}
 Déterminer le rayon de convergence de $\Sum{n\geq 0}{} \sin \left( \dfrac{n \pi}{3} \right) x^n$ et déterminer sa somme.
-\end{Exa}
+\end{Exercice}
 
 \corr Soit $R$ ce rayon de convergence. La suite de terme général $\sin \left( \dfrac{n \pi}{3} \right)$ est bornée donc $R \geq 1$ et cette suite diverge (cyclicité d'une suite non constante) donc la série diverge pour $x=1$ donc $R \leq 1$. Ainsi, $R=1$.
 
@@ -144,8 +144,8 @@ On sait que $\vert xe^{i \pi/3} \vert <1$ donc la série de terme général $(xe
 En prenant la partie imaginaire, on en déduit que pour tout $x \in ]-1,1[$,
 $$ \sum_{k=0}^{+ \infty} \sin \left( \dfrac{k \pi}{3} \right) x^k =\dfrac{\sqrt{3}}{2} \times \dfrac{x}{1-x+x^2}$$
 
-\begin{Exa} Déterminer le rayon de convergence de $\Sum{n\geq 1}{}  n^{(-1)^n} x^n$ et déterminer sa somme.
-\end{Exa}
+\begin{Exercice}{} Déterminer le rayon de convergence de $\Sum{n\geq 1}{}  n^{(-1)^n} x^n$ et déterminer sa somme.
+\end{Exercice}
 
 \begin{corr} Pour tout $n \geq 1$,
 $$ \dfrac{1}{n} \leq n^{(-1)^n} \leq n$$
@@ -174,8 +174,8 @@ $$ S(x) = \dfrac{x^2}{(1-x^2)^2} + \dfrac{1}{2} \ln \left( \dfrac{1+x}{1-x} \rig
 Remarquons que $S$ n'est pas définie en $1$ ou $-1$ (les suites extraites d'indices pairs et impaires n'ont pas le même comportement asymptotique).
 \end{corr}
 
-\begin{Exa} Déterminer le rayon de convergence de $\Sum{n\geq 1}{} \dfrac{3n}{n+2} x^n$ et déterminer sa somme.
-\end{Exa}
+\begin{Exercice}{} Déterminer le rayon de convergence de $\Sum{n\geq 1}{} \dfrac{3n}{n+2} x^n$ et déterminer sa somme.
+\end{Exercice}
 
 %\corr On a :
 $$  \dfrac{3n}{n+2} \underset{+ \infty}{\sim} 3$$
@@ -191,8 +191,8 @@ On en déduit alors que pour $x \in ]-1,1[$, $x \neq 0$, on a :
 $$ S(x) =  \dfrac{3x}{1-x}  + \dfrac{6\ln(1-x)}{x^2} + \dfrac{6}{x} +3$$
 et on a $S(0)= 0$. Remarquons que $S$ n'est pas définie en $-1$ et $1$ (divergence grossière).
 
-\begin{Exa} Soit $\theta\in\mathbb{R}$. Après avoir justifié la convergence, calculer $\dsp\sum_{n=0}^{+\infty}\dfrac{\sin(n\theta)}{3^nn!}$.
-\end{Exa}
+\begin{Exercice}{} Soit $\theta\in\mathbb{R}$. Après avoir justifié la convergence, calculer $\dsp\sum_{n=0}^{+\infty}\dfrac{\sin(n\theta)}{3^nn!}$.
+\end{Exercice}
 
 \corr Pour tout entier naturel $n$, on a : 
 \[
@@ -205,8 +205,8 @@ $$ \e^{\frac{\e^{i\theta}}{3}}= \sum_{n=0}^{+\infty}\dfrac{(\frac{\e^{i\theta}}{
 Par passage à la partie imaginaire, on en déduit que :
 $$ \sum_{n=0}^{+\infty}\dfrac{\sin(n\theta)}{3^nn!} = \e^{\frac{\cos\theta}{3}}\sin\left(\dfrac{\sin\theta}{3}\right)$$
 
-\begin{Exa} Déterminer le rayon de convergence puis la somme de $\Sum{n \geq 0}{} n^2x^n$.
-\end{Exa}
+\begin{Exercice}{} Déterminer le rayon de convergence puis la somme de $\Sum{n \geq 0}{} n^2x^n$.
+\end{Exercice}
 
 \corr La série $\Sum{n \geq 0}{} x^n$ a même rayon de convergence que  la série $\Sum{n \geq 0}{} nx^n$ qui a lui même le même rayon de convergence de $\Sum{n \geq 0}{} n^2x^n$. Ainsi, le rayon de convergence de cette série vaut $1$.
 
@@ -223,7 +223,7 @@ $$ \sum_{n=0}^{+\infty} n^2 x^{n-1} = \dfrac{(1-x)^2\times 1-(-2(1-x))x}{(1-x)^4
 puis en multipliant par $x$ :
 $$ \sum_{n=0}^{+\infty} n^2 x^{n}= \dfrac{(1-x)^2\times 1-(-2(1-x))x}{(1-x)^4} \times x  = \dfrac{x(x+1)}{(1-x)^3}$$
 
-\begin{Exa}[\ding{80}] Le but de cet exercice est de justifier l'existence et calculer la valeur de la somme :  
+\begin{Exercice}{\ding{80}} Le but de cet exercice est de justifier l'existence et calculer la valeur de la somme :  
 \[
 A=\sum_{n=1}^{+\infty}\dfrac{1}{n2^n}\cos\left(\dfrac{2n\pi}{3}\right)
 \]
@@ -232,7 +232,7 @@ A=\sum_{n=1}^{+\infty}\dfrac{1}{n2^n}\cos\left(\dfrac{2n\pi}{3}\right)
 \item Calculer la somme cette série entière sur son intervalle ouvert de convergence.
 \item En déduire l'existence et la valeur de $A$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -269,11 +269,11 @@ A=\dsp\sum_{n=1}^{+\infty}\dfrac{1}{n2^n}\cos\left(\dfrac{2n\pi}{3}\right)=S\lef
 \]
 \end{enumerate}
 
-\begin{Exa} \begin{enumerate}
+\begin{Exercice}{} \begin{enumerate}
 \item Déterminer le rayon de convergence $R$ de $\Sum{n \geq 1}{} \sin \left( \frac{1}{\sqrt{n}} \right) x^n$.
 \item Déterminer l'ensemble de définition de la somme de cette série entière.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -297,7 +297,7 @@ Ainsi,
 $$ \mathcal{D}= [-1,1[$$
 \end{enumerate}
 
-\begin{Exa} Soit $\dis f : x \mapsto \sum_{n = 2}^{ + \infty} \frac{( - 1)^{n}}{n(n - 1)}x^{n}.$
+\begin{Exercice}{} Soit $\dis f : x \mapsto \sum_{n = 2}^{ + \infty} \frac{( - 1)^{n}}{n(n - 1)}x^{n}.$
 
   \begin{enumerate}
   \item
@@ -306,7 +306,7 @@ $$ \mathcal{D}= [-1,1[$$
     Exprimer la fonction $f$ à l'aide des fonctions usuelles sur $] - 1,1[$
   \item Calculer $f(1)$ et $f( - 1)$.
   \end{enumerate}
-  \end{Exa} 
+  \end{Exercice} 
   
 %  \corr 
   
@@ -340,7 +340,7 @@ $$ f(-1) = \lim_{x \rightarrow 1^{-}} f(x) =  1$$
   \end{enumerate}
   
   
-  \begin{Exa} Soit $\dis f : x \mapsto \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n+1}}{n(2n+1)} x^{2n+1}$.
+  \begin{Exercice}{} Soit $\dis f : x \mapsto \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n+1}}{n(2n+1)} x^{2n+1}$.
 
 \begin{enumerate}
 \item Déterminer l'ensemble de définition de $f$.
@@ -348,7 +348,7 @@ $$ f(-1) = \lim_{x \rightarrow 1^{-}} f(x) =  1$$
 \item Déterminer une expression simple de $f'(x)$ pour $x \in ]-1,1[$. En déduire une expression simple de $f(x)$ pour $x \in ]-1,1[$.
 \item Calculer $ \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n+1}}{n(2n+1)} \cdot$
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 
 \corr 
@@ -393,8 +393,8 @@ et ainsi :
 $$ \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n+1}}{n(2n+1)} = \ln(2)-2 + \dfrac{\pi}{2}$$
 \end{enumerate}
 
-\begin{Exa}[\ding{80}] Soit $\Sum{n \geq 0}{} a_n z^n$ une série entière de rayon de convergence $R>0$. Montrer que  la série $\Sum{n \geq 0}{} \dfrac{a_n}{n!}z^n$ a un rayon de convergence infini. 
-\end{Exa}
+\begin{Exercice}{\ding{80}} Soit $\Sum{n \geq 0}{} a_n z^n$ une série entière de rayon de convergence $R>0$. Montrer que  la série $\Sum{n \geq 0}{} \dfrac{a_n}{n!}z^n$ a un rayon de convergence infini. 
+\end{Exercice}
 
 \corr Soit $r\in ]0,R[$. Par définition du rayon de convergence, $(a_n r^n)_{n \geq 0}$ est donc bornée : 
 \[
@@ -407,8 +407,8 @@ Soit $z\in\mathbb{C}$. On a alors pour tout entier $n \geq 0$,
 \end{align*}
 Or la série exponentielle $\Sum{n \geq 0}{} \dfrac{(z/r)^n}{n!}$ converge absolument pour tout $z\in\mathbb{C}$, donc par critère de comparaison pour des séries à termes positifs, on en déduit que $\Sum{n \geq 0}{} \dfrac{a_n}{n!} z^n$ converge aussi absolument pour tout $z\in\mathbb{C}$. Ainsi, la série $\Sum{n \geq 0}{} \dfrac{a_n}{n!} z^n$ a un rayon de convergence infini.
 
-\begin{Exa}[\ding{80}] Déterminer le rayon de convergence $R$ de $\dis \sum_{n \geq 0} x^{n^2}$. Déterminer un équivalent simple en $R^{-}$ de la somme de cette série entière.
-\end{Exa}
+\begin{Exercice}{\ding{80}} Déterminer le rayon de convergence $R$ de $\dis \sum_{n \geq 0} x^{n^2}$. Déterminer un équivalent simple en $R^{-}$ de la somme de cette série entière.
+\end{Exercice}
 
 \begin{corr} On pose pour tout $n \geq 0$, $a_n=1$ si $n$ est un carré et $a_n =0$ si $n$ n'est pas un carré. La suite $(a_n)_{n \geq 0}$ est clairement bornée donc le rayon de convergence de la série est supérieur ou égal à $1$. Remarquons que la sous-suite $(a_{n^2})$ converge vers $1$. La série diverge donc grossièrement pour $z=1$.Finalement, le rayon de convergence de la série vaut $1$.
 
@@ -449,8 +449,8 @@ $$S(x) \underset{x \rightarrow 1^{-}}{\sim} \dfrac{C}{\sqrt{1-x}}$$
 
 \medskip
 
-\begin{Exa} Développer en série entière $x \mapsto \e^{-x}\sin x$.
-\end{Exa}
+\begin{Exercice}{} Développer en série entière $x \mapsto \e^{-x}\sin x$.
+\end{Exercice}
 
 \corr Les fonctions $x\mapsto\e^{-x}$ et $\sin$ sont développables en série entière, donc leur produit $f$ l'est aussi, et on a pour tout $x\in\mathbb{R}$ : 
 \[
@@ -461,8 +461,8 @@ f(x) &= & \e^{-x}\sin x=\Im\mathrm{m}[\e^{(-1+i)x}]=\Im\mathrm{m}\left[\dsp\sum_
 \end{array}
 \]
 
-\begin{Exa} Développer en série entière $x \mapsto \dfrac{1}{x^2-5x+6}$.
-\end{Exa}
+\begin{Exercice}{} Développer en série entière $x \mapsto \dfrac{1}{x^2-5x+6}$.
+\end{Exercice}
 
 \corr Le trinôme $X^2-5X+6$ a pour racines $2$ et $3$. La fonction (que l'on note $f$) est définie sur $\mathbb{R} \setminus \lbrace 2,3 \rbrace$ donc $f$ est développable en série entière au mieux sur $]-2,2[$. Pour tout $x \in ]-2,2[$, on a :
 \begin{align*}
@@ -475,8 +475,8 @@ f(x) & = \dfrac{1}{(x-2)(x-3)}\\
 car $\vert x/3 \vert <1$ et $\vert x/2 \vert <1$. Finalement, $f$ est développable en série entière sur $]-2,2[$ et pour tout $x \in ]-2,2[$, on a :
 $$ f(x) = \dsp\sum_{n=0}^{+\infty}\left(  \dfrac{1}{2^{n+1}}-\dfrac{1}{3^{n+1}}\right)x^n$$
 
-\begin{Exa} Développer en série entière $x \mapsto \dsp\int_0^x\sin(t^2)\mathrm{d}t$.
-\end{Exa}
+\begin{Exercice}{} Développer en série entière $x \mapsto \dsp\int_0^x\sin(t^2)\mathrm{d}t$.
+\end{Exercice}
 
 \corr Pour tout $t\in\mathbb{R}$ : 
 \[
@@ -485,13 +485,13 @@ $$ f(x) = \dsp\sum_{n=0}^{+\infty}\left(  \dfrac{1}{2^{n+1}}-\dfrac{1}{3^{n+1}}\
 Notons $f$ la fonction étudiée. Par théorème d'intégration terme à terme, il vient alors que pour tout $x\in\mathbb{R}$ : 
 $$f(x)=\dsp\int_0^x\dsp\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!}t^{4n+2}\mathrm{d}t=\dsp\dsp\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!}\int_0^xt^{4n+2}\mathrm{d}t=\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!(4n+3)}x^{4n+3}$$
 
-\begin{Exa} On pose $f(x)=\dfrac{1}{(x+1)^{2}(3-x)} \cdot$
+\begin{Exercice}{} On pose $f(x)=\dfrac{1}{(x+1)^{2}(3-x)} \cdot$
 \begin{enumerate}
 \item Déterminer la primitive $G$ de $f$ définie sur l'intervalle $]-1,3[$ telle que $G(1)=0$.
 \item Déterminer le développement en série entière en 0 de la fonction $f$ et précisez le rayon de convergence.
 \item Déduire de ce développement la valeur de $G^{(3)}(0)$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item Il existe des réels $a$, $b$ et $c$ tels que pour tout $x \in \mathbb{R} \setminus \lbrace -1,3 \rbrace$,
@@ -524,14 +524,14 @@ et donc
 $$ G^{(3)}(0)=\dfrac{44}{27}$$
 \end{enumerate}
 
-\begin{Exa} \begin{enumerate}
+\begin{Exercice}{} \begin{enumerate}
 \item Montrer que l'ensemble de définition de $g$, définie par 
 $$ g(x) = \int_{0}^1 \dfrac{\ln(1+xt)}{t} \dt$$
 contient $]-1,1[$.
 \item Déterminer le développement en série entière de $g$ sur $]-1,1[$.
 \item Montrer que $g$ est de classe $\mathcal{C}^1$ sur $]0,1[$ et déterminer $g'$ de deux manières différentes.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item Soit $x \in ]-1,1[$. Pour tout $t \in ]0,1]$, $xt \in ]-1,1[$ donc $1+xt >0$ et ainsi $t \mapsto \dfrac{\ln(1+xt)}{t} $ est continue sur $]0,1]$. Si $t$ tend vers $0$, on a :
@@ -575,8 +575,8 @@ $$ g'(x) = \dfrac{1}{x} [ \ln(1+xt) ]_0^1 = \dfrac{\ln(1+x)}{x}$$
 
 \medskip
 
-\begin{Exa} Montrer que $\dis \int_{0}^1 \dfrac{\ln(1+t)}{t}\dt = \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n-1}}{n^2} \cdot$
-\end{Exa}
+\begin{Exercice}{} Montrer que $\dis \int_{0}^1 \dfrac{\ln(1+t)}{t}\dt = \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n-1}}{n^2} \cdot$
+\end{Exercice}
 
 \corr Pour tout $t \in ]0,1[$, on a :
 $$ \ln(1+t) = \sum_{n=0}^{+ \infty} (-1)^{n} \dfrac{x^{n+1}}{n+1}$$
@@ -599,12 +599,12 @@ Ainsi, la série de terme général $\int_0^1 \vert f_n(x) \vert\dx$ converge.
 D'après le théorème d'intégration terme à terme, on en déduit que $S$ est intégrable sur $]0,1[$ et que l'on a :
 $$ \int_0^1 \dfrac{\ln(1+t)}{t} \dt = \sum_{n=1}^{+ \infty} \int_0^1 f_n(x) \dx = \sum_{n=0}^{+ \infty} (-1)^{n} \times \dfrac{1}{(n+1)^2} = \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n-1}}{n^2}$$
 
-\begin{Exa}
+\begin{Exercice}{}
 \begin{enumerate}
 \item Justifier l'existence de $I= \dis \int_{0}^1 \ln(x) \ln(1-x) \dx$.
 \item Montrer que $I =\dis \sum_{n=1}^{+ \infty} \dfrac{1}{n(n+1)^2}$ puis calculer $I$ sachant que $\dis \sum_{n=1}^{+ \infty} \dfrac{1}{n^2} = \dfrac{\pi^2}{6}\cdot$
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 
 \begin{corr}
@@ -666,8 +666,8 @@ $$ I = 1 - \sum_{n=2}^{+ \infty} \dfrac{1}{n^2} = 1 - \dfrac{\pi^2}{6} +1 = 2 - 
 \end{enumerate}
 \end{corr}
 
-\begin{Exa} Montrer que pour tout $x \in \mathbb{R}$, $\ch(x) \leq e^{x^2/2}$.
-\end{Exa}
+\begin{Exercice}{} Montrer que pour tout $x \in \mathbb{R}$, $\ch(x) \leq e^{x^2/2}$.
+\end{Exercice}
 
 \corr Pour tout réel $x$,
 $$ \ch(x) = \sum_{k=0}^{+ \infty} \dfrac{x^{2k}}{(2k)!} \; \hbox{ et } \; e^{x^2/2} = \sum_{k=0}^{+ \infty} \dfrac{x^{2k}}{2^k k!}$$
@@ -686,13 +686,13 @@ Il y a $k$ termes dans le produit et chaque terme est supérieur ou égal à $2$
 \medskip
 
 
-\begin{Exa} On pose $a_0=1$, $a_1=1$ et pour tout $n \geq 0$, $a_{n+2} = a_{n+1} + (n+1)a_n$.
+\begin{Exercice}{} On pose $a_0=1$, $a_1=1$ et pour tout $n \geq 0$, $a_{n+2} = a_{n+1} + (n+1)a_n$.
 \begin{enumerate}
 \item Montrer que pour tout $n \geq 0$, $\dfrac{a_n}{n!} \leq 1$.
 \item Montrer que $f$, définie par $f(x) = \dis \sum_{k=0}^{+ \infty} \dfrac{a_k}{k!}x^k$, est solution d'une équation différentielle du premier ordre que l'on résoudra.
 \item Exprimer pour tout $p \geq 0$, $a_{2p}$ et $a_{2p+1}$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item Montrons par récurrence double que pour tout $n \geq 0$, $\dfrac{a_n}{n!} \leq 1$.
@@ -754,12 +754,12 @@ a_{2p+1} & = (2p+1)! \sum_{j=0}^p \dfrac{c_{2j}}{(2p+1-2j)!} \\
 \end{align*}
 \end{enumerate}
 
-\begin{Exa}[\ding{80}] Soit $(a_n)_{n \geq 0}$ une suite de réels telle que $na_n$ tend vers $0$ quand $n$ tend vers $+ \infty$.
+\begin{Exercice}{\ding{80}} Soit $(a_n)_{n \geq 0}$ une suite de réels telle que $na_n$ tend vers $0$ quand $n$ tend vers $+ \infty$.
 \begin{enumerate}
 \item Montrer que $\dis \sum_{n \geq 0} a_n x^n$ a un rayon de convergence supérieur ou égal à $1$.
 \item Montrer que $\dis \sum_{n=0}^{+ \infty} a_n x^n = o(\ln(1-x))$ quand $x$ tend vers $1^{-}$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \begin{corr} 
 \begin{enumerate}
@@ -791,7 +791,7 @@ On en déduit que $f(x)= o(\ln(1-x))$ quand $x$ tend vers $1^{-}$.
 \end{enumerate}
 \end{corr}
 
-\begin{Exa} Soit $(u_n)_{n \geq 0}$ la suite définie par $u_0 >0$ et pour tout $n \geq 0$, $u_{n+1}= \ln(1+u_n)$.
+\begin{Exercice}{} Soit $(u_n)_{n \geq 0}$ la suite définie par $u_0 >0$ et pour tout $n \geq 0$, $u_{n+1}= \ln(1+u_n)$.
 \begin{enumerate}
 \item Prouver la convergence et déterminer la limite de cette suite.
 \item Déterminer le rayon de convergence de $\dis \sum_{n \geq 0} u_n x^n$.
@@ -800,7 +800,7 @@ $$ w_n = \dfrac{1}{n} \sum_{k=1}^n v_k$$
 converge vers $\ell$.
 \item A l'aide de la suite de terme général $\dfrac{1}{u_{n+1}} - \dfrac{1}{u_n}$, déterminer un équivalent de $u_n$ quand $n$ tend vers $+ \infty$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \newpage
 
@@ -844,7 +844,7 @@ $$ u_n \underset{+ \infty}{\sim} \dfrac{2}{n}$$
 \end{enumerate}
 \end{corr}
 
-\begin{Exa}[\ding{80}] Soit $(u_n)_{n \geq 0}$ la suite définie par $u_0=0$ et pour tout $n \geq 0$ par 
+\begin{Exercice}{\ding{80}} Soit $(u_n)_{n \geq 0}$ la suite définie par $u_0=0$ et pour tout $n \geq 0$ par 
 $$ \dfrac{u_{n+1}}{u_n} = \dfrac{n+a}{n+b}$$
 où $a$ et $b$ sont deux réels strictement positifs. On pose pour tout $n \geq 1$, $v_n = \ln(n^{b-a}u_n)$.
 \begin{enumerate}
@@ -853,7 +853,7 @@ où $a$ et $b$ sont deux réels strictement positifs. On pose pour tout $n \geq 
 $$ f(x) = \sum_{k=0}^{+ \infty} u_k x^k$$
 Déterminer l'ensemble de définition de $f$ et déterminer $f(-1)$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \begin{corr} 
 \begin{enumerate}
@@ -910,8 +910,8 @@ $$ f(1) = \dfrac{1-b}{a-b+1}$$
 
 
 
-\begin{Exa} Montrer que la fonction $x \mapsto \dfrac{\sin(x)}{x}$ se prolonge en une fonction $\mathcal{C}^{\infty}$ sur $\mathbb{R}$.
-\end{Exa}
+\begin{Exercice}{} Montrer que la fonction $x \mapsto \dfrac{\sin(x)}{x}$ se prolonge en une fonction $\mathcal{C}^{\infty}$ sur $\mathbb{R}$.
+\end{Exercice}
 
 \corr Soit $f$ cette fonction. Remarquons que 
 $$ \lim_{x \rightarrow 0} f(x) = 1$$
@@ -921,7 +921,7 @@ donc pour $x \neq 0$,
 $$ f(x) = \sum_{k=0}^{+ \infty} \dfrac{(-1)^k x^{2k}}{(2k+1)!}$$
 $f$ coïncide donc avec la somme d'une série entière sur $\mathbb{R}^*$ (cette série entière a donc un rayon de converge infini) et la limite de $f$ en $0$ est égal à la somme de cette série en $0$. Or la somme d'une série entière est $\mathcal{C}^{\infty}$ sur son intervalle de convergence (qui est $\mathbb{R}$). Finalement, $x \mapsto \dfrac{\sin(x)}{x}$ se prolonge en une fonction $\mathcal{C}^{\infty}$ sur $\mathbb{R}$.
 
-\begin{Exa} \begin{enumerate}
+\begin{Exercice}{} \begin{enumerate}
 \item Déterminer le rayon de convergence de la série entière $\Sum{n \geq 0}{} \dfrac{x^n}{(2n)!} \cdot$
 
 \noindent On note $S$ la somme de cette série entière.
@@ -935,7 +935,7 @@ $f$ coïncide donc avec la somme d'une série entière sur $\mathbb{R}^*$ (cette
 	Démontrer que $f$ est de classe $\mathcal{C}^{\infty}$ sur $\mathbb{R}$.
 	\end{enumerate}
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item Pour $x \neq 0$, posons  pour tout entier $n \geq 0$,

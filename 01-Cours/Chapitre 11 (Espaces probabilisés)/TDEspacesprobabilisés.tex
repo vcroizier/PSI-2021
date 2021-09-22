@@ -8,7 +8,7 @@
  \shadowbox{{\LARGE TD 11 : Espaces probabilisés}}
 \end{center}
 
-\begin{Exa} $ABCD$ est un carré de centre $O$. Un pion se déplace de manière aléatoire de l'un de ces 5 points à un autre de la façon suivante : il se déplace vers un des points adjacents, de façon équiprobable. Au départ le pion est en $A$. Pour tout entier $n \in \N$, on note $E_n$ l'événement <<le pion est en $O$ après $n$ déplacements>> et $p_n = \P(E_n)$, la probabilité de cet événement.
+\begin{Exercice}{} $ABCD$ est un carré de centre $O$. Un pion se déplace de manière aléatoire de l'un de ces 5 points à un autre de la façon suivante : il se déplace vers un des points adjacents, de façon équiprobable. Au départ le pion est en $A$. Pour tout entier $n \in \N$, on note $E_n$ l'événement <<le pion est en $O$ après $n$ déplacements>> et $p_n = \P(E_n)$, la probabilité de cet événement.
 \begin{center}\begin{tikzpicture}
 \draw (0,0) node[below,left] {$D$} -- (2,0) node[below,right] {$C$} -- (2,2) node[above,right] {$B$} -- (0,2) node[above,left] {$A$} -- cycle; 
 \draw (0,0) -- (2,2);
@@ -21,7 +21,7 @@
  \item En déduire $p_n$ en fonction de $n$.
  \item Interpréter la limite de la suite $(p_n)_{n\in \N^*}$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item Au temps 0, le pion est en A. Donc l'événement $E_0$ est l'évènement impossible. Ainsi, $p_0=\P(E_0)=0$.
@@ -44,8 +44,8 @@ Après un temps long, la probabilité que le pion soit en $O$ est proche de $ \d
 \end{enumerate}
 
 
-\begin{Exa} Trois urnes $U_1, U_2 $ et $U_3$ contiennent chacune 10 boules dont respectivement 1,4 et 6 sont rouges et les autres noires. On choisit une urne au hasard puis trois boules successivement avec remise dans l'urne choisie. Quelle est la probabilité qu'on ait choisi l'urne $U_1$ sachant qu'on a obtenu 2 boules rouges et une boule noire (dans n'importe quel ordre).
-\end{Exa}
+\begin{Exercice}{} Trois urnes $U_1, U_2 $ et $U_3$ contiennent chacune 10 boules dont respectivement 1,4 et 6 sont rouges et les autres noires. On choisit une urne au hasard puis trois boules successivement avec remise dans l'urne choisie. Quelle est la probabilité qu'on ait choisi l'urne $U_1$ sachant qu'on a obtenu 2 boules rouges et une boule noire (dans n'importe quel ordre).
+\end{Exercice}
 
 \corr Pour tout $k \in \Interv13$, on définit les évènements $R_k$ : \og On tire une boule rouge au $k$-ième tirage \fg et $U_k$ : \og On choisit l'urne $k$ \fg . En posant $B$ : \og On a tiré deux boules rouges et une boule noire \fg , on souhaite  alors calculer $\P_B(U_1)$.
 
@@ -79,7 +79,7 @@ D'après la formule de Bayes, on a donc
 Ainsi,
 $$ P_{B}(U_1) = \dis \frac{3}{83} $$
 
-\begin{Exa}
+\begin{Exercice}{}
 Une société de jeux en ligne propose un nouveau jeu à ses clients se basant sur une une grille \`{a} trois
 lignes et trois colonnes. Une fonction al\'{e}atoire place au hasard trois jetons $\left( \bigstar \right) $
 dans trois cases diff\'{e}rentes. La partie est gagn\'{e}e si les trois
@@ -141,7 +141,7 @@ est \'{e}gal \`{a} $:$%
 \end{equation*}
 \end{enumerate}
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item 
@@ -183,8 +183,8 @@ P(N) & = & \dis x \times \frac{25}{28}+ (1-x) \frac{19}{21} \\[0.2cm]
 \end{enumerate}
 
 
-\begin{Exa} On lance indéfiniment 3 dés équilibrés simultanément. Pour tout $n \geq 1$, on note $A_n$ l'évènement \og on obtient une triple 6 pour la première fois au $n$-ième tirage \fg . Déterminer $P(A_n)$ pour tout $n \geq 1$ et en déduire la probabilité d'obtenir au moins une fois un triple $6$.
-\end{Exa}
+\begin{Exercice}{} On lance indéfiniment 3 dés équilibrés simultanément. Pour tout $n \geq 1$, on note $A_n$ l'évènement \og on obtient une triple 6 pour la première fois au $n$-ième tirage \fg . Déterminer $P(A_n)$ pour tout $n \geq 1$ et en déduire la probabilité d'obtenir au moins une fois un triple $6$.
+\end{Exercice}
 
 \corr Pour tout $n \geq 1$, on pose $B_n$ : \og On n'obtient pas un triple 6 lors du $n$-ième tirage \fg . Il est clair que pour tout $n \geq 1$, $P(B_n) = \dis \frac{6^3-1}{6^3} = \frac{215}{216}$ (nous sommes en situation d'équiprobabilité, il y a $6^3$ issues possibles quand on lance les trois dés et une seule nous permet d'avoir un triple $6$).
 
@@ -214,13 +214,13 @@ car $-1 < \dis \frac{215}{216} < 1$. On a finalement :
 \[ P(A) = \frac{1}{215} \times (216-1) = 1 \]
 
 
-\begin{Exa} On peut distinguer des élèves en trois catégories : ceux qui aiment la chimie, ceux qui n'aiment pas et ceux qui s'en fichent (royalement). Les étudiants des classes PC et PSI du lycée Robespierre sont assez différents : les étudiants en PC aiment la chimie avec une probabilité de $0.6$ et n'aiment pas avec une probabilité de $0.2$ alors que les étudiants en PSI aiment la chimie avec une probabilité de $0.4$ et s'en fichent avec une probabilité de $0.4$. On rencontre un étudiant au hasard et on suppose qu'il a deux fois plus de chance d'être en PSI plutôt qu'en PC.
+\begin{Exercice}{} On peut distinguer des élèves en trois catégories : ceux qui aiment la chimie, ceux qui n'aiment pas et ceux qui s'en fichent (royalement). Les étudiants des classes PC et PSI du lycée Robespierre sont assez différents : les étudiants en PC aiment la chimie avec une probabilité de $0.6$ et n'aiment pas avec une probabilité de $0.2$ alors que les étudiants en PSI aiment la chimie avec une probabilité de $0.4$ et s'en fichent avec une probabilité de $0.4$. On rencontre un étudiant au hasard et on suppose qu'il a deux fois plus de chance d'être en PSI plutôt qu'en PC.
 
 \begin{enumerate}
 \item Quelle est la probabilité qu'il aime la chimie?
 \item Si il aime la chimie, quelle est la probabilité qu'il soit en PC?
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr Soient $E$ l'évènement \og L'étudiant est en PC \fg , $F_1$ l'évènement \og L'étudiant aime la chimie \fg , $F_2$ l'évènement \og L'étudiant n'aime pas la chimie \fg et $F_3$ l'évènement \og L'étudiant se fiche de la chimie \fg $\cdot$
 
@@ -244,12 +244,12 @@ D'après la question précédente et l'énoncé, on a :
 \end{align*}
 \end{enumerate}
 
-\begin{Exa} Soit $p \in ]0,1[$. \\
+\begin{Exercice}{} Soit $p \in ]0,1[$. \\
 Une information est transmise dans un réseau social. avec une probabilité $p$, c'est l'information correcte qui est transmise à chaque étape d'une personne à l'autre et avec une probabilité $1-p$ c'est l'information contraire qui est transmise. Pour tout $n \geq 0$, on pose $E_n$ l'évènement \og Après $n$ transmissions, l'information est correcte \fg et $p_n$ la probabilité de $E_n$. \\
 \noindent Après 0 transmission, l'information est correcte donc $p_0=1$.
 
 \medskip Déterminer l'expression de $p_n$ en fonction de $n \geq 0$ et étudier la convergence de $(p_n)_{n \geq 0}$.
-\end{Exa}
+\end{Exercice}
 
 \corr D'après l'énoncé $p_1=p$. Pour calculer $p_2$ (après avoir fait un arbre au brouillon), il suffit d'utiliser la formule des probabilités totales. $(E_1, \overline{E_1})$ est un système complet d'évènements et $P(E_1)=p \neq 0$ et $P(\overline{E_1})=1-p \neq 0$ (car $p \in ]0,1[$). D'après la formule des probabilités totales, on a alors :
 \[ P(E_2)=P(E_1)P_{E_1}(E_2) + P( \overline{E_1}) P_{\overline{E_1}}(E_2) \]
@@ -282,7 +282,7 @@ et finalement :
 On sait que $p \in ]0,1[$ donc $2p \in ]0,2[$ et $2p-1 \in ]-1,1[$. Ainsi, par somme et produit on a :
 \[ \lim_{n \rightarrow + \infty} p_n = \frac{1}{2} \]
 
-\begin{Exa} Un jeu de cartes comporte $32$ cartes. On tire simultanément $8$ cartes dans ce jeu de $32$ cartes. 
+\begin{Exercice}{} Un jeu de cartes comporte $32$ cartes. On tire simultanément $8$ cartes dans ce jeu de $32$ cartes. 
 
 \begin{enumerate}
 \item Quelle est la probabilité d'obtenir au moins un pique ?
@@ -290,7 +290,7 @@ On sait que $p \in ]0,1[$ donc $2p \in ]0,2[$ et $2p-1 \in ]-1,1[$. Ainsi, par s
 \item Quelle est la probabilité d'obtenir 2 carrés (un carré est constitué de 4 cartes de la même hauteur, par exemple 4 rois)?
 \item Quelle est la probabilité d'obtenir un roi et un pique exactement ?
 \end{enumerate}
-\end{Exa} 
+\end{Exercice} 
 
 \corr Nous sommes en situation d'équiprobabilité. L'univers $\Omega$ contient $\dis \binom{32}{8}$ issues : en effet, on tire \textit{simultanément} 8 cartes dans un jeu de 32 cartes.
 
@@ -321,7 +321,7 @@ et donc :
 \[  P(D)= \frac{\hbox{Card}(D)}{\hbox{Card}(\Omega)} = \frac{\binom{21}{7} + 21 \binom{21}{6}}{\binom{32}{8}}\]
 \end{enumerate}
 
-\begin{Exa} On considère deux urnes $U$ et $V$. L'urne $U$ contient 7 boules blanches et 3 boules noires et l'urne $V$ contient 3 boules blanches et 7 boules noires.
+\begin{Exercice}{} On considère deux urnes $U$ et $V$. L'urne $U$ contient 7 boules blanches et 3 boules noires et l'urne $V$ contient 3 boules blanches et 7 boules noires.
 
 \begin{enumerate}
 \item Une personne lance un dé parfaitement équilibré 3 fois de suite.\\
@@ -333,7 +333,7 @@ Si les 3 numéros obtenus sont différents les uns des autres alors elle effectu
 \item Sachant qu'elle a obtenu une boule blanche, quelle est la probabilité que les 3 numéros obtenus aient été distincts ?
 \end{enumerate}
 \end{enumerate}
-\end{Exa} 
+\end{Exercice} 
 
 \corr \begin{enumerate}
 \item Chaque issue de cette expérience aléatoire correspond à une liste à $3$ éléments de l'ensemble $\{1,2,3,4,5,6\}$ (il y a un ordre et la répétition est possible). Le cardinal de l'univers est donc $6^3$.
@@ -373,7 +373,7 @@ $$P_B(A)=\frac{P(A)P_A(B)}{P(B)}=\frac{\frac 59 \times \frac 7{10}}{\frac{47}{90
 \end{enumerate}
 \end{enumerate}
 
-\begin{Exa} On lance deux dés équilibrés jusqu'à ce que la somme des numéros obtenus soit un multiple de $5$. 
+\begin{Exercice}{} On lance deux dés équilibrés jusqu'à ce que la somme des numéros obtenus soit un multiple de $5$. 
 \begin{enumerate}
 \item 
 \begin{enumerate}
@@ -383,7 +383,7 @@ $$P_B(A)=\frac{P(A)P_A(B)}{P(B)}=\frac{\frac 59 \times \frac 7{10}}{\frac{47}{90
 \item Donner la probabilité que l'épreuve s'arrête par l'obtention d'un 10.
 \item L'épreuve peut-elle ne jamais s'arrêter?
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item 
@@ -413,9 +413,9 @@ $$P(C) = \frac{1}{9} \times \frac{1}{1-\frac{29}{36}} = \frac{1}{9} \times \frac
 \item En pratique oui mais la somme des deux probabilités précédentes étant égale à $1$, la probabilité que cela arrive vaut $0$.
 \end{enumerate}
 
-\begin{Exa} Soient $n \geq 1$ et $(A_1, \ldots, A_n)$ une famille de $n$ évènements d'un espace probabilisé $(\Omega, \mathcal{A}, \P)$. Montrer que :
+\begin{Exercice}{} Soient $n \geq 1$ et $(A_1, \ldots, A_n)$ une famille de $n$ évènements d'un espace probabilisé $(\Omega, \mathcal{A}, \P)$. Montrer que :
 $$ \P(A_1 \cup \cdots \cup A_n) \leq \P(A_1) + \cdots \P(A_n) \leq P(A_1 \cap \cdots \cap A_n) + n-1$$
-\end{Exa}
+\end{Exercice}
 
 \corr Montrons les deux inégalités par récurrence.
 
@@ -456,7 +456,7 @@ ce qui prouve l'inégalité \og de droite \fg.
 \item La propriété est vraie au rang $1$ et est héréditaire. Par principe de récurrence, elle est vraie pour tout entier $n \geq 1$.
 \end{itemize}
 
-\begin{Exa} On lance une infinité de fois une pièce équilibrée. On note pour tout $n \in \mathbb{N}^*$, $A_n$ l'évènement \og on obtient au moins une fois la séquence pile pile face au cours des $n$ premiers lancers \fg et $P_n$  l'évènement \og on obtient pile au $n$-ième lancer \fg .
+\begin{Exercice}{} On lance une infinité de fois une pièce équilibrée. On note pour tout $n \in \mathbb{N}^*$, $A_n$ l'évènement \og on obtient au moins une fois la séquence pile pile face au cours des $n$ premiers lancers \fg et $P_n$  l'évènement \og on obtient pile au $n$-ième lancer \fg .
 
 \begin{enumerate}
 \item Donner $P(A_1)$, $P(A_2)$ et $P(A_3)$.
@@ -468,7 +468,7 @@ ce qui prouve l'inégalité \og de droite \fg.
 \item Montrer que la famille d'évènements $(A_n)_{n \geq 0}$ est croissante. En déduire $\dis P \bigg{(} \bigcup_{n=1}^{+  \infty} A_n \bigg{)}$. Qu'en déduit-on ?
 \end{enumerate}
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr On lance une infinité de fois une pièce équilibrée. On note pour tout $n \in \mathbb{N}^*$, $A_n$ l'évènement \og on obtient au moins une fois la séquence pile pile face au cours des $n$ premiers lancers \fg et $P_n$  l'évènement \og on obtient pile au $n$-ième lancer \fg .
 
@@ -514,10 +514,10 @@ On en déduit que l'évènement $\bigcup_{n=1}^{+  \infty} A_n $ se réalise ave
 \end{enumerate}
 \end{enumerate}
 
-\begin{Exa}[Le problème des anniversaires]
+\begin{Exercice}{Le problème des anniversaires}
 On considère un groupe de $n$ personnes ($n \in \mathbb{N}^*$ avec $n \leq 365$).\\
 Quelle est la probabilité qu'au moins deux personnes aient leur anniversaire le même jour ?
-\end{Exa}
+\end{Exercice}
 
 \corr En considérant cette expérience comme une expérience aléatoire et en considérant que l'on est en situation d'équiprobabilité, on peut modéliser celle-ci avec l'univers $\Omega$ constitué de $n$-listes formés de dates d'anniversaire ($365$ choix). Ainsi,
 $$ \textrm{Card}(\Omega) = 365^n$$
@@ -539,7 +539,7 @@ $$ P(A) = 1- P(\overline{A}) = 1 - \dfrac{\dfrac{365!}{(365-n)!}}{365^n}$$
 
 
 
-\begin{Exa} Dans une zone d\'esertique, un animal erre entre trois points d'eau $A, B$ et $C.$
+\begin{Exercice}{} Dans une zone d\'esertique, un animal erre entre trois points d'eau $A, B$ et $C.$
 A l'instant $t=0,$ il se trouve au point $A.$
 
 \noindent Quand il a \'epuis\'e l'eau du point o\`u il se trouve, il part avec \'equiprobabilit\'e rejoindre l'un des deux autres points d'eau.
@@ -589,7 +589,7 @@ Soit $n\in\N.$ On note :
 	
 	
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 
@@ -639,9 +639,9 @@ $$ X_n = A^n X_0$$
 Or on a $A^n=PD^n P^{-1}$ et $D^n$ est facile à calculer car $D$ est diagonale.
 \end{enumerate}
 
-\begin{Exa} Calculer les sommes suivantes ($n \in \mathbb{N}$) : 
+\begin{Exercice}{} Calculer les sommes suivantes ($n \in \mathbb{N}$) : 
 $$\dis\sum_{k=0}^n k \binom{n}{k}, \; \dis\sum_{k=0}^n\dis\frac{1}{k+1} \binom{n}{k} \; \hbox{ et } \; \sum_{k=0}^n \binom{2n+1}{k}$$
-\end{Exa}
+\end{Exercice}
 
 \corr Soit $f : \mathbb{R} \rightarrow \mathbb{R}$ définie par :
 $$ \forall x \in \mathbb{R}, \; f(x)=(x+1)^n = \sum_{k=0}^n \binom{n}{k} x^k$$
@@ -676,7 +676,7 @@ On en déduit alors que :
 et ainsi :
 $$  S= 2^{2n} = 4^n $$
 
-\begin{Exa} Un tiroir contient 5 paires de chaussures noires, 3 paires de chaussures vertes et 2 paires de chaussures rouges. Toutes les paires d'une même couleur ont des formes différentes. On prend deux chaussures au hasard simultanément dans le tiroir.
+\begin{Exercice}{} Un tiroir contient 5 paires de chaussures noires, 3 paires de chaussures vertes et 2 paires de chaussures rouges. Toutes les paires d'une même couleur ont des formes différentes. On prend deux chaussures au hasard simultanément dans le tiroir.
 \begin{enumerate}
 \item Combien y a-t-il de tirages possibles ?
 \item 
@@ -689,7 +689,7 @@ Combien de tirages donnent :
 \item une vraie paire de chaussures (deux chaussures de même couleur et même forme avec un pied gauche et un pied droit) ?
 \end{enumerate}
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 \begin{enumerate}
@@ -725,7 +725,7 @@ tirages avec deux chaussures de la même couleur avec un pied gauche et un pied 
 \end{enumerate}
 \end{enumerate}
 
-\begin{Exa}
+\begin{Exercice}{}
 Soit $p \in ]0,1[$. On note $q=1-p$.\\
 On effectue une infinité de lancers indépendants d'une pièce pour laquelle la probabilité d'obtenir Face est $p$.
 \begin{enumerate}
@@ -738,7 +738,7 @@ $$P(A_n)=\begin{cases}
 \item Est-il possible que Face ne soit jamais suivi de Pile ?\\
 Calculer la probabilité de l'événement $A$ : \og Face n'est jamais suivi de Pile \fg.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr Notons pour tout entier $k \geq 1$, $F_k$ l'événement \og La pièce donne face lors du $k$-ième lancer \fg .
 
@@ -784,13 +784,13 @@ Sachant que $p$ et $q$ appartient à $]0,1[$ si $p \neq 1/2$ et en utilisant le 
 $$ P(A)=0$$
 \end{enumerate}
 
-\begin{Exa} Une urne contient initialement une boule rouge et une boule blanche. On répète $n$ fois ($n \geq 1$) l'opération suivante : tirer une boule blanche, noter sa couleur, et la remettre dans l'urne accompagnée d'une autre boule de la même couleur. 
+\begin{Exercice}{} Une urne contient initialement une boule rouge et une boule blanche. On répète $n$ fois ($n \geq 1$) l'opération suivante : tirer une boule blanche, noter sa couleur, et la remettre dans l'urne accompagnée d'une autre boule de la même couleur. 
 
 \begin{enumerate}
 \item Quelle est la probabilité de ne tirer que des boules rouges ?
 \item Même question si à chaque étape on remet deux boules de la même couleur dans l'urne. On donnera un équivalent simple de cette probabilité.
 \end{enumerate}
-\end{Exa} 
+\end{Exercice} 
 
 \corr Notons pour tout entier $k \in \Interv{1}{n}$, $R_k$ l'évènement \og On tire une boule rouge au $k$-ième lancer \fg.
 
@@ -828,14 +828,14 @@ P(A) & \underset{+ \infty}{\sim} \dfrac{\left(\dfrac{2n}{e} \right)^{2n} \sqrt{4
 \end{enumerate}
 
 
-\begin{Exa} Soit $(A_n)_{n \geq 0}$ une famille d'évènements mutuellement indépendants d'un même espace probabilisé.
+\begin{Exercice}{} Soit $(A_n)_{n \geq 0}$ une famille d'évènements mutuellement indépendants d'un même espace probabilisé.
 \begin{enumerate}
 \item On suppose que $\dis \sum_{n \geq 0} P(A_n)$ converge. Montrer que :
 $$ \P \left( \bigcap_{n \geq 0} \overline{A_n} \right) \leq \exp \left(- \sum_{k=0}^{+ \infty} \P(A_k) \right)$$
 \item On suppose que $\dis \sum_{n \geq 0} P(A_n)$ diverge. Montrer que :
 $$ \P \left( \bigcap_{n \geq 0} \overline{A_n} \right) = 0$$
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 \begin{enumerate}
@@ -874,12 +874,12 @@ On en déduit par unicité de la limite que :
 $$ P \left( \bigcap_{k=0}^{+ \infty} \overline{A_k} \right) = 0$$
 \end{enumerate}
 
-\begin{Exa} On lance un dé non truqué à 5 faces numérotées de 1 à 5. Pour tout entier $n \geq 1$, on note $p_n$ la probabilité que la somme des résultats obtenus lors des $n$ premiers lancers soit paire. 
+\begin{Exercice}{} On lance un dé non truqué à 5 faces numérotées de 1 à 5. Pour tout entier $n \geq 1$, on note $p_n$ la probabilité que la somme des résultats obtenus lors des $n$ premiers lancers soit paire. 
 \begin{enumerate}
 \item Calculer $p_1$ et $p_2$.
 \item Donner une relation de récurrence vérifiée par $(p_n)_{n \geq 1}$ et en déduire l'expression de $p_n$ pour tout $n \geq 1$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr Notons pour tout entier $n \geq 1$, $A_n$ l'évènement défini par \og la somme des résultats obtenus lors des $n$ premiers lancers est paire \fg .
 
@@ -914,10 +914,10 @@ et ainsi :
 $$ p_n = \dfrac{1}{2} - \dfrac{1}{10}  \left( - \dfrac{1}{5} \right)^{n-1}$$
 \end{enumerate}
 
-\begin{Exa} Soit $(p, n) \in \mathbb{N}^2$ tel que $p \leq n$. Déterminer la valeur de $\dis\sum_{k=p}^n{k\choose p} \cdot$
+\begin{Exercice}{} Soit $(p, n) \in \mathbb{N}^2$ tel que $p \leq n$. Déterminer la valeur de $\dis\sum_{k=p}^n{k\choose p} \cdot$
 
 %={n+1\choose p+1}\cdot$
-\end{Exa}
+\end{Exercice}
 
 \corr Notons $S$ cette somme. On a :
 \begin{align*}
@@ -930,7 +930,7 @@ $$ S = \binom{p+3}{p+1} +  \cdots + \binom{n}{p} $$
 De proche en proche, on obtient :
 $$ S = \binom{n}{p+1}  + \binom{n}{p} = \binom{n+1}{p+1} $$
 
-\begin{Exa} On considère une particule se déposant à chaque seconde sur l'un des trois sommets $A,B,C$ d'un triangle suivant le procédé suivant :
+\begin{Exercice}{} On considère une particule se déposant à chaque seconde sur l'un des trois sommets $A,B,C$ d'un triangle suivant le procédé suivant :
 
 \vspace{0.3cm}
 
@@ -953,7 +953,7 @@ Pour tout $n\in \N^*$, on note $A_n$ (respectivement $B_n$ et $C_n$) l'événeme
  \item Montrer que pour tout $n \in \mathbb{N}^*$, $c_n = (1/2)^n-(1/6)^n$. En déduire $a_n$ et $b_n$ en fonction de $n$.
  \item Étudier la convergence des suites $(a_n)_{n \geq 1}, (b_n)_{n \geq 1}, (c_n)_{n \geq 1}$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -1018,11 +1018,11 @@ donc
 $$\lim_{n \rightarrow + \infty} b_n = 1$$
 \end{enumerate}
 
-\begin{Exa} Soit $(a_n)_{n \geq 0}$ une suite strictement décroissante de réels strictement positifs de limite nulle.  Déterminer $\lambda \in \R$ tel qu'il existe une probabilité $\P$ sur $\bigl(\N,\mathcal{P}(\N)\bigr)$ vérifiant :
+\begin{Exercice}{} Soit $(a_n)_{n \geq 0}$ une suite strictement décroissante de réels strictement positifs de limite nulle.  Déterminer $\lambda \in \R$ tel qu'il existe une probabilité $\P$ sur $\bigl(\N,\mathcal{P}(\N)\bigr)$ vérifiant :
     \[
     \forall n \geq 0, \qquad \P\bigl( \lbrace n, n+1, \ldots \rbrace) = \lambda a_n
     \]
-\end{Exa} 
+\end{Exercice} 
 
 \corr Pour tout $n \geq 0$, notons :
 $$ A_n = \lbrace n, n+1, \ldots \rbrace$$
@@ -1059,13 +1059,13 @@ car $(a_n)_{n \geq 0}$ est une suite décroissante positive. Ainsi, avec ce choi
     \forall n \geq 0, \qquad \P\bigl( \lbrace n, n+1, \ldots \rbrace) = \lambda a_n
     \]
     
-\begin{Exa} Soit $(A_n)_{n \geq 0}$ une suite d'évènements d'un même espace probabilisé ayant tous probabilité 1. 
+\begin{Exercice}{} Soit $(A_n)_{n \geq 0}$ une suite d'évènements d'un même espace probabilisé ayant tous probabilité 1. 
  
  \begin{enumerate}
  \item Montrer que $\P \left( \bigcup_{n \geq 0} \overline{A_n} \right) = 0$.
  \item Qu'en déduit-on pour $\P \left( \bigcap_{n \geq 0} A_n \right)$?
  \end{enumerate}
- \end{Exa}
+ \end{Exercice}
  
  \corr 
  
@@ -1084,10 +1084,10 @@ car $(a_n)_{n \geq 0}$ est une suite décroissante positive. Ainsi, avec ce choi
  \end{enumerate}
  
  
-\begin{Exa} Soit $\Omega$ un univers muni d'une tribu ${\cal A}$. On se donne un sous-ensemble $\Omega'$ de $\Omega$ et on pose :
+\begin{Exercice}{} Soit $\Omega$ un univers muni d'une tribu ${\cal A}$. On se donne un sous-ensemble $\Omega'$ de $\Omega$ et on pose :
  $${\cal A}'=\{A\cap \Omega',\ A\in{\cal A}\}$$
 Montrer que ${\cal A}'$ est une tribu sur $\Omega'.$
-\end{Exa}
+\end{Exercice}
 
 \corr Montrons les trois points de la définition d'une tribu.
 
@@ -1115,7 +1115,7 @@ $$ \bigcup_{n=0}^{+ \infty} A_n \in \mathcal{A}'$$
 \end{itemize}
 Ainsi, $\mathcal{A}'$ est une tribu de $\Omega'$.
 
-\begin{Exa} On effectue une succession infinie de lancers indépendants d'une pièce
+\begin{Exercice}{} On effectue une succession infinie de lancers indépendants d'une pièce
 donnant Pile avec la probabilité $p\in ]0,1[$ et Face avec la probabilité $%
 q=1-p$.\newline
 On s'intéresse dans cet exercice aux successions de lancers amenant un mê%
@@ -1142,7 +1142,7 @@ Quelle est la probabilité que la première série ne se termine pas?
 \item En déduire que, pour $k\in \mathbb{N}^{* }$, $P(B_k)$.
 \end{enumerate}
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr Pour tout $i\in \mathbb{N}^{* }$, on note $P_{i}$ l'événement \og le $i$-ième lancer amène Pile \fg.
 
@@ -1190,7 +1190,7 @@ car $p=1-q$.
 \end{enumerate}
 \end{enumerate}
 
-\begin{Exa} Une urne contient 5 boules blanches et 10 boules noires.
+\begin{Exercice}{} Une urne contient 5 boules blanches et 10 boules noires.
 
 \begin{enumerate}
 \item On tire au hasard successivement et avec remise 2 boules de l'urne.
@@ -1201,7 +1201,7 @@ car $p=1-q$.
 \item Mêmes questions dans le cas de tirages sans remise.
 \item On tire simultanément 5 boules de l'urne. Quelle est la probabilité d'obtenir 2 boules blanches et 3 boules noires ?
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -1236,13 +1236,13 @@ Nous sommes en situation d'équiprobabilité donc :
 $$ \P(D) = \dfrac{\binom{5}{2} \binom{10}{3}}{\binom{15}{5}}$$
 \end{enumerate}
 
-\begin{Exa}Soient $3$ urnes $U_1,U_2$ et $U_3$ et $n$ boules numérotées ($n \in \mathbb{N}^*$) de 1 à $n$.
+\begin{Exercice}{}Soient $3$ urnes $U_1,U_2$ et $U_3$ et $n$ boules numérotées ($n \in \mathbb{N}^*$) de 1 à $n$.
 \begin{enumerate}
 \item Quel est le nombre total de répartitions de ces boules dans les trois urnes ?
 \item Quel est le nombre total de répartitions qui laissent au moins $U_1$ vide ? au moins une urne vide ?
 \item En déduire le nombre de répartitions qui ne laissent aucune urne vide.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -1254,13 +1254,13 @@ $$ 3^n - (3 \times 2^n - 3) = 3^n - 3 \times 2^n + 3$$
 qui ne laissent aucune urne vide.
 \end{enumerate}
 
-\begin{Exa}  Soient $E,F$ deux évènements d'un même espace probabilisé.
+\begin{Exercice}{}  Soient $E,F$ deux évènements d'un même espace probabilisé.
 \begin{enumerate}
 \item Montrer que $P(E \cup F) \leq P(E) + P(F)$.
 \item Soit $G$ un évènement. Montrer que $P(E \cup F \cup G) \leq P(E) + P(F) + P(G)$.
 \item Écrire cette inégalité pour $\overline{E}$, $\overline{F}$ et $\overline{G}$ et en déduire que si $E,F$ et $G$ sont équiprobables de probabilité $p$ et si $P(E \cap F \cap G)=0$ alors $p \leq \dis \frac{2}{3} \cdot$
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 \begin{enumerate}
@@ -1287,12 +1287,12 @@ et finalement :
 $$ p \leq \dfrac{2}{3}$$
 \end{enumerate}
 
-\begin{Exa} Un enfant lance un galet pour faire des ricochets sur l'eau. On suppose que la probabilité que le galet ricoche pour la $n$-ième fois sachant qu'il a ricoché les $(n-1)$ coups d'avant, est égale à $\dis \frac{1}{n}\cdot$ On suppose que lors du premier coup, le galet ricoche nécessairement.
+\begin{Exercice}{} Un enfant lance un galet pour faire des ricochets sur l'eau. On suppose que la probabilité que le galet ricoche pour la $n$-ième fois sachant qu'il a ricoché les $(n-1)$ coups d'avant, est égale à $\dis \frac{1}{n}\cdot$ On suppose que lors du premier coup, le galet ricoche nécessairement.
 \begin{enumerate}
 \item Soit $n \in \mathbb{N}^*$. Déterminer la probabilité $p_n$ que le galet coule après $n$ ricochets réussis.
 \item Montrer que $\dis \sum_{n \geq 1} p_n$ converge, donner sa somme et interpréter.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr Notons pour tout entier $k \geq 1$, $A_k$ l'évènement \og Le galet ricoche au $k$-ième coup \fg.
 
@@ -1325,7 +1325,7 @@ Ainsi, le galet coule presque-surement.
 \end{enumerate}
 
 
-\begin{Exa} Soit $f : \mathbb{N}^2 \rightarrow \mathbb{N}$ définie par :
+\begin{Exercice}{} Soit $f : \mathbb{N}^2 \rightarrow \mathbb{N}$ définie par :
 $$ f((p,q)) = \frac{(p+q)(p+q+1)}{2} + q$$
 \begin{enumerate}
 \item Calculer $f((0,0))$, $f((1,0))$, $f((0,1))$, $f((2,0))$ et $f((1,1))$.
@@ -1339,7 +1339,7 @@ Encadrer alors $n-\dfrac{m_0(m_0+1)}{2}$ et en déduire que $f$ est une surjecti
 \item Conclure.
 \end{enumerate}
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 \begin{enumerate}

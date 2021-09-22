@@ -19,12 +19,12 @@
 \maketitle{Chapitre 5}{Matrices et applications linéaires}
 
 
-\noindent Dans tout le chapitre, $n$, $k$, $q$ et $p$ seront des entiers naturels non nuls et $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
+Dans tout le chapitre, $n$, $k$, $q$ et $p$ seront des entiers naturels non nuls et $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
 
 \section{Calcul matriciel}
 \subsection{L'espace vectoriel $\mathcal{M}_{n,p}(\mathbb{K})$}
 
-\noindent On note $\mathcal{M}_{n,p}(\mathbb{K})$ l'ensemble des matrices à $n$ lignes et $p$ colonnes à coefficients dans $\mathbb{K}$.
+On note $\mathcal{M}_{n,p}(\mathbb{K})$ l'ensemble des matrices à $n$ lignes et $p$ colonnes à coefficients dans $\mathbb{K}$.
 %
 %Soient $A=(a_{i,j})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq p}}$ et $B=(b_{i,j})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq p}}$ deux éléments de $\mathcal{M}_{n,p}(\mathbb{K})$ (l'ensemble des matrices à $n$ lignes et $p$ colonnes à coefficients dans $\mathbb{K}$) et $\lambda \in \mathbb{K}$.
 %
@@ -39,30 +39,31 @@
 %
 %\medskip
 %
-%\noindent On définit ainsi une loi de composition interne $+$ et une loi de composition externe $\cdot$ sur $\mathcal{M}_{n,p}(\mathbb{K})$ qui en font un $\mathbb{K}$-espace vectoriel.
+%On définit ainsi une loi de composition interne $+$ et une loi de composition externe $\cdot$ sur $\mathcal{M}_{n,p}(\mathbb{K})$ qui en font un $\mathbb{K}$-espace vectoriel.
 %
 %\medskip
 
 \medskip
 
-\noindent Pour tout $k\in \Interv{1}{n}$ et $ l \in \Interv{1}{p}$, on définit la matrice $E_{k,l}$ de $\mathcal{M}_{n,p}( \mathbb{K})$ comme étant la matrice dont tous les coefficients sont nuls exceptés le coefficient de la $k$-ième ligne et de la $l$-ième colonne qui vaut $1$. Autrement dit,
+Pour tout $k\in \Interv{1}{n}$ et $ l \in \Interv{1}{p}$, on définit la matrice $E_{k,l}$ de $\mathcal{M}_{n,p}( \mathbb{K})$ comme étant la matrice dont tous les coefficients sont nuls exceptés le coefficient de la $k$-ième ligne et de la $l$-ième colonne qui vaut $1$. Autrement dit,
 $$ E_{k,l} = ( \delta_{i,k} \delta_{j,l})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq p}}$$
 où $\delta_{i,j}$ est le symbole de Kronecker.
 
-\begin{prop} La famille $(E_{i,j})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq p}}$ est une base de $\mathcal{M}_{n,p}(\mathbb{K})$ et ainsi $\textrm{dim}(\mathcal{M}_{n,p}(\mathbb{K}))=np$.
-\end{prop}
+\begin{Proposition}{} La famille $(E_{i,j})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq p}}$ est une base de $\mathcal{M}_{n,p}(\mathbb{K})$ et ainsi $\textrm{dim}(\mathcal{M}_{n,p}(\mathbb{K}))=np$.
+\end{Proposition}
 
 
 \subsection{Produit de deux matrices}
 
-\noindent Soient $A=(a_{i,j})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq p}} \in \mathcal{M}_{n,p}(\mathbb{K})$ et $B=(b_{i,j})_{\substack{1 \leq i \leq p \\ 1 \leq j \leq q}} \in \mathcal{M}_{p,q}(\mathbb{K})$. On définit la matrice $AB$ de $\mathcal{M}_{n,q}(\mathbb{K})$ par :
+Soient $A=(a_{i,j})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq p}} \in \mathcal{M}_{n,p}(\mathbb{K})$ et $B=(b_{i,j})_{\substack{1 \leq i \leq p \\ 1 \leq j \leq q}} \in \mathcal{M}_{p,q}(\mathbb{K})$. On définit la matrice $AB$ de $\mathcal{M}_{n,q}(\mathbb{K})$ par :
 $$ \forall i \in \Interv{1}{n}, \, \forall j \in \Interv{1}{q}, \quad (AB)_{i,j} = \sum_{k=1}^p a_{i,k} b_{k,j}$$
 Autrement dit, le coefficient $(AB)_{i,j}$ est le produit\footnote{Ici on triche car on définit un produit à l'aide de ce même produit... } de la $i$-ème ligne de $A$ avec la $j$-ième colonne de $B$.
 
 \medskip
 
-\begin{rems}
- \item Le \textit{nombre de colonnes} de $A$ doit être égal au \textit{nombre de lignes} de $B$.
+\begin{Remarques}{}
+\begin{itemize}
+ \item Le \emph{nombre de colonnes} de $A$ doit être égal au \emph{nombre de lignes} de $B$.
 % \item Le coefficient $c_{i,j}$ est égal au produit de la $i\eme$ ligne de $A$ par la $j\eme$ colonne de $B$.
 \item Il est important de bien connaitre la formule liée aux tailles : 
 
@@ -74,15 +75,16 @@ Autrement dit, le coefficient $(AB)_{i,j}$ est le produit\footnote{Ici on triche
 %\begin{center}
 %\includegraphics[scale=0.5]{produitmatrice}
 %\end{center}
-\end{rems}
+\end{itemize}
+\end{Remarques}{}
 
 \begin{att}
- Le produit de matrices \textit{ne vérifie pas} certaines propriétés du produit de nombres :
+ Le produit de matrices \emph{ne vérifie pas} certaines propriétés du produit de nombres :
  \begin{enumerate}
 \item Le produit $AB$ peut être défini et le produit $BA$ ne pas être défini.
 \item Même si les produits $AB$ et $BA$ sont définis, ils peuvent être différents.
 %
-%\textit{Exemple :} Soit $A=\begin{pmatrix}
+%\emph{Exemple :} Soit $A=\begin{pmatrix}
 % 0 & 1\\
 % 0 & 0
 % \end{pmatrix} \in \mathcal{M}_{2}(\mathbb{R})$ et $B=\begin{pmatrix}
@@ -100,11 +102,11 @@ Autrement dit, le coefficient $(AB)_{i,j}$ est le produit\footnote{Ici on triche
 % \end{pmatrix} \;\;\text{ donc }\;\; AB \neq BA.$$
 \item On peut avoir $AB=0$ sans avoir $A=0$ ou $B=0$.
 %
-%\textit{Exemple :} Dans l'exemple précédent, $AB=0_2$ et pourtant $A \neq 0_2$ et $B \neq 0_2$.
+%\emph{Exemple :} Dans l'exemple précédent, $AB=0_2$ et pourtant $A \neq 0_2$ et $B \neq 0_2$.
 \item On peut avoir $AC=BC$ sans avoir $A=B$.
 
 %
-% \textit{Exemple :} Soit $A=\begin{pmatrix}
+% \emph{Exemple :} Soit $A=\begin{pmatrix}
 % 1 & -1\\
 % 2 & 1
 % \end{pmatrix}$, $B=\begin{pmatrix}
@@ -124,14 +126,14 @@ Autrement dit, le coefficient $(AB)_{i,j}$ est le produit\footnote{Ici on triche
 \medskip
 
 
-\begin{prop}  Soient $n \geq 1$ et $(i,j,k,l) \in \Interv{1}{n}^4$. On a $E_{i,j} E_{k,l} = \delta_{j,k} E_{i,l}$ (on considère des matrices carrées d'ordre $n$).
-\end{prop}
+\begin{Proposition}{}  Soient $n \geq 1$ et $(i,j,k,l) \in \Interv{1}{n}^4$. On a $E_{i,j} E_{k,l} = \delta_{j,k} E_{i,l}$ (on considère des matrices carrées d'ordre $n$).
+\end{Proposition}
 
-\begin{ex} Soient $A$ et $B$ deux matrices de $\mathcal{M}_n(\mathbb{R})$ telles que la somme des coefficients sur chaque ligne de ces matrices est égal à $1$. Montrons que $AB$ vérifie la même propriété.
+\begin{Exemple} Soient $A$ et $B$ deux matrices de $\mathcal{M}_n(\mathbb{R})$ telles que la somme des coefficients sur chaque ligne de ces matrices est égal à $1$. Montrons que $AB$ vérifie la même propriété.
 
 
 
-\end{ex}
+\end{Exemple}
 
 \newpage
 
@@ -140,40 +142,42 @@ $\phantom{test}$
 \vspace{4cm}
 \subsection{Matrices et tailles particulières}
 
-\begin{defin}
+\begin{Definition}{}
 \begin{itemize}
-\item On appelle \textit{matrice carrée d'ordre $n$} toute matrice de taille $n \times n$. Les coefficients $(a_{i,i})_{1 \leq i \leq n}$ d'une matrice carrée $A$ sont appelés \textit{les coefficients diagonaux} de $A$ et ils constituent \textit{la diagonale} de $A$.
+\item On appelle \emph{matrice carrée d'ordre $n$} toute matrice de taille $n \times n$. Les coefficients $(a_{i,i})_{1 \leq i \leq n}$ d'une matrice carrée $A$ sont appelés \emph{les coefficients diagonaux} de $A$ et ils constituent \emph{la diagonale} de $A$.
 
-\noindent On note $\mathcal{M}_n(\mathbb{K})$ (au lieu de $\mathcal{M}_{n,n}( \mathbb{K})$) \textit{l'ensemble des matrices carrées d'ordre $n$ à coefficients dans $\mathbb{K}$}.
-\item On dit qu'une matrice carrée est \textit{diagonale} lorsque tous ses coefficients non diagonaux sont nuls.
-\item On dit qu'une matrice est \textit{triangulaire supérieure} lorsque tous ses coefficients situés en-dessous de la diagonale sont nuls.
-\item On dit qu'une matrice est \textit{triangulaire inférieure} lorsque tous ses coefficients situés au dessus de la diagonale sont nuls.
+On note $\mathcal{M}_n(\mathbb{K})$ (au lieu de $\mathcal{M}_{n,n}( \mathbb{K})$) \emph{l'ensemble des matrices carrées d'ordre $n$ à coefficients dans $\mathbb{K}$}.
+\item On dit qu'une matrice carrée est \emph{diagonale} lorsque tous ses coefficients non diagonaux sont nuls.
+\item On dit qu'une matrice est \emph{triangulaire supérieure} lorsque tous ses coefficients situés en-dessous de la diagonale sont nuls.
+\item On dit qu'une matrice est \emph{triangulaire inférieure} lorsque tous ses coefficients situés au dessus de la diagonale sont nuls.
 \end{itemize}
-\end{defin}
+\end{Definition}
 
 
 
-\begin{defin}
+\begin{Definition}{}
 \begin{itemize}
-\item La matrice de taille $n \times p$ dont tous les coefficients sont nuls est appelée la \textit{matrice nulle de taille $n \times p$} et est notée $0_{n,p}$ (ou $0_{n}$ si $n=p$).
-\item La matrice carrée d'ordre $n$ dont tous les coefficients sont nuls sauf les coefficients diagonaux qui valent tous 1 est appelée la \textit{matrice identité d'ordre $n$} et est notée $I_n$.
+\item La matrice de taille $n \times p$ dont tous les coefficients sont nuls est appelée la \emph{matrice nulle de taille $n \times p$} et est notée $0_{n,p}$ (ou $0_{n}$ si $n=p$).
+\item La matrice carrée d'ordre $n$ dont tous les coefficients sont nuls sauf les coefficients diagonaux qui valent tous 1 est appelée la \emph{matrice identité d'ordre $n$} et est notée $I_n$.
 \end{itemize}
-\end{defin}
+\end{Definition}
 
 \subsection{Puissances de matrices}
-\noindent Si on manipule uniquement deux matrices carrés de tailles $n$ notées $A$ et $B$, alors les produits $AB$ et $BA$ \textit{sont toujours définis} (on a le même nombre de lignes et colonnes pour les deux matrices). On a par contre déjà vu qu'ils pouvaient être différents. 
+Si on manipule uniquement deux matrices carrés de tailles $n$ notées $A$ et $B$, alors les produits $AB$ et $BA$ \emph{sont toujours définis} (on a le même nombre de lignes et colonnes pour les deux matrices). On a par contre déjà vu qu'ils pouvaient être différents. 
 
 
-\begin{defin}[Puissance d'une matrice carrée]
+\begin{Definition}{}[Puissance d'une matrice carrée]
 Soit $A \in \mathcal{M}_{n}(\mathbb{K})$.\\
-On pose $A^0=I_n$ et pour $p \in \mathbb{N}^*$, on appelle \textit{puissance $p$-ième de la matrice $A$} et on note $A^p$ l'élément de $\mathcal{M}_n(\mathbb{K})$ défini par :
+On pose $A^0=I_n$ et pour $p \in \mathbb{N}^*$, on appelle \emph{puissance $p$-ième de la matrice $A$} et on note $A^p$ l'élément de $\mathcal{M}_n(\mathbb{K})$ défini par :
 $$A^p= \underbrace{A \times A \times \cdots \times A}_{p \text{ termes}}$$
-\end{defin}
+\end{Definition}
 
-\begin{rems}
+\begin{Remarques}{}
+\begin{itemize}
 \item Soient $A \in \mathcal{M}_n(\mathbb{K})$ et $p,q \in \mathbb{N}$. On a $A^{p+q}=A^pA^q=A^qA^p.$
 \item Il faut faire attention quand on factorise des puissances de matrices, par exemple si $A \in \mathcal{M}_{n}(\mathbb{K})$, \newline $A^2+A = A( A+I_n)$.
-\end{rems}
+\end{itemize}
+\end{Remarques}{}
 
 \begin{metho}
 Il est souvent demandé dans les exercices l'expression explicite de $A^n$ en fonction de $n \in \mathbb{N}$. Il existe (au moins) 4 cas où il est facile de donner une expression explicite des puissances d'une matrice.
@@ -185,42 +189,44 @@ Il est souvent demandé dans les exercices l'expression explicite de $A^n$ en fo
 \end{itemize}
 \end{metho}
 
-\begin{exa} Déterminer les puissances de $A = \begin{pmatrix}0&-1\\1&0\end{pmatrix}$ et $B=\begin{pmatrix} 1&-1\\-1&1\end{pmatrix}\cdot$
-\end{exa}
+\begin{ApplicationDirecte} Déterminer les puissances de $A = \begin{pmatrix}0&-1\\1&0\end{pmatrix}$ et $B=\begin{pmatrix} 1&-1\\-1&1\end{pmatrix}\cdot$
+\end{ApplicationDirecte}
 
-\begin{thm}[Formule du binôme]
+\begin{Theoreme}{Formule du binôme}
 Soient $n\in \mathbb{N}$ et $A,B$ deux matrices carrées de même ordre. Si $A$ et $B$ commutent alors :
 \[ (A+B)^n = \sum_{k=0}^n \binom{n}{k} A^k B^{n-k} \]
-\end{thm}
+\end{Theoreme}
 
-\begin{ex} Déterminons les puissances de $M = \begin{pmatrix}
+\begin{Exemple} Déterminons les puissances de $M = \begin{pmatrix}
 2 & 0 & 1 \\
 0 & 1 & 0 \\
 0 & 0 & 2
 \end{pmatrix}\cdot$
 
 \vspace{10cm}
-\end{ex}
+\end{Exemple}
 
-\begin{rems}
+\begin{Remarques}{}
+\begin{itemize}
 \item Attention, pour appliquer cette formule il faut vérifier que $A$ et $B$ commutent!
 \item En particulier si l'une des deux matrices est la matrice identité (ou un multiple de celle-ci par un scalaire), elle commute avec l'autre matrice et on peut donc appliquer cette formule.
-\end{rems}
+\end{itemize}
+\end{Remarques}{}
 
 \subsection{Transposée d'une matrice}
-\begin{defin}
+\begin{Definition}{}
  
 Soit $A=(a_{i,j})_{{1 \leq i \leq n}\atop{1 \leq j \leq p}} \in \mathcal{M}_{n,p}(\mathbb{K})$.\\
 
 
-\noindent On appelle \textit{matrice transposée de $A$} la matrice de $\mathcal{M}_{p,n}(\mathbb{K})$, notée $^tA$, définie par \linebreak $^tA=(b_{i,j})_{{1 \leq i \leq p}\atop{1 \leq j \leq n}}$  où pour tout  $i$ de $\Interv 1p$ et tout $j$ de $\Interv 1n$, on a $b_{i,j}= a_{j,i}.$
-\end{defin}
+On appelle \emph{matrice transposée de $A$} la matrice de $\mathcal{M}_{p,n}(\mathbb{K})$, notée $^tA$, définie par \linebreak $^tA=(b_{i,j})_{{1 \leq i \leq p}\atop{1 \leq j \leq n}}$  où pour tout  $i$ de $\Interv 1p$ et tout $j$ de $\Interv 1n$, on a $b_{i,j}= a_{j,i}.$
+\end{Definition}
 
-%\begin{rem}
+%\begin{Remarque}{}
 %La première ligne de $A$ est la première colonne de $^tA$, la seconde ligne de $A$ est la seconde colonne de $^tA$...
-%\end{rem}
+%\end{Remarque}
 
-\begin{prop}
+\begin{Proposition}{}
 Soient $A,B \in \mathcal{M}_{n,p}(\mathbb{K})$ et $\lambda \in \mathbb{R}$.
 \begin{itemize}
 \item 
@@ -229,41 +235,41 @@ $^t(^tA)= A$
 $^t(A+B)=^tA + ^tB $ et $^t( \lambda A) = \lambda ^tA$ (l'application transposée est une application linéaire)
 \item $^t(AB) =^tB \, ^tA$
 \end{itemize}
-\end{prop}
+\end{Proposition}
 
 
 \subsection{Inversibilité d'une matrice}
-\begin{defip}
+\begin{TheoremeDefinition}{}
 Soit $A \in \mathcal{M}_n(\mathbb{K})$.\\
-On dit que la matrice $A$ est \textit{inversible} lorsqu'il existe une matrice $B$ de $\mathcal{M}_n(\mathbb{K})$ telle que
+On dit que la matrice $A$ est \emph{inversible} lorsqu'il existe une matrice $B$ de $\mathcal{M}_n(\mathbb{K})$ telle que
 $$AB=BA=I_n$$
-Dans ce cas, une telle matrice $B$ est \textit{unique} : on l'appelle \textit{l'inverse de $A$} et on la note $A^{-1}$.
+Dans ce cas, une telle matrice $B$ est \emph{unique} : on l'appelle \emph{l'inverse de $A$} et on la note $A^{-1}$.
 
-\noindent On note $GL_{n}(\mathbb{K})$ l'ensemble des matrices inversibles de $\mathcal{M}_n(\mathbb{K})$.
-\end{defip}
+On note $GL_{n}(\mathbb{K})$ l'ensemble des matrices inversibles de $\mathcal{M}_n(\mathbb{K})$.
+\end{TheoremeDefinition}
 %
-%\begin{preuve}
+%\begin{Demonstration}{}
 % Soit $B$ et $C$ deux éléments de $\mathcal{M}_n(\mathbb{R})$ vérifiant $AB=BA=I_n$ et $AC=CA=I_n$.\\
 % On a alors $CAB=(CA)B=I_nB=B$ et $CAB=C(AB)=CI_n=C$ d'où $B=C$.
-%\end{preuve}
+%\end{Demonstration}
 
-\begin{exa} L'ensemble $GL_{n}(\mathbb{K})$ est-il un sous-espace vectoriel de $\mathcal{M}_n(\mathbb{K})$?
-\end{exa}
+\begin{ApplicationDirecte} L'ensemble $GL_{n}(\mathbb{K})$ est-il un sous-espace vectoriel de $\mathcal{M}_n(\mathbb{K})$?
+\end{ApplicationDirecte}
 
 
-\begin{prop}
+\begin{Proposition}{}
 Soient $A$ et $B$ deux matrices inversibles de $\mathcal{M}_n(\mathbb{K})$. Alors : 
 \begin{itemize}
 \item $A^{-1}$ est inversible et $(A^{-1})^{-1}=A$.
 \item $^tA$ est inversible et $(^tA)^{-1} = \ ^t(A^{-1})$.
 \item $AB$ est inversible et $(AB)^{-1}=B^{-1}A^{-1}$.
 \end{itemize}
-\end{prop}
+\end{Proposition}
 
 
 
 
-\begin{rem}
+\begin{Remarque}{}
  Soient $A$, $B$ et $C$ trois matrices de $\mathcal{M}_n(\mathbb{K})$.
 \begin{itemize}
 \item Si $AB=0_n$ et $B$ est inversible alors $A=0_n$.\\
@@ -271,27 +277,27 @@ En effet, \phantom{on a alors $ABB^{-1}=0_nB^{-1}$ donc $AI_n=0_n$ donc $A=0_n$.
 \item Si $AC=BC$ et $C$ est inversible alors $A=B$ (preuve semblable).
 %En effet, on a alors $AC-BC=0_n$ donc $(A-B)C=0_n$ avec $C$ inversible donc par la propriété précédente, $A-B=0_n$ donc $A=B$.
 \end{itemize}
-\end{rem}
+\end{Remarque}
 
 \medskip
 
-\begin{thm}
+\begin{Theoreme}{}
 Soient $A$ et $B$ deux matrices de $\mathcal{M}_n(\mathbb{K})$.\\
 Si $AB=I_n$, alors les matrices $A$ et $B$ sont inversibles et sont inverses l'une de l'autre.
-\end{thm}
+\end{Theoreme}
 
-\begin{rem} 
-L'intérêt du théorème précédent est qu'il suffit de vérifier que le produit $AB$ est égal à l'identité et non pas vérifier que les deux matrices $AB$ \textit{et} $BA$ sont égales à l'identité.
-\end{rem}
+\begin{Remarque}{} 
+L'intérêt du théorème précédent est qu'il suffit de vérifier que le produit $AB$ est égal à l'identité et non pas vérifier que les deux matrices $AB$ \emph{et} $BA$ sont égales à l'identité.
+\end{Remarque}
 
-\begin{ex} Soient $n \geq 1$ et $J$ la matrice carrée d'ordre $n$ dont tous les coefficients valent $1$. Posons $M=J+ I_n$. Déterminer une relation entre $M^2$, $M$ et $I_n$ et en déduire que $M$ est inversible.
+\begin{Exemple} Soient $n \geq 1$ et $J$ la matrice carrée d'ordre $n$ dont tous les coefficients valent $1$. Posons $M=J+ I_n$. Déterminer une relation entre $M^2$, $M$ et $I_n$ et en déduire que $M$ est inversible.
 
 \vspace{7cm}
-\end{ex}
+\end{Exemple}
 
 \medskip
 
-\begin{exa}
+\begin{ApplicationDirecte}
 Soit $A=\begin{pmatrix}
 3& 0 & 2 & 0\\
 0 & -1 & 0 & 2\\
@@ -299,27 +305,27 @@ Soit $A=\begin{pmatrix}
 0 & -2 & 0 & 3
 \end{pmatrix} \cdot$
 
-\noindent Calculer $(A-I_4)^2$. En déduire que $A$ est inversible et déterminer $A^{-1}$. 
+Calculer $(A-I_4)^2$. En déduire que $A$ est inversible et déterminer $A^{-1}$. 
 %
 %Montrer que $A^2$ est inversible et calculer $(A^2)^{-1}$.
-\end{exa}
+\end{ApplicationDirecte}
 
 \begin{metho}
-Pour étudier si une matrice $A$ est inversible, on forme un système dont les coefficients sont les coefficients de $A$ et dont le second membre est une matrice colonne \textit{quelconque} de $\mathcal{M}_{n,1}(\mathbb{K}).$ On résout ce système à l'aide de la méthode du pivot de Gauss. 
+Pour étudier si une matrice $A$ est inversible, on forme un système dont les coefficients sont les coefficients de $A$ et dont le second membre est une matrice colonne \emph{quelconque} de $\mathcal{M}_{n,1}(\mathbb{K}).$ On résout ce système à l'aide de la méthode du pivot de Gauss. 
  \begin{enumerate}
   \item[$\bullet$]   Si on obtient un système triangulaire $n \times n$ dont les coefficients diagonaux sont non nuls, alors la matrice $A$ est inversible et la résolution du système fournit $A^{-1}$.
   \item[$\bullet$] Sinon la matrice $A$ n'est pas inversible. 
  \end{enumerate}
 \end{metho}
 
-\begin{rem} La méthode du pivot de Gauss doit être la méthode privilégiée pour résoudre un tel système. 
-\end{rem}
+\begin{Remarque}{} La méthode du pivot de Gauss doit être la méthode privilégiée pour résoudre un tel système. 
+\end{Remarque}
 
-\begin{ex} Soit $P = \begin{pmatrix}
+\begin{Exemple} Soit $P = \begin{pmatrix}
         1&0&1\\-1&0&-2\\0&1&0
        \end{pmatrix} \cdot$
        
-\noindent Étudions l'inversibilité de $P$. 
+Étudions l'inversibilité de $P$. 
 
 %Soient $(b_1,b_2,b_3) \in \mathbb{R}^3$. On résout alors le système suivant :
 %\[ (S) \left\lbrace \begin{array}{rcl}
@@ -328,7 +334,7 @@ Pour étudier si une matrice $A$ est inversible, on forme un système dont les c
 %\; \, y \qquad & = & b_3 \\
 %\end{array}\right. \]
 %
-%\noindent On a 
+%On a 
 %\[ \begin{array}{ccll}
 %(S) & \Longleftrightarrow & \left\lbrace \begin{array}{rcl}
 %x \; \; \, \; \; + z & = & b_1 \\
@@ -382,42 +388,42 @@ Pour étudier si une matrice $A$ est inversible, on forme un système dont les c
 %\end{pmatrix}$$
 
 \vspace{13cm}
-\end{ex}
+\end{Exemple}
 
-\begin{exa} Soient $A\dis  = \begin{pmatrix} 1 & 2 & -1\\
+\begin{ApplicationDirecte} Soient $A = \begin{pmatrix} 1 & 2 & -1\\
 2 & 4 & -1\\
 -2 & -5 & 3
-\end{pmatrix}$ et $ \dis B = \begin{pmatrix}
+\end{pmatrix}$ et $ B = \begin{pmatrix}
                    2 & -3 & -1\\
 1 & 1 & -3\\
 -3 & -1 & 7
                   \end{pmatrix}\cdot$
                   
-\noindent Déterminer si les matrices $A$ et $B$ sont inversibles (on donnera l'inverse le cas échéant).
-\end{exa}
+Déterminer si les matrices $A$ et $B$ sont inversibles (on donnera l'inverse le cas échéant).
+\end{ApplicationDirecte}
 
 
-\noindent Rappelons pour finir un résultat généralement utile dans un cadre théorique :
+Rappelons pour finir un résultat généralement utile dans un cadre théorique :
 
-\begin{thm} Soit $A \in \mathcal{M}_n(\mathbb{K})$. Les assertions suivantes sont équivalentes :
+\begin{Theoreme}{} Soit $A \in \mathcal{M}_n(\mathbb{K})$. Les assertions suivantes sont équivalentes :
 
 \begin{itemize}
 \item $A$ est inversible.
 \item L'équation $AX= 0_{n,1}$ d'inconnue $X \in \mathcal{M}_{n,1}(\mathbb{K})$ n'admet que la solution nulle.
 \item Pour tout $B \in \mathcal{M}_{n,1}(\mathbb{K})$, l'équation $AX= B$ admet une unique solution.
 \end{itemize}
-\end{thm}
+\end{Theoreme}
 
 
 \section{Matrices, vecteurs et applications linéaires}
 
-\noindent Dans cette section, $E$ et $F$ sont deux $\mathbb{K}$-espaces vectoriels de dimensions respectives $n$ et $p$. On se donne aussi $\mathcal{B}=(e_1, \ldots, e_n)$ une base de $E$ et $\mathcal{C}=(f_1, \ldots, f_p)$ une base de $F$.
+Dans cette section, $E$ et $F$ sont deux $\mathbb{K}$-espaces vectoriels de dimensions respectives $n$ et $p$. On se donne aussi $\mathcal{B}=(e_1, \ldots, e_n)$ une base de $E$ et $\mathcal{C}=(f_1, \ldots, f_p)$ une base de $F$.
 
 \subsection{Matrice d'un vecteur}
 
-\noindent Tout vecteur $x$ de $E$ s'écrit sous la forme :
+Tout vecteur $x$ de $E$ s'écrit sous la forme :
 $$ x = \sum_{k=1}^n x_k e_k $$
-où $(x_1, \ldots, x_n)$ sont les coordonnées de $x$ dans la base $\mathcal{B}$. On appelle \textit{matrice des coordonnées} de $x$ dans la base $\mathcal{B}$, et on note $\textrm{Mat}_{\mathcal{B}}(x)$, la matrice suivante :
+où $(x_1, \ldots, x_n)$ sont les coordonnées de $x$ dans la base $\mathcal{B}$. On appelle \emph{matrice des coordonnées} de $x$ dans la base $\mathcal{B}$, et on note $\textrm{Mat}_{\mathcal{B}}(x)$, la matrice suivante :
 $$ \textrm{Mat}_{\mathcal{B}}(x) = \phantom{\begin{pmatrix}
 x_1 \\
 x_2 \\
@@ -427,11 +433,11 @@ x_n
 
 \subsection{Matrice d'une famille de vecteurs}
 
-\noindent Soient $k \in \mathbb{N}^*$ et $\mathcal{F}=(x_1, x_2, \ldots, x_k)$ des vecteurs. On appelle \textit{matrice de la famille} $\mathcal{F}$ dans la base $\mathcal{B}$, et on note $\textrm{Mat}_{B}(x_1, \ldots, x_k)$ la matrice de $\mathcal{M}_{n,k}( \mathbb{K})$ dont la $j$-ième colonne (pour $1 \leq j \leq k)$ est $\textrm{Mat}_{B}(x_j)$.
+Soient $k \in \mathbb{N}^*$ et $\mathcal{F}=(x_1, x_2, \ldots, x_k)$ des vecteurs. On appelle \emph{matrice de la famille} $\mathcal{F}$ dans la base $\mathcal{B}$, et on note $\textrm{Mat}_{B}(x_1, \ldots, x_k)$ la matrice de $\mathcal{M}_{n,k}( \mathbb{K})$ dont la $j$-ième colonne (pour $1 \leq j \leq k)$ est $\textrm{Mat}_{B}(x_j)$.
 
 \medskip
 
-\begin{ex} Soient $E = \mathbb{R}_3[X]$ et $\mathcal{B}$ la base canonique de $E$. Soit $\mathcal{F}=(1,(X-1),(X-1)^2,(X-1)^3)$. La matrice de la famille $\mathcal{F}$ dans la base $\mathcal{B}$ est :
+\begin{Exemple} Soient $E = \mathbb{R}_3[X]$ et $\mathcal{B}$ la base canonique de $E$. Soit $\mathcal{F}=(1,(X-1),(X-1)^2,(X-1)^3)$. La matrice de la famille $\mathcal{F}$ dans la base $\mathcal{B}$ est :
 
 \vspace{5cm}
 %$$ \begin{pmatrix}
@@ -442,23 +448,23 @@ x_n
 %\end{pmatrix}$$
 
 
-\end{ex}
+\end{Exemple}
 
 
 \subsection{Matrice d'une application linéaire}
 
-\noindent Soit $u \in \mathcal{L}(E,F)$. L'application linéaire $u$ est entièrement caractérisée par son action sur une base de $E$.
+Soit $u \in \mathcal{L}(E,F)$. L'application linéaire $u$ est entièrement caractérisée par son action sur une base de $E$.
 
-\begin{defin} La \textit{matrice de} $u$ dans les bases $\mathcal{B}$ et $\mathcal{C}$, notée $\textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u)$, est définie par :
+\begin{Definition}{} La \emph{matrice de} $u$ dans les bases $\mathcal{B}$ et $\mathcal{C}$, notée $\textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u)$, est définie par :
 $$ \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u)= \phantom{\textrm{Mat}_{\mathcal{C}}(u(e_1), u(e_2), \ldots, u(e_n))}$$
 Si $E=F$ et $\mathcal{B}= \mathcal{C}$, on note simplement $\textrm{Mat}_{\mathcal{B}}(u)$.
-\end{defin}
+\end{Definition}
 
-\noindent Ainsi, pour déterminer cette matrice, il suffit de calculer pour tout $i \in \Interv{1}{n}$, $u(e_i) \in F$ et de déterminer ses coordonnées dans la base $\mathcal{C}$.
+Ainsi, pour déterminer cette matrice, il suffit de calculer pour tout $i \in \Interv{1}{n}$, $u(e_i) \in F$ et de déterminer ses coordonnées dans la base $\mathcal{C}$.
 
 %\newpage
 
-\noindent Cela se schématise par :
+Cela se schématise par :
 
 %\begin{center}
 %\[
@@ -475,7 +481,7 @@ Si $E=F$ et $\mathcal{B}= \mathcal{C}$, on note simplement $\textrm{Mat}_{\mathc
 
 \newpage
 
-\begin{ex}\label{det} Soient $n \geq 1$ et $\varphi : \mathbb{R}_n[X] \rightarrow \mathbb{R}_n[X]$ définie par $\varphi(P)=P+P'$. Justifier que $\varphi$ est un endomorphisme et donner sa matrice dans la base canonique de  $\mathbb{R}_3[X]$.
+\begin{Exemple}\label{det} Soient $n \geq 1$ et $\varphi : \mathbb{R}_n[X] \rightarrow \mathbb{R}_n[X]$ définie par $\varphi(P)=P+P'$. Justifier que $\varphi$ est un endomorphisme et donner sa matrice dans la base canonique de  $\mathbb{R}_3[X]$.
 
 
 \vspace{7cm}
@@ -496,27 +502,27 @@ Si $E=F$ et $\mathcal{B}= \mathcal{C}$, on note simplement $\textrm{Mat}_{\mathc
 %0 & 0 & 1 & -3 \\
 %0 & 0 & 0 & 1 \\
 %\end{pmatrix}$$
-\end{ex}
+\end{Exemple}
 
 \medskip
 
-\begin{exa} Soient $(a,b,c) \in \mathbb{K}^3$ et $\varphi : \mathbb{K}_3[X] \rightarrow \mathbb{K}^3$ définie par :
+\begin{ApplicationDirecte} Soient $(a,b,c) \in \mathbb{K}^3$ et $\varphi : \mathbb{K}_3[X] \rightarrow \mathbb{K}^3$ définie par :
 $$ \varphi(P) = (P(a), P(b), P(c))$$
 Déterminer la matrice de $\varphi$ dans les bases canoniques de $\mathbb{K}_3[X]$ et $\mathbb{K}^3$.
-\end{exa}
+\end{ApplicationDirecte}
 
-\begin{exa} Soit $f : \mathbb{R}^3 \rightarrow \mathbb{R}^3$ définie par :
+\begin{ApplicationDirecte} Soit $f : \mathbb{R}^3 \rightarrow \mathbb{R}^3$ définie par :
 $$ f((x,y,z)) = (y+z, z+x, x+y)$$
 Donner la matrice de $f$ dans la base canonique $\mathcal{B}=(e_1,e_2,e_3)$ de $\mathbb{R}^3$. 
 
-\noindent Soit $\mathcal{B}'=(e_1, e_1+e_2, e_1+e_2+e_3)$. Montrer que $\mathcal{B}'$ est une base de $\mathbb{R}^3$ et donner la matrice de $f$  dans cette base.
-\end{exa}
+Soit $\mathcal{B}'=(e_1, e_1+e_2, e_1+e_2+e_3)$. Montrer que $\mathcal{B}'$ est une base de $\mathbb{R}^3$ et donner la matrice de $f$  dans cette base.
+\end{ApplicationDirecte}
 
 \medskip
 
-\noindent En fixant des bases, on peut donc associer à chaque application linéaire de $E$ dans $F$ une matrice de $\mathcal{M}_{p,n}(\mathbb{K})$. Réciproquement, si l'on fixe une matrice de $\mathcal{M}_{p,n}(\mathbb{K})$, cela définit une application linéaire de $E$ dans $F$ (car cela définit les images des vecteurs d'une base de $E$).
+En fixant des bases, on peut donc associer à chaque application linéaire de $E$ dans $F$ une matrice de $\mathcal{M}_{p,n}(\mathbb{K})$. Réciproquement, si l'on fixe une matrice de $\mathcal{M}_{p,n}(\mathbb{K})$, cela définit une application linéaire de $E$ dans $F$ (car cela définit les images des vecteurs d'une base de $E$).
 
-\begin{thm} L'application :
+\begin{Theoreme}{} L'application :
 $$ \begin{array}{ccccl}
 \textrm{Mat}_{\mathcal{B}, \mathcal{C}} & : & \mathcal{L}(E,F) & \rightarrow & \mathcal{M}_{p,n}(\mathbb{K}) \\
 & & u & \mapsto & \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u) \\
@@ -527,18 +533,18 @@ est un isomorphisme d'espace vectoriels. En particulier :
 \item $\forall (u,v) \in \mathcal{L}(E,F)^2$, $\forall \lambda \in \mathbb{K}$, $\textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u + \lambda v) = \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u) + \lambda \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(v)$.
 \item $\textrm{dim}(\mathcal{L}(E,F)) = np$.
 \end{itemize}
-\end{thm}
+\end{Theoreme}
 
-\begin{att} On ne parle jamais de \textit{la} matrice d'une application linéaire sans préciser les bases considérées.
+\begin{att} On ne parle jamais de \emph{la} matrice d'une application linéaire sans préciser les bases considérées.
 \end{att}
 
 \subsection{Image d'un vecteur}
-\noindent Fixons $u \in \mathcal{L}(E,F)$.
+Fixons $u \in \mathcal{L}(E,F)$.
 
-\begin{prop} Pour tout $x \in E$, on a $\textrm{Mat}_{\mathcal{C}}(u(x)) = \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u) \textrm{Mat}_{\mathcal{B}}(x)$.
-\end{prop}
+\begin{Proposition}{} Pour tout $x \in E$, on a $\textrm{Mat}_{\mathcal{C}}(u(x)) = \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u) \textrm{Mat}_{\mathcal{B}}(x)$.
+\end{Proposition}
 
-%\begin{preuve} 
+%\begin{Demonstration}{} 
 %
 %%Notons $(x_1, \ldots, x_n)$ les coordonnées de $x$ dans la base $\mathcal{B}$ et $\textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u) = (a_{i,j})_{\substack{1 \leq i \leq p \\ 1 \leq j \leq n}}$. On a :
 %%\begin{align*}
@@ -553,36 +559,36 @@ est un isomorphisme d'espace vectoriels. En particulier :
 %%$$\textrm{Mat}_{\mathcal{C}}(u(x)) = \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u) \textrm{Mat}_{\mathcal{B}}(x)$$
 %
 %\vspace{8cm}
-%\end{preuve}
+%\end{Demonstration}
 \subsection{Matrice et composition d'applications linéaires}
 
-\begin{prop}
+\begin{Proposition}{}
 Soient $E$, $F$, $G$ trois $\mathbb{K}$-espaces vectoriels de dimension finie que l'on munit de bases respectives $\mathcal{E}$, $\mathcal{F}$ et $\mathcal{G}$. Soient $u \in \mathcal{L}(E,F)$ et $v \in \mathcal{L}(F,G)$. Alors $v \circ u \in L(E,G)$ et :
 $$ \textrm{Mat}_{\mathcal{E}, \mathcal{G}}(v \circ u) = \textrm{Mat}_{\mathcal{F}, \mathcal{G}}(v ) \textrm{Mat}_{\mathcal{E}, \mathcal{F}}( u)$$
-\end{prop}
+\end{Proposition}
 
-\begin{rem} En particulier, si $u$ est un endomorphisme de $E$ muni d'une base $\mathcal{B}$, on a pour tout $n \geq 0$,
+\begin{Remarque}{} En particulier, si $u$ est un endomorphisme de $E$ muni d'une base $\mathcal{B}$, on a pour tout $n \geq 0$,
 $$ \textrm{Mat}_{\mathcal{B}}(u^n) = \left(\textrm{Mat}_{\mathcal{B}}(u)\right)^n$$
 où $u^n$ désigne $u \circ u \circ \cdots \circ u$ (composée $n$ fois).
-\end{rem}
+\end{Remarque}
 
-\begin{cor} Soient $E$ et $F$ deux $\mathbb{K}-$espaces vectoriels  de dimension $n$ que l'on munit de deux bases $\mathcal{E}$ et $\mathcal{F}$. Pour tout $u \in \mathcal{L}(E,F)$, on a l'équivalence suivante :
+\begin{Corollaire}{} Soient $E$ et $F$ deux $\mathbb{K}-$espaces vectoriels  de dimension $n$ que l'on munit de deux bases $\mathcal{E}$ et $\mathcal{F}$. Pour tout $u \in \mathcal{L}(E,F)$, on a l'équivalence suivante :
 $$ u \hbox{ est un isomorphisme si et seulement si } \textrm{Mat}_{\mathcal{E}, \mathcal{F}}(u) \in GL_n (\mathbb{K})$$
 et on a dans ce cas :
 $$ \textrm{Mat}_{\mathcal{F}, \mathcal{E}}(u^{-1}) = \left( \textrm{Mat}_{\mathcal{E}, \mathcal{F}}(u) \right)^{-1}$$
-\end{cor}
+\end{Corollaire}
 
 
 \subsection{Changement de base}
 
-\noindent Dans la suite, $\mathcal{B}=(e_1, \ldots, e_n)$ et $\mathcal{B}'= (e_1', \ldots,e_n')$ sont deux bases d'un espace vectoriel de dimension finie $n$.
+Dans la suite, $\mathcal{B}=(e_1, \ldots, e_n)$ et $\mathcal{B}'= (e_1', \ldots,e_n')$ sont deux bases d'un espace vectoriel de dimension finie $n$.
 
-\begin{defin} On appelle \textit{matrice de passage} de $\mathcal{B}$ dans $\mathcal{B}'$ et on note $P_{\mathcal{B}, \mathcal{B}'}$ la matrice définie par :
+\begin{Definition}{} On appelle \emph{matrice de passage} de $\mathcal{B}$ dans $\mathcal{B}'$ et on note $P_{\mathcal{B}, \mathcal{B}'}$ la matrice définie par :
 $$ P_{\mathcal{B}, \mathcal{B}'} = \phantom{\textrm{Mat}_{\mathcal{B}', \mathcal{B}}(\textrm{Id})}$$
 Autrement dit, les colonnes de $P_{\mathcal{B}, \mathcal{B}'}$ sont les coordonnées des vecteurs de $\mathcal{B}'$ dans la base $\mathcal{B}$.
-\end{defin}
+\end{Definition}
 
-\begin{ex} Soient $\mathcal{B}=(e_1,e_2,e_3)$ la base canonique de $\mathbb{R}^3$ et $\mathcal{B}'=(e_1,e_1+e_2, e_1+e_2+e_3)$. On montre facilement que $\mathcal{B}'$ est libre et de cardinal $3$ qui est la dimension de $\mathbb{R}^3$. Ainsi $\mathcal{B}'$ est une base de $\mathbb{R}^3$ et on a :
+\begin{Exemple} Soient $\mathcal{B}=(e_1,e_2,e_3)$ la base canonique de $\mathbb{R}^3$ et $\mathcal{B}'=(e_1,e_1+e_2, e_1+e_2+e_3)$. On montre facilement que $\mathcal{B}'$ est libre et de cardinal $3$ qui est la dimension de $\mathbb{R}^3$. Ainsi $\mathcal{B}'$ est une base de $\mathbb{R}^3$ et on a :
 
 \vspace{2.7cm}
 %$$ P_{\mathcal{B}, \mathcal{B}'} = \begin{pmatrix}
@@ -590,17 +596,17 @@ Autrement dit, les colonnes de $P_{\mathcal{B}, \mathcal{B}'}$ sont les coordonn
 %0 & 1 & 1 \\
 %0 & 0& 1 \\
 %\end{pmatrix}$$
-\end{ex}
+\end{Exemple}
 
-\begin{prop} La matrice de passage de $\mathcal{B}$ dans $\mathcal{B}'$ est inversible d'inverse la matrice de passage de $\mathcal{B}'$ dans $\mathcal{B}$.
-\end{prop}
+\begin{Proposition}{} La matrice de passage de $\mathcal{B}$ dans $\mathcal{B}'$ est inversible d'inverse la matrice de passage de $\mathcal{B}'$ dans $\mathcal{B}$.
+\end{Proposition}
 
-\begin{preuve} C'est évident avec le corollaire précédent car $P_{\mathcal{B}, \mathcal{B}'} = \textrm{Mat}_{\mathcal{B}', \mathcal{B}}(Id)$.
-\end{preuve}
+\begin{Demonstration}{} C'est évident avec le corollaire précédent car $P_{\mathcal{B}, \mathcal{B}'} = \textrm{Mat}_{\mathcal{B}', \mathcal{B}}(Id)$.
+\end{Demonstration}
 
 \medskip
 
-\begin{ex} Reprenons l'exemple précédent. On a :
+\begin{Exemple} Reprenons l'exemple précédent. On a :
 $$ P_{\mathcal{B}', \mathcal{B}} = \begin{pmatrix}
 1 & 1 & 1 \\
 0 & 1 & 1 \\
@@ -614,22 +620,22 @@ On peut calculer l'inverse de la matrice mais on peut aussi remarquer qu'il est 
 %0 & 1 & -1 \\
 %0 & 0& 1 \\
 %\end{pmatrix}$$
-\end{ex}
+\end{Exemple}
 
-\begin{prop} Soit $x \in E$. Alors :
+\begin{Proposition}{} Soit $x \in E$. Alors :
 $$ \textrm{Mat}_{\mathcal{B}}(x) = P_{\mathcal{B}, \mathcal{B}'} \textrm{Mat}_{\mathcal{B}'}(x)$$
-\end{prop}
+\end{Proposition}
 
-%\begin{preuve} 
+%\begin{Demonstration}{} 
 %\vspace{4cm}
 %%Par définition de la matrice de passage, cela est équivalent à montrer que :
 %%$$  \textrm{Mat}_{\mathcal{B}}(x) =  \textrm{Mat}_{\mathcal{B}', \mathcal{B}}(Id) \textrm{Mat}_{\mathcal{B}'}(x)$$
 %%ou encore :
 %%$$ \textrm{Mat}_{\mathcal{B}}(Id(x)) =  \textrm{Mat}_{\mathcal{B}', \mathcal{B}}(Id) \textrm{Mat}_{\mathcal{B}'}(x)$$
 %%ce qui est vrai d'après la proposition liée à la matrice de l'image d'un vecteur par une application linéaire.
-%\end{preuve}
+%\end{Demonstration}
 
-\begin{ex} Reprenons encore l'exemple précédent. Soit $x=(1,-2,3) \in \mathbb{R}^3$. On a :
+\begin{Exemple} Reprenons encore l'exemple précédent. Soit $x=(1,-2,3) \in \mathbb{R}^3$. On a :
 $$ \textrm{Mat}_{\mathcal{B}}(x) = \begin{pmatrix}
 1 \\
 -2 \\
@@ -655,40 +661,40 @@ Déterminons les coordonnées de $x$ dans la base $\mathcal{B}'$. On a :
 %-3
 %\end{pmatrix}
 %\end{align*}
-\end{ex}
+\end{Exemple}
 
-\begin{thm} Soient $\mathcal{B}$, $\mathcal{B}'$ deux bases de $E$ et $\mathcal{C}$, $\mathcal{C}'$ deux bases de $F$ et $u \in L(E,F)$. Alors :
+\begin{Theoreme}{} Soient $\mathcal{B}$, $\mathcal{B}'$ deux bases de $E$ et $\mathcal{C}$, $\mathcal{C}'$ deux bases de $F$ et $u \in L(E,F)$. Alors :
 $$ \textrm{Mat}_{\mathcal{B}', \mathcal{C}'}(u) = \textrm{Mat}_{\mathcal{C}, \mathcal{C}'}(Id_F)  \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u) \textrm{Mat}_{\mathcal{B}', \mathcal{B}}(Id_E)$$
 ou encore :
 $$ \textrm{Mat}_{\mathcal{B}', \mathcal{C}'}(u) = P_{\mathcal{C}', \mathcal{C}}  \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u)  P_{\mathcal{B}, \mathcal{B}'}$$
-\end{thm}
+\end{Theoreme}
 
-\begin{cor} Soient $\mathcal{B}, \mathcal{B}'$ deux bases de $E$ et $u \in L(E)$. Alors :
+\begin{Corollaire}{} Soient $\mathcal{B}, \mathcal{B}'$ deux bases de $E$ et $u \in L(E)$. Alors :
 $$ \textrm{Mat}_{\mathcal{B}'}(u) = P_{\mathcal{B}', \mathcal{B}}  \textrm{Mat}_{\mathcal{B}}(u)  P_{\mathcal{B}, \mathcal{B}'}$$
-\end{cor}
+\end{Corollaire}
 
-\begin{ex} Posons :
+\begin{Exemple} Posons :
 $$ \begin{array}{ccccl}
 f & : & \mathbb{R}_2[X] & \rightarrow & \mathbb{R}_2[X] \\
 & & P & \rightarrow & (X+1)P' \\
 \end{array} $$
-\noindent Montrons que $f$ est un endomorphisme de $ \mathbb{R}_2[X]$ :
+Montrons que $f$ est un endomorphisme de $ \mathbb{R}_2[X]$ :
 
 \vspace{3cm}
 
 
-\noindent Déterminons la matrice de $f$ dans la base canonique $\mathcal{B}$ de $\mathbb{R}_2[X]$ :
+Déterminons la matrice de $f$ dans la base canonique $\mathcal{B}$ de $\mathbb{R}_2[X]$ :
 
 \vspace{5cm}
 
-\noindent Considérons la famille suivante : $\mathcal{B}'= (1, (X+1),(X+1)^2)$. Montrons que $\mathcal{B}'$ est une base de $\mathbb{R}_2[X]$ et déterminons la matrice de $f$ dans cette base :
+Considérons la famille suivante : $\mathcal{B}'= (1, (X+1),(X+1)^2)$. Montrons que $\mathcal{B}'$ est une base de $\mathbb{R}_2[X]$ et déterminons la matrice de $f$ dans cette base :
 
 \newpage
 $\phantom{test}$
 
 \vspace{6.5cm}
 
-\noindent Déterminons à l'aide d'un changement de base les puissances de $\textrm{Mat}_{\mathcal{B}}(f)$ :
+Déterminons à l'aide d'un changement de base les puissances de $\textrm{Mat}_{\mathcal{B}}(f)$ :
 
 \vspace{10.5cm}
 %\begin{itemize}
@@ -732,21 +738,21 @@ $\phantom{test}$
 %$$ \textrm{Mat}_{\mathcal{B}}(f) ^n= P_{\mathcal{B}, \mathcal{B}'} \textrm{Mat}_{\mathcal{B}'}(f)^n P_{\mathcal{B}', \mathcal{B}}$$
 %Il suffit de terminer le calcul.
 %\end{itemize}
-\end{ex}
+\end{Exemple}
 
 \subsection{Matrices semblables}
 
-\begin{prop} Soient $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{K})$. Les assertions suivantes sont équivalentes :
+\begin{Proposition}{} Soient $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{K})$. Les assertions suivantes sont équivalentes :
 
 \begin{enumerate}
 \item Il existe $P \in GL_n(\mathbb{K})$ tel que $B=P A P^{-1}$.
 \item $A$ et $B$ sont les matrices du même endomorphisme $u$ d'un $\mathbb{K}-$espace vectoriel $E$ de dimension $n$ dans deux bases de $E$ : il existe $u \in \mathcal{L}(E)$ et deux bases $\mathcal{B}$ et $\mathcal{B}'$ de $E$ tels que $B= \textrm{Mat}_{\mathcal{B}'}(u)$ et $A= \textrm{Mat}_{\mathcal{B}}(u)$.
 \end{enumerate}
 
-\noindent Dans ce cas, on dit que $A$ et $B$ sont deux \textit{matrices semblables}.
-\end{prop}
+Dans ce cas, on dit que $A$ et $B$ sont deux \emph{matrices semblables}.
+\end{Proposition}
 
-\begin{ex} Montrons que les matrices $A = \begin{pmatrix}
+\begin{Exemple} Montrons que les matrices $A = \begin{pmatrix}
 3 & 2 \\
 -3 & 8 \\
 \end{pmatrix}$ et $B = \begin{pmatrix}
@@ -756,7 +762,7 @@ $\phantom{test}$
 
 \medskip
 %
-%\noindent Soit $u$ l'endomorphisme de $\mathbb{K}^2$ canoniquement associé à $A$ (autrement dit $A = \textrm{Mat}_{\mathcal{B}}(u)$ où $\mathcal{B}$ est la base canonique de $\mathbb{K}^2$ et $u : X \mapsto AX$). On cherche $\mathcal{F}=(f_1,f_2)$ une base de $\mathbb{K}^2$ tel que $B= \textrm{Mat}_{\mathcal{F}}(u)$ ce qui est équivalent à $u(f_1)=5f_1$ et $u(f_2)=6 f_2$. 
+%Soit $u$ l'endomorphisme de $\mathbb{K}^2$ canoniquement associé à $A$ (autrement dit $A = \textrm{Mat}_{\mathcal{B}}(u)$ où $\mathcal{B}$ est la base canonique de $\mathbb{K}^2$ et $u : X \mapsto AX$). On cherche $\mathcal{F}=(f_1,f_2)$ une base de $\mathbb{K}^2$ tel que $B= \textrm{Mat}_{\mathcal{F}}(u)$ ce qui est équivalent à $u(f_1)=5f_1$ et $u(f_2)=6 f_2$. 
 %
 %\medskip On résout alors les équations $AX=5X$ et $AX=6X$ d'inconnue $X \in \mathbb{K}^2$ :
 %
@@ -781,7 +787,7 @@ $\phantom{test}$
 %
 %\medskip
 %
-%\noindent Posons donc $f_1 = \begin{pmatrix}
+%Posons donc $f_1 = \begin{pmatrix}
 %1 \\
 %1 \\
 %\end{pmatrix}$ et $f_2 = \begin{pmatrix}
@@ -793,68 +799,70 @@ $\phantom{test}$
 
 $\phantom{test}$
 \vspace{12cm}
-\end{ex}
+\end{Exemple}
 
 
 
 \section{Image, noyau et rang d'une matrice}
 \subsection{Définitions}
-\noindent Soit $A \in \mathcal{M}_{n,p}(\mathbb{K})$. On associe à cette matrice une application linéaire :
+Soit $A \in \mathcal{M}_{n,p}(\mathbb{K})$. On associe à cette matrice une application linéaire :
 $$ \begin{array}{ccccl}
 u_A & : & \mathcal{M}_{p,1}(\mathbb{K}) & \rightarrow & \mathcal{M}_{n,1}(\mathbb{K}) \\
 & & X & \mapsto & AX
 \end{array}$$
 
-\begin{defin} On transpose à la matrice $A$ certaines définitions liées à $u_A$ :
+\begin{Definition}{} On transpose à la matrice $A$ certaines définitions liées à $u_A$ :
 \begin{itemize}
-\item Le \textit{noyau} de $A$, noté $\textrm{Ker}(A)$, est le noyau de $u_A$.
-\item L'\textit{image} de $A$, notée $\textrm{Im}(A)$, est l'image de $u_A$.
-\item Le \textit{rang} de $A$, noté $\textrm{rg}(A)$, est le rang de $u_A$.
+\item Le \emph{noyau} de $A$, noté $\textrm{Ker}(A)$, est le noyau de $u_A$.
+\item L'\emph{image} de $A$, notée $\textrm{Im}(A)$, est l'image de $u_A$.
+\item Le \emph{rang} de $A$, noté $\textrm{rg}(A)$, est le rang de $u_A$.
 \end{itemize}
-\end{defin}
+\end{Definition}
 
-\begin{rems}
+\begin{Remarques}{}
+\begin{itemize}
 \item Les lignes de $A$ fournissent les équations définissant $\textrm{Ker}(A)$.
 \item Les colonnes engendrent l'image de $A$ car en notant $(e_1, \ldots, e_p)$ la base canonique de $ \mathcal{M}_{p,1}(\mathbb{K}) $, on a :
 $$ \textrm{Im}(A) = \textrm{Im}(u_A) = \textrm{Vect}(u_A(e_1), \ldots, u_A(e_p))= \textrm{Vect}(Ae_1, \ldots, Ae_p)$$
-\end{rems}
+\end{itemize}
+\end{Remarques}{}
 
-\begin{thm} Soit $A \in \mathcal{M}_{n,p}(\mathbb{K})$. On a :
+\begin{Theoreme}{} Soit $A \in \mathcal{M}_{n,p}(\mathbb{K})$. On a :
 $$ p = \textrm{dim}(\textrm{Ker}(A)) + \textrm{rg}(A)$$
-\end{thm}
+\end{Theoreme}
 
 \newpage
 
 \subsection{Méthodes pratiques d'obtention du noyau et de l'image}
 
-\noindent Soit $A \in \mathcal{M}_{n,p}(\mathbb{K})$.
+Soit $A \in \mathcal{M}_{n,p}(\mathbb{K})$.
 
 \medskip
 
-\noindent $\rhd$ Dans tous les cas, on peut obtenir une base du noyau en résolvant $AX = 0_{n,1}$ d'inconnue $X \in \mathcal{M}_{p,1}(\mathbb{K})$.
+$\rhd$ Dans tous les cas, on peut obtenir une base du noyau en résolvant $AX = 0_{n,1}$ d'inconnue $X \in \mathcal{M}_{p,1}(\mathbb{K})$.
 
 \medskip
 
-\noindent $\rhd$ L'image de $A$ est le sous-espace vectoriel engendré par les colonnes (mais bien entendu, une famille génératrice n'est pas nécessairement une base de ce sous-espace).
+$\rhd$ L'image de $A$ est le sous-espace vectoriel engendré par les colonnes (mais bien entendu, une famille génératrice n'est pas nécessairement une base de ce sous-espace).
 
 \medskip
 
-\noindent $\rhd$ On utilise la proposition suivante :
+$\rhd$ On utilise la proposition suivante :
 
-\begin{prop} Les opérations élémentaires sur les colonnes ne changent pas l'image d'une matrice.
-\end{prop}
+\begin{Proposition}{} Les opérations élémentaires sur les colonnes ne changent pas l'image d'une matrice.
+\end{Proposition}
 
-\noindent On utilise alors les opérations élémentaires sur la matrice $A$ pour faire apparaitre une matrice triangulaire. Les colonnes nulles fourniront une base du noyau.
+On utilise alors les opérations élémentaires sur la matrice $A$ pour faire apparaitre une matrice triangulaire. Les colonnes nulles fourniront une base du noyau.
 
 \medskip
 
-\begin{ex} Soit $A = \begin{pmatrix}
+\begin{Exemple} Soit $A = \begin{pmatrix}
 1 & 1 & -1 \\
 2 & 4 & 0 \\
 -1 & 1 & 2 \\
 \end{pmatrix} \cdot$
 
-\noindent Déterminons le noyau et l'image de $A$. 
+Déterminons le noyau et l'image de $A$. 
 
 %On part de la configuration suivante :
 %$$ \begin{pmatrix}
@@ -902,44 +910,44 @@ $$ p = \textrm{dim}(\textrm{Ker}(A)) + \textrm{rg}(A)$$
 
 \vspace{13
 cm}
-\end{ex}
+\end{Exemple}
 
 \medskip
 
-\noindent $\rhd$ Quelques astuces pour aller plus vite dans le cas d'une matrice $A$ carrée d'ordre $3$ :
+$\rhd$ Quelques astuces pour aller plus vite dans le cas d'une matrice $A$ carrée d'ordre $3$ :
 
 \begin{itemize}
 \item Si deux colonnes de la matrice sont non colinéaires, la matrice a un rang supérieur ou égal $2$. Si l'on trouve facilement une relation linéaire entre les colonnes, cela nous donne un élément de noyau (et donc une base car le noyau est au maximum de dimension $1$ d'après le théorème du rang).
 
 
 
-\begin{ex} Soit $A = \begin{pmatrix}
+\begin{Exemple} Soit $A = \begin{pmatrix}
 1 & 1 & 2 \\
 -1 & 4 & 3 \\
 0 & 1 & 1 \\
 \end{pmatrix} \cdot$
 %
-%\noindent Les deux premières colonnes sont non colinéaires donc le rang de la matrice est supérieur ou égal à $2$. La troisième colonne est la somme des deux premières colonnes. En notation $(e_1,e_2,e_3)$ la base canonique de $\mathcal{M}_{3,1}(\mathbb{K}$, cela signifie que $Ae_1 + Ae_2 = Ae_3$ ou encore $A(e_1+e_2-e_3) = O_{3}$. Ainsi $e_1+e_2-e_3$ est dans le noyau qui est au maximum de dimension $1$ (d'après le Théorème du rang) et est non nul : c'est donc une base du noyau. Le rang est donc égal à $2$ et une base de celui-ci est $(C_1,C_2)$ (les deux premières colonnes de la matrice).
+%Les deux premières colonnes sont non colinéaires donc le rang de la matrice est supérieur ou égal à $2$. La troisième colonne est la somme des deux premières colonnes. En notation $(e_1,e_2,e_3)$ la base canonique de $\mathcal{M}_{3,1}(\mathbb{K}$, cela signifie que $Ae_1 + Ae_2 = Ae_3$ ou encore $A(e_1+e_2-e_3) = O_{3}$. Ainsi $e_1+e_2-e_3$ est dans le noyau qui est au maximum de dimension $1$ (d'après le Théorème du rang) et est non nul : c'est donc une base du noyau. Le rang est donc égal à $2$ et une base de celui-ci est $(C_1,C_2)$ (les deux premières colonnes de la matrice).
 
 \vspace{5cm}
-\end{ex}
+\end{Exemple}
 \item Si la matrice est de rang $1$ (ce qui se voit directement), on obtient une base du noyau en obtenant des relations linéaires sur les colonnes.
 
-\begin{ex} Soit $A = \begin{pmatrix}
+\begin{Exemple} Soit $A = \begin{pmatrix}
 1 & 1 & 2 \\
 -1 & -1 & -2 \\
 1 & 1 & 2 \\
 \end{pmatrix} \cdot$
 
-%\noindent Notons $C_1$, $C_2$ et $C_3$ les colonnes de $A$.
+%Notons $C_1$, $C_2$ et $C_3$ les colonnes de $A$.
 %
-%\noindent La matrice est de rang $1$ et une base de l'image est $(C_1)$. On remarque que $C_1=C_2$ et $2C_2=C_3$ donc en notant $(e_1,e_2,e_3)$ la base canonique de $\mathbb{K}^3$, une base du noyau est $(e_1-e_2, 2e_2-e_3)$ (c'est une famille libre car les deux vecteurs sont non colinéaires et le noyau est de dimension $2$ car le rang de la matrice est $1$).
+%La matrice est de rang $1$ et une base de l'image est $(C_1)$. On remarque que $C_1=C_2$ et $2C_2=C_3$ donc en notant $(e_1,e_2,e_3)$ la base canonique de $\mathbb{K}^3$, une base du noyau est $(e_1-e_2, 2e_2-e_3)$ (c'est une famille libre car les deux vecteurs sont non colinéaires et le noyau est de dimension $2$ car le rang de la matrice est $1$).
 
 \vspace{5cm}
-\end{ex}
+\end{Exemple}
 \end{itemize}
 
-\begin{exa} Déterminer l'image, le noyau et le rang des matrices suivantes :
+\begin{ApplicationDirecte} Déterminer l'image, le noyau et le rang des matrices suivantes :
 $$ \begin{pmatrix}
 -2 & 1 & 3 \\
 2 & -1 & -3 \\
@@ -949,31 +957,31 @@ $$ \begin{pmatrix}
 -1 & 5 & 4 \\
 4 & 1 & 3 \\
 \end{pmatrix} $$
-\end{exa}
+\end{ApplicationDirecte}
 
-\begin{thm} Le rang d'une matrice est égal au rang de sa transposée. 
-\noindent En particulier, si l'on souhaite obtenir le rang d'une matrice, on peut utiliser les opérations élémentaires sur les lignes et sur les colonnes. 
-\end{thm}
+\begin{Theoreme}{} Le rang d'une matrice est égal au rang de sa transposée. 
+En particulier, si l'on souhaite obtenir le rang d'une matrice, on peut utiliser les opérations élémentaires sur les lignes et sur les colonnes. 
+\end{Theoreme}
 
 \begin{att} Si l'on souhaite obtenir une base de l'image, on manipule uniquement les colonnes.
 \end{att}
 \section{Trace d'une matrice, d'un endomorphisme}
 
-\begin{defin} Soit $A=(a_{i,j})_{1 \leq i,j \leq n} \in \mathcal{M}_n(\mathbb{K})$. On appelle \textit{trace} de $A$, et on note $\textrm{Tr}(A)$ la somme des coefficients diagonaux de $A$ :
+\begin{Definition}{} Soit $A=(a_{i,j})_{1 \leq i,j \leq n} \in \mathcal{M}_n(\mathbb{K})$. On appelle \emph{trace} de $A$, et on note $\textrm{Tr}(A)$ la somme des coefficients diagonaux de $A$ :
 $$\textrm{Tr}(A) = \sum_{k=1}^n a_{k,k}$$
-\end{defin}
+\end{Definition}
 
-\begin{prop} La trace est une forme linéaire sur $\mathcal{M}_n( \mathbb{K})$.
-\end{prop}
+\begin{Proposition}{} La trace est une forme linéaire sur $\mathcal{M}_n( \mathbb{K})$.
+\end{Proposition}
 
-\begin{ex} L'ensemble des matrices de trace nulle est un hyperplan de $\mathcal{M}_n(\mathbb{K})$ (donc de dimension $n^2-1$) car noyau d'une forme linéaire non nulle.
-\end{ex}
+\begin{Exemple} L'ensemble des matrices de trace nulle est un hyperplan de $\mathcal{M}_n(\mathbb{K})$ (donc de dimension $n^2-1$) car noyau d'une forme linéaire non nulle.
+\end{Exemple}
 
-\begin{prop} Soient $A \in \mathcal{M}_{n,p}(\mathbb{K})$ et $B \in \mathcal{M}_{p,n}(\mathbb{K})$. Alors :
+\begin{Proposition}{} Soient $A \in \mathcal{M}_{n,p}(\mathbb{K})$ et $B \in \mathcal{M}_{p,n}(\mathbb{K})$. Alors :
 $$ \textrm{Tr}(AB) = \textrm{Tr}(BA) $$
-\end{prop}
+\end{Proposition}
 
-\begin{preuve} 
+\begin{Demonstration}{} 
 
 \vspace{7cm}
 %On a :
@@ -984,58 +992,58 @@ $$ \textrm{Tr}(AB) = \textrm{Tr}(BA) $$
 %& = \sum_{i=1}^p (BA)_{i,i} \\
 %& = \textrm{Tr}(BA)  \\
 %\end{align*}
-\end{preuve}
+\end{Demonstration}
 
-\begin{cor} Deux matrices semblables ont la même trace.
-\end{cor}
+\begin{Corollaire}{} Deux matrices semblables ont la même trace.
+\end{Corollaire}
 
-\begin{preuve} 
+\begin{Demonstration}{} 
 \vspace{3cm}
 %Soient $A, B \in \mathcal{M}_n( \mathbb{K})$ et $P \in GL_n(\mathbb{K})$ tels que $B=PAP^{-1}$. On a :
 %$$ \textrm{Tr}(B) = \textrm{Tr}((PA)P^{-1}) = \textrm{Tr}(P^{-1}PA) = \textrm{Tr}(I_nA)= \textrm{Tr}(A)$$
-\end{preuve}
+\end{Demonstration}
 
 
-\begin{exa} Justifier rapidement que $\begin{pmatrix}
+\begin{ApplicationDirecte} Justifier rapidement que $\begin{pmatrix}
 1 & 2 \\
 3 & 4 \\
 \end{pmatrix}$ et $\begin{pmatrix}
 -1 & 4 \\
 4 & 7 \\
 \end{pmatrix}$ ne sont pas semblables.
-\end{exa}
+\end{ApplicationDirecte}
 
 
 
-\begin{defip} Soient $E$ un espace vectoriel de dimension finie et $u \in \mathcal{L}(E)$. On appelle \textit{trace} de $u$, et on note $\textrm{Tr}(u)$, la trace commune aux matrices représentant $u$.
-\end{defip}
+\begin{TheoremeDefinition}{} Soient $E$ un espace vectoriel de dimension finie et $u \in \mathcal{L}(E)$. On appelle \emph{trace} de $u$, et on note $\textrm{Tr}(u)$, la trace commune aux matrices représentant $u$.
+\end{TheoremeDefinition}
 
-\begin{preuve} Cette définition a bien un sens car deux matrices représentant $u$ sont semblables et ont donc la même trace.
-\end{preuve}
+\begin{Demonstration}{} Cette définition a bien un sens car deux matrices représentant $u$ sont semblables et ont donc la même trace.
+\end{Demonstration}
 
 \medskip
 
-\begin{ex} La trace d'un projecteur est égal à son rang.
+\begin{Exemple} La trace d'un projecteur est égal à son rang.
 
 \vspace{5cm}
 \medskip
 
-%\noindent Soit $p$ un projecteur d'un espace vectoriel $E$ de dimension finie $n$. On sait que $E = \textrm{Im}(p) \oplus \textrm{Ker}(p)$. Soit $\mathcal{B}$ une base de $E$ obtenu par concaténation d'une base de $\textrm{Im}(p)$ (de dimension $r= rg(p)$) et d'une base de $\textrm{Ker}(p)$. En remarquant que pour tout élément de $y \in \textrm{Im}(p)$, $p(y)=y$, on a :
+%Soit $p$ un projecteur d'un espace vectoriel $E$ de dimension finie $n$. On sait que $E = \textrm{Im}(p) \oplus \textrm{Ker}(p)$. Soit $\mathcal{B}$ une base de $E$ obtenu par concaténation d'une base de $\textrm{Im}(p)$ (de dimension $r= rg(p)$) et d'une base de $\textrm{Ker}(p)$. En remarquant que pour tout élément de $y \in \textrm{Im}(p)$, $p(y)=y$, on a :
 %$$ \textrm{Mat}_{\mathcal{B}}(u) = \begin{pmatrix}
 %I_r & 0_{r,n-r} \\
 %0_{n-r,r}& 0_{n-r,n-r} \\
 %\end{pmatrix}$$
 %et ainsi $\textrm{Tr}(\textrm{Mat}_{\mathcal{B}}(u)) = \textrm{Tr}(I_r)= r = rg(u)$.
-\end{ex}
+\end{Exemple}
 
-\begin{exa} Soit $n \in \mathbb{N}^*$. Posons pour tout $P \in \mathbb{R}_n[X]$, $\varphi(P) = ((X^2-1)P(X))''$. Justifier que $\varphi$ induit un endomorphisme de $\mathbb{R}_n[X]$ et déterminer la trace de celui-ci.
-\end{exa}
+\begin{ApplicationDirecte} Soit $n \in \mathbb{N}^*$. Posons pour tout $P \in \mathbb{R}_n[X]$, $\varphi(P) = ((X^2-1)P(X))''$. Justifier que $\varphi$ induit un endomorphisme de $\mathbb{R}_n[X]$ et déterminer la trace de celui-ci.
+\end{ApplicationDirecte}
 
 \section{Déterminant}
 
 \subsection{Définition et premières propriétés}
 
-\begin{defin} Il existe une unique application $f : \mathcal{M}_n(\mathbb{K}) \rightarrow \mathbb{K}$ vérifiant les trois propriétés suivantes :
+\begin{Definition}{} Il existe une unique application $f : \mathcal{M}_n(\mathbb{K}) \rightarrow \mathbb{K}$ vérifiant les trois propriétés suivantes :
 
 \begin{enumerate}
 \item L'application $f$ est linéaire par rapport à chaque colonne de sa variable.
@@ -1043,10 +1051,10 @@ $$ \textrm{Tr}(AB) = \textrm{Tr}(BA) $$
 \item On a l'égalité : $f(I_n)=1$.
 \end{enumerate}
 
-\noindent Cette application est appelée \textit{déterminant} et est notée $\textrm{det}$.
-\end{defin}
+Cette application est appelée \emph{déterminant} et est notée $\textrm{det}$.
+\end{Definition}
 
-\begin{rem} On note aussi :
+\begin{Remarque}{} On note aussi :
 $$ \textrm{det} \left( \begin{pmatrix}
 a_{1,1} & \ldots & a_{1,n} \\
 \vdots & & \vdots \\
@@ -1056,17 +1064,17 @@ a_{1,1} & \ldots & a_{1,n} \\
 \vdots & & \vdots \\
 a_{n,1} & \ldots & a_{n,n} \\
 \end{array}\right\vert$$
-\end{rem}
+\end{Remarque}
 
-\begin{cor} Soit $A \in \mathcal{M}_n(\mathbb{K})$.
+\begin{Corollaire}{} Soit $A \in \mathcal{M}_n(\mathbb{K})$.
 
 \begin{enumerate}
 \item Si $A$ a deux colonnes égales alors $\textrm{det}(A)=0$.
 \item Si une colonne de $A$ est combinaison linéaire des autres colonnes de $A$ alors $\textrm{det}(A)=0$.
 \end{enumerate}
-\end{cor}
+\end{Corollaire}
 %
-%\begin{preuve}
+%\begin{Demonstration}{}
 %%\begin{enumerate}
 %%\item Si l'on permute les deux colonnes de $A$ identiques, on a par antisymétrie du déterminant $\textrm{det}(A)=- \textrm{det}(A)$ donc $\textrm{det}(A)=0$.
 %%\item Notons $C_1, \ldots, C_n$ les colonnes de $A$ et notons pour simplifier $\textrm{det}(C_1, \ldots, C_n)$ au lieu de $\textrm{det}(A)$. Supposons, sans perte de généralité, que $C_1$ soit combinaison linéaire des autres colonnes de $A$ : il existe $(\lambda_2, \ldots, \lambda_n) \in \mathbb{K}^{n-1}$ tel que :
@@ -1079,41 +1087,41 @@ a_{n,1} & \ldots & a_{n,n} \\
 %%\end{enumerate}
 %
 %\vspace{5cm}
-%\end{preuve}
+%\end{Demonstration}
 %
 %\newpage
 %
 %$\phantom{ bla }$
 %\vspace{3cm}
 
-\begin{prop} $\left\vert \begin{array}{cc}
+\begin{Proposition}{} $\left\vert \begin{array}{cc}
 a & b \\
 c & d
 \end{array} \right\vert = ad-bc$
-\end{prop}
+\end{Proposition}
 
-\begin{prop}[Règle de Sarrus]
+\begin{Proposition}{Règle de Sarrus}
 
 $$\left\vert \begin{array}{ccc}
 a_{1,1} & a_{1,2} & a_{1,3} \\
 a_{2,1} & a_{2,2} & a_{2,3} \\
 a_{3,1} & a_{3,2} & a_{3,3} \\
 \end{array} \right\vert =  (a_{1,1}a_{2,2} a_{3,3} +  a_{2,1}a_{3,2}a_{1,3} + a_{3,1}a_{1,2}a_{2,3}) - (a_{3,1}a_{2,2}a_{1,3} + a_{2,1} a_{1,2} a_{3,3} + a_{3,3} a_{3,2} a_{1,2} ) $$
-\end{prop}
+\end{Proposition}
 
-\begin{rem} En particulier, le déterminant d'une matrice triangulaire carrée d'ordre $2$ ou $3$ est égal au produit de ses coefficients diagonaux.
-\end{rem}
+\begin{Remarque}{} En particulier, le déterminant d'une matrice triangulaire carrée d'ordre $2$ ou $3$ est égal au produit de ses coefficients diagonaux.
+\end{Remarque}
 
-\begin{exa} Calculer $\left\vert \begin{array}{ccc}
+\begin{ApplicationDirecte} Calculer $\left\vert \begin{array}{ccc}
 1 & j & j^2 \\
 j & j^2& 1 \\
 j^2 & 1 & j \\
 \end{array}\right\vert$ où $j=e^{\frac{2i\pi}{3}}$.
-\end{exa}
+\end{ApplicationDirecte}
 
 \subsection{Opérations élémentaires}
 
-\noindent Soient $A \in \mathcal{M}_n(\mathbb{K})$. Notons $C_1, \ldots, C_n$ les colonnes de $A$. Voici les opérations élémentaires liées aux déterminant :
+Soient $A \in \mathcal{M}_n(\mathbb{K})$. Notons $C_1, \ldots, C_n$ les colonnes de $A$. Voici les opérations élémentaires liées aux déterminant :
 
 \begin{itemize}
 \item Si $B$ est obtenue à partir de $A$ en permutant deux colonnes $C_i$ et $C_j$ avec $i \neq j$ alors $\textrm{det}(B) = - \textrm{det}(A)$.
@@ -1125,85 +1133,85 @@ j^2 & 1 & j \\
 
 \subsection{Propriétés classiques}
 
-\begin{prop} Soit $A \in \mathcal{M}_n(\mathbb{K})$. Alors $A$ est inversible si et seulement si $\textrm{det}(A) \neq 0$.
-\end{prop}
+\begin{Proposition}{} Soit $A \in \mathcal{M}_n(\mathbb{K})$. Alors $A$ est inversible si et seulement si $\textrm{det}(A) \neq 0$.
+\end{Proposition}
 
-\begin{prop} Soient $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{K})$. Alors :
+\begin{Proposition}{} Soient $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{K})$. Alors :
 $$ \textrm{det}(AB) = \textrm{det}(A) \textrm{det}(B)$$
-\end{prop}
+\end{Proposition}
 
-\begin{cor} Soit $A \in \mathcal{M}_n(\mathbb{K})$ une matrice inversible. Alors $\textrm{det}(A^{-1}) = \dfrac{1}{\textrm{det}(A)}
+\begin{Corollaire}{} Soit $A \in \mathcal{M}_n(\mathbb{K})$ une matrice inversible. Alors $\textrm{det}(A^{-1}) = \dfrac{1}{\textrm{det}(A)}
 \cdot$
-\end{cor}
+\end{Corollaire}
 
-\begin{prop} Deux matrices semblables ont le même déterminant.
-\end{prop}
+\begin{Proposition}{} Deux matrices semblables ont le même déterminant.
+\end{Proposition}
 
-\begin{preuve} 
+\begin{Demonstration}{} 
 %Soient $A$, $B$ deux matrices semblables de $\mathcal{M}_n(\mathbb{K})$. Il existe une matrice $P \in GL_n(\mathbb{K})$ tel que $A=PBP^{-1}$. Ainsi :
 %$$ \textrm{det}(A) = \textrm{det}(PBP^{-1}) = \textrm{det}(P) \textrm{det}(B) \textrm{det}(P^{-1}) =  \textrm{det}(P) \textrm{det}(B) \dfrac{1}{\textrm{det}(P)} = \textrm{det}(B) $$
 \vspace{4cm}
-\end{preuve}
+\end{Demonstration}
 
-\begin{prop} Soit $A \in \mathcal{M}_n(\mathbb{K})$. Alors $\textrm{det}(~^tA) = \textrm{det}(A)$.
-\end{prop}
+\begin{Proposition}{} Soit $A \in \mathcal{M}_n(\mathbb{K})$. Alors $\textrm{det}(~^tA) = \textrm{det}(A)$.
+\end{Proposition}
 
-\begin{cor} Les propriétés du déterminant par rapport aux colonnes sont également vraies par rapport aux lignes.
-\end{cor}
+\begin{Corollaire}{} Les propriétés du déterminant par rapport aux colonnes sont également vraies par rapport aux lignes.
+\end{Corollaire}
 
 \subsection{Déterminant d'une famille de vecteurs}
 
-\noindent Soient $E$ un espace vectoriel de dimension finie $n$ et $\mathcal{B}$ une base de $E$.
+Soient $E$ un espace vectoriel de dimension finie $n$ et $\mathcal{B}$ une base de $E$.
 
-\begin{defin} Soit $\mathcal{F} = (x_1, \ldots, x_n)$ une famille de vecteurs de $E$. On appelle \textit{déterminant} de $\mathcal{F}$ dans la base $\mathcal{B}$, et on note $\textrm{det}_{\mathcal{B}}(\mathcal{F})$, le déterminant de $\textrm{Mat}_{\mathcal{B}}(\mathcal{F})$.
-\end{defin}
+\begin{Definition}{} Soit $\mathcal{F} = (x_1, \ldots, x_n)$ une famille de vecteurs de $E$. On appelle \emph{déterminant} de $\mathcal{F}$ dans la base $\mathcal{B}$, et on note $\textrm{det}_{\mathcal{B}}(\mathcal{F})$, le déterminant de $\textrm{Mat}_{\mathcal{B}}(\mathcal{F})$.
+\end{Definition}
 
-\begin{prop} Soit $\mathcal{F} = (x_1, \ldots, x_n)$ une famille de vecteurs de $E$. Alors $\mathcal{F}$ est une base de $E$ si et seulement si \newline $\textrm{det}_{\mathcal{B}}(\mathcal{F}) \neq 0$.
-\end{prop}
+\begin{Proposition}{} Soit $\mathcal{F} = (x_1, \ldots, x_n)$ une famille de vecteurs de $E$. Alors $\mathcal{F}$ est une base de $E$ si et seulement si \newline $\textrm{det}_{\mathcal{B}}(\mathcal{F}) \neq 0$.
+\end{Proposition}
 
-\begin{ex} Soit $\mathcal{B}=((1,1,1), (-1,2,0), (0,1,5))$. Montrons que $\mathcal{B}$ est une base de $\mathbb{R}^3$.
+\begin{Exemple} Soit $\mathcal{B}=((1,1,1), (-1,2,0), (0,1,5))$. Montrons que $\mathcal{B}$ est une base de $\mathbb{R}^3$.
 
 \vspace{5.5cm}
-\end{ex}
+\end{Exemple}
 
 \subsection{Déterminant d'un endomorphisme}
 
-\noindent Soient $E$ un espace vectoriel de dimension finie $n$ et $\mathcal{B}$ une base de $E$.
+Soient $E$ un espace vectoriel de dimension finie $n$ et $\mathcal{B}$ une base de $E$.
 
-\begin{defip} Soit $u \in \mathcal{L}(E)$. Toutes les matrices représentant $u$ ont le même déterminant. On définit le \textit{déterminant} de $u$ comme le déterminant d'une de ses matrices.
-\end{defip}
+\begin{TheoremeDefinition}{} Soit $u \in \mathcal{L}(E)$. Toutes les matrices représentant $u$ ont le même déterminant. On définit le \emph{déterminant} de $u$ comme le déterminant d'une de ses matrices.
+\end{TheoremeDefinition}
 
-\begin{preuve} Deux matrices de $u$ dans des bases différentes de $E$ sont semblables et donc admettent le même déterminant.
-\end{preuve}
+\begin{Demonstration}{} Deux matrices de $u$ dans des bases différentes de $E$ sont semblables et donc admettent le même déterminant.
+\end{Demonstration}
 
 \medskip
 
 
-\begin{prop} Les propriétés du déterminant de matrice (déterminant d'un produit, lien entre inversibilité et déterminant) se transposent au déterminant d'un endomorphisme (déterminant d'une composée, lien entre automorphisme et déterminant).
-\end{prop} 
+\begin{Proposition}{} Les propriétés du déterminant de matrice (déterminant d'un produit, lien entre inversibilité et déterminant) se transposent au déterminant d'un endomorphisme (déterminant d'une composée, lien entre automorphisme et déterminant).
+\end{Proposition} 
 
-\begin{exa} Donner le déterminant de l'endomorphisme de l'exercice d'application directe du cours $6$.
-\end{exa}
+\begin{ApplicationDirecte} Donner le déterminant de l'endomorphisme de l'exercice d'application directe du cours $6$.
+\end{ApplicationDirecte}
 
 \subsection{Méthodes de calcul}
 %\textbf{MINEUR COFACTEUR}
 \subsubsection{Matrice triangulaire}
 
-\begin{prop} Le déterminant d'une matrice triangulaire est égal au produit de ses coefficients diagonaux.
-\end{prop}
+\begin{Proposition}{} Le déterminant d'une matrice triangulaire est égal au produit de ses coefficients diagonaux.
+\end{Proposition}
 
-\begin{rem} Le résultat est en particulier vrai pour une matrice diagonale.
-\end{rem}
+\begin{Remarque}{} Le résultat est en particulier vrai pour une matrice diagonale.
+\end{Remarque}
 
 \subsubsection{Déterminant par blocs}
 
-\begin{prop} Soit $A$ une matrice carrée de la forme $A = \begin{pmatrix}
+\begin{Proposition}{} Soit $A$ une matrice carrée de la forme $A = \begin{pmatrix}
 B & C \\
 0 & D \\
 \end{pmatrix}$ où $B$ et $D$ sont des matrices carrées. Alors \newline $\textrm{det}(A)= \textrm{det}(B) \textrm{det}(D)$.
-\end{prop}
+\end{Proposition}
 
-\begin{ex} Soient $n \in \mathbb{N}^*$ et $A, B \in \mathcal{M}_n(\mathbb{R})$. Montrons que :
+\begin{Exemple} Soient $n \in \mathbb{N}^*$ et $A, B \in \mathcal{M}_n(\mathbb{R})$. Montrons que :
 $$ \left\vert \begin{array}{cc}
 A & B \\
 B & A \\
@@ -1213,7 +1221,7 @@ B & A \\
 
 \vspace{8.5cm}
 %
-%\noindent Par opération sur les colonnes, on a : 
+%Par opération sur les colonnes, on a : 
 %$$  \left\vert \begin{array}{cc}
 %A & B \\
 %B & A \\
@@ -1230,12 +1238,12 @@ B & A \\
 %0 & A-B \\
 %\end{array}\right\vert = \textrm{det}(A+B) \textrm{det}(A-B)$$
 %par calcul du déterminant par blocs.
-\end{ex}
+\end{Exemple}
 
 \subsubsection{Développement par rapport à une ligne ou à une colonne}
 
 
-\begin{prop} Soit $A \in \mathcal{M}_n(\mathbb{K})$. Pour tout $(i,j) \in  \Interv{1}{n}^2$, on définit la matrice $A_{i,j} \in  \mathcal{M}_{n-1}(\mathbb{K})$ comme étant la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ième colonne de $A$. Alors :
+\begin{Proposition}{} Soit $A \in \mathcal{M}_n(\mathbb{K})$. Pour tout $(i,j) \in  \Interv{1}{n}^2$, on définit la matrice $A_{i,j} \in  \mathcal{M}_{n-1}(\mathbb{K})$ comme étant la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ième colonne de $A$. Alors :
 
 \begin{itemize}
 \item On peut développer par rapport à la $j$-ième colonne :
@@ -1243,15 +1251,17 @@ $$ \textrm{det}(A) = \sum_{i=1}^n (-1)^{i+j} a_{i,j} \textrm{det}(A_{i,j}) $$
 \item On peut développer par rapport à la $i$-ième ligne :
 $$ \textrm{det}(A) = \sum_{j=1}^n (-1)^{i+j} a_{i,j} \textrm{det}(A_{i,j}) $$
 \end{itemize}
-\end{prop}
+\end{Proposition}
 
-\begin{rems} 
+\begin{Remarques}{}
+\begin{itemize} 
 \item Ces formules sont intéressantes quand une ligne ou une colonne a beaucoup de coefficients nuls. Si ce n'est pas le cas, on utilise des opérations élémentaires pour se ramener à ce cas.\footnote{Et on évite la méthode dite \og du gros bourrin \fg }
-\item Le nombre $\textrm{det}(A_{i,j})$ est appelé \textit{mineur} d'indice $(i,j)$ et $(-1)^{i+j}\textrm{det}(A_{i,j})$ le \textit{cofacteur} d'indice $(i,j)$.
-\end{rems}
+\item Le nombre $\textrm{det}(A_{i,j})$ est appelé \emph{mineur} d'indice $(i,j)$ et $(-1)^{i+j}\textrm{det}(A_{i,j})$ le \emph{cofacteur} d'indice $(i,j)$.
+\end{itemize}
+\end{Remarques}{}
 
 
-\begin{ex} Soit $(a,b,c) \in \mathbb{R}^3$. Donner une forme factorisée de $\left\vert \begin{array}{ccc}
+\begin{Exemple} Soit $(a,b,c) \in \mathbb{R}^3$. Donner une forme factorisée de $\left\vert \begin{array}{ccc}
 a & b & c \\
 c & a & b \\
 b & c & a \\
@@ -1259,7 +1269,7 @@ b & c & a \\
 %
 %\medskip
 %
-%\noindent On remarque\footnote{argument classique !} que la somme des coefficients sur les colonnes est constante. En utilisant l'opération $C_1 \leftarrow C_1+C_2+C_3$ puis par linéarité par rapport à la première colonne :
+%On remarque\footnote{argument classique !} que la somme des coefficients sur les colonnes est constante. En utilisant l'opération $C_1 \leftarrow C_1+C_2+C_3$ puis par linéarité par rapport à la première colonne :
 %$$ \left\vert \begin{array}{ccc}
 %a & b & c \\
 %c & a & b \\
@@ -1291,10 +1301,10 @@ b & c & a \\
 %\end{array} \right\vert = (a+b+c) ((a-b)(a-c)+(c-b)^2) = (a^2+b^2+c^2 - ab - ac-bc)$$
 
 \vspace{9cm}
-\end{ex}
+\end{Exemple}
 
 
-\begin{exa} 
+\begin{ApplicationDirecte} 
 Calculer pour $n \geq 1$, $\left\vert \begin{array}{ccccc}
 1 & 1 & 1 & \ldots & 1 \\
 1 & 2 & 2 & \ldots & 2 \\
@@ -1302,11 +1312,11 @@ Calculer pour $n \geq 1$, $\left\vert \begin{array}{ccccc}
 \vdots & \vdots & \vdots & \ddots & \vdots \\
 1 & 2 & 3 & \ldots & n \\
 \end{array} \right\vert \cdot$
-\end{exa}
+\end{ApplicationDirecte}
 
 \subsubsection{Déterminant de Vandermonde}
 
-\begin{defin} Soit $(a_1, \ldots, a_n) \in \mathbb{K}^n$. On pose :
+\begin{Definition}{} Soit $(a_1, \ldots, a_n) \in \mathbb{K}^n$. On pose :
 $$ V_n(a_1, \ldots, a_n) = \left\vert \begin{array}{ccccc}
 1 & a_1 & a_1^2 & \ldots & a_1^{n-1} \\
 1 & a_2 & a_2^2 & \ldots & a_2^{n-1} \\
@@ -1314,19 +1324,19 @@ $$ V_n(a_1, \ldots, a_n) = \left\vert \begin{array}{ccccc}
 \vdots & \vdots & & \vdots \\
 1 & a_n & a_n^2 & \ldots & a_n^{n-1} \\
 \end{array}\right\vert = \textrm{det}( (a_i^{j-1})_{1 \leq i,j \leq n})$$
-Ce déterminant est appelé \textit{déterminant de Vandermonde} associé à $a_1$, $\ldots$, $a_n$.
-\end{defin}
+Ce déterminant est appelé \emph{déterminant de Vandermonde} associé à $a_1$, $\ldots$, $a_n$.
+\end{Definition}
 
-\begin{prop} En gardant les notations précédentes, pour tout $n \geq 1$, on a :
+\begin{Proposition}{} En gardant les notations précédentes, pour tout $n \geq 1$, on a :
 $$ V_n(a_1, \ldots, a_n) = \prod_{1 \leq i<j \leq n} (a_j-a_i) $$
 Rappelons que par convention, un produit vide vaut $1$.
-\end{prop}
+\end{Proposition}
 
-\begin{preuve} On commence par déterminer une relation de récurrence de deux manières différentes. 
+\begin{Demonstration}{} On commence par déterminer une relation de récurrence de deux manières différentes. 
 
 %\medskip
 %
-%\noindent $\rhd$ \textit{Première méthode} : soit $n \geq 2$. En effectuant pour tout $k \in \Interv{2}{n}$ les opérations élémentaires $L_k \leftarrow L_k-L_1$, on a :
+%$\rhd$ \emph{Première méthode} : soit $n \geq 2$. En effectuant pour tout $k \in \Interv{2}{n}$ les opérations élémentaires $L_k \leftarrow L_k-L_1$, on a :
 %$$ V_n(a_1, \ldots, a_n) = \left\vert \begin{array}{ccccc}
 %1 & a_1 & a_1^2  & \ldots & a_1^{n-1} \\
 %0 & a_2-a_1 & a_2^2 - a_1^2 & \ldots & a_2^{n-1} - a_1^{n-1} \\
@@ -1356,7 +1366,7 @@ Rappelons que par convention, un produit vide vaut $1$.
 % \vdots &  \vdots & & \vdots \\
 % 1 & a_n+a_1 & \ldots & a_n^{n-2} + a_1 a_n^{n-3} + \cdots + a_1^{n-2} \\
 %\end{array}\right\vert  $$
-%On effectue ensuite \textit{successivement}, pour tout $k \in \Interv{2}{n-1}$, les opérations $C_k \leftarrow \Sum{i=1}{k-1} a_1^i C_i$ :
+%On effectue ensuite \emph{successivement}, pour tout $k \in \Interv{2}{n-1}$, les opérations $C_k \leftarrow \Sum{i=1}{k-1} a_1^i C_i$ :
 %$$ V_n(a_1, \ldots, a_n)  =  \prod_{2 \leq k \leq n} (a_k - a_1) \, \, \left\vert\begin{array}{cccc}
 % 1 & a_2& \ldots & a_2^{n-2}\\
 % 1& a_3 & \ldots & a_3^{n-2}  \\
@@ -1366,7 +1376,7 @@ Rappelons que par convention, un produit vide vaut $1$.
 %
 %\medskip
 %
-%\noindent $\rhd$ \textit{Deuxième méthode} : Soit $n \geq 2$. Remarquons que :
+%$\rhd$ \emph{Deuxième méthode} : Soit $n \geq 2$. Remarquons que :
 %$$ V_n(X, a_2 \ldots, a_n) = \left\vert \begin{array}{ccccc}
 %1 & X & X^2 & \ldots & X^{n-1} \\
 %1 & a_2 & a_2^2 & \ldots & a_2^{n-1} \\
@@ -1400,7 +1410,7 @@ $\phantom{test}$
 
 %\newpage
 %
-%\phantom{\noindent $\rhd$ Prouvons maintenant le résultat souhaitée par récurrence. }
+%\phantom{$\rhd$ Prouvons maintenant le résultat souhaitée par récurrence. }
 
 %Pour tout $n \in \mathbb{N}^*$, on pose :
 %$$ \mathcal{P}_n \, \hbox{\og} \forall (a_1, \ldots, a_n) \in \mathbb{K}^n, \, V_n(a_1, \ldots, a_n) = \prod_{1 \leq i<j \leq n} (a_j-a_i)$$
@@ -1414,7 +1424,7 @@ $\phantom{test}$
 %et ainsi $\mathcal{P}_{n+1}$ est vraie.
 %\item Par principe de récurrence, la propriété est vraie pour tout $n \geq 1$.
 %\end{itemize}
-\end{preuve}
+\end{Demonstration}
 \vspace{7cm}
 %\textbf{RAJOUTER DES EXEMPLES}
 %
@@ -1429,44 +1439,44 @@ $\phantom{test}$
 %
 %\subsection{Opérations élémentaires}
 %
-%\begin{defin}[Opérations élémentaires]
-%On appelle \textit{opération élémentaire sur les lignes} d'un système $(S)$ toute transformation du système $(S)$ en un système $(S')$ consistant en :
+%\begin{Definition}{}[Opérations élémentaires]
+%On appelle \emph{opération élémentaire sur les lignes} d'un système $(S)$ toute transformation du système $(S)$ en un système $(S')$ consistant en :
 %\begin{itemize}
-%\item \textit{L'échange de deux lignes}\\
+%\item \emph{L'échange de deux lignes}\\
 %On permute les lignes $L_i$ et $L_j$, opération codée \phantom{$L_i \leftrightarrow L_j$.}
-%\item \textit{La multiplication d'une ligne par un réel non nul}\\
+%\item \emph{La multiplication d'une ligne par un réel non nul}\\
 %On remplace la ligne $L_i$ par $a$ fois la ligne $L_i$ avec $a \neq 0$, opération codée \phantom{$L_i \leftarrow aL_i$.}
-%\item \textit{L'ajout à une ligne d'un multiple d'une autre ligne}\\
+%\item \emph{L'ajout à une ligne d'un multiple d'une autre ligne}\\
 %On ajoute à la ligne $L_i$, $b$ fois la ligne $L_j$, avec $i \neq j$, opération codée \phantom{$L_i \leftarrow L_i+bL_j$.}
 %\end{itemize}
-%\end{defin}
+%\end{Definition}
 %
-%\begin{rem}
+%\begin{Remarque}{}
 %On admet aussi comme opération élémentaire l'opération obtenue en combinant les deux dernières opérations : $L_i \leftarrow aL_i+bL_j$ avec $a \neq 0$, $b \neq 0$ et $i \neq j$.
-%\end{rem}
+%\end{Remarque}
 %
 %
-%\begin{rem}
-%Si l'on a effectué une opération élémentaire transformant le système $(S)$ en le système $(S')$, on peut retrouver le système $(S)$ en effectuant une nouvelle opération élémentaire au système $(S')$ (appelée \textit{opération inverse}).
-%\end{rem}
+%\begin{Remarque}{}
+%Si l'on a effectué une opération élémentaire transformant le système $(S)$ en le système $(S')$, on peut retrouver le système $(S)$ en effectuant une nouvelle opération élémentaire au système $(S')$ (appelée \emph{opération inverse}).
+%\end{Remarque}
 %
-%\begin{prop}
+%\begin{Proposition}{}
 %Toute opération élémentaire transforme un système $(S)$ en un système $(S')$ équivalent (c'est-à-dire un système ayant les mêmes solutions).
-%\end{prop}
+%\end{Proposition}
 %
 %\subsection{Résolution d'un système linéaire}
 %
-%\begin{thm}
-%Grâce à des opérations élémentaires, on peut transformer tout système linéaire $(S)$ $n \times p$ (avec $n \leq p$) en un système équivalent $(S')$ qui est échelonné, auquel s'ajoutent éventuellement des équations du type $0$=constante. Le nombres de pivots du système $(S')$ est le \textit{rang} du système linéaire.
-%\end{thm}
+%\begin{Theoreme}{}
+%Grâce à des opérations élémentaires, on peut transformer tout système linéaire $(S)$ $n \times p$ (avec $n \leq p$) en un système équivalent $(S')$ qui est échelonné, auquel s'ajoutent éventuellement des équations du type $0$=constante. Le nombres de pivots du système $(S')$ est le \emph{rang} du système linéaire.
+%\end{Theoreme}
 %
-%\noindent Ainsi, on peut toujours se ramener à un système échelonné que l'on sait résoudre.
+%Ainsi, on peut toujours se ramener à un système échelonné que l'on sait résoudre.
 %
 %\begin{metho}[Pivot de Gauss]
 %Soit $(S)$ est un système de $n$ équations à $p$ inconnues. Voici la méthode du pivot de Gauss :
 % \begin{itemize}
 % \item On multiplie éventuellement certaines lignes par un coefficient non nul ($L_i \leftarrow a L_i$) pour simplifier les équations.
-%  \item On échange si besoin la première ligne avec une autre (opération $L_1 \leftrightarrow L_i$)  pour que le coefficient de $x_1$ de la première ligne soit non nul et \textit{le plus simple possible} pour la suite des opérations.
+%  \item On échange si besoin la première ligne avec une autre (opération $L_1 \leftrightarrow L_i$)  pour que le coefficient de $x_1$ de la première ligne soit non nul et \emph{le plus simple possible} pour la suite des opérations.
 %  \item On effectue une opération du type $L_i \leftarrow L_i - a L_1$ pour les lignes $2,\, \ldots, n$ afin de faire \og disparaitre \fg le terme en $x_1$ dans ces lignes et se retrouver avec un système du type :
 %  $$ \l\{ \begin{array}{rcl}
 %           a_{1,1}x_{1}+a_{1,2}x_{2}+\ldots+a_{1,p}x_{p} &= &b_{1} \hspace{1cm}(L_1)\\
@@ -1482,13 +1492,13 @@ $\phantom{test}$
 %\end{itemize}
 %\end{metho}
 %
-%\noindent Autrement dit, dans la première étape on utilise comme pivot \og le $x_1$ \fg de la première ligne pour \og éliminer \fg{} tous les termes en $x_1$ des autres lignes. Puis on recommence avec $x_2$ sans toucher à la première ligne, etc$\ldots$
+%Autrement dit, dans la première étape on utilise comme pivot \og le $x_1$ \fg de la première ligne pour \og éliminer \fg{} tous les termes en $x_1$ des autres lignes. Puis on recommence avec $x_2$ sans toucher à la première ligne, etc$\ldots$
 %
 %
 %
-%\begin{rem}
+%\begin{Remarque}{}
 %Quand on résout un système il faut placer les inconnues en colonnes pour faciliter les calculs. A chaque étape on peut soit échanger deux lignes soit pour un $i$ fixé effectuer simultanément les opérations $L_j \leftarrow a L_j + b L_i$ pour $j>i$. On indiquera toujours les opérations effectuées.
-%\end{rem}
+%\end{Remarque}
 %
 %\subsection{Systèmes avec plus d'équations que d'inconnues}
 %\begin{metho}

@@ -3,9 +3,9 @@
 \\dis 
 
 \\pinf
-+\\inf
++\\infty
 \\minf
--\\inf
+-\\infty
 \\textit\{
 \\emph{
 \\begin\{defip\}
@@ -25,9 +25,9 @@
 \\end\{rem\}
 \\end{Remarque}
 \\begin\{rems\}
-\\begin{Remarques}{}
+\\begin{Remarques}{}\n\\begin{itemize}
 \\end\{rems\}
-\\end{Remarques}{}
+\\end{itemize}\n\\end{Remarques}{}
 \\begin\{thm\}\[(.*)\]
 \\begin{Theoreme}{$1}
 \\begin\{thm\}

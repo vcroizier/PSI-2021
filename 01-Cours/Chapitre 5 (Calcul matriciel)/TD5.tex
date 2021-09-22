@@ -15,12 +15,12 @@
 
 \medskip
 
-\begin{Exa} Soient $n \geq 2$ et $D= \textrm{diag}(\lambda_1, \ldots, \lambda_n)$ ou $\lambda_1$, $\ldots$, $\lambda_n$ sont $n$ éléments de $\mathbb{K}$ deux à deux distincts.
+\begin{Exercice}{} Soient $n \geq 2$ et $D= \textrm{diag}(\lambda_1, \ldots, \lambda_n)$ ou $\lambda_1$, $\ldots$, $\lambda_n$ sont $n$ éléments de $\mathbb{K}$ deux à deux distincts.
 \begin{enumerate}
 \item Soit $M \in \mathcal{M}_n(\mathbb{K})$. Montrer que $M$ commute avec $D$ si et seulement si $M$ est diagonale.
 \item Soit $M \in \mathcal{M}_n(\mathbb{K})$ une matrice diagonale. Montrer qu'il existe un polynôme $P$ de degré au plus $n-1$ tel que $M=P(D)$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr \begin{enumerate}
 \item Soit $M \in \mathcal{M}_n(\mathbb{K})$. 
@@ -47,7 +47,7 @@ Le polynôme $P$ est une somme de polynômes de degré $n-1$ donc est bien de de
 \end{enumerate}
 
 
-\begin{Exa} Soit $E$ un espace vectoriel de dimension $n \geq 1$. On suppose que $f \in \mathcal{L}(E)$ vérifie $f^n = \tilde{0}$ et $f^{n-1} \neq \tilde{0}$. Soit $x_0 \in E$ tel que $f^{n-1}(x_0) \neq 0_E$.
+\begin{Exercice}{} Soit $E$ un espace vectoriel de dimension $n \geq 1$. On suppose que $f \in \mathcal{L}(E)$ vérifie $f^n = \tilde{0}$ et $f^{n-1} \neq \tilde{0}$. Soit $x_0 \in E$ tel que $f^{n-1}(x_0) \neq 0_E$.
 
 \begin{enumerate}
 \item Montrer que $\mathcal{B}= (x_0, f(x_0), \ldots, f^{n-1}(x_0))$ est base de $E$. 
@@ -60,7 +60,7 @@ $$ A = \begin{pmatrix}
 \end{pmatrix}$$
 Montrer que $f$ vérifie l'hypothèse de l'énoncé et déterminer un $x_0$ correspondant.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -101,8 +101,8 @@ $$ A^2 \begin{pmatrix}
 Ainsi $x_0$ n'est pas dans le noyau de $f^2$.
 \end{enumerate}
 
-\begin{Exa} Soient $n \in \mathbb{N}^*$ et $M$ une matrice de $\mathcal{M}_n(\mathbb{K})$. On suppose que $M-I_n$ est nilpotente. Montrer que $M$ est inversible.
-\end{Exa} 
+\begin{Exercice}{} Soient $n \in \mathbb{N}^*$ et $M$ une matrice de $\mathcal{M}_n(\mathbb{K})$. On suppose que $M-I_n$ est nilpotente. Montrer que $M$ est inversible.
+\end{Exercice} 
 
 \corr D'après l'énoncé, il existe un entier naturel $k \geq 1$ tel que $(M-I_n)^k = 0_n$. Les matrices $M$ et $I_n$ commutent donc d'après la formule du binôme de Newton, on a :
 $$ \sum_{j=0}^k \binom{k}{j} M^j (-I_n)^{k-j} = 0_n$$
@@ -117,13 +117,13 @@ $$ M^{-1} = \sum_{j=1}^k \binom{k}{j} M^{j-1} (-1)^{1+j} $$
 
 \medskip
 
-\begin{Exa} Soient $(a,b) \in \mathbb{R}^2$ et $A$ définie par :
+\begin{Exercice}{} Soient $(a,b) \in \mathbb{R}^2$ et $A$ définie par :
 $$ A = \begin{pmatrix}
 a & b \\
 0  & a
 \end{pmatrix}$$ 
 Déterminer toutes les puissances de $A$.
-\end{Exa}
+\end{Exercice}
 
 \corr On a :
 $$ A = a I_2 + b T$$
@@ -151,8 +151,8 @@ Par simple calcul, on a $T^2 = 0_2$. Ainsi, pour tout entier $n \geq 0$,
 %
 %\medskip 
 
-\begin{Exa} Soient $n\geq 1$ et $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{K})$. Montrer que si $I_n - AB$ est inversible alors $I_n - BA$ est inversible.
-\end{Exa} 
+\begin{Exercice}{} Soient $n\geq 1$ et $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{K})$. Montrer que si $I_n - AB$ est inversible alors $I_n - BA$ est inversible.
+\end{Exercice} 
 
 \corr Supposons que $I_n -AB$ est inversible. Montrons que $I_n-BA$ est inversible. Il suffit de montrer que le noyau de cette matrice est réduit au vecteur nul que l'on notera abusivement $0$. Si $X$ est dans le noyau de $I_n-BA$ alors $(I_n- BA)X=0$ donc $BAX=X$. En multipliant par $A$, on en déduit que $ABAX=AX$ donc 
 $$ (AB-I_n)(AX)=0$$
@@ -176,8 +176,8 @@ Ainsi, on retrouve que $I_n-BA$ est inversible et :
 $$ (I_n-BA)^{-1} = I_n+BPA = I_n+B(I_n-AB)^{-1}A$$
 
 
-\begin{Exa} Soit $n \in \mathbb{N}^*$. Existe-t-il des matrices $A,B \in \mathcal{M}_n(\mathbb{C})$ vérifiant $AB - BA = I_n$ ?
-\end{Exa}
+\begin{Exercice}{} Soit $n \in \mathbb{N}^*$. Existe-t-il des matrices $A,B \in \mathcal{M}_n(\mathbb{C})$ vérifiant $AB - BA = I_n$ ?
+\end{Exercice}
 
 \corr Supposons l'existence de matrices $A,B \in \mathcal{M}_n(\mathbb{C})$ vérifiant $AB - BA = I_n$. Alors :
 $$ \textrm{Tr}(AB-BA) = \textrm{Tr}(I_n) = n \neq 0$$
@@ -185,10 +185,10 @@ Or par linéarité de la trace et par propriété liée à la trace d'un produit
 $$  \textrm{Tr}(AB-BA) =  \textrm{Tr}(AB)- \textrm{Tr}(BA) = 0$$
 C'est absurde. Ainsi, il n'existe pas de matrices $A,B \in \mathcal{M}_n(\mathbb{C})$ vérifiant $AB - BA = I_n$.
 
-\begin{Exa} Soient $n \geq 1$ et $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $X \in \mathcal{M}_n(\mathbb{R})$, 
+\begin{Exercice}{} Soient $n \geq 1$ et $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $X \in \mathcal{M}_n(\mathbb{R})$, 
 $$\textrm{Tr}(AX)= \textrm{Tr}(BX)$$
 Montrer que $A=B$.
-\end{Exa}
+\end{Exercice}
 
 \corr Supposons que pour tout $X \in \mathcal{M}_n(\mathbb{R})$, 
 $$\textrm{Tr}(AX)= \textrm{Tr}(BX)$$
@@ -204,14 +204,14 @@ où $\delta_{i,r}$ est le symbole de Kronecker. Ainsi,
  $$ A_{r,p}= B_{r,p}$$
  Ceci étant vrai pour tout $(p,r) \in \Interv{1}{n}^2$, on en déduit que $A=B$.
 
-\begin{Exa} Soient $n \geq 1$ et $S : \mathcal{M}_n(\mathbb{C}) \rightarrow \mathbb{C}$ définie par :
+\begin{Exercice}{} Soient $n \geq 1$ et $S : \mathcal{M}_n(\mathbb{C}) \rightarrow \mathbb{C}$ définie par :
 $$ S((a_{i,j})_{1 \leq i,j \leq n}) = \sum_{1 \leq i,j \leq n} a_{i,j} a_{j,i}$$
 
 \begin{enumerate}
 \item Montrer que pour tout $(A,B) \in \mathcal{M}_n(\mathbb{C})^2$, $S(AB)=S(BA)$.
 \item Montrer que deux matrices semblables ont la même image par $S$.
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -237,8 +237,8 @@ S(A) & = S((PB)P^{-1}) \\
 \end{align*}
 \end{enumerate}
 
-\begin{Exa} Déterminer le rang de $A=(i+j+ij)_{1\leq i,j\leq n}$ pour $n \geq 2$.
-\end{Exa} 
+\begin{Exercice}{} Déterminer le rang de $A=(i+j+ij)_{1\leq i,j\leq n}$ pour $n \geq 2$.
+\end{Exercice} 
 
 \corr Notons pour tout $j \in \Interv{1}{n}$, $C_j$, la $j$-ième colonne de $A$. Alors :
 $$ C_j = \begin{pmatrix}
@@ -276,7 +276,7 @@ n+1
 \end{pmatrix}$$
 Ainsi, le rang de la matrice $A$ qui est égal à la dimension du sous-espace engendré par ses colonnes, est inférieur ou égal à $2$. Or les deux premières colonnes de $A$ ne sont pas colinéaires donc le rang de $A$ est supérieur ou égal à $2$. Ainsi, le rang de $A$ est égal à $2$.
 
-\begin{Exa} Montrer que $\begin{pmatrix}
+\begin{Exercice}{} Montrer que $\begin{pmatrix}
 1 & 1 & -1 \\
 -3 & -3 & 3 \\
 -2 & -2 & 2 \\
@@ -285,7 +285,7 @@ Ainsi, le rang de la matrice $A$ qui est égal à la dimension du sous-espace en
 0 & 0 & 0 \\
 0 & 0 & 0 \\
 \end{pmatrix}$ sont semblables.
-\end{Exa}
+\end{Exercice}
 
 \corr Posons :
 $$ A = \begin{pmatrix}
@@ -349,14 +349,14 @@ $$ \textrm{Mat}_{\mathcal{B}'}(f) = \begin{pmatrix}
 
 \noindent Finalement, les matrices $A$ et $B$ représentent le même endomorphisme de $\mathbb{R}^3$ dans des bases différentes donc sont semblables.
 
-\begin{Exa} Soient $n \geq 1$ et $A$ et $B$ deux matrices \textit{réelles} semblables dans $\mathcal{M}_n(\mathbb{C})$.
+\begin{Exercice}{} Soient $n \geq 1$ et $A$ et $B$ deux matrices \textit{réelles} semblables dans $\mathcal{M}_n(\mathbb{C})$.
 
 \begin{enumerate}
 \item Monter l'existence de deux matrices $U$, $V$ de $\mathcal{M}_n(\mathbb{R})$ telles que $AU=UB$, $AV=VB$ et $U+iV$ soit dans $GL_n(\mathbb{C})$.
 \item Justifier l'existence d'un réel $a$ tel que $U+aV$ soit inversible.
 \item En déduire que $A$ et $B$ sont semblables dans $\mathcal{M}_n(\mathbb{R})$.
 \end{enumerate}
-\end{Exa} 
+\end{Exercice} 
 
 \corr \begin{enumerate}
 \item Les matrices $A$ et $B$ sont semblables dans $\mathcal{M}_n(\mathbb{C})$ donc il existe une matrice $P$ de $GL_n(\mathbb{C})$ tel que :
@@ -384,7 +384,7 @@ $$ A= QBQ^{-1}$$
 La matrice $Q$ étant réelle (car $U$ et $V$ le sont et que $a$ est un réel), on en déduit que $A$ et $B$ sont semblables dans $\mathcal{M}_n(\mathbb{R})$.
 \end{enumerate}
 
-\begin{Exa} On considère l'application $\varphi : \mathbb{R}_2[X] \rightarrow \mathbb{R}^3$ définie par :
+\begin{Exercice}{} On considère l'application $\varphi : \mathbb{R}_2[X] \rightarrow \mathbb{R}^3$ définie par :
 \[ \varphi(P)=(P(0),P'(0),P(1)) \]
 
 \begin{enumerate}
@@ -392,7 +392,7 @@ La matrice $Q$ étant réelle (car $U$ et $V$ le sont et que $a$ est un réel), 
 \item Montrer que $\varphi$ est un isomorphisme d'espaces vectoriels.
 \item Déterminer une expression de $\varphi^{-1}$.
 \end{enumerate}
-\end{Exa} 
+\end{Exercice} 
 
 \corr \begin{enumerate}
 \item La base canonique de $\mathbb{R}_2[X]$ est $\mathcal{B}=(1,X,X^2)$. On a :
@@ -437,7 +437,7 @@ En se rappelant que $\mathcal{B}=(1,X,X^2)$, on a donc :
 $$ \varphi^{-1}((x,y,z)) = x + y X + (-x-y+z)X^2$$
 \end{enumerate}
 
-\begin{Exa} Donner les matrices, dans la base canonique, des endomorphismes suivants de $E=\mathbb{R}_n[X]$. Que peut-on en déduire concernant ces endomorphismes ?
+\begin{Exercice}{} Donner les matrices, dans la base canonique, des endomorphismes suivants de $E=\mathbb{R}_n[X]$. Que peut-on en déduire concernant ces endomorphismes ?
 
 \begin{enumerate}
 \item $f : E \rightarrow E$ définie par :
@@ -447,7 +447,7 @@ $$ \forall P \in E, \; f(P) = P(X+1)-P(X-1) $$
 \item $f : E \rightarrow E$ définie par :
 $$ \forall P \in E, \; f(P) = P-P' $$
 \end{enumerate}
-\end{Exa} 
+\end{Exercice} 
 
 \begin{enumerate}
 \item Soit $k \in \Interv{0}{n}$. On a (en utilisant la formule du binôme de Newton pour la deuxième égalité) : 
@@ -510,7 +510,7 @@ $$\textrm{Mat}_{\mathcal{B}}(f)=\begin{pmatrix}
 La matrice de l'endomorphisme $f$ dans la base canonique de $\R_n[X]$ est triangulaire supérieure avec des éléments diagonaux non nuls, elle est donc inversible. Ainsi, $f$ est un automorphisme de $\R_n[X]$.
 \end{enumerate}
 
-\begin{Exa} Soit $E=\R^3.$
+\begin{Exercice}{} Soit $E=\R^3.$
 
 \begin{enumerate}
 
@@ -525,7 +525,7 @@ de $E$, de la projection sur $G$ parallèlement à $F.$
 \item En d\'eduire la matrice, dans la base ${\cal B}$, de la
 sym\'etrie par rapport \`a $F$ parallèlement à $G.$
 \end{enumerate}
-\end{Exa} 
+\end{Exercice} 
 
 \corr 
 
@@ -582,8 +582,8 @@ $$ \textrm{Mat}_{\mathcal{B}}(s_F) = I_3 - 2 \textrm{Mat}_{\mathcal{B}}(p_G) =  
 \end{pmatrix}$$
 \end{enumerate}
 
-\begin{Exa} Peut-on trouver une matrice $A \in \mathcal{M}_3(\mathbb{R})$ telle que $A^2= - I_3$?
-\end{Exa}
+\begin{Exercice}{} Peut-on trouver une matrice $A \in \mathcal{M}_3(\mathbb{R})$ telle que $A^2= - I_3$?
+\end{Exercice}
 
 \corr Supposons par l'absurde l'existence d'une $A \in \mathcal{M}_3(\mathbb{R})$ telle que $A^2= - I_3$. Alors :
 $$ \textrm{det}(A^2) = \textrm{det}(-I_3) = - 1$$
@@ -591,7 +591,7 @@ et donc
 $$ \textrm{det}(A)^2 = \textrm{det}(-I_3) = - 1$$
 Or $\textrm{det}(A)$ est un réel donc son carré est un nombre positif : c'est absurde. Ainsi, il n'existe pas de matrice $A \in \mathcal{M}_3(\mathbb{R})$ telle que $A^2= - I_3$.
 
-\begin{Exa} Soient $n \geq 1$, $\lambda_1 ,\lambda_2 ,\ldots,\lambda_n$ des réels et $a$, $b$ deux réels distincts. On pose pour tout $x \in \mathbb{R}$,
+\begin{Exercice}{} Soient $n \geq 1$, $\lambda_1 ,\lambda_2 ,\ldots,\lambda_n$ des réels et $a$, $b$ deux réels distincts. On pose pour tout $x \in \mathbb{R}$,
     \[
     \Delta_n(x) =
     \begin{vmatrix}
@@ -605,7 +605,7 @@ Or $\textrm{det}(A)$ est un réel donc son carré est un nombre positif : c'est 
       \item Montrer que $\Delta_n$ est une fonction affine.
       \item Donner son expression.
     \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -633,13 +633,13 @@ puis on a :
 $$ q = \Delta_n(-a) -pa$$
 \end{enumerate}
 
-\begin{Exa} Soient $n \geq 2$ et $f \in \mathcal{L}(\mathcal{M}_n(\mathbb{R}))$ définie par $f(M) = \dfrac{M+~^tM}{2}\cdot$
+\begin{Exercice}{} Soient $n \geq 2$ et $f \in \mathcal{L}(\mathcal{M}_n(\mathbb{R}))$ définie par $f(M) = \dfrac{M+~^tM}{2}\cdot$
 
 \begin{enumerate}
 \item Donner, sans aucun calcul, le déterminant de $f$.
 \item Déterminer le noyau, l'image et le rang de $f$. 
 \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr
 
@@ -660,7 +660,7 @@ $$ \textrm{Im}(f) \subset \mathcal{S}_n(\mathbb{R})$$
 Ces espaces sont de même dimension donc sont égaux.
 \end{enumerate}
 
-\begin{Exa} Déterminer pour tout entier $n \geq 1$, le déterminant $D_n$ de taille $n$ suivant :
+\begin{Exercice}{} Déterminer pour tout entier $n \geq 1$, le déterminant $D_n$ de taille $n$ suivant :
 
 \[
     D_n =
@@ -671,7 +671,7 @@ Ces espaces sont de même dimension donc sont égaux.
         {(0)} & {} & 1 & 2 \\
     \end{vmatrix}_{[n]}
     \]
-\end{Exa} 
+\end{Exercice} 
 
 \corr On a $D_1=2$ et 
 $$ D_2 = \begin{vmatrix}
@@ -714,7 +714,7 @@ $$  2- \mu + 2 \mu = 3$$
 et ainsi $ \mu =1$ puis $\lambda=1$. Ainsi, pour tout entier $n \geq 1$,
 $$ D_n = 1+n$$
 
-\begin{Exa} Soient $a_1 ,a_2 , \ldots ,a_n \in \mathbb{C}$. Calculer :
+\begin{Exercice}{} Soient $a_1 ,a_2 , \ldots ,a_n \in \mathbb{C}$. Calculer :
     \[
     \begin{vmatrix}
         {a_1} & {a_2} & \cdots & {a_n} \\
@@ -723,7 +723,7 @@ $$ D_n = 1+n$$
         {(a_1)} & {} & {} & {a_1} \\
     \end{vmatrix}
     \]
-\end{Exa}
+\end{Exercice}
 
 \corr Les opérations successives $L_k \leftarrow L_k - L_{k-1}$ pour $k=n$, $k=n-1$, $\ldots$, $k=2$ implique que le déterminant cherché vaut :
 $$  \begin{vmatrix}
@@ -735,10 +735,10 @@ $$  \begin{vmatrix}
     \end{vmatrix} = a_1 (a_1-a_2)^{n-1}$$
  car ce déterminant est triangulaire.
  
- \begin{Exa} Soient $n \geq 1$ et $A = (a_{ij})_{1 \leq i,j \leq n}$ une matrice de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $i \in \Interv{1}{n}$,
+ \begin{Exercice}{} Soient $n \geq 1$ et $A = (a_{ij})_{1 \leq i,j \leq n}$ une matrice de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $i \in \Interv{1}{n}$,
 $$ \vert a_{ii} \vert > \sum_{k \neq i} \vert a_{ik} \vert $$
 Montrer que $A$ est inversible.
-\end{Exa}
+\end{Exercice}
 
 \corr Supposons par l'absurde que $A$ n'est pas inversible. Il existe alors un vecteur $X = \begin{pmatrix}
 x_1 \\
@@ -760,7 +760,7 @@ Or $\vert x_j \vert$ est non nul donc :
 $$ \vert a_{j,j} \vert  \leq  \sum_{k \neq j} \vert a_{j,k} \vert$$
 ce qui est absurde au vu de l'hypothèse de l'énoncé.
 
-\begin{Exa} Soit ${\cal B}=(e_1,e_2,e_3)$ la base canonique de $\R^3.$ On consid\`ere
+\begin{Exercice}{} Soit ${\cal B}=(e_1,e_2,e_3)$ la base canonique de $\R^3.$ On consid\`ere
 l'endomorphisme $f$ de $E$ d\'efini par~:
 
 \begin{center}
@@ -778,7 +778,7 @@ $\forall (x,y,z)\in\R^3,\quad f(x,y,z)=(x+y-z,x+2y+z,y+2z).$
 \item  D\'eterminer la matrice $M'$ de $f$ dans cette nouvelle base. Quel est le lien entre $M$ et $M'$ ?
 \end{enumerate}
 
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -835,13 +835,13 @@ $$ M' = \begin{pmatrix}
 Les matrices $M$ et $M'$ représentent le même endomorphisme dans des bases de $\mathbb{R}^3$ donc sont semblables.
 \end{enumerate}
 
-\begin{Exa} Soient $n \geq 1$ et $H \in \mathcal{M}_n(\mathbb{C})$ une matrice de rang 1.
+\begin{Exercice}{} Soient $n \geq 1$ et $H \in \mathcal{M}_n(\mathbb{C})$ une matrice de rang 1.
     \begin{enumerate}
       \item
         Montrer qu'il existe des matrices $U,V \in \mathcal{M}_{n,1}(\mathbb{C})$ telles que $H = U ~^tV$.
       \item En déduire que $H^2 = \textrm{Tr}(H)H$.
  \end{enumerate}
-\end{Exa}
+\end{Exercice}
 
 \corr 
 
@@ -872,12 +872,12 @@ c_n
 Or, toujours d'après la question précédente, les coefficients diagonaux de $H$ sont les réels $\alpha_i c_i$ donc $~^tVU $ est égal à la trace de $H$ et finalement, $H^2 = \textrm{Tr}(H)H$.
 \end{enumerate}
 
-\begin{Exa} Donner le noyau, le rang et l'image de $A = \begin{pmatrix}
+\begin{Exercice}{} Donner le noyau, le rang et l'image de $A = \begin{pmatrix}
 -5 & 4 & -1 \\
 -4 & 3 & - 1 \\
 2 	 & -2 & 0 \\
 \end{pmatrix}\cdot$
-\end{Exa}
+\end{Exercice}
 
 \corr En notant $C_1$, $C_2$ et $C_3$ les colonnes de cette matrice, on remarque que :
 $$C_1+C_2-C_3 = 0_{\mathcal{M}_{3,1}(\mathbb{R})}$$
@@ -895,13 +895,13 @@ et ainsi $\textrm{dim}(\textrm{Ker}(A)) = 1$ et $\textrm{rg}(A)=2$. Une base du 
 -1 
 \end{pmatrix} \right)$ (c'est un vecteur non nul) et une base de l'image de $A$ est donnée par $(C_1,C_2)$ (car le rang de la matrice est $2$ et que ces deux vecteurs appartiennent à l'image et sont non colinéaires).
 
-\begin{Exa} Déterminer le rang de $A = \begin{pmatrix}
+\begin{Exercice}{} Déterminer le rang de $A = \begin{pmatrix}
 x & 0 & 0& y \\
 y & x & 0 & 0 \\
 0 & y & x & 0 \\
 0 & 0 & y & x
 \end{pmatrix}$ où $(x,y) \in \mathbb{R}^2$.
-\end{Exa} 
+\end{Exercice} 
 
 \corr Distinguons plusieurs cas.
 

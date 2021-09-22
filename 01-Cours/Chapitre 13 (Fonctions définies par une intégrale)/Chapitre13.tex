@@ -18,25 +18,25 @@
 
 \maketitle{Chapitre 13}{Fonctions définies par une intégrale}
 
-\noindent Dans ce chapitre, $I$ est un intervalle de $\mathbb{R}$ non vide et non réduit à un point.
+Dans ce chapitre, $I$ est un intervalle de $\mathbb{R}$ non vide et non réduit à un point.
 \section{Théorème fondamental de l'analyse}
 
-\begin{thm} Soient $f$ une fonction continue sur $I$ à valeurs dans $\mathbb{R}$ et $a \in I$. Alors la fonction 
+\begin{Theoreme}{} Soient $f$ une fonction continue sur $I$ à valeurs dans $\mathbb{R}$ et $a \in I$. Alors la fonction 
 $$ \begin{array}{cllll}
 F & : & I & \rightarrow & \mathbb{R} \\
- & & x & \mapsto & \dis \int_{a}^x f(t) \dt \\
+ & & x & \mapsto & \int_{a}^x f(t) \dt \\
 \end{array}$$
 est l'unique primitive de $f$ s'annulant en $a$. En particulier $F$ est de classe $\mathcal{C}^1$ sur $I$ et $F'=f$.
-\end{thm} 
+\end{Theoreme} 
 
-\begin{ex} La fonction $t \mapsto e^{-t^2}$ est continue sur $\mathbb{R}$ donc la fonction $F$ définie pour tout $x \in \mathbb{R}$ par 
+\begin{Exemple} La fonction $t \mapsto e^{-t^2}$ est continue sur $\mathbb{R}$ donc la fonction $F$ définie pour tout $x \in \mathbb{R}$ par 
 $$ F(x) = \int_{0}^x e^{-t^2} \dt$$
 est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et pour tout réel $x$, on a $F'(x)=e^{-x^2}$.
-\end{ex}
+\end{Exemple}
 
 \medskip
 
-\begin{ex} Soit $f$ la fonction définie sur $\mathbb{R}$ par $\displaystyle{f(x)=\int_x^{2x} e^{-t^2}\;\text{d}t}$.
+\begin{Exemple} Soit $f$ la fonction définie sur $\mathbb{R}$ par $\displaystyle{f(x)=\int_x^{2x} e^{-t^2}\;\text{d}t}$.
 \begin{enumerate}
 \item Montrons que $f$ est bien définie et que c'est une fonction impaire.
 
@@ -54,21 +54,21 @@ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et pour tout réel $x$, on a $F'(
 
 \vspace{7cm}
 \end{enumerate}
-\end{ex}
+\end{Exemple}
 
 \medskip
 
-\begin{ex} Soient $f$ une fonction continue et intégrable sur $\mathbb{R}$ et $h$ la fonction définie pour tout réel $x$ par :
+\begin{Exemple} Soient $f$ une fonction continue et intégrable sur $\mathbb{R}$ et $h$ la fonction définie pour tout réel $x$ par :
 $$ h(x) = \int_x^{+ \infty} f(t) \dt$$
 Montrons que $h$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et déterminons sa dérivée.
 
 
-%\begin{ex} Soit $f$ définie par $f(x) = \dis \int_{x}^{3x-1} \frac{e^t}{t} dt$. Donnons l'ensemble de définition de $f$, de dérivabilité de $f$ et l'expression de $f'$.
+%\begin{Exemple} Soit $f$ définie par $f(x) = \int_{x}^{3x-1} \frac{e^t}{t} dt$. Donnons l'ensemble de définition de $f$, de dérivabilité de $f$ et l'expression de $f'$.
 
 \vspace{11.5cm}
-\end{ex}
+\end{Exemple}
 
-\begin{exa} Soit $f$ la fonction définie sur $\mathbb{R}^*$ par $f(x) = \dis \int_{x}^{2x} \dfrac{\ch(t)}{t} \dt$.
+\begin{ApplicationDirecte} Soit $f$ la fonction définie sur $\mathbb{R}^*$ par $f(x) = \int_{x}^{2x} \dfrac{\ch(t)}{t} \dt$.
 
 \begin{enumerate}
 \item Justifier que $f$ est bien définie sur $\mathbb{R}^*$. 
@@ -76,17 +76,17 @@ Montrons que $h$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et déterminons 
 \item Justifier que $f$ est prolongeable par continuité en $0$.
 \item Montrer que $f$ est $\mathcal{C}^1$ sur $\mathbb{R}_+^{*}$ et donner pour tout $x>0$, $f'(x)$.
 \end{enumerate}
-\end{exa}
+\end{ApplicationDirecte}
 
 \section{Intégrales à paramètres}
 
-\noindent Dans cette section, $A$ et $I$ désignent deux intervalles de $\mathbb{R}$ et $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$. Dans la suite, on considère des fonctions $f : (x,t) \in A \times I \rightarrow \mathbb{K}$.
+Dans cette section, $A$ et $I$ désignent deux intervalles de $\mathbb{R}$ et $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$. Dans la suite, on considère des fonctions $f : (x,t) \in A \times I \rightarrow \mathbb{K}$.
 
 \subsection{Théorème de continuité}
 
-\begin{thm}[de continuité sous le signe intégrale]
+\begin{Theoreme}{de continuité sous le signe intégrale}
 
-\noindent Soit $f : A \times I \rightarrow \mathbb{K}$. On suppose que :
+Soit $f : A \times I \rightarrow \mathbb{K}$. On suppose que :
 \begin{itemize}
 \item Pour tout $x \in A$, $t \mapsto f(x,t)$ est continue par morceaux sur $I$.
 \item Pour tout $t \in I$, la fonction $x \mapsto f(x,t)$ est continue sur $A$.
@@ -96,30 +96,32 @@ $$ \vert f(x,t) \vert \leq \varphi(t)$$
 Alors la fonction :
 $$ F : x \mapsto \int_{I} f(x,t) \dt$$
 est définie et continue sur $A$.
-\end{thm}
+\end{Theoreme}
 
 
-\begin{rems}
+\begin{Remarques}{}
+\begin{itemize}
 \item $x$ est la variable de la fonction $F$ et $t$ est la variable d'intégration.
-\item La dernière hypothèse s'appelle l'\textit{hypothèse de domination}.
+\item La dernière hypothèse s'appelle l'\emph{hypothèse de domination}.
 \item Si il est difficile d'obtenir l'hypothèse de domination sur $A$, on peut juste l'obtenir sur tout segment de $A$ (on obtiendra alors la continuité de $F$ sur tout segment de $A$ et donc sur $A$).
-\end{rems}
+\end{itemize}
+\end{Remarques}{}
 
 \medskip
 
-\begin{ex} Soit $F$ définie par 
+\begin{Exemple} Soit $F$ définie par 
 $$ F(x) = \int_{1}^{+ \infty} \frac{1}{x+t^3} \dt$$
 Justifions que $F$ est bien définie et continue sur $\mathbb{R}_+$.
 
 \vspace{8.5cm}
-\end{ex}
+\end{Exemple}
 
-\begin{ex} Soit $F$ définie par 
+\begin{Exemple} Soit $F$ définie par 
 $$ F(x) = \int_{0}^{+ \infty} \frac{\ln(1+xt)}{1+t^2} \dt$$
 Justifions que $F$ est bien définie et continue sur $\mathbb{R}_+$.
 
 \vspace{8.5cm}
-\end{ex}
+\end{Exemple}
 
 \newpage
 
@@ -127,37 +129,37 @@ $\phantom{test}$
 
 \vspace{6cm}
 
-\begin{exa} Soit $F$ définie par 
+\begin{ApplicationDirecte} Soit $F$ définie par 
 $$ F(x) = \int_{0}^{+ \infty} \frac{e^{-xt}}{1+t^2} \dt$$
 Justifier que $F$ est bien définie et continue sur $\mathbb{R}_+$.
-\end{exa} 
+\end{ApplicationDirecte} 
 
 \subsection{Théorème de dérivation}
 
-\begin{defin} Soit $f : A \times I \rightarrow \mathbb{K}$.
+\begin{Definition}{} Soit $f : A \times I \rightarrow \mathbb{K}$.
 
 \begin{itemize}
 \item Soit $t \in I$. Si la fonction $x \mapsto f(x,t)$ est de classe $\mathcal{C}^1$ sur $A$ alors pour tout $x_0 \in A$, le nombre dérivé de $x \mapsto f(x,t)$ en $x_0$ est noté $\dfrac{\partial f}{\partial x} (x_0,t)$.
 \item Si la propriété précédente est vérifiée pour tout $t \in I$, on obtient ainsi une fonction :
 $$ \dfrac{\partial f}{\partial x} : (x,t) \in A \times I \mapsto \dfrac{\partial f}{\partial x}(x,t)$$
-que l'on appelle la \textit{dérivée partielle} de $f$ par rapport à $x$.
+que l'on appelle la \emph{dérivée partielle} de $f$ par rapport à $x$.
 \item En itérant le procédé, on définit de la même manière la dérivée partielle d'ordre $k \geq 2$ par rapport à $x$, que l'on note $\dfrac{\partial^k f}{\partial x^k} \cdot$
 \end{itemize}
-\end{defin}
+\end{Definition}
 
 \medskip
 
-\begin{ex} Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par $\dis f(x,t) = \frac{e^{-xt}}{1+t^2}\cdot$
+\begin{Exemple} Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par $f(x,t) = \frac{e^{-xt}}{1+t^2}\cdot$
 
 \vspace{4cm}
-\end{ex}
+\end{Exemple}
 
-\begin{exa} Soit $f : \mathbb{R} \times \mathbb{R}_+^{*} \rightarrow \mathbb{R}$ définie par :
+\begin{ApplicationDirecte} Soit $f : \mathbb{R} \times \mathbb{R}_+^{*} \rightarrow \mathbb{R}$ définie par :
 $$ f(x,t) = t^x$$
 Justifier que $f$ admet une dérivée partielle par rapport à $x$ et donner son expression. 
-\end{exa}
+\end{ApplicationDirecte}
 
-\begin{thm}[dérivation sous le signe intégrale]
+\begin{Theoreme}{dérivation sous le signe intégrale}
 Soit $f : A \times I \rightarrow \mathbb{K}$. On suppose que :
 \begin{itemize}
 \item Pour tout $x \in A$, $t \mapsto f(x,t)$ est continue par morceaux et intégrable sur $I$.
@@ -170,29 +172,31 @@ Alors la fonction
 $$ F : x \mapsto \int_{I} f(x,t) \dt$$
 est définie et de classe $\mathcal{C}^1$ sur $A$ et pour tout $x \in A$,
 $$ F'(x) = \int_{I}  \dfrac{\partial f}{\partial x}(x,t) \dt$$
-\end{thm}
+\end{Theoreme}
 
-\begin{rems}
-\item L'hypothèse de domination est faite sur la dérivée partielle de $f$ par rapport à $x$, il faut donc remarquer que pour ce théorème, il est important de ne pas oublier de montrer que pour tout $x \in A$, $t \mapsto f(x,t)$ est \textit{intégrable} sur $I$. 
+\begin{Remarques}{}
+\begin{itemize}
+\item L'hypothèse de domination est faite sur la dérivée partielle de $f$ par rapport à $x$, il faut donc remarquer que pour ce théorème, il est important de ne pas oublier de montrer que pour tout $x \in A$, $t \mapsto f(x,t)$ est \emph{intégrable} sur $I$. 
 \item Ici aussi, on peut appliquer le théorème sur tout segment de $A$.
-\end{rems}
+\end{itemize}
+\end{Remarques}{}
 
-\begin{ex} Soit $F$ définie par :
+\begin{Exemple} Soit $F$ définie par :
 $$ F(x) = \int_{0}^{+ \infty} \frac{\sin(xt)}{t} e^{-t} \dt$$
 Justifions que $F$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$, déterminons $F'$ et déduisons-en une expression simple de $F$.
 
 \vspace{10cm}
-\end{ex}
+\end{Exemple}
 
 \newpage
 
-\begin{exa} Soit $F$ définie par :
+\begin{ApplicationDirecte} Soit $F$ définie par :
 $$ F(x) = \int_{0}^{+ \infty} e^{-t^2} \ch(2xt) \dt$$
 Justifier que $F$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ (on vérifiera l'hypothèse de domination sur $[-a,a]$ pour tout $a>0$).
-\end{exa}
+\end{ApplicationDirecte}
 
 \subsection{Généralisation : dérivée d'ordre supérieur}
-\begin{thm}
+\begin{Theoreme}{}
 Soient $f : A \times I \rightarrow \mathbb{K}$ et $k \geq 2$. On suppose que :
 \begin{itemize}
 \item Pour tout $x \in A$, $t \mapsto f(x,t)$ est continue par morceaux et intégrable sur $I$.
@@ -205,15 +209,17 @@ Alors la fonction
 $$ F : x \mapsto \int_{I} f(x,t) \dt$$
 est définie et de classe $\mathcal{C}^k$ sur $A$ et pour tout $j \in \Interv{1}{k}$ et tout $x \in A$,
 $$ F^{(j)}(x) = \int_{I}  \dfrac{\partial^{j} f}{\partial x^j}(x,t) \dt$$
-\end{thm}
+\end{Theoreme}
 
-\begin{rems}
+\begin{Remarques}{}
+\begin{itemize}
 \item Encore une fois : on peut travailler sur tout sous-segment de $A$.
 \item Pour montrer que $F$ est de classe $\mathcal{C}^{\infty}$ sur $A$, il suffit de montrer que $F$ est de classe $\mathcal{C}^k$ pour tout $k \geq 1$.
-\end{rems}
+\end{itemize}
+\end{Remarques}{}
 %Centrale PSI 2001
 \section{Fonction Gamma}
-\noindent On définit la fonction $\Gamma$ d'Euler, pour tout réel $x>0$, par :
+On définit la fonction $\Gamma$ d'Euler, pour tout réel $x>0$, par :
 $$ \Gamma(x) = \int_{0}^{+ \infty} t^{x-1} e^{-t} \dt$$
 Montrons que $t \mapsto  t^{x-1} e^{-t}$ est intégrable sur $]0, + \infty[$ si et seulement si $x>0$.
 
@@ -221,19 +227,19 @@ Montrons que $t \mapsto  t^{x-1} e^{-t}$ est intégrable sur $]0, + \infty[$ si 
 
 \newpage
 
-\noindent Justifions que $\Gamma$ est de classe $\mathcal{C}^1$ sur $]0, + \infty[$.
+Justifions que $\Gamma$ est de classe $\mathcal{C}^1$ sur $]0, + \infty[$.
 
 \vspace{13cm}
 
 
 
-\noindent Exprimons, pour tout réel $x>0$, $\Gamma(x+1)$ en fonction de $\Gamma(x)$ et de $x$.
+Exprimons, pour tout réel $x>0$, $\Gamma(x+1)$ en fonction de $\Gamma(x)$ et de $x$.
 
 \vspace{7cm}
 
-\noindent 
 
-\noindent Déterminer $\Gamma(n)$ pour tout $n \geq 1$.
+
+Déterminer $\Gamma(n)$ pour tout $n \geq 1$.
 
 \vspace{5cm}
 
