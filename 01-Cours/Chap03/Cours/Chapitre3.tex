@@ -16,7 +16,7 @@
 \tableofcontents
 \separationTitre
 
-\newpage
+
 Dans tout le chapitre, $n$, $k$ et $p$ seront des entiers naturels non nuls et $\mathbb{K}$ sera $\mathbb{R}$ ou $\mathbb{C}$.
 
 \section{Espaces et sous-espaces vectoriels}
@@ -86,7 +86,6 @@ Un vecteur $x$ de $E$ est une \emph{combinaison linéaire} de $(e_1, \ldots, e_p
 $$ \phantom{x = \sum_{k=1}^p \lambda_k e_k = \lambda_1 e_1 + \lambda_2 e_2 + \cdots + \lambda_p e_p }$$
 \end{Definition}
 
-\newpage
 
 \begin{Exemples}
 \begin{enumerate}
@@ -143,7 +142,9 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel, $I$ un ensemble et $(E_i)_{i \in I}
 \end{Proposition}
 
 \begin{Demonstration}{}
-\vspace{5cm}
+\vspace{6cm}
+
+\vspace{\stretch{1}}
 %On vérifie les trois points :
 %\begin{itemize}
 %\item $\bigcap_{i \in I} E_i \subset E$.
@@ -310,6 +311,8 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel et $E_1$, $E_2$, $\ldots, E_p$ des s
 %$\rhd$  Supposons que $E_1 \cap E_2 = \lbrace 0_E \rbrace$ et montrons que la somme est directe. Soit $(x_1,x_2) \in E_1 \times E_2$ tel que $x_1+x_2 = 0$. Alors $x_1=-x_2 \in E_1 \cap E_2$ car $E_2$ est un sous-espace vectoriel de $E$. Or l'intersection est réduite au vecteur nul donc $x_1=-x_2 = 0_E$ et la somme est donc directe.
 
 \vspace{8cm}
+
+\vspace{\stretch{1}}
 \end{Demonstration}
 
 \begin{Remarque}{} Le critère précédent ne se généralise pas dans le cas $n$ sous-espaces vectoriels avec $n \geq 3$. Par exemple :
@@ -348,7 +351,12 @@ Montrons que $F$ et $G$ sont des sous-espaces vectoriels supplémentaires de $\m
 %
 %$\rhd$ On a donc $\mathcal{C}([-1,1], \mathbb{R}) = F \bigoplus G$.
 \end{enumerate}
-\vspace{17cm}
+
+\newpage
+
+\vspace*{7cm}
+
+\vspace{\stretch{1}}
 \end{Exemple}
 %
 %\begin{ApplicationDirecte} Prouver le résultat de la question 1. de l'exemple précédent.
@@ -372,6 +380,8 @@ Dans le cas de deux espaces vectoriels, on a un critère plus rapide pour montre
  \begin{Demonstration}{}
  Conséquence de la proposition \ref{SommeDir2}.
  \end{Demonstration}
+
+\newpage
  \section{Familles libres, génératrices, bases}
  
  \begin{Definition}{}
@@ -435,7 +445,7 @@ Soient $E$ un $\mathbb{K}$-espace vectoriel et $(x,y)$ un couple de vecteurs de 
 
 \begin{Exemple} Étudions dans $\mathbb{R}^3$ la liberté de la famille $((1,2,1), (1,-1,1), (1,1,0))$.
 
-\vspace{7cm}
+\vspace*{8cm}
 \end{Exemple}
 
 \begin{ApplicationDirecte} Étudier dans $\mathbb{R}[X]$ la liberté de la famille ($(1-X)^2,X(1-X),X^2)$.
@@ -461,6 +471,8 @@ On dit que la famille est \emph{échelonnée en degré} (et qu'elle ne contient 
 %Ainsi $\lambda_1 = \lambda_2 = \ldots = \lambda_n = 0$ et la famille est donc libre.
 
 \vspace{9cm}
+
+\vspace{\stretch{1}}
 \end{Exemple}
 
 \begin{TheoremeDefinition}{} 
@@ -493,7 +505,7 @@ En particulier, tout espace vectoriel, non réduit au vecteur nul et de dimensio
  \begin{Theoreme}{} Toutes les bases d'un $\mathbb{K}$-espace vectoriel $E$ non réduit au vecteur nul de dimension finie ont le même cardinal. Ce nombre est appelé \emph{dimension} de $E$ et on le note $\textrm{dim}_{\mathbb{K}}(E)$ ou $\textrm{dim}(E)$ (si il n'y a pas d'ambiguïté sur le corps de base). Par convention, si $E$ est réduit au vecteur nul, sa dimension est nulle.
  \end{Theoreme}
  
-\newpage
+
  
  Donnons maintenant des exemples (usuels) en donnant à chaque fois la \emph{base canonique} (c'est-à-dire la base la plus classique).
  
@@ -534,6 +546,7 @@ En effet, la famille est échelonné en degrés, ne contient pas le vecteur nul 
 Montrer que $\mathcal{B}' = (\varepsilon_{1} ,\varepsilon_{2} ,\varepsilon_{3})$ est une base de $E$.
 \end{ApplicationDirecte}
 
+\medskip
 \subsection{Dimension de sous-espaces vectoriels, de produits, de sommes}
 
 \begin{Proposition}{}  Soient $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et $F$ un sous-espace vectoriel de $E$. Alors :
@@ -559,14 +572,12 @@ $$ \textrm{dim}(E_1 \times E_2 \times \cdots \times E_p) = \sum_{k=1}^p \textrm{
 	$(e_{1,n_1}, 0_{E_2}, \ldots, 0_{E_p})$, $\ldots$, 
 	$(0_{E_1},e_{2,1}, 0_{E_2}, \ldots, 0_{E_p})$, $\ldots$,
 	$(0_{E_1},e_{2,n_2}, 0_{E_2}, \ldots,0_{E_p}),$
-
-$(0_{E_1},e_{2,n_2}, 0_{E_2}, \ldots,0_{E_p}), \ldots, 
-(0_{E_1},\ldots, 0_{E_{p-1}}, e_{p,1}), (0_{E_1},\ldots, 
-0_{E_{p-1}}, e_{p,n_p}))$ est une base de $E_1 \times E_2 \times \cdots \times E_p$
-ce qui donne le résultat.
+	$(0_{E_1},e_{2,n_2}, 0_{E_2}, \ldots,0_{E_p})$, $\ldots$, 
+	$(0_{E_1},\ldots, 0_{E_{p-1}}, e_{p,1})$, $(0_{E_1},\ldots, 
+	0_{E_{p-1}}, e_{p,n_p}))$ est une base de $E_1 \times E_2 \times \cdots \times E_p$
+	ce qui donne le résultat.
 \end{Demonstration}
 
-\medskip
 %\begin{lem}
 %Soient $E$ un espace vectoriel, $p \in \mathbb{N}^*$ tel que $p \geq 2$ et $(x_1, x_2, \ldots, x_p)$ une famille libre. Alors pour tout $i \in \iii{1}{p-1}$,
 %$$ \Vect(x_1, x_2, \ldots, x_p) = \Vect(x_1, \ldots, x_i) \oplus \Vect(x_{i+1}, \ldots, x_p)$$
@@ -706,8 +717,12 @@ E = F \oplus G & \Longleftrightarrow & \phantom{ F \cap G = \lbrace 0_E \rbrace 
 \begin{Exemple} \textbf{Matrices symétriques et matrices antisymétriques.}
 \end{Exemple}
 
-\vspace{14cm}
-\begin{ApplicationDirecte} Reprouver l'application directe du cours \ref{Exo} en utilisant le corollaire précédent.
+\vspace{\stretch{1}}
+
+\newpage
+\vspace*{14cm}
+\begin{ApplicationDirecte} Reprouver l'application directe du cours 
+	page~\pageref{Exo} en utilisant le corollaire précédent.
 \end{ApplicationDirecte}
 
 \subsection{Rang d'une famille de vecteurs}
