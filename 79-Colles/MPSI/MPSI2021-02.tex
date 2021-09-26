@@ -1,0 +1,107 @@
+\documentclass[twoside,a4paper,landscape,french,10pt]{VcCours}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnseprule{0.4pt}%
+\addtolength\columnsep{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{colle}[4]{{\large\bf\makebox[0cm][l]{#1\hspace{\stretch{-1}}}\hspace{\stretch{1}}#2\hspace{\stretch{1}}\makebox[0cm][r]{\hspace{\stretch{-1}}#3}}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{multicols*}{#4}}{\end{multicols*}\pagebreak}
+\newenvironment{eleve}[1]{\textbf{\large #1}}{\vspace{\stretch{1}}
+\columnbreak}
+\newenvironment{eleveF}[1]{\textbf{\large #1}}{}
+\newcommand{\cours}{\medskip\uwave{Cours :}
+
+\smallskip}
+\newcommand{\exo}[1]{\vspace{\stretch{1}}\uwave{Exercice #1:}
+
+\smallskip}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+-----------------------------------------+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{colle}{MPSI -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
+n\degres1 -- le lundi 27/09/2021}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+    \cours
+    Définition de $A\cap B$, $A\cup B$, $A\setminus B$ et $\overline{A}$.\\
+    Démo de $A\subset B \Longleftrightarrow \overline{B}\subset \overline{A}$.
+
+    \exo1
+    Montrez que $\forall n\geqslant 1$,
+    $\sum_{k=1}^{n}\dfrac{k}{(k+1)!}=1-\dfrac{1}{(n+1)!}$.
+
+
+    \exo2
+    Résoudre dans $\C$ l'équation: $(z + 1)^n = e^{2ina}$.
+
+    \exo3
+    Montrez que $(\forall \varepsilon >0,|a|\leqslant \varepsilon)\Longrightarrow a=0$.  
+
+    \vspace*{\stretch{2}}
+
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+  \cours
+  Démo $\overline{A}=\overline{A\cap B}\cup\overline{B}$.\\
+  $u_0=2$, $u_1=10$, $u_{n+2}=4u_{n+1}-4u_n$.\\
+  Montrer que $\forall n\in\N$, $u_n=(3n+2)2^n$.
+
+  \exo1
+  Résoudre $\cos(2x)-\sqrt3\sin(2x)=1$.
+
+  \exo2
+  \begin{enumerate}
+    \item Étudier pour $n\in\N$, la proposition $2n+1\leq 2^n$.
+    \item Montrer que $\forall n\in\N$, $n^2\leq 2^n+1$.
+  \end{enumerate}
+
+  \exo2
+  $A,B,C,D$ des parties de $E$.\\
+  Montrez que $\systeme{B\setminus C\subset A\\C\setminus D\subset A}
+  \Longrightarrow B\setminus D\subset A$
+
+  \vspace*{\stretch{2}}
+    
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleveF}{}
+    
+  \cours
+  Démo $A\cap B=\varnothing \Longleftrightarrow A\subset\overline{B}
+  \Longleftrightarrow B\subset\overline{A}$.\\
+  Montrez que $\forall z\in\C$, $\exists!(a,b)\in\R^2/$ $z = a + bj$ 
+  où $j=e^{i2\pi/3}$.
+
+
+  \exo1
+  Montrez que $\forall n\geqslant 1$,
+  $\sum_{k=1}^{n}k\times k!=(n+1)!-1$.
+  
+  \exo2
+  Linéariser $\cos^{2}x\sin(4x)$.
+
+  \exo3
+  Montrer que pour tout $\lambda \in \R$, le nombre complexe $z =
+  \frac{1+\lambda i}{1-\lambda i}$ est de module $1$. Pour quels $z
+  \in\C$, existe-t-il $\lambda \in\R$ tel que $z = \frac{1+\lambda
+  i}{1-\lambda i}$?
+  
+  \vspace*{\stretch{2}}
+  
+\end{eleveF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{colle}%
+\end{document}
+    
