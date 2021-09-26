@@ -1,0 +1,212 @@
+\documentclass[a4paper,twoside,french,10pt]{VcCours}
+
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+
+\begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir non surveillé n\degres3}
+
+\begin{center}
+\large\bf
+Correction
+\end{center}
+\separationTitre
+
+
+\section*{Problème -- développement asymptotique de la série harmonique}
+
+\begin{enumerate}
+
+    \item 
+        
+        \begin{enumerate}
+            \item On suppose que $a_n \mathop{\sim}\limits_{+\infty} b_n$. Soit $\varepsilon>0$. Sachant que la suite $(b_n)_{n \geq 0}$ est à termes strictement positifs, on a :
+    $$ \lim_{n \rightarrow + \infty} \dfrac{a_n}{b_n} =1$$
+    ou encore :
+    $$ \lim_{n \rightarrow + \infty} \dfrac{a_n}{b_n} -1= 0$$
+    Par définition de convergence, il existe un entier $n_0 \in \mathbb{N}$ tel que pour tout entier $n \geq N$,
+    $$ \left\vert  \dfrac{a_n}{b_n} -1 \right\vert \leq \varepsilon$$
+    ou encore :
+    $$ \left\vert  \dfrac{a_n-b_n}{b_n}  \right\vert \leq \varepsilon$$
+    En multipliant par $\vert b_n \vert>0$, on a alors :
+    $$ |a_n-b_n|\leq \varepsilon b_n$$
+    Ainsi, il existe un rang $n_0\in\N$ tel que :
+            $$\boxed{\forall n\geq n_0,\, |a_n-b_n|\leq \varepsilon b_n}$$
+            
+            \item Soit $n\geq n_0$ un entier et $N>n$. On a d'après l'inégalité triangulaire : 
+    
+    $$\left|\sum_{k=n+1}^{N} (a_k-b_k)\right| \ \leq \ \sum_{k=n+1}^{N} |a_k-b_k|
+    \ \leq \ \varepsilon \sum_{k=n+1}^{N} b_k$$
+    Et comme les s\'eries convergent, quand $N\rightarrow +\infty,$ on obtient : 
+    $$\left|\sum_{k=n+1}^{+\infty} (a_k-b_k)\right|\ =\ \left|\sum_{k=n+1}^{\infty} a_k-\sum_{k=n+1}^{+\infty} b_k\right|\ \leq\ \varepsilon \sum_{k=n+1}^{+\infty} b_k$$
+    et ainsi, 
+    \fbox{ $\forall n\geq n_0,\qquad |R_n-T_n|\leq \varepsilon T_n.$ }
+    \item Pour tout entier $n \geq n_0$, en divisant par $T_n$ (qui est strictement positif) l'inégalité précédente, on obtient finalement que :
+    $$\forall \varepsilon>0, \ \exists n_0\in\N,\ \forall n\geq n_0,\qquad \left|\frac{R_n}{T_n}-1\right|\leq \varepsilon$$ 
+    Donc
+    $$\lim_{n\to+\infty}\frac{R_n}{T_n}=1$$
+    et ainsi, 
+    \fbox{$R_n \mathop{\sim}\limits_{+\infty} T_n$}
+        \end{enumerate}
+        
+        
+        \item Voir le cours pour la divergence. C'est une série à termes positifs donc :
+        $$\boxed{ \lim_{n \rightarrow + \infty} S_n = + \infty}$$
+        
+        
+        \item
+        \begin{enumerate}
+            \item Vérifions les trois hypothèses.
+            
+            \begin{itemize}
+            \item On a pour tout $n \geq 1$,
+            $$u_n-v_n=\frac{1}{n}$$
+            donc :
+            $$u_n-v_n \mathop{\longrightarrow}\limits_{n\to+\infty}0$$
+            \item Soit $n \geq 1$. On a :
+            \begin{align*}
+            u_{n+1}-u_n& =S_{n+1}-S_n-\ln(n+1)+\ln(n) \\
+            & =\frac{1}{n+1}+\ln\left(\frac{n}{n+1}\right) \\
+            & =\frac{1}{n+1}+\ln\left(1-\frac{1}{n+1}\right)\leq 0
+            \end{align*}
+            car pour tout réel $x \geq -1$, $\ln(1+x) \leq x$.  Ainsi la suite $(u_n)_{n\in\N^*}$ est décroissante.
+            \item Soit $n \geq 1$. On a :
+            \begin{align*}
+            v_{n+1}-v_n& =u_{n+1}-u_n-\frac{1}{n+1}+\frac{1}{n} \\
+            & =\frac{1}{n}-\ln(n+1)+\ln(n) \\
+            & =\frac{1}{n}-\ln\left(1+\frac1{n}\right)\geq 0
+            \end{align*}
+            en réutilisant l'inégalité classique précédente. Ainsi la suite $(v_n)_{n\in\N^*}$ est croissante.
+            \end{itemize}
+    Finalement, 
+    \fbox{$(u_n)_{n\in\N^*}$ et $(v_n)_{n\in\N^*}$ sont adjacentes et elles convergent donc vers une même limite.}
+            
+            
+        
+        \item Le réel $\gamma$ est la limite commune des deux suites. D'après le théorème lié aux suites adjacentes, sachant que la suite $(v_n)_{n\in\N^*}$ est croissante, on sait que pour tout entier $n \geq 1$, $\gamma\geq v_n$. Or :
+    $$v_1=u_1-1=0 \, \hbox{ et } \, v_2=1+\frac{1}{2}-\ln(2)-\frac{1}{2}=1-\ln(2)>0$$
+    Ainsi,
+    \fbox{$\gamma\geq v_2>0$ }
+        
+        
+        Démontrer que $\gamma>0.$
+        
+        
+        
+    \end{enumerate}
+        
+        
+        
+        \item
+        
+        
+        \begin{enumerate}
+        
+        \item 
+        
+        
+        \begin{enumerate}
+        
+        \item Pour tout $n\in\N^*,$ $r_n$ est le reste d'une série de Riemann convergente ($2>1$) donc 
+        \fbox{$r_n$ est défini}
+        
+        
+        \item La fonction $x \mapsto \dfrac{1}{x^2}$ est continue et décroissante sur $\mathbb{R}_+^*$. Soit $k\in\N^*$. Pour tout $t\in[k,k+1],$ on a :
+        $$\frac{1}{(k+1)^2}\leq\frac{1}{t^2}\leq \frac{1}{k^2}$$
+    ce qui implique par croissance de l'intégrale :
+        $$\frac{1}{(k+1)^2}\leq \int_k^{k+1}\frac{dt}{t^2}\leq \frac{1}{k^2}$$
+    Par sommation pour $k$ variant de $n+1$ à $N \geq n+1$, on obtient :
+    $$\sum_{k=n+1}^N \frac{1}{(k+1)^2}\leq \int_{n+1}^{N+1}\frac{dt}{t^2}=\frac{1}{n+1}-\frac{1}{N+1}\leq \sum_{k=n+1}^N \frac{1}{k^2}$$
+    Puisque tous les membres de l'inégalité admettent une limite quand $N$ tend vers $+\infty,$ par passage \`a la limite, on obtient :
+        $$r_n-\frac{1}{(n+1)^2}=\sum_{k=n+1}^{+\infty} \frac{1}{(k+1)^2}\leq \frac{1}{n+1} \leq \sum_{k=n+1}^{+\infty} \frac{1}{k^2}=r_n$$
+    et ainsi,
+    $$\frac{1}{n+1}  \leq r_n\leq \frac{1}{n+1} +\frac{1}{(n+1)^2}$$
+    puis sachant que $n+1>0$:
+    $$ 1 \leq (n+1) r_n  \leq 1 + \dfrac{1}{n+1}$$
+    On a :
+    $$ \lim_{n \rightarrow + \infty} 1 + \dfrac{1}{n+1} = 1$$
+    Par théorème d'encadrement, on en déduit que la suite de terme général $(n+1)r_n$ converge et sa limite vaut $1$. Ainsi,
+    \fbox{ $r_n\mathop{\sim}\limits_{+\infty}\frac{1}{n}$ }
+        \end{enumerate} 
+        
+            \item 
+            \begin{enumerate}
+                \item Quand $n$ tend vers $+ \infty$, $1/n$ tend vers $0$ donc on a :
+    \begin{align*} 
+    a_n& =t_n-t_{n-1} \\
+    &=u_n-u_{n-1} \\
+    & =\ln\left(1-\frac{1}{n}\right)+\frac{1}{n}\\
+    &\mathop{\sim}\limits_{+\infty}-\frac{1}{2n^2}
+    \end{align*}
+    car :
+    $$\ln(1+x)-x \underset{0}{=} \dfrac{x^2}{2} + o(x^2)$$
+    Ainsi,
+    $$ \boxed{a_n \mathop{\sim}\limits_{+\infty}-\frac{1}{2n^2}}$$
+                
+                \item On applique la question préliminaire avec $a_n=t_n-t_{n-1}$ et $b_n=-\frac{1}{2n^2}$, les hypothèses sont bien vérifiées (quitte à tout multiplier par $-1$), donc :
+                $$R_n \mathop{\sim}\limits_{+\infty} T_n$$
+    Or on a pour tout entier $n \geq 1$,
+    $$R_n=\lim_{N\to+\infty}\sum_{k=n+1}^N (t_k-t_{k-1})=\lim_{N\to+\infty}(t_N-t_n)=-t_n$$
+    car le fait que $\gamma=\lim_{n\to+\infty} u_n$ implique que 
+    $$\lim_{N\to+\infty}t_N=\lim_{N\to+\infty} (u_N-\gamma)=0$$
+    D'après la question 4(a), 
+    $$T_n=-\frac{1}{2}\sum_{k=n+1}^{+\infty} \frac{1}{k^2}=-\frac{r_n}{2}\mathop{\sim}\limits_{+\infty}-\frac{1}{2n}$$
+    Finalement,
+    \fbox{$t_n \mathop{\sim}\limits_{+\infty}\frac{1}{2n}$}
+                
+                
+                
+            \end{enumerate}
+            
+            \item On a d'après la question précédente :
+            $$ t_n \underset{+ \infty}{=} \dfrac{1}{2n} + o \left(  \dfrac{1}{n} \right)$$
+            puis 
+            $$ u_n - \gamma \underset{+ \infty}{=} \dfrac{1}{2n} + o \left(  \dfrac{1}{n} \right)$$
+            et ainsi :
+            $$ S_n - \ln(n) - \gamma \underset{+ \infty}{=} \dfrac{1}{2n} + o \left(  \dfrac{1}{n} \right)$$
+    Finalement,
+    \fbox{$S_n \underset{ \infty}{=} \ln(n)+\gamma+\frac{1}{2n}+\mathop{o}\left(\frac{1}{n}\right)$}
+    
+        
+    
+        \end{enumerate}
+        
+        
+        
+        \item 
+        
+        
+        \begin{enumerate}
+            \item On a quand $n$ tend vers $+ \infty$ :
+    \begin{align*}
+    w_n-w_{n-1} & =  \ln\left(1-\frac{1}{n}\right)+\frac{1}{n}-\frac{1}{2n}+\frac{1}{2(n-1)}\\
+        \\
+        & =  -\frac{1}{n}-\frac{1}{2n^2}-\frac{1}{3n^3}+\frac{1}{n}-\frac{1}{2n}+\frac{1}{2n}\frac{1}{1-1/n} + \mathop{o}\left(\frac{1}{n^3}\right)\\
+        \\
+        & =  -\frac{1}{2n^2}-\frac{1}{3n^3}-\frac{1}{2n}+\frac{1}{2n}\left(1+\frac{1}{n}+\frac{1}{n^2}\right)+\mathop{o}\left(\frac{1}{n^3}\right)\\
+        \\
+        & =  -\frac{1}{3n^3}+\frac{1}{2n^3}+\mathop{o}\left(\frac{1}{n^3}\right)	
+        \end{align*}
+    Ainsi,
+    \fbox{ $w_n-w_{n-1}\underset{+\infty}{\sim}\frac{1}{6n^3}$ }
+        
+            
+            \item En reprenant le raisonnement de la question 4(a), avec la fonction $t \mapsto \frac{1}{t^3},$ on démontre que : 
+        $$\sum_{k=n+1}^{+\infty}\frac{1}{k^3}\underset{+\infty}{\sim}\frac{1}{2n^2}$$
+        En utilisant à nouveau la question préliminaire avec $a_n=w_n-w_{n-1}$ et $b_n=\frac{1}{6n^3},$ on obtient que :
+    \fbox{$w_n \underset{+\infty}{\sim}-\frac{1}{12n^2}$}
+        
+            
+            
+            
+            \item En précédant comme auparavant, on a :
+        
+    
+        \fbox{ $S_n \underset{+ \infty}{=} \ln(n)+\gamma+\frac{1}{2n}-\frac{1}{12n^2}+\mathop{o}\left(\frac{1}{n^2}\right)$ }
+    
+            
+        \end{enumerate}
+        \end{enumerate}
+    
+    
+    \end{document}

@@ -1,0 +1,72 @@
+\documentclass[a4paper,french,11pt,twoside]{VcCours}
+
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+
+\begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir non surveillé n°4}
+\begin{center}
+\large\bf 
+Facultatif, pour le vendredi 1 octobre 2021
+\end{center}
+\separationTitre
+
+
+Deux options pour ce DM :
+
+\begin{itemize}
+\item Traiter les exercices 1 à 3 (conseillé pour les élèves visant e3a et CCP).
+\item Traiter l'exercice 4 (conseillé pour les élèves visant Centrale ou les Mines). \emph{Je conseille tout de même dans ce cas d'étudier l'exercice 3 mais pas besoin de le rédiger et de me le rendre}.
+\end{itemize}
+
+\medskip
+
+\section*{Exercice 1}
+Déterminer la nature de la série de terme général $u_n$ dans les cas suivants :
+
+\begin{enumerate}
+%\item $\forall n \geq 8$, $u_n = \dfrac{n+1}{n^3-7}$
+%\item $\forall n \geq 1$, $u_n = \tan \left( \dfrac{1}{n^2} \right)$
+\item $\forall n \geq 0$, $u_n = \dfrac{1}{\ln(n^2+2)}$
+%\item $\forall n \geq 1$, $u_n = \dfrac{\ln(n)^{2018}}{n^{1.2}}$
+%\item $\forall n \geq 1$, $u_n = \dfrac{2^n+3^n}{\ln(n)+n^2+5^n}$
+%\item $\forall n \geq 1$, $u_n = \dfrac{3^{n+1} ((n+1)!)^2}{(2n-1)!}$
+\item $\forall n \geq 0$, $u_n = (-1)^n (\sqrt{n+1} - \sqrt{n})$
+\item $\forall n \geq 1$, $u_n = \left( 1 - \dfrac{1}{n} \right)^{n^2}$
+\end{enumerate}
+
+\medskip
+
+\section*{Exercice 2}
+Soit $(u_n)_{n \geq 0}$ la suite définie par $u_0 \in \mathbb{R}$ et pour tout entier $n \geq 1$ par :
+$$ u_{n} = \dfrac{(-1)^n \cos(u_{n-1})}{n}$$
+Déterminer la nature de la série de terme général $u_n$.
+
+\medskip
+
+\section*{Exercice 3}
+On considère une suite de réels $(a_n)_{n \geq 0}$, une suite de complexes $(b_n)_{n \geq 0}$ et on note pour tout entier naturel $n$ :
+   $$S_n=\sum_{k=0}^n a_kb_k \; \hbox{ et } \; B_n=\sum_{k=0}^n b_k$$
+   \begin{enumerate}
+\item En remarquant que, pour $k \geq 1, b_k=B_k-B_{k-1}$, démontrer que, pour tout entier naturel $n$ non nul,
+   $$S_n=\sum_{k=0}^{n-1}(a_k-a_{k+1})B_k + a_n B_n$$ 
+\item On suppose que la suite $(B_n)$ est bornée et que la suite $(a_n)$ est décroissante de limite nulle.
+\begin{enumerate}
+\item Démontrer que la série $\sum_{k \geq 0} (a_k-a_{k+1})$ converge.
+\item En déduire que la série $\sum_{n \geq 0} a_nb_n$ converge.
+\item En appliquant le résultat précédent au cas o\`u $b_n=(-1)^n$, donner une démonstration du critère spécial des séries
+    alternées, après l'avoir énoncé.
+    \end{enumerate}
+\item \textit{Un exemple.}
+
+\noindent Dans cette question, $\theta$ est un réel différent de $2k\pi$ $(k\in \Z)$ et $\alpha \in \R$.
+\begin{enumerate}
+\item Calculer pour $n$ entier naturel non nul, $\sum_{k=1}^n e^{ik\theta}.$
+\item Discuter en fonction du réel $\alpha$ la nature de la série $\sum_{n \geq 1} \frac{e^{in\theta}}{n^{\alpha}} \cdot$
+   \end{enumerate}
+   \end{enumerate}
+   
+\section*{Exercice 4}
+Partie 1 de Centrale 2 PC 2017. Les 3/2 doivent enlever la question I.B.3) (a et b).
+
+\end{document}

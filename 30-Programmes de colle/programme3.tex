@@ -1,0 +1,91 @@
+\documentclass[twoside,a4paper,french,10pt]{VcCours}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{\vspace{-1.5em}}
+
+\begin{center}
+\large\bf
+Programme de colles\hspace{\stretch{1}}Semaine n\degres3 : du 27/09 au 01/10/2021
+\end{center}
+\separationTitre
+
+
+Pour cette khôlle, chaque étudiant aura :
+\begin{itemize}
+\item Une question de cours.
+\item Une démonstration \textbf{(D)} ou un exercice à retravailler.
+\end{itemize}
+
+
+\medskip 
+\section*{Chapitre 2 : Séries.}
+
+\begin{enumerate}
+\item Généralités.
+\begin{itemize}
+\item Séries, sommes partielles, convergence/divergence d'une série et somme d'une série en cas de convergence.  Nature d'une série. Il est important de comprendre la différence entre les notations :
+$$ \sum u_n, \,  \sum_{k=0}^n u_k, \, \sum_{k=0}^{+ \infty} u_k $$
+\item Condition nécessaire de convergence : si une série converge, son terme général tend vers $0$ (la réciproque est fausse : connaître un contre-exemple). Série grossièrement divergente.
+\item \textbf{Reste d'ordre $m$ d'une série} (convergente). La suite des restes converge vers $0$.
+\item \textbf{Séries géométriques} + Théorème lié à la convergence des séries géométriques et expressions des restes \textbf{(D)}.
+\item Divergence de la série harmonique.
+\item Convergence de la série harmonique alternée.
+\item Proposition concernant la convergence d'une série télescopique.
+\end{itemize}
+\item Quelques propriétés.
+\begin{itemize}
+\item L'ensemble des séries convergentes est un $\mathbb{K}$-espace vectoriel.
+\item Convergence d'une série à termes complexes.
+\end{itemize}
+\item Comparaison série-intégrale.
+\begin{itemize}
+\item Principe.
+\item Quelques exemples.
+\end{itemize}
+\item Séries à termes positifs.
+\begin{itemize}
+\item Une série à termes positifs est convergente si et seulement si sa suite des sommes partielles est majorée (car celle-ci est croissante).
+\item \textbf{Critère de comparaison de séries à termes positifs}. 
+\item \textbf{Séries de Riemann. Critère de convergence d'une série de Riemann.}
+\item \textbf{Règle de D'Alembert}. 
+\item Convergence absolue d'une série. \textbf{(D)} : la convergence absolue implique la convergence. \textit{Uniquement la preuve dans le cas réel.}
+\end{itemize} 
+\item Critères du type $u_n = O(v_n)$ et $u_n= o(v_n)$.
+\item Séries alternées.
+\begin{itemize}
+\item Définition d'une série alternée.
+\item \textbf{Critère spécial des séries alternées}.
+\end{itemize}
+\item Produit de Cauchy.
+\begin{itemize}
+\item \textbf{Définition du produit de Cauchy}.
+\item Si deux séries sont absolument convergentes alors le produit de Cauchy de ces deux séries est absolument convergent. De plus, le produit des sommes est égal à la somme du produit de Cauchy.
+\item Application : la série exponentielle. \textbf{(D)} : la fonction exponentielle est bien définie sur $\mathbb{C}$, la série associée est absolument convergente et on a pour tout $(z,z') \in \mathbb{C}^2$, $\exp(z)\exp(z')= \exp(z+z')$.
+\end{itemize}
+\item Compléments.
+\begin{itemize}
+\item \textbf{Formule de Stirling}.
+\item Cas de convergence des séries de Bertrand (hors-programme) : \textit{important} de retenir les différentes méthodes dans la pratique.
+\end{itemize}
+\end{enumerate}
+
+\medskip
+
+\begin{Exercice}
+Montrer que $\sum_{k=1}^n \frac{1}{k} \underset{+ \infty}{\sim} \ln(n)$.
+\end{Exercice}
+
+\begin{Exercice}
+    Montrer que $\sum_{n \geq 0} \dfrac{\cos(n \pi/3)}{2^n}$ converge et donner sa somme.
+\end{Exercice}
+
+\begin{Exercice}
+    Montrer que $\sum_{n \geq 0} {\dfrac{( - 1)^n 8^n}{(2n)!}}$ est convergente et que sa somme est négative.
+\end{Exercice}
+
+\begin{Exercice}
+    Savoir étudier rapidement une série de Bertrand dans le \og cas simple \fg{} ($\alpha<1$ ou $\alpha>1$).
+\end{Exercice}                        
+
+\end{document}
