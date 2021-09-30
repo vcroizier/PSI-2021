@@ -1,23 +1,23 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
 
 \begin{document}
-\everymath{\displaystyle}
-\begin{center}
-\textit{{ {\huge TD 4 : Applications linéaires}}}
-\end{center}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 4 : Applications linéaires}
 
-\bigskip
+\tableofcontents
+\separationTitre
 
 
-\noindent Dans tout le TD, $n$ sera un entier naturel non nul, $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$ et $I$ sera un intervalle de $\mathbb{R}$ contenant au moins deux points.
+Dans tout le TD, $n$ sera un entier naturel non nul, $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$ et $I$ sera un intervalle de $\mathbb{R}$ contenant au moins deux points.
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Noyaux, images}}}
-\end{center}
+\subsection{\large Noyaux, images}
 
 
 \begin{Exercice}{} Montrer que les applications suivantes sont linéaires, déterminer leur noyau et leur image (et le rang, si cela a un sens). On précisera si c'est un endomorphisme, isomorphisme ou un automorphisme et on vérifiera si l'application est bien définie.
@@ -58,7 +58,11 @@ $$ \forall f \in \mathcal{C}(I, \mathbb{R}), \; \varphi(f)=f'$$
   est un isomorphisme.
 \end{Exercice}
 
-\begin{Exercice}{\ding{80}] Pour tout $P \in \mathbb{R}_3[X]$, on pose $\varphi(P)$ le reste de la division euclidienne de $(X^4-1)P$ par $X^4-X$. Montrer que $\varphi$ définit ainsi une endomorphisme de $\mathbb{R}_3[X}$ puis déterminer son noyau et son image.
+\begin{Exercice}[$\bigstar$] 
+  Pour tout $P \in \mathbb{R}_3[X]$, on pose $\varphi(P)$ 
+  le reste de la division euclidienne de $(X^4-1)P$ par $X^4-X$. 
+  Montrer que $\varphi$ définit ainsi une endomorphisme de $\mathbb{R}_3[X]$ 
+  puis déterminer son noyau et son image.
 \end{Exercice} 
 
 
@@ -68,9 +72,9 @@ Soit $u$ un endomorphisme d'un espace vectoriel $E$ de dimension $n \geq 1$.
 \begin{enumerate}
 \item On suppose $u$ injectif. Déterminer pour tout $m \geq 1$, $K_m = \textrm{Ker}(u^m)$ et $I_m = \textrm{Im}(u^m)$.
 \item Montrer que pour tout $m \geq 0$, $K_m \subset K_{m+1}$ et $I_{m+1} \subset I_m$.
-\item On suppose $u$ non injectif. Montrer l'existence d'un entier $p \in \Interv{1}{n}$ tel que $K_p=K_{p+1}$ et $I_p = I_{p+1}$.
+\item On suppose $u$ non injectif. Montrer l'existence d'un entier $p \in \iii{1}{n}$ tel que $K_p=K_{p+1}$ et $I_p = I_{p+1}$.
 
-\noindent Montrer alors que pour tout $q \in \mathbb{N}$, $K_p = K_{p+q}$ et $I_p = I_{p+q}$ puis que $E = K_p \oplus I_p$.
+Montrer alors que pour tout $q \in \mathbb{N}$, $K_p = K_{p+q}$ et $I_p = I_{p+q}$ puis que $E = K_p \oplus I_p$.
 \end{enumerate}
 \end{Exercice} 
 
@@ -100,9 +104,7 @@ Soit $u$ un endomorphisme d'un espace vectoriel $E$ de dimension $n \geq 1$.
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Rang d'une application linéaire}}}
-\end{center}
+\subsection{\large Rang d'une application linéaire}
 
 \medskip
 
@@ -112,7 +114,7 @@ $$ \textrm{rg}(f^2 ) =  \textrm{rg}( f ) \, \Longleftrightarrow E = \textrm{Ker}
 \end{Exercice}
 
 
-\begin{Exercice}{\ding{80}} Soient $f,g \in \mathcal{L}(E)$ où $E$ est un $\mathbb{K}$-espace vectoriel de dimension finie. Montrer que :
+\begin{Exercice}[$\bigstar$] Soient $f,g \in \mathcal{L}(E)$ où $E$ est un $\mathbb{K}$-espace vectoriel de dimension finie. Montrer que :
     \[
     \vert \textrm{rg}(f) - \textrm{rg}(g) \vert \leq \textrm{rg}(f + g) \leq \textrm{rg}(f) + \textrm{rg}(g)
     \]
@@ -120,15 +122,13 @@ $$ \textrm{rg}(f^2 ) =  \textrm{rg}( f ) \, \Longleftrightarrow E = \textrm{Ker}
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Projections, symétries}}}
-\end{center}
+\subsection{\large Projections, symétries}
 
 \medskip
 
 
 \begin{Exercice}{} Soient $E= \mathbb{R}^3$ et $F$, $G$ les ensembles définis par :
-$$ F = \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, x-y+z=0 \rbrace \; \hbox{ et }  \; G = \textrm{Vect}((1,1,1)) $$
+$$ F = \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, x-y+z=0 \rbrace \; \hbox{ et }  \; G = \Vect((1,1,1)) $$
 
 \begin{enumerate}
 \item Donner une base de $F$ et préciser sa dimension.
@@ -149,7 +149,7 @@ $$ F = \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, x-y+z=0 \rbrace \; \hbox{ et
 \end{Exercice}
 
 
-\begin{Exercice}{\ding{80}} Soient $p,q$ deux endomorphismes d'un espace vectoriel $E$. Montrer que les assertions suivantes sont équivalentes :
+\begin{Exercice}[$\bigstar$] Soient $p,q$ deux endomorphismes d'un espace vectoriel $E$. Montrer que les assertions suivantes sont équivalentes :
     \begin{enumerate}
 \item $p \circ q = p$ et $q \circ p = q$.
 \item $p$ et $q$ sont des projecteurs de même noyau.
@@ -161,18 +161,16 @@ $$ F = \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, x-y+z=0 \rbrace \; \hbox{ et
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Formes linéaires et hyperplans}}}
-\end{center}
+\subsection{\large Formes linéaires et hyperplans}
 
 \medskip
 
-\begin{Exercice}{\ding{80}] Soient $E= \mathbb{R}_n[X}$ et $L \in \mathcal{L}(E, \mathbb{R})$ définie par :
+\begin{Exercice}[$\bigstar$] Soient $E= \mathbb{R}_n[X]$ et $L \in \mathcal{L}(E, \mathbb{R})$ définie par :
 $$ \forall P \in E, \;  L(P) = \int_{-1}^1 P(t) \dt$$
 \begin{enumerate}
 \item Déterminer l'image de $P= \sum_{k=0}^n a_k X^k$ par $L$.
 \item Déterminer la dimension puis une base du noyau de $L$.
-\item Soit $(x_0, x_1, \ldots, x_n) \in \mathbb{R}^n$ tels que $-1 \leq x_0 < x_1 < \cdots < x_n \leq 1$. Montrer que pour tout $i \in \Interv{0}{n}$, il existe un unique polynôme $P_i$ de $E$ tel que pour tout $j \in \Interv{0}{n}$, $P_i(x_j)= \delta_{i,j}$.
+\item Soit $(x_0, x_1, \ldots, x_n) \in \mathbb{R}^n$ tels que $-1 \leq x_0 < x_1 < \cdots < x_n \leq 1$. Montrer que pour tout $i \in \iii{0}{n}$, il existe un unique polynôme $P_i$ de $E$ tel que pour tout $j \in \iii{0}{n}$, $P_i(x_j)= \delta_{i,j}$.
 \item Montrer que $(P_0, \ldots, P_n)$ est une base de $E$.
 \item Montrer qu'il existe $(\lambda_0, \ldots, \lambda_n) \in \mathbb{R}^{n+1}$ tel que :
 $$ \forall P \in E, \; \int_{-1}^1 P(t) \dt = \lambda_0 P(x_0) + \cdots + \lambda_n P(x_n)$$
@@ -181,7 +179,7 @@ $$ \forall P \in E, \; \int_{-1}^1 P(t) \dt = \lambda_0 P(x_0) + \cdots + \lambd
 
 \begin{Exercice}{} Soient $f$ une forme linéaire sur un $\mathbb{R}$-espace vectoriel $E$, de dimension $n$, et $a\in E$ tel que $f(a)\neq 0$.
 \begin{enumerate}
-\item Montrer que $E=\textrm{Ker}(f)\oplus\textrm{Vect}(a)$.
+\item Montrer que $E=\textrm{Ker}(f)\oplus\Vect(a)$.
 \item On suppose $f(a)=1$. Montrer que $p : E \rightarrow E$ définie par :
 $$ \forall x \in E, \; p(x) = f(x) a $$
 est un projecteur et donner les sous-espaces $F$ et $G$ tels que $p$ soit le projecteur sur $F$ parallèlement à $G$.
@@ -195,7 +193,7 @@ est un projecteur et donner les sous-espaces $F$ et $G$ tels que $p$ soit le pro
 $$ H = \lbrace (x_1, \ldots, x_n)\in \mathbb{R}^n \; \vert \;    x_1 + \cdots + x_n = 0 \rbrace$$
 est un sous-espace vectoriel de $\mathbb{R}^n$ et donner sa dimension.
 \item Déterminer l'expression de la symétrie par rapport à $H$ parallèlement à $G$ défini par :
-$$ G = \textrm{Vect}((1,1, \ldots, 1))$$
+$$ G = \Vect((1,1, \ldots, 1))$$
 \end{enumerate}
 \end{Exercice}
 
@@ -206,9 +204,7 @@ $$ G = \textrm{Vect}((1,1, \ldots, 1))$$
 
 \newpage
 
-\begin{center}
-\textit{{ {\large Divers}}}
-\end{center}
+\subsection{\large Divers}
 
 \medskip
 
@@ -238,7 +234,7 @@ où $\theta$ est l'endomorphisme nul de $E$.
 
 
 
-\begin{Exercice}{\ding{80}} Soient $E$ un $\mathbb{K}$-espace vectoriel et $f \in \mathcal{L}(E)$.
+\begin{Exercice}[$\bigstar$] Soient $E$ un $\mathbb{K}$-espace vectoriel et $f \in \mathcal{L}(E)$.
 
 \begin{enumerate}
 \item On suppose que pour tout $x \in E$, $(x, f(x))$ est liée.
@@ -258,7 +254,7 @@ où $\theta$ est l'endomorphisme nul de $E$.
 
 
 
-%\noindent Dans la suite, $\mathbb{K}= \mathbb{R}$ ou $\mathbb{C}$.
+%Dans la suite, $\mathbb{K}= \mathbb{R}$ ou $\mathbb{C}$.
 %
 %\medskip
 %
@@ -334,8 +330,8 @@ où $\theta$ est l'endomorphisme nul de $E$.
 %\bigskip
 %
 
-%\exo Soient $n \in \mathbb{N}^*$ et $(e_1, \ldots, e_n)$ une base d'un $\mathbb{K}$-espace vectoriel $E$. Posons pour tout $i \in \Interv{1}{n}$,
-%$$ F_i = \lbrace u \in \mathcal{L}(E), \, \textrm{Im}(u) \subset \textrm{Vect}(e_i) \rbrace$$
+%\exo Soient $n \in \mathbb{N}^*$ et $(e_1, \ldots, e_n)$ une base d'un $\mathbb{K}$-espace vectoriel $E$. Posons pour tout $i \in \iii{1}{n}$,
+%$$ F_i = \lbrace u \in \mathcal{L}(E), \, \textrm{Im}(u) \subset \Vect(e_i) \rbrace$$
 %Montrer que $\mathcal{L}(E) = F_1 \oplus F_2 \oplus \cdots \oplus F_n$.
 %
 %\medskip

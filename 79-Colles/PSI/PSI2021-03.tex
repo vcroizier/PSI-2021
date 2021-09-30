@@ -1,0 +1,103 @@
+\documentclass[twoside,a4paper,landscape,french,10pt]{VcCours}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnseprule{0.4pt}%
+\addtolength\columnsep{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{colle}[4]{{\large\bf\makebox[0cm][l]{#1\hspace{\stretch{-1}}}\hspace{\stretch{1}}#2\hspace{\stretch{1}}\makebox[0cm][r]{\hspace{\stretch{-1}}#3}}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{multicols*}{#4}}{\end{multicols*}\pagebreak}
+\newenvironment{eleve}[1]{\textbf{\large #1}}{\vspace{\stretch{1}}
+\columnbreak}
+\newenvironment{eleveF}[1]{\textbf{\large #1}}{}
+\newcommand{\cours}{\medskip\uwave{Cours :}
+
+\smallskip}
+\newcommand{\exo}[1]{\vspace{\stretch{1}}\uwave{Exercice #1:}
+
+\smallskip}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+-----------------------------------------+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{colle}{PSI -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
+n\degres3 -- le jeudi 30/09/2021}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+  \cours
+  la série exponentielle : la fonction exponentielle est bien 
+  définie sur $\mathbb{C}$, la série associée est absolument convergente et 
+  on a pour tout $(z,z') \in \mathbb{C}^2$, $\exp(z)\exp(z')= \exp(z+z')$.
+
+  \exo1
+  Nature de la série $\sum_{n\geq0}\frac{2^nn!}{n^n}$.
+
+  \exo2
+  Considérons la série $\sum_{n\geq2}\frac{(-1)^n}{n\ln^2(x)}$.
+  \begin{enumerate}
+    \item Montrer la convergence de la série. Donner un encadrement de sa somme.
+    \item Montrer l'absolue convergence de la série.
+  \end{enumerate}
+
+  \vspace*{\stretch{2}}
+
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+  \cours
+  Critère spécial des séries alternées.\\
+  Montrer que $\sum_{k=1}^n \frac{1}{k} \underset{+ \infty}{\sim} \ln(n)$.
+  
+  \exo1
+  On considère la série $\sum_{n\geq0}\arctan\left(\frac{1}{n^2+n+1}\right)$.
+  \begin{enumerate}
+    \item Nature de la série.
+    \item Simplifier $\tan(\arctan(n+1)-\arctan(n))$.
+    En déduire la somme de la série.
+  \end{enumerate}
+
+  \exo2
+  $\alpha>0$. Nature de la série $\sum_{n\geq1}\frac{(-1)^n}{n^{\alpha}+(-1)^n}$.  
+
+  \vspace*{\stretch{2}}
+
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleveF}{}
+    
+  \cours
+  Formule de Stirling.\\
+  Montrer que $\sum_{n \geq 0} {\dfrac{( - 1)^n 8^n}{(2n)!}}$ 
+  est convergente et que sa somme est négative.
+
+  \exo1
+  Considérons $u_n=\sum_{k=1}^n\ln(k)$.
+  \begin{enumerate}
+    \item Nature de $\sum_{n\geq1}\ln(k)$.
+    \item Nature de la série de terme général $((-1)^n/u_n)$.
+    \item Déterminer un équivalent de $u_n$.
+    \item La série du \textbf{2)} est-elle absolument convergente ?
+  \end{enumerate}
+
+  \exo2
+  $\alpha>0$. Nature de la série $\sum_{n\geq0}\sqrt{1+\frac{(-1)^n}{n^{\alpha}}}-1$.  
+
+
+  \vspace*{\stretch{2}}
+  
+
+
+\end{eleveF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{colle}%
+\end{document}
+    

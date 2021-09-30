@@ -1,20 +1,20 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{Cours}
-\usepackage{delarray}
-\usepackage{fancybox}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\newcommand{\Int}[2]{\ensuremath{\mathchoice%
-	{{\displaystyle\int_{#1}^{#2}}}
-	{{\displaystyle\int_{#1}^{#2}}}
-	{\int_{#1}^{#2}}
-	{\int_{#1}^{#2}}
-	}}
+\documentclass[french,11pt,twoside]{VcCours}
 
+\newenvironment{ApplicationDirecte}{\textbf{Application directe du cours :}
+
+}{}
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
 
 \begin{document}
-% \everymath{\displaystyle}
 
-\maketitle{Chapitre 4}{Applications linéaires}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Chapitre 4 : Applications linéaires}
+
+\tableofcontents
+\separationTitre
 
 Dans tout le chapitre, $n$, $k$ et $p$ seront des entiers naturels non nuls et $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
 
@@ -67,7 +67,11 @@ $$ f( \lambda_1x_1+ \lambda_2 x_2 + \ldots + \lambda_n x_n) = \lambda_1 f(x_1) +
 \begin{Remarque}{} $\textrm{GL}(E)$ est un sous-groupe de l'ensemble des permutations de $E$ muni de la composition.
 \end{Remarque}
 
-\begin{ApplicationDirecte} Soient $f$ et $g$ les applications de $\mathbb{R}^3$ dans $\mathbb{R}^2$ définies pour tout $(x,y,z) \in \mathbb{R}^3$ par $f((x,y,z))=(x+z,y-z)$ et $g((x,y,z))= (x+y+1,2z)$. Ces applications sont-elles linéaires ?
+\begin{ApplicationDirecte} 
+	Soient $f$ et $g$ les applications de $\mathbb{R}^3$ dans $\mathbb{R}^2$ 
+	définies pour tout $(x,y,z) \in \mathbb{R}^3$ par 
+	\[f((x,y,z))=(x+z,y-z) \et g((x,y,z))= (x+y+1;2z)\]
+	Ces applications sont-elles linéaires ?
 \end{ApplicationDirecte} 
 
 \begin{ApplicationDirecte} Soit $h$ l'application qui à $P \in \mathbb{R}_n[X]$ associe $2P-3XP'$. Montrer que $h$ définit un endomorphisme de $\mathbb{R}_n[X]$.
@@ -108,10 +112,13 @@ $$ f( \lambda_1x_1+ \lambda_2 x_2 + \ldots + \lambda_n x_n) = \lambda_1 f(x_1) +
 %Ainsi, $f^{-1}(V)$ est sous-espace vectoriel de $E$.
 
 \vspace{12cm}
+
+\vspace{\stretch{1}}
  \end{Demonstration}
  
- \begin{att} La notation $f^{-1}(V)$ ne signifie pas que $f$ est bijective.
- \end{att}
+ \begin{Remarque}{}
+	\warning{}  La notation $f^{-1}(V)$ ne signifie pas que $f$ est bijective.
+ \end{Remarque}
  
  \begin{TheoremeDefinition}{} Soient $E$ et $F$ deux $\mathbb{K}$-espaces vectoriels et $f \in \mathcal{L}(E,F)$.
 \begin{itemize}
@@ -121,11 +128,12 @@ $$ f( \lambda_1x_1+ \lambda_2 x_2 + \ldots + \lambda_n x_n) = \lambda_1 f(x_1) +
  \end{TheoremeDefinition}
  
  Autrement dit,
-$$ \textrm{Im}(f)= \phantom{\lbrace f(x) \, \vert \, x \in E \rbrace = \lbrace y \in F \, \vert \, \exists x \in E, \, y=f(x) \rbrace}$$
-et
-$$ \textrm{Ker}(f) = \phantom{ bla bl a\lbrace x \in E \, \vert \,  f(x)= 0_F \rbrace}$$
+ \begin{align*}
+	\Ima(f)&= \phantom{\lbrace f(x) \, \vert \, x \in E \rbrace = \lbrace y \in F \, \vert \, \exists x \in E, \, y=f(x) \rbrace}\\\\
+	\Ker(f)&= \phantom{ bla bl a\lbrace x \in E \, \vert \,  f(x)= 0_F \rbrace}
+ \end{align*}
 
-\medskip
+\newpage
 
  \begin{Remarques}{}
 \begin{itemize} 
@@ -134,9 +142,8 @@ $$ \textrm{Ker}(f) = \phantom{ bla bl a\lbrace x \in E \, \vert \,  f(x)= 0_F \r
  \end{itemize}
 \end{Remarques}{}
  
- \newpage
- 
- \begin{Exemple} Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}^2$ l'application linéaire définie par $f((x,y))=(x-y,y-x)$. Déterminons le noyau et l'image de $f$.
+\begin{Exemple}
+	Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}^2$ l'application linéaire définie par $f((x,y))=(x-y,y-x)$. Déterminons le noyau et l'image de $f$.
  
 % \medskip
 % 
@@ -149,9 +156,11 @@ $$ \textrm{Ker}(f) = \phantom{ bla bl a\lbrace x \in E \, \vert \,  f(x)= 0_F \r
 \vspace{7cm}
 \end{Exemple}
 
-\begin{ApplicationDirecte} Déterminer le noyau de $f$ et $h$ (applications directes du cours $1$ et $2$).
+\begin{ApplicationDirecte} 
+	Déterminer le noyau de $f$ et $h$ (applications directes du cours $1$ et $2$).
 \end{ApplicationDirecte}
 
+\medskip
 \textbf{Application : Équations différentielles.}
 
 Soient $I$ un intervalle de $\mathbb{R}$ (contenant au moins deux points) et $a : I \rightarrow \mathbb{R}$ continue. On définit une application linéaire $D : \mathcal{C}^1(\mathbb{R}, \mathbb{R}) \rightarrow \mathcal{F}(\mathbb{R}, \mathbb{R})$ par $D(y)=y'-ay$. Le noyau de cette application linéaire est l'ensemble des solutions de l'équation différentielle linéaire et homogène d'ordre $1$, $y'-ay=0$.
@@ -193,7 +202,7 @@ Ainsi $\textrm{Ker}(D) = \textrm{Vect}(\exp \circ A)$.
 
 \begin{Proposition}{} Soient $E$, $F$ deux $\mathbb{K}$-espaces vectoriels et $(e_1, e_2, \ldots, e_n)$ une base de $E$. Fixons une famille $(f_1, f_2, \ldots, f_n)$ de vecteurs de $F$. 
 
-Il existe une unique application linéaire $f \in \mathcal{L}(E,F)$ tel que pour tout $i \in \Interv{1}{n}$, $f(e_i)=f_i$.
+Il existe une unique application linéaire $f \in \mathcal{L}(E,F)$ tel que pour tout $i \in \iii{1}{n}$, $f(e_i)=f_i$.
 
 Autrement dit, une application linéaire est déterminée par l'image des vecteurs d'une base de $E$.
 \end{Proposition}
@@ -202,7 +211,7 @@ Autrement dit, une application linéaire est déterminée par l'image des vecteu
 %%
 %
 %\vspace{7cm}
-%%$\rhd$ \emph{Analyse} : soit $f \in \mathcal{L}(E,F)$ tel que pour tout $i \in \Interv{1}{n}$, $f(e_i)=f_i$. Tout vecteur $x \in E$ s'écrit sous la forme :
+%%$\rhd$ \emph{Analyse} : soit $f \in \mathcal{L}(E,F)$ tel que pour tout $i \in \iii{1}{n}$, $f(e_i)=f_i$. Tout vecteur $x \in E$ s'écrit sous la forme :
 %%$$ x = \sum_{k=1}^n x_k e_k$$
 %%ou $(x_1,x_2, \ldots, x_n)$ sont les coordonnées de $x$ dans la base $(e_1, e_2, \ldots,e_n)$. Par linéarité de $f$, on a :
 %%$$ f(x) = \sum_{k=1}^n x_k f(e_k) = \sum_{k=1}^n x_k f_k$$
@@ -211,25 +220,34 @@ Autrement dit, une application linéaire est déterminée par l'image des vecteu
 %%
 %%$\rhd$ \emph{Synthèse} : Pour tout $x \in E$, de coordonnées $(x_1,x_2, \ldots, x_n)$ dans la base $(e_1, e_2, \ldots,e_n)$, on pose :
 %%$$ f(x) =  \sum_{k=1}^n x_k f_k$$
-%%On montre facilement que $f$ est une application linéaire de $E$ dans $F$ et que pour tout $i \in \Interv{1}{n}$, $f(e_i)=f_i$. L'unicité d'une telle application est prouvée dans l'analyse.
+%%On montre facilement que $f$ est une application linéaire de $E$ dans $F$ et que pour tout $i \in \iii{1}{n}$, $f(e_i)=f_i$. L'unicité d'une telle application est prouvée dans l'analyse.
 %\end{Demonstration}
 
-\begin{Exemple} Soit $(e_1, e_2, e_3)$ la base canonique de $\mathbb{R}^3$. Donnons l'expression de l'unique endomorphisme $\varphi$ de $\mathbb{R}^3$ vérifiant $\varphi(e_1)= \varphi(e_2)= e_1+e_2$ et $\varphi(e_3)=e_1$.
-
-\vspace{8cm}
+\begin{Exemple} Soit $(e_1, e_2, e_3)$ la base canonique de $\mathbb{R}^3$. 
+	Donnons l'expression de l'unique endomorphisme $\varphi$ de $\mathbb{R}^3$ 
+	vérifiant $\varphi(e_1)= \varphi(e_2)= e_1+e_2$ et $\varphi(e_3)=e_1$.
 \end{Exemple}
 
-\begin{Theoreme}{} Soient $E$, $F$ deux $\mathbb{K}$-espaces vectoriels, $f \in \mathcal{L}(E,F)$ et $(e_1, e_2, \ldots, e_n)$ une base de $E$.
+%\vspace*{8cm}
+\newpage
 
+\begin{Theoreme}{} 
+	Soient $E$, $F$ deux $\mathbb{K}$-espaces vectoriels, $f \in \mathcal{L}(E,F)$
+	et $(e_1, e_2, \ldots, e_n)$ une base de $E$.
 \begin{itemize}
 \item $\textrm{Im}(f) = \phantom{\textrm{Vect}(f(e_1), f(e_2), \ldots, f(e_n))}$
-\item L'application $f$ est injective si et seulement si \phantom{$(f(e_1), f(e_2), \ldots, f(e_n))$ est une famille libre.}
-\item L'application $f$ est surjective si et seulement si \phantom{$(f(e_1), f(e_2), \ldots, f(e_n))$ est une famille génératrice de $F$.}
-\item L'application $f$ est un isomorphisme si et seulement si \phantom{$(f(e_1), f(e_2), \ldots, f(e_n))$ est une base.}
+\item L'application $f$ est injective si et seulement si \\
+		\phantom{$(f(e_1), f(e_2), \ldots, f(e_n))$ est une famille libre.}
+\item L'application $f$ est surjective si et seulement si \\
+		\phantom{$(f(e_1), f(e_2), \ldots, f(e_n))$ est une famille génératrice de $F$.}
+\item L'application $f$ est un isomorphisme si et seulement si \\
+		\phantom{$(f(e_1), f(e_2), \ldots, f(e_n))$ est une base.}
 \end{itemize}
 \end{Theoreme}
 
-\begin{Remarque}{} En particulier, l'image d'une base par un isomorphisme est une base de l'espace d'arrivée.
+\begin{Remarque}{} 
+	En particulier, l'image d'une base par un isomorphisme est une base de 
+	l'espace d'arrivée.
 \end{Remarque}
 
 %\begin{Demonstration}{} 
@@ -247,7 +265,7 @@ Autrement dit, une application linéaire est déterminée par l'image des vecteu
 %%$$ f \left(\sum_{k=1}^n \lambda_k e_k \right) = 0_F$$
 %%et ainsi $\Sum{k=1}{n} \lambda_k e_k \in \textrm{Ker}(f) = \lbrace 0_E \rbrace$ et ainsi :
 %%$$ \sum_{k=1}^n \lambda_k e_k = 0_E$$
-%%Or la famille $(e_1,e_2, \ldots, e_n)$ est une base donc libre et ainsi pour tout $k \in \Interv{1}{n}$, $\lambda_k=0$. La famille $(f(e_1), f(e_2), \ldots, f(e_n))$ est donc une famille libre.
+%%Or la famille $(e_1,e_2, \ldots, e_n)$ est une base donc libre et ainsi pour tout $k \in \iii{1}{n}$, $\lambda_k=0$. La famille $(f(e_1), f(e_2), \ldots, f(e_n))$ est donc une famille libre.
 %%
 %%\medskip
 %%
@@ -255,7 +273,7 @@ Autrement dit, une application linéaire est déterminée par l'image des vecteu
 %%$$ x = \sum_{k=1}^n x_k e_k $$
 %%et par linéarité de $f$ :
 %%$$ 0_F = f(x) = \sum_{k=1}^n x_k f(e_k)$$
-%%Par liberté de la famille $(f(e_1), f(e_2), \ldots, f(e_n))$, on a pour tout $k \in \Interv{1}{n}$, $x_k=0$ et ainsi $x=0_E$. On vient donc de montrer que $\textrm{Ker}(f) \subset \lbrace 0_E \rbrace$ et l'autre inclusion est vraie. 
+%%Par liberté de la famille $(f(e_1), f(e_2), \ldots, f(e_n))$, on a pour tout $k \in \iii{1}{n}$, $x_k=0$ et ainsi $x=0_E$. On vient donc de montrer que $\textrm{Ker}(f) \subset \lbrace 0_E \rbrace$ et l'autre inclusion est vraie. 
 %%\item Même type d'idée.
 %%\item Conséquence des deux derniers points.
 %%\end{itemize}
@@ -311,8 +329,9 @@ Pour tout $x \in E$, il existe un unique couple $(x_F,x_G) \in F \times G$ tel q
 \includegraphics[scale=0.4]{Projection1}
 \end{center}
 
-\begin{nota} L'application identité de $E$ sera notée $\textrm{Id}_E$ ou plus simplement $\textrm{Id}$ si il n'y a pas d'ambiguïté.
-\end{nota}
+\begin{Notation}{}
+	L'application identité de $E$ sera notée $\textrm{Id}_E$ ou plus simplement $\textrm{Id}$ si il n'y a pas d'ambiguïté.
+\end{Notation}
 
 \begin{Proposition}{} Gardons les mêmes notations que dans la définition précédente. Alors :
 \begin{itemize}
@@ -324,14 +343,12 @@ Pour tout $x \in E$, il existe un unique couple $(x_F,x_G) \in F \times G$ tel q
 
 \begin{Demonstration}{}
 
-\vspace{10cm}
+\vspace{24cm}
 
-\newpage
-$\phantom{test}$
-\vspace{14cm}
+\vspace{\stretch{1}}
 
 \end{Demonstration}
-
+\newpage
 
 \begin{Remarques}{}
 \begin{itemize} 
@@ -350,21 +367,26 @@ Un endomorphisme $p$ de $E$ est une projection si et seulement si $p$ est un pro
 
 \begin{Demonstration}{}
 \vspace{12cm}
-\newpage
 
-$\phantom{tes}$
-
-\vspace{11cm}
+\vspace{\stretch{1}}
 \end{Demonstration}
+\newpage
 
 \begin{ApplicationDirecte} Soit $f : \mathbb{R}^3 \rightarrow \mathbb{R}^3$ définie par :
 $$ f((x,y,z)=((x-z)/2,0,(z-x)/2)$$
 Montrer que $f$ est un projecteur de $\mathbb{R}^3$. On précisera le noyau et l'image de $f$.
 \end{ApplicationDirecte}
 
-\begin{Definition}{} Soient $E$ un $\mathbb{K}$-espace vectoriel et $F$, $G$ deux sous-espaces vectoriels supplémentaires de $E$.
+\begin{Definition}{}
+	Soient $E$ un $\mathbb{K}$-espace vectoriel 
+	et $F$, $G$ deux sous-espaces vectoriels supplémentaires de $E$.
 
-Pour tout $x \in E$, il existe un unique couple $(x_F,x_G) \in F \times G$ tel que $x=x_F+x_G$. On pose \newline $s(x)=x_F-x_G$. On définit ainsi une application $s : E \rightarrow E$ que l'on appelle \emph{symétrie vectorielle} par rapport à $F$ parallèlement à $G$. 
+	Pour tout $x \in E$, il existe un unique couple $(x_F,x_G) \in F \times G$ 
+	tel que $x=x_F+x_G$.
+	
+	On pose \[s(x)=x_F-x_G\]
+	On définit ainsi une application $s : E \rightarrow E$ que l'on appelle 
+	\emph{symétrie vectorielle} par rapport à $F$ parallèlement à $G$. 
 \end{Definition}
 
 \begin{center}
@@ -385,20 +407,27 @@ Pour tout $x \in E$, il existe un unique couple $(x_F,x_G) \in F \times G$ tel q
 \phantom{test}
 
 \vspace{7.5cm}
+
 \end{Demonstration}
 
-\begin{Definition}{} On appelle \emph{endomorphisme involutif} d'un espace vectoriel $E$, tout endomorphisme $s$ de $E$ vérifiant \newline $s \circ s = \textrm{Id}$.
+\begin{Definition}{} 
+On appelle \emph{endomorphisme involutif} d'un espace vectoriel $E$, tout endomorphisme $s$ de $E$ vérifiant \newline $s \circ s = \textrm{Id}$.
 \end{Definition}
 
 \begin{Proposition}{} Soit $E$ un $\mathbb{K}$-espace vectoriel.
 
-Un endomorphisme $s$ de $E$ est une symétrie si et seulement si $s$ est un endomorphisme involutif. Dans ce cas, $s$ est une symétrie par rapport à $\textrm{Ker}(p-\textrm{Id})$ parallèlement à $\textrm{Ker}(p+\textrm{Id})$.
+Un endomorphisme $s$ de $E$ est une symétrie si et seulement si $s$ est un 
+endomorphisme involutif. Dans ce cas, $s$ est une symétrie par rapport à 
+$\textrm{Ker}(p-\textrm{Id})$ parallèlement à $\textrm{Ker}(p+\textrm{Id})$.
 \end{Proposition}
 
-\vspace{13cm}
+\newpage
 
-\begin{retenir} $s=2p-\textrm{Id}$
-\end{retenir}
+\vspace*{7cm}
+
+\begin{Remarque}{} 
+	La relation $s=2p-\textrm{Id}$ est très utile pour faire le lien entre $s$ et $p$.
+\end{Remarque}
 
 
 \begin{Exemple} On considère les sous-espaces vectoriels de $\mathbb{R}^3 $ suivants : $P = \left\{ {(x,y,z) \in \mathbb{R}^3 \mid x + 2y - z = 0} \right\}$ et $D = \textrm{Vect} (w){\text{ o\`u }}w = (1,0, - 1)$. Justifier l'existence de la projection vectorielle, notée $p$, sur $P$ parallèlement à $D$ puis donner son expression.
@@ -435,16 +464,20 @@ Montrons que $P$ et $D$ sont supplémentaires en raisonnant par analyse-synthès
 %
 %Ainsi $P$ et $D$ sont supplémentaires dans $\mathbb{R}^3$ donc la projection de vectorielle sur $P$ paraallèlement à $D$ existe. Le raisonnement nous fournit son expression : 
 %$$ \forall (x,y,z) \in \mathbb{R}^3, \, p((x,y,z))= \left(x- \dfrac{x+2y-z}{2}, y, z+ \dfrac{x+2y-z}{2} \right) = \dfrac{1}{2} \left(x-2y+z , 2y, x+2y+z \right)$$
+\newpage
 
-\vspace{22cm}
+\vspace*{8cm}
 \end{Exemple}
 
 \begin{ApplicationDirecte} Soient $F= \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, x+y+z =0 \rbrace$ et $G= \textrm{Vect}((1,1,1))$. Justifier l'existence de la projection sur $F$ parallèlement à $G$ et donner son expression. De même avec la symétrie par rapport à $F$ parallèlement à $G$. \end{ApplicationDirecte}
 
 \section{Hyperplans}
 
-\begin{Theoreme}{} Soient $E$ un espace vectoriel de dimension $n$ et $H$ un sous-espace vectoriel de $E$. Les assertions suivantes sont équivalentes :
+\begin{Theoreme}{} 
+Soient $E$ un espace vectoriel de dimension $n$ et $H$ un sous-espace vectoriel 
+de $E$. 
 
+Les assertions suivantes sont équivalentes :
 \begin{enumerate}
 \item $H$ admet une droite vectorielle comme supplémentaire.
 \item $H$ est le noyau d'une forme linéaire sur $E$ non nulle.
@@ -455,16 +488,17 @@ Quand elles sont vraies, on dit que $H$ est un \emph{hyperplan} de $E$.
 
 \begin{Demonstration}{}
 
-$\rhd$ Montrons que $1$ implique $3$. 
+%$\rhd$ Montrons que $1$ implique $3$. 
 
 %Supposons que $H$ admette une droite vectorielle comme supplémentaire. Il existe donc un sous-espace vectoriel $D$ de $E$ de dimension $1$ tel que $E= H \oplus D$. On a alors :
 %$$ n=\textrm{dim}(E) =  \textrm{dim}(H \oplus D) = \textrm{dim}(H) + \textrm{dim}(H) = \textrm{dim}(H)+1$$
 %et donc $\textrm{dim}(H)=n-1$.
 
 \medskip
-\vspace{5cm}
+\vspace*{5cm}
+\newpage
 
-$\rhd$ Montrons que $3$ implique $2$.
+%$\rhd$ Montrons que $3$ implique $2$.
 
 %Supposons que $\textrm{dim}(H)=n-1$. Considérons $(e_1, \ldots, e_{n-1})$ une base de $H$ et complétons-la en une base $\mathcal{B}$ de $E$, $(e_1, \ldots, e_{n-1},e_n)$ (Théorème de la base incomplète). Tout vecteur $x$ admet des coordonnées $(x_1, \ldots, x_{n-1},x_n)$ dans la base $\mathbb{B}$. On pose alors :
 %$$ \begin{array}{ccccl}
@@ -473,10 +507,10 @@ $\rhd$ Montrons que $3$ implique $2$.
 %\end{array}$$
 %Il est évident que $\varphi$ est une forme linéaire. Celle-ci étant non nulle, son noyau est un sous-espace vectoriel de dimension au plus $n-1$. Or par construction, $H$ est inclus dans $\textrm{Ker}(\varphi)$ et est de dimension $n-1$. Par égalité des dimensions, on a donc $H = \textrm{Ker}(\varphi)$.
 
-\vspace{10cm}
+\vspace*{10cm}
 
 
-$\rhd$ Montrons que $2$ implique $1$.
+%$\rhd$ Montrons que $2$ implique $1$.
 
 %Supposons que $H$ soit le noyau d'une forme linéaire $\varphi$ sur $E$ non nulle. D'après le Théorème du rang, on a :
 %$$ \textrm{dim}(E) = \textrm{dim}(\textrm{Ker}(\varphi)) +  \textrm{rg}(\varphi)$$
@@ -486,14 +520,10 @@ $\rhd$ Montrons que $2$ implique $1$.
 %$$ \varphi(x) = \alpha \varphi(x_0)$$
 %or $x \in H = \textrm{Ker}(\varphi)$ donc $\varphi(x)=0$ et $x_0 \notin H$ donc $\varphi(x_0) \neq 0_E$ et ainsi $\alpha = 0$ et donc $x=0$. On a donc $D \cap H \subset \lbrace 0_E \rbrace$ et par double-inclusion, on a le résultat souhaité.
 
-\vspace{12cm}
+\vspace*{\stretch{1}}
 
-\newpage
-
-\phantom{9cm}
-
-\vspace{9cm}
 \end{Demonstration}
+\newpage
 
 \begin{Exemple} Posons $F = \left\lbrace P \in \mathbb{K}_n[X] \, \big{\vert} \, \int_{0}^1 P(x) \dx =0\right\rbrace \cdot$
 
@@ -516,18 +546,16 @@ $\rhd$ Montrons que $2$ implique $1$.
 %\begin{itemize}
 %\item Si $\textrm{dim}(E) \geq 2$. Soit $(e_1, e_2, \ldots, e_{n-1})$ une base de $H$ que l'on complète en une base $\mathcal{B}= (e_1, \ldots,e_n)$ de $E$. On a $\varphi(e_n) \neq 0$ et $\psi(e_n) \neq 0$ (sinon les applications seraient nulles). On a alors $\varphi(e_n) = \lambda \psi(e_n)$ où 
 %$$ \lambda = \frac{\varphi(e_n)}{\psi(e_n)}$$
-%Or pour tout $i \in \Interv{1}{n-1}$, $\varphi(e_i)=0$ et $\lambda \psi (e_i)=0$ donc $\varphi(e_i)=\lambda \psi (e_i)$. Finalement, $\varphi$ et $\lambda \psi$ coïncident sur une base de $E$ donc sont égales.
+%Or pour tout $i \in \iii{1}{n-1}$, $\varphi(e_i)=0$ et $\lambda \psi (e_i)=0$ donc $\varphi(e_i)=\lambda \psi (e_i)$. Finalement, $\varphi$ et $\lambda \psi$ coïncident sur une base de $E$ donc sont égales.
 %\item Si $E$ est de dimension $1$, alors $H = \lbrace 0_E \rbrace$. Si $(e_1)$ est une base de $E$ alors $\varphi(e_1) \neq 0$ et $\psi(e_1) \neq 0$ (sinon les applications seraient nulles). On a alors $\varphi(e_1) = \lambda \psi(e_1)$ où 
 %$$ \lambda = \frac{\varphi(e_1)}{\psi(e_1)}$$
 %Ainsi $\varphi$ et $\lambda \psi$ coïncident sur une base de $E$ donc sont égales.
 %\end{itemize}
+
+\vspace*{\stretch{1}}
 \end{Demonstration}
 
 \newpage
-
-$\phantom{test}$
-
-\vspace{3cm}
 
 \begin{TheoremeDefinition}{} Soient $E$ un espace vectoriel de dimension finie et $H$ un hyperplan de $E$. Il existe alors une forme linéaire non nulle $\varphi$ sur $E$ telle que $H = \textrm{Ker}(\varphi)$. 
 
@@ -539,7 +567,7 @@ C'est ce qu'on appelle l'\emph{équation} de $H$ dans la base $\mathcal{B}$.
 \end{itemize}
 \end{TheoremeDefinition}
 
-\begin{Remarque}{} En posant pour tout $i \in \Interv{1}{n}$, $a_i = \varphi(e_i)$, on a :
+\begin{Remarque}{} En posant pour tout $i \in \iii{1}{n}$, $a_i = \varphi(e_i)$, on a :
 $$ x \in H \Longleftrightarrow a_1 x_1 + \cdots + a_n x_n = 0$$
 \end{Remarque}
 
@@ -550,13 +578,12 @@ $$ x \in H \Longleftrightarrow a_1 x_1 + \cdots + a_n x_n = 0$$
 \vspace{1cm}
 
 %$$ \lbrace  (x,y) \in \mathbb{R}^2 \, \vert \,  ax+by = 0 \rbrace$$
-où $(a,b) \neq (0,0)$. On reconnait des équations de droites vectorielles.
+où $(a,b) \neq (0,0)$. On reconnaît des équations de droites vectorielles.
 \item  Les hyperplans de $\mathbb{R}^3$ sont de la forme :
 
-\vspace{1cm
-}
+\vspace{1cm}
 %$$ \lbrace   (x,y,z) \in \mathbb{R}^3 \, \vert \, ax+by+cz = 0\rbrace$$
-où $(a,b,c) \neq (0,0,0)$. On reconnait des équations de plans vectoriels.
+où $(a,b,c) \neq (0,0,0)$. On reconnaît des équations de plans vectoriels.
 \item Posons pour $n \in \mathbb{N}^*$, $H = \lbrace (x_1, \ldots, x_n) \in \mathbb{R}^n \, \vert \, x_1 + \cdots + x_n = 0 \rbrace \cdot$
 
 Alors $H$ est un hyperplan de $\mathbb{R}^n$ car c'est le noyau de la forme linéaire non nulle suivante :
@@ -564,7 +591,7 @@ $$ \begin{array}{ccccl}
 \varphi & : & \mathbb{R}^n  & \rightarrow & \mathbb{R} \\
 & & (x_1, \ldots, x_n) & \mapsto &  x_1 + \cdots + x_n \\
 \end{array}$$
-\end{itemize}
+\end{enumerate}
 \end{Exemples}
 
 \begin{ApplicationDirecte} Donner rapidement la dimension de $\lbrace P \in \mathbb{R}_n[X] \, \vert P(0)+P(1)+P(2)= 0 \rbrace\cdot$ \end{ApplicationDirecte}
