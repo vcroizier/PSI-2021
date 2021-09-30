@@ -1,0 +1,189 @@
+\documentclass[twoside,french,11pt]{VcCours}
+
+% cSpell:ignore ndarray Drapide
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Informatique}{Devoir surveillé n°1}
+
+\begin{center}
+\large 
+Le samedi 2 octobre 2021
+
+\bigskip
+\textbf{Durée: 1h}
+
+\bigskip
+\large\underline{\textbf{Calculatrice interdite}}
+\end{center}
+
+\bigskip
+\begin{itemize}
+  \item Le candidat attachera la plus grande importance à la clarté, à la précision et à la concision de la rédaction. Si un candidat est amené à repérer ce qui peut lui sembler être une erreur d'énoncé, il le signalera sur sa copie et devra poursuivre sa composition en expliquant les raisons des initiatives qu'il a été amené à prendre.
+  \item Il est conseillé au candidat de lire l'intégralité du sujet et de repérer les parties qui lui semblent plus abordables.
+  %\item Les questions de cours sont à traiter \underline{sur la feuille d'énoncé} et les exercices sont à traiter sur une autre feuille.
+  \item Le candidat \fbox{encadrera} ou \underline{soulignera} les résultats. 
+  %\item Les étudiants visant un concours plus dur que CCP traiteront \textbf{obligatoirement} l'exercice $2$.
+  \end{itemize}
+\separationTitre
+
+\section*{Simulation de la cinétique d'un gaz parfait}
+La théorie cinétique des gaz vise à expliquer le comportement macroscopique d'un gaz à partir des mouvements
+des particules qui le composent. Depuis la naissance de l'informatique, de nombreuses simulations numériques
+ont permis de retrouver les lois de comportement de différents modèles de gaz comme celui du gaz parfait.
+
+Ce sujet s'intéresse à un gaz parfait monoatomique. Nous considérerons que le gaz étudié est constitué de $N$
+particules sphériques, toutes identiques, de masse $m$ et de rayon $R$, confinées dans un récipient rigide. La
+simulation sera réalisée dans un espace à une dimension; le récipient contenant le gaz sera
+un segment de longueur $L$.
+
+Dans le modèle du gaz parfait, les particules ne subissent aucune force (leur poids est négligé) ni aucune autre
+action à distance. Elle n'interagissent que par l'intermédiaire de chocs, avec une autre particule ou avec la paroi
+du récipient. Ces chocs sont toujours élastiques, c'est-à-dire que l'énergie cinétique totale est conservée.
+Le seul langage de programmation autorisé dans cette épreuve est Python. Pour répondre à une
+question il est possible de faire appel aux fonctions définies dans les questions précédentes. Dans tout le sujet
+on suppose que les bibliothèques \code{math}, \code{numpy} et \code{random} ont été importées grâce aux instructions
+\begin{Python*}  
+import math
+import numpy as np
+import random
+\end{Python*}  
+Si les candidats font appel à des fonctions d'autres bibliothèques ils doivent préciser 
+les instructions d'importation correspondantes.
+Ce sujet utilise la syntaxe des annotations pour préciser le types des arguments et du résultat des fonctions à
+écrire. Ainsi
+\begin{Python*}
+def maFonction(n:int, x:float, l:[str]) -> (int, np.ndarray):
+\end{Python*} 
+signifie que la fonction maFonction prend trois arguments, le premier est un entier, le deuxième un nombre à
+virgule flottante et le troisième une liste de chaînes de caractères et qu'elle renvoie un couple dont le premier
+élément est un entier et le deuxième un tableau numpy. Il n'est pas demandé aux candidats de recopier les
+entêtes avec annotations telles qu'elles sont fournies dans ce sujet, ils peuvent utiliser des entêtes classiques. Ils
+veilleront cependant à décrire précisément le rôle des fonctions qu'ils définiraient eux-mêmes.
+Une liste de fonctions utiles est donnée à la fin du sujet.
+
+\medskip
+\textbf{Représentation en Python}
+
+\smallskip
+Chaque particule est représentée par une liste de deux éléments, le premier correspond à la position de son
+centre, la deuxième à sa vitesse. Chacun de ces éléments (position et vitesse) est représenté par un vecteur
+(np.ndarray) dont le nombre de composantes correspond à la dimension de l'espace de simulation.
+Les positions et vitesses sont exprimées sous forme de coordonnées cartésiennes dans un repère orthonormé
+dont l'origine est placée dans un coin du récipient contenant le gaz et dont les axes sont parallèles aux côtés
+du récipient issus de ce coin de façon à ce que tout point situé à l'intérieur du récipient ait ses coordonnées
+comprises entre $0$ et $L$.
+
+Les positions sont exprimées en mètres et les vitesses en $m.s^{−1}$. La figure 1 propose des exemples de particules
+dans des espaces de diverses dimensions.
+\begin{Python*} 
+p1 = [np.array([5.3]), np.array([412.3])]
+\end{Python*} 
+
+
+\section*{Initialisation}
+Pour pouvoir réaliser une simulation, il convient de disposer d'une situation initiale, c'est-à-dire d'un ensemble
+de particules réparties dans le récipient et dotées d'une vitesse initiale connue. Cette partie s'intéresse au
+positionnement aléatoire d'un ensemble de particules. L'attribution de vitesses initiales à ces particules ne sera
+pas abordé ici.
+
+\subsection*{A -- Placement en dimension 1}
+Nous cherchons d'abord comment placer $N$ particules (sphères de rayon $R$) le long d'un segment de longueur $L$
+sans qu'elles se chevauchent ni qu'elles sortent du segment. La figure 2 montre quelques exemples de placements
+possibles avec $N = 5$, $R = 0,5$ et $L = 10$.
+Exemples de placement de $5$ particules de rayon $0,5$ sur un segment de longueur $10$
+La fonction \code{placement1D} construit aléatoirement, à partir des paramètres géométriques du problème (nombre
+et rayon des particules, taille du récipient), une liste de coordonnées correspondant à la position initiale du
+centre de chaque particule.
+\begin{Python}
+def placement1D(N:int, R:float, L:float) -> [np.ndarray]:
+
+    def possible(c:np.ndarray) -> bool:
+        if c[0] < R or c[0] > L - R: return False
+        for p in res:
+            if abs(c[0] - p[0]) < 2*R: return False
+        return True
+
+    res = []
+    while len(res) < N:
+        p = L * np.random.rand(1)
+        if possible(p): res.append(p)
+    return res
+\end{Python}
+\renewcommand{\labelenumi}{\textbf{Q \theenumi.}}
+\begin{enumerate}
+\item
+Détailler l'action de la ligne 11.
+\item
+Quelle est la signification du paramètre \code{c} de la fonction possible (ligne 3) ?
+\item
+Expliquer le rôle de la ligne 4.
+\item
+Expliquer le rôle des lignes 5 et 6.
+\item
+Donner en une phrase le rôle de la fonction \code{possible}.
+\item
+Proposer une nouvelle version de la ligne 11 permettant d'éviter certains rejets de la part de la fonction
+possible.
+\item
+On considère l'appel \code{placement1D(4, 0.5, 5)} et on suppose que les trois premières particules ont
+été placées aux points d'abscisses $1$, $2,5$ et $4$ (figure 3). 
+Quelle sera la suite du déroulement de la fonction \code{placement1D} ?
+\item
+Quelle est la complexité temporelle de la fonction \code{placement1D} dans le cas où $N\ll Nmax$, nombre
+maximal de particules de rayon $R$ pouvant être placées sur un segment de longueur $L$ ?
+\item
+Pour remédier de manière simple (mais non optimale) à la situation de la question 7, on décide
+de recommencer à zéro le placement des particules dès qu'une particule est rejetée par la fonction possible.
+Réécrire les lignes 9 à 13 de la fonction \code{placement1D} pour mettre en œuvre cette décision.
+\end{enumerate}
+
+\subsection*{B -- Optimisation du placement en dimension 1}
+Pour placer aléatoirement $N$ particules le long d'un segment, nous envisageons une approche plus efficace que
+celle étudiée dans la partie A.
+L'idée est de calculer l'espace laissé libre sur le segment cible par $N$ particules puis de répartir aléatoirement cet
+espace libre entre les particules. Afin de conserver une répartition uniforme des particules dans tout le segment,
+nous utilisons l'algorithme suivant :
+\begin{itemize}
+  \item[1.] déterminer $\ell$, espace laissé libre par les $N$ particules dans le segment $[0, L[$ ;
+  \item[2.] placer aléatoirement dans le segment $[0, \ell[$, $N$ particules virtuelles ponctuelles ($R = 0$) ; à cette étape, deux
+particules peuvent parfaitement occuper la même abscisse : il n'y a pas de conflit ;
+  \item[3.] remplacer chaque particule virtuelle par une particule réelle de rayon $R$ en décalant toutes les particules
+(réelles et virtuelles) situées plus à droite de façon à dégager l'espace nécessaire.
+\end{itemize}
+\begin{enumerate}\setcounter{enumi}{9}
+  \item
+Écrire la fonction d'entête
+\begin{Python*}
+def placement1Drapide(N:int, R:float, L:float) -> [np.ndarray]:
+\end{Python*}
+qui implante cet algorithme et renvoie la liste des coordonnées des centres de $N$ particules de rayon $R$ réparties
+aléatoirement le long d'un segment situé entre les abscisses $0$ et $L$. On précise que l'ordre de la liste résultat
+n'est pas important.
+\item
+Quelle est la complexité de la fonction \code{placement1Drapide} ? Commenter.
+\end{enumerate}
+% \subsection*{C -- Analyse statistique}
+% Afin de vérifier que la fonction \code{placement1Drapide} produit une répartition de particules uniformément répartie
+% sur le segment cible, on l'appelle un grand nombre de fois et on comptabilise pour chaque résultat obtenu la
+% position initiale de chaque particule. Le résultat final est présenté sous forme d'un histogramme dont l'axe
+% horizontal correspond à l'abscisse du centre de la particule dans l'intervalle $[0, L]$ et l'axe vertical au nombre
+% total de particules placées à cette abscisse au cours des différentes exécutions de la fonction.
+% \begin{enumerate}\setcounter{enumi}{11}
+% \item Tracer et justifier l'allure des histogrammes pour $N$ = 1, $N$ = 2 et $N$ = 5 dans le cas où $R$ = 1 et
+% $L$ = 10.
+% \end{enumerate}
+% \subsection*{D -- Dimension quelconque}
+% L'algorithme optimisé pour un segment, n'est pas utilisable pour des espaces de dimensions supérieures. Nous
+% allons donc généraliser la fonction \code{placement1D} pour la transformer en une fonction utilisable dans un espace
+% de dimension 1, 2 ou 3.
+% \begin{enumerate}\setcounter{enumi}{12}
+%   \item
+% En s'inspirant de la fonction \code{placement1D}, écrire la fonction d'entête
+% def placement(D:int, N:int, R:float, L:float) -> [np.ndarray]:
+% qui renvoie la liste des coordonnées des centres de N particules sphériques de rayon R placées aléatoirement dans
+% un récipient de côté L dans un espace à D dimensions. Les modifications prévues aux questions 6 et 9 seront
+% prises en compte dans cette fonction.
+% \end{enumerate}
+
+\end{document}
