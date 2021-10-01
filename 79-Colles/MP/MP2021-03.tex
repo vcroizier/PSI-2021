@@ -28,31 +28,25 @@
 
 
 \begin{colle}{MP -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
-n\degres1 -- le vendredi 17/09/2021}{3}
+n\degres3 -- le vendredi 01/10/2021}{3}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{eleve}{}
 
     \cours
-    Définition d’une projection vectorielle et propriétés associées\\
+    Théorème de Bolzano-Weierstrass.\\
     Exercice 2
 
     \exo1
-    $E\!=\!\R^3$, $F\!=\!\ensemble{(x,y,z)\in\R^3}{x+4y+z=0}$,\\
-    $G\!=\!\ensemble{(x,\!y,\!z)\in\R^3}{x+y+z=0\textrm{ et }x+2y+3z=0}$.\hspace*{-1cm}
-    \begin{enumerate}
-      \item Montrer que $F$ et $G$ sont en somme directe.
-      \item Montrer que $F\oplus G=E$.
-    \end{enumerate}
+    $\alpha>0$. Nature de la série $\sum_{n\geq0}\left(\sqrt{1+\frac{(-1)^n}{n^{\alpha}}}-1\right)$.
     
     \exo2
-    $E$ un $\K$-ev. $p,q\in\LL(E)$ deux projecteurs.
-    \begin{enumerate}
-      \item Montrer que $p+q$ est un projecteur\\
-      ssi $p\circ q=q\circ p=0$.
-      \item Si $p+q$ est un projecteur, montrer que
-      \[\Ima(p+q)=\Ima p\oplus\Ima q\]
-      \[\Ker(p+q)=\Ker p\cap \Ker q\]
-    \end{enumerate}
+    Nature de la série $\sum_{n\geq2}\frac{(-1)^2)}{\sqrt{n^{\alpha}+(-1)^n}}$.
+
+    \exo3
+    Considérons la suite définie par $u_0=u_1=1$ et $\forall n\in\N$,
+    $u_{n+2}=\frac49(3u_{n+1}-u_n)$.
+
+    Déterminer la nature le série $\sum_{n\geq0}u_n$.
 
     \vspace*{\stretch{2}}
 
@@ -61,28 +55,22 @@ n\degres1 -- le vendredi 17/09/2021}{3}
 \begin{eleve}{}
 
   \cours
-  Définition du noyau et de l’image d’une application linéaire.\\
+  Théorème des valeurs intermédiaires et théorème de bijection.\\
   Exercice 3
   
   \exo1
-  $u$ et $v$ deux endomorphismes de $E$ qui commutent.
-  
-  Montrer que $\Ker u$ et $\Ima u$ sont stables par $v$.
+  On considère la série $\sum_{n\geq0}\arctan\left(\frac{1}{n^2+n+1}\right)$.
+  \begin{enumerate}
+    \item Nature de la série.
+    \item Simplifier $\tan(\arctan(n+1)-\arctan(n))$.
+    En déduire la somme de la série.
+  \end{enumerate}
   
   \exo2
-  $(e_1,\ldots,e_n)$ une famille libre de $E$, un $\K$-ev.
-  
-  $(\lambda_1,\ldots,\lambda_n)\in\K^n$ et $u=\sum_{i=1}^n\lambda_ie_i$.
-  
-  On pose $v_i=u+e_i$.
-  
-  Montrer que $(v_1,\ldots,v_n)$ est libre ssi $\sum_{i=1}^n\lambda_i\neq-1$.
+  Nature de la série $\sum_{n\geq0}(n+(-1)^n)3^{-n}\sin(n)$.
   
   \exo3
-  $F$ et $G$ deux sev d'un $\K$-ev $E$ tels que $F+G=E$.
-  Soit $F'$ un supplémentaire de $F\cap G$ dans $F$.
-  
-  Montrer que $F'\oplus G=E$.
+  Étudier $u_0\in\R$ et $u_{n+1}=\sqrt{\frac{16+u_n^2}{2}}$
 
   \vspace*{\stretch{2}}
     
@@ -91,24 +79,18 @@ n\degres1 -- le vendredi 17/09/2021}{3}
 \begin{eleveF}{}
     
   \cours
-  Lien entre injectivité et noyau.\\
+  Définition : domination, négligeabilité, équivalence.\\
   Exercice 1
 
   \exo1
-  $a\in\C$ et $f:\C\mapsto\C$ avec $f(z)=z+a\overline{z}$.
-  \begin{enumerate}
-    \item Montrer que $f$ est $\R$-linéaire.
-    \item À quelle condition sur $a$, $f$ est-elle $\C$-linéaire ?
-    \item En considérant $\C$ comme un $\R$-ev, déterminer $\Ker f$.
-  \end{enumerate}
+  Nature de la série $\sum_{n\geq0}\frac{2^nn!}{n^n}$.
+
   
   \exo2
-  $f\in\LL(E)$ tel que $f^3-3f+2\id_E=0$.
-  \begin{enumerate}
-    \item Montrer que $f$ est un isomorphisme et donner $f^{-1}$ en fonction de $f$.
-    \item Montrer que $\Ker(f-\id_E)\oplus \Ker(f^2+f-2\id_E)=E$.
-    \item Montrer que $\Ima(f-\id_E)=\Ker(f^2+f-2\id_E)$.
-  \end{enumerate}
+  Nature de la série $\sum_{n\geq0}\frac{\ln^3(n)}{n^2+1}$.
+
+  \exo3
+
   
   \vspace*{\stretch{2}}
   
