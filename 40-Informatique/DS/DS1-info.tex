@@ -7,7 +7,7 @@
 \Titre{PSI}{Promotion 2021--2022}{Informatique}{Devoir surveillé n°1}
 
 \begin{center}
-\large 
+\large
 Le samedi 2 octobre 2021
 
 \bigskip
@@ -27,19 +27,39 @@ Le samedi 2 octobre 2021
   \end{itemize}
 \separationTitre
 
+% \tikzstyle{int}=[draw, fill=blue!20, minimum size=2em,circle]
+% \tikzstyle{init} = [pin edge={to-,thin,black}]
+% 
+% \begin{tikzpicture}[>=latex']
+%     \node [int] (a) at (1,0) {};
+%     \node (b) at (0,0) {};
+%     \node [int] (c) [right of=a] {};
+%     \node [coordinate] (end) [right of=c, node distance=2cm]{};
+%     \path[-] (b) edge node {$a$} (a);
+%     \path[-] (a) edge node {$v$} (c);
+%     \draw[->] (c) edge node {$p$} (end) ;
+% \end{tikzpicture}
+
+\emph{Il s'agit de la première partie d'un sujet d'informatique de Centrale-Supélec.}
+
+\bigskip
 \section*{Simulation de la cinétique d'un gaz parfait}
+
 La théorie cinétique des gaz vise à expliquer le comportement macroscopique d'un gaz à partir des mouvements
 des particules qui le composent. Depuis la naissance de l'informatique, de nombreuses simulations numériques
 ont permis de retrouver les lois de comportement de différents modèles de gaz comme celui du gaz parfait.
 
+\medskip
 Ce sujet s'intéresse à un gaz parfait monoatomique. Nous considérerons que le gaz étudié est constitué de $N$
 particules sphériques, toutes identiques, de masse $m$ et de rayon $R$, confinées dans un récipient rigide. La
-simulation sera réalisée dans un espace à une dimension; le récipient contenant le gaz sera
+simulation sera réalisée dans un espace à une dimension (sauf à la dernière question); le récipient contenant le gaz sera
 un segment de longueur $L$.
 
-Dans le modèle du gaz parfait, les particules ne subissent aucune force (leur poids est négligé) ni aucune autre
-action à distance. Elle n'interagissent que par l'intermédiaire de chocs, avec une autre particule ou avec la paroi
-du récipient. Ces chocs sont toujours élastiques, c'est-à-dire que l'énergie cinétique totale est conservée.
+% Dans le modèle du gaz parfait, les particules ne subissent aucune force (leur poids est négligé) ni aucune autre
+% action à distance. Elle n'interagissent que par l'intermédiaire de chocs, avec une autre particule ou avec la paroi
+% du récipient. Ces chocs sont toujours élastiques, c'est-à-dire que l'énergie cinétique totale est conservée.
+
+\medskip
 Le seul langage de programmation autorisé dans cette épreuve est Python. Pour répondre à une
 question il est possible de faire appel aux fonctions définies dans les questions précédentes. Dans tout le sujet
 on suppose que les bibliothèques \code{math}, \code{numpy} et \code{random} ont été importées grâce aux instructions
@@ -47,7 +67,9 @@ on suppose que les bibliothèques \code{math}, \code{numpy} et \code{random} ont
 import math
 import numpy as np
 import random
-\end{Python*}  
+\end{Python*} 
+
+\newpage
 Si les candidats font appel à des fonctions d'autres bibliothèques ils doivent préciser 
 les instructions d'importation correspondantes.
 Ce sujet utilise la syntaxe des annotations pour préciser le types des arguments et du résultat des fonctions à
@@ -55,12 +77,12 @@ Ce sujet utilise la syntaxe des annotations pour préciser le types des argument
 \begin{Python*}
 def maFonction(n:int, x:float, l:[str]) -> (int, np.ndarray):
 \end{Python*} 
-signifie que la fonction maFonction prend trois arguments, le premier est un entier, le deuxième un nombre à
+signifie que la fonction \code{maFonction} prend trois arguments, le premier est un entier, le deuxième un nombre à
 virgule flottante et le troisième une liste de chaînes de caractères et qu'elle renvoie un couple dont le premier
 élément est un entier et le deuxième un tableau numpy. Il n'est pas demandé aux candidats de recopier les
 entêtes avec annotations telles qu'elles sont fournies dans ce sujet, ils peuvent utiliser des entêtes classiques. Ils
 veilleront cependant à décrire précisément le rôle des fonctions qu'ils définiraient eux-mêmes.
-Une liste de fonctions utiles est donnée à la fin du sujet.
+%Une liste de fonctions utiles est donnée à la fin du sujet.
 
 \medskip
 \textbf{Représentation en Python}
@@ -68,7 +90,7 @@ Une liste de fonctions utiles est donnée à la fin du sujet.
 \smallskip
 Chaque particule est représentée par une liste de deux éléments, le premier correspond à la position de son
 centre, la deuxième à sa vitesse. Chacun de ces éléments (position et vitesse) est représenté par un vecteur
-(np.ndarray) dont le nombre de composantes correspond à la dimension de l'espace de simulation.
+(\code{np.ndarray}) dont le nombre de composantes correspond à la dimension de l'espace de simulation.
 Les positions et vitesses sont exprimées sous forme de coordonnées cartésiennes dans un repère orthonormé
 dont l'origine est placée dans un coin du récipient contenant le gaz et dont les axes sont parallèles aux côtés
 du récipient issus de ce coin de façon à ce que tout point situé à l'intérieur du récipient ait ses coordonnées
@@ -76,10 +98,16 @@ comprises entre $0$ et $L$.
 
 Les positions sont exprimées en mètres et les vitesses en $m.s^{−1}$. La figure 1 propose des exemples de particules
 dans des espaces de diverses dimensions.
-\begin{Python*} 
-p1 = [np.array([5.3]), np.array([412.3])]
-\end{Python*} 
 
+\begin{figure}[h]
+\centering
+\begin{Python*} 
+p1 = [np.array([5.3]), np.array([412.3])] # 1D
+p2 = [np.array([3.1, 4.8]), np.array([241, -91.4])] # 2D
+p3 = [np.array([5.2, 3.2, 2.3]), np.array([-13.1, 30, 26])] # 3D
+\end{Python*} 
+\caption{Exemples de particules}
+\end{figure}
 
 \section*{Initialisation}
 Pour pouvoir réaliser une simulation, il convient de disposer d'une situation initiale, c'est-à-dire d'un ensemble
@@ -90,11 +118,20 @@ pas abordé ici.
 \subsection*{A -- Placement en dimension 1}
 Nous cherchons d'abord comment placer $N$ particules (sphères de rayon $R$) le long d'un segment de longueur $L$
 sans qu'elles se chevauchent ni qu'elles sortent du segment. La figure 2 montre quelques exemples de placements
-possibles avec $N = 5$, $R = 0,5$ et $L = 10$.
-Exemples de placement de $5$ particules de rayon $0,5$ sur un segment de longueur $10$
+possibles avec $N = 5$, $R = 0,\!5$ et $L = 10$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{DS1-figure2.png}
+\caption{Exemples de placement de $5$ particules de rayon $0,\!5$ sur un segment de longueur $10$}
+\end{figure}
+
+
 La fonction \code{placement1D} construit aléatoirement, à partir des paramètres géométriques du problème (nombre
 et rayon des particules, taille du récipient), une liste de coordonnées correspondant à la position initiale du
 centre de chaque particule.
+
+\pagebreak
 \begin{Python}
 def placement1D(N:int, R:float, L:float) -> [np.ndarray]:
 
@@ -127,11 +164,19 @@ Proposer une nouvelle version de la ligne 11 permettant d'éviter certains rejet
 possible.
 \item
 On considère l'appel \code{placement1D(4, 0.5, 5)} et on suppose que les trois premières particules ont
-été placées aux points d'abscisses $1$, $2,5$ et $4$ (figure 3). 
+été placées aux points d'abscisses $1$; $2,\!5$ et $4$ (figure 3). 
 Quelle sera la suite du déroulement de la fonction \code{placement1D} ?
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{DS1-figure3.png}
+\caption{Question 7}
+\end{figure}
 \item
 Quelle est la complexité temporelle de la fonction \code{placement1D} dans le cas où $N\ll Nmax$, nombre
 maximal de particules de rayon $R$ pouvant être placées sur un segment de longueur $L$ ?
+
+\indication{Déterminer la complexité correspond à estimer, en fonction de $N$, le nombre de tests 
+nécessaires au placement de $N$ particules.}
 \item
 Pour remédier de manière simple (mais non optimale) à la situation de la question 7, on décide
 de recommencer à zéro le placement des particules dès qu'une particule est rejetée par la fonction possible.
@@ -154,6 +199,7 @@ particules peuvent parfaitement occuper la même abscisse : il n'y a pas de conf
 \begin{enumerate}\setcounter{enumi}{9}
   \item
 Écrire la fonction d'entête
+\lstset{xleftmargin=0.7cm,xrightmargin=0.7cm}
 \begin{Python*}
 def placement1Drapide(N:int, R:float, L:float) -> [np.ndarray]:
 \end{Python*}
@@ -173,17 +219,20 @@ Quelle est la complexité de la fonction \code{placement1Drapide} ? Commenter.
 % \item Tracer et justifier l'allure des histogrammes pour $N$ = 1, $N$ = 2 et $N$ = 5 dans le cas où $R$ = 1 et
 % $L$ = 10.
 % \end{enumerate}
-% \subsection*{D -- Dimension quelconque}
-% L'algorithme optimisé pour un segment, n'est pas utilisable pour des espaces de dimensions supérieures. Nous
-% allons donc généraliser la fonction \code{placement1D} pour la transformer en une fonction utilisable dans un espace
-% de dimension 1, 2 ou 3.
-% \begin{enumerate}\setcounter{enumi}{12}
-%   \item
-% En s'inspirant de la fonction \code{placement1D}, écrire la fonction d'entête
-% def placement(D:int, N:int, R:float, L:float) -> [np.ndarray]:
-% qui renvoie la liste des coordonnées des centres de N particules sphériques de rayon R placées aléatoirement dans
-% un récipient de côté L dans un espace à D dimensions. Les modifications prévues aux questions 6 et 9 seront
-% prises en compte dans cette fonction.
-% \end{enumerate}
+\subsection*{C -- Dimension quelconque}
+L'algorithme optimisé pour un segment, n'est pas utilisable pour des espaces de dimensions supérieures. Nous
+allons donc généraliser la fonction \code{placement1D} pour la transformer en une fonction utilisable dans un espace
+de dimension 1, 2 ou 3.
+\begin{enumerate}\setcounter{enumi}{11}
+  \item
+En s'inspirant de la fonction \code{placement1D}, écrire la fonction d'entête
+\lstset{xleftmargin=0.7cm,xrightmargin=0.7cm}
+\begin{Python*}
+def placement(D:int, N:int, R:float, L:float) -> [np.ndarray]:
+\end{Python*}
+qui renvoie la liste des coordonnées des centres de $N$ particules sphériques de rayon $R$ placées aléatoirement dans
+un récipient de côté $L$ dans un espace à $D$ dimensions (segment, carré ou cube suivant la dimension). Les modifications prévues aux questions 6 et 9 seront
+prises en compte dans cette fonction.
+\end{enumerate}
 
 \end{document}
