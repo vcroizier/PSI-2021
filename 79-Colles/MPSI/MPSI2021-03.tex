@@ -1,0 +1,132 @@
+\documentclass[twoside,a4paper,landscape,french,10pt]{VcCours}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnseprule{0.4pt}%
+\addtolength\columnsep{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{colle}[4]{{\large\bf\makebox[0cm][l]{#1\hspace{\stretch{-1}}}\hspace{\stretch{1}}#2\hspace{\stretch{1}}\makebox[0cm][r]{\hspace{\stretch{-1}}#3}}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{multicols*}{#4}}{\end{multicols*}\pagebreak}
+\newenvironment{eleve}[1]{\textbf{\large #1}}{\vspace{\stretch{1}}
+\columnbreak}
+\newenvironment{eleveF}[1]{\textbf{\large #1}}{}
+\newcommand{\cours}{\medskip\uwave{Cours :}
+
+\smallskip}
+\newcommand{\exo}[1]{\vspace{\stretch{1}}\uwave{Exercice #1:}
+
+\smallskip}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+-----------------------------------------+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{colle}{MPSI -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
+n\degres3 -- le lundi 04/10/2021}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+    \cours
+    Définition de l'injectivité.\\
+    Soit $A = \ensemble{(1 + 2t, 2 + t)}{t \in\R}$
+    et $B = \ensemble{(x, y)\in\R^2}{x − 2y + 3 = 0}$.
+    Démontrer que $A = B$.
+
+    \exo1
+    Simplifier $S_n=\sum_{j=1}^n\sum_{i=j}^n\frac{j^3}{(i+1)^2}$.
+
+
+    \exo2
+    Soit $f\in\FF(E,F)$ tel que $f\circ f\circ f=f$.
+    Montrez que $f\text{ injective }\Longleftrightarrow f\text{ surjective}$. 
+
+    \exo3
+    Soit $f:E\longrightarrow F$ une application, et $G$ un troisième ensemble
+    ayant au moins deux éléments.
+    
+    On construit deux nouvelles applications :
+
+$
+   \application{f_*}{E^G}{F^G}{\phi}{f\circ \phi}
+   \et 
+   \application{f^*}{G^F}{G^E}{\phi}{\phi\circ f}
+$
+
+Montrer que :
+\begin{enumerate}
+\item $f$ est injective  $\Longleftrightarrow f_*$ est injective  $\Longleftrightarrow f^*$ est surjective.
+\item $f$ est surjective $\Longleftrightarrow f_*$ est surjective $\Longleftrightarrow f^*$ est injective.
+\end{enumerate}
+    \vspace*{\stretch{2}}
+
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+  \cours
+  Définition de la surjectivité.\\
+  Montrer que $g\circ f$ injective $\Longrightarrow$ $f$ injective.\\
+  Montrer que $g\circ f$ surjective $\Longrightarrow$ $g$ surjective.
+
+  \exo1
+  Simplifier $S_n=\sum_{j=1}^n\sum_{i=j}^n$.
+
+  \exo2
+  $A,B,C,D$ des parties de $E$.\\
+  Montrez que $\systeme{B\setminus C\subset A\\C\setminus D\subset A}
+  \Longrightarrow B\setminus D\subset A$
+
+  \exo3
+  Soit $E$ un ensemble, et $A,B$ deux parties fixées de $E$.
+  Soit $\application{\phi}{\PP(E)}{\PP(A)\times\PP(B)}{X}{(X\cup A, X\cap B).}$
+  \begin{enumerate}
+    \item Qu'est-ce que $\phi(\varnothing)$ ? $\phi(E\setminus(A\cup B))$ ?
+    \item A quelle condition sur $A$ et $B$, $\phi$ est-elle injective ?
+    \item Est-ce que le couple $(\varnothing,B)$ possède un antécédent par $\phi$ ?
+    \item A quelle condition sur $A$ et $B$, $\phi$ est-elle surjective ?
+  \end{enumerate}
+
+  \vspace*{\stretch{2}}
+    
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleveF}{}
+    
+  \cours
+  Définition de la bijectivité.\\
+  $g$ et $f$ injectives $\Longrightarrow$ $g\circ f$ injective. Idem avec surjective.
+
+  \exo1
+  Montrer que $\systeme{A\cap B \subset A\cap C\\A\cup B \subset A\cup C}
+  \Longrightarrow B \subset C$.
+  
+  \exo2
+  Simplifier $S_n=\sum_{j=1}^n\sum_{i=j}^n$.
+
+  \exo3
+  Soit $f:E\longrightarrow E$ bijective.
+  La conjugaison par $f$ est l'application
+  $\application{\phi_f}{E^E}{E^E}{\phi}{f\circ \phi\circ f^{-1}}$
+  \begin{enumerate}
+    \item Montrer que $\phi_f$ est une bijection de $E^E$.
+    \item Simplifier $\phi_f \circ \phi_g$.
+    \item Simplifier $\phi_f(\phi) \circ \phi_f(\psi)$.
+    \item Soient $\II$ et $\SS$ les sous-ensembles de $E^E$ constitués
+        des injections et des surjections.
+        Montrer que $\II$ et $\SS$ sont invariants par $\phi_f$.
+    \item Lorsque $\phi$ est bijective, qu'est-ce que $(\phi_f(\phi))^{-1}$ ?
+  \end{enumerate}
+  
+  \vspace*{\stretch{2}}
+  
+\end{eleveF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{colle}%
+\end{document}
+    

@@ -1,23 +1,19 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
+\documentclass[a4paper,twoside,french,10pt]{VcCours}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 3 : Espaces vectoriels}
 
-\everymath{\displaystyle}
-\begin{center}
-\textit{{ {\huge TD 3 : Espaces vectoriels}}}
-\end{center}
-\bigskip
+\tableofcontents
+\separationTitre
 
 
-\noindent Dans tout le TD, $n$ sera un entier naturel non nul et $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
+Dans tout le TD, $n$ sera un entier naturel non nul et $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Sous-espaces vectoriels}}}
-\end{center}
+\subsection{\large Sous-espaces vectoriels}
 
 \begin{Exercice}{} Les ensembles suivants sous-ils des sous-espaces vectoriels d'un espace vectoriel de référence ?
 
@@ -77,7 +73,6 @@ Sachant que $3/2 \neq 5/3$, on en déduit que $u+v$ n'appartient pas à $C$. Ain
 \end{itemize}
 On en déduit que $E$ est un sous-espace vectoriel de $\mathcal{F}(\mathbb{R}, \mathbb{R})$.
 \item $F$ n'est pas un sous-espace vectoriel de $\mathcal{F}(\mathbb{R}, \mathbb{R})$ car la fonction nulle n'appartient pas à $F$.
-\newpage
 \item Montrons que $G$ est un sous-espace vectoriel de $\mathcal{F}(\mathbb{R}, \mathbb{R})$.
 \begin{itemize}
 \item $G \subset \mathcal{F}(\mathbb{R}, \mathbb{R})$.
@@ -147,7 +142,7 @@ On en déduit que $F$ est un sous-espace vectoriel de $\mathbb{R}^{\mathbb{N}}$.
 
 \begin{Exercice}{} Soient $E = \mathcal{F}(\mathbb{R}, \mathbb{R})$, $C$ l'ensemble des fonctions croissantes de $E$ et $\Delta = \lbrace f-g \, \vert \, (f,g) \in C^2 \rbrace\cdot$
 
-\noindent Montrer que $\Delta$ est un sous-espace vectoriel de $E$.
+Montrer que $\Delta$ est un sous-espace vectoriel de $E$.
 \end{Exercice}
 
 \corr Notons $\theta$ la fonction nulle.
@@ -159,21 +154,21 @@ On en déduit que $F$ est un sous-espace vectoriel de $\mathbb{R}^{\mathbb{N}}$.
 
 \medskip
 
-\noindent Distinguons deux cas :
+Distinguons deux cas :
 
-\noindent \textit{Premier cas.} Supposons que $\lambda$ est positif. On a :
+\textit{Premier cas.} Supposons que $\lambda$ est positif. On a :
 $$ \lambda f+g = \lambda (f_1-f_2) + g_1- g_2 = (\lambda f_1 + g_1) - (\lambda f_2+g_2)$$
 La fonction $f_1$ est croissante sur $\mathbb{R}$ donc $\lambda f_1$ aussi car $\lambda$ est positif et ainsi $\lambda f_1 + g_1$ est croissante sur $\mathbb{R}$ par somme de fonctions qui le sont. De même, $\lambda f_2+g_2$ est aussi croissante sur $\mathbb{R}$. Finalement, $\lambda f+g$ s'écrit bien comme la différence de deux fonctions croissantes sur $\mathbb{R}$ donc $\lambda f+g$ appartient à $\Delta$.
 
 \medskip
 
-\noindent \textit{Deuxième cas.} Supposons que $\lambda$ est négatif. On a :
+\textit{Deuxième cas.} Supposons que $\lambda$ est négatif. On a :
 $$ \lambda f+g = \lambda (f_1-f_2) + g_1- g_2 = (-\lambda f_2 + g_1) - (-\lambda f_1+g_2)$$
 La fonction $f_2$ est croissante sur $\mathbb{R}$ donc $-\lambda f_2$ aussi car $-\lambda$ est positif et ainsi $-\lambda f_2 + g_1$ est croissante sur $\mathbb{R}$ par somme de fonctions qui le sont. De même, $-\lambda f_1+g_2$ est aussi croissante sur $\mathbb{R}$. Finalement, $\lambda f+g$ s'écrit bien comme la différence de deux fonctions croissantes sur $\mathbb{R}$ donc $\lambda f+g$ appartient à $\Delta$.
 
 \medskip
 
-\noindent Ainsi, $\Delta$ est stable par combinaison linéaire.
+Ainsi, $\Delta$ est stable par combinaison linéaire.
 \end{itemize}
 On en déduit que $\Delta$ est un sous-espace vectoriel de $E$.
 
@@ -181,10 +176,10 @@ On en déduit que $\Delta$ est un sous-espace vectoriel de $E$.
 
 
 
-\begin{Exercice}{} Soit $F$ le sous-ensemble de $\mathbb{R}^3$ défini par $F=$Vect($(0,2,4), (3,-2,-1)$).
+\begin{Exercice}{} Soit $F$ le sous-ensemble de $\mathbb{R}^3$ défini par $F=\Vect((0,2,4), (3,-2,-1)$).
 \begin{enumerate}
 \item Le vecteur $(-1,1,6)$ appartient-il à $F$?
-\item Comparer $F$ et $G=$Vect($(1,0,1), (-1,2,3)$).
+\item Comparer $F$ et $G=\Vect((1,0,1), (-1,2,3)$).
 \end{enumerate}
 \end{Exercice}
 
@@ -204,7 +199,7 @@ $$ (1,0,1) + (-1,2,3) =(0,2,4)$$
 donc $(0,2,4) \in G$.
 $$ 2(1,0,1) -(-1,2,3) = (3,-2,-1)$$
 donc $(3,-2,-1) \in G$. Ainsi,
-$$ F=\textrm{Vect}((0,2,4), (3,-2,-1)) \subset G$$
+$$ F=\Vect((0,2,4), (3,-2,-1)) \subset G$$
 On peut montrer l'autre inclusion mais il plus simple d'utiliser un argument de dimension : les deux espaces sont de dimension $2$ car générées par deux vecteurs non colinéaires. Ainsi $F$ est inclus $G$ et $G$ et $F$ ont la même dimension donc $F=G$.
 \end{enumerate}
 
@@ -224,9 +219,7 @@ car $F$ est un sous-espace vectoriel de $E$. C'est absurde car $g$ n'appartient 
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Familles libres, génératrices, bases}}}
-\end{center}
+\subsection{\large Familles libres, génératrices, bases}
 
 \medskip
 
@@ -284,11 +277,11 @@ Soit $a_1, \ldots, a_n \in \mathbb{R}$ $(n \geq 2)$ deux à deux distincts. Mont
 
 \corr Notons $\theta$ la fonction nulle. 
 
-\noindent Montrons que $(f_{a_i})_{1 \leq i \leq n}$ est une famille libre de $\mathcal{F}(\mathbb{R}, \mathbb{R})$. Soit $(\lambda_0, \ldots, \lambda_n) \in \mathbb{R}^{n+1}$ tel que :
+Montrons que $(f_{a_i})_{1 \leq i \leq n}$ est une famille libre de $\mathcal{F}(\mathbb{R}, \mathbb{R})$. Soit $(\lambda_0, \ldots, \lambda_n) \in \mathbb{R}^{n+1}$ tel que :
 $$ \sum_{k=1}^n \lambda_k f_{a_k} = \theta$$
 Supposons par l'absurde que $(\lambda_1, \ldots, \lambda_n)$ n'est pas nul. Alors l'ensemble :
-$$ \lbrace k \in \Interv{1}{n} \, \vert \, \lambda_k \neq 0 \rbrace$$
-est un ensemble fini non vide. Il admet donc un plus petit élément $j \in \Interv{1}{n}$. Par définition de $j$, on a :
+$$ \lbrace k \in \iii{1}{n} \, \vert \, \lambda_k \neq 0 \rbrace$$
+est un ensemble fini non vide. Il admet donc un plus petit élément $j \in \iii{1}{n}$. Par définition de $j$, on a :
 $$ \sum_{k=1}^{j-1} \lambda_k f_{a_k} = \theta$$
 Ainsi,
 $$ \sum_{k=j}^n \lambda_k f_{a_k} = \theta$$
@@ -308,28 +301,27 @@ La famille $(f_{a_i})_{1 \leq i \leq n}$ est donc une famille libre de $\mathcal
 \begin{enumerate}
 \item $A=\lbrace (x,y,z) \in \mathbb{R}^3 \, \vert  \, 2x-y+z=0 \rbrace$
 \item $B= \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, z+y=0 \rbrace$
-\item $C= \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, z-y=0 \hbox{ et } x-y+z=0 \rbrace$
+\item $C= \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, z-y=0 \hbox{ et } x-y+z=0 \rbrace\!\!\!\!\!$
 
-\item $D = \left\lbrace \begin{pmatrix}
+\item $D = \ensemble{\begin{pmatrix}
 a+b & 0 & c \\
 0 & b+c & 0 \\
 c+a & 0& a+b 
-\end{pmatrix} \bigg{\vert} (a,b,c) \in \mathbb{R}^3 \right\rbrace$
+\end{pmatrix}}{a,b,c\in\R}$
 
 \columnbreak
-\item $E = \left\lbrace M \in \mathcal{M}_3(\mathbb{R}) \,\vert  MA=AM \right\rbrace$ où \newline \begin{center}
+\item $E = \ensemble{M \in \mathcal{M}_3(\R)}{MA=AM}$ où
+\begin{center}
 $A = \begin{pmatrix}
 0 & 2 & 0 \\
 1 & 1 & 0 \\
 0 & 0 & 1 
 \end{pmatrix}$
 \end{center}
-\item $F= \lbrace a + bX^2 + (c-b)(X-1) \, \vert \, (a,b,c) \in \mathbb{R}^3 \rbrace$
+\item $F= \ensemble{a + bX^2 + (c-b)(X-1)}{a,b,c\in\R}$
 \item $G = \lbrace P \in \mathbb{R}_3[X] \, \vert \,  P(1)=P'(1)=0 \rbrace$
 \end{enumerate}
 \end{multicols}
-
-\vspace{0.05cm}
 \end{Exercice}
 
 \corr 
@@ -342,7 +334,7 @@ $A = \begin{pmatrix}
 & \Longleftrightarrow (x,y,z) = x (1,2,0) + z(0,1,1)
 \end{align*}
 Ainsi,
-$$ A = \textrm{Vect}((1,2,0),(0,1,1))$$
+$$ A = \Vect((1,2,0),(0,1,1))$$
 Les vecteurs $(1,2,0)$ et $(0,1,1)$ sont non colinéaires donc forment une famille libre. Ainsi, $((1,2,0),(0,1,1))$ est une base de $A$.
 
 \item Soit $(x,y,z) \in \mathbb{R}^3$. Alors :
@@ -352,8 +344,10 @@ Les vecteurs $(1,2,0)$ et $(0,1,1)$ sont non colinéaires donc forment une famil
 & \Longleftrightarrow (x,y,z) = x (1,0,0) + z (0,-1,1) 
 \end{align*}
 Ainsi,
-$$ B = \textrm{Vect}((1,0,0),(0,-1,1))$$
-Les vecteurs $(1,0,0)$ et $(0,-1,1)$ sont non colinéaires donc forment une famille libre. Ainsi, $((1,0,0),(0,-1,1))$ est une base de $B$.
+$$ B = \Vect((1,0,0),(0,-1,1))$$
+Les vecteurs $(1,0,0)$ et $(0,-1,1)$ sont non colinéaires donc forment une famille libre.
+
+Ainsi, $((1,0,0),(0,-1,1))$ est une base de $B$.
 \item Soit $(x,y,z) \in \mathbb{R}^3$. Alors :
 \begin{align*}
 (x,y,z) \in C&\Longleftrightarrow y=z \; \hbox{ et } \; x=y-z \\
@@ -362,7 +356,7 @@ Les vecteurs $(1,0,0)$ et $(0,-1,1)$ sont non colinéaires donc forment une fami
 & \Longleftrightarrow (x,y,z)= z (0,1,1)
 \end{align*}
 Ainsi,
-$$C = \textrm{Vect}((0,1,1))$$
+$$C = \Vect((0,1,1))$$
 Le vecteur $(0,1,1)$ est non nul donc forme une base de $C$.
 \item On a :
 \begin{align*}
@@ -451,7 +445,7 @@ On montre (comme dans la question précédente) que $(M_1,M_2,M_3)$ est une fami
 \begin{align*}
 F & = \lbrace a + bX^2 + (c-b)(X-1) \, \vert \, (a,b,c) \in \mathbb{R}^3 \rbrace \\
 & = \lbrace a + b(X^2-X+1)+ c (X-1) \, \vert \, (a,b,c) \in \mathbb{R}^3 \rbrace \\ 
-& = \textrm{Vect}(1,X-1,X^2-X+1)
+& = \Vect(1,X-1,X^2-X+1)
 \end{align*}
 La famille $(1,X-1,X^2-X+1)$ est libre car c'est une famille de polynômes non nuls dont les degrés sont échelonnés. Elle génère $F$ donc c'est une base de $F$.
 \item Soit $P \in \mathbb{R}_3[X]$. Il existe quatre réels $a$, $b$, $c$ et $d$ tels que :
@@ -467,7 +461,7 @@ P \in G & \Longleftrightarrow P(1)=0 \; \hbox{ et } \; P'(1)=0 \\
 & \Longleftrightarrow P(X) = c (1-2X+X^2)+ d (2-3X+X^3)
 \end{align*}
 Ainsi,
-$$ G = \textrm{Vect}(1-2X+X^2,2-3X+X^3)$$
+$$ G = \Vect(1-2X+X^2,2-3X+X^3)$$
 La famille $(1-2X+X^2,2-3X+X^3)$ est libre car c'est une famille de polynômes non nuls dont les degrés sont échelonnés. Elle génère $G$ donc c'est une base de $G$.
 \end{enumerate}
 
@@ -486,7 +480,7 @@ $$ x^2-3x-10=0$$
 Celle-ci admet deux solutions : $-2$ et $5$. D'après le cours, on en déduit que $f : \mathbb{R} \rightarrow \mathbb{R}$ appartient à $F$ si et seulement si il existe deux réels $\alpha$ et $\beta$ tels que pour tout réel $x$,
 $$ f(x) = \alpha e^{-2x} + \beta e^{5x} = \alpha \exp(x)^{-2} + \beta \exp(x)^5$$
 Ainsi,
-$$ F = \textrm{Vect}(\exp^{-2}, \exp^5)$$
+$$ F = \Vect(\exp^{-2}, \exp^5)$$
 Montrons que $(\exp^{-2}, \exp^5)$ est une famille libre. Soit $(\alpha, \beta) \in \mathbb{R}^2$ tel que (on note $\theta$ la fonction nulle) :
 $$ \alpha \exp^{-2} + \beta \exp^5 = \theta$$
 Ainsi, pour tout réel $x$,
@@ -503,8 +497,8 @@ Par passage à la limite quand $x$ tend vers $- \infty$, on obtient $\alpha=0$ p
 \corr Notons $\theta$ le polynôme nul. Montrons que $\mathcal{F}$ est une famille libre de $E$. Soit $(\lambda_0, \ldots, \lambda_n) \in \mathbb{R}^{n+1}$ tel que :
 $$ \sum_{k=0}^n \lambda_k X^k (1-X)^{n-k} = \theta$$
 Supposons par l'absurde que $(\lambda_0, \ldots, \lambda_n)$ n'est pas nul. Alors l'ensemble :
-$$ \lbrace k \in \Interv{0}{n} \, \vert \, \lambda_k \neq 0 \rbrace$$
-est un ensemble fini non vide. Il admet donc un plus petit élément $j \in \Interv{0}{n}$. Par définition de $j$, on a :
+$$ \lbrace k \in \iii{0}{n} \, \vert \, \lambda_k \neq 0 \rbrace$$
+est un ensemble fini non vide. Il admet donc un plus petit élément $j \in \iii{0}{n}$. Par définition de $j$, on a :
 $$ \sum_{k=0}^{j-1} \lambda_k X^k (1-X)^{n-k} = \theta$$
 Ainsi,
 $$ \sum_{k=j}^n \lambda_k X^k (1-X)^{n-k} = \theta$$
@@ -573,7 +567,7 @@ et
  & = 2 f_4(x)
  \end{align*}
  Ainsi, $f_3$ et $f_4$ sont combinaison linéaires de $f_1$ et $f_2$ donc :
- $$ \textrm{Vect}(f_1,f_2,f_3,f_4) = \textrm{Vect}(f_1,f_2)$$
+ $$ \Vect(f_1,f_2,f_3,f_4) = \Vect(f_1,f_2)$$
 Montrons que $(f_1,f_2)$ est libre. Soit $(\alpha, \beta) \in \mathbb{R}^2$ tel que (on note $\theta$ la fonction nulle) :
 $$ \alpha f_1 + \beta f_2 = \theta$$
 où $\theta$ est la fonction nulle de $\mathcal{F}(]-1,1[, \mathbb{R})$. Ainsi, pour tout $x \in ]-1,1[$,
@@ -599,9 +593,9 @@ puis :
 $$ \sum_{k=1}^n   \sum_{j=1}^k \lambda_k e_j = 0_E$$
 On a $1 \leq j \leq k \leq n$ donc pour $j$ fixé entre $1$ et $n$, $k$ varie de $j$ à $n$ donc :
 $$ \sum_{j=1}^n   \sum_{k=j}^n \lambda_k e_j = 0_E$$
-La famille $(e_1, \ldots, e_n)$ est libre donc pour tout $j \in \Interv{1}{n}$,
+La famille $(e_1, \ldots, e_n)$ est libre donc pour tout $j \in \iii{1}{n}$,
 $$ \sum_{k=j}^n \lambda_k = 0$$
-Pour $j=n$, on obtient $\lambda_n=0$. Pour $j=n-1$, on a $\lambda_{n-1}+\lambda_n=0$ donc $\lambda_{n-1}=0$. De proche en proche on obtient pour tout $j \in \Interv{1}{n}$, $\lambda_j=0$ et ainsi $\mathcal{B}'$ est une famille libre de $E$.
+Pour $j=n$, on obtient $\lambda_n=0$. Pour $j=n-1$, on a $\lambda_{n-1}+\lambda_n=0$ donc $\lambda_{n-1}=0$. De proche en proche on obtient pour tout $j \in \iii{1}{n}$, $\lambda_j=0$ et ainsi $\mathcal{B}'$ est une famille libre de $E$.
 
 \medskip
 
@@ -612,40 +606,38 @@ Pour $j=n$, on obtient $\lambda_n=0$. Pour $j=n-1$, on a $\lambda_{n-1}+\lambda_
 
 \medskip
 
-\noindent Raisonnons par l'absurde : supposons que pour tout $j \in \lbrace 1, \ldots ,n \rbrace$, la famille $\mathcal{F}_j=(e_1 , \ldots ,e_{n - 1} ,e'_j)$ est liée. Il existe donc un $n$-uplet $(\lambda_1, \ldots, \lambda_n)$, non nul, tel que :
+Raisonnons par l'absurde : supposons que pour tout $j \in \lbrace 1, \ldots ,n \rbrace$, la famille $\mathcal{F}_j=(e_1 , \ldots ,e_{n - 1} ,e'_j)$ est liée. Il existe donc un $n$-uplet $(\lambda_1, \ldots, \lambda_n)$, non nul, tel que :
 $$ \sum_{k=1}^{n-1} \lambda_k e_k + \lambda_n e_j' = 0_E$$
 Le scalaire $\lambda_n$ est non nul car si il l'était, tous les $\lambda_k$ seraient nuls ($(e_1, \ldots, e_{n-1})$ est une famille extraite d'une famille libre donc est libre). On a donc :
 $$ e_j' = - \sum_{k=1}^{n-1} \dfrac{\lambda_k}{\lambda_n} e_k$$
-Ainsi, pour tout $j \in \Interv{1}{n}$,
-$$ e_j' \in \textrm{Vect}(e_1, \ldots, e_{n-1})$$
+Ainsi, pour tout $j \in \iii{1}{n}$,
+$$ e_j' \in \Vect(e_1, \ldots, e_{n-1})$$
 Or $(e_1', \ldots, e_n')$ est une base de $E$ donc :
-$$ E \subset \textrm{Vect}(e_1, \ldots, e_{n-1})$$
-Or $E$ est de dimension $n$ et $\textrm{Vect}(e_1, \ldots, e_{n-1})$ est de dimension $n-1$ : c'est absurde !
+$$ E \subset \Vect(e_1, \ldots, e_{n-1})$$
+Or $E$ est de dimension $n$ et $\Vect(e_1, \ldots, e_{n-1})$ est de dimension $n-1$ : c'est absurde !
 
 \medskip
 
 
 
-\begin{center}
-\textit{{ {\large Espaces supplémentaires}}}
-\end{center}
+\subsection{\large Espaces supplémentaires}
 
 \medskip
 
-\begin{Exercice}{} Soient $F= \lbrace (x+y,y-2x, x) \, \vert \,  (x,y) \in \mathbb{R}^2 \rbrace$ et $G = \textrm{Vect}((1,2,3))$. Montrer que $F$ et $G$ sont supplémentaires dans $\mathbb{R}^3$.
+\begin{Exercice}{} Soient $F= \lbrace (x+y,y-2x, x) \, \vert \,  (x,y) \in \mathbb{R}^2 \rbrace$ et $G = \Vect((1,2,3))$. Montrer que $F$ et $G$ sont supplémentaires dans $\mathbb{R}^3$.
 \end{Exercice} 
 
 \corr $G$ est un sous-espace vectoriel de dimension $1$ car $(1,2,3)$ est non nul. On a :
 \begin{align*}
 F & = \lbrace (x+y,y-2x, x) \, \vert \,  (x,y) \in \mathbb{R}^2 \rbrace \\
 & = \lbrace x (1,-2,1) + y (1,1,0) \, \vert \, (x,y) \in \mathbb{R}^2 \rbrace \\
-& = \textrm{Vect}((1,-2,1),(1,1,0)) 
+& = \Vect((1,-2,1),(1,1,0)) 
 \end{align*}
 Ainsi, $F$ est un sous-espace vectoriel de dimension $2$ car $(1,-2,1)$ et $(1,1,0)$ sont non colinéaires donc forment une famille libre.
 
 \medskip
 
-\noindent \textit{Méthode 1.} On sait que :
+\textit{Méthode 1.} On sait que :
 $$ \textrm{dim}(F) + \textrm{dim}(G) = \textrm{dim}(\mathbb{R}^3)$$
 Montrons que $F \cap G = \lbrace (0,0,0) \rbrace$. L'inclusion $ \lbrace (0,0,0) \rbrace \subset F \cap G$ est claire car $F$ et $G$ sont des sous-espaces vectoriels de de $\mathbb{R}^3$. Soit $X \in F \cap G$. Le vecteur $X$ appartient à $G$ donc il existe un réel $a$ tel que :
 $$ X = a(1,2,3)$$
@@ -657,16 +649,16 @@ $F$ et $G$ sont donc supplémentaires dans $\mathbb{R}^3$.
 
 \medskip
 
-\noindent \textit{Méthode 2.} On sait que :
-$$ F=\textrm{Vect}((1,-2,1),(1,1,0)) \; \hbox{ et } \; G=\textrm{Vect}((1,2,3))$$
+\textit{Méthode 2.} On sait que :
+$$ F=\Vect((1,-2,1),(1,1,0)) \; \hbox{ et } \; G=\Vect((1,2,3))$$
 Posons $\mathcal{B}=(((1,-2,1),(1,1,0),(1,2,3))$. Par la méthode usuelle, on montre que $\mathcal{B}$ est libre et cette famille a pour cardinal $3$ qui est la dimension de $\mathbb{R}^3$ donc c'est une base de $\mathbb{R}^3$. Par fractionnement d'une base, on a donc :
-$$ \mathbb{R}^3 =  \textrm{Vect}((1,-2,1),(1,1,0)) \oplus \textrm{Vect}((1,2,3)) = F \oplus G$$
+$$ \mathbb{R}^3 =  \Vect((1,-2,1),(1,1,0)) \oplus \Vect((1,2,3)) = F \oplus G$$
 
 
 \medskip
 
 \begin{Exercice}{} Soient $E= \mathbb{R}^3$ et $F$, $G$ les ensembles définis par :
-$$ F = \lbrace (x,y,z) \in \mathbb{R}^3, \, x-y+z=0 \rbrace \quad \hbox{ et }  \quad G = \textrm{Vect}((1,1,1)) $$
+$$ F = \lbrace (x,y,z) \in \mathbb{R}^3, \, x-y+z=0 \rbrace \quad \hbox{ et }  \quad G = \Vect((1,1,1)) $$
 
 \begin{enumerate}
 \item Donner une base de $F$ et préciser sa dimension.
@@ -678,12 +670,12 @@ $$ F = \lbrace (x,y,z) \in \mathbb{R}^3, \, x-y+z=0 \rbrace \quad \hbox{ et }  \
 \corr \begin{enumerate}
 \item Soit $(x,y,z) \in \mathbb{R}^3$. On a :
 $$ (x,y,z) \in F \Longleftrightarrow x=y-z \Longleftrightarrow (x,y,z) = (y-z,y,z) \Longleftrightarrow (x,y,z) = y(1,1,0) + z(-1,0,1)$$
-Ainsi $F = \textrm{Vect}((1,1,0), (-1,0,1))$ (donc les vecteurs $(1,1,0)$ et $(-1,0,1)$ forment une famille génératrice de $F$). De plus, ces deux vecteurs sont non colinéaires donc forment une famille libre de $F$ et ainsi forment une base de $F$. La dimension de $F$ est donc $2$.
+Ainsi $F = \Vect((1,1,0), (-1,0,1))$ (donc les vecteurs $(1,1,0)$ et $(-1,0,1)$ forment une famille génératrice de $F$). De plus, ces deux vecteurs sont non colinéaires donc forment une famille libre de $F$ et ainsi forment une base de $F$. La dimension de $F$ est donc $2$.
 \item On sait que $\textrm{dim}(F)=2$ et $\textrm{dim}(G)=1$ (car $(1,1,1)$ est non nul). Ainsi $\textrm{dim}(F) + \textrm{dim}(G) = \textrm{dim}(\mathbb{R}^3)$. Il nous suffit alors de montrer que $F \cap G = \lbrace (0,0,0) \rbrace$. Soit $(x,y,z) \in F \cap G$. Il existe $\alpha \in \mathbb{R}$ tel que $(x,y,z) = \alpha (1,1,1)$ et sachant que $x-y+z=0$, on obtient $\alpha = 0$ puis $(x,y,z)=(0,0,0)$. Ainsi $F \cap G \subset \lbrace (0,0,0) \rbrace$ et l'autre inclusion est vérifiée car $F$ et $G$ sont des sous-espaces vectoriels de $\mathbb{R}^3$.
 
 \medskip
 
-\noindent Les espaces $F$ et $G$ sont donc des sous-espaces vectoriels supplémentaires de $\mathbb{R}^3$.
+Les espaces $F$ et $G$ sont donc des sous-espaces vectoriels supplémentaires de $\mathbb{R}^3$.
 \end{enumerate}
 
 \medskip
@@ -693,7 +685,7 @@ Ainsi $F = \textrm{Vect}((1,1,0), (-1,0,1))$ (donc les vecteurs $(1,1,0)$ et $(-
 
 \begin{enumerate}
 \item Montrer que $F$ est un espace vectoriel, déterminer en une base et préciser sa dimension.
-\item Montrer que le sous-espace vectoriel $G= \textrm{Vect}(1,X,1+X+X^2)$ et $F$  sont en somme directe.
+\item Montrer que le sous-espace vectoriel $G= \Vect(1,X,1+X+X^2)$ et $F$  sont en somme directe.
 \item $F$ et $G$ sont-ils supplémentaires dans $\mathbb{R}_4[X]$?
 \end{enumerate}
 \end{Exercice}
@@ -714,7 +706,7 @@ P \in F & \Longleftrightarrow P(0)=0, \; P'(0)=0 \hbox{ et } P'(1)=0 \\
 & \Longleftrightarrow P(X) = d \left( - \dfrac{3}{2}X^2+ X^3 \right) + e (-2X^2+X^4)
 \end{align*}
 Ainsi,
-$$ F= \textrm{Vect}(P_1,P_2)$$
+$$ F= \Vect(P_1,P_2)$$
 où $P_1(X) = - \dfrac{3}{2}X^2+ X^3$ et $P_2(X)= -2X^2+X^4$. On en déduit que $F$ est un sous-espace vectoriel et sachant que $P_1$ et $P_2$ sont deux polynômes non nuls de degrés différents, ils constituent une famille libre et génératrice de $F$, et donc une base de $F$.
 \item Notons $\theta$ le polynôme nul. On sait que $\lbrace \theta \rbrace \subset F \cap G$ car $F$ et $G$ sont des sous-espaces vectoriels de $\mathbb{R}_4[X]$. Soit $P \in F \cap G$. Par définition, on a :
 $$ P(0)=P'(0)=P'(1)=0$$
@@ -735,7 +727,7 @@ Sachant que $F$ et $G$ sont en somme directe d'après la question précédente, 
 
 \medskip
 
-\noindent \textit{Analyse.} Supposons que $E= F \oplus I$. Soit $f \in E$. Il existe un unique couple $(p,i) \in P \times I$ tel que $f=p + i$. Par définition de l'égalité de fonctions, cela signifie que pour tout $x \in \mathbb{R}$,
+\textit{Analyse.} Supposons que $E= F \oplus I$. Soit $f \in E$. Il existe un unique couple $(p,i) \in P \times I$ tel que $f=p + i$. Par définition de l'égalité de fonctions, cela signifie que pour tout $x \in \mathbb{R}$,
 $$ f(x) = p(x)+i(x)$$
 et en particulier pour tout $x \in \mathbb{R}$,
 $$ f(-x) = p(-x)+i(-x) = p(x)-i(x)$$
@@ -747,7 +739,7 @@ et sachant que $f(x)=p(x)+i(x)$, $i(x)=f(x)-p(x) = \dfrac{f(x)-f(-x)}{2}\cdot$
 
 \medskip
 
-\noindent \textit{Synthèse.} Soit $f \in E$. Posons pour tout $x \in \mathbb{R}$,
+\textit{Synthèse.} Soit $f \in E$. Posons pour tout $x \in \mathbb{R}$,
 $$ p(x) = \frac{f(x)+f(-x)}{2} \quad \hbox{ et } \quad i(x) = \frac{f(x)-f(-x)}{2} $$
 On vérifie facilement que $f=p+i$, que $p$ est paire et que $i$ est impaire. Ainsi $E \subset P + I$ et $P + I \subset E$ (car $P$ et $I$ sont des sous-espaces vectoriels de $E$). Finalement $E=P+I$. De plus, d'après l'analyse, pour tout $f \in E$, les fonctions paires et impaires, $p$ et $i$, vérifiant $f=p+i$ sont uniques donc $E = P \oplus I$.
 
@@ -760,14 +752,14 @@ On vérifie facilement que $f=p+i$, que $p$ est paire et que $i$ est impaire. Ai
 
 \medskip
 
-\noindent \textit{Analyse.} Supposons que $\mathcal{M}_n(\mathbb{R})= \mathcal{S}_n(\mathbb{R}) \oplus \mathcal{A}_n(\mathbb{R})$. Soit $M \in \mathcal{M}_n(\mathbb{R})$. Il existe un unique couple $(S,A)$ appartenant à  $\mathcal{S}_n(\mathbb{R}) \times \mathcal{A}_n(\mathbb{R})$ tel que $M=S+A$. Par linéarité de l'application transposée, on a alors $~^t M = ~^t S + ~^t A = S-A$. Ainsi :
+\textit{Analyse.} Supposons que $\mathcal{M}_n(\mathbb{R})= \mathcal{S}_n(\mathbb{R}) \oplus \mathcal{A}_n(\mathbb{R})$. Soit $M \in \mathcal{M}_n(\mathbb{R})$. Il existe un unique couple $(S,A)$ appartenant à  $\mathcal{S}_n(\mathbb{R}) \times \mathcal{A}_n(\mathbb{R})$ tel que $M=S+A$. Par linéarité de l'application transposée, on a alors $~^t M = ~^t S + ~^t A = S-A$. Ainsi :
 $$ M + ~^t M = 2S \; \hbox{ et } \; M- ~^tM= 2A$$
 donc :
 $$ S = \dfrac{M + ~^t M}{2} \; \hbox{ et } A = \dfrac{M-~^tM}{2}$$
 
 \medskip
 
-\noindent \textit{Synthèse.} Soit $M \in \mathcal{M}_n(\mathbb{R})$. Posons : 
+\textit{Synthèse.} Soit $M \in \mathcal{M}_n(\mathbb{R})$. Posons : 
 $$ S = \dfrac{M + ~^t M}{2} \; \hbox{ et } A = \dfrac{M-~^tM}{2}$$
 Il est évident que $M=S+A$. On a :
 $$ ^t{} S = \dfrac{~^t M + ~^t(~^t M)}{2} = \dfrac{~^t M + M}{2} = S$$
@@ -784,7 +776,7 @@ Ainsi, $S$ est symétrique. De même, $A$ est antisymétrique.
 
 \medskip
 
-\noindent \textit{Analyse.} Supposons que $E = A \oplus F$. Soit $f \in E$. Il existe alors $(g,h) \in A \times F$ tel que $f=g+h$. Ainsi, pour tout $x \in \mathbb{R}$,
+\textit{Analyse.} Supposons que $E = A \oplus F$. Soit $f \in E$. Il existe alors $(g,h) \in A \times F$ tel que $f=g+h$. Ainsi, pour tout $x \in \mathbb{R}$,
 $$ f(x) =g(x)+h(x)$$
 La fonction $g$ est affine donc il existe deux réels $a$ et $b$ tels que pour tout réel $x$,
 $$ g(x) = ax+b$$
@@ -800,7 +792,7 @@ et $h=f-g$.
 
 \medskip
 
-\noindent \textit{Synthèse.} Soit $f \in E$. Posons pour tout $x \in \mathbb{R}$,
+\textit{Synthèse.} Soit $f \in E$. Posons pour tout $x \in \mathbb{R}$,
 $$ g(x) = (f(1)-f(0))x + f(0) \; \hbox{ et } \; h(x)=f(x)-g(x)$$
 On a $f=g+h$. La fonction $g$ appartient à $A$. On a :
 $$ h(0) = f(0)-g(0) = f(0)-f(0)=0$$
@@ -810,7 +802,7 @@ Ainsi, $h$ appartient à $F$.
 
 \medskip
 
-\noindent Toute fonction de $E$ s'écrit donc comme la somme d'une fonction de $A$ et d'une fonction de $F$. L'analyse prouve que cette décomposition est unique. Ainsi, $A$ et $F$ sont supplémentaires dans $E$.
+Toute fonction de $E$ s'écrit donc comme la somme d'une fonction de $A$ et d'une fonction de $F$. L'analyse prouve que cette décomposition est unique. Ainsi, $A$ et $F$ sont supplémentaires dans $E$.
 
 \medskip
 
@@ -829,7 +821,7 @@ Montrer que $E = F_1 \oplus F_2 \oplus F_3$.
 
 \medskip
 
-\noindent \textit{Analyse.} Supposons que $E = F_1 \oplus F_2 \oplus F_3$. Soit $f \in E$. Il existe donc $(f_1,f_2,f_3) \in F_1 \times F_2 \times F_3$ tel que :
+\textit{Analyse.} Supposons que $E = F_1 \oplus F_2 \oplus F_3$. Soit $f \in E$. Il existe donc $(f_1,f_2,f_3) \in F_1 \times F_2 \times F_3$ tel que :
 $$ f = f_1+ f_2+ f_3$$
 La fonction $f_1$ est constante donc il existe un réel $c$ tel que pour tout $t \in [-1,1]$, $f_1(t)=c$. On a donc pour $t \in [-1,1]$,
 $$ f(t) = c + f_2(t) + f_3(t)$$
@@ -844,7 +836,7 @@ $$ f_2(t) = f(t)-f(0)$$
 
 \medskip
 
-\noindent \textit{Synthèse.} Soit $f \in E$. Posons pour tout $t \in [-1,1]$, $f_1(t) = f(0)$, 
+\textit{Synthèse.} Soit $f \in E$. Posons pour tout $t \in [-1,1]$, $f_1(t) = f(0)$, 
 $$ f_2(t) = \left\lbrace \begin{array}{ccl}
 0 & \hbox{ si } t \in [-1,0] \\
 f(t)-f(0) & \hbox{ si } t \in ]0,1]
@@ -858,7 +850,7 @@ De plus pour tout $t \in [-1,0]$, $f_1(t)=0$. Ainsi, $f_1$ appartient à $F_1$. 
 
 \medskip
 
-\noindent Pour tout $t \in [-1,0[$,
+Pour tout $t \in [-1,0[$,
 $$ f_1(t)+f_2(t)+f_3(t) = f(0) + 0 + f(t)-f(0) = f(t)$$
 On obtient le même résultat si $t \in ]0,1]$. Pour finir,
 $$ f_1(0)+f_2(0)+f_3(0) = f(0) + 0 + 0 = f(0)$$
@@ -866,11 +858,11 @@ Ainsi, $f=f_1+f_2+f_3$.
 
 \medskip
 
-\noindent Finalement, tout fonction de $E$ s'écrit comme la somme de trois fonctions de $F_1$, $F_2$ et $F_3$. Cette décomposition est unique d'après l'analyse. Ainsi, $E = F_1 \oplus F_2 \oplus F_3$.
+Finalement, tout fonction de $E$ s'écrit comme la somme de trois fonctions de $F_1$, $F_2$ et $F_3$. Cette décomposition est unique d'après l'analyse. Ainsi, $E = F_1 \oplus F_2 \oplus F_3$.
 
 \medskip
 
-\begin{Exercice}{} Soient $n\in\N$, $E=\K_n[X]$, $S$ un polynôme de degré $d \in \Interv{1}{n}$ et $F$ l'ensemble des polynômes de $E$ divisibles par $S$.
+\begin{Exercice}{} Soient $n\in\N$, $E=\K_n[X]$, $S$ un polynôme de degré $d \in \iii{1}{n}$ et $F$ l'ensemble des polynômes de $E$ divisibles par $S$.
 \begin{enumerate}
 	\item Montrer que $F$ est un sous-espace vectoriel de $\E$ de dimension $n+1-d$.
 	\item Montrer que $\mathbb{K}_{d-1}[X]$  et $F$ sont des sous-espaces vectoriels supplémentaires de $E$.
@@ -882,32 +874,32 @@ Ainsi, $f=f_1+f_2+f_3$.
 
 \medskip
 
-\noindent \textit{Analyse.} Soit $P \in F$. Par définition, il existe un polynôme $Q$ de $E$ tel que $P=QS$. Or $P \in F \subset E$ donc $\textrm{deg}(P) \leq n$ et 
+\textit{Analyse.} Soit $P \in F$. Par définition, il existe un polynôme $Q$ de $E$ tel que $P=QS$. Or $P \in F \subset E$ donc $\textrm{deg}(P) \leq n$ et 
 $$ \textrm{deg}(P) = \textrm{deg}(QS) = \textrm{deg}(Q) + \textrm{deg}(S) = \textrm{deg}(Q) + d$$
 Ainsi, $\textrm{deg}(Q) \leq \textrm{deg}(P) - d \leq n-d$ donc il existe des scalaires $a_0, a_1, \ldots, a_{n-d}$ tels que :
 $$ Q = a_0 + a_1X+ \ldots a_{n-d} X^{n-d}$$
 et ainsi :
 $$ P = QS = a_0 S + a_1XS+ \ldots a_{n-d} X^{n-d}S$$
 et donc 
-$$ P \in \textrm{Vect}(S,XS,\ldots, X^{n-d}S)$$
+$$ P \in \Vect(S,XS,\ldots, X^{n-d}S)$$
 
 \medskip
 
-\noindent \textit{Synthèse.} Si $P \in \textrm{Vect}(S,XS,\ldots, X^{n-d}S)$, il est clair que $P$ est divisible par $S$.
+\textit{Synthèse.} Si $P \in \Vect(S,XS,\ldots, X^{n-d}S)$, il est clair que $P$ est divisible par $S$.
 
 \medskip
 
-\noindent On vient donc de montrer que $F= \textrm{Vect}(S,XS,\ldots, X^{n-d}S)$. Or le polynôme $S$ étant non nul, la famille ($X,,XS,\ldots, X^{n-d}S)$ est une famille de polynômes non nuls à degrés échelonnés donc est une famille libre et est aussi une famille génératrice de $F$ : c'est donc une base de $F$. Ainsi, $F$ est un sous-espace vectoriel de dimension $n+1-d$.
+On vient donc de montrer que $F= \Vect(S,XS,\ldots, X^{n-d}S)$. Or le polynôme $S$ étant non nul, la famille ($X,,XS,\ldots, X^{n-d}S)$ est une famille de polynômes non nuls à degrés échelonnés donc est une famille libre et est aussi une famille génératrice de $F$ : c'est donc une base de $F$. Ainsi, $F$ est un sous-espace vectoriel de dimension $n+1-d$.
 \item Proposons deux méthodes en remarquant tout d'abord que :
 $$ \textrm{dim}(F) + \textrm{dim}(\mathbb{K}_{d-1}[X]) = n+1-d +d = n+1 =  \textrm{dim}(\mathbb{K}_{n}[X]) =  \textrm{dim}(E)$$
 
 \medskip
 
-\noindent \textit{Première méthode.}  Il suffit de montrer que $F \cap \mathbb{K}_{d-1}[X] =\lbrace \tilde{\theta} \rbrace$ où $\tilde{\theta}$ est le polynôme nul. L'inclusion  $\lbrace \tilde{\theta} \rbrace \subset F \cap \mathbb{K}_{d-1}[X]$ est vérifiée car $F$ et $\mathbb{K}_{d-1}[X]$ sont des sous-espaces vectoriels de $E$. Soit $P \in F \cap \mathbb{K}_{d-1}[X]$. Par définition, il existe un polynôme $Q$ tel que $P = QS$. Or $P$ est de degré inférieur ou égal à $d-1$ et $S$ est de degré $d$. Nécessairement $Q= \tilde{\theta}$ et donc $P= \tilde{\theta}$. Finalement, $F \cap \mathbb{K}_{d-1}[X] = \lbrace  \tilde{\theta} \rbrace$ et avec l'égalité des dimensions déjà prouvée, on obtient que $F$ et $\mathbb{K}_{d-1}[X]$ sont supplémentaires dans $E$.
+\textit{Première méthode.}  Il suffit de montrer que $F \cap \mathbb{K}_{d-1}[X] =\lbrace \tilde{\theta} \rbrace$ où $\tilde{\theta}$ est le polynôme nul. L'inclusion  $\lbrace \tilde{\theta} \rbrace \subset F \cap \mathbb{K}_{d-1}[X]$ est vérifiée car $F$ et $\mathbb{K}_{d-1}[X]$ sont des sous-espaces vectoriels de $E$. Soit $P \in F \cap \mathbb{K}_{d-1}[X]$. Par définition, il existe un polynôme $Q$ tel que $P = QS$. Or $P$ est de degré inférieur ou égal à $d-1$ et $S$ est de degré $d$. Nécessairement $Q= \tilde{\theta}$ et donc $P= \tilde{\theta}$. Finalement, $F \cap \mathbb{K}_{d-1}[X] = \lbrace  \tilde{\theta} \rbrace$ et avec l'égalité des dimensions déjà prouvée, on obtient que $F$ et $\mathbb{K}_{d-1}[X]$ sont supplémentaires dans $E$.
 
 \medskip
 
-\noindent \textit{Deuxième méthode.}  Il suffit de montrer que $F + \mathbb{K}_{d-1}[X]=E$. L'inclusion  $ F + \mathbb{K}_{d-1}[X] \subset E$ est vérifiée car $F$ et $\mathbb{K}_{d-1}[X]$ sont des sous-espaces vectoriels de $E$. Soit $P \in E$. D'après le théorème de division euclidienne, il existe un unique couple $(Q,R) \in \mathbb{K}[X]$ tel que :
+\textit{Deuxième méthode.}  Il suffit de montrer que $F + \mathbb{K}_{d-1}[X]=E$. L'inclusion  $ F + \mathbb{K}_{d-1}[X] \subset E$ est vérifiée car $F$ et $\mathbb{K}_{d-1}[X]$ sont des sous-espaces vectoriels de $E$. Soit $P \in E$. D'après le théorème de division euclidienne, il existe un unique couple $(Q,R) \in \mathbb{K}[X]$ tel que :
 $$ P = QS+R$$
 et vérifiant $\textrm{deg}(R) < \textrm{deg}(S) = d$. Pour des raisons de degré, $P$ et $R$ sont donc dans $F$ donc $QS$ aussi. De plus, $QS$ est divisible par $S$ donc $QS \in F$ et $\textrm{deg}(R) \leq d-1$ donc $R \in \mathbb{K}_{d-1}[X]$. Ainsi, $P \in F + \mathbb{K}_{d-1}[X]$. Finalement, on a montré que $F + \mathbb{K}_{d-1}[X]=E$ et avec l'égalité des dimensions déjà prouvée, on obtient que $F$ et $\mathbb{K}_{d-1}[X]$ sont supplémentaires dans $E$.
 \end{enumerate}
@@ -922,17 +914,17 @@ et vérifiant $\textrm{deg}(R) < \textrm{deg}(S) = d$. Pour des raisons de degr�
 
 \medskip
 
-\noindent $\rhd$ Si $n=r$, le résultat est évident : on peut choisir comme supplémentaire commun $H = \lbrace 0_E \rbrace$.
+$\rhd$ Si $n=r$, le résultat est évident : on peut choisir comme supplémentaire commun $H = \lbrace 0_E \rbrace$.
 
 \medskip
 
-\noindent $\rhd$ Soit $r$ strictement plus petit que $n$ et supposons la propriété vérifiée pour des sous-espaces de dimension $r+1$. Une propriété classique énonce que la réunion de deux sous-espaces vectoriels $A$ et $B$ de $E$ est un sous-espace vectoriel de $E$ si et seulement si $A \subset B$ ou $B \subset A$. Dans notre cas, la réunion de $F$ et $G$ ne peut donc être égale à $E$ que si $F=G=E$ ce qui n'est pas le cas vu l'hypothèse sur les dimensions. Ainsi, il existe un vecteur non nul $x$ de $E$ tel que $x \notin F \cup G$. Les sous-espaces $\tilde{F}= F \oplus \textrm{Vect}(x)$ et $\tilde{G}= G \oplus \textrm{Vect}(x)$ sont de dimensions $r+1$ et ont donc par hypothèse de récurrence un supplémentaire en commun que l'on note $\tilde{H}$. Ainsi :
-$$  F \oplus \textrm{Vect}(x) \oplus \tilde{H} =  G \oplus \textrm{Vect}(x) \oplus \tilde{H} = E$$
-Le sous-espace $H=\textrm{Vect}(x) \oplus \tilde{H}$ est alors un supplémentaire commun à $F$ et $G$.
+$\rhd$ Soit $r$ strictement plus petit que $n$ et supposons la propriété vérifiée pour des sous-espaces de dimension $r+1$. Une propriété classique énonce que la réunion de deux sous-espaces vectoriels $A$ et $B$ de $E$ est un sous-espace vectoriel de $E$ si et seulement si $A \subset B$ ou $B \subset A$. Dans notre cas, la réunion de $F$ et $G$ ne peut donc être égale à $E$ que si $F=G=E$ ce qui n'est pas le cas vu l'hypothèse sur les dimensions. Ainsi, il existe un vecteur non nul $x$ de $E$ tel que $x \notin F \cup G$. Les sous-espaces $\tilde{F}= F \oplus \Vect(x)$ et $\tilde{G}= G \oplus \Vect(x)$ sont de dimensions $r+1$ et ont donc par hypothèse de récurrence un supplémentaire en commun que l'on note $\tilde{H}$. Ainsi :
+$$  F \oplus \Vect(x) \oplus \tilde{H} =  G \oplus \Vect(x) \oplus \tilde{H} = E$$
+Le sous-espace $H=\Vect(x) \oplus \tilde{H}$ est alors un supplémentaire commun à $F$ et $G$.
 
 \medskip
 
-\noindent On a donc bien démontré le résultat par récurrence descendante sur $r$.
+On a donc bien démontré le résultat par récurrence descendante sur $r$.
 
 
 
