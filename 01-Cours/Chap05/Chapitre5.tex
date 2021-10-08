@@ -1,22 +1,23 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{verbatim}
-\usepackage{blkarray}
-\usepackage{Cours}
-\usepackage{delarray}
-\usepackage{fancybox}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\newcommand{\Int}[2]{\ensuremath{\mathchoice%
-	{{\displaystyle\int_{#1}^{#2}}}
-	{{\displaystyle\int_{#1}^{#2}}}
-	{\int_{#1}^{#2}}
-	{\int_{#1}^{#2}}
-	}}
+\documentclass[french,11pt,twoside]{VcCours}
 
+\newenvironment{ApplicationDirecte}{\textbf{Application directe du cours :}
+
+}{}
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\renewcommand{\trou}[1]{{\color{white}#1}}
+%\renewcommand{\trou}[1]{{\color{blue}#1}}
 
 \begin{document}
-% \everymath{\displaystyle}
 
-\maketitle{Chapitre 5}{Matrices et applications linéaires}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Chapitre 5 : Matrices et applications linéaires}
+
+\tableofcontents
+\separationTitre
 
 
 Dans tout le chapitre, $n$, $k$, $q$ et $p$ seront des entiers naturels non nuls et $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
@@ -32,9 +33,9 @@ On note $\mathcal{M}_{n,p}(\mathbb{K})$ l'ensemble des matrices à $n$ lignes et
 %
 %\begin{itemize}
 %\item La matrice $\lambda \cdot A$ (ou plus simplement $\lambda A$) est la matrice de $\mathcal{M}_{n,p}(\mathbb{K})$ définie par :
-%$$ \forall i \in \Interv{1}{n}, \, \forall j \in \Interv{1}{p}, \quad ( \lambda \cdot A)_{i,j} = \lambda a_{i,j} $$
+%$$ \forall i \in \iii{1}{n}, \, \forall j \in \iii{1}{p}, \quad ( \lambda \cdot A)_{i,j} = \lambda a_{i,j} $$
 %\item La matrice $A+B$ est la matrice de $\mathcal{M}_{n,p}(\mathbb{K})$ définie par :
-%$$ \forall i \in \Interv{1}{n}, \, \forall j \in \Interv{1}{p}, \quad (A+B)_{i,j} = a_{i,j} + b_{i,j}$$
+%$$ \forall i \in \iii{1}{n}, \, \forall j \in \iii{1}{p}, \quad (A+B)_{i,j} = a_{i,j} + b_{i,j}$$
 %\end{itemize}
 %
 %\medskip
@@ -45,7 +46,7 @@ On note $\mathcal{M}_{n,p}(\mathbb{K})$ l'ensemble des matrices à $n$ lignes et
 
 \medskip
 
-Pour tout $k\in \Interv{1}{n}$ et $ l \in \Interv{1}{p}$, on définit la matrice $E_{k,l}$ de $\mathcal{M}_{n,p}( \mathbb{K})$ comme étant la matrice dont tous les coefficients sont nuls exceptés le coefficient de la $k$-ième ligne et de la $l$-ième colonne qui vaut $1$. Autrement dit,
+Pour tout $k\in \iii{1}{n}$ et $ l \in \iii{1}{p}$, on définit la matrice $E_{k,l}$ de $\mathcal{M}_{n,p}( \mathbb{K})$ comme étant la matrice dont tous les coefficients sont nuls exceptés le coefficient de la $k$-ième ligne et de la $l$-ième colonne qui vaut $1$. Autrement dit,
 $$ E_{k,l} = ( \delta_{i,k} \delta_{j,l})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq p}}$$
 où $\delta_{i,j}$ est le symbole de Kronecker.
 
@@ -56,7 +57,7 @@ où $\delta_{i,j}$ est le symbole de Kronecker.
 \subsection{Produit de deux matrices}
 
 Soient $A=(a_{i,j})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq p}} \in \mathcal{M}_{n,p}(\mathbb{K})$ et $B=(b_{i,j})_{\substack{1 \leq i \leq p \\ 1 \leq j \leq q}} \in \mathcal{M}_{p,q}(\mathbb{K})$. On définit la matrice $AB$ de $\mathcal{M}_{n,q}(\mathbb{K})$ par :
-$$ \forall i \in \Interv{1}{n}, \, \forall j \in \Interv{1}{q}, \quad (AB)_{i,j} = \sum_{k=1}^p a_{i,k} b_{k,j}$$
+$$ \forall i \in \iii{1}{n}, \, \forall j \in \iii{1}{q}, \quad (AB)_{i,j} = \sum_{k=1}^p a_{i,k} b_{k,j}$$
 Autrement dit, le coefficient $(AB)_{i,j}$ est le produit\footnote{Ici on triche car on définit un produit à l'aide de ce même produit... } de la $i$-ème ligne de $A$ avec la $j$-ième colonne de $B$.
 
 \medskip
@@ -78,7 +79,8 @@ Autrement dit, le coefficient $(AB)_{i,j}$ est le produit\footnote{Ici on triche
 \end{itemize}
 \end{Remarques}{}
 
-\begin{att}
+\begin{Remarque}{\warning}
+
  Le produit de matrices \emph{ne vérifie pas} certaines propriétés du produit de nombres :
  \begin{enumerate}
 \item Le produit $AB$ peut être défini et le produit $BA$ ne pas être défini.
@@ -121,12 +123,12 @@ Autrement dit, le coefficient $(AB)_{i,j}$ est le produit\footnote{Ici on triche
 % 2 & 2
 % \end{pmatrix}=BC$ et pourtant $A \neq B$.
 \end{enumerate}
-\end{att}
+\end{Remarque}
 
 \medskip
 
 
-\begin{Proposition}{}  Soient $n \geq 1$ et $(i,j,k,l) \in \Interv{1}{n}^4$. On a $E_{i,j} E_{k,l} = \delta_{j,k} E_{i,l}$ (on considère des matrices carrées d'ordre $n$).
+\begin{Proposition}{}  Soient $n \geq 1$ et $(i,j,k,l) \in \iii{1}{n}^4$. On a $E_{i,j} E_{k,l} = \delta_{j,k} E_{i,l}$ (on considère des matrices carrées d'ordre $n$).
 \end{Proposition}
 
 \begin{Exemple} Soient $A$ et $B$ deux matrices de $\mathcal{M}_n(\mathbb{R})$ telles que la somme des coefficients sur chaque ligne de ces matrices est égal à $1$. Montrons que $AB$ vérifie la même propriété.
@@ -139,7 +141,7 @@ Autrement dit, le coefficient $(AB)_{i,j}$ est le produit\footnote{Ici on triche
 
 $\phantom{test}$
 
-\vspace{4cm}
+\vspace{8cm}
 \subsection{Matrices et tailles particulières}
 
 \begin{Definition}{}
@@ -179,7 +181,7 @@ $$A^p= \underbrace{A \times A \times \cdots \times A}_{p \text{ termes}}$$
 \end{itemize}
 \end{Remarques}{}
 
-\begin{metho}
+\begin{Methode}{}
 Il est souvent demandé dans les exercices l'expression explicite de $A^n$ en fonction de $n \in \mathbb{N}$. Il existe (au moins) 4 cas où il est facile de donner une expression explicite des puissances d'une matrice.
 \begin{itemize}
 \item Le cas où la matrice est diagonale.
@@ -187,7 +189,7 @@ Il est souvent demandé dans les exercices l'expression explicite de $A^n$ en fo
 \item Le cas où il y a une cyclicité (par exemple si $A^3=A$).
 \item Le cas où $A$ est somme de deux matrices qui commutent : dans ce cas, on peut utiliser la formule du binôme de Newton.
 \end{itemize}
-\end{metho}
+\end{Methode}
 
 \begin{ApplicationDirecte} Déterminer les puissances de $A = \begin{pmatrix}0&-1\\1&0\end{pmatrix}$ et $B=\begin{pmatrix} 1&-1\\-1&1\end{pmatrix}\cdot$
 \end{ApplicationDirecte}
@@ -202,8 +204,10 @@ Soient $n\in \mathbb{N}$ et $A,B$ deux matrices carrées de même ordre. Si $A$ 
 0 & 1 & 0 \\
 0 & 0 & 2
 \end{pmatrix}\cdot$
+\vspace{\stretch{1}}
 
-\vspace{10cm}
+\newpage
+\vspace*{10cm}
 \end{Exemple}
 
 \begin{Remarques}{}
@@ -216,10 +220,14 @@ Soient $n\in \mathbb{N}$ et $A,B$ deux matrices carrées de même ordre. Si $A$ 
 \subsection{Transposée d'une matrice}
 \begin{Definition}{}
  
-Soit $A=(a_{i,j})_{{1 \leq i \leq n}\atop{1 \leq j \leq p}} \in \mathcal{M}_{n,p}(\mathbb{K})$.\\
+Soit $A=(a_{i,j})_{{1 \leq i \leq n}\atop{1 \leq j \leq p}} \in 
+\mathcal{M}_{n,p}(\mathbb{K})$.\\
 
 
-On appelle \emph{matrice transposée de $A$} la matrice de $\mathcal{M}_{p,n}(\mathbb{K})$, notée $^tA$, définie par \linebreak $^tA=(b_{i,j})_{{1 \leq i \leq p}\atop{1 \leq j \leq n}}$  où pour tout  $i$ de $\Interv 1p$ et tout $j$ de $\Interv 1n$, on a $b_{i,j}= a_{j,i}.$
+On appelle \emph{matrice transposée de $A$} la matrice de 
+$\mathcal{M}_{p,n}(\mathbb{K})$, notée $^tA$, définie par 
+\linebreak $^tA=(b_{i,j})_{{1 \leq i \leq p}\atop{1 \leq j \leq n}}$ 
+où pour tout  $i$ de $\iii1p$ et tout $j$ de $\iii1n$, on a $b_{i,j}= a_{j,i}.$
 \end{Definition}
 
 %\begin{Remarque}{}
@@ -291,8 +299,10 @@ L'intérêt du théorème précédent est qu'il suffit de vérifier que le produ
 \end{Remarque}
 
 \begin{Exemple} Soient $n \geq 1$ et $J$ la matrice carrée d'ordre $n$ dont tous les coefficients valent $1$. Posons $M=J+ I_n$. Déterminer une relation entre $M^2$, $M$ et $I_n$ et en déduire que $M$ est inversible.
+        \vspace{\stretch{1}}
 
-\vspace{7cm}
+        \newpage
+\vspace*{3cm}
 \end{Exemple}
 
 \medskip
@@ -310,13 +320,13 @@ Calculer $(A-I_4)^2$. En déduire que $A$ est inversible et déterminer $A^{-1}$
 %Montrer que $A^2$ est inversible et calculer $(A^2)^{-1}$.
 \end{ApplicationDirecte}
 
-\begin{metho}
+\begin{Methode}{}
 Pour étudier si une matrice $A$ est inversible, on forme un système dont les coefficients sont les coefficients de $A$ et dont le second membre est une matrice colonne \emph{quelconque} de $\mathcal{M}_{n,1}(\mathbb{K}).$ On résout ce système à l'aide de la méthode du pivot de Gauss. 
  \begin{enumerate}
   \item[$\bullet$]   Si on obtient un système triangulaire $n \times n$ dont les coefficients diagonaux sont non nuls, alors la matrice $A$ est inversible et la résolution du système fournit $A^{-1}$.
   \item[$\bullet$] Sinon la matrice $A$ n'est pas inversible. 
  \end{enumerate}
-\end{metho}
+\end{Methode}
 
 \begin{Remarque}{} La méthode du pivot de Gauss doit être la méthode privilégiée pour résoudre un tel système. 
 \end{Remarque}
@@ -386,8 +396,10 @@ Pour étudier si une matrice $A$ est inversible, on forme un système dont les c
 %0 & 0 & 1 \\
 %-1 & -1 & 0 
 %\end{pmatrix}$$
+\vspace{\stretch{1}}
 
-\vspace{13cm}
+\newpage
+\vspace*{3cm}
 \end{Exemple}
 
 \begin{ApplicationDirecte} Soient $A = \begin{pmatrix} 1 & 2 & -1\\
@@ -438,8 +450,10 @@ Soient $k \in \mathbb{N}^*$ et $\mathcal{F}=(x_1, x_2, \ldots, x_k)$ des vecteur
 \medskip
 
 \begin{Exemple} Soient $E = \mathbb{R}_3[X]$ et $\mathcal{B}$ la base canonique de $E$. Soit $\mathcal{F}=(1,(X-1),(X-1)^2,(X-1)^3)$. La matrice de la famille $\mathcal{F}$ dans la base $\mathcal{B}$ est :
+        \vspace{\stretch{1}}
 
-\vspace{5cm}
+        \newpage
+\vspace*{5cm}
 %$$ \begin{pmatrix}
 %1 & -1 & 1 & - 1 \\
 %0 & 1 & -2 & 3 \\
@@ -460,7 +474,7 @@ $$ \textrm{Mat}_{\mathcal{B}, \mathcal{C}}(u)= \phantom{\textrm{Mat}_{\mathcal{C
 Si $E=F$ et $\mathcal{B}= \mathcal{C}$, on note simplement $\textrm{Mat}_{\mathcal{B}}(u)$.
 \end{Definition}
 
-Ainsi, pour déterminer cette matrice, il suffit de calculer pour tout $i \in \Interv{1}{n}$, $u(e_i) \in F$ et de déterminer ses coordonnées dans la base $\mathcal{C}$.
+Ainsi, pour déterminer cette matrice, il suffit de calculer pour tout $i \in \iii{1}{n}$, $u(e_i) \in F$ et de déterminer ses coordonnées dans la base $\mathcal{C}$.
 
 %\newpage
 
@@ -479,12 +493,14 @@ Cela se schématise par :
 %\]
 %\end{center}
 
-\newpage
+\vspace*{5cm}
+
 
 \begin{Exemple}\label{det} Soient $n \geq 1$ et $\varphi : \mathbb{R}_n[X] \rightarrow \mathbb{R}_n[X]$ définie par $\varphi(P)=P+P'$. Justifier que $\varphi$ est un endomorphisme et donner sa matrice dans la base canonique de  $\mathbb{R}_3[X]$.
 
+        \vspace{\stretch{1}}
 
-\vspace{7cm}
+        \newpage
 
 
 %Soit $\varphi : \mathbb{R}_3[X] \rightarrow \mathbb{R}_3[X]$ défini par $\varphi(P)=P-P'$. Cette application est linéaire et on a :
@@ -535,8 +551,9 @@ est un isomorphisme d'espace vectoriels. En particulier :
 \end{itemize}
 \end{Theoreme}
 
-\begin{att} On ne parle jamais de \emph{la} matrice d'une application linéaire sans préciser les bases considérées.
-\end{att}
+\begin{Remarque}{\warning}
+ On ne parle jamais de \emph{la} matrice d'une application linéaire sans préciser les bases considérées.
+\end{Remarque}
 
 \subsection{Image d'un vecteur}
 Fixons $u \in \mathcal{L}(E,F)$.
@@ -689,14 +706,14 @@ Déterminons la matrice de $f$ dans la base canonique $\mathcal{B}$ de $\mathbb{
 
 Considérons la famille suivante : $\mathcal{B}'= (1, (X+1),(X+1)^2)$. Montrons que $\mathcal{B}'$ est une base de $\mathbb{R}_2[X]$ et déterminons la matrice de $f$ dans cette base :
 
-\newpage
-$\phantom{test}$
-
-\vspace{6.5cm}
+\vspace*{6.5cm}
 
 Déterminons à l'aide d'un changement de base les puissances de $\textrm{Mat}_{\mathcal{B}}(f)$ :
 
-\vspace{10.5cm}
+\vspace{\stretch{1}}
+
+\newpage
+\vspace*{5cm}
 %\begin{itemize}
 %\item L'application $f$ est bien définie (Si $P$ est dans $\mathbb{R}_2[X]$, $P'$ est dans $\mathbb{R}_1[X]$ et ainsi $f(P)$ appartient bien à $\mathbb{R}_2[X]$.
 %\item L'application $f$ est linéaire.
@@ -795,11 +812,8 @@ Dans ce cas, on dit que $A$ et $B$ sont deux \emph{matrices semblables}.
 %3 \\
 %\end{pmatrix}$, la famille $\mathcal{F}=(f_1,f_2)$ est libre (vecteurs non colinéaires) dans un espace de dimension $2$ donc c'est une base de $\mathbb{K}^2$. Par le raisonnement précédent, on a donc $\textrm{Mat}_{\mathcal{F}}(u)= B$ et ainsi $A$ et $B$ sont semblables.
 
-\newpage
-
-$\phantom{test}$
-\vspace{12cm}
 \end{Exemple}
+\newpage
 
 
 
@@ -830,8 +844,6 @@ $$ \textrm{Im}(A) = \textrm{Im}(u_A) = \textrm{Vect}(u_A(e_1), \ldots, u_A(e_p))
 \begin{Theoreme}{} Soit $A \in \mathcal{M}_{n,p}(\mathbb{K})$. On a :
 $$ p = \textrm{dim}(\textrm{Ker}(A)) + \textrm{rg}(A)$$
 \end{Theoreme}
-
-\newpage
 
 \subsection{Méthodes pratiques d'obtention du noyau et de l'image}
 
@@ -907,9 +919,9 @@ Déterminons le noyau et l'image de $A$.
 %-1 \\
 %1 \\
 %\end{pmatrix} \right)$ (le vecteur est non nul et appartient à noyau par opérations élémentaires).
+\newpage
 
-\vspace{13
-cm}
+\vspace*{13cm}
 \end{Exemple}
 
 \medskip
@@ -963,8 +975,9 @@ $$ \begin{pmatrix}
 En particulier, si l'on souhaite obtenir le rang d'une matrice, on peut utiliser les opérations élémentaires sur les lignes et sur les colonnes. 
 \end{Theoreme}
 
-\begin{att} Si l'on souhaite obtenir une base de l'image, on manipule uniquement les colonnes.
-\end{att}
+\begin{Remarque}{\warning}
+ Si l'on souhaite obtenir une base de l'image, on manipule uniquement les colonnes.
+\end{Remarque}
 \section{Trace d'une matrice, d'un endomorphisme}
 
 \begin{Definition}{} Soit $A=(a_{i,j})_{1 \leq i,j \leq n} \in \mathcal{M}_n(\mathbb{K})$. On appelle \emph{trace} de $A$, et on note $\textrm{Tr}(A)$ la somme des coefficients diagonaux de $A$ :
@@ -1025,7 +1038,10 @@ $$ \textrm{Tr}(AB) = \textrm{Tr}(BA) $$
 
 \begin{Exemple} La trace d'un projecteur est égal à son rang.
 
-\vspace{5cm}
+        \vspace{\stretch{1}}
+
+\newpage
+\vspace*{5cm}
 \medskip
 
 %Soit $p$ un projecteur d'un espace vectoriel $E$ de dimension finie $n$. On sait que $E = \textrm{Im}(p) \oplus \textrm{Ker}(p)$. Soit $\mathcal{B}$ une base de $E$ obtenu par concaténation d'une base de $\textrm{Im}(p)$ (de dimension $r= rg(p)$) et d'une base de $\textrm{Ker}(p)$. En remarquant que pour tout élément de $y \in \textrm{Im}(p)$, $p(y)=y$, on a :
@@ -1243,7 +1259,7 @@ B & A \\
 \subsubsection{Développement par rapport à une ligne ou à une colonne}
 
 
-\begin{Proposition}{} Soit $A \in \mathcal{M}_n(\mathbb{K})$. Pour tout $(i,j) \in  \Interv{1}{n}^2$, on définit la matrice $A_{i,j} \in  \mathcal{M}_{n-1}(\mathbb{K})$ comme étant la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ième colonne de $A$. Alors :
+\begin{Proposition}{} Soit $A \in \mathcal{M}_n(\mathbb{K})$. Pour tout $(i,j) \in  \iii{1}{n}^2$, on définit la matrice $A_{i,j} \in  \mathcal{M}_{n-1}(\mathbb{K})$ comme étant la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ième colonne de $A$. Alors :
 
 \begin{itemize}
 \item On peut développer par rapport à la $j$-ième colonne :
@@ -1303,7 +1319,7 @@ b & c & a \\
 \vspace{9cm}
 \end{Exemple}
 
-
+\newpage
 \begin{ApplicationDirecte} 
 Calculer pour $n \geq 1$, $\left\vert \begin{array}{ccccc}
 1 & 1 & 1 & \ldots & 1 \\
@@ -1336,7 +1352,7 @@ Rappelons que par convention, un produit vide vaut $1$.
 
 %\medskip
 %
-%$\rhd$ \emph{Première méthode} : soit $n \geq 2$. En effectuant pour tout $k \in \Interv{2}{n}$ les opérations élémentaires $L_k \leftarrow L_k-L_1$, on a :
+%$\rhd$ \emph{Première méthode} : soit $n \geq 2$. En effectuant pour tout $k \in \iii{2}{n}$ les opérations élémentaires $L_k \leftarrow L_k-L_1$, on a :
 %$$ V_n(a_1, \ldots, a_n) = \left\vert \begin{array}{ccccc}
 %1 & a_1 & a_1^2  & \ldots & a_1^{n-1} \\
 %0 & a_2-a_1 & a_2^2 - a_1^2 & \ldots & a_2^{n-1} - a_1^{n-1} \\
@@ -1366,7 +1382,7 @@ Rappelons que par convention, un produit vide vaut $1$.
 % \vdots &  \vdots & & \vdots \\
 % 1 & a_n+a_1 & \ldots & a_n^{n-2} + a_1 a_n^{n-3} + \cdots + a_1^{n-2} \\
 %\end{array}\right\vert  $$
-%On effectue ensuite \emph{successivement}, pour tout $k \in \Interv{2}{n-1}$, les opérations $C_k \leftarrow \Sum{i=1}{k-1} a_1^i C_i$ :
+%On effectue ensuite \emph{successivement}, pour tout $k \in \iii{2}{n-1}$, les opérations $C_k \leftarrow \Sum{i=1}{k-1} a_1^i C_i$ :
 %$$ V_n(a_1, \ldots, a_n)  =  \prod_{2 \leq k \leq n} (a_k - a_1) \, \, \left\vert\begin{array}{cccc}
 % 1 & a_2& \ldots & a_2^{n-2}\\
 % 1& a_3 & \ldots & a_3^{n-2}  \\
@@ -1424,8 +1440,10 @@ $\phantom{test}$
 %et ainsi $\mathcal{P}_{n+1}$ est vraie.
 %\item Par principe de récurrence, la propriété est vraie pour tout $n \geq 1$.
 %\end{itemize}
+
+\vspace*{\stretch{1}}
 \end{Demonstration}
-\vspace{7cm}
+
 %\textbf{RAJOUTER DES EXEMPLES}
 %
 %\newpage
@@ -1472,7 +1490,7 @@ $\phantom{test}$
 %
 %Ainsi, on peut toujours se ramener à un système échelonné que l'on sait résoudre.
 %
-%\begin{metho}[Pivot de Gauss]
+%\begin{Methode}{}[Pivot de Gauss]
 %Soit $(S)$ est un système de $n$ équations à $p$ inconnues. Voici la méthode du pivot de Gauss :
 % \begin{itemize}
 % \item On multiplie éventuellement certaines lignes par un coefficient non nul ($L_i \leftarrow a L_i$) pour simplifier les équations.
@@ -1490,7 +1508,7 @@ $\phantom{test}$
 %%\item On recommence ainsi jusqu'à obtenir un système échelonné, auquel s'ajoutent éventuellement des équations du type 0=constante.
 %\item Les équations du type $0=0$ peuvent être négligées. Si le système comporte une équation du type $c=0$ où $c$ est une constante non nulle, cela signifie que le système n'a pas de solution.
 %\end{itemize}
-%\end{metho}
+%\end{Methode}
 %
 %Autrement dit, dans la première étape on utilise comme pivot \og le $x_1$ \fg de la première ligne pour \og éliminer \fg{} tous les termes en $x_1$ des autres lignes. Puis on recommence avec $x_2$ sans toucher à la première ligne, etc$\ldots$
 %
@@ -1501,14 +1519,14 @@ $\phantom{test}$
 %\end{Remarque}
 %
 %\subsection{Systèmes avec plus d'équations que d'inconnues}
-%\begin{metho}
+%\begin{Methode}{}
 %Soit $(n,p) \in (\mathbb{N}^*)^2$. \\
 %Si un système à $n$ équations inconnues et $p$ inconnues avec $n>p$, on procède de la manière suivante :
 %\begin{itemize}
 %\item On ne travaille qu'avec $p$ équations, on se ramène donc à un système avec autant d'équations que d'inconnues que l'on sait résoudre (grâce à la méthode du pivot de Gauss).
 %\item Si il y a des solutions, on remplace celles-ci dans les équations restantes pour voir si ces solutions le sont aussi pour ces équations.
 %\end{itemize}
-%\end{metho}
+%\end{Methode}
 %
 %
 %

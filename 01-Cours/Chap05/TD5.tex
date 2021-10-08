@@ -1,23 +1,21 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 5 : Matrices et applications linéaires}
 
-\begin{center}
-\textit{{ {\huge TD 5 : Matrices et applications linéaires }}}
-\end{center}
+\tableofcontents
+\separationTitre
 
-\bigskip
+Dans la suite, $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
 
-\noindent Dans la suite, $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
 
-\medskip
-
-\begin{center}
-\textit{{ {\large Calcul matriciel}}}
-\end{center}
+\subsection{\large Calcul matriciel}
 
 \begin{Exercice}{} Soient $(a,b) \in \mathbb{R}^2$ et $A$ définie par :
 $$ A = \begin{pmatrix}
@@ -30,12 +28,12 @@ Déterminer toutes les puissances de $A$.
 \begin{Exercice}{} Soient $n \in \mathbb{N}^*$ et $M$ une matrice de $\mathcal{M}_n(\mathbb{K})$. On suppose que $M-I_n$ est nilpotente. Montrer que $M$ est inversible.
 \end{Exercice}
 
- \begin{Exercice}{\ding{80}} Soient $n \geq 1$ et $A = (a_{ij})_{1 \leq i,j \leq n}$ une matrice de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $i \in \Interv{1}{n}$,
+ \begin{Exercice}[$\bigstar$] Soient $n \geq 1$ et $A = (a_{ij})_{1 \leq i,j \leq n}$ une matrice de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $i \in \iii{1}{n}$,
 $$ \vert a_{ii} \vert > \sum_{k \neq i} \vert a_{ik} \vert $$
 Montrer que $A$ est inversible.
 \end{Exercice}
 
-\begin{Exercice}{\ding{80}} Soient $n\geq 1$ et $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{K})$. Montrer que si $I_n - AB$ est inversible alors $I_n - BA$ est inversible.
+\begin{Exercice}[$\bigstar$] Soient $n\geq 1$ et $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{K})$. Montrer que si $I_n - AB$ est inversible alors $I_n - BA$ est inversible.
 \end{Exercice} 
 
 \begin{Exercice}{} Soient $n \geq 2$ et $D= \textrm{diag}(\lambda_1, \ldots, \lambda_n)$ ou $\lambda_1$, $\ldots$, $\lambda_n$ sont $n$ éléments de $\mathbb{K}$ deux à deux distincts.
@@ -46,13 +44,9 @@ Montrer que $A$ est inversible.
 \end{Exercice}
 
 
- \medskip
+ 
+\subsection{\large Matrice d'application linéaire}
 
-\begin{center}
-\textit{{ {\large Matrice d'application linéaire}}}
-\end{center}
-
-\medskip
 
 
 
@@ -104,29 +98,25 @@ $$ \forall P \in E, \; f(P) = P-P' $$
 \begin{enumerate}
 
 \item Montrer que les deux sous-espaces vectoriels suivants sont
-suppl\'ementaires dans $E.$
+supplémentaires dans $E.$
 $$F=\hbox{Vect}((1,-1,1))\quad\hbox{ et }\quad G=\{(x,y,z)\in
 E,\ 2x+4y+z=0\}$$
 
-\item D\'eterminer la matrice, dans la base canonique ${\cal B}$
+\item Déterminer la matrice, dans la base canonique ${\cal B}$
 de $E$, de la projection sur $G$ parallèlement à $F.$
 
-\item En d\'eduire la matrice, dans la base ${\cal B}$, de la
-sym\'etrie par rapport \`a $F$ parallèlement à $G.$
+\item En déduire la matrice, dans la base ${\cal B}$, de la
+symétrie par rapport \`a $F$ parallèlement à $G.$
 \end{enumerate}
 \end{Exercice} 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Matrices semblables}}}
-\end{center}
-
-\medskip
+\subsection{\large Matrices semblables}
 
 
-\begin{Exercice}{} Soit ${\cal B}=(e_1,e_2,e_3)$ la base canonique de $\R^3.$ On consid\`ere
-l'endomorphisme $f$ de $E$ d\'efini par~:
+
+\begin{Exercice}{} Soit ${\cal B}=(e_1,e_2,e_3)$ la base canonique de $\R^3.$ On considère
+l'endomorphisme $f$ de $E$ défini par~:
 
 \begin{center}
 $\forall (x,y,z)\in\R^3,\quad f(x,y,z)=(x+y-z,x+2y+z,y+2z).$
@@ -136,16 +126,16 @@ $\forall (x,y,z)\in\R^3,\quad f(x,y,z)=(x+y-z,x+2y+z,y+2z).$
 
 \item Écrire la matrice $M$ de $f$ dans la base ${\cal B}.$
 
-\item D\'eterminer une base de $\textrm{Ker}(f)$ et une base de $\textrm{Im}(f)$.
+\item Déterminer une base de $\textrm{Ker}(f)$ et une base de $\textrm{Im}(f)$.
 
-\item Montrer que la r\'eunion des bases pr\'ec\'edentes constitue une base de $E$. On note ${\cal B}'$ cette nouvelle base.
+\item Montrer que la réunion des bases précédentes constitue une base de $E$. On note ${\cal B}'$ cette nouvelle base.
 
-\item  D\'eterminer la matrice $M'$ de $f$ dans cette nouvelle base. Quel est le lien entre $M$ et $M'$ ?
+\item  Déterminer la matrice $M'$ de $f$ dans cette nouvelle base. Quel est le lien entre $M$ et $M'$ ?
 \end{enumerate}
 
 \end{Exercice}
 
-\begin{Exercice}{\ding{80}} Montrer que $\begin{pmatrix}
+\begin{Exercice}[$\bigstar$] Montrer que $\begin{pmatrix}
 1 & 1 & -1 \\
 -3 & -3 & 3 \\
 -2 & -2 & 2 \\
@@ -165,7 +155,7 @@ $$ S((a_{i,j})_{1 \leq i,j \leq n}) = \sum_{1 \leq i,j \leq n} a_{i,j} a_{j,i}$$
 \end{enumerate}
 \end{Exercice}
 
-\begin{Exercice}{\ding{80}} Soient $n \geq 1$ et $A$ et $B$ deux matrices \textit{réelles} semblables dans $\mathcal{M}_n(\mathbb{C})$.
+\begin{Exercice}[$\bigstar$] Soient $n \geq 1$ et $A$ et $B$ deux matrices \textit{réelles} semblables dans $\mathcal{M}_n(\mathbb{C})$.
 
 \begin{enumerate}
 \item Monter l'existence de deux matrices $U$, $V$ de $\mathcal{M}_n(\mathbb{R})$ telles que $AU=UB$, $AV=VB$ et $U+iV$ soit dans $GL_n(\mathbb{C})$.
@@ -176,13 +166,9 @@ $$ S((a_{i,j})_{1 \leq i,j \leq n}) = \sum_{1 \leq i,j \leq n} a_{i,j} a_{j,i}$$
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Noyau, Rang}}}
-\end{center}
+\subsection{\large Noyau, Rang}
 
-\medskip
 
 
 \begin{Exercice}{} Donner le noyau, le rang et l'image de $A = \begin{pmatrix}
@@ -211,32 +197,24 @@ y & x & 0 & 0 \\
       \item En déduire que $H^2 = \textrm{Tr}(H)H$.
  \end{enumerate}
 \end{Exercice}
- \medskip
+ 
+\subsection{\large Trace}
 
-\begin{center}
-\textit{{ {\large Trace}}}
-\end{center}
-
-\medskip
 
 
 \begin{Exercice}{} Soit $n \in \mathbb{N}^*$. Existe-t-il des matrices $A,B \in \mathcal{M}_n(\mathbb{C})$ vérifiant $AB - BA = I_n$ ?
 \end{Exercice}
 
 
-\begin{Exercice}{\ding{80}} Soient $n \geq 1$ et $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $X \in \mathcal{M}_n(\mathbb{R})$, 
+\begin{Exercice}[$\bigstar$] Soient $n \geq 1$ et $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $X \in \mathcal{M}_n(\mathbb{R})$, 
 $$\textrm{Tr}(AX)= \textrm{Tr}(BX)$$
 Montrer que $A=B$.
 \end{Exercice}
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Déterminant}}}
-\end{center}
+\subsection{\large Déterminant}
 
-\medskip
 
 
 \begin{Exercice}{} Peut-on trouver une matrice $A \in \mathcal{M}_3(\mathbb{R})$ telle que $A^2= - I_3$?
@@ -269,8 +247,7 @@ Montrer que $A=B$.
 
 
 \begin{Exercice}{} Déterminer pour tout entier $n \geq 1$, le déterminant $D_n$ de taille $n$ suivant :
-
-\[
+$
     D_n =
     \begin{vmatrix}
         2 & 1 & {} & {(0)} \\
@@ -278,19 +255,19 @@ Montrer que $A=B$.
         {} & \ddots & \ddots & 1 \\
         {(0)} & {} & 1 & 2 \\
     \end{vmatrix}_{[n]}
-    \]
+    $
 \end{Exercice} 
 
 
 \begin{Exercice}{} Soient $a_1 ,a_2 , \ldots ,a_n \in \mathbb{C}$. Calculer :
-    \[
+    $
     \begin{vmatrix}
         {a_1} & {a_2} & \cdots & {a_n} \\
         {} & \ddots & \ddots & \vdots \\
         {} & {} & \ddots & {a_2} \\
         {(a_1)} & {} & {} & {a_1} \\
     \end{vmatrix}
-    \]
+    $
 \end{Exercice}
 
 
