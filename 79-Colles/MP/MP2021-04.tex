@@ -1,0 +1,104 @@
+\documentclass[twoside,a4paper,landscape,french,10pt]{VcCours}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnseprule{0.4pt}%
+\addtolength\columnsep{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{colle}[4]{{\large\bf\makebox[0cm][l]{#1\hspace{\stretch{-1}}}\hspace{\stretch{1}}#2\hspace{\stretch{1}}\makebox[0cm][r]{\hspace{\stretch{-1}}#3}}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{multicols*}{#4}}{\end{multicols*}\pagebreak}
+\newenvironment{eleve}[1]{\textbf{\large #1}}{\vspace{\stretch{1}}
+\columnbreak}
+\newenvironment{eleveF}[1]{\textbf{\large #1}}{}
+\newcommand{\cours}{\medskip\uwave{Cours :}
+
+\smallskip}
+\newcommand{\exo}[1]{\vspace{\stretch{1}}\uwave{Exercice #1:}
+
+\smallskip}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+-----------------------------------------+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{colle}{MP -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
+n\degres4 -- le vendredi 08/10/2021}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+    \cours
+    Théorème de Bolzano-Weierstrass.\\
+    Exercice 2
+
+    \exo1
+    $\alpha>0$. Nature de la série $\sum_{n\geq0}\left(\sqrt{1+\frac{(-1)^n}{n^{\alpha}}}-1\right)$.
+    
+    \exo2
+    Nature de la série $\sum_{n\geq2}\frac{(-1)^2)}{\sqrt{n^{\alpha}+(-1)^n}}$.
+
+    \exo3
+    Considérons la suite définie par $u_0=u_1=1$ et $\forall n\in\N$,
+    $u_{n+2}=\frac49(3u_{n+1}-u_n)$.
+
+    Déterminer la nature le série $\sum_{n\geq0}u_n$.
+
+    \vspace*{\stretch{2}}
+
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+  \cours
+  Théorème des valeurs intermédiaires et théorème de bijection.\\
+  Exercice 3
+  
+  \exo1
+  On considère la série $\sum_{n\geq0}\arctan\left(\frac{1}{n^2+n+1}\right)$.
+  \begin{enumerate}
+    \item Nature de la série.
+    \item Simplifier $\tan(\arctan(n+1)-\arctan(n))$.
+    En déduire la somme de la série.
+  \end{enumerate}
+  
+  \exo2
+  Nature de la série $\sum_{n\geq0}(n+(-1)^n)3^{-n}\sin(n)$.
+  
+  \exo3
+  Étudier $u_0\in\R$ et $u_{n+1}=\sqrt{\frac{16+u_n^2}{2}}$
+
+  \vspace*{\stretch{2}}
+    
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleveF}{}
+    
+  \cours
+  Définition : domination, négligeabilité, équivalence.\\
+  Exercice 1
+
+  \exo1
+  Nature de la série $\sum_{n\geq0}\frac{2^nn!}{n^n}$.
+
+  
+  \exo2
+  Nature de la série $\sum_{n\geq0}\frac{\ln^3(n)}{n^2+1}$.
+
+  \exo3
+  Soit $u\in\R^{\N}$ tel que $\lim_{n\to+\infty}\frac{u_{2n+1}}{u_{2n}}=a\in\R$ 
+  et $\lim_{n\to+\infty}\frac{u_{2n+2}}{u_{2n+1}}=b\in\R$.
+  
+  Discuter la nature de $\sum_{n\geq0}u_n$ en fonction de $a$ et $b$.
+ 
+  \vspace*{\stretch{2}}
+  
+\end{eleveF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{colle}%
+\end{document}
+    
