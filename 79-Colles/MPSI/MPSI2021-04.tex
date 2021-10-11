@@ -1,0 +1,130 @@
+\documentclass[twoside,a4paper,landscape,french,10pt]{VcCours}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnseprule{0.4pt}%
+\addtolength\columnsep{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{colle}[4]{{\large\bf\makebox[0cm][l]{#1\hspace{\stretch{-1}}}\hspace{\stretch{1}}#2\hspace{\stretch{1}}\makebox[0cm][r]{\hspace{\stretch{-1}}#3}}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{multicols*}{#4}}{\end{multicols*}\pagebreak}
+\newenvironment{eleve}[1]{\textbf{\large #1}}{\vspace{\stretch{1}}
+\columnbreak}
+\newenvironment{eleveF}[1]{\textbf{\large #1}}{}
+\newcommand{\cours}{\medskip\uwave{Cours :}
+
+\smallskip}
+\newcommand{\exo}[1]{\vspace{\stretch{1}}\uwave{Exercice #1:}
+
+\smallskip}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+-----------------------------------------+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{colle}{MPSI -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
+n\degres4 -- le lundi 11/10/2021}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+    \cours
+    Définition d'images directes et réciproques.\\
+    Liens entre images directes et $\cap/\cup$.\\
+    Exercice 4.
+
+    \exo1
+    Résoudre $2z^2-(4-4i)z-5i=0$.
+
+
+    \exo2
+    Soit $f:E\longrightarrow E$.
+Soit $A\subset E$ et $B = \bigcup_{n\in\N}f^n(A)$.
+\begin{enumerate}
+\item Montrer que $f(B) \subset B$.
+\item Montrer que $B$ est la plus petite partie de $E$ stable par $f$ et
+    contenant $A$.
+  \end{enumerate}
+
+    \exo3
+    Soit $n\in \N^*$ et $\omega =e^{i\frac{2\pi }{n}}$.
+\begin{enumerate}
+\item  Que vaut $\sum\limits_{k=1}^{n}\omega ^{k}$ ?
+\item  Soit $p\in \Z$. Calculer $\sum\limits_{k=1}^{n}(\omega
+^{p})^{k}$.
+\item  Montrer que $\forall z\in \C,\sum\limits_{k=1}^{n}(z+\omega
+^{k})^{n}=n(z^{n}+1)\!\!\!\!\!$.
+\end{enumerate}
+
+    \vspace*{\stretch{2}}
+
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+  \cours
+  Définition de recouvrement et partition.\\
+  Complémentaire de l'union/intersection d'une famille d'ensembles.\\
+  Exercice 1
+
+  \exo1
+  Résoudre $X^2-(7-2i)X+13-i=0$.
+
+  \exo2
+  Soit $f:E\longrightarrow F$ et 
+  
+  $S = \ensemble{X\subset E}{f^{-1}(f(X)) = X}$.
+\begin{enumerate}
+\item Pour $A \subset E$, montrer que $f^{-1}(f(A))\in S$.
+\item Montrer que $S$ est stable par intersection et réunion.
+\item Soient $X\in S$ et $A\subset E$ tels que $X\cap A = \varnothing$.
+Montrer que $X\cap f^{-1}(f(A)) = \varnothing$.
+\item Soient $X,Y\in S$. Montrer que $E\setminus X$ et $Y\setminus X$ appartiennent à $S$.
+\item Montrer que l'application
+
+$\application{\varphi}{S}{\PP(f(E))}{A}{f(A)}$
+    est une bijection.
+\end{enumerate}
+
+  \exo3
+  Soit $n\in\N$. Résoudre dans $\C$: $(z+i)^n = (i - z)^n$.
+
+  \vspace*{\stretch{2}}
+    
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleveF}{}
+    
+  \cours
+  Définition de racine d'un polynôme, Théorème de D'Alembert-Gauss.\\
+  Lien entre racine et factorisation.\\
+  Exercice 3.
+
+  \exo1
+  Résoudre $X^2-(5-2i)X+9-7i=0$.
+  
+  \exo2
+  Soit $f:E→F$. On définit
+$\application{\varphi}{\PP(E)}{\PP(F)}A{f(A)}$ et
+$\application{\psi}{\PP(F)}{\PP(E)}B{f^{-1}(B)}$.
+
+Montrer que :
+\begin{enumerate}
+\item $f$ est injective  $\Longleftrightarrow \varphi$ est injective  $\Longleftrightarrow \psi$ est surjective.
+\item $f$ est surjective $\Longleftrightarrow \varphi$ est surjective $\Longleftrightarrow \psi$ est injective.
+\end{enumerate}
+
+  \exo3
+  Résoudre dans $\C$ l'équation: $(z + 1)^n = e^{2ina}$.
+  
+  \vspace*{\stretch{2}}
+  
+\end{eleveF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{colle}%
+\end{document}
+    
