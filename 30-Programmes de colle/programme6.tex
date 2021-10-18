@@ -1,0 +1,104 @@
+\documentclass[twoside,a4paper,french,10pt]{VcCours}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{\vspace{-1.5em}}
+
+\begin{center}
+\large\bf
+Programme de colles\hspace{\stretch{1}}Semaine n\degres6: du 18/10 au 22/10/2021
+\end{center}
+\separationTitre
+
+
+Pour cette khôlle, chaque étudiant aura :
+\begin{itemize}
+\item Une \textbf{question de cours}.
+\item Une démonstration \textbf{(D)} ou un exercice à retravailler.
+\end{itemize}
+
+
+\section*{Chapitre 4 : Applications linéaires}
+
+\begin{enumerate}
+\item Généralités.
+\begin{itemize}
+\item Définition d'une application linéaire (trois équivalentes). Endomorphisme, isomorphisme, automorphisme, forme linéaire. Quelques propriétés.
+\item Image directe d'un sous-espace et image réciproque d'un sous-espace.
+\item \textbf{Image et noyau d'une application linéaire.} 
+\item \textbf{(D)} : Soient $E$, $F$ deux $\mathbb{K}$-espaces vectoriels et $f \in \mathcal{L}(E,F)$. L'application $f$ est injective si et seulement si $\textrm{Ker}(f) = \lbrace 0_E \rbrace$.
+\item Une application linéaire est déterminée par l'image des vecteurs d'une base de $E$. 
+\item $\textrm{Im}(f) = \textrm{Vect}(f(e_1), \ldots, f(e_n))$ : \textit{très utile dans la pratique}. Lien entre injectivité, surjectivité et bijectivité et image d'une base.
+\item Rang d'une application linéaire. \textbf{Théorème du rang}. Soient $E, F$ deux $\mathbb{K}$-espaces vectoriels de même dimension $n$ et $f \in \mathcal{L}(E,F)$. Alors $f$ est un isomorphisme ssi $f$ est injective ssi $f$ est surjective ssi le rang de $f$ est égal à $n$.
+\item \textbf{Définition d'une projection vectorielle}. 
+\item \textbf{(D)} $p$ est un endomorphisme de $E$ vérifiant $p \circ p = p$, $\textrm{Im}(p) = \textrm{Ker}(p-\textrm{Id})=F$ et $\textrm{Ker}(p)=G$.
+\item Définition d'un projecteur. Un endomorphisme $p$ de $E$ est une projection si et seulement si $p$ est un projecteur. Dans ce cas, $p$ est une projection sur $\textrm{Im}(p)$ parallèlement à $\textrm{Ker}(p)$.
+\item \textbf{Définition d'une symétrie vectorielle}. Quelques propriétés : $s$ est un endomorphisme de $E$ vérifiant $s \circ s = \textrm{Id}$, $F = \textrm{Ker}(s-\textrm{Id})$ et $G= \textrm{Ker}(s+\textrm{Id})$.
+\item Définition d'un endomorphisme involutif. Un endomorphisme $s$ de $E$ est une symétrie si et seulement si $s$ est un endomorphisme involutif.
+\item \textbf{Il est important de savoir déterminer l'expression d'une projection ou d'une symétrie en raisonnant par analyse-synthèse.}
+\end{itemize}
+\item Hyperplan.
+\begin{itemize}
+\item Trois définitions équivalentes d'un hyperplan (existence d'une droite vectorielle comme supplémentaire, noyau d'une forme linéaire non nulle, dimension égal à $\textrm{dim}(E)-1$).
+\item Formes linéaires avec le même noyau.
+\item Équation d'un hyperplan dans une base.
+\end{itemize}
+\end{enumerate}
+
+\newpage
+\section*{Chapitre 5 : Matrices et applications linéaires}
+
+\begin{enumerate}
+\item Calcul matriciel.
+\begin{itemize}
+\item Espace vectoriel $\mathcal{M}_{n,p}(\mathbb{K)}$. Produit de matrices. Matrices particulières. 
+\item Puissances de matrices : par conjecture, par cyclicité, si la matrice est diagonale, d'après la formule du binôme de Newton.
+\item Transposée d'une matrice.
+\item Inversibilité d'une matrice. Quelques propriétés. 
+\end{itemize}
+\item Matrices, vecteurs et applications linéaires.
+\begin{itemize}
+\item Matrice d'un vecteur dans une base. Matrice d'une famille de vecteurs dans une base.
+\item Matrice d'une application linéaire dans des bases données. Image d'un vecteur. Matrices d'une composition d'une application linéaire. En particulier $\textrm{Mat}_{\mathcal{B}}(u^n)$. 
+\item \textbf{Matrice de passage.}
+\item \textbf{Formule de changement de base (théorème 14 et corollaire 15).}
+\item Matrices semblables.
+\end{itemize}
+\item Image, noyau et rang d'une matrice.
+\begin{itemize}
+\item Noyau, image et rang d'une matrice.
+\item Méthodes pratique d'obtention du noyau et de l'image. 
+\end{itemize}
+\item Trace.
+\begin{itemize}
+\item Trace d'une matrice carrée. Trace d'un produit de matrice. Trace d'un endomorphisme. 
+\item \textbf{(D)} Deux matrices semblables ont la même trace.
+\end{itemize}
+\end{enumerate}
+
+\begin{Exercice}
+    Soit $f$ l'application définie sur $\mathbb{R}_2[X]$ par $f(P)=P-(X+1)P'+X^2 P''$. Montrer que $f$ est un endomorphisme de $\mathbb{R}_2[X]$. Déterminer son noyau, son image et son rang.
+\end{Exercice} 
+
+\begin{Exercice}
+    Soient $F= \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, x+y+z =0 \rbrace$ et $G= \textrm{Vect}((1,1,1))$. Justifier l'existence de la projection sur $F$ parallèlement à $G$ et donner son expression. De même avec la symétrie par rapport à $F$ parallèlement à $G$. 
+\end{Exercice} 
+
+\begin{Exercice}
+    Soient $n \geq 1$ et $J$ la matrice carrée d'ordre $n$ dont tous les coefficients valent $1$. Posons $M=J+ I_n$. Déterminer une relation entre $M^2$, $M$ et $I_n$ et en déduire que $M$ est inversible.
+\end{Exercice} 
+
+\begin{Exercice}
+    Posons :
+    $$ \application{f}{\mathbb{R}_2[X]}{\mathbb{R}_2[X]}{P}{(X+1)P'}$$
+
+    \begin{enumerate}
+    \item Montrer que $f$ est un endomorphisme de $ \mathbb{R}_2[X]$.
+    \item Déterminer la matrice de $f$ dans la base canonique $\mathcal{B}$ de $\mathbb{R}_2[X]$.
+    \item Soit $\mathcal{B}'= (1, (X+1),(X+1)^2)$. Montrer que $\mathcal{B}'$ est une base de $\mathbb{R}_2[X]$ et déterminer la matrice de $f$ dans cette base.
+    \item Déterminer le lien entre $\textrm{Mat}_{\mathcal{B}'}(f)$ et $\textrm{Mat}_{\mathcal{B}}(f)$.
+    \end{enumerate}
+\end{Exercice} 
+
+
+\end{document}

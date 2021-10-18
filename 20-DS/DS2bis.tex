@@ -1,0 +1,234 @@
+\documentclass[twoside,french,11pt]{VcCours}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir surveillé n°2${}^{\text{bis}}$}
+
+\begin{center}
+\large 
+Le jeudi 14 octobre 2021
+
+\bigskip
+\textbf{Durée: 3h30}
+
+\bigskip
+\large\underline{\textbf{Calculatrice interdite}}
+\end{center}
+
+\bigskip
+\begin{itemize}
+  \item Le candidat attachera la plus grande importance à la clarté, à la précision et à la concision de la rédaction. Si un candidat est amené à repérer ce qui peut lui sembler être une erreur d'énoncé, il le signalera sur sa copie et devra poursuivre sa composition en expliquant les raisons des initiatives qu'il a été amené à prendre.
+  \item Il est conseillé au candidat de lire l'intégralité du sujet et de repérer les parties qui lui semblent plus abordables.
+  \item Le candidat \fbox{encadrera} ou \underline{soulignera} les résultats. 
+  %\item Les étudiants visant un concours plus dur que CCP traiteront \textbf{obligatoirement} l'exercice $2$.
+  \end{itemize}
+\separationTitre
+
+
+\section*{Exercice 1 -- Séries}
+  Déterminer la nature des séries suivantes. 
+  
+  \begin{multicols}{3}
+  \begin{enumerate}
+  \item $\sum_{n \geq 1} \dfrac{n\sqrt{n}}{n^7+\sqrt{n}}$
+  \item $\sum_{n \geq 1} \dfrac{\ln^{5}(n)}{2\sqrt{n}+1}$
+  \columnbreak
+  \item $\sum_{n \geq 1} \dfrac{n!\pi^n}{n^n}$
+  \item $\sum_{n \geq 1} \sqrt{\ch\left(\frac{1}{n^2}\right)-1}$
+  \columnbreak
+  \item $\sum_{n \geq 1} \arctan \left( \dfrac{(-1)^n}{n}\right)$
+  \end{enumerate}
+  \end{multicols}
+
+\section*{Exercice 2 -- Espaces vectoriels}
+\begin{enumerate}
+  \item Montrer que $F=\ensemble{(x;y;z)\in\R^3}{2x-y-5z=0}$ est un sous-espace
+  vectoriel de $\R^3$, en donner une base et la dimension.
+  \item Montrer que $\SS_n(\R)$ et $\AA_n(\R)$ sont supplémentaires dans $\MM_n(\R)$.
+\end{enumerate}
+
+  
+\section*{Exercice 3 -- Espaces vectoriels}
+On note $\mathcal{M}_3(\mathbb{R})$ l'espace vectoriel des matrices carrées 
+d'ordre $3$ à coefficients réels. On note $I_3$ la matrice identité de 
+$\mathcal{M}_3(\mathbb{R})$.
+
+\subsection*{Partie 1 : un ensemble de matrices}
+Soit $F$ l'ensemble défini par :
+$$ F = \ensemble{\begin{pmatrix}
+a & 0 & 0 \\
+0 & b & -c \\
+0 & c & b \\
+\end{pmatrix}}{(a,b,c) \in \R^3}$$
+
+\begin{enumerate}
+\item Montrer que $F$ est un espace vectoriel et donner-en une base.
+\item Montrer que $F$ est stable par produit :
+$$ \forall (A,B) \in F^2, \; AB \in F$$
+Dans la suite de l'exercice, on pose :
+$$ M = \begin{pmatrix}
+-2 & 0 & 0 \\
+0 & 1 & -1 \\
+0 & 1 & 1 \\
+\end{pmatrix}$$
+\item Montrer que $(I_3,M,M^2)$ est une base de $F$.
+\item Exprimer $M^3$ en fonction de $I_3$ et $M$.
+\end{enumerate}
+
+
+\subsection*{Partie 2 : étude d'une suite}
+
+
+Soit $u$ la suite définie par $u_0=3$, $u_1=0$, $u_2=4$ et pour tout entier $n \geq 0$,
+$$ u_{n+3}= 2u_{n+1}-4u_n$$
+
+\medskip
+
+\begin{enumerate}
+\item Écrire, en langage Python, une fonction {\tt Suite} ayant pour argument un entier naturel $n$ et renvoyant le réel $u_n$.
+\item Montrer que pour tout entier $k \geq 0$, il existe des réels $a_k$, $b_k$ et $c_k$ tels que :
+$$ M^k = \begin{pmatrix}
+a_k & 0 & 0 \\
+0 & b_k & -c_k \\
+0 & c_k & b_k \\
+\end{pmatrix}$$
+Préciser une relation de récurrence définissant $(a_k)_{k \geq 0}$ et deux relations de récurrences liant $(b_k)_{k \geq 0}$ et $(c_k)_{k \geq 0}$.
+\item En déduire pour tout entier $k \geq 0$, $a_k$ en fonction de $k$.
+\item Pour tout $k \in \mathbb{N}$, on pose $z_k$ le nombre complexe défini par :
+$$ z_k = b_k + i c_k$$
+Exprimer $z_{k+1}$ en fonction de $z_k$ et en déduire que $b_k = \Re e((1+i)^k)$ puis une expression simple de $b_k$.
+% \item Montrer que pour tout entier $n \geq 0$,
+% $$ u_n = \textrm{Tr}(M^n)$$
+% et en déduire la valeur de $u_n$.
+\end{enumerate}
+
+  
+\section*{Problème -- séries dont le terme général est un reste}
+  Soit $n_0$ un entier naturel fixé.
+
+  Soient $(a_n)_{n\geq n_0}$ une suite numérique et $\sum_{n \geq n_0} a_n$ la
+  série de terme général $a_n.$ 
+  
+  \medskip
+  
+  On suppose que cette série est convergente et on définit pour $n\geq n_0,$ son reste
+  d'ordre $n$ par :
+  \begin{center}$r_n=\sum_{k=n+1}^{+\infty}a_k$
+  \end{center}
+  Dans ce problème, on s'intéresse à la
+  série $\sum_{n \geq n_0} r_n$ dans divers exemples.
+  
+  \medskip
+  
+  
+  \begin{enumerate}
+  
+  \item {\it Exemple 1}. Dans cette question, on pose pour tout entier $n\geq 0,$ 
+  $$a_n=\lambda^n$$
+  où $\lambda\in\R.$
+  
+  \begin{enumerate}
+    \item Donner, sans preuve, une condition nécessaire et suffisante sur $\lambda$ pour la série $\sum_{n \geq 0} a_n$ soit convergente. Rappeler la valeur de la somme de cette série. 
+    
+    \item On suppose cette condition réalisée. \\
+    Déterminer pour tout entier $n \geq 0$, la valeur de $r_n$ (en fonction de $\lambda$). \\
+    En déduire que $\sum_{n \geq 0} r_n$ converge et calculer sa somme.
+  \end{enumerate}
+  
+  
+  \item {\it Exemple 2}. Pour tout entier $n\geq 1,$ on pose maintenant :
+  $$a_n=\frac{1}{n^2}$$
+  
+  \begin{enumerate}
+  
+  %\item Démontrer que pour tout entier $k\in\N^*$, on a :
+  %$$\frac{1}{(k+1)^2}\leq\int_{k}^{k+1}\frac{dt}{t^2}\leq
+  %\frac{1}{k^2}$$
+  
+  
+  
+  \item Montrer que pour tout $n\in\N^*$ et pour tout entier $N\geq n+1$, on a l'encadrement suivant :
+  $$\sum_{k=n+1}^{N}\frac{1}{(k+1)^2}\leq
+  \int_{n+1}^{N+1}\frac{1}{t^2}dt\leq
+  \sum_{k=n+1}^{N}\frac{1}{k^2}$$
+  
+  
+  
+  \item En déduire que pour tout entier $n\in\N^*,$ on a :
+  $$ \frac{1}{n+1}\leq r_n \leq
+  \frac{1}{n+1}+\frac{1}{(n+1)^2}$$
+  
+  
+  
+  \item Déterminer alors un équivalent de $r_n$ quand $n$ tend vers $+\infty.$\\
+  Que peut-on en conclure sur la nature de la série $\sum_{n \geq 1}
+  r_n$?
+  
+  
+  \end{enumerate}
+
+  
+  \item {\it Exemple 3}. Dans cet question, on suppose simplement que $\sum_{n \geq 0} a_n$ est une série à termes positifs.
+  
+  
+  
+  \begin{enumerate}
+    \item Démontrer que pour tout $n\in\N^*,$ on a :
+    $$\sum_{k=1}^n ka_k=\sum_{k=0}^{n-1} r_k-nr_n$$
+    
+    \item En déduire que si $\sum_{n \geq 0} r_n$ converge alors $\sum_{n \geq 0} na_n$ converge aussi.
+    
+    \item Retrouver alors le résultat de la question $2(c).$ 
+    
+  \end{enumerate}
+  
+  \item {\it Exemple 4.} Pour tout entier $n\geq 1,$ on pose dorénavant :
+  $$a_n=\frac{(-1)^n}{n}$$
+  
+  \begin{enumerate}
+  
+  \item Justifier la convergence de la série $\sum_{n \geq 1} a_n.$ \textit{Il ne suffira pas de donner son nom}.
+  
+  
+  \item On définit la suite $(I_n)_{n \geq 1}$ par :
+  $$\forall n\in\N^*,\;
+  I_n=(-1)^n\int_0^1\frac{x^n}{1+x}dx$$
+  
+  \begin{enumerate}
+  
+  \item Démontrer que 
+  $\lim_{n\to +\infty}I_n=0.$
+  
+  
+  \item Soit $n\in\N^*$. Calculer $I_{n+1}-I_n.$
+  En déduire que :
+  $$ \forall n\in\N^*, \; I_n=\ln(2)+\sum_{k=1}^n\frac{(-1)^k}{k}$$
+  \item En déduire la valeur de :
+  $$\sum_{k=1}^{+\infty}\frac{(-1)^k}{k}$$
+  Exprimer enfin $r_n$ en fonction de $I_n.$
+  
+  
+  
+  \end{enumerate}
+  
+  \item \textit{Conclusion.}
+  
+  \begin{enumerate}
+  
+  \item Montrer que :
+  $$ I_n \underset{+ \infty}{=} \frac{(-1)^n}{a(n+1)}+O\left(\frac{1}{n^{\alpha}}\right)$$
+  o\`u $a\in\R^*$ et $\alpha>1$ sont des constantes à déterminer.
+  \item En déduire la nature de la série $\sum_{n \geq 1} r_n$.
+  \end{enumerate}
+  \end{enumerate}
+  \item {\it Exemple 5.}  Pour tout entier $n\geq 0,$ on pose dorénavant :
+  $$a_n=\frac{1}{n!}$$
+  \begin{enumerate}
+  \item Déterminer un équivalent de $r_n$ quand $n$ tend vers $+ \infty$.
+  \item En déduire la nature de la série de terme général $r_n$.
+  \item Déterminer, à l'aide de (a), la nature de la série de terme général $\sin(2 \pi e n!)$.
+  \end{enumerate}
+  \end{enumerate}
+  
+  
+  \end{document}

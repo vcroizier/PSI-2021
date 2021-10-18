@@ -1,0 +1,92 @@
+\documentclass[twoside,a4paper,landscape,french,10pt]{VcCours}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnseprule{0.4pt}%
+\addtolength\columnsep{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{colle}[4]{{\large\bf\makebox[0cm][l]{#1\hspace{\stretch{-1}}}\hspace{\stretch{1}}#2\hspace{\stretch{1}}\makebox[0cm][r]{\hspace{\stretch{-1}}#3}}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{multicols*}{#4}}{\end{multicols*}\pagebreak}
+\newenvironment{eleve}[1]{\textbf{\large #1}}{\vspace{\stretch{1}}
+\columnbreak}
+\newenvironment{eleveF}[1]{\textbf{\large #1}}{}
+\newcommand{\cours}{\medskip\uwave{Cours :}
+
+\smallskip}
+\newcommand{\exo}[1]{\vspace{\stretch{1}}\uwave{Exercice #1:}
+
+\smallskip}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+-----------------------------------------+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{colle}{MP -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
+n\degres5 -- le vendredi 15/10/2021}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+    \cours
+    Définitions des normes 1, 2 et $\infty$ et leur boule unité.\\
+    Exercice 1
+
+    \exo1
+    1.1.2
+    
+    \exo2
+    
+    
+    \exo3
+    7.1.1 j
+    
+    \vspace*{\stretch{2}}
+
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+  \cours
+  Définition de norme, boules ouvertes/fermées/sphère\\
+  Exercice 2
+
+  \exo1
+  1.1.1
+  
+  \exo2
+  
+  
+  \exo3
+  7.1.1 d
+  
+  \vspace*{\stretch{2}}
+  
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleveF}{}
+    
+  \cours
+  Exemple 4 : norme infinie sur les fonctions bornées.\\
+  + démo
+
+  \exo1
+  1.1.4
+  
+  \exo2
+  
+  
+  \exo3
+  7.1.1 g
+  
+  \vspace*{\stretch{2}}
+
+\end{eleveF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{colle}%
+\end{document}
+    
