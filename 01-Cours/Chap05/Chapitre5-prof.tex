@@ -1350,96 +1350,90 @@ Rappelons que par convention, un produit vide vaut $1$.
 
 \begin{Demonstration}{} On commence par déterminer une relation de récurrence de deux manières différentes. 
 
-%\medskip
-%
-%$\rhd$ \emph{Première méthode} : soit $n \geq 2$. En effectuant pour tout $k \in \iii{2}{n}$ les opérations élémentaires $L_k \leftarrow L_k-L_1$, on a :
-%$$ V_n(a_1, \ldots, a_n) = \left\vert \begin{array}{ccccc}
-%1 & a_1 & a_1^2  & \ldots & a_1^{n-1} \\
-%0 & a_2-a_1 & a_2^2 - a_1^2 & \ldots & a_2^{n-1} - a_1^{n-1} \\
-%0 & a_3 -a_1& a_3^2-a_1^2 & \ldots & a_3^{n-1}- a_1^{n-1} \\
-%\vdots & \vdots & & \vdots \\
-%0 & a_n-a_1 & a_n^2 - a_1^2 & \ldots & a_n^{n-1} - a_1^{n-1}\\
-%\end{array}\right\vert$$
-%et ainsi en développant par rapport à la première colonne :
-%\begin{align*}
-%V_n(a_1, \ldots, a_n) & = \left\vert \begin{array}{cccc}
-% a_2-a_1 & a_2^2 - a_1^2 & \ldots & a_2^{n-1} - a_1^{n-1} \\
-% a_3 -a_1& a_3^2-a_1^2 & \ldots & a_3^{n-1}- a_1^{n-1} \\
-% \vdots &  \vdots & & \vdots \\
-% a_n-a_1 & a_n^2 - a_1^2 & \ldots & a_n^{n-1} - a_1^{n-1}\\
-%\end{array}\right\vert \\
-%& = \left\vert\begin{array}{cccc}
-% a_2-a_1 & (a_2-a_1)(a_2+a_1)& \ldots & (a_2-a_1)(a_2^{n-2} + a_1 a_2^{n-3} + \cdots + a_1^{n-2}) \\
-% a_3 -a_1& (a_3-a_1)(a_3+a_1) & \ldots & (a_3-a_1)(a_3^{n-2} + a_1 a_3^{n-3} + \cdots + a_1^{n-2}) \\
-% \vdots &  \vdots & & \vdots \\
-% a_n-a_1 & (a_n - a_1)(a_n+a_1) & \ldots & (a_n-a_1)(a_n^{n-2} + a_1 a_n^{n-3} + \cdots + a_1^{n-2}) \\
-%\end{array}\right\vert \\
-%\end{align*}
-%et ainsi par linéarité par rapport à chaque ligne :
-%$$ V_n(a_1, \ldots, a_n)  =  \prod_{2 \leq k \leq n} (a_k - a_1) \, \left\vert\begin{array}{cccc}
-% 1 & a_2+a_1& \ldots & a_2^{n-2} + a_1 a_2^{n-3} + \cdots + a_1^{n-2} \\
-% 1& a_3+a_1 & \ldots & a_3^{n-2} + a_1 a_3^{n-3} + \cdots + a_1^{n-2} \\
-% \vdots &  \vdots & & \vdots \\
-% 1 & a_n+a_1 & \ldots & a_n^{n-2} + a_1 a_n^{n-3} + \cdots + a_1^{n-2} \\
-%\end{array}\right\vert  $$
-%On effectue ensuite \emph{successivement}, pour tout $k \in \iii{2}{n-1}$, les opérations $C_k \leftarrow \Sum{i=1}{k-1} a_1^i C_i$ :
-%$$ V_n(a_1, \ldots, a_n)  =  \prod_{2 \leq k \leq n} (a_k - a_1) \, \, \left\vert\begin{array}{cccc}
-% 1 & a_2& \ldots & a_2^{n-2}\\
-% 1& a_3 & \ldots & a_3^{n-2}  \\
-% \vdots &  \vdots & & \vdots \\
-% 1 & a_n & \ldots & a_n^{n-2}  \\
-%\end{array}\right\vert = \prod_{2 \leq k \leq n} (a_k - a_1) V_{n-1}(a_2, \ldots, a_n) $$
-%
-%\medskip
-%
-%$\rhd$ \emph{Deuxième méthode} : Soit $n \geq 2$. Remarquons que :
-%$$ V_n(X, a_2 \ldots, a_n) = \left\vert \begin{array}{ccccc}
-%1 & X & X^2 & \ldots & X^{n-1} \\
-%1 & a_2 & a_2^2 & \ldots & a_2^{n-1} \\
-%1 & a_3 & a_3^2 & \ldots & a_3^{n-1} \\
-%\vdots & \vdots & & \vdots \\
-%1 & a_n & a_n^2 & \ldots & a_n^{n-1} \\
-%\end{array}\right\vert$$
-%est un polynôme de $\mathbb{K}_{n-1}[X]$ : en effet, il suffit de développer par rapport à la première ligne. Ce polynôme admet $a_2$, $\ldots$, $a_{n}$ comme racines (déterminant d'une matrice ayant deux lignes identiques). Ce polynôme admet donc $n-1$ racines et est degré maximum égal à $n-1$ : il existe donc $\lambda \in \mathbb{K}$ tel que :
-%$$ V_n(X, a_2, \ldots, a_n) = \lambda \prod_{k=2}^{n} (X-a_k) $$
-%Or $\lambda$ est le coefficient dominant du polynôme, il s'obtient en développant par rapport à la première ligne (en remarquant que seul le dernier terme dans le développement intervient pour ce coefficient dominant et sans oublier la puissance de $(-1)$) : 
-%$$ \lambda =  (-1)^{n+1} \left\vert \begin{array}{ccccc}
-%1 & a_2 & a_2^2 & \ldots & a_2^{n-2} \\
-%1 & a_3 & a_3^2 & \ldots & a_3^{n-2} \\
-%\vdots & \vdots & & \vdots \\
-%1 & a_n & a_n^2 & \ldots & a_n^{n-2} \\
-%\end{array}\right\vert =  (-1)^{n-1} V_{n-1}(a_2, \ldots, a_n)$$
-%Finalement :
-%$$ V_n(X, a_2\ldots, a_n) =  (-1)^{n-1} V_{n-1}(a_2, \ldots, a_n) \prod_{k=2}^{n} (X-a_k)$$
-%et ainsi :
-%$$ V_n(a_1, \ldots, a_n) =  (-1)^{n-1} V_{n-1}(a_2, \ldots, a_n) \prod_{k=2}^{n} (a_1-a_k)$$
-%ou encore :
-%$$ V_n(a_1, \ldots, a_n) =   V_{n-1}(a_2, \ldots, a_n) \prod_{k=2}^{n} (a_k-a_1)$$
-%
-%\medskip
+\medskip
 
-\vspace{5cm}
+$\rhd$ \emph{Première méthode} : soit $n \geq 2$. En effectuant pour tout $k \in \iii{2}{n}$ les opérations élémentaires $L_k \leftarrow L_k-L_1$, on a :
+$$ V_n(a_1, \ldots, a_n) = \left\vert \begin{array}{ccccc}
+1 & a_1 & a_1^2  & \ldots & a_1^{n-1} \\
+0 & a_2-a_1 & a_2^2 - a_1^2 & \ldots & a_2^{n-1} - a_1^{n-1} \\
+0 & a_3 -a_1& a_3^2-a_1^2 & \ldots & a_3^{n-1}- a_1^{n-1} \\
+\vdots & \vdots & & \vdots \\
+0 & a_n-a_1 & a_n^2 - a_1^2 & \ldots & a_n^{n-1} - a_1^{n-1}\\
+\end{array}\right\vert$$
+et ainsi en développant par rapport à la première colonne :
+\begin{align*}
+V_n(a_1, \ldots, a_n) & = \left\vert \begin{array}{cccc}
+a_2-a_1 & a_2^2 - a_1^2 & \ldots & a_2^{n-1} - a_1^{n-1} \\
+a_3 -a_1& a_3^2-a_1^2 & \ldots & a_3^{n-1}- a_1^{n-1} \\
+\vdots &  \vdots & & \vdots \\
+a_n-a_1 & a_n^2 - a_1^2 & \ldots & a_n^{n-1} - a_1^{n-1}\\
+\end{array}\right\vert \\
+& = \left\vert\begin{array}{cccc}
+a_2-a_1 & (a_2-a_1)(a_2+a_1)& \ldots & (a_2-a_1)(a_2^{n-2} + a_1 a_2^{n-3} + \cdots + a_1^{n-2}) \\
+a_3 -a_1& (a_3-a_1)(a_3+a_1) & \ldots & (a_3-a_1)(a_3^{n-2} + a_1 a_3^{n-3} + \cdots + a_1^{n-2}) \\
+\vdots &  \vdots & & \vdots \\
+a_n-a_1 & (a_n - a_1)(a_n+a_1) & \ldots & (a_n-a_1)(a_n^{n-2} + a_1 a_n^{n-3} + \cdots + a_1^{n-2}) \\
+\end{array}\right\vert \\
+\end{align*}
+et ainsi par linéarité par rapport à chaque ligne :
+$$ V_n(a_1, \ldots, a_n)  =  \prod_{2 \leq k \leq n} (a_k - a_1) \, \left\vert\begin{array}{cccc}
+1 & a_2+a_1& \ldots & a_2^{n-2} + a_1 a_2^{n-3} + \cdots + a_1^{n-2} \\
+1& a_3+a_1 & \ldots & a_3^{n-2} + a_1 a_3^{n-3} + \cdots + a_1^{n-2} \\
+\vdots &  \vdots & & \vdots \\
+1 & a_n+a_1 & \ldots & a_n^{n-2} + a_1 a_n^{n-3} + \cdots + a_1^{n-2} \\
+\end{array}\right\vert  $$
+On effectue ensuite \emph{successivement}, pour tout $k \in \iii{2}{n-1}$, les opérations $C_k \leftarrow \Sum{i=1}{k-1} a_1^i C_i$ :
+$$ V_n(a_1, \ldots, a_n)  =  \prod_{2 \leq k \leq n} (a_k - a_1) \, \, \left\vert\begin{array}{cccc}
+1 & a_2& \ldots & a_2^{n-2}\\
+1& a_3 & \ldots & a_3^{n-2}  \\
+\vdots &  \vdots & & \vdots \\
+1 & a_n & \ldots & a_n^{n-2}  \\
+\end{array}\right\vert = \prod_{2 \leq k \leq n} (a_k - a_1) V_{n-1}(a_2, \ldots, a_n) $$
 
-\newpage
+\medskip
 
-$\phantom{test}$
+$\rhd$ \emph{Deuxième méthode} : Soit $n \geq 2$. Remarquons que :
+$$ V_n(X, a_2 \ldots, a_n) = \left\vert \begin{array}{ccccc}
+1 & X & X^2 & \ldots & X^{n-1} \\
+1 & a_2 & a_2^2 & \ldots & a_2^{n-1} \\
+1 & a_3 & a_3^2 & \ldots & a_3^{n-1} \\
+\vdots & \vdots & & \vdots \\
+1 & a_n & a_n^2 & \ldots & a_n^{n-1} \\
+\end{array}\right\vert$$
+est un polynôme de $\mathbb{K}_{n-1}[X]$ : en effet, il suffit de développer par rapport à la première ligne. Ce polynôme admet $a_2$, $\ldots$, $a_{n}$ comme racines (déterminant d'une matrice ayant deux lignes identiques). Ce polynôme admet donc $n-1$ racines et est degré maximum égal à $n-1$ : il existe donc $\lambda \in \mathbb{K}$ tel que :
+$$ V_n(X, a_2, \ldots, a_n) = \lambda \prod_{k=2}^{n} (X-a_k) $$
+Or $\lambda$ est le coefficient dominant du polynôme, il s'obtient en développant par rapport à la première ligne (en remarquant que seul le dernier terme dans le développement intervient pour ce coefficient dominant et sans oublier la puissance de $(-1)$) : 
+$$ \lambda =  (-1)^{n+1} \left\vert \begin{array}{ccccc}
+1 & a_2 & a_2^2 & \ldots & a_2^{n-2} \\
+1 & a_3 & a_3^2 & \ldots & a_3^{n-2} \\
+\vdots & \vdots & & \vdots \\
+1 & a_n & a_n^2 & \ldots & a_n^{n-2} \\
+\end{array}\right\vert =  (-1)^{n-1} V_{n-1}(a_2, \ldots, a_n)$$
+Finalement :
+$$ V_n(X, a_2\ldots, a_n) =  (-1)^{n-1} V_{n-1}(a_2, \ldots, a_n) \prod_{k=2}^{n} (X-a_k)$$
+et ainsi :
+$$ V_n(a_1, \ldots, a_n) =  (-1)^{n-1} V_{n-1}(a_2, \ldots, a_n) \prod_{k=2}^{n} (a_1-a_k)$$
+ou encore :
+$$ V_n(a_1, \ldots, a_n) =   V_{n-1}(a_2, \ldots, a_n) \prod_{k=2}^{n} (a_k-a_1)$$
 
-%\newpage
-%
-%\phantom{$\rhd$ Prouvons maintenant le résultat souhaitée par récurrence. }
+\medskip
 
-%Pour tout $n \in \mathbb{N}^*$, on pose :
-%$$ \mathcal{P}_n \, \hbox{\og} \forall (a_1, \ldots, a_n) \in \mathbb{K}^n, \, V_n(a_1, \ldots, a_n) = \prod_{1 \leq i<j \leq n} (a_j-a_i)$$
-%
-%\begin{itemize}
-%\item Si $n=1$, pour tout $a_1 \in \mathbb{K}$, $V_1(a_1) = \textrm{det}((1)) =1 =\prod_{1 \leq i<j \leq 1} (a_j-a_i)$et ainsi $\mathcal{P}_1$ est vraie.
-%\item Soit $n \in \mathbb{N}^*$ tel que $\mathcal{P}_n$ est vraie. Montrons que $\mathcal{P}_{n+1}$ est vraie : on a $n+1 \geq 2$ donc d'après la relation de récurrence, pour tout $a_1, \ldots, a_{n+1} \in \mathbb{K}$, on a :
-%$$ V_n(a_1, \ldots, a_{n+1}) =   V_{n}(a_2, \ldots, a_{n+1}) \prod_{k=2}^{n+1} (a_k-a_1)$$
-%et par hypothèse de récurrence :
-%$$V_n(a_1, \ldots, a_{n+1}) =  \prod_{2 \leq i<j \leq n+1} (a_j-a_i) \;  \prod_{k=2}^{n+1} (a_k-a_1)  =  \prod_{1 \leq i<j \leq n+1} (a_j-a_i)$$
-%et ainsi $\mathcal{P}_{n+1}$ est vraie.
-%\item Par principe de récurrence, la propriété est vraie pour tout $n \geq 1$.
-%\end{itemize}
+
+
+\phantom{$\rhd$ Prouvons maintenant le résultat souhaitée par récurrence. }
+
+Pour tout $n \in \mathbb{N}^*$, on pose :
+$$ \mathcal{P}_n \, \hbox{\og} \forall (a_1, \ldots, a_n) \in \mathbb{K}^n, \, V_n(a_1, \ldots, a_n) = \prod_{1 \leq i<j \leq n} (a_j-a_i)$$
+
+\begin{itemize}
+\item Si $n=1$, pour tout $a_1 \in \mathbb{K}$, $V_1(a_1) = \textrm{det}((1)) =1 =\prod_{1 \leq i<j \leq 1} (a_j-a_i)$et ainsi $\mathcal{P}_1$ est vraie.
+\item Soit $n \in \mathbb{N}^*$ tel que $\mathcal{P}_n$ est vraie. Montrons que $\mathcal{P}_{n+1}$ est vraie : on a $n+1 \geq 2$ donc d'après la relation de récurrence, pour tout $a_1, \ldots, a_{n+1} \in \mathbb{K}$, on a :
+$$ V_n(a_1, \ldots, a_{n+1}) =   V_{n}(a_2, \ldots, a_{n+1}) \prod_{k=2}^{n+1} (a_k-a_1)$$
+et par hypothèse de récurrence :
+$$V_n(a_1, \ldots, a_{n+1}) =  \prod_{2 \leq i<j \leq n+1} (a_j-a_i) \;  \prod_{k=2}^{n+1} (a_k-a_1)  =  \prod_{1 \leq i<j \leq n+1} (a_j-a_i)$$
+et ainsi $\mathcal{P}_{n+1}$ est vraie.
+\item Par principe de récurrence, la propriété est vraie pour tout $n \geq 1$.
+\end{itemize}
 
 \vspace*{\stretch{1}}
 \end{Demonstration}

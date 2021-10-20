@@ -1,32 +1,31 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{Cours}
-\usepackage{delarray}
-\usepackage{fancybox}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\newcommand{\Int}[2]{\ensuremath{\mathchoice%
-	{{\displaystyle\int_{#1}^{#2}}}
-	{{\displaystyle\int_{#1}^{#2}}}
-	{\int_{#1}^{#2}}
-	{\int_{#1}^{#2}}
-	}}
+\documentclass[french,11pt,twoside]{VcCours}
 
+\newenvironment{ApplicationDirecte}{\textbf{Application directe du cours :}
+
+}{}
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\renewcommand{\trou}[1]{{\color{white}#1}}
+%\renewcommand{\trou}[1]{{\color{blue}#1}}
 
 \begin{document}
-% \everymath{\displaystyle}
 
-\maketitle{Chapitre 6}{Suites et séries de fonctions}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Chapitre 6 : Suites et séries de fonctions}
 
-%\maketitle{Chapitre 7}{Suites et séries de fonctions}
+\tableofcontents
+\separationTitre
 
 Dans tout le chapitre, $\mathbb{K}$ désigne $\mathbb{R}$ ou $\mathbb{C}$, $k$ un entier naturel non nul et $I$ est un intervalle de $\mathbb{R}$ contenant au moins deux points.
 
-\medskip
 
 \section{Introduction} 
 
 Pour tout $n \geq 0$, on considère la fonction $f_n$ définie pour tout $x \in I= [-1,1]$ par $f_n(x)=x^n$. Intéressons nous, pour tout $x \in [-1,1]$, à la convergence de la suite $(f_n(x))_{n \geq 0}$.
 
-\medskip
 
 $\rhd$ \emph{Premier cas} : si $x=-1$.
 
@@ -34,14 +33,14 @@ $\rhd$ \emph{Premier cas} : si $x=-1$.
 %
 %\medskip
 
-\vspace{2.5cm}
+\vspace*{2.5cm}
 $\rhd$ \emph{Deuxième cas} : si $x \in ]-1,1[$.
 %
 % alors pour tout $n \geq 0$, $f_n(x)=x^n$ et ainsi :
 %$$ \lim_{n \rightarrow + \infty} f_n(x) = 0$$
 %car $x \in ]-1,1[$.
 
-\vspace{2.5cm}
+\vspace*{2.5cm}
 
 
 $\rhd$ \emph{Troisième cas} : si $x=1$.
@@ -49,11 +48,11 @@ $\rhd$ \emph{Troisième cas} : si $x=1$.
 % alors pour tout $n \geq 0$, $f_n(-1)=1$ et donc $(f_n(1))_{n \geq 0}$ converge vers $1$.
 %
 %\medskip
-\vspace{2.5cm}
+\vspace*{2.5cm}
 
 Définissons la fonction \og limite \fg, notée $f$, de la suite $(f_n)_{n \geq 0}$ par :
 
-\vspace{2.5cm}
+\vspace*{2.5cm}
 %$$ f(x) = \left\lbrace \begin{array}{ccl}
 %0 & \hbox{ si } x \in ]-1,1] \\
 %1 & \hbox{ si } x =1 \\
@@ -73,12 +72,17 @@ Plusieurs remarques sont alors naturelles :
 \end{center}
 
 \begin{center}
-\includegraphics[scale=0.4]{intro.png}
+\includegraphics[scale=0.4]{Chap6-intro.png}
 \end{center}
 
 \medskip
 
-Le but du chapitre est le suivant : si l'on considère une suite de fonctions $(f_n)_{n \geq 0}$ définies sur $I$ à valeurs dans $\mathbb{K}$, comment définir la convergence de cette suite ? Peut-on le faire de manière à conserver certaines propriétés (continuité ou dérivabilité par exemple) ? L'exemple précédent montre que la convergence \og point par point \fg ne conserve pas la continuité ...
+Le but du chapitre est le suivant : 
+si l'on considère une suite de fonctions $(f_n)_{n \geq 0}$ définies sur $I$ 
+à valeurs dans $\mathbb{K}$, comment définir la convergence de cette suite ? 
+Peut-on le faire de manière à conserver certaines propriétés (continuité ou 
+dérivabilité par exemple) ? L'exemple précédent montre que la convergence \og{}
+point par point \fg{} ne conserve pas la continuité\ldots
 
 \medskip
 
@@ -102,17 +106,15 @@ On note alors $f_n \xrightarrow[n \rightarrow + \infty]{\textrm{CVS}} f$.
 \end{itemize}
 \end{Remarques}{}
 
-\begin{metho} Pour étudier la convergence simple de la suite $(f_n)_{n \geq 0}$, on commence par \emph{fixer} un élément $x$ de $I$ et on étudie la convergence de $(f_n(x))_{n \geq 0}$. Il est parfois nécessaire de distinguer des valeurs particulières pour $x$.
-\end{metho}
+\begin{Methode}{} Pour étudier la convergence simple de la suite $(f_n)_{n \geq 0}$, on commence par \emph{fixer} un élément $x$ de $I$ et on étudie la convergence de $(f_n(x))_{n \geq 0}$. Il est parfois nécessaire de distinguer des valeurs particulières pour $x$.
+\end{Methode}
 
 \medskip
 
 \begin{Exemple}\label{PremierEx} Étudions la convergence simple sur $\mathbb{R}$ de la suite $(f_n)_{n \geq 1}$ définie par :
 $$ \forall x \in \mathbb{R}, \quad f_n(x) = \sqrt{x^2 + \frac{1}{n}}$$
 
-\medskip
-
-\vspace{7.5cm}
+\newpage
 
 %Soit $x \in \mathbb{R}$. On a :
 %$$x^2 + \frac{1}{n} \underset{n \rightarrow + \infty}{\rightarrow} x^2 \geq 0$$
@@ -124,9 +126,6 @@ $$ \forall x \in \mathbb{R}, \quad f_n(x) = \sqrt{x^2 + \frac{1}{n}}$$
 \begin{Exemple}\label{Ex} Étudions la convergence simple  sur $\mathbb{R}_+$ de la suite $(f_n)_{n \geq 0}$ définie par :
 $$ \forall x \in \mathbb{R}_+, \quad f_n(x) = \frac{x^n}{x^n+1}$$
 
-
-\newpage
-$\phantom{test}$
 %Distinguons plusieurs cas :
 %
 %\begin{itemize}
@@ -145,15 +144,15 @@ $\phantom{test}$
 %1 & \hbox{ si } x> 1 \\
 %\end{array}\right.$$
 
-\vspace{8cm}
+\vspace*{8cm}
 
 \end{Exemple}
 
 \begin{Remarque}{} La convergence simple est donc une convergence \emph{ponctuelle} : on fixe $x \in I$ avant de passer à la limite. Cette convergence n'est pas satisfaisante en général, par exemple :
 
 \begin{itemize}
-\item L'exemple \ref{Ex} et l'introduction montrent que la limite simple n'est pas nécessairement continue sur $I$ même si les fonctions $f_n$ le sont.
-\item L'exemple \ref{PremierEx} montre que même si la continuité est conservée pour la limite simple, ce n'est pas forcément le cas de la dérivabilité (dérivabilité en $0$ dans ce cas).
+\item L'exemple~\ref{Ex} et l'introduction montrent que la limite simple n'est pas nécessairement continue sur $I$ même si les fonctions $f_n$ le sont.
+\item L'exemple~\ref{PremierEx} montre que même si la continuité est conservée pour la limite simple, ce n'est pas forcément le cas de la dérivabilité (dérivabilité en $0$ dans ce cas).
 \end{itemize}
 \end{Remarque}
 
@@ -188,16 +187,12 @@ L'échange de quantificateur est ici extrêmement important : dans le cas de la 
 \begin{Proposition}{}  Si une suite $(f_n)_{n \geq 0}$ converge uniformément vers une fonction $f$ sur un intervalle $I$ alors elle converge simplement vers $f$ sur $I$. Ainsi, $f$ est unique et est appelée la \emph{limite uniforme} de $(f_n)_{n \geq 0}$.
 \end{Proposition}
 \begin{Demonstration}{}
-\vspace{5cm}
+
+\vspace*{8cm}
 \end{Demonstration}
 
-\newpage
 
-$\phantom{test}$
-
-\vspace{3cm}
-
-\begin{Remarque}{} On dit que $(f_n)_{n \geq 0}$ converge uniformément sur $I$ si il existe une fonction $f : I \rightarrow \mathbb{K}$ telle que $(f_n)_{n \geq 0}$ converge uniformément vers $f$ sur $I$. Cette définition est peu utilisée car dans la pratique, on commence par étudier la convergence simple et on connait alors le candidat $f$ pour être la limite uniforme.
+\begin{Remarque}{} On dit que $(f_n)_{n \geq 0}$ converge uniformément sur $I$ si il existe une fonction $f : I \rightarrow \mathbb{K}$ telle que $(f_n)_{n \geq 0}$ converge uniformément vers $f$ sur $I$. Cette définition est peu utilisée car dans la pratique, on commence par étudier la convergence simple et on connaît alors le candidat $f$ pour être la limite uniforme.
 \end{Remarque}
 
 \medskip
@@ -206,8 +201,8 @@ La définition de convergence uniforme n'étant pas très maniable, on introduit
 
 \subsection{Convergence uniforme et norme infini}
 %
-%\begin{metho} On commence généralement par étudier la convergence simple de la suite de fonctions pour déterminer la fonction qui est potentiellement la limite uniforme.
-%\end{metho}
+%\begin{Methode}{} On commence généralement par étudier la convergence simple de la suite de fonctions pour déterminer la fonction qui est potentiellement la limite uniforme.
+%\end{Methode}
 %
 %\begin{Exemple} Considérons la suite de fonctions de l'introduction : pour tout $n \geq 0$, on considère la fonction $f_n$ définie pour tout $x \in I= [-1,1]$ par $f_n(x)=x^n$. On sait que $(f_n)_{n \geq 0}$ converge simplement sur $]-1,1]$ vers la fonction $f$ définie par :
 %$$ f(x) = \left\lbrace \begin{array}{ccl}
@@ -231,7 +226,7 @@ La définition de convergence uniforme n'étant pas très maniable, on introduit
 %$$ \sup_{x \in [0,1[} x^n = \lim_{x \rightarrow 1^{-}} x^n = 1 \neq 0$$
 %Ainsi $(f_n)_{n \geq 0}$ ne converge pas uniformément vers $f$ sur $]-1,1]$.
 
-%\vspace{7cm}
+%\vspace*{7cm}
 %\end{itemize}
 
 %\end{Exemple}
@@ -263,13 +258,13 @@ est ce que l'on appelle une \emph{norme} sur $\mathcal{B}(I,\mathbb{K})$, c'est-
 \end{Theoreme}
 \begin{Demonstration}{}
 
-\vspace{10cm}
+\vspace*{10cm}
 
 \newpage
 
 $\phantom{test}$
 
-\vspace{9cm}
+\vspace*{5cm}
 \end{Demonstration}
 
 \begin{Proposition}{}  Soit $(f_n)_{n \geq 0}$ une suite de fonctions définies sur $I$ à valeurs dans $\mathbb{K}$. Alors $(f_n)_{n \geq 0}$ converge uniformément vers une fonction $f : I \rightarrow \mathbb{K}$ si et seulement si les deux conditions suivantes sont vérifiées :  
@@ -282,7 +277,7 @@ $\phantom{test}$
 
 \begin{Demonstration}{} Conséquence directe de la définition de convergence uniforme.
 %
-%\vspace{4cm}
+%\vspace*{4cm}
 \end{Demonstration}
 
 \medskip
@@ -294,7 +289,9 @@ $$ f(x) = \left\lbrace \begin{array}{ccl}
 \end{array}\right. $$
 Étudions la convergence uniforme de $(f_n)_{n \geq 0}$ vers $f$ sur $]-1,1]$ :
 
-\vspace{7cm}
+\vspace*{7cm}
+
+\vspace*{\stretch{1}}
 \end{Exemple}
 
 %
@@ -316,7 +313,7 @@ $$ f(x) = \left\lbrace \begin{array}{ccl}
 %
 %$\rhd$ Supposons que $(f_n)_{n \geq 0}$ converge uniformément vers $f$. A partir d'un certain rang $N$, les fonctions $f_n-f$ sont bornées et on pose dans ce cas :
 %$$ a_n = \sup_{x \in I} \vert f_n(x)-f(x) \vert$$
-%On pose $a_n=0$ pour tout $n \in \Interv{0}{N}$. Par définition de la convergence uniforme, on a alors bien :
+%On pose $a_n=0$ pour tout $n \in \iii{0}{N}$. Par définition de la convergence uniforme, on a alors bien :
 %$$ \lim_{n \rightarrow + \infty} a_n = 0$$
 %
 %\medskip
@@ -327,7 +324,7 @@ $$ f(x) = \left\lbrace \begin{array}{ccl}
 %Ainsi les fonctions $f_n-f$ sont bornées à partir de ce rang et par théorème d'encadrement, $\left(\sup_{x \in I} \vert f_n(x)-f(x) \vert \right)_{n \geq 0}$ est convergente et sa limite est $0$. Par passage aux quantificateurs, on obtient le résultat.
 %\end{Demonstration}
 
-\begin{metho} Pour étudier la convergence uniforme d'une suite de fonctions $(f_n)_{n \geq 0}$  sur un intervalle $I$, on peut procéder de la manière suivante :
+\begin{Methode}{} Pour étudier la convergence uniforme d'une suite de fonctions $(f_n)_{n \geq 0}$  sur un intervalle $I$, on peut procéder de la manière suivante :
 
 \begin{enumerate}
 \item On étudie la convergence simple pour obtenir la limite simple (si elle existe) $f$.
@@ -338,9 +335,11 @@ $$ \Vert f_n - f \Vert_{\infty} \leq a_n$$
 Dans ce cas, par théorème d'encadrement, on obtient que $(f_n)_{n \geq 0}$ converge uniformément vers $f$ sur $I$. \emph{Attention} : Le point important est de majorer avec un \emph{terme ne dépendant pas de $x$}.
 \item Si il semble compliqué de majorer, on peut étudier les fonctions $x \mapsto f_n(x)-f(x)$ (dérivabilité, variations) afin de déterminer $\sup_{x \in I} \vert f_n(x)-f(x) \vert$ : la convergence est uniforme vers $f$ si cette expression tend vers $0$ quand $n$ tend vers $+ \infty$ (et ne converge pas uniformément sinon). 
 \end{enumerate}
-\end{metho}
+\end{Methode}
 
-\begin{Exemple} On pose pour tout $n \geq 0$ et tout $x \in \mathbb{R}_+$, $f_n(x)= nx^2 e^{-nx}$. Étudions la convergence uniforme de $(f_n)_{n \geq 0}$ sur $\mathbb{R}_+$. 
+\begin{Exemple} 
+On pose pour tout $n \geq 0$ et tout $x \in \mathbb{R}_+$, $f_n(x)= nx^2 e^{-nx}$. 
+Étudions la convergence uniforme de $(f_n)_{n \geq 0}$ sur $\mathbb{R}_+$. 
 
 \medskip
 
@@ -354,17 +353,19 @@ $\rhd$ Commençons par étudier la convergence simple sur $\mathbb{R}_+$.
 %
 %\medskip
 
-\vspace{5cm}
+\vspace*{5cm}
 
 $\rhd$ Étudions la convergence uniforme sur $\mathbb{R}_+$.
 
-\vspace{9cm}
-%Pour tout $n \geq 0$, $f_n$ est dérivable sur $\mathbb{R}_+$ et l'on a :
-%$$ \forall x \in \mathbb{R}_+, \quad f_n'(x) = n x e^{-nx}( 2-nx)$$
-%Ainsi $f_n$ est croissante sur $[0, \frac{2}{n}]$ puis décroissante sur $[\frac{2}{n}, + \infty[$ et ainsi (en remarquant que $f_n$ est positive) : 
-%$$ \sup_{x \in \mathbb{R}_+} \vert f_n(x) \vert = \sup_{x \in \mathbb{R}_+}  f_n(x)  = f_n \left( \frac{2}{n} \right) = \frac{4}{n} e^{-2}$$
-%Or $\dfrac{4}{n} e^{-2} \underset{n \rightarrow + \infty}{\rightarrow} 0$ donc $f_n \xrightarrow[n \rightarrow + \infty]{\textrm{CVU}} f$ sur $\mathbb{R}_+$.
+\vspace*{\stretch{1}}
+% Pour tout $n \geq 0$, $f_n$ est dérivable sur $\mathbb{R}_+$ et l'on a :
+% $$ \forall x \in \mathbb{R}_+, \quad f_n'(x) = n x e^{-nx}( 2-nx)$$
+% Ainsi $f_n$ est croissante sur $[0, \frac{2}{n}]$ puis décroissante sur $[\frac{2}{n}, + \infty[$ et ainsi (en remarquant que $f_n$ est positive) : 
+% $$ \sup_{x \in \mathbb{R}_+} \vert f_n(x) \vert = \sup_{x \in \mathbb{R}_+}  f_n(x)  = f_n \left( \frac{2}{n} \right) = \frac{4}{n} e^{-2}$$
+% Or $\dfrac{4}{n} e^{-2} \underset{n \rightarrow + \infty}{\rightarrow} 0$ donc $f_n \xrightarrow[n \rightarrow + \infty]{\textrm{CVU}} f$ sur $\mathbb{R}_+$.
 \end{Exemple}
+
+\newpage
 
 \begin{Remarque}{} Si $(f_n)_{n \geq 0}$ converge uniformément vers une fonction $f$ sur un intervalle $I$ alors pour tout suite $(x_n)_{n \geq 0}$ d'éléments de $I$, on a :
 $$ \forall n \geq 0, \quad 0 \leq \vert f_n(x_n)-f(x_n) \vert \leq \sup_{x \in I} \vert f_n(x)- f(x) \vert$$
@@ -388,17 +389,17 @@ Ainsi, si l'on trouve une suite $(x_n)_{n \geq 0}$ d'éléments de $I$ ne vérif
 %\end{itemize}
 %Finalement, $f_n \xrightarrow[n \rightarrow + \infty]{\textrm{CVS}} f$ sur $\mathbb{R}_+$ où $f$ est la fonction nulle sur $\mathbb{R}_+$.
 
-\vspace{7cm}
+\vspace*{7cm}
 \item Étudions la convergence uniforme $(f_n)_{n \geq 0}$ sur $[a, + \infty[$ où $a>0$. 
 
-\vspace{7cm}
+\vspace*{7cm}
 %
 %Pour tout $x \in [a, + \infty[$, on a :
 %$$ 0 \leq \vert f_n(x) - f(x) \vert = \vert e^{-nx} \sin(nx) \vert \leq e^{-nx}  \leq e^{-na} $$
 %Or $e^{-na} \underset{n \rightarrow + \infty}{\rightarrow} 0$. Ainsi $f_n \xrightarrow[n \rightarrow + \infty]{\textrm{CVU}} f$ sur $[a, + \infty[$.
 \item Étudions la convergence uniforme $(f_n)_{n \geq 0}$ sur $\mathbb{R}_+$. 
 
-\vspace{5cm}
+\vspace*{5cm}
 %Pour tout $n \geq 0$, on a :
 %$$ \sup_{x \in I} \vert f_n(x)- f(x) \vert \geq \vert f_n( \frac{1}{n}) - 0 \vert e^{-1} \vert \sin(1) \vert >0 $$
 %Ainsi $\sup_{x \in I} \vert f_n(x)- f(x) \vert$ ne peut pas tend vers $0$ quand $n$ tend vers $+ \infty$ donc la suite $(f_n)_{n \geq 0}$ ne converge pas uniformément vers $f$ sur $\mathbb{R}_+$.
@@ -424,14 +425,16 @@ $$ \forall n \geq 0, \quad S_n = \sum_{k=0}^n f_k $$
 \end{itemize}
 \end{Definition}
 
-\begin{metho} Pour montrer que $\sum_{n \geq 0} f_n$ converge simplement sur $I$, il suffit de montrer que pour tout $x \in I$, la série numérique $\sum_{n \geq 0} f_n(x)$ converge.
-\end{metho}
+\begin{Methode}{} Pour montrer que $\sum_{n \geq 0} f_n$ converge simplement sur $I$, il suffit de montrer que pour tout $x \in I$, la série numérique $\sum_{n \geq 0} f_n(x)$ converge.
+\end{Methode}
 
 \begin{Exemple} Posons pour tout $x \in \mathbb{R}$ et tout entier $n \geq 1$,
 $$ f_n(x) = \frac{1}{n^x}$$
 Étudions la convergence simple de la série de fonctions de terme général $f_n$.
 
-\vspace{5cm}
+\vspace*{5cm}
+
+\vspace*{\stretch{1}}
 %
 %Pour tout $x \in \mathbb{R}$, 
 %$$ \sum_{n \geq 1} f_n(x) = \sum_{n \geq 1} \frac{1}{n^x}$$
@@ -462,14 +465,14 @@ $$ S(x) - \sum_{k=0}^n f_k(x) = R_n(x)$$
 \end{itemize}
 \end{Proposition}
 
-\begin{metho} Pour étudier la convergence uniforme d'une série de fonctions sur un intervalle $I$, on peut procéder de la manière suivante :
+\begin{Methode}{} Pour étudier la convergence uniforme d'une série de fonctions sur un intervalle $I$, on peut procéder de la manière suivante :
 \begin{enumerate}
 \item On étudie la convergence simple de celle-ci.
 \item On montre que $(R_n)_{n \geq 0}$ converge uniformément sur $I$, par exemple en montrant l'existence d'une suite $(a_n)_{n \geq 0}$ convergeant vers $0$ tel qu'à partir d'un certain rang,
 $$ \forall x \in I, \, \vert R_n(x) \vert \leq a_n $$
 Souvent, cela peut être effectué à l'aide du critère spécial des séries alternées.
 \end{enumerate}
-\end{metho}
+\end{Methode}
 
 \begin{Exemple} Posons pour tout $x \in \mathbb{R}_+$ et tout $n \geq 1$, 
 $$ f_n(x) = \frac{(-1)^n}{x+n}$$
@@ -495,7 +498,7 @@ $$ f_n(x) = \frac{(-1)^n}{x+n}$$
 %
 %$\rhd$ Finalement, $\sum_{n \geq 1} f_n$ converge uniformément sur $\mathbb{R}_+$.
 
-\vspace{10.2cm}
+\vspace*{10.2cm}
 \end{Exemple}
 
 \subsection{Convergence normale}
@@ -538,23 +541,21 @@ $$ f_n(x) = \frac{(-1)^n}{x+n}$$
 %$$ \sum_{k=n+1}^{+ \infty} \Vert f_k \Vert_{\infty} \underset{n \rightarrow + \infty}{\rightarrow} 0$$
 %D'après (\ref{ineg}), on a donc montré que $(R_n)_{n \geq 0}$ convergeait uniformément vers $0$ sur $I$ et ainsi la série de fonctions de terme général $f_n$ converge uniformément.
 
-\vspace{14cm}
+\vspace*{13cm}
 \end{Demonstration}
 
 \medskip
 
-\begin{metho} Pour étudier la convergence normale d'une série de fonctions, on peut procéder de la manière suivante : on détermine une suite $(\alpha_n)_{n\geq 0}$ (qui ne \emph{dépend pas} de $x$) tel que pour tout $n \geq 0$,
+\begin{Methode}{} Pour étudier la convergence normale d'une série de fonctions, on peut procéder de la manière suivante : on détermine une suite $(\alpha_n)_{n\geq 0}$ (qui ne \emph{dépend pas} de $x$) tel que pour tout $n \geq 0$,
 $$ \sup_{x \in I} \vert f_n(x) \vert \leq \alpha_n$$
 Alors si la série de terme général $\alpha_n$ converge, d'après le critère de comparaison de séries à termes positifs, la série de fonctions $\Sum{n \geq 0}{} f_n$ converge normalement et donc uniformément sur $I$.
-\end{metho}
+\end{Methode}
 
 \begin{Exemple} Pour pour tout $n \geq 0$ et tout $x \in \mathbb{R}$, posons :
 $$ f_n(x) = \frac{\sin(nx)}{n^2+1}$$
 Étudions la convergence uniforme de $\sum_{n \geq 0} f_n$ sur $\mathbb{R}$.
 
-\newpage
-$\phantom{test}$
-\medskip
+
 %
 %Pour pour tout $n \geq 0$ et tout $x \in \mathbb{R}$, on a :
 %\begin{equation}\label{ineg2}
@@ -566,7 +567,7 @@ $\phantom{test}$
 %$$  \sum_{n \geq 0} \frac{1}{n^2+1}$$
 %est convergente. D'après (\ref{ineg2}), on obtient que la série $\sum_{n \geq 0} f_n$ converge normalement sur $\mathbb{R}$ et donc uniformément sur $\mathbb{R}$.
 
-\vspace{7cm}
+\vspace*{7cm}
 \end{Exemple}
 
 \begin{Remarque}{} La réciproque de la propriété précédente est fausse : la convergence uniforme d'une série de fonctions sur un intervalle n'implique pas la convergence normale de celle-ci.
@@ -602,8 +603,9 @@ Soient $(f_n)_{n \geq 0}$ une suite de fonctions définies sur $I$ à valeurs da
 %Finalement, d'après (\ref{Cont2}), pour tout $x \in I \cap [x- \eta, x + \eta]$, 
 %$$ \vert f(x)- f(a) \vert \leq \varepsilon$$
 %On obtient donc le résultat souhaité.
+\newpage
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Demonstration}
 
 \begin{Corollaire}{}
@@ -671,12 +673,10 @@ Justifions que cette fonction est bien définie et continue sur $]1, + \infty[$.
 %$$ \left\vert \frac{1}{n^x} \right\vert \leq \frac{1}{n^a}$$
 %La série de terme général $\frac{1}{n^a}$ converge (série de Riemann avec $a>1$) donc la série $\sum_{n \geq 1} f_n$ converge normalement sur $[a,b]$ et ceci pour tout segment $[a,b] \subset ]1, + \infty[$. Or, pour tout $n \geq 1$, $f_n$ est continue sur $]1,+ \infty[$ donc la fonction $\sum_{n = 1}^{+ \infty} f_n$ est continue sur $]1, + \infty[$ et donc $\zeta$ est continue sur $]1, + \infty[$.
 
-\vspace{8cm}
+
 \newpage
 
-$\phantom{test}$
-
-\vspace{5cm}
+\vspace*{6cm}
 \end{Exemple}
 
 \begin{Remarque}{}
@@ -746,9 +746,10 @@ $$  \lim_{x \rightarrow a} \sum_{n=0}^{+ \infty} f_n(x) = \sum_{n=0}^{+ \infty} 
 %$$ \lim_{x \rightarrow + \infty} \sum_{n=0}^{+ \infty}\frac{1}{n^x} = \sum_{n=0}^{+ \infty} \lim_{x \rightarrow + \infty} \frac{1}{n^x} = 1$$
 %ce qui donne le résultat.
 
-\vspace{8cm}
+\vspace*{8cm}
 \end{Exemple}
 
+\newpage
 \section{Intégration}
 
 Dans la suite, $a$ et $b$ sont deux réels tels que $a<b$.
@@ -785,9 +786,12 @@ $$  \lim_{n \rightarrow + \infty} \int_{a}^b f_n(x) \dx = \int_{a}^b f(x) \dx$$
 %$$ \lim_{n \rightarrow + \infty}  \int_{a}^b f_n(x)-f(x) \dx = 0$$
 %ce qui donne le résultat par linéarité.
 
-\vspace{9cm}
+\vspace*{9cm}
+
+\vspace*{\stretch{1}}
 \end{Demonstration}
 
+\newpage
 \begin{Exemple} Déterminons $\lim_{n \rightarrow + \infty} \int_{0}^1 \left( 1 + \frac{x}{n}\right)^n \dx$.
 
 \medskip
@@ -844,14 +848,10 @@ Posons pour tout $n \geq 1$ et $x \in [0,1]$, $f_n(x) = \left( 1 + \frac{x}{n}\r
 % & = e-1 \\
 %\end{align*}
 
-\vspace{15cm}
+\vspace*{15cm}
 \end{Exemple}
 
 \newpage
-
-\phantom{test}
-
-\vspace{4cm}
 
 \begin{Remarque}{} Sans l'hypothèse de convergence uniforme, le résultat précédent est en général faux. 
 \end{Remarque}
@@ -863,7 +863,7 @@ Qu'en déduit-on ?
 
 \subsection{Interversion somme/intégrale pour ses séries de fonctions}
 
-\begin{Theoreme}{Interversion somme/intégrale]  Soit $\sum_{n \geq 0} f_n$ une série de fonctions définies sur $[a,b}$ et à valeurs dans $\mathbb{K}$. Supposons que :
+\begin{Theoreme}{Interversion somme/intégrale}  Soit $\sum_{n \geq 0} f_n$ une série de fonctions définies sur $[a,b]$ et à valeurs dans $\mathbb{K}$. Supposons que :
 
 \begin{enumerate}
 \item Pour tout entier naturel $n$, $f_n$ est continue sur $[a,b]$.
@@ -876,7 +876,6 @@ $$  \sum_{n = 0}^{+ \infty} \int_{a}^b f_n(x) \dx = \int_{a}^b  \left(\sum_{n=0}
 \begin{Exemple} Montrons que pour tout $a \in [0,1[$, 
 $$ - \ln(1-a) = \sum_{n=0} \frac{a^{n+1}}{n+1} $$
 
-\medskip
 %
 %Soit $a \in [0,1[$. Pour tout $x \in [0,a]$ et tout $n \geq 0$,
 %$$ \vert x^n \vert \leq a^n$$
@@ -888,8 +887,9 @@ $$ - \ln(1-a) = \sum_{n=0} \frac{a^{n+1}}{n+1} $$
 %$$ \int_{0}^a \frac{1}{1-x} \dx = \sum_{n=0}^{+ \infty} \frac{a^{n+1}}{n+1} $$
 %et ainsi :
 %$$ - \ln(1-a) = \sum_{n=0} \frac{a^{n+1}}{n+1} $$
+\newpage
 
-\vspace{9cm}
+\vspace*{4cm}
 \end{Exemple}
 
 \section{Dérivation}
@@ -910,7 +910,9 @@ Alors $f$ est de classe $\mathcal{C}^1$ sur $I$ et $f'=g$.
 
 \begin{Demonstration}{} 
 
-\vspace{11cm}
+	\newpage
+
+\vspace*{4cm}
 %Soit $a \in I$. D'après le théorème fondamental de l'analyse, et sachant que $f_n'$ est continue sur $I$ car $f_n$ est $\mathcal{C}^1$ sur $I$, on a pour tout $x \in I$ et tout $n \in \mathbb{N}$,
 %\begin{equation}\label{TFA}
 % f_n(x) = f_n(a) + \int_{a}^x f_n'(t) \dt 
@@ -937,8 +939,6 @@ Alors la fonction $\sum_{n=0}^{+ \infty} f_n$ est de classe $\mathcal{C}^1$ sur 
 $$ \left( \sum_{n=0}^{+ \infty} f_n \right)' = \sum_{n=0}^{+ \infty} f_n'$$
 \end{Theoreme}
 
-\newpage
-
 \textbf{Application : la fonction exponentielle réelle.}
 
 \medskip
@@ -961,9 +961,9 @@ $\rhd$ \emph{Étude de la convergence simple}.
 %Ainsi, la série $\sum_{n \geq 0}f_n$ converge simplement sur $\mathbb{R}$. Notons $f$ la somme de cette série :
 %$$ \forall x \in \mathbb{R}, \quad f(x) = \sum_{k=0}^{+ \infty} \frac{x^k}{k!}$$ 
 
-\vspace{6cm}
+\vspace*{5cm}
 
-\medskip
+\newpage
 
 $\rhd$ \emph{Étude de la dérivabilité de $f$ sur $\mathbb{R}$}. 
 
@@ -980,7 +980,7 @@ $\rhd$ \emph{Étude de la dérivabilité de $f$ sur $\mathbb{R}$}.
 %$$ f'(x) = \sum_{k=1}^{+ \infty} \frac{x^{k-1}}{(k-1)!} = \sum_{j=0}^{+ \infty} \frac{x^j}{j!}$$
 %par changement d'indice $j=k-1$. Ainsi, pour tout $x \in \mathbb{R}$, $f'(x)=f(x)$ et de plus $f(0)=1$.
 
-\vspace{9cm}
+\vspace*{9cm}
 
 \begin{Corollaire}{} Pour tout $x \in \mathbb{R}$, 
 $$ e^x = \sum_{k=0}^{+ \infty} \frac{x^k}{k!}$$
@@ -989,7 +989,7 @@ $$ e^x = \sum_{k=0}^{+ \infty} \frac{x^k}{k!}$$
 \begin{Demonstration}{} Les deux fonctions considérées sont solutions de la même équation différentielle linéaire d'ordre $1$ à coefficients constants $y'=y$ avec la condition initiale $y(0)=1$. Le résultat provient de l'unicité du problème de Cauchy.
 \end{Demonstration}
 
-\subsection{Compléments pour des pour des suites et séries de fonctions de $\mathcal{C}^k$}
+\subsection{Compléments pour des pour des suites et séries de fonctions de \texorpdfstring{$\mathcal{C}^k$}{Cᵏ}}
 
 Fixons $k$ un entier naturel supérieur ou égal à $1$. Rappelons que par convention, pour une fonction $f$, $f^{(0)}$ est simplement la fonction $f$.
 
@@ -1000,10 +1000,10 @@ Fixons $k$ un entier naturel supérieur ou égal à $1$. Rappelons que par conve
 \begin{enumerate}
 \item Pour tout entier $n$, $f_n$ est de classe $\mathcal{C}^k$ sur $I$.
 \item La suite $(f_n)_{n \geq 0}$ converge simplement vers une fonction $f$ sur $I$.
-\item Pour tout $j \in \Interv{1}{k-1}$, la suite $(f_n^{(j)})_{n \geq 0}$ converge simplement vers une fonction $g_j$ sur $I$.
+\item Pour tout $j \in \iii{1}{k-1}$, la suite $(f_n^{(j)})_{n \geq 0}$ converge simplement vers une fonction $g_j$ sur $I$.
 \item La suite $(f_n^{(k)})_{n \geq 0}$ converge uniformément vers une fonction $g_k$ sur $I$ (ou sur tout segment de $I$).
 \end{enumerate}
-Alors $f$ est de classe $\mathcal{C}^k$ sur $I$ et pour tout $j \in \Interv{1}{k}$, $f^{(j)} = g_j$.
+Alors $f$ est de classe $\mathcal{C}^k$ sur $I$ et pour tout $j \in \iii{1}{k}$, $f^{(j)} = g_j$.
 \end{Theoreme}
 
 \begin{Theoreme}{Dérivation terme à terme de séries de fonctions}
@@ -1011,10 +1011,10 @@ Soit $\sum_{n \geq 0} f_n$ une série de fonctions définies sur $I$ et à valeu
 
 \begin{enumerate}
 \item Pour tout entier naturel $n$, $f_n$ est de classe $\mathcal{C}^k$ sur $I$.
-\item Pour tout $j \in \Interv{0}{k-1}$, la série $\sum_{n \geq 0} f_n^{(j)}$ converge simplement sur $I$.
+\item Pour tout $j \in \iii{0}{k-1}$, la série $\sum_{n \geq 0} f_n^{(j)}$ converge simplement sur $I$.
 \item La série $\sum_{n \geq 0} f_n^{(k)}$ converge uniformément sur $I$ (ou sur tout segment de $I$).
 \end{enumerate}
-Alors la fonction $\sum_{n=0}^{+ \infty} f_n$ est de classe $\mathcal{C}^k$ sur $I$ et pour tout $j \in \Interv{1}{k}$,
+Alors la fonction $\sum_{n=0}^{+ \infty} f_n$ est de classe $\mathcal{C}^k$ sur $I$ et pour tout $j \in \iii{1}{k}$,
 $$ \left( \sum_{n=0}^{+ \infty} f_n \right)^{(j)} = \sum_{n=0}^{+ \infty} f_n^{(j)}$$
 \end{Theoreme}
 
