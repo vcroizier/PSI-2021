@@ -1,20 +1,20 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 6 : Suites et séries de fonctions}
 
+\tableofcontents
+\separationTitre
 
-\begin{center}
-\textit{{ {\huge TD 6 : Suites et séries de fonctions}}}
-\end{center}
-
-
-\bigskip
-
-\noindent Dans la suite, $I$ sera un intervalle de $\mathbb{R}$ contenant au moins deux points.
+Dans la suite, $I$ sera un intervalle de $\mathbb{R}$ contenant au moins deux points.
 
 \medskip
 
@@ -30,13 +30,13 @@ $$ f_n(x) = \frac{x}{n+x}$$
 
 \corr 
 
-\noindent $\rhd$ Pour tout $x \in \mathbb{R}_+$,
+$\rhd$ Pour tout $x \in \mathbb{R}_+$,
 $$ \lim_{n \rightarrow + \infty} f_n(x) = 0$$
 Ainsi, $(f_n)_{n \geq 1}$ converge simplement vers la fonction nulle sur $\mathbb{R}_+$.
 
 \medskip
 
-\noindent $\rhd$ Supposons par l'absurde que $(f_n)_{n \geq 1}$ converge uniformément vers la fonction nulle sur $\mathbb{R}_+$. A partir d'un certain rang, $f_n$ est bornée et on a à partir de ce rang :
+$\rhd$ Supposons par l'absurde que $(f_n)_{n \geq 1}$ converge uniformément vers la fonction nulle sur $\mathbb{R}_+$. A partir d'un certain rang, $f_n$ est bornée et on a à partir de ce rang :
 $$ 0 \leq \vert f_n(n) \vert \leq \Vert f_n \Vert_{\infty}$$
 Par théorème d'encadrement, on en déduit que :
 $$ \lim_{n \rightarrow + \infty} f_n(n) = 0$$
@@ -46,7 +46,7 @@ Ainsi,  $(f_n)_{n \geq 1}$ ne converge pas uniformément vers la fonction nulle 
 
 \medskip
 
-\noindent $\rhd$ Soit $(a,b) \in \mathbb{R}_+^2$ tel que $a <b$. Pour tout entier $n \geq 1$ et $x \in [a,b]$, $n+x \geq n+a>0$ donc par décroissance de la fonction inverse :
+$\rhd$ Soit $(a,b) \in \mathbb{R}_+^2$ tel que $a <b$. Pour tout entier $n \geq 1$ et $x \in [a,b]$, $n+x \geq n+a>0$ donc par décroissance de la fonction inverse :
 $$ 0 \leq \dfrac{1}{n+x} \leq \dfrac{1}{n+a}$$
 De plus, $0 \leq x \leq b$ donc 
 $$ 0 \leq \dfrac{x}{n+x} \leq \dfrac{b}{n+a}$$
@@ -172,7 +172,7 @@ On en déduit que $(f_n)_{n \geq 1}$ converge simplement sur $\mathbb{R}_+$ vers
 
 \medskip
 
-\noindent $\rhd$ Supposons par l'absurde que $(f_n)_{n \geq 1}$ converge uniformément vers la fonction nulle sur $\mathbb{R}_+$. On en déduit qu'à partir d'un certain rang, $f_n$ est bornée et :
+$\rhd$ Supposons par l'absurde que $(f_n)_{n \geq 1}$ converge uniformément vers la fonction nulle sur $\mathbb{R}_+$. On en déduit qu'à partir d'un certain rang, $f_n$ est bornée et :
 $$ \lim_{n \rightarrow + \infty} \Vert f_n \Vert_{\infty} = 0$$
 Pour tout entier $n \geq 1$, $1/n \in \mathbb{R}_+$ donc à partir d'un certain rang :
 $$ 0 \leq \left\vert f_n \left( \dfrac{1}{n} \right) \right\vert \leq \Vert f_n \Vert_{\infty}$$
@@ -184,7 +184,7 @@ C'est absurde. Ainsi, $(f_n)_{n \geq 1}$ ne converge pas uniformément vers la f
 
 \medskip
 
-\noindent $\rhd$ Soit $n \geq 1$. Étudions les variations de $f_n$. La fonction $f_n$ est dérivable sur $\mathbb{R}_+$ et pour tout $x \in \mathbb{R}_+$,
+$\rhd$ Soit $n \geq 1$. Étudions les variations de $f_n$. La fonction $f_n$ est dérivable sur $\mathbb{R}_+$ et pour tout $x \in \mathbb{R}_+$,
 $$ f_n'(x) = n \times \dfrac{(1+n^2x^2)-x(2n^2x)}{(1+n^2x^2)^2} = n \times \dfrac{1-n^2x^2}{(1+n^2x^2)^2}$$
 On en déduit que $f_n$ est croissante sur $[0,1/n]$ et décroissante sur $[1/n, + \infty[$. On a $f_n(0)=0$, $f_n(1/n)=1/2$ et 
 $$ \lim_{x \rightarrow + \infty} f_n(x) = 0$$
@@ -194,7 +194,7 @@ Ainsi, la suite de terme général $\Vert f_n \Vert_{\infty}$ tend pas vers $0$ 
 
 \medskip
 
-\noindent Soit $a>0$. D'après la méthode précédente, on sait que pour tout entier $n \geq 1$, $f_n$ est croissante sur $[0,1/n]$ et décroissante sur $[1/n, + \infty[$. On sait que $1/n$ tend vers $0$ quand $n$ tend vers $+ \infty$ donc à partir d'un certain rang, $1/n<a$ donc $f_n$ est décroissante sur $[a, + \infty[$ et avec la même méthode que précédemment on en déduit que :
+Soit $a>0$. D'après la méthode précédente, on sait que pour tout entier $n \geq 1$, $f_n$ est croissante sur $[0,1/n]$ et décroissante sur $[1/n, + \infty[$. On sait que $1/n$ tend vers $0$ quand $n$ tend vers $+ \infty$ donc à partir d'un certain rang, $1/n<a$ donc $f_n$ est décroissante sur $[a, + \infty[$ et avec la même méthode que précédemment on en déduit que :
 $$  \Vert f_n \Vert_{\infty} = f_n(a)$$
 Or $(f_n)_{n \geq 1}$ converge simplement vers la fonction nulle sur $\mathbb{R}_+$ et $a \in \mathbb{R}_+$ donc 
 $$ \lim_{n \rightarrow + \infty} f_n(a) = 0$$
@@ -217,8 +217,8 @@ $$f_{n}(x) =\dfrac{n+2}{n+1}\mathrm{e}^{-n x^{2}}$$
 \begin{enumerate}
 \item \'Etudier la convergence simple de la suite de fonctions $\left(f_{n}\right) _{n \geq 0}$.
 \item La suite de fonctions  $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniformément sur $\left[ 0,+\infty\right[$ ?
-\item Soit $a>0$. La suite de fonctions $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniform\'{e}ment sur  $[a,+\infty[$ ?	
-\item La suite de fonctions  $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniform\'{e}ment sur $]0,+\infty[$? 
+\item Soit $a>0$. La suite de fonctions $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniformément sur  $[a,+\infty[$ ?	
+\item La suite de fonctions  $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniformément sur $]0,+\infty[$? 
 \end{enumerate}
 \end{Exercice}
 
@@ -244,20 +244,20 @@ $$ \Vert f_n - f \Vert_{[a, + \infty[,\infty} \leq \dfrac{n+2}{n+1}\mathrm{e}^{-
 Or on a :
 $$\lim\limits_{n\to +\infty}^{}\dfrac{n+2}{n+1}\mathrm{e}^{-n a^{2}}=0$$
 car $\dfrac{n+2}{n+1}\mathrm{e}^{-n a^{2}}\underset{+\infty}{\thicksim}\mathrm{e}^{-n a^{2}}$. Ainsi, $(f_n)$ converge uniformément vers $f$ sur $\left[a,+\infty \right[$.
-\item Supposons que $\left(f_{n}\right) _{n \geq 1}$ converge uniform\'{e}ment sur $]0,+\infty[$ vers la fonction $f$. Cela implique que pour toute suite $(x_n)_{n \geq 0}$ d'éléments de $]0, + \infty[$,
+\item Supposons que $\left(f_{n}\right) _{n \geq 1}$ converge uniformément sur $]0,+\infty[$ vers la fonction $f$. Cela implique que pour toute suite $(x_n)_{n \geq 0}$ d'éléments de $]0, + \infty[$,
 $$ \lim_{n \rightarrow + \infty} f_n(x_n) - f(x_n) = 0$$
 En considérant alors pour tout $n \geq 1$, $x_n = \dfrac{1}{\sqrt{n}}>0$, on a :
 $$ f_n(x_n)-f(x_n) = \dfrac{n+2}{n+1} e^{-1} \underset{n \rightarrow + \infty}{\rightarrow} e^{-1} \neq 0$$
-Ainsi, $\left(f_{n}\right) _{n \geq 0}$ ne converge pas uniform\'{e}ment sur $]0,+\infty[$ vers la fonction $f$.
+Ainsi, $\left(f_{n}\right) _{n \geq 0}$ ne converge pas uniformément sur $]0,+\infty[$ vers la fonction $f$.
 \end{enumerate}
 
 \medskip
 
 \begin{Exercice}{} \begin{enumerate}
 \item Soient $X$ une partie de $\mathbb{R}$ et $\left( f_{n}\right) _{n \geq 0}$ une suite de fonctions de $X$ dans $\mathbb{R}$ convergeant simplement vers une fonction $f$. \\
-On suppose qu'il existe une suite $\left( x_{n}\right)_{n \geq 0}$ d'\'{e}l\'{e}ments de $X$ telle que la suite $\left( f_{n}(x_{n})-f\left( x_{n}\right) \right) _{n \geq 0}$ ne tende pas vers $0$. \medskip
+On suppose qu'il existe une suite $\left( x_{n}\right)_{n \geq 0}$ d'éléments de $X$ telle que la suite $\left( f_{n}(x_{n})-f\left( x_{n}\right) \right) _{n \geq 0}$ ne tende pas vers $0$. \medskip
 
-D\'{e}montrer que la suite de fonctions $\left( f_{n}\right) _{n \geq 0}$ ne converge pas uniform\'{e}ment vers $f$ sur $X$.
+Démontrer que la suite de fonctions $\left( f_{n}\right) _{n \geq 0}$ ne converge pas uniformément vers $f$ sur $X$.
 
 \item Pour tout $x\in\mathbb{R}$ et tout entier $n \geq 0$, on pose :
 $$f_{n}(x) =\dfrac{\sin \left( nx\right) }{1+n^{2}x^{2}}$$
@@ -298,7 +298,7 @@ donc par théorème d'encadrement, on en déduit que $(f_n)$ converge uniformém
 
 \medskip
 
-\noindent Posons pour tout $n\in\mathbb{N}^*$, 
+Posons pour tout $n\in\mathbb{N}^*$, 
 $$x_n  = \dfrac{\pi}{2n}$$
 Alors pour tout $n \in \mathbb{N}^*$, $x_n\in \left]  0,+\infty\right[$ et  
 $$|f_n (x_n )-f(x_n)| = \dfrac{1}{{1 + \dfrac{{\pi ^2 }}{4}}}$$
@@ -383,7 +383,7 @@ Ainsi, $(f_n)_{n \geq 1}$ converge simplement sur $\mathbb{R}$ vers la fonction 
 
 \medskip
 
-\noindent Pour tout $n \geq 1$ et tout $x \in \mathbb{R}$, on a :
+Pour tout $n \geq 1$ et tout $x \in \mathbb{R}$, on a :
 $$ f_n(x)-f(x)= \left\lbrace \begin{array}{cl}
 \dfrac{nx^2}{1+nx}-x = \dfrac{-x}{1+nx} & \hbox{ si } x \geq 0 \\
 \dfrac{nx^3}{1+nx^2}-x =  \dfrac{-x}{1+nx^2}& \hbox{ si } x < 0 \\
@@ -410,7 +410,7 @@ Par théorème d'encadrement, on en déduit alors que $(f_n)_{n \geq 1}$ converg
 
 \medskip
 
-\noindent \textit{Remarque}. On peut aussi étudier $f_n-f$ sur $\mathbb{R}_+^{*}$ (variations puis extrema) et faire de même sur $\mathbb{R}_{-}^*$ afin d'obtenir $\Vert f_n-f \Vert_{\infty}$.
+\textit{Remarque}. On peut aussi étudier $f_n-f$ sur $\mathbb{R}_+^{*}$ (variations puis extrema) et faire de même sur $\mathbb{R}_{-}^*$ afin d'obtenir $\Vert f_n-f \Vert_{\infty}$.
 
 \medskip
 
@@ -427,7 +427,7 @@ Ainsi, $f_n$ est dérivable en $0$ et $f_n'(0)=0$.
 
 \medskip
 
-\noindent Finalement, $f_n$ est dérivable sur $\mathbb{R}$ et on a par simple calcul que pour tout $x \in \mathbb{R}$,
+Finalement, $f_n$ est dérivable sur $\mathbb{R}$ et on a par simple calcul que pour tout $x \in \mathbb{R}$,
 $$ f_n'(x)  = \left\lbrace \begin{array}{cl}
 \dfrac{nx(2+nx)}{(1+nx)^2} & \hbox{ si } x \geq 0 \\
 \dfrac{nx^2(3+nx^2)}{(1+nx^2)^2} & \hbox{ si }x  < 0 \\
@@ -438,7 +438,7 @@ Ainsi, $f_n'$ est continue sur $[-1,1]$.
 
 \medskip
 
-\noindent Étudions la convergence simple de $(f_n')_{n \geq 1}$ sur $[-1,1]$. Soit $x \in [-1,1]$.
+Étudions la convergence simple de $(f_n')_{n \geq 1}$ sur $[-1,1]$. Soit $x \in [-1,1]$.
 \begin{itemize}
 \item Si $x=0$, pour tout $n \geq 1$, $f_n'(x)=0$ donc :
 $$ \lim_{n \rightarrow + \infty} f_n'(x)=0$$
@@ -457,20 +457,20 @@ Ainsi, $(f_n')_{n \geq 1}$ converge simplement sur $[-1,1]$ vers la fonction $g 
 \medskip
 
 
-\begin{Exercice}{} Soit $(P_{n})_{n \geq 0}$ une suite de fonctions polynômiales de $\R$ dans $\R$. On suppose que cette suite converge uniformément vers une fonction $f$ sur $\R$. Montrer que la fonction $f$ est polynomiale.
+\begin{Exercice}{} Soit $(P_{n})_{n \geq 0}$ une suite de fonctions polynomiales de $\R$ dans $\R$. On suppose que cette suite converge uniformément vers une fonction $f$ sur $\R$. Montrer que la fonction $f$ est polynomiale.
 \end{Exercice}
 
-\corr Soit $(P_{n})_{n \geq 0}$ une suite de fonctions polynômiales de $\R$ dans $\R$. On suppose que cette suite converge uniformément vers une fonction $f$ sur $\R$. Par définition, on a :
+\corr Soit $(P_{n})_{n \geq 0}$ une suite de fonctions polynomiales de $\R$ dans $\R$. On suppose que cette suite converge uniformément vers une fonction $f$ sur $\R$. Par définition, on a :
 $$ \forall \varepsilon >0, \; \exists N \in \mathbb{N}, \; \forall n \geq N, \;  \forall x \in \mathbb{R}, \; \vert P_n(x)-f(x) \vert \leq \varepsilon$$
 En particulier, pour $\varepsilon=1$, il existe un rang $N \in \mathbb{N}$, tel que pour tout $n \geq N$, $P_n-f$ est bornée sur $\mathbb{R}$ et tel que :
 $$ \Vert P_n- f \Vert_{\infty} \leq 1$$
 Ainsi, pour tout $n \geq N$,
 $$ P_n-P_N = (P_n-f)-(P_N-f)$$
-est une fonction polynômiale bornée sur $\mathbb{R}$ donc constante. On a de plus pour tout $n \geq N$,
+est une fonction polynomiale bornée sur $\mathbb{R}$ donc constante. On a de plus pour tout $n \geq N$,
 $$ P_n-P_N - (f-P_N) = f-P_n$$
 donc $(P_n-P_N)$ converge uniformément vers $f-P_N$ sur $\mathbb{R}$ mais cette suite étant une suite de fonctions constantes, on en déduit qu'elle converge uniformément nécessairement vers une fonction constante $x \mapsto C$ où $C \in \mathbb{R}$. Par unicité de la limite, on a alors que pour tout réel $x$,
 $$ f(x)-P_N(x)=C$$
-et donc $f(x)=P_N(x)+C$. On en déduit que $f$ est une fonction polynômiale.
+et donc $f(x)=P_N(x)+C$. On en déduit que $f$ est une fonction polynomiale.
 
 \medskip
 
@@ -487,19 +487,19 @@ Cette série converge t-elle uniformément sur tout segment de $\mathbb{R}_+^*$ 
 
 \corr 
 
-\noindent $\rhd$ Soit $x \in \mathbb{R}_+^*$. La série de terme général $f_n(x)$ est à termes positifs et :
+$\rhd$ Soit $x \in \mathbb{R}_+^*$. La série de terme général $f_n(x)$ est à termes positifs et :
 $$ f_n(x) \underset{+ \infty}{\sim} \dfrac{1}{n^3x^2}$$
 La série de terme général positif $1/n^3$ converge (série de Riemann avec $3>1$). Par critère de comparaison des séries à termes positifs, on en déduit que la série de terme général $f_n(x)$ converge. Ainsi, $\Sum{n\geq 1}{} f_n$ converge simplement sur $\mathbb{R}_+^*$.
 
 \medskip
 
-\noindent $\rhd$ Supposons par l'absurde que $\Sum{n\geq 1}{} f_n$ converge uniformément sur $\mathbb{R}_+^*$. Pour tout entier $n \geq 1$,
+$\rhd$ Supposons par l'absurde que $\Sum{n\geq 1}{} f_n$ converge uniformément sur $\mathbb{R}_+^*$. Pour tout entier $n \geq 1$,
 $$ \lim_{x \rightarrow 0} f_n(x) = \dfrac{1}{n}$$
 Or $0$ est une extrémité de $\mathbb{R}_+^*$ donc par théorème d'interversion limite-somme, on en déduit que la série de terme général $1/n$ converge ce qui est absurde. Ainsi, $\Sum{n\geq 1}{} f_n$ ne converge pas uniformément sur $\mathbb{R}_+^*$ et donc ne converge pas normalement sur $\mathbb{R}_+^*$.
 
 \medskip
 
-\noindent $\rhd$ Soit $(a,b) \in \mathbb{R}_+^*$ tel que $a<b$. Pour tout entier $n \geq 1$ et tout $x \in [a,b]$, $n+n^3x^2 \geq n+n^3a^2 >0$. Par décroissance de la fonction inverse sur $\mathbb{R}_+^*$,
+$\rhd$ Soit $(a,b) \in \mathbb{R}_+^*$ tel que $a<b$. Pour tout entier $n \geq 1$ et tout $x \in [a,b]$, $n+n^3x^2 \geq n+n^3a^2 >0$. Par décroissance de la fonction inverse sur $\mathbb{R}_+^*$,
 $$ 0 \leq f_n(x) \leq \dfrac{1}{n+n^3a^2} = f_n(a)$$
 Ainsi $f_n$ est bornée sur $[a,b]$ et on a :
 $$ 0 \leq \Vert f_n \Vert_{\infty} \leq f_n(a)$$
@@ -508,12 +508,12 @@ La série de terme général $f_n(a)$ converge (la série de fonctions converge 
 \medskip
 
 
-\begin{Exercice}{}\label{doublon} Étudier la convergence simple, normale puis uniforme de $\dis \Sum{n\geq 0}{} f_n$ sur $\mathbb{R}_+$ où pour tout entier $n \geq 0$ et tout $x \in \mathbb{R}_+$, $f_n(x) = nx^2e^{-x\sqrt{n}}.$
+\begin{Exercice}{}\label{doublon} Étudier la convergence simple, normale puis uniforme de $\Sum{n\geq 0}{} f_n$ sur $\mathbb{R}_+$ où pour tout entier $n \geq 0$ et tout $x \in \mathbb{R}_+$, $f_n(x) = nx^2e^{-x\sqrt{n}}.$
 \end{Exercice}
 
 \corr 
 
-\noindent $\rhd$ Étudions la convergence simple. Soit $x \in \mathbb{R}_+$.
+$\rhd$ Étudions la convergence simple. Soit $x \in \mathbb{R}_+$.
 
 \begin{itemize}
 \item Si $x=0$ alors pour tout entier $n \geq 0$, $f_n(0)=0$ et la série de terme général $f_n(0)$ est donc convergente.
@@ -527,7 +527,7 @@ Ainsi, $\Sum{n\geq 0}{} f_n$ converge simplement sur $\mathbb{R}_+$.
 
 \medskip
 
-\noindent $\rhd$ Supposons par l'absurde que $\Sum{n\geq 0}{} f_n$ converge normalement sur $\mathbb{R}_+$. Pour tout entier $n \geq 0$, $f_n$ est bornée sur $\mathbb{R}_+$ et on a :
+$\rhd$ Supposons par l'absurde que $\Sum{n\geq 0}{} f_n$ converge normalement sur $\mathbb{R}_+$. Pour tout entier $n \geq 0$, $f_n$ est bornée sur $\mathbb{R}_+$ et on a :
 $$ 0 \leq \vert f_n(1/\sqrt{n}) \vert \leq \Vert f_n \Vert_{\infty}$$
 Par critère de comparaison des séries à termes positifs, on en déduit que la série de terme général $f_n(1/\sqrt{n})$ converge absolument donc converge. Or pour tout entier $n \geq 1$,
  $$ f_n(1/\sqrt{n}) = e^{-1}$$
@@ -535,7 +535,7 @@ Cette série diverge grossièrement : c'est absurde. Ainsi, $\Sum{n\geq 0}{} f_n
 
 \medskip
 
-\noindent $\rhd$ Posons pour tout $x \in \mathbb{R}_+$ et tout entier $n \geq 0$,
+$\rhd$ Posons pour tout $x \in \mathbb{R}_+$ et tout entier $n \geq 0$,
 $$ R_n(x) = \sum_{k=n+1}^{+ \infty} f_k(x)$$
 Par positivité des termes, on a :
 $$ \vert R_n(x) \vert = R_n(x) \geq f_{n+1}(x)$$
@@ -566,7 +566,7 @@ $$ f_n(x) = \dfrac{\left(-1\right)^{n}e^{-nx}}{n} $$
 \item Pour tout entier $n \geq 1$ et tout $x \in \mathbb{R}$, on a $f_n(x)=(-1)^nu_n(x)$ où 
 $$u_n(x)=\dfrac{e^{-nx}}{n} $$
 
-\noindent Soit $x \in \mathbb{R}$.
+Soit $x \in \mathbb{R}$.
 \begin{itemize}
 \item Si $x<0$ alors par théorème des croissances comparées :
 $$\lim\limits_{n\to +\infty}^{} u_n(x) =+\infty$$
@@ -577,14 +577,14 @@ D'après le critère spécial des séries alternées, on en déduit que la séri
 \end{itemize}
 Finalement, $\Sum{n\geq 1}{} f_n$ converge simplement sur $\left[ 0,+\infty\right[$.
 \item La série de fonctions $\Sum{n\geq 1}{} f_n$ converge simplement sur $\left[ 0,+\infty\right[ $. On pose alors pour tout $x \in \mathbb{R}_+$ et tout $n \geq 0$, 
-$$ R_n(x)=\displaystyle\sum\limits_{k=n+1}^{+\infty}f_k(x)$$
+$$ R_n(x)=\sum\limits_{k=n+1}^{+\infty}f_k(x)$$
 D'après le critère spécial des séries alternées (hypothèses vérifiées d'après la question précédente), on en déduit que pour tout $x \in \mathbb{R}_+$ et tout $n \geq 0$,
 $$|R_n(x)|\leq \dfrac{e^{-(n+1)x}}{n+1} \leq \dfrac{1}{n+1}$$
 Ainsi pour tout $n \geq 0$, $R_n$ est bornée sur $\mathbb{R}_+$ et :
 $$0 \leq \Vert R_n \Vert_{\infty}\leq \dfrac{1}{n+1}$$
 Par théorème d'encadrement, on en déduit que :
 $$ \lim_{n \rightarrow + \infty} \Vert R_n \Vert_{\infty} = 0$$
-Ainsi $(R_n)_{n \geq 1}$ converge uniformément vers la fonction nulle sur $\mathbb{R}_+$ et donc $\Sum{n\geq 1}{}^{}f_n$ converge uniformément sur $\left[ 0,+\infty\right[ $.
+Ainsi $(R_n)_{n \geq 1}$ converge uniformément vers la fonction nulle sur $\mathbb{R}_+$ et donc $\Sum{n\geq 1}{}f_n$ converge uniformément sur $\left[ 0,+\infty\right[ $.
 \end{enumerate}
 
 \medskip
@@ -593,11 +593,11 @@ Ainsi $(R_n)_{n \geq 1}$ converge uniformément vers la fonction nulle sur $\mat
 \begin{Exercice}{} Soient $A\subset \mathbb{R}$ et $\left( f_{n}\right)_{n \geq 0}$ une suite de fonctions de $A$ dans $\mathbb{R}$.
 
 \begin{enumerate}
-\item D\'{e}montrer l'implication:
+\item Démontrer l'implication:
 	\begin{eqnarray*}
-	&  \text{La s\'{e}rie de fonctions }\dis \Sum{n\geq 0}{} f_n\ \text{converge uniform\'{e}ment sur $A$}& \\
+	&  \text{La série de fonctions }\Sum{n\geq 0}{} f_n\ \text{converge uniformément sur $A$}& \\
 	&\Downarrow &\\
-	&\text{La suite de fonctions\ }\left( f_{n}\right) _{n \geq 0}\ \text{converge uniform\'{e}ment vers la fonction nulle sur $A$}&
+	&\text{La suite de fonctions\ }\left( f_{n}\right) _{n \geq 0}\ \text{converge uniformément vers la fonction nulle sur $A$}&
 	\end{eqnarray*}
 \item
 On pose pour tout $n\in\mathbb{N}$ et tout $x\in\left[ 0,+\infty\right[ $, 
@@ -609,9 +609,9 @@ Prouver que $\Sum{n\geq 0}{} f_n$ converge simplement sur $\left[ 0,+\infty\righ
 \corr 
 \begin{enumerate}
 \item On suppose que $\Sum{n\geq 0}{} f_n$ converge uniformément sur $X$. On a alors que $\Sum{n\geq 0}{} f_n$ converge simplement sur $X$. Posons pour tout $x \in X$,
-$$S(x)=\displaystyle\sum\limits_{k=0}^{+\infty}f_k(x)$$
+$$S(x)=\sum\limits_{k=0}^{+\infty}f_k(x)$$
 et pour tout $n\in\mathbb{N}$, 
-$$S_n(x)=\displaystyle\sum\limits_{k=0}^{n}f_k(x)$$
+$$S_n(x)=\sum\limits_{k=0}^{n}f_k(x)$$
 La série $\Sum{n\geq 0}{} f_n$ converge uniformément sur $X$ donc par définition $(S_n)_{n \geq 0}$ converge uniformément vers $S$ sur $X$ donc à partir d'un certain rang, $S_n-S$ est bornée sur $X$ et :
 $$\lim\limits_{n\to+\infty}^{}||S_n-S||_{\infty}=0$$ 
 Pour tout $n \in \mathbb{N}^*$ et tout $x \in X$, on a :
@@ -629,7 +629,7 @@ Finalement, par théorème d'encadrement, on en déduit que  $(f_n)_{n \geq 0}$ 
 
 \medskip
 
-\noindent Pour tout $n\in\mathbb{N}$, $f_n$ est continue sur  $\left[0,+\infty \right[$ et  $\lim\limits_{x\to +\infty}^{}f_n(x)=0$, donc $f_n$ est bornée sur $\left[0,+\infty \right[$. De plus, la suite de fonctions $(f_n)_{n \geq 0}$ converge simplement sur $\mathbb{R}_+$ vers la fonction nulle (car la série de terme général $f_n(x)$ converge). Pour tout $n\in\mathbb{N}^*$, 
+Pour tout $n\in\mathbb{N}$, $f_n$ est continue sur  $\left[0,+\infty \right[$ et  $\lim\limits_{x\to +\infty}^{}f_n(x)=0$, donc $f_n$ est bornée sur $\left[0,+\infty \right[$. De plus, la suite de fonctions $(f_n)_{n \geq 0}$ converge simplement sur $\mathbb{R}_+$ vers la fonction nulle (car la série de terme général $f_n(x)$ converge). Pour tout $n\in\mathbb{N}^*$, 
 $$f_n\left( \dfrac{1}{\sqrt{n}}\right) =\mathrm{e}^{-1}$$
 et
 $$\left\vert f_n\left( \dfrac{1}{\sqrt{n}}\right) \right\vert \leq \Vert f_n \Vert_{\infty}$$
@@ -652,8 +652,8 @@ Ainsi $\Vert f_n \Vert_{\infty}$ ne tend pas vers $0$ quand $n$ tend vers $+ \in
 $$f_{n}\left( x\right) =\left( x^{2}+1\right) \dfrac{ne^{x}+xe^{-x}}{n+x} $$
 
 \begin{enumerate}
-\item Démontrer que la suite de fonctions $\left( f_{n}\right) _{n \geq 1}$ converge uniform\'{e}ment sur $[0,1]$.
-\item Calculer $\underset{n\rightarrow +\infty }{\lim }\displaystyle\int\limits_{0}^{1}\left( x^{2}+1\right) \dfrac{ne^{x}+xe^{-x}}{n+x}\text{d}x$.
+\item Démontrer que la suite de fonctions $\left( f_{n}\right) _{n \geq 1}$ converge uniformément sur $[0,1]$.
+\item Calculer $\underset{n\rightarrow +\infty }{\lim }\int\limits_{0}^{1}\left( x^{2}+1\right) \dfrac{ne^{x}+xe^{-x}}{n+x}\text{d}x$.
 \end{enumerate}
 \end{Exercice} 
 
@@ -663,7 +663,7 @@ $$\lim\limits_{n\to +\infty}^{}f_n (x)=(x^2  + 1){\mathrm{e}}^x $$
 Ainsi, la suite de fonctions $(f_n)_{n \geq 1}$ converge simplement vers $f:x \mapsto (x^2  + 1){\mathrm{e}}^x $ sur $\left[ {0,1} \right]$.
 \medskip
 
-\noindent Pour tout $x\in \left[ 0,1\right]$ et tout $n \geq 1$, 
+Pour tout $x\in \left[ 0,1\right]$ et tout $n \geq 1$, 
 $$f_n (x) - f(x) = (x^2  + 1)\dfrac{{x({\mathrm{e}}^{ - x}  - {\mathrm{e}}^x )}}{{n + x}}$$
 et donc d'après l'inégalité triangulaire et en utilisant que $n+x \geq n$,
 $$\left| {f_n (x) - f(x)} \right| \leq \dfrac{{2(1+\textrm{e})}}{n}$$
@@ -673,9 +673,9 @@ et sachant que
 $$ \lim_{n \rightarrow + \infty} \dfrac{{2(1+\textrm{e})}}{n} = 0 $$
 On en déduit que la suite de fonctions $(f_n)_{n \geq 1}$ converge uniformément vers $f$ sur $\left[ {0,1} \right]$.
 \item Pour tout $n \geq 1$, $f_n$ est continue sur $[0,1]$ et $(f_n)_{n \geq 1}$ converge uniformément vers $f$ sur $\left[ {0,1} \right]$ donc par interversion limite-intégrale, on en déduit que :
-$$\mathop {\lim }\limits_{n \to  + \infty } \displaystyle\int_0^1 {(x^2  + 1)\dfrac{{n{\mathrm{e}}^x  + x{\mathrm{e}}^{ - x} }}{{n + x}}\,{\mathrm{d}}x}  = \displaystyle\int_0^1 {(x^2  + 1){\mathrm{e}}^x \,{\mathrm{d}}x} $$
+$$\mathop {\lim }\limits_{n \to  + \infty } \int_0^1 {(x^2  + 1)\dfrac{{n{\mathrm{e}}^x  + x{\mathrm{e}}^{ - x} }}{{n + x}}\,{\mathrm{d}}x}  = \int_0^1 {(x^2  + 1){\mathrm{e}}^x \,{\mathrm{d}}x} $$
 Après deux intégrations par parties, on obtient :
-$$\displaystyle\int_0^1 {(x^2  + 1){\mathrm{e}}^x \,{\mathrm{d}}x}  = 2{\mathrm{e}} - 3$$
+$$\int_0^1 {(x^2  + 1){\mathrm{e}}^x \,{\mathrm{d}}x}  = 2{\mathrm{e}} - 3$$
 \end{enumerate}
 
 
@@ -697,7 +697,7 @@ $$\displaystyle\int_0^1 {(x^2  + 1){\mathrm{e}}^x \,{\mathrm{d}}x}  = 2{\mathrm{
  
  \corr 
 
-\noindent $\rhd$ Soit $x \in \mathbb{R}$.
+$\rhd$ Soit $x \in \mathbb{R}$.
 \begin{itemize}
 \item Si $x<0$ alors $-x>0$ donc :
 $$ \lim_{n \rightarrow + \infty} \e^{ - x\sqrt n} = + \infty$$
@@ -711,7 +711,7 @@ Ainsi, $f$ est définie sur $\mathbb{R}_+^*$.
 
 \bigskip
 
-\noindent Notons pour tout entier $n \geq 0$, $f_n$ la fonction définie sur $\mathbb{R}_+^*$ par :
+Notons pour tout entier $n \geq 0$, $f_n$ la fonction définie sur $\mathbb{R}_+^*$ par :
 $$f_n(x)= \e^{ - x\sqrt n}$$
 Soit $a \in \mathbb{R}_+^*$. Pour tout entier $n \geq 0$, la fonction $f_n$ est décroissante sur $\mathbb{R}_+$ donc :
 $$ 0 \leq f_n(x) \leq f_n(a)$$
@@ -721,7 +721,7 @@ La série de terme général $f_n(a)$ converge (la série de fonctions converge 
 
 \medskip
 
-\noindent $\rhd$ On a :
+$\rhd$ On a :
 $$ \lim_{x \rightarrow + \infty} f_0(x) = \lim_{x \rightarrow + \infty} 1 = 1$$
 et pour tout entier $n \geq 1$,
 $$ \lim_{x \rightarrow + \infty} f_n(x) = 0$$
@@ -731,15 +731,15 @@ $$ \lim_{x \rightarrow + \infty} f(x) = \sum_{n=0}^{+ \infty} \lim_{x \rightarro
 \medskip
  
 
-\begin{Exercice}{} On consid\`{e}re la s\'{e}rie de fonctions de terme g\'{e}n\'{e}ral $u_{n}$ d\'{e}finie par: 
+\begin{Exercice}{} On consid\`{e}re la série de fonctions de terme général $u_{n}$ définie par: 
 \begin{equation*}
 \forall n\in \mathbb{N}^{*},\ \forall x\in \lbrack 0,1], \ \ u_{n}\left(x\right) =\ln \left( 1+\dfrac{x}{n}\right) -\dfrac{x}{n}~
 \end{equation*}
 
-On pose, lorsque la s\'{e}rie converge, $S(x)=\displaystyle\sum\limits_{n=1}^{+\infty }\left[ \ \ln \left( 1+\dfrac{x}{n}\right) -\dfrac{x}{n}\right] \cdot $
+On pose, lorsque la série converge, $S(x)=\sum\limits_{n=1}^{+\infty }\left[ \ \ln \left( 1+\dfrac{x}{n}\right) -\dfrac{x}{n}\right] \cdot $
 
 \begin{enumerate}
-\item D\'{e}montrer que $S$ est dérivable sur $[0,1]$.
+\item Démontrer que $S$ est dérivable sur $[0,1]$.
 \item Calculez $S'(1)$.
 \end{enumerate}
 \end{Exercice}
@@ -760,7 +760,7 @@ On en déduit que la série de fonctions $u_n $ converge simplement sur $\left[ 
 
 \bigskip
 
-\noindent Vérifions les hypothèses de dérivabilité d'une somme de série de fonctions :
+Vérifions les hypothèses de dérivabilité d'une somme de série de fonctions :
 \begin{itemize}
 \item La série de fonctions de terme général $u_n$ converge simplement sur $[0,1]$.
 \item Pour tout $n \in \mathbb{N}^*$, $u_n $ est de  classe $\mathcal{C}^1 $ sur $\left[ {0,1} \right]$ et pour tout $x \in [0,1]$,
@@ -776,11 +776,11 @@ Or $\Sum{n\geq 1}{} \dfrac{1}{n^2}$ converge donc par critère de comparaison de
 Ainsi, la fonction $S$ est de classe $\mathcal{C}^1$ et donc dérivable sur $[0,1]$. 
 \item D'après la question précédente,
 \begin{align*}
-S'(1) & = \displaystyle\sum\limits_{n = 1}^{ + \infty } {u'_n (1)} \\
-&   =\displaystyle\sum\limits_{n = 1}^{ + \infty } {\left( {\dfrac{1}{{n + 1}} - \dfrac{1}{n}} \right)} 
+S'(1) & = \sum\limits_{n = 1}^{ + \infty } {u'_n (1)} \\
+&   =\sum\limits_{n = 1}^{ + \infty } {\left( {\dfrac{1}{{n + 1}} - \dfrac{1}{n}} \right)} 
 \end{align*}
 Or pour tout entier $N \geq 1$, on a par télescopage :
-$$\displaystyle\sum\limits_{n = 1}^N {\left( {\dfrac{1}{{n + 1}} - \dfrac{1}{n}} \right)}  = \dfrac{1}{{N + 1}} - 1\xrightarrow[{N \to  + \infty }]{} -1$$
+$$\sum\limits_{n = 1}^N {\left( {\dfrac{1}{{n + 1}} - \dfrac{1}{n}} \right)}  = \dfrac{1}{{N + 1}} - 1\xrightarrow[{N \to  + \infty }]{} -1$$
 Ainsi, $S'(1) =-1$.
 \end{enumerate}
 
@@ -791,9 +791,9 @@ Ainsi, $S'(1) =-1$.
 \begin{Exercice}{} On pose pour tout $x \in \mathbb{R}$,
 $$ f(x) = \sum_{n=1}^{+ \infty} \dfrac{\arctan(nx)}{n^2}$$
 \begin{enumerate}
-\item Déterminer $\dis \lim_{n \rightarrow + \infty} f(x)$ sachant que $\dis \sum_{n=1}^{+ \infty} \dfrac{1}{n^2} = \dfrac{\pi^2}{6} \cdot$
+\item Déterminer $\lim_{n \rightarrow + \infty} f(x)$ sachant que $\sum_{n=1}^{+ \infty} \dfrac{1}{n^2} = \dfrac{\pi^2}{6} \cdot$
 \item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}^*$.
-\item Déterminer $\dis \lim_{n \rightarrow + \infty} f'(x)$.
+\item Déterminer $\lim_{n \rightarrow + \infty} f'(x)$.
 \item Que peut-on en déduire sur le graphe de $f$?
 \end{enumerate}
 \end{Exercice}
@@ -838,18 +838,18 @@ $$ \lim_{x \rightarrow + \infty} f'(x) = 0$$
 
 
 \begin{Exercice}{} \begin{enumerate}
-\item D\'eterminer l'ensemble $I$ des r\'eels $x$ pour lesquels la s\'erie $\Sum{n\geq 1}{} \dfrac{1}{1+(nx)^2}$ converge.\\
-On d\'efinit alors la fonction $f$ de $I$ dans $\R$ en posant $f(x)=\dis \sum_{n=1}^{+\infty}\frac{1}{1+(nx)^2}\cdot$
-\item D\'eterminer la parité de $f$ puis son sens de variation de $f$. 
+\item Déterminer l'ensemble $I$ des réels $x$ pour lesquels la série $\Sum{n\geq 1}{} \dfrac{1}{1+(nx)^2}$ converge.\\
+On définit alors la fonction $f$ de $I$ dans $\R$ en posant $f(x)=\sum_{n=1}^{+\infty}\frac{1}{1+(nx)^2}\cdot$
+\item Déterminer la parité de $f$ puis son sens de variation de $f$. 
 \item Prouver que $f$ est de classe $C^1$ sur $I$.
-\item Calculer $\dis \lim_{x\to +\infty}f(x)$.
+\item Calculer $\lim_{x\to +\infty}f(x)$.
 \item
 \begin{enumerate}
-\item V\'erifier que :
+\item Vérifier que :
 \[\forall p\in \N^*,\ \forall x >0,\ \frac{1}{1+(p+1)^2x^2}\leq \int_p^{p+1}\frac{dt}{1+t^2x^2}\leq \frac{1}{1+p^2x^2}\] 
-\item En d\'eduire un \'equivalent de $f$ au voisinage de $0$.
+\item En déduire un équivalent de $f$ au voisinage de $0$.
 \end{enumerate}
-\item Donner l'allure de la courbe repr\'esentative de $f$.
+\item Donner l'allure de la courbe représentative de $f$.
 \end{enumerate}
 \end{Exercice}
 
@@ -858,15 +858,15 @@ On d\'efinit alors la fonction $f$ de $I$ dans $\R$ en posant $f(x)=\dis \sum_{n
 
 \medskip
 
-\noindent Soit $x \in \mathbb{R}$.
+Soit $x \in \mathbb{R}$.
 
 \begin{itemize}
-\item Si $x=0$ : pour tout $n \geq 1$, $f_n(0)=1$ donc $\dis \Sum{n \geq 1}{} f_n(0)$ diverge grossièrement.
+\item Si $x=0$ : pour tout $n \geq 1$, $f_n(0)=1$ donc $\Sum{n \geq 1}{} f_n(0)$ diverge grossièrement.
 \item Si $x \neq 0$ alors $\Sum{n \geq 1}{} f_n(x)$ est une série à termes positifs et :
 $$ f_n(x) \underset{n \rightarrow + \infty}{\sim} \frac{1}{n^2x^2}$$
-Or la série de terme général $\frac{1}{n^2}$ est convergente (série de Riemann avec $2>1$). Par critère de comparaison de séries à termes positifs, on en déduit que $\dis \Sum{n \geq 1}{} f_n(x)$ converge.
+Or la série de terme général $\frac{1}{n^2}$ est convergente (série de Riemann avec $2>1$). Par critère de comparaison de séries à termes positifs, on en déduit que $\Sum{n \geq 1}{} f_n(x)$ converge.
 \end{itemize}
-Ainsi, $\dis \Sum{n \geq 1}{} f_n$ converge simplement sur $\mathbb{R}^*$ et donc $\dis I = \mathbb{R}^*$.
+Ainsi, $\Sum{n \geq 1}{} f_n$ converge simplement sur $\mathbb{R}^*$ et donc $I = \mathbb{R}^*$.
 
 \item Remarquons que $f$ est définie sur un ensemble symétrique par rapport à $0$ et que pour tout $x \in \mathbb{R}^*$,
 $$ f(-x) = \sum_{k=1}^{+ \infty} \frac{1}{1+(-kx)^2} = \sum_{k=1}^{+ \infty} \frac{1}{1+(kx)^2} = f(x)$$
@@ -874,7 +874,7 @@ Ainsi, la fonction $f$ est paire sur $I$.
 
 \medskip
 
-\noindent Soit $(x,y) \in \mathbb{R}_+^{*}$ tel que $x<y$. Pour tout $n \geq 1$, $f_n$ est une fonction décroissante (inverse d'une fonction croissante strictement positive) donc $f_n(x)>f_n(y)$. Par sommation (licite car les séries associées convergent), on obtient que :
+Soit $(x,y) \in \mathbb{R}_+^{*}$ tel que $x<y$. Pour tout $n \geq 1$, $f_n$ est une fonction décroissante (inverse d'une fonction croissante strictement positive) donc $f_n(x)>f_n(y)$. Par sommation (licite car les séries associées convergent), on obtient que :
 $$ \sum_{n=1}^{+ \infty} f_n(x) >  \sum_{n=1}^{+ \infty} f_n(y)$$
 donc $f(x) > f(y)$. Ainsi, $f$ est strictement décroissante sur $\mathbb{R}_+^{*}$.
 Par parité, on en déduit que $f$ est strictement croissante sur $\mathbb{R}_{-}^{*}$.
@@ -917,22 +917,22 @@ $$ \frac{1}{1+n^2} \underset{n \rightarrow + \infty}{\sim} \frac{1}{n^2} \geq 0$
 La série de terme général $1/n^2$ converge (série de Riemann avec $2>1$) donc par critère de comparaison de séries à termes positifs, la série de terme général $1/(1+n^2)$ converge puis toujours par ce même critère, la série de fonctions de terme général $f_n$ converge normalement donc uniformément sur $[1, + \infty[$.
 \end{itemize}
 Par théorème d'interversion limite-somme, on en déduit que :
-$$\dis \lim_{x\rightarrow+\infty}f(x)=0$$
+$$\lim_{x\rightarrow+\infty}f(x)=0$$
 
 \medskip
 
-\noindent \textit{Remarque.} On peut être plus fin : pour tout $x>1$, sachant que les séries de termes généraux $1/(1+(nx)^2)$ et $1/(nx)^2$ convergent, on a :
+\textit{Remarque.} On peut être plus fin : pour tout $x>1$, sachant que les séries de termes généraux $1/(1+(nx)^2)$ et $1/(nx)^2$ convergent, on a :
 $$ 0 \leq \sum_{n=1}^{+ \infty} \dfrac{1}{1+(nx)^2} \leq \sum_{n=1}^{+ \infty} \dfrac{1}{(nx)^2} = \frac{1}{x^2} \times \frac{\pi}{6}$$
 On conclut alors avec le théorème d'encadrement.
 \item
 \begin{enumerate}
-\item Fixons $x>0$. La fonction $g_x\ :\ t\mapsto \dfrac{1}{1+t^2x^2}$ est d\'ecroissante sur $\R_+^{*}$. En particulier,
+\item Fixons $x>0$. La fonction $g_x\ :\ t\mapsto \dfrac{1}{1+t^2x^2}$ est décroissante sur $\R_+^{*}$. En particulier,
 \[\forall p\geq 1,\ \forall t\in [p,p+1],\ g_x(p+1)\leq g_x(t)\leq g_x(p)\]
-En int\'egrant cette in\'egalit\'e sur $[p,p+1]$ (bornes dans le bon sens), on obtient :
+En intégrant cette inégalité sur $[p,p+1]$ (bornes dans le bon sens), on obtient :
 \[\forall p\in \N^*,\ \forall x>0 \; \frac{1}{1+(p+1)^2x^2}\leq \int_p^{p+1}\frac{dt}{1+t^2x^2}\leq \frac{1}{1+p^2x^2}\]
 \item Fixons $x>0$. En sommant les inégalités précédentes, on en déduit que pour tout $n \geq 1$,
 \[ \sum_{p=1}^n \frac{1}{1+(p+1)^2x^2}\leq \int_1^{n+1}\frac{dt}{1+t^2x^2}\leq \sum_{p=1}^n\frac{1}{1+p^2x^2}\]
-La fonction $t\mapsto \frac{1}{1+t^2x^2}$ a pour primitive sur $\R$ la fonction $t\mapsto \frac{1}{x}\arctan(tx)$. Les quantit\'es pr\'ec\'edentes admettent une limite quand $n \rightarrow +\infty$ et on obtient donc par passage à la limite :
+La fonction $t\mapsto \frac{1}{1+t^2x^2}$ a pour primitive sur $\R$ la fonction $t\mapsto \frac{1}{x}\arctan(tx)$. Les quantités précédentes admettent une limite quand $n \rightarrow +\infty$ et on obtient donc par passage à la limite :
 \[f(x)-\frac{1}{1+x^2}\leq \frac{1}{x} \left(\frac{\pi}{2} - \arctan(x) \right) \leq f(x)\]
 ou encore :
 \[ \frac{1}{x} \left(\frac{\pi}{2} - \arctan(x) \right)\leq f(x)\leq \frac{1}{1+x^2}+ \frac{1}{x} \left(\frac{\pi}{2} - \arctan(x) \right)\]
@@ -947,22 +947,22 @@ Pour tout $x<0$, remarquons que :
 Et ainsi,
 \[f(x)\mathop{\sim}_{x\to 0} \frac{\pi}{2 \vert x \vert }\]
 \end{enumerate}
-\item L'idée pour cette question est de faire apparaitre toutes les propriétés démontrées dans l'exercice : variations, limites, équivalents. Voici une allure cohérente :
+\item L'idée pour cette question est de faire apparaître toutes les propriétés démontrées dans l'exercice : variations, limites, équivalents. Voici une allure cohérente :
 
 \begin{center}
-\includegraphics[scale=0.4]{allure}
+\includegraphics[scale=0.4]{TD6-corr-allure}
 \end{center}
 \end{enumerate}
 
 \medskip
 
 
-\begin{Exercice}{}  Soit $\Sum{n \geq 1}{} u_n$ la s\'erie de fonctions d'une variable r\'eelle de terme g\'en\'eral $u_n$ d\'efini pour tout $n \in \N^*$ par : 
+\begin{Exercice}{}  Soit $\Sum{n \geq 1}{} u_n$ la série de fonctions d'une variable réelle de terme général $u_n$ défini pour tout $n \in \N^*$ par : 
 $$ \forall x \in \R ,\ u_n(x)=\dfrac{2x}{x^2+n^2\pi^2}$$
 \begin{enumerate}
-\item Montrer que $\Sum{n \geq 1}{} u_n$ converge simplement sur $\R$. On note $U$ la somme de cette  s\'erie de fonctions.
+\item Montrer que $\Sum{n \geq 1}{} u_n$ converge simplement sur $\R$. On note $U$ la somme de cette  série de fonctions.
 \item Montrer que, pour tout $a > 0$ , $\Sum{n \geq 1}{} u_n$ converge normalement sur $[-a,a]$.
-\item La s\'erie $\Sum{n \geq 1}{} u_n$ converge-t-elle normalement sur $\mathbb{R}$ ?
+\item La série $\Sum{n \geq 1}{} u_n$ converge-t-elle normalement sur $\mathbb{R}$ ?
 \item Montrer que $U$ est continue sur $\R$.
 \end{enumerate}
 \end{Exercice}
@@ -971,24 +971,24 @@ $$ \forall x \in \R ,\ u_n(x)=\dfrac{2x}{x^2+n^2\pi^2}$$
 \item Pour tout réel $x$ et tout entier $n \geq 1$, on a :
 $$\left| u_{n}\left( x\right) \right| \leq 
 \frac{2\left| x\right| }{n^{2}\pi ^{2}}$$
-Or la s\'{e}rie de terme g\'{e}n\'{e}ral $\dfrac{2\left| x\right| }{n^{2}\pi ^{2}}$ converge (série de Riemann avec $2>1$) donc par critère de comparaison de séries à termes positifs, on en déduit que la série de terme général $u_{n}\left( x\right) $ converge absolument donc converge. Ainsi, $\Sum{n \geq 1}{} u_n$ converge simplement sur $\R$.
+Or la série de terme général $\dfrac{2\left| x\right| }{n^{2}\pi ^{2}}$ converge (série de Riemann avec $2>1$) donc par critère de comparaison de séries à termes positifs, on en déduit que la série de terme général $u_{n}\left( x\right) $ converge absolument donc converge. Ainsi, $\Sum{n \geq 1}{} u_n$ converge simplement sur $\R$.
 \item Si $x\in \left[ -a,a\right] $ alors pour tout $n \geq 1$, 
 $$\left| u_{n}\left( x\right) \right| \leq \frac{2\left| x\right| }{n^{2}\pi ^{2}}\leq \frac{2\left|
 a\right| }{n^{2}\pi ^{2}}$$
 Ainsi $u_n$ est bornée sur $[-a,a]$ et on a :
 $$ \Vert u_n \Vert_{[-a,a], \infty} \leq  \frac{2\left|a\right| }{n^{2}\pi ^{2}}$$
-Or la s\'{e}rie de terme g\'{e}n\'{e}ral $\dfrac{2\left| a\right| }{n^{2}\pi ^{2}}$ converge (série de Riemann avec $2>1$) donc par critère de comparaison de séries à termes positifs, la série de fonctions de terme général $u_n$ converge normalement sur $[-a,a]$. Ainsi, pour tout $a > 0$ , $\Sum{n \geq 1}{} u_n$ converge normalement sur $[-a,a]$.
+Or la série de terme général $\dfrac{2\left| a\right| }{n^{2}\pi ^{2}}$ converge (série de Riemann avec $2>1$) donc par critère de comparaison de séries à termes positifs, la série de fonctions de terme général $u_n$ converge normalement sur $[-a,a]$. Ainsi, pour tout $a > 0$ , $\Sum{n \geq 1}{} u_n$ converge normalement sur $[-a,a]$.
 \item Pour tout $n \geq 1$, $u_n$ est impaire (évident), de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et pour tout $x \in \mathbb{R}$,
 $$u_n'(x) = 2 \times \frac{n^2\pi^2-x^2}{(x^2+n^2 \pi^2)^2}$$
 En dressant le tableau de variations (suffisant sur $\mathbb{R}_+$ par imparité de la fonction), on en déduit que $u_n$ est bornée sur $\mathbb{R}$ et que l'on a :
 $$ \Vert u_n \Vert_{\infty} = u_n( n \pi) = \frac{1}{n \pi}$$
-Sachant que la série de terme général $1/(n\pi)$ diverge (série harmonique), on en déduit que la s\'{e}rie $\Sum{n \geq 1}{} u_{n}$ ne converge pas normalement sur $\mathbb{R}$.
-\item Les fonctions $u_{n}$ ($n \geq 1$) sont continues sur $\mathbb{R}$ et on sait que la s\'{e}rie $\Sum{n \geq 1}{} u_{n}$ converge normalement et donc uniformément sur tout segment de $\mathbb{R}$ (car sur tout segment symétrique). Par théorème de continuité, on en déduit que $U$ est continue sur $\Bbb{R}$.
+Sachant que la série de terme général $1/(n\pi)$ diverge (série harmonique), on en déduit que la série $\Sum{n \geq 1}{} u_{n}$ ne converge pas normalement sur $\mathbb{R}$.
+\item Les fonctions $u_{n}$ ($n \geq 1$) sont continues sur $\mathbb{R}$ et on sait que la série $\Sum{n \geq 1}{} u_{n}$ converge normalement et donc uniformément sur tout segment de $\mathbb{R}$ (car sur tout segment symétrique). Par théorème de continuité, on en déduit que $U$ est continue sur $\R$.
 \end{enumerate}
 
 \medskip
 
-\begin{Exercice}{} Soit $S : x \mapsto \dis \sum_{n=0}^{+ \infty}  (-1)^n \dfrac{\cos^3(3^nx)}{3^n} \cdot$
+\begin{Exercice}{} Soit $S : x \mapsto \sum_{n=0}^{+ \infty}  (-1)^n \dfrac{\cos^3(3^nx)}{3^n} \cdot$
 
 \begin{enumerate}
 \item Déterminer l'ensemble de définition, notée $I$, de $S$.
@@ -1001,11 +1001,11 @@ Sachant que la série de terme général $1/(n\pi)$ diverge (série harmonique),
 
 \medskip
 
-\noindent Pour tout $n \geq 0$ et tout $x \in \mathbb{R}$, on a :
+Pour tout $n \geq 0$ et tout $x \in \mathbb{R}$, on a :
 $$ \vert f_n(x) \vert \leq \frac{1}{3^n}$$
 donc $f_n$ est bornée sur $\mathbb{R}$ et on a :
 $$ 0 \leq \Vert f_n \Vert_{\infty} \leq \frac{1}{3^n}$$
-La série de terme général $1/3^n$ converge (série géométrique avec une raison de module strictement inférieur à $1$) donc par critère de comparaison de séries à termes positifs, on en déduit que la série de fonctions de terme général $f_n$ converge normalement et donc en particulier simplement. Ainsi, $\dis S$ est définie sur $I = \mathbb{R}$.
+La série de terme général $1/3^n$ converge (série géométrique avec une raison de module strictement inférieur à $1$) donc par critère de comparaison de séries à termes positifs, on en déduit que la série de fonctions de terme général $f_n$ converge normalement et donc en particulier simplement. Ainsi, $S$ est définie sur $I = \mathbb{R}$.
 \item Par linéarisation, on montre que pour tout $y \in \mathbb{R}$,
 $$ \cos^3(y) = \frac{\cos(3y)+3\cos(y)}{4}$$
 Ainsi, pour tout $n \geq 1$ et tout $x \in \mathbb{R}$,
@@ -1025,7 +1025,7 @@ $$ \lim_{N \rightarrow + \infty} \frac{(-1)^N}{4} \dfrac{\cos(3^{N+1} x)}{3^N} =
 et ainsi :
 $$ \sum_{n=0}^{+\infty} f_n(x)  = \cos^3(x) - \frac{1}{4} \cos(3x) = \frac{3}{4} \cos(x)$$
 Finalement,
-$$\dis \forall x \in I, \; S(x)= \dfrac{3}{4}\cos(x)$$
+$$\forall x \in I, \; S(x)= \dfrac{3}{4}\cos(x)$$
 \end{enumerate}
 
 \medskip
@@ -1037,11 +1037,11 @@ $$\dis \forall x \in I, \; S(x)= \dfrac{3}{4}\cos(x)$$
 $$ f_n(x)=\frac{(-1)^n}{\ln(nx)}$$
 
 \begin{enumerate}
-	\item Justifier que $F : x\longmapsto \dis\sum_{n=1}^{+\infty} f_n(x)$ est bien définie sur $]1,+\infty[.$
+	\item Justifier que $F : x\longmapsto \sum_{n=1}^{+\infty} f_n(x)$ est bien définie sur $]1,+\infty[.$
 	
 	\item Démontrer que $\Sum{n\geq 1}{} f_n$ converge uniformément sur $]1,+\infty[.$ 
 	
-	\item Montrer que $F$ est continue sur $]1,+\infty[$ et déterminer $\dis\lim_{x \rightarrow 1}F(x)$ et  $\dis\lim_{x \rightarrow  +\infty}F(x)$.
+	\item Montrer que $F$ est continue sur $]1,+\infty[$ et déterminer $\lim_{x \rightarrow 1}F(x)$ et  $\lim_{x \rightarrow  +\infty}F(x)$.
 	
 	\item Démontrer que $F$ est de classe ${\cal C}^1$ sur $]1,+\infty[$ et préciser les variations de $F.$
 \end{enumerate}
@@ -1064,11 +1064,11 @@ $$ 0 \leq \Vert R_n \Vert_{\infty} \leq \dfrac{1}{\ln(n+1)}$$
 Par théorème d'encadrement, on en déduit que la suite (des restes) de terme général $ \Vert R_n \Vert_{\infty}$ converge vers $0$. Ainsi, $\Sum{n\geq 1}{} f_n$ converge uniformément sur $]1,+\infty[.$ 
 \item 
 
-\noindent $\rhd$ Pour tout entier $n \geq 1$, $f_n$ est continue et sur $]1, + \infty[$ et $\Sum{n\geq 1}{} f_n$ converge uniformément sur $]1,+\infty[.$ Par théorème de continuité, on en déduit que $F= \Sum{n= 1}{+ \infty} f_n$ est continue sur $]1, + \infty[$.
+$\rhd$ Pour tout entier $n \geq 1$, $f_n$ est continue et sur $]1, + \infty[$ et $\Sum{n\geq 1}{} f_n$ converge uniformément sur $]1,+\infty[.$ Par théorème de continuité, on en déduit que $F= \Sum{n= 1}{+ \infty} f_n$ est continue sur $]1, + \infty[$.
 
 \medskip
 
-\noindent $\rhd$ Déterminons par une première méthode la limite de $F$ en $+ \infty$. D'après le critère spécial des séries alternés (hypothèses vérifiées dans la question $1$), on sait que pour tout $x>1$,
+$\rhd$ Déterminons par une première méthode la limite de $F$ en $+ \infty$. D'après le critère spécial des séries alternés (hypothèses vérifiées dans la question $1$), on sait que pour tout $x>1$,
 $$ 0 \leq \left\vert \sum_{n=1}^{+ \infty} \dfrac{(-1)^n}{\ln(nx)} \right\vert \leq \left\vert \dfrac{(-1)^1}{\ln(x)} \right\vert = \dfrac{1}{\ln(x)}$$
 Par théorème d'encadrement, on en déduit que :
 $$ \lim_{x \rightarrow + \infty} \sum_{n=1}^{+ \infty} \dfrac{(-1)^n}{\ln(nx)} = 0$$
@@ -1077,7 +1077,7 @@ $$ \lim_{x \rightarrow + \infty} F(x)= 0$$
 
 \medskip
 
-\noindent $\rhd$ Déterminons par une deuxième méthode la limite de $F$ en $+ \infty$.
+$\rhd$ Déterminons par une deuxième méthode la limite de $F$ en $+ \infty$.
 
 \begin{itemize}
 \item $\Sum{n\geq 1}{} f_n$ converge uniformément sur $]1,+\infty[$ (dont $+ \infty$ est une extrémité).
@@ -1090,7 +1090,7 @@ $$ \lim_{x \rightarrow + \infty}  F(x) = \lim_{x \rightarrow + \infty} \sum_{n=1
 
 \medskip
 
-\noindent $\rhd$ Pour tout $x \in ]1, + \infty[$,
+$\rhd$ Pour tout $x \in ]1, + \infty[$,
 $$ F(x) = - \dfrac{1}{\ln(x)} + \sum_{n=2}^{+ \infty} f_n(x)$$
 La série $\Sum{n\geq 2}{} f_n$ converge uniformément sur $]1, + \infty[$ donc $1$ est une extrémité. Pour tout $n \geq 2$,
 $$ \lim_{x \rightarrow 1} f_n(x) = \dfrac{(-1)^n}{\ln(n)}$$
@@ -1143,15 +1143,15 @@ $$ f_n(x) = \dfrac{1}{n^2+x^2}$$
 
 \medskip
 
-\noindent $\rhd$ Pour tout $x \in \mathbb{R}$ et tout entier $n \geq 1$, $n^2+x^2 \geq n^2>0$ donc par décroissance de la fonction inverse sur $\mathbb{R}_+^*$ :
+$\rhd$ Pour tout $x \in \mathbb{R}$ et tout entier $n \geq 1$, $n^2+x^2 \geq n^2>0$ donc par décroissance de la fonction inverse sur $\mathbb{R}_+^*$ :
 $$ 0 \leq f_n(x) \leq \dfrac{1}{n^2}$$
 Ainsi, $f_n$ est bornée sur $\mathbb{R}$ et on a :
 $$ 0 \leq \Vert f_n \Vert_{\infty} \leq \dfrac{1}{n^2}$$
-La série de terme général $1/n^2$ converge (série de Riemann avec $2>1$). Par critère de comparaison, on en déduit que $\dis \Sum{n \geq1}{} f_n$ converge normalement sur $\mathbb{R}$. Ainsi, pour tout réel $x$, la série de terme général $f_n(x)$ converge et $f$ est donc bien définie sur $\mathbb{R}$.
+La série de terme général $1/n^2$ converge (série de Riemann avec $2>1$). Par critère de comparaison, on en déduit que $\Sum{n \geq1}{} f_n$ converge normalement sur $\mathbb{R}$. Ainsi, pour tout réel $x$, la série de terme général $f_n(x)$ converge et $f$ est donc bien définie sur $\mathbb{R}$.
 
 \medskip
 
-\noindent $\rhd$ Pour tout entier $n \geq 1$ et tout $x \in \mathbb{R}$,
+$\rhd$ Pour tout entier $n \geq 1$ et tout $x \in \mathbb{R}$,
 \begin{align*}
 f_n(x) & = \dfrac{1}{x^2+n^2} \\
 & = \dfrac{1}{(x-in)(x+in)} \\
@@ -1170,11 +1170,11 @@ Ainsi, d'après l'inégalité triangulaire, on en déduit que pour tout $(n,k) \
 \end{align*}
 car $x^2+n^2 \geq n^2$. On en déduit que $f_n^{(k)}$ est bornée sur $\mathbb{R}$ et on a :
 $$ 0 \leq \Vert f_n^{(k)} \Vert_{\infty} \leq \dfrac{k!}{n^{k+2}} $$
-La série de terme général $1/n^{k+2}$ converge car $k+2 \geq 2$ (série de Riemann convergente) donc par critère de comparaison on en déduit que $\dis \sum_{n \geq 1} f_n^{(k)}$ converge normalement sur $\mathbb{R}$.
+La série de terme général $1/n^{k+2}$ converge car $k+2 \geq 2$ (série de Riemann convergente) donc par critère de comparaison on en déduit que $\sum_{n \geq 1} f_n^{(k)}$ converge normalement sur $\mathbb{R}$.
 
 \medskip
 
-\noindent Par théorème de dérivation, on en déduit que $f$ est de classe $\mathcal{C}^k$ sur $\mathbb{R}$ pour tout entier $k \geq 0$. Ainsi, $f$ est de classe $\mathcal{C}^{\infty}$ sur $\mathbb{R}$.
+Par théorème de dérivation, on en déduit que $f$ est de classe $\mathcal{C}^k$ sur $\mathbb{R}$ pour tout entier $k \geq 0$. Ainsi, $f$ est de classe $\mathcal{C}^{\infty}$ sur $\mathbb{R}$.
 
 
 \end{document}

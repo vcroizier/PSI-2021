@@ -1,0 +1,448 @@
+\documentclass[french,11pt,twoside]{VcCours}
+\usepackage{hyperref}
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=black,
+      linkcolor=black,
+      citecolor=black,
+}
+\lstnewenvironment{PYout}{\lstset{language=Python,numbers=none,backgroundcolor=\color{white}}}{}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Informatique}{TP d'info n°2 -- Manipulation des images}
+
+\tableofcontents
+\separationTitre
+
+\section*{Mise en place}
+Récupérer l'archive du TP2 dans le cours d'informatique sur moodle.
+
+Décompresser cette archive avec \og{} extraire ici \fg{} dans votre dossier de travail
+(un dossier \code{TP2-2021} est automatiquement créé). 
+
+On va utiliser deux fichiers ".py" et le document PDF:
+  \begin{enumerate}
+    \item \code{exemples-array.py} pour la première partie.
+    \item \code{exercices-images.py} pour la seconde partie.
+  \end{enumerate}
+  Dans ce cas, pour exécuter les blocs de lignes délimités par \code{\#\#}
+  (ou \code{\#\%\%} pour Spyder), 
+  il suffit de faire \code{Ctrl+Entrée} ou \code{Ctrl+Shift+Entrée},
+  le premier reste sur place, le second avance au bloc suivant (ou
+  utiliser les boutons dédiés pour Spyder). 
+
+
+
+\section{Très court aperçu du type ARRAY de Numpy.}
+
+Ici, nous aurons un usage très limité du type ARRAY du module Numpy,
+mais incontournable. En effet, les images seront stockées sous cette forme.
+Le but est donc ici de découvrir les quelques commandes simples dont nous aurons besoin.
+
+\pagebreak
+\subsection{Construction d'un ARRAY.}
+Il faut naturellement charger Numpy.
+\begin{PY}
+import numpy as np
+\end{PY}
+np.array permet de créer un ARRAY à partir d'une liste (de listes de listes...) habituelle.
+\begin{PY}
+a = np.array([[1,2],[3,4],[5,6]])
+a
+\end{PY}
+Cela donne :
+\begin{PYout}
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+\end{PYout}
+
+Pour obtenir les dimensions du tableau on utilise shape.
+\begin{PY}
+print(a.shape)
+n,p = a.shape
+print(n)
+print(p)
+\end{PY}
+\begin{PYout}
+(3, 2)
+3
+2
+\end{PYout}
+Si besoin est, on peut créer un tableau rempli de zéros de la dimension que l'on veut. (Remarquez les deux jeux de parenthèses, car l'argument est un TUPLE.)
+\begin{PY}
+b = np.zeros((2,5))
+b
+\end{PY}
+\begin{PYout}
+array([[ 0.,  0.,  0.,  0.,  0.],
+       [ 0.,  0.,  0.,  0.,  0.]])
+\end{PYout}
+Nous n'avons utilisé ici que des tableau à deux dimensions, mais on peut étendre les exemples à la dimension nn.
+
+\subsection{Accéder et modifier les éléments d'un ARRAY.}
+\begin{PY}
+print(a)
+print('a[1]    donne',a[1])
+print('a[1][0] donne',a[1][0])
+print('a[1,0]  donne',a[1,0])
+print('a[1,:]  donne',a[1,:])
+print('a[:,1]  donne',a[:,1])
+\end{PY}
+\begin{PYout}
+[[1 2]
+ [3 4]
+ [5 6]]
+a[1]    donne [3 4]
+a[1][0] donne 3
+a[1,0]  donne 3
+a[1,:]  donne [3 4]
+a[:,1]  donne [2 4 6]
+\end{PYout}
+\begin{PY}
+a[1,0]=30
+a
+\end{PY}
+\begin{PYout}
+array([[ 1,  2],
+       [30,  4],
+       [ 5,  6]])
+\end{PYout}
+\begin{PY}
+a[1,:]=[8,9]
+a
+\end{PY}
+\begin{PYout}
+array([[1, 2],
+       [8, 9],
+       [5, 6]])
+\end{PYout}
+\begin{PY}
+a[:,1]=[-1,-2,-3]
+a
+\end{PY}
+\begin{PYout}
+array([[ 1, -1],
+       [ 8, -2],
+       [ 5, -3]])
+\end{PYout}
+Comme notre tableau est à deux dimensions, il n'y a que deux coordonnées. Biens sûr, cela s'adapte facilement à la dimension $n$.
+
+Dans la suite nous manipulerons essentiellement des ARRAY de dimension $3$.
+
+\section{Traitement des images.}
+\subsection{Les bases de la manipulation d'images.}
+Nous aurons besoin du module Numpy et des sous-modules Image et Pyplot de Matplotlib. 
+
+(ils seront tous rebaptisés pour plus de facilité.)
+\begin{PY}
+import numpy as np
+import matplotlib.image as img
+import matplotlib.pyplot as plt
+\end{PY}
+
+La commande \code{imread} ne sait lire nativement que le format d'image PNG.
+
+(Cependant, l'installation de la librairie PIL permet d'obtenir le support de tous les formats d'images habituels.)
+\begin{PY}
+# Chargement du fichier image :
+A = img.imread("Chloroplastes.png")
+# Enregistrement de l'image dans un fichier :
+img.imsave("Chloroplastes_bis.png",A)
+# Affichage de l'image :
+plt.imshow(A, interpolation='none')
+plt.show()
+\end{PY}
+
+Le fichier est pris dans le répertoire \code{TP\_Python}, mais on peut faire toute sorte de chemins relatifs ou absolus.
+
+Remarquez que, maintenant, il y a un fichier \code{Chloroplastes\_bis.png} dans le répertoire \code{TP\_Python}.
+
+\begin{PY}
+print(type(A))
+n,p,c=A.shape
+print((n,p,c))
+print(A[10,40])
+\end{PY}
+\begin{PYout}
+<class 'numpy.ndarray'>
+(200, 300, 3)
+[ 0.44313726  0.45882353  0.35294119]
+\end{PYout}
+
+L'image est stockée à l'aide d'un objet ARRAY. On voit qu'il compte 200 lignes, 300 colonnes et que ses couleurs sont des listes de 3 valeurs entre 0 et 1.
+
+Ces trois nombres sont les composantes RGB (rouge, vert, bleu). [0,0,0] représente le noir et [1,1,1] le blanc.
+
+Attention : il s'agit ici des couleur primaires additives.
+\begin{PY}
+A=np.array([[ [0,0,0] , [0.5,0.5,0.5] , [1,1,1] ]
+           ,[ [0,0,0.5] , [0,1,1] , [0,0.5,0]]])
+​
+plt.imshow(A,interpolation='none')
+plt.show()
+\end{PY}
+
+\subsection{Convertir en noir et blanc, en niveaux de gris.}
+\begin{Exercice}
+	Écrire une fonction \code{nbconvert(image,seuil)} qui convertit l'image en noir et blanc.
+
+	\code{image} est un array et \code{seuil} est un réel entre $0$ et $3$. Le résultat est un array,
+	dans lequel le pixel est noir si la somme des composantes RGB est inférieure au \code{seuil} et blanc sinon.
+\end{Exercice}
+\begin{PY}
+def nbconvert(image,seuil) :
+    """ Convertit l'image en noir et blanc selon le seuil.
+    """
+    n,p,c = image.shape
+    resultat = np.zeros((n,p,c))
+
+    ### A compléter ###
+        
+    return(resultat)
+\end{PY}
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+B = nbconvert(A , 1.5)
+plt.imshow(B, interpolation='none')
+plt.show()
+img.imsave("Chloroplastes_NB.png",B)
+\end{PY}
+
+\begin{Exercice}
+Écrire une fonction \code{ngconvert(image)} qui convertit l'image en niveau de gris.
+
+Il suffit pour cela d'égaliser les composantes RGB de chaque pixel, en essayant de
+conserver la même luminosité (le même total des composantes couleurs).
+\end{Exercice}
+
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+B = ngconvert(A)
+plt.imshow(B, interpolation='none')
+plt.show()
+img.imsave("Chloroplastes_gris.png",B)
+\end{PY}
+
+\subsection{Faire un filtre de couleur.}
+\begin{Exercice}
+	Écrire une fonction \code{filtre\_bleu(image)} qui élimine les composantes rouges et
+	vertes de chaque pixel (en les forçant à 0).
+
+	On pourrait faire de même avec \code{filtre\_rouge(image)} et \code{filtre\_vert(image)}.
+\end{Exercice}
+
+\begin{PY}
+def filtre_bleu(image) :
+    """ Redonne l'image après lui avoir appliqué un filtre bleu.
+    """
+    n,p,c = image.shape
+    resultat = np.zeros((n,p,c))
+
+    ### A compléter ###
+        
+    return(resultat)
+\end{PY}
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+B = filtre_bleu(A)
+plt.imshow(B, interpolation='none')
+plt.show()
+\end{PY}
+
+\subsection{Faire un négatif.}
+\begin{Exercice}
+	Écrire une fonction \code{negatif(image)} qui donne le négatif de l'image.
+	
+	Si on additionnait le positif et le négatif, on devrait obtenir une image totalement blanche.
+\end{Exercice}
+
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+# négatif
+B = negatif(A)
+plt.imshow(B, interpolation='none')
+plt.show()
+# négatif du négatif
+C = negatif(B)
+plt.imshow(C, interpolation='none')
+plt.show()
+\end{PY}
+
+\subsection{Rotations et symétries.}
+\begin{Exercice}
+	Écrire une fonction \code{miroir(image)} qui donne l'image retournée gauche/droite.
+	
+	Puis écrire une fonction \code{rotation(image)} qui tourne l'image de 90° dans le sens trigonométrique.
+\end{Exercice}
+
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+# effet miroir
+B = miroir(A)
+plt.imshow(B, interpolation='none')
+plt.show()
+\end{PY}
+
+\begin{PY}
+       A = img.imread("Chloroplastes.png")
+       plt.imshow(A, interpolation='none')
+       plt.show()
+       # une rotation
+       B = rotation(A)
+       plt.imshow(B, interpolation='none')
+       plt.show()
+       # deuxième rotation
+       C = rotation(B)
+       plt.imshow(C, interpolation='none')
+       plt.show()
+       ​\end{PY}
+
+\subsection{Contraste et luminosité.}
+\begin{Exercice}
+	Écrire une fonction \code{luminosite(image,coeff)} qui multiplie chaque composante par coeff.
+	
+Si coeff<1 on baisse la luminosité et si coeff>1 on l'augmente.
+
+(Vous aurez besoin des fonctions min et max pour éviter les dépassements.)
+\end{Exercice}
+
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+# Foncer
+B = luminosite(A,0.5)
+plt.imshow(B, interpolation='none')
+plt.show()
+#Eclaircir
+C = luminosite(A,2)
+plt.imshow(C, interpolation='none')
+plt.show()
+\end{PY}
+
+\setcounter{exercices}{\theexercices-1}
+\begin{Exercice}[\textbf{(suite)}]
+Écrire une fonction \code{contraste(image,coeff)} qui multiplie l'écart de chaque composante (par rapport à la moyenne des composantes sur l'image) par coeff.
+Si coeff<1 on diminue le contraste et si coeff>1 on l'augmente.
+
+(Vous aurez besoin des fonctions min et max pour éviter les dépassements.)
+\end{Exercice}
+
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+# Diminuer le contraste
+B = contraste(A,0.5)
+plt.imshow(B, interpolation='none')
+plt.show()
+#E Augmenter le contraste
+C = contraste(A,2)
+plt.imshow(C, interpolation='none')
+plt.show()
+\end{PY}
+
+
+\subsection{Changer la résolution.}
+\begin{Exercice}
+	Écrire une fonction \code{reduire(image,coeff)} divise la taille par le coefficient entier donné.
+	
+	Par exemple, si le coefficient est 3, un carré de 9 pixels, en deviendra 1 seul.
+	
+	Chaque nouveau pixel étant la moyenne du groupe de pixels qu'il remplace. Si la
+	taille ne tombe pas juste, on arrondira à l'entie inférieur à l'aide de la
+	fonction \code{floor}.
+\end{Exercice}
+
+\begin{PY}
+from math import floor
+​
+#exemple d'usage de floor :
+floor(2.72)
+\end{PY}
+\begin{PYout}
+2
+\end{PYout}
+
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+plt.imshow(A, interpolation='none')
+plt.show()
+# image / 3
+B = reduire(A,3)
+plt.imshow(B, interpolation='none')
+plt.show()
+# Remarquer la graduation des images.
+\end{PY}
+
+
+\begin{Exercice}
+Écrire une fonction \code{agrandir(image,coeff)} qui multiplie la taille par le coefficient entier donné.
+
+Par exemple, si le coefficient est 3, un pixel sera remplacé par un carré de 9
+pixels, tous affectés de la couleur du pixel de départ.
+
+ (on pourrait le faire pour un coefficient quelconque, il faudrait alors faire une moyenne pondérée des couleurs des pixels recouverts par chaque nouveau pixel, la pondération étant l'aire de recouvrement.)
+\end{Exercice}
+
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+plt.imshow(A, interpolation='none')
+plt.show()
+# image * 3
+B = agrandir(A,3)
+plt.imshow(B, interpolation='none')
+plt.show()
+# Remarquer la graduation des images.
+\end{PY}
+
+\subsection{Faire un flou.}
+\begin{Exercice}
+Écrire une fonction \code{flou(image)} qui réalise un flou : 
+la couleur de chaque pixel est la moyenne de sa prope couleur (coeff 4)
+et des couleurs des pixel voisins (coeff 1) nord-sud-est-ouest. 
+On ne fera aucun traitement sur le bord pour simplifier (les pixels 
+seront recopiés).
+\end{Exercice}
+
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+plt.imshow(A, interpolation='none')
+plt.show()
+# Fait un flou
+B = flou(A)
+plt.imshow(B, interpolation='none')
+plt.show()
+# Fait 10 fois le flou
+for k in range(9) :
+    B=flou(B)
+plt.imshow(B, interpolation='none')
+plt.show()
+\end{PY}
+
+\subsection{Detection de contours.}
+\begin{Exercice}
+Écrire une fonction \code{contour(image,seuil)} qui créer une image noir et blanc :
+
+On choisit de colorer un pixel en noir si la variation de couleur y est
+importante. Pour ce faire, on calcul la somme sur toutes les composantes couleurs de  
+$|E−O|+|S−N|$  ( $E$  pour est,  $O$  pour ouest,  $S$  pour sud et 
+$N$ pour nord : les pixels voisins du pixel observé). Si cette grandeur dépasse
+le seuil, on mettra un pixel noir et sinon un blanc.
+
+On ne fera aucun traitement sur le bord pour simplifier, il sera supprimé.
+\end{Exercice}
+
+\begin{PY}
+A = img.imread("Chloroplastes.png")
+plt.imshow(A, interpolation='none')
+plt.show()
+# Détection de contours
+B = contour(A,1)
+plt.imshow(B, interpolation='none')
+plt.show()
+\end{PY}
+
+
+
+
+\end{document}

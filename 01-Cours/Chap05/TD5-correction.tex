@@ -1,23 +1,23 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 5 : Matrices et applications linéaires}
 
-\begin{center}
-\textit{{ {\huge TD 5 : Matrices et applications linéaires }}}
-\end{center}
+\tableofcontents
+\separationTitre
 
-\bigskip
+Dans la suite, $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
 
-\noindent Dans la suite, $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$.
 
-\medskip
-
-\begin{center}
-\textit{{ {\large Calcul matriciel}}}
-\end{center}
+\subsection{\large Calcul matriciel}
 
 \begin{Exercice}{} Soient $(a,b) \in \mathbb{R}^2$ et $A$ définie par :
 $$ A = \begin{pmatrix}
@@ -44,7 +44,7 @@ Par simple calcul, on a $T^2 = 0_2$. Ainsi, pour tout entier $n \geq 0$,
  \end{pmatrix}
  \end{align*}
  
- \medskip
+ 
 
 \begin{Exercice}{} Soient $n \in \mathbb{N}^*$ et $M$ une matrice de $\mathcal{M}_n(\mathbb{K})$. On suppose que $M-I_n$ est nilpotente. Montrer que $M$ est inversible.
 \end{Exercice}
@@ -60,9 +60,9 @@ $$ M \left(\sum_{j=1}^k \binom{k}{j} M^{j-1} (-1)^{1+j} \right)= I_n$$
 Ainsi, $M$ est inversible et :
 $$ M^{-1} = \sum_{j=1}^k \binom{k}{j} M^{j-1} (-1)^{1+j} $$
 
-\medskip
 
- \begin{Exercice}{} Soient $n \geq 1$ et $A = (a_{ij})_{1 \leq i,j \leq n}$ une matrice de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $i \in \Interv{1}{n}$,
+
+ \begin{Exercice}{} Soient $n \geq 1$ et $A = (a_{ij})_{1 \leq i,j \leq n}$ une matrice de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $i \in \iii{1}{n}$,
 $$ \vert a_{ii} \vert > \sum_{k \neq i} \vert a_{ik} \vert $$
 Montrer que $A$ est inversible.
 \end{Exercice}
@@ -71,9 +71,9 @@ Montrer que $A$ est inversible.
 x_1 \\
 \vdots \\
 x_n
-\end{pmatrix}$, non nul, appartenant au noyau de $A$ donc $AX= 0$ ($0$ étant un abus de notation pour le vecteur colonne nul). Il existe un entier $j \in \Interv{1}{n}$ tel que :
+\end{pmatrix}$, non nul, appartenant au noyau de $A$ donc $AX= 0$ ($0$ étant un abus de notation pour le vecteur colonne nul). Il existe un entier $j \in \iii{1}{n}$ tel que :
 $$ \vert x_j \vert = \max_{1 \leq i \leq n} \vert x_i \vert$$
-Notons que le maximum existe car l'ensemble associé est un ensemble fini de $\mathbb{R}$. $X$ étant non nul, un des réels $x_i$ ($1 \leq i \leq n$) est non nul donc $\vert x_j \vert >0$. Sachant que $AX=0$, on a d'après la formule du produit matriciel que pour tout $i \in \Interv{1}{n}$,
+Notons que le maximum existe car l'ensemble associé est un ensemble fini de $\mathbb{R}$. $X$ étant non nul, un des réels $x_i$ ($1 \leq i \leq n$) est non nul donc $\vert x_j \vert >0$. Sachant que $AX=0$, on a d'après la formule du produit matriciel que pour tout $i \in \iii{1}{n}$,
 $$ \sum_{k=1}^n a_{i,k} x_k = 0$$
 En particulier :
 $$ \sum_{k=1}^n a_{j,k} x_k = 0$$
@@ -87,7 +87,7 @@ Or $\vert x_j \vert$ est non nul donc :
 $$ \vert a_{j,j} \vert  \leq  \sum_{k \neq j} \vert a_{j,k} \vert$$
 ce qui est absurde au vu de l'hypothèse de l'énoncé.
 
-\medskip
+
 
 \begin{Exercice}{} Soient $n\geq 1$ et $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{K})$. Montrer que si $I_n - AB$ est inversible alors $I_n - BA$ est inversible.
 \end{Exercice} 
@@ -96,12 +96,12 @@ ce qui est absurde au vu de l'hypothèse de l'énoncé.
 $$ (AB-I_n)(AX)=0$$
 Or $I_n -AB$ est inversible donc $BA-I_n$ aussi. Ainsi, $AX=0$. Sachant que $BAX=X$ on en déduit que $X=0$. Le noyau de $I_n-BA$ est réduit au vecteur nul donc cette matrice est inversible.
 
-\medskip
+
 
 \noindent Ce n'est pas demandé mais on peut déterminer l'inverse de $I_n-BA$. La matrice $I_n-AB$ étant supposée inversible, Il existe une matrice $P$ inversible tel que :
 $$ I_n= (I_n-AB)P = P- ABP$$
 On a alors en multipliant par $A$ à droite : 
-$$ A = PA-ABPA$$
+$$ A = P A - A B P A$$
 puis en multipliant par $B$ à gauche :
 $$ BA = BPA- B(ABP)A$$
 On a ainsi :
@@ -113,7 +113,7 @@ $$ I_n = (I_n-BA)(I_n+BPA)$$
 On retrouve que $I_n-BA$ est inversible et :
 $$ (I_n-BA)^{-1} = I_n+BPA = I_n+B(I_n-AB)^{-1}A$$
 
-\medskip
+
 \begin{Exercice}{} Soient $n \geq 2$ et $D= \textrm{diag}(\lambda_1, \ldots, \lambda_n)$ ou $\lambda_1$, $\ldots$, $\lambda_n$ sont $n$ éléments de $\mathbb{K}$ deux à deux distincts.
 \begin{enumerate}
 \item Soit $M \in \mathcal{M}_n(\mathbb{K})$. Montrer que $M$ commute avec $D$ si et seulement si $M$ est diagonale.
@@ -125,7 +125,7 @@ $$ (I_n-BA)^{-1} = I_n+BPA = I_n+B(I_n-AB)^{-1}A$$
 \item Soit $M \in \mathcal{M}_n(\mathbb{K})$. 
 \begin{itemize}
 \item Si $M$ est diagonale, il est évident que $M$ commute avec $D$ qui est aussi diagonale.
-\item Supposons que $M=(m_{i,j})$ commute avec $D=(d_{i,j})$. Posons $A=MD=(a_{i,j})$ et $B=DM=(b_{i,j})$. On a donc $A=B$. Soit $(i,j) \in \Interv{1}{n}^2$ tel que $i \neq j$. On a :
+\item Supposons que $M=(m_{i,j})$ commute avec $D=(d_{i,j})$. Posons $A=MD=(a_{i,j})$ et $B=DM=(b_{i,j})$. On a donc $A=B$. Soit $(i,j) \in \iii{1}{n}^2$ tel que $i \neq j$. On a :
 $$ a_{i,j} = \sum_{k=1}^n m_{i,k} d_{k,j} = m_{i,j} d_{j,j} = \lambda_j m_{i,j}$$
 car $d_{j,k}$ est nul si $j \neq k$ car $D$ est diagonale.
 De même, on a :
@@ -136,23 +136,19 @@ Sachant que $i \neq j$, on a par hypothèse que $\lambda_j \neq \lambda_i$ donc 
 \end{itemize}
 Finalement, $M$ commute avec $D$ si et seulement si $M$ est diagonale.
 \item Soit $M \in \mathcal{M}_n(\mathbb{K})$ une matrice diagonale. De manière évidente, si $P$ est un polynôme alors :
-$$ P(D) = \textrm{diag}(P(\lambda_1), \ldots, P(\lambda_n))$$
-Notons $M= \textrm{diag}(a_1, \ldots, a_n)$. Répondre à la question posée revient à déterminer un polynôme de degré au plus $n-1$ tel que pour tout $i \in \Interv{1}{n}$, $P(\lambda_i)= a_i$. Sachant que les scalaires $\lambda_i$ sont deux à deux distincts, il suffit de connaitre les polynômes de Lagrange ! Posons :
+$$ P(D) = \diag(P(\lambda_1), \ldots, P(\lambda_n))$$
+Notons $M= \textrm{diag}(a_1, \ldots, a_n)$. Répondre à la question posée revient à déterminer un polynôme de degré au plus $n-1$ tel que pour tout $i \in \iii{1}{n}$, $P(\lambda_i)= a_i$. Sachant que les scalaires $\lambda_i$ sont deux à deux distincts, il suffit de connaître les polynômes de Lagrange ! Posons :
 $$ P(X) = \sum_{i=1}^n a_i L_i(X)$$
-où pour tout $i \in \Interv{1}{n}$,
-$$ L_i(X) = \prod_{k \in \Interv{1}{n} \setminus \lbrace i \rbrace} \dfrac{X-\lambda_k}{\lambda_i- \lambda_k}$$
-Le polynôme $P$ est une somme de polynômes de degré $n-1$ donc est bien de degré au plus $n-1$ et vérifie pour tout $i \in \Interv{1}{n}$ que $P(\lambda_i)= a_i$ car (de manière usuelle) $L_i(\lambda_t) = \delta_{i,t}$.
+où pour tout $i \in \iii{1}{n}$,
+$$ L_i(X) = \prod_{k \in \iii{1}{n} \setminus \lbrace i \rbrace} \dfrac{X-\lambda_k}{\lambda_i- \lambda_k}$$
+Le polynôme $P$ est une somme de polynômes de degré $n-1$ donc est bien de degré au plus $n-1$ et vérifie pour tout $i \in \iii{1}{n}$ que $P(\lambda_i)= a_i$ car (de manière usuelle) $L_i(\lambda_t) = \delta_{i,t}$.
 
 \end{enumerate}
 
 
- \newpage
+\subsection{\large Matrice d'application linéaire}
 
-\begin{center}
-\textit{{ {\large Matrice d'application linéaire}}}
-\end{center}
 
-\medskip
 
 
 
@@ -182,7 +178,7 @@ En composant par $f^{n-1}$ qui est linéaire, et en utilisant que $f^n$ est l'en
 $$ \lambda_0 f^{n-1}(x_0)=0_E$$
 Or par hypothèse $f^{n-1}(x_0)$ n'est pas nul donc $\lambda_0=0$. On a ainsi :
 $$ \sum_{k=1}^n \lambda_k f^k (x_0) = 0_E$$
-On réitère alors le procédé avec $f^{n-2}$ et de proche en proche, on obtient que pour tout $k \in \Interv{0}{n-1}$, $\lambda_k=0$. Ainsi $\mathcal{B}$ est libre et de cardinal $n$ qui est la dimension de $E$ donc $\mathcal{B}$ est une base de $E$.
+On réitère alors le procédé avec $f^{n-2}$ et de proche en proche, on obtient que pour tout $k \in \iii{0}{n-1}$, $\lambda_k=0$. Ainsi $\mathcal{B}$ est libre et de cardinal $n$ qui est la dimension de $E$ donc $\mathcal{B}$ est une base de $E$.
 \item Sachant que $f^n(x_0)=0_E$, on a :
 $$ \textrm{Mat}_{\mathcal{B}}(f) = \begin{pmatrix}
 0 & 0 & 0 & \cdots & 0 & 0 \\
@@ -212,7 +208,7 @@ $$ A^2 \begin{pmatrix}
 Ainsi $x_0$ n'est pas dans le noyau de $f^2$.
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exercice}{} Donner les matrices, dans la base canonique, des endomorphismes suivants de $E=\mathbb{R}_n[X]$. Que peut-on en déduire concernant ces endomorphismes ?
 
@@ -227,7 +223,7 @@ $$ \forall P \in E, \; f(P) = P-P' $$
 \end{Exercice} 
 
 \corr \begin{enumerate}
-\item Soit $k \in \Interv{0}{n}$. On a (en utilisant la formule du binôme de Newton pour la deuxième égalité) : 
+\item Soit $k \in \iii{0}{n}$. On a (en utilisant la formule du binôme de Newton pour la deuxième égalité) : 
 
 \begin{align*}
 f(X^k) & = (X+1)^k  \\
@@ -258,7 +254,7 @@ Avec le même raisonnement que précédemment (en développant $(X-1)^k$ avec la
 0 &  0 & 0 &  \cdots& 1 \\
 \end{pmatrix}
 \end{align*}
-\item Soit $k \in \Interv{0}{n}$. On a (en utilisant la formule du binôme de Newton pour la deuxième égalité) : 
+\item Soit $k \in \iii{0}{n}$. On a (en utilisant la formule du binôme de Newton pour la deuxième égalité) : 
 
 \begin{align*}
 f(X^k) & = (X+1)^k - (X-1)^k \\
@@ -275,12 +271,12 @@ $$ \textrm{Mat}_{\mathcal{B}}(f) = \begin{pmatrix}
 0 &  0 & 0 &  \cdots& 0 \\
 \end{pmatrix}$$
 La première colonne est nulle et les autres vecteurs colonnes forment une famille libre (la matrice formée des $n$ dernières colonnes en supprimant la dernière ligne est diagonale avec des coefficients diagonaux non nuls). Ainsi, la matrice de $f$ dans la base $\mathcal{B}$ est de rang $n$ et son noyau est de dimension $1$. Alors, $f$ a un noyau de dimension $1$ et on a :
-$$ \textrm{Ker}(f) = \textrm{Vect}(1) $$
+$$ \textrm{Ker}(f) = \Vect(1) $$
 La dernière ligne de la matrice de $f$ dans la base $\mathcal{B}$ est nulle donc :
 $$ \textrm{Im}(f) \subset \mathbb{R}_{n-1}[X]$$
 Par égalité des dimensions, on en déduit que :
 $$  \textrm{Im}(f) = \mathbb{R}_{n-1}[X]$$
-\item On a $f(1)=1$ et pour tout $k \in \Interv{1}{n}$, $f(X^k)=X^k-kX^{k-1}$. Ainsi, la matrice de $f$ dans la base canonique $\mathcal{B}$ de $\R_n[X]$ est : 
+\item On a $f(1)=1$ et pour tout $k \in \iii{1}{n}$, $f(X^k)=X^k-kX^{k-1}$. Ainsi, la matrice de $f$ dans la base canonique $\mathcal{B}$ de $\R_n[X]$ est : 
 $$\textrm{Mat}_{\mathcal{B}}(f)=\begin{pmatrix}
 1&-1&0&\cdots&0\\0&1&-2&\ddots&\vdots\\ \vdots&\ddots&\ddots&\ddots&0\\\vdots&&\ddots&\ddots&-n\\0&\cdots&\cdots&0&1
 \end{pmatrix}$$
@@ -288,7 +284,7 @@ La matrice de l'endomorphisme $f$ dans la base canonique de $\R_n[X]$ est triang
 \end{enumerate}
 
 
-\medskip
+
 
 \begin{Exercice}{} On considère l'application $\varphi : \mathbb{R}_2[X] \rightarrow \mathbb{R}^3$ définie par :
 \[ \varphi(P)=(P(0),P'(0),P(1)) \]
@@ -343,7 +339,7 @@ En se rappelant que $\mathcal{B}=(1,X,X^2)$, on a donc :
 $$ \varphi^{-1}((x,y,z)) = x + y X + (-x-y+z)X^2$$
 \end{enumerate}
 
-\medskip
+
 
 
 \begin{Exercice}{} Soit $E=\R^3.$
@@ -351,15 +347,15 @@ $$ \varphi^{-1}((x,y,z)) = x + y X + (-x-y+z)X^2$$
 \begin{enumerate}
 
 \item Montrer que les deux sous-espaces vectoriels suivants sont
-suppl\'ementaires dans $E.$
+supplémentaires dans $E.$
 $$F=\hbox{Vect}((1,-1,1))\quad\hbox{ et }\quad G=\{(x,y,z)\in
 E,\ 2x+4y+z=0\}$$
 
-\item D\'eterminer la matrice, dans la base canonique ${\cal B}$
+\item Déterminer la matrice, dans la base canonique ${\cal B}$
 de $E$, de la projection sur $G$ parallèlement à $F.$
 
-\item En d\'eduire la matrice, dans la base ${\cal B}$, de la
-sym\'etrie par rapport \`a $F$ parallèlement à $G.$
+\item En déduire la matrice, dans la base ${\cal B}$, de la
+symétrie par rapport \`a $F$ parallèlement à $G.$
 \end{enumerate}
 \end{Exercice} 
 
@@ -368,7 +364,7 @@ sym\'etrie par rapport \`a $F$ parallèlement à $G.$
 \begin{enumerate}
 \item Au vu de la question suivante, raisonnons par analyse-synthèse.
 
-\medskip
+
 
 \noindent \textit{Analyse.} Supposons que $E = F \oplus G$. Soit $x=(x_1,x_2,x_3) \in E$. Il existe alors un vecteur de $F$, de la forme $\alpha (1,-1,1)$, et un vecteur $(a,b,c) \in G$ tel que 
 $$x = \alpha (1,-1,1) + (a,b,c)$$
@@ -379,7 +375,7 @@ $$ 2(x_1 -\alpha) + 4 (x_2+ \alpha) + x_3- \alpha = 0$$
 ce qui implique que :
 $$ \alpha = - (2x_1+4x_2+x_3)$$
 
-\medskip
+
 
 \noindent \textit{Synthèse.} Soit $x=(x_1,x_2,x_3) \in \mathbb{R}^3$. Posons :
 $$ z = \alpha (1,-1,1) \; \hbox{ où } \; \alpha = - (2x_1+4x_2+x_3)$$
@@ -389,7 +385,7 @@ et
 $$ 2(x_1 - \alpha) + 4(x_2+ \alpha) + (x_3-\alpha) = 2x_1+4x_2+x_3 + \alpha = 0$$
 Ainsi, $w$ appartient à $G$.
 
-\medskip
+
 
 \noindent On a donc montré que tout élément de $\mathbb{R}^3$ s'écrit comme la somme d'un élément de $F$ et d'un élément de $G$. Cette décomposition est unique d'après l'analyse. Ainsi, $F$ et $G$ sont supplémentaires dans $E$.
 \item Notons $p_G$ cette projection. D'après la question précédente, en gardant les mêmes notations, on a pour tout $x \in \mathbb{R}^3$,
@@ -419,17 +415,15 @@ $$ \textrm{Mat}_{\mathcal{B}}(s_F) = I_3 - 2 \textrm{Mat}_{\mathcal{B}}(p_G) =  
 \end{enumerate}
 
 
-\medskip
-
-\begin{center}
-\textit{{ {\large Matrices semblables}}}
-\end{center}
-
-\medskip
 
 
-\begin{Exercice}{} Soit ${\cal B}=(e_1,e_2,e_3)$ la base canonique de $\R^3.$ On consid\`ere
-l'endomorphisme $f$ de $E$ d\'efini par~:
+\subsection{\large Matrices semblables}
+
+
+
+
+\begin{Exercice}{} Soit ${\cal B}=(e_1,e_2,e_3)$ la base canonique de $\R^3.$ On considère
+l'endomorphisme $f$ de $E$ défini par~:
 
 \begin{center}
 $\forall (x,y,z)\in\R^3,\quad f(x,y,z)=(x+y-z,x+2y+z,y+2z).$
@@ -439,11 +433,11 @@ $\forall (x,y,z)\in\R^3,\quad f(x,y,z)=(x+y-z,x+2y+z,y+2z).$
 
 \item Écrire la matrice $M$ de $f$ dans la base ${\cal B}.$
 
-\item D\'eterminer une base de $\textrm{Ker}(f)$ et une base de $\textrm{Im}(f)$.
+\item Déterminer une base de $\textrm{Ker}(f)$ et une base de $\textrm{Im}(f)$.
 
-\item Montrer que la r\'eunion des bases pr\'ec\'edentes constitue une base de $E$. On note ${\cal B}'$ cette nouvelle base.
+\item Montrer que la réunion des bases précédentes constitue une base de $E$. On note ${\cal B}'$ cette nouvelle base.
 
-\item  D\'eterminer la matrice $M'$ de $f$ dans cette nouvelle base. Quel est le lien entre $M$ et $M'$ ?
+\item  Déterminer la matrice $M'$ de $f$ dans cette nouvelle base. Quel est le lien entre $M$ et $M'$ ?
 \end{enumerate}
 
 \end{Exercice}
@@ -470,10 +464,12 @@ $$ \begin{pmatrix}
 0  & 1 & 0 \\
 \end{pmatrix}$$
 La matrice obtenue est clairement de rang $2$. On en déduit que :
-$$ \textrm{Ker}(f) = \textrm{Vect}((e_3-2e_2+3e_1)) = \textrm{Vect}((3,-2,1))$$
+$$ \textrm{Ker}(f) = \Vect((e_3-2e_2+3e_1)) = \Vect((3,-2,1))$$
 et 
-$$ \textrm{Im}(f) = \textrm{Vect}((1,1,0),(1,2,1))$$
-La famille $((3,-2,1))$ est une base du noyau de $f$ ($(3,-2,1)$ est non nul). De même, $((1,1,0),(1,2,1))$ est une base de l'image de $f$ car les deux vecteurs de cette famille sont non colinéaires.
+$$ \textrm{Im}(f) = \Vect((1,1,0),(1,2,1))$$
+La famille $((3,-2,1))$ est une base du noyau de $f$ ($(3,-2,1)$ est non nul). 
+
+De même, $((1,1,0),(1,2,1))$ est une base de l'image de $f$ car les deux vecteurs de cette famille sont non colinéaires.
 \item Notons $\mathcal{B}'=((3,-2,1),(1,1,0),(1,2,1))$. Le déterminant de la famille $\mathcal{B}'$ dans la base $\mathcal{B}$ vaut :
 $$ \begin{vmatrix}
 3 & 1 & 1 \\
@@ -503,7 +499,7 @@ $$ M' = \begin{pmatrix}
 Les matrices $M$ et $M'$ représentent le même endomorphisme dans des bases de $\mathbb{R}^3$ donc sont semblables.
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exercice}{} Montrer que $\begin{pmatrix}
 1 & 1 & -1 \\
@@ -528,7 +524,7 @@ $$ A = \begin{pmatrix}
 \end{pmatrix}$$
 Soit $f$ l'endomorphisme  de $\mathbb{R}^3$ canoniquement associé à la matrice $A$. On cherche une une base $\mathcal{B}'=(x_1,x_2,x_3)$ de $\mathbb{R}^3$ telle que la matrice de $f$ dans la base $\mathcal{B}'$ soit $B$. 
 
-\medskip
+
 
 \noindent \textit{Analyse.} Soit $\mathcal{B}'$ une telle base. En notant abusivement $0$ le vecteur nul de $\mathbb{R}^3$, on a alors :
 $$ f(x_1)=0, \; f(x_2)=x_1 \hbox{ et } f(x_3)=0$$
@@ -556,7 +552,7 @@ $$  A \begin{pmatrix}
 \end{pmatrix}$$
 Ainsi, $f(x_3)=(0,0,0)$.
 
-\medskip
+
 
 \noindent \textit{Synthèse.} Posons :
 $$ x_1 =(1,-3,-2), \; x_2 = (0,1,0), \; x_3= (0,1,1)$$
@@ -574,12 +570,12 @@ $$ \textrm{Mat}_{\mathcal{B}'}(f) = \begin{pmatrix}
 0 & 0 & 0 \\
 \end{pmatrix}$$
 
-\medskip
+
 
 \noindent Finalement, les matrices $A$ et $B$ représentent le même endomorphisme de $\mathbb{R}^3$ dans des bases différentes donc sont semblables.
 
 
-\medskip
+
 
 \begin{Exercice}{} Soient $n \geq 1$ et $S : \mathcal{M}_n(\mathbb{C}) \rightarrow \mathbb{C}$ définie par :
 $$ S((a_{i,j})_{1 \leq i,j \leq n}) = \sum_{1 \leq i,j \leq n} a_{i,j} a_{j,i}$$
@@ -614,7 +610,7 @@ S(A) & = S((PB)P^{-1}) \\
 \end{align*}
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exercice}{} Soient $n \geq 1$ et $A$ et $B$ deux matrices \textit{réelles} semblables dans $\mathcal{M}_n(\mathbb{C})$.
 
@@ -637,7 +633,7 @@ $$ AU+ i AV = UB + i VB$$
 Par identification, on en déduit que $AU=UB$ et $AV=VB$.
 \item Posons pour tout $z \in \mathbb{C}$,
 $$ P(z) = \textrm{det}(A+zB)$$
-Alors $P$ est une fonction polynômiale (il suffit de développer le déterminant). Or $P(i)$ est non nul car $A+iB$ est inversible. Ainsi, $P$ est une fonction polynomiale non nulle, elle admet donc une nombre fini de racines. En particulier, il existe nécessairement un réel $a$ tel que $P(a) \neq 0$ et ainsi le déterminant de $U+aV$ est non nul ce qui implique que $U+aV$ soit inversible.
+Alors $P$ est une fonction polynomiale (il suffit de développer le déterminant). Or $P(i)$ est non nul car $A+iB$ est inversible. Ainsi, $P$ est une fonction polynomiale non nulle, elle admet donc une nombre fini de racines. En particulier, il existe nécessairement un réel $a$ tel que $P(a) \neq 0$ et ainsi le déterminant de $U+aV$ est non nul ce qui implique que $U+aV$ soit inversible.
 \item Posons $Q=U+aV$. Alors :
 \begin{align*}
 AQ & = A(U+aV) \\
@@ -652,13 +648,11 @@ La matrice $Q$ étant réelle (car $U$ et $V$ le sont et que $a$ est un réel), 
 \end{enumerate}
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Noyau, Rang}}}
-\end{center}
 
-\medskip
+\subsection{\large Noyau, Rang}
+
+
 
 
 \begin{Exercice}{} Donner le noyau, le rang et l'image de $A = \begin{pmatrix}
@@ -684,7 +678,7 @@ et ainsi $\textrm{dim}(\textrm{Ker}(A)) = 1$ et $\textrm{rg}(A)=2$. Une base du 
 -1 
 \end{pmatrix} \right)$ (c'est un vecteur non nul) et une base de l'image de $A$ est donnée par $(C_1,C_2)$ (car le rang de la matrice est $2$ et que ces deux vecteurs appartiennent à l'image et sont non colinéaires).
 
-\medskip
+
 
 \begin{Exercice}{} Déterminer le rang de $A = \begin{pmatrix}
 x & 0 & 0& y \\
@@ -696,11 +690,11 @@ y & x & 0 & 0 \\
 
 \corr Distinguons plusieurs cas.
 
-\medskip
+
 
 \noindent $\rhd$ Si $(x,y)=(0,0)$, la matrice $A$ est nulle donc son rang est nul.
 
-\medskip
+
 
 \noindent $\rhd$ Si $x=0$ et $y \neq 0$. Alors :
 $$ A = \begin{pmatrix}
@@ -711,7 +705,7 @@ y & 0 & 0 & 0 \\
 \end{pmatrix}$$
 Les vecteurs colonnes de $A$ sont les multiples (non nuls) des vecteurs de la base canonique de $\mathcal{M}_{4,1}(\mathbb{R})$ donc le rang de $A$ est égal à $4$.
 
-\medskip
+
 
 \noindent $\rhd$ Si $x$ est non nul. L'opération $L_2 \leftarrow x L_2 - y L_1$ implique que :
 $$ \textrm{rg}(A) = \textrm{rg} \left(\begin{pmatrix}
@@ -736,12 +730,12 @@ x & 0 & 0& y \\
 \end{pmatrix} \right)$$
 Le réel $x$ étant non nul, la matrice $A$ est donc au moins de $3$ et elle est de rang $4$ si et seulement si $x^4 \neq y^4$, c'est à-dire si et seulement si $x \neq y$ et $x \neq -y$.
 
-\medskip
+
 
 \begin{Exercice}{} Déterminer le rang de $A=(i+j+ij)_{1\leq i,j\leq n}$ pour $n \geq 2$.
 \end{Exercice} 
 
-\corr Notons pour tout $j \in \Interv{1}{n}$, $C_j$, la $j$-ième colonne de $A$. Alors :
+\corr Notons pour tout $j \in \iii{1}{n}$, $C_j$, la $j$-ième colonne de $A$. Alors :
 $$ C_j = \begin{pmatrix}
 1 + 2j \\
 2 + 3j \\
@@ -760,7 +754,7 @@ n + (n+1)j
 4\\
 \vdots \\
 n+1
-\end{pmatrix} \in \textrm{Vect}(X_1,X_2)$$
+\end{pmatrix} \in \Vect(X_1,X_2)$$
 où 
 $$ X_1= \begin{pmatrix}
 1  \\
@@ -777,7 +771,7 @@ n+1
 \end{pmatrix}$$
 Ainsi, le rang de la matrice $A$ qui est égal à la dimension du sous-espace engendré par ses colonnes, est inférieur ou égal à $2$. Or les deux premières colonnes de $A$ ne sont pas colinéaires donc le rang de $A$ est supérieur ou égal à $2$. Ainsi, le rang de $A$ est égal à $2$.
 
-\medskip
+
 
 
 \begin{Exercice}{} Soient $n \geq 1$ et $H \in \mathcal{M}_n(\mathbb{C})$ une matrice de rang 1.
@@ -792,7 +786,7 @@ Ainsi, le rang de la matrice $A$ qui est égal à la dimension du sous-espace en
 
 \begin{enumerate}
 \item Notons $C_1$, $\ldots$, $C_n$ les colonnes de $H$. La matrice $H$ étant de rang $1$, il existe un vecteur colonne $C$ de $\mathcal{M}_{n,1}(\mathbb{R})$ et des scalaires $\alpha_1$, $\ldots$, $\alpha_n$ tels que :
-$$ \forall i \in \Interv{1}{n}, \; C_i =\alpha_i C $$
+$$ \forall i \in \iii{1}{n}, \; C_i =\alpha_i C $$
 Ainsi, on a :
 $$ M = [C_1, \ldots, C_n] = [\alpha_1 C, \ldots, \alpha_n C] = C (\alpha_1, \ldots, \alpha_n) = C~^t \begin{pmatrix}
 \alpha_1 \\
@@ -816,13 +810,11 @@ c_n
 \end{pmatrix} = \sum_{i=1}^n \alpha_i c_i $$
 Or, toujours d'après la question précédente, les coefficients diagonaux de $H$ sont les réels $\alpha_i c_i$ donc $~^tVU $ est égal à la trace de $H$ et finalement, $H^2 = \textrm{Tr}(H)H$.
 \end{enumerate}
- \medskip
+ 
 
-\begin{center}
-\textit{{ {\large Trace}}}
-\end{center}
+\subsection{\large Trace}
 
-\medskip
+
 
 
 \begin{Exercice}{} Soit $n \in \mathbb{N}^*$. Existe-t-il des matrices $A,B \in \mathcal{M}_n(\mathbb{C})$ vérifiant $AB - BA = I_n$ ?
@@ -834,7 +826,7 @@ Or par linéarité de la trace et par propriété liée à la trace d'un produit
 $$  \textrm{Tr}(AB-BA) =  \textrm{Tr}(AB)- \textrm{Tr}(BA) = 0$$
 C'est absurde. Ainsi, il n'existe pas de matrices $A,B \in \mathcal{M}_n(\mathbb{C})$ vérifiant $AB - BA = I_n$.
 
-\medskip
+
 
 
 \begin{Exercice}{} Soient $n \geq 1$ et $A$, $B$ deux matrices de $\mathcal{M}_n(\mathbb{R})$. On suppose que pour tout $X \in \mathcal{M}_n(\mathbb{R})$, 
@@ -844,9 +836,9 @@ Montrer que $A=B$.
 
 \corr Supposons que pour tout $X \in \mathcal{M}_n(\mathbb{R})$, 
 $$\textrm{Tr}(AX)= \textrm{Tr}(BX)$$
-Utilisons les matrices de la base canonique de $\mathcal{M}_n(\mathbb{R})$. Soit $(p,r) \in \Interv{1}{n}^2$. Par hypothèse,
+Utilisons les matrices de la base canonique de $\mathcal{M}_n(\mathbb{R})$. Soit $(p,r) \in \iii{1}{n}^2$. Par hypothèse,
 $$ \textrm{Tr}(AE_{p,r})= \textrm{Tr}(BE_{p,r})$$
-Or, pour tout $i \in \Interv{1}{n}$,
+Or, pour tout $i \in \iii{1}{n}$,
 $$ (A E_{p,r})_{i,i} = \sum_{k=1}^n A_{i,k} (E_{p,r})_{k,i} $$
 et $(E_{p,r})_{k,i}$ vaut $1$ si et seulement si $(p,r)=(k,i)$ et vaut $0$ sinon. Ainsi,
 $$ (A E_{p,r})_{i,i} = A_{i,p} \delta_{i,r}$$
@@ -854,17 +846,15 @@ où $\delta_{i,r}$ est le symbole de Kronecker. Ainsi,
  $$ \textrm{Tr}(AE_{p,r}) = \sum_{i=1}^n (A E_{p,r})_{i,i} = A_{r,p}$$
  Le raisonnement est analogue pour $B E_{p,r}$ donc on en déduit que :
  $$ A_{r,p}= B_{r,p}$$
- Ceci étant vrai pour tout $(p,r) \in \Interv{1}{n}^2$, on en déduit que $A=B$.
+ Ceci étant vrai pour tout $(p,r) \in \iii{1}{n}^2$, on en déduit que $A=B$.
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Déterminant}}}
-\end{center}
 
-\medskip
+\subsection{\large Déterminant}
+
+
 
 
 \begin{Exercice}{} Peut-on trouver une matrice $A \in \mathcal{M}_3(\mathbb{R})$ telle que $A^2= - I_3$?
@@ -876,7 +866,7 @@ et donc
 $$ \textrm{det}(A)^2 = \textrm{det}(-I_3) = - 1$$
 Or $\textrm{det}(A)$ est un réel donc son carré est un nombre positif : c'est absurde. Ainsi, il n'existe pas de matrice $A \in \mathcal{M}_3(\mathbb{R})$ telle que $A^2= - I_3$.
 
-\medskip
+
 
 \begin{Exercice}{} Soient $n \geq 1$, $\lambda_1 ,\lambda_2 ,\ldots,\lambda_n$ des réels et $a$, $b$ deux réels distincts. On pose pour tout $x \in \mathbb{R}$,
     \[
@@ -897,7 +887,7 @@ Or $\textrm{det}(A)$ est un réel donc son carré est un nombre positif : c'est 
 \corr 
 
 \begin{enumerate}
-\item Soit $x \in \mathbb{R}$. En utilisant les opérations $C_i \leftarrow C_i - C_1$ pour tout $i \in \Interv{2}{n}$, on a :
+\item Soit $x \in \mathbb{R}$. En utilisant les opérations $C_i \leftarrow C_i - C_1$ pour tout $i \in \iii{2}{n}$, on a :
     \[
     \Delta_n(x) =
     \begin{vmatrix}
@@ -920,7 +910,7 @@ puis on a :
 $$ q = \Delta_n(-a) -pa$$
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exercice}{} Soient $n \geq 2$ et $f \in \mathcal{L}(\mathcal{M}_n(\mathbb{R}))$ définie par $f(M) = \dfrac{M+~^tM}{2}\cdot$
 
@@ -948,12 +938,12 @@ Dans la question $1$, on a montré que :
 $$ \textrm{Im}(f) \subset \mathcal{S}_n(\mathbb{R})$$
 Ces espaces sont de même dimension donc sont égaux.
 
-\medskip
 
-\noindent \textit{Remarque.} On peut aussi aller beaucoup plus vite en remarquant que $f$ est la projection vectorielle sur $\mathcal{S}_n(\mathbb{R})$ parallèlement à $\mathcal{A}_n(\mathbb{R})$ (connaitre parfaitement la décomposition d'une matrice en somme d'une matrice symétrique et d'une matrice antisymétrique est très important).
+
+\noindent \textit{Remarque.} On peut aussi aller beaucoup plus vite en remarquant que $f$ est la projection vectorielle sur $\mathcal{S}_n(\mathbb{R})$ parallèlement à $\mathcal{A}_n(\mathbb{R})$ (connaître parfaitement la décomposition d'une matrice en somme d'une matrice symétrique et d'une matrice antisymétrique est très important).
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exercice}{} Déterminer pour tout entier $n \geq 1$, le déterminant $D_n$ de taille $n$ suivant :
 
@@ -1009,7 +999,7 @@ $$  2- \mu + 2 \mu = 3$$
 et ainsi $ \mu =1$ puis $\lambda=1$. Ainsi, pour tout entier $n \geq 1$,
 $$ D_n = 1+n$$
 
-\medskip
+
 
 
 \begin{Exercice}{} Soient $a_1 ,a_2 , \ldots ,a_n \in \mathbb{C}$. Calculer :

@@ -1,20 +1,20 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
 
 \begin{document}
-\everymath{\displaystyle}
-\begin{center}
-\textit{{ {\huge TD 4 : Applications linéaires}}}
-\end{center}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 4 : Applications linéaires}
 
-\bigskip
+\tableofcontents
+\separationTitre
 
-\medskip
-
-\begin{center}
-\textit{{ {\large Noyaux, images}}}
-\end{center}
+\subsection{\large Noyaux, images}
 
 
 \begin{Exercice}{} Montrer que les applications suivantes sont linéaires, déterminer leur noyau et leur image (et le rang, si cela a un sens). On précisera si c'est un endomorphisme, isomorphisme ou un automorphisme et on vérifiera si l'application est bien définie.
@@ -41,7 +41,7 @@ $$ \forall f \in \mathcal{C}(I, \mathbb{R}), \; \varphi(f)=f'$$
 \begin{enumerate}
 \item Soient $X=(x,y,z),Y=(x',y',z) \in \mathbb{R}^3$ et $\lambda \in \mathbb{R}$. Alors :
 \begin{align*}
-f(\lambda X+Y) & = f((\lambda x+x',\lambda y + y', \lambda z + z')) \\
+f(&\lambda X+Y) = f((\lambda x+x',\lambda y + y', \lambda z + z')) \\
 & = ((\lambda x + x')+2(\lambda y + y')+(\lambda z +z'),(\lambda y+y')-(\lambda x+x'),2(\lambda x + x')+4(\lambda y +y')+(\lambda z +z')) \\
 & = (\lambda (x+2y+z)+(x'+2y'+z'), \lambda (y-x) + y'-x', \lambda(2x+4y+z) + 2x'+4y'+z') \\
 & = \lambda(x+2y+z,y-x,2x+4y+z) + (x'+2y'+z',y'-x',2x'+4y'+z') \\
@@ -86,7 +86,7 @@ $$ \textrm{Im}(f) = \textrm{Vect}((1,1,1),(0,0,1))$$
 \end{align*}
 Or le degré de $P'$ est inférieur ou égal à $n-1$ (et celui de $P''$ inférieur ou égal à $n-2$) donc le degré de $(X+1)P'$ est inférieur ou égal à $n$ et de même pour celui de $X^2P''$. Ainsi le degré de $f(P)$ est inférieur ou égal à $2$ donc $\varphi(P)$ appartient à $\mathbb{R}_2[X]$.
 
-\medskip
+
 
 \noindent Montrons la linéarité de $f$. Soient $(P,Q) \in \mathbb{R}_{2}[X]^2$ et $\lambda \in \mathbb{R}$. On a :
 
@@ -98,13 +98,13 @@ f(\lambda P + Q) & = (\lambda P+Q)-(X+1)(\lambda P+Q)'+X^2(\lambda P+Q)'' \\
 \end{align*}
 Ainsi, $f$ est linéaire.
 
-\medskip
+
 
 \noindent \textit{Remarque}. Si $P$ et $Q$ sont deux polynômes, on a :
 $$ \textrm{deg}(P+Q) \leq \max ( \textrm{deg}(P),  \textrm{deg}(Q))$$
 On a égalité \textit{si} le degré de $P$ est différent du degré de $Q$.
 
-\medskip
+
 
 \noindent Déterminons le noyau de $f$. Soit $P \in \mathbb{R}_2[X]$. Il existe $(a,b,c) \in \mathbb{R}^3$ tel que :
 $$ P= aX^2+bX+c$$
@@ -112,7 +112,7 @@ et par simple calcul :
 $$f(P) = aX^2-2aX+c-b$$
 Ainsi, $P$ appartient au noyau de $f$ si et seulement si, par identification, $a=0$ et $c=b$ et donc si et seulement si $P =b(X+1)$. Finalement, on a $\textrm{Ker}(f)= \textrm{Vect}(X+1)$.
 
-\medskip
+
 
 \noindent Le noyau de $f$ est de dimension $1$ (car $X+1$ est différent du polynôme nul). La dimension de $\mathbb{R}_2[X]$ est trois donc d'après le théorème du rang, le rang de $f$ vaut $3-1=2$. De plus, on a :
 $$ \textrm{Im}(f) = \textrm{Vect}(f(1), f(X), f(X^2)) = \textrm{Vect}(1,-1, X^2-2X) = \textrm{Vect}(1,X^2-2X)$$
@@ -120,7 +120,7 @@ car $1$ et $-1$ sont colinéaires. Ainsi, $(1,X^2-2X)$ est une famille générat
 \item Il est clair que pour tout $M \in \mathcal{M}_2(\mathbb{R})$, $f(M) \in \mathcal{M}_2(\mathbb{R})$. Pour tout $(M,N) \in \mathcal{M}_2(\mathbb{R})^2$ et tout réel $\lambda$,
 $$ f(\lambda M + N) = A(\lambda M+N) = \lambda AM + AN = \lambda f(M)+ f(N)$$
 
-\medskip
+
 
 \noindent Déterminons le noyau de $f$. Soit $M = \begin{pmatrix}
 a&b \\
@@ -160,7 +160,7 @@ $$ M_1 = \begin{pmatrix}
 \end{pmatrix}$$
 Les matrices $M_1$ et $M_2$ étant non colinéaires, on en déduit que $(M_1,M_2)$ est une base de $\textrm{Ker}(f)$.
 
-\medskip
+
 
 \noindent L'application $f$ est un endomorphisme d'un espace vectoriel de dimension finie et non injectif d'après le raisonnement précédent donc $f$ n'est pas surjectif. D'après le théorème du rang, le rang de $f$ vaut $2$. Il suffit de déterminer une famille libre de l'image de $f$ qui contient deux éléments pour déterminer une base. On a :
 $$  f \left( \begin{pmatrix}
@@ -186,7 +186,7 @@ Les deux matrices $M_3=\begin{pmatrix}
 0 & 2 \\
 \end{pmatrix}$ étant non colinéaires, on en déduit que $(M_3,M_4)$ est une base de $\textrm{Im}(f)$.
 \item L'application est linéaire par linéarité de la dérivation. L'application $\varphi$ n'est pas injective car les fonctions constantes ont toutes la même image : la fonction nulle. L'application $\varphi$ n'est pas surjective car pour tout $f \in \mathcal{C}^1(I, \mathbb{R})$, $\varphi(f)=f'$ est continue sur $I$ et il existe des fonctions définies sur $I$ non continues.
-\medskip
+
 
 \noindent Soit $f \in \mathcal{C}^1(I, \mathbb{R})$. Si $f$ appartient au noyau de $\varphi$ alors $\varphi(f)=f'$ est la fonction nulle définie sur l'intervalle $I$ et $f$ est donc constante. Réciproquement, toute fonction constante définie sur $I$ appartient au noyau de $\varphi$. Ainsi, en notant $\tilde{1}$ la fonction constante égale à $1$, on a :
 $$ \textrm{Ker}(f) = \textrm{Vect}( \tilde{1} )$$
@@ -194,7 +194,7 @@ Soit $f \in \mathcal{C}^1(I, \mathbb{R})$. Alors $\varphi(f) = f'$ est continue 
 $$  \textrm{Im}(\varphi) = \mathcal{C}^0(I, \mathbb{R})$$
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exercice}{} Soit $\varphi : \mathbb{K}_{n+1}[X]\rightarrow \mathbb{K}_{n}[X]$ définie par $\varphi(P) = (n + 1)P - XP'$.
     \begin{enumerate}
@@ -214,7 +214,7 @@ $$  \textrm{Im}(\varphi) = \mathcal{C}^0(I, \mathbb{R})$$
 & \leq  \textrm{max}(\textrm{deg}(P), 1 +\textrm{deg}(P') ) \\
  &\leq  \textrm{deg}(P) 
 \end{align*}
-Cet argument n'est pas suffisant pour conclure. Procédons autrement\footnote{Pour justifier qu'une application linéaire entre deux espaces de polynômes est bien définie, on utilise souvent un argument lié au degré : il est très important de connaitre les propriétés liées au degré d'une somme, d'un produit, d'une composée... Si cela ne suffit pas : il peut être utile de déterminer explicitement l'expression de l'application.} : Il existe $(a_0, \ldots, a_{n+1}) \in \mathbb{K}^{n+2}$ tel que :
+Cet argument n'est pas suffisant pour conclure. Procédons autrement\footnote{Pour justifier qu'une application linéaire entre deux espaces de polynômes est bien définie, on utilise souvent un argument lié au degré : il est très important de connaître les propriétés liées au degré d'une somme, d'un produit, d'une composée... Si cela ne suffit pas : il peut être utile de déterminer explicitement l'expression de l'application.} : Il existe $(a_0, \ldots, a_{n+1}) \in \mathbb{K}^{n+2}$ tel que :
 $$ P = \sum_{k=0}^{n+1} a_k X^k $$
 Ainsi :
 \begin{align*}
@@ -224,7 +224,7 @@ Ainsi :
 \end{align*} 
 car le coefficient de $X^{n+1}$ est nul. Ainsi, le degré de $P$ est inférieur ou égal à $n$. Donc $\varphi(P) \in \mathbb{K}_n[X]$ et $\varphi$ est bien définie.
 
-\medskip
+
 
 \noindent Montrons que $\varphi$ est linéaire. Soient $(P,Q) \in \mathbb{K}_{n+1}[X]^2$ et $\lambda \in \mathbb{R}$. On a :
 
@@ -242,12 +242,12 @@ On a, en notant $\theta$ le polynôme nul, et d'après la question précédente 
 P \in \textrm{Ker}(\varphi) & \Longleftrightarrow  \varphi(P) = \theta \\
 & \Longleftrightarrow (n+1) a_0 + \sum_{k=1}^n (n+1-k) a_k X^k =\theta  \\
 \end{align*}
-Et ainsi, par identification, $P \in \textrm{Ker}(\varphi)$ si et seulement si $a_0 = \cdots = a_n = 0$ (car pour tout $k \in \Interv{0}{n}$, $(n+1-k) \neq 0$). Finalement $P$ appartient au noyau si et seulement si $P = a_{n+1} X^{n+1}$ et donc 
+Et ainsi, par identification, $P \in \textrm{Ker}(\varphi)$ si et seulement si $a_0 = \cdots = a_n = 0$ (car pour tout $k \in \iii{0}{n}$, $(n+1-k) \neq 0$). Finalement $P$ appartient au noyau si et seulement si $P = a_{n+1} X^{n+1}$ et donc 
 $$\textrm{Ker}(\varphi)= \textrm{Vect}(X^{n+1})$$
 \item La dimension de $\mathbb{K}_{n+1}[X]$ est $n+2$ et celle du noyau de $\varphi$ est $1$ (d'après la question précédente sachant que $X^{n+1}$ n'est pas nul). D'après le théorème du rang, le rang de $\varphi$ est $n+1$ qui est la dimension de $\mathbb{K}_n[X]$ (l'espace d'arrivée de $\varphi$). Ainsi, $\varphi$ est surjective.
 \end{enumerate}
 
-\medskip
+
 
 
 \begin{Exercice}{} Soient $n \geq 1$ et $a_{0} ,a_{1} , \ldots ,a_{n}$ des éléments deux à deux distincts de $\mathbb{C}$. Montrer que l'application $\varphi \colon \mathbb{C}_n[X] \rightarrow \mathbb{C}^{n+1}$ définie par :
@@ -265,7 +265,7 @@ $$\textrm{Ker}(\varphi)= \textrm{Vect}(X^{n+1})$$
 \end{align*}
 Ainsi, $\varphi$ est linéaire.
 
-\medskip
+
 
 \noindent Soit $P \in \mathbb{C}_n[X]$. Si $P$ appartient au noyau de $\varphi$ alors :
 $$ P(a_0) = P(a_1) = \cdots = P(a_n) = 0$$
@@ -275,18 +275,18 @@ L'autre inclusion est vraie car le noyau de $\varphi$ est un sous-espace vectori
 $$ \textrm{dim}(\mathbb{C}_n[X]) = \textrm{dim}(\mathbb{C}^{n+1}) = n+1$$
 Donc $\varphi$ est un isomorphisme.
 
-\medskip
+
 
 \begin{Exercice}{} Pour tout $P \in \mathbb{R}_3[X]$, on pose $\varphi(P)$ le reste de la division euclidienne de $(X^4-1)P$ par $X^4-X$. Montrer que $\varphi$ définit ainsi une endomorphisme de $\mathbb{R}_3[X]$ puis déterminer son noyau et son image.
 \end{Exercice} 
 
 \corr 
 
-\medskip
+
 
 \noindent $\rhd$ Soit $P\in \mathbb{R}_3[X]$. Le reste de la division euclidienne de $(X^4-1)P$ par $X^4-X$ est un polynôme à coefficients réels de degré strictement inférieur au degré de $X^4-X$. C'est un donc un polynôme de $\mathbb{R}_3[X]$. Ainsi, pour tout $P \in \mathbb{R}_3[X]$, $\varphi(P) \in \mathbb{R}_3[X]$.
 
-\medskip
+
 
 \noindent $\rhd$ Montrons que $\varphi$ est linéaire. Soient $(P,Q) \in \mathbb{R}_3[X]^2$ et $\lambda \in \mathbb{R}$. D'après le théorème de division euclidienne, il existe deux uniques couples $(P_1,P_2)$ et $(Q_1,Q_2)$ de polynômes tels que :
 $$ (X^4-1)P(X) = P_1(X)(X^4-X)+ P_2(X) \; \hbox{ et } \; (X^4-1)Q(X) = Q_1(X)(X^4-X)+ Q_2(X)$$
@@ -306,11 +306,15 @@ $$ X(X-1)(X-j)(X-j^2) Q(X) = (X-1)(X+1)(X-i)(X+i) P(X)$$
 Si un tel polynôme $Q$ existe, cela implique que $0$, $j$ et $j^2$ sont des racines de $(X-1)(X+1)(X-i)(X+i) P(X)$ et donc de $P$. Or $P$ est de degré inférieur ou égal à $3$ donc il existe un réel $\lambda$ tel que :
 $$ P(X) = \lambda X (X-j)(X-j^2) = \lambda X (X^2+X+1)$$
 Réciproquement si $P(X) = \lambda X (X-j)(X-j^2)$ avec $\lambda \in \mathbb{R}$ alors :
-$$ (X-1)(X+1)(X-i)(X+i) P(X) = \lambda (X-1)(X+1)(X-i)(X+i) X (X-j)(X-j^2) = X(X-1)(X-j)(X-j^2) Q(X)$$
+\begin{align*}
+  (X-1)(X+1)(X-i)(X+i) P(X) 
+  &= \lambda (X-1)(X+1)(X-i)(X+i) X (X-j)(X-j^2)\\
+  &= X(X-1)(X-j)(X-j^2) Q(X)
+\end{align*}
 avec $Q(X) = \lambda (X+1)(X-i)(X+i) = \lambda(X+1)(X^2+1) \in \mathbb{R}$. Finalement, on a :
 $$ \textrm{Ker}(\varphi) = \textrm{Vect}(X(X^2+X+1))$$
 
-\medskip
+
 
 \noindent L'espace $\mathbb{R}_3[X]$ est de dimension $4$ et le noyau de $\varphi$ est de dimension $1$ car $X(X^2+X+1)$ est non nul. D'après le théorème du rang, on en déduit que l'image de $\varphi$ est de dimension $3$. Il suffit de trouver trois vecteurs de l'image formant une famille libre pour obtenir une base de l'image. Remarquons que :
 $$ \left\lbrace \begin{array}{l}
@@ -323,7 +327,7 @@ $$ \varphi(1)= X-1, \; \varphi(X)= X^2-X \; \hbox{ et } \; \varphi(X^3) = X^3-X^
 Les polynômes $X-1$, $X^2-X$ et $X^3-X^2$ sont non nuls et sont échelonnés  en degré donc forment une famille libre à $3$ éléments. Cette famille est donc une base de l'image de $\varphi$ :
 $$ \textrm{Im}(\varphi) = \textrm{Vect}(X-1,X^2-X,X^3-X^2)$$
 
-\medskip
+
 
 
 
@@ -332,7 +336,7 @@ Soit $u$ un endomorphisme d'un espace vectoriel $E$ de dimension $n \geq 1$.
 \begin{enumerate}
 \item On suppose $u$ injectif. Déterminer pour tout $m \geq 1$, $K_m = \textrm{Ker}(u^m)$ et $I_m = \textrm{Im}(u^m)$.
 \item Montrer que pour tout $m \geq 0$, $K_m \subset K_{m+1}$ et $I_{m+1} \subset I_m$.
-\item On suppose $u$ non injectif. Montrer l'existence d'un entier $p \in \Interv{1}{n}$ tel que $K_p=K_{p+1}$ et $I_p = I_{p+1}$.
+\item On suppose $u$ non injectif. Montrer l'existence d'un entier $p \in \iii{1}{n}$ tel que $K_p=K_{p+1}$ et $I_p = I_{p+1}$.
 
 \noindent Montrer alors que pour tout $q \in \mathbb{N}$, $K_p = K_{p+q}$ et $I_p = I_{p+q}$ puis que $E = K_p \oplus I_p$.
 \end{enumerate}
@@ -348,15 +352,15 @@ donc $f^{m+1}(x)=0_E$ et alors $x \in K_{m+1}$. Ainsi, $K_m \subset K_{m+1}$.
 \item Soit $x \in E$. Si $x \in I_{m+1}$ alors il existe $z \in E$ tel que $x = f^{m+1}(z)$ et donc $x= f^m(f(z))$ avec $f(z) \in E$ donc $x \in I_m$. Ainsi, $I_{m+1} \subset I_m$.
 \end{itemize}
 
-\item Supposons par l'absurde que pour tout $p \in \Interv{1}{n}$, $K_p \neq K_{p+1}$. D'après la question précédente, on en déduit que :
+\item Supposons par l'absurde que pour tout $p \in \iii{1}{n}$, $K_p \neq K_{p+1}$. D'après la question précédente, on en déduit que :
 $$  K_1 \subset K_2 \subset \cdots \subset K_{n+1} \subset E$$
 et chaque inclusion est stricte donc :
 $$  \textrm{dim}(K_1) < \textrm{dim}(K_2) < \cdots < \textrm{dim}(K_{n+1})$$
 De plus, $u$ n'est pas injectif donc $K_1$ n'est pas réduit au vecteur nul et $E$ est de dimension $n$ donc :
 $$  0< \textrm{dim}(K_1) < \textrm{dim}(K_2) < \cdots < \textrm{dim}(K_{n+1}) \leq n$$
-On obtient ainsi $n+1$ entiers distincts compris entre $1$ et $n$ ce qui est absurde. Ainsi, il existe un entier $p \in \Interv{1}{n}$ tel que $K_p=K_{p+1}$. 
+On obtient ainsi $n+1$ entiers distincts compris entre $1$ et $n$ ce qui est absurde. Ainsi, il existe un entier $p \in \iii{1}{n}$ tel que $K_p=K_{p+1}$. 
 
-\medskip
+
 
 \noindent On sait que $I_{p+1} \subset I_{p}$ et d'après le théorème du rang et le raisonnement précédent :
 \begin{align*}
@@ -367,7 +371,7 @@ On obtient ainsi $n+1$ entiers distincts compris entre $1$ et $n$ ce qui est abs
  Ainsi, $I_{p+1}=I_p$.
 
 
-\medskip
+
 
 \noindent Montrons par récurrence que pour tout $q \in \mathbb{N}$, $K_p = K_{p+q}$.
 \begin{itemize}
@@ -376,7 +380,7 @@ On obtient ainsi $n+1$ entiers distincts compris entre $1$ et $n$ ce qui est abs
 \item La propriété est vraie au rang $0$ et est héréditaire donc est vraie pour tout $q \geq 0$ par principe de récurrence.
 \end{itemize}
 
-\medskip
+
 
 \noindent On sait que pour tout $q \geq 0$, $I_{p+q} \subset I_{p}$. D'après le théorème du rang, on a :
 $$ \textrm{dim}(I_p) = \textrm{dim}(E) - \textrm{dim}(K_p)$$
@@ -384,13 +388,13 @@ et
 $$ \textrm{dim}(I_{p+q}) = \textrm{dim}(E) - \textrm{dim}(K_{p+q})$$
 Or $K_p = K_{p+q}$ d'après le raisonnement précédent donc $I_p$ et $I_{p+q}$ ont la même dimension et $I_{p+q} \subset I_{p}$ donc ces espaces sont égaux.
 
-\medskip
+
 
 \noindent Montrons maintenant que $E = K_p \oplus I_p$. D'après le théorème du rang, il suffit de vérifier que $K_p$ et $I_p$ sont en somme directe. On sait que $\lbrace 0_E \rbrace \subset  K_p \cap I_p$ car $K_p$ et $I_p$ sont des sous-espaces vectoriels de $E$. Soit $x \in  K_p \cap I_p$. Alors $f^p(x)=0_E$ et il existe alors $z \in E$ tel que $x=f^p(z)$. On en déduit que $f^{2p}(z)=0_E$ donc $z \in K_{2p}$ et d'après le raisonnement précédent, $z \in K_p$. Finalement $x=f^p(z)=0_E$. Ainsi, $K_p \cap I_p \subset \lbrace 0_E \rbrace $ et on a l'égalité par double inclusion.    
 
 \end{enumerate}
 
-\medskip
+
 
 
 \begin{Exercice}{} Soit $\Delta : \mathbb{C}[X] \rightarrow \mathbb{C}[X]$ l'application définie par :
@@ -424,20 +428,20 @@ Or $K_p = K_{p+q}$ d'après le raisonnement précédent donc $I_p$ et $I_{p+q}$ 
 \end{align*}
 Ainsi, $\Delta$ est linéaire.
 
-\medskip
+
 
 \noindent Soit $P$ un polynôme non constant :
 $$ P(X) = a_0 + a_1 X + \cdots + a_n X^n$$
 où $(a_0, \cdots, a_n) \in \mathbb{C}^n$, $a_n \neq 0$ et $n \in \mathbb{N}^*$. Par linéarité de $P$, on a :
 $$ \Delta(P) = a_0 \Delta(1)+ a_0 \Delta(X) + \cdots + a_n \Delta(X^n)$$
-Pour tout $k \in \Interv{0}{n-1}$,
+Pour tout $k \in \iii{0}{n-1}$,
 $$ \Delta(X^k) = (X+1)^k - X^k = \sum_{j=0}^{k-1} \binom{k}{j} X^j$$
 donc $\textrm{deg}(\Delta(X^k))=k-1 \leq n-2$. De même, le degré de $\Delta(X^n)$ vaut $n-1$. Sachant que $a_n$ est non nul, on en déduit que le degré de $\Delta(P)$ vaut $n-1$ et ainsi,
 $$ \textrm{deg}(\Delta(P)) = \textrm{deg}(P)-1$$
 \item Déterminons le noyau de $\Delta$. Soit $P \in \mathbb{C}[X]$. Si $P$ est dans le noyau de $\Delta$ alors $\Delta(P)$ est le polynôme nul donc de degré $- \infty$. D'après la question précédente, $P$ ne peut pas être de degré supérieur ou égal à $1$ donc $P$ est constant. Réciproquement, si $P$ est constant, il est évident que $P$ est dans le noyau de $\Delta$. Ainsi,
 $$ \textrm{Ker}(\Delta) = \textrm{Vect}(1)$$
 
-\noindent Soit $n \in \mathbb{N}^*$. D'après la question précédente, pour tout $k \in \Interv{1}{n+1}$, le degré de $\Delta(X^k)$ vaut $k-1$ donc la famille :
+\noindent Soit $n \in \mathbb{N}^*$. D'après la question précédente, pour tout $k \in \iii{1}{n+1}$, le degré de $\Delta(X^k)$ vaut $k-1$ donc la famille :
 $$ \mathcal{F}_n = (\Delta(X), \Delta(X^2), \ldots, \Delta(X^{n+1}))$$
  est une famille de polynômes non nuls échelonnée en degré. C'est donc une famille libre de $\mathbb{C}_n[X]$, de cardinal $n+1$, qui est la dimension de $\mathbb{C}_n[X]$. C'est donc une base de cet espace. Ainsi,
  $$ \textrm{Vect}(\Delta(X), \Delta(X^2), \ldots, \Delta(X^{n+1})) = \mathbb{C}_n[X]$$
@@ -454,14 +458,14 @@ $$\sum_{k = 0}^{n} ( - 1)^{k} \binom{n}{k}P(X + k) = \theta$$
  $$ \sum_{k = 0}^{n} ( - 1)^{k} \binom{n}{k}P(k) = 0$$
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exercice}{} Soient $u$, $v$ deux endomorphismes d'un $\mathbb{K}$-espace vectoriel $E$. On suppose que $u$ et $v$ commutent. Montrer que $\textrm{Ker}(u)$ et $\textrm{Im}(u)$ sont stables par $v$.
 \end{Exercice} 
 
 \corr 
 
-\medskip
+
 
 \noindent $\rhd$ Montrons que $\textrm{Ker}(u)$ est stable par $v$, c'est-à-dire :
 $$ \forall x \in \textrm{Ker}(u), \; v(x) \in \textrm{Ker}(u)$$
@@ -475,7 +479,7 @@ u (v(x)) & = u \circ v (x) \\
 \end{align*}
 Ainsi, $v(x) \in \textrm{Ker}(u)$. On a bien montré le résultat souhaité.
 
-\medskip
+
 
 \noindent $\rhd$ Montrons que $\textrm{Im}(u)$ est stable par $v$, c'est-à-dire :
 $$ \forall y \in \textrm{Im}(u), \; v(y) \in \textrm{Im}(u)$$
@@ -489,14 +493,12 @@ v(y) & = v (u(x)) \\
 avec $v(x) \in E$. Ainsi, $v(y) \in \textrm{Im}(u)$. On a a donc montré le résultat souhaité.
 
 
-\medskip
 
 
-\begin{center}
-\textit{{ {\large Rang d'une application linéaire}}}
-\end{center}
 
-\medskip
+\subsection{\large Rang d'une application linéaire}
+
+
 
 
 \begin{Exercice}{} Soient $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et $f \in \mathcal{L}(E)$. Montrer que :
@@ -505,7 +507,7 @@ $$ \textrm{rg}(f^2 ) =  \textrm{rg}( f ) \, \Longleftrightarrow E = \textrm{Ker}
 
 \corr Raisonnons par double implications.
 
-\medskip
+
 
 \noindent $\rhd$ Supposons que $\textrm{rg}(f^2 ) =  \textrm{rg}( f )$. D'après le théorème du rang, on sait que :
 $$ \textrm{dim}(E) = \textrm{dim}( \textrm{Ker}(f)) + \textrm{rg}( f )$$
@@ -515,12 +517,12 @@ donc
 $$ \textrm{dim}( \textrm{Ker}(f)) = \textrm{dim}( \textrm{Ker}(f^2))$$
 Or le noyau de $f$ est inclus dans le noyau de $f^2$ donc ces espaces sont égaux.
 
-\medskip
+
 
 \noindent On sait que $\lbrace 0_E \rbrace \subset \textrm{Ker}(f) \cap \textrm{Im}(f)$. Soit $x \in E$. Supposons que $x \in \textrm{Ker}(f) \cap \textrm{Im}(f)$. Alors il existe un vecteur $y$ de $E$ tel que $x=f(y)$ et $f(x)=0_E$ donc $f^2(y)=0_E$. Ainsi, $y$ appartient au noyau de $f^2$ qui est égal au noyau de $f$ donc $x=f(y)=0_E$. Ainsi, $\textrm{Ker}(f) \cap \textrm{Im}(f) \subset \lbrace 0_E \rbrace$ et finalement l'égalité souhaitée est prouvée.
 
 
-\medskip
+
 
 \noindent $\rhd$ Supposons que $E = \textrm{Ker}(f) \oplus \textrm{Im}(f)$. Montrons que le rang de $f^2$ est égal au rang de $f$, c'est-à-dire :
 $$ \textrm{dim}(\textrm{Im}(f^2)) = \textrm{dim}(\textrm{Im}(f))$$
@@ -531,7 +533,7 @@ $$ y = f(f(x_0))= f^2(x_0) \in  \textrm{Im}(f^2)$$
 Finalement, $\textrm{Im}(f) \subset \textrm{Im}(f^2)$ et c'est ce qu'il fallait montrer.
 
 
-\medskip
+
 
 
 \begin{Exercice}{} Soient $f,g \in \mathcal{L}(E)$ où $E$ est un $\mathbb{K}$-espace vectoriel de dimension finie. Montrer que :
@@ -563,13 +565,11 @@ $$\vert \textrm{rg}(f) - \textrm{rg}(g) \vert\leq \textrm{rg}(f+g) $$
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Projections, symétries}}}
-\end{center}
 
-\medskip
+\subsection{\large Projections, symétries}
+
+
 
 
 \begin{Exercice}{} Soient $E= \mathbb{R}^3$ et $F$, $G$ les ensembles définis par :
@@ -591,7 +591,7 @@ $$ (x,y,z) \in F \Longleftrightarrow x=y-z \Longleftrightarrow (x,y,z) = (y-z,y,
 Ainsi $F = \textrm{Vect}((1,1,0), (-1,0,1))$ (donc les vecteurs $(1,1,0)$ et $(-1,0,1)$ forment une famille génératrice de $F$). De plus, ces deux vecteurs sont non colinéaires donc forment une famille libre de $F$ et ainsi forment une base de $F$. La dimension de $F$ est donc $2$.
 \item On sait que $\textrm{dim}(F)=2$ et $\textrm{dim}(G)=1$ (car $(1,1,1)$ est non nul). Ainsi $\textrm{dim}(F) + \textrm{dim}(G) = \textrm{dim}(\mathbb{R}^3)$. Il nous suffit alors de montrer que $F \cap G = \lbrace (0,0,0) \rbrace$. Soit $(x,y,z) \in F \cap G$. Il existe $\alpha \in \mathbb{R}$ tel que $(x,y,z) = \alpha (1,1,1)$ et sachant que $x-y+z=0$, on obtient $\alpha = 0$ puis $(x,y,z)=(0,0,0)$. Ainsi $F \cap G \subset \lbrace (0,0,0) \rbrace$ et l'autre inclusion est vérifiée car $F$ et $G$ sont des sous-espaces vectoriels de $\mathbb{R}^3$.
 
-\medskip
+
 
 \noindent Les espaces $F$ et $G$ sont donc des sous-espaces vectoriels supplémentaires de $\mathbb{R}^3$.
 \item D'après la question précédente, $F$ et $G$ sont  des sous-espaces vectoriels supplémentaires de $\mathbb{R}^3$. Soit $(x,y,z)$ un vecteur de $\mathbb{R}^3$. Il existe $x_F = (a,b,c) \in F$ et $x_G \in G$ tel que $(x,y,z) = x_F + x_G$. Par définition de $G$, il existe $\alpha \in \mathbb{R}$ tel que $x_G = (\alpha, \alpha, \alpha)$. Ainsi :
@@ -601,18 +601,18 @@ $$ \alpha = x-y+z $$
 Ainsi $x_G = (x-y+z) (1,1,1)$ et $x_F = (x,y,z) - x_G = (y-z, -x+2y-z,-x+y)$. Par définition de la projection sur $F$ parallèlement à $G$, on a donc pour tout $(x,y,z) \in \mathbb{R}^3$,
 $$ p((x,y,z)) = (y-z, -x+2y-z,-x+y)$$
 
-\medskip
+
 
 \noindent \textit{Remarque.} On peut avec la méthode proposée ici montrer en une fois que $F$ et $G$ sont des sous-espaces vectoriels supplémentaires de $\mathbb{R}^3$ et d'obtenir la décomposition associée de chaque élément de $\mathbb{R}^3$ : il suffit de raisonner par analyse-synthèse (qui donne la décomposition et l'unicité de celle-ci).
 \item D'après la question précédente, on a pour tout $(x,y,z) \in \mathbb{R}^3$, 
 $$ q((x,y,z)) = (x-y+z) (1,1,1)$$
 
-\medskip
+
 
 \noindent \textit{Remarque.} On a $p+q=\textrm{Id}$.
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exercice}{} Donner l'expression de la projection de $\mathcal{M}_n(\mathbb{R})$ sur $\mathcal{S}_n(\mathbb{R})$ parallèlement à $\mathcal{A}_n(\mathbb{R})$ et celle de la symétrie par rapport à $\mathcal{S}_n(\mathbb{R})$ parallèlement à $\mathcal{A}_n(\mathbb{R})$.
 \end{Exercice}
@@ -622,7 +622,7 @@ $$ p(M) = \dfrac{M+ ~^t M}{2}$$
 et 
 $$ s(M) =  \dfrac{M+ ~^t M}{2} -  \dfrac{M- ~^t M}{2} =~^t M$$
 
-\medskip
+
 
 
 
@@ -632,7 +632,7 @@ $$ s(M) =  \dfrac{M+ ~^t M}{2} -  \dfrac{M- ~^t M}{2} =~^t M$$
 \corr Voir le TD précédent pour la preuve. En notant $p$ cette projection, on a pour toute fonction $f \in \mathcal{F}(\mathbb{R}, \mathbb{R})$,
 $$ p(f) : x  \mapsto \dfrac{f(x)+f(-x)}{2}$$
 
-\medskip
+
 
 
 \begin{Exercice}{} Soient $p,q$ deux endomorphismes d'un espace vectoriel $E$. Montrer que les assertions suivantes sont équivalentes :
@@ -644,7 +644,7 @@ $$ p(f) : x  \mapsto \dfrac{f(x)+f(-x)}{2}$$
 
 \corr Raisonnons par double implications.
 
-\medskip
+
 
 \noindent $\rhd$ Supposons que $p \circ q = p$ et $q \circ p = q$.  Alors :
 \begin{align*}
@@ -656,13 +656,13 @@ p^2 & = (p \circ q) \circ (p \circ q) \\
 \end{align*}
 Par un argument symétrique, on montre que $q^2=q$. Ainsi, $p$ et $q$ sont des projecteurs.
 
-\medskip
+
 
 \noindent Soit $x \in E$. Si $x$ appartient au noyau de $p$ alors $p(x) = 0_E$ donc par linéarité de $q$ :
 $$ q(x)= q \circ p(x) = q(p(x))=q(0_E) = 0_E$$
 Donc $x$ appartient au noyau de $q$. Par un argument symétrique, on montre que si $x$ appartient au noyau de $q$, il appartient au noyau de $p$. Ainsi, $p$ et $q$ ont le même noyau.
 
-\medskip
+
 
 \noindent $\rhd$. Supposons que $p$ et $q$ sont des projecteurs de même noyau. Alors :
 $$ E = \textrm{Ker}(p) \oplus \textrm{Im}(p) = \textrm{Ker}(q) \oplus \textrm{Im}(q)$$
@@ -685,20 +685,18 @@ Ainsi, pour tout $x \in E$, $p \circ q(x)=p(x)$ donc $p \circ q = p$. Un argumen
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Formes linéaires et hyperplans}}}
-\end{center}
 
-\medskip
+\subsection{\large Formes linéaires et hyperplans}
+
+
 
 \begin{Exercice}{} Soient $E= \mathbb{R}_n[X]$ et $L \in \mathcal{L}(E, \mathbb{R})$ définie par :
 $$ \forall P \in E, \;  L(P) = \int_{-1}^1 P(t) \dt$$
 \begin{enumerate}
 \item Déterminer l'image de $P= \sum_{k=0}^n a_k X^k$ par $L$.
 \item Déterminer la dimension puis une base du noyau de $L$.
-\item Soit $(x_0, x_1, \ldots, x_n) \in \mathbb{R}^n$ tels que $-1 \leq x_0 < x_1 < \cdots < x_n \leq 1$. Montrer que pour tout $i \in \Interv{0}{n}$, il existe un unique polynôme $P_i$ de $E$ tel que pour tout $j \in \Interv{0}{n}$, $P_i(x_j)= \delta_{i,j}$.
+\item Soit $(x_0, x_1, \ldots, x_n) \in \mathbb{R}^n$ tels que $-1 \leq x_0 < x_1 < \cdots < x_n \leq 1$. Montrer que pour tout $i \in \iii{0}{n}$, il existe un unique polynôme $P_i$ de $E$ tel que pour tout $j \in \iii{0}{n}$, $P_i(x_j)= \delta_{i,j}$.
 \item Montrer que $(P_0, \ldots, P_n)$ est une base de $E$.
 \item Montrer qu'il existe $(\lambda_0, \ldots, \lambda_n) \in \mathbb{R}^{n+1}$ tel que :
 $$ \forall P \in E, \; \int_{-1}^1 P(t) \dt = \lambda_0 P(x_0) + \cdots + \lambda_n P(x_n)$$
@@ -713,9 +711,9 @@ L(P) & = \sum_{k=0}^n a_k \int_{-1}^{1} x^k \dx \\
 \end{align*}
 \item L'application $L$ est une forme linéaire non nulle ($L(1)=2$) sur l'espace vectoriel $\mathbb{R}_n[X]$ qui est de dimension $n+1$ donc le noyau de $L$ est un hyperplan de cet espace et est donc de dimension $n$.
 
-\medskip
 
-\noindent Soit $\dis P= \sum_{k=0}^n a_k X^k$. D'après la question précédente, $P$ appartient au noyau de $L$ si et seulement si :
+
+\noindent Soit $P= \sum_{k=0}^n a_k X^k$. D'après la question précédente, $P$ appartient au noyau de $L$ si et seulement si :
 $$ a_0 = - \sum_{2 \leq k \hbox{ {\scriptsize pair}} \leq n} \dfrac{2a_k}{k+1}$$
 Si $n$ est pair : il existe $p \geq 1$ tel que $n=2p$. Dans ce cas, l'égalité précédente se réécrit :
 $$ a_0 = - \dfrac{2a_2}{3} - \dfrac{2a_4}{5} - \cdots - \dfrac{2a_{2p}}{2p+1}$$
@@ -730,21 +728,21 @@ La famille générant cet espace est de cardinal $n=2p$ qui est la dimension du 
 $$ \textrm{Ker}(L) = \textrm{Vect} \left(X,X^2   - \dfrac{2}{3},X^3,X^4   - \dfrac{2}{5}, \ldots, X^{2p}   - \dfrac{2}{2p+1}, X^{2p+1} \right)$$
 ce qui donne une base pour les mêmes raisons.
 %\item Soit $(x_0, x_1, \ldots, x_n) \in \mathbb{R}^n$ tels que $-1 \leq x_0 < x_1 < \cdots < x_n \leq 1$. Posons :
-%$$ P_i(X) = \prod_{k \in \Interv{1}{n} \setminus \lbrace i \rbrace} \dfrac{X-x_k}{x_i-x_k}$$
-%où pour tout $k \in \Interv{1}{n}$,
-%$$ L_k(X) = \prod_{r \in \Interv{1}{n} \setminus \lbrace k \rbrace} \dfrac{X-x_r}{x_k- x_r}$$
-%Le polynôme $P$ est une somme de polynômes de degré $n-1$ donc est bien de degré au plus $n-1$ et vérifie pour tout $j \in \Interv{1}{n}$ que $P_i(x_j)= a_i$ car (de manière usuelle) $L_i(x_k) = \delta_{i,k}$.
+%$$ P_i(X) = \prod_{k \in \iii{1}{n} \setminus \lbrace i \rbrace} \dfrac{X-x_k}{x_i-x_k}$$
+%où pour tout $k \in \iii{1}{n}$,
+%$$ L_k(X) = \prod_{r \in \iii{1}{n} \setminus \lbrace k \rbrace} \dfrac{X-x_r}{x_k- x_r}$$
+%Le polynôme $P$ est une somme de polynômes de degré $n-1$ donc est bien de degré au plus $n-1$ et vérifie pour tout $j \in \iii{1}{n}$ que $P_i(x_j)= a_i$ car (de manière usuelle) $L_i(x_k) = \delta_{i,k}$.
 \item L'application $f : E \rightarrow \mathbb{R}^{n+1}$ définie par :
 $$ f(P) = (P(x_0), \ldots, P(x_n))$$
 est une application linéaire. Son noyau est réduit au polynôme nul car si un polynôme $P$ de $E$ appartient à son noyau alors il admet $n+1$ racines distinctes et a un degré inférieur ou égal à $n$ donc il est nul. Ainsi $f$ est une application linéaire injective. Or la dimension de $E$ est égal à la dimension de $\mathbb{R}^{n+1}$ donc $f$ est un isomorphisme. Ainsi tout élément de $\mathbb{R}^{n+1}$ admet un unique antécédent par $f$. On obtient le résultat en appliquant ce résultat à tout élément de la base canonique de $\mathbb{R}^{n+1}$.
 \item Cette famille contient $n+1$ éléments qui est la dimension de $E$. Il suffit de montrer que cette famille est libre. Soit $(\lambda_0, \lambda_1, \ldots, \lambda_n) \in \mathbb{R}^{n+1}$ tel que :
 $$ \sum_{i=0}^n \lambda_i P_i (X)= 0$$
-En évaluant, pour $k \in \Interv{0}{n}$, en $x_k$, on obtient (en utilisant la question précédente) que :
+En évaluant, pour $k \in \iii{0}{n}$, en $x_k$, on obtient (en utilisant la question précédente) que :
 $$ \lambda_k =0$$
 Ainsi, $(P_0, \ldots, P_n)$ est une famille libre et donc une base de $E$.
 \item Supposons l'existence de $(\lambda_0, \ldots, \lambda_n) \in \mathbb{R}^{n+1}$ tel que :
 $$ \forall P \in E, \; \int_{-1}^1 P(t) \dt = \lambda_0 P(x_0) + \cdots + \lambda_n P(x_n)$$
-En particulier, pour tout $k \in \Interv{0}{n}$,
+En particulier, pour tout $k \in \iii{0}{n}$,
 $$ \int_{-1}^1 P_k(t) \dt = \lambda_0 P_k(x_0) + \cdots + \lambda_n P_k(x_n)$$
 et donc :
 $$ \lambda_k =  \int_{-1}^1 P_k(t) \dt$$
@@ -754,7 +752,7 @@ où les $\lambda_k$ sont définis comme précédemment. Alors $\varphi$ est une 
 $$ \int_{-1}^1 P(t) \dt = \lambda_0 P(x_0) + \cdots + \lambda_n P(x_n)$$
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exercice}{} Soient $f$ une forme linéaire sur un $\mathbb{R}$-espace vectoriel $E$, de dimension $n$, et $a\in E$ tel que $f(a)\neq 0$.
 \begin{enumerate}
@@ -788,7 +786,7 @@ $$ G = \textrm{Ker}(f)$$
 \end{enumerate}
 
 
-\medskip
+
 
 
 \begin{Exercice}{} 
@@ -809,18 +807,18 @@ $$ \varphi((x_1, \ldots, x_n))=  x_1 + \cdots + x_n$$
 Cette forme linéaire est non nulle ($\varphi((1,1, \ldots, 1)) = n \neq 0$) donc c'est un hyperplan de $\mathbb{R}^n$ donc un espace vectoriel de dimension $n-1$.
 \item Raisonnons par analyse-synthèse pour montrer que $\mathbb{R}^n = H \oplus G$.
 
-\medskip
+
 
 \noindent \textit{Analyse.} Supposons que $\mathbb{R}^n = H \oplus G$. Soit $(x_1, \ldots, x_n) \in \mathbb{R}^n$. Il existe un vecteur $(a_1, \ldots, a_n)$ de $H$ et un vecteur de $G$, de la forme $\alpha (1, \ldots, 1)$ avec $\alpha \in \mathbb{R}$, tel que :
 $$ (x_1, \ldots, x_n) = (a_1, \ldots, a_n) + \alpha (1, \ldots, 1)$$
-On sait que $\dis \sum_{i=1}^n a_i=0$ donc :
+On sait que $\sum_{i=1}^n a_i=0$ donc :
 $$ \sum_{i=1}^n x_i = \sum_{i=1}^n \alpha = n \alpha$$
 et ainsi :
 $$ \alpha = \dfrac{1}{n} \sum_{i=1}^n x_i $$
-On a donc pour tout $i \in \Interv{1}{n}$,
+On a donc pour tout $i \in \iii{1}{n}$,
 $$ a_i = x_i - \alpha = x_i - \dfrac{1}{n} \sum_{j=1}^n x_j$$
 
-\medskip
+
 
 \noindent \textit{Synthèse.} Soit $(x_1, \ldots , x_n) \in \mathbb{R}^n$. Posons :
 $$ g = \alpha (1, \ldots, 1) \; \hbox{ où } \; \alpha =  \dfrac{1}{n} \sum_{i=1}^n x_i$$
@@ -831,11 +829,11 @@ $$ h = (x_1-\alpha, \ldots, x_n - \alpha)$$
 et
 $$ \sum_{i=1}^n (x_i - \alpha)  = \left(\sum_{i=1}^n x_i \right) - n \alpha = \sum_{i=1}^n x_i- \sum_{i=1}^n x_i = 0$$
 
-\medskip
+
 
 \noindent On a donc montré que tout vecteur de $\mathbb{R}^n$ s'écrit comme la somme d'un élément de $H$ et d'un élément de $G$. Cette décomposition est unique d'après l'analyse. Ainsi, $F$ et $G$ sont supplémentaires dans $\mathbb{R}^n$.
 
-\medskip
+
 
 \noindent Notons $s$ la symétrie par rapport à $F$ parallèlement à $G$. D'après le raisonnement précédent (en gardant les notations), on a :
 \begin{align*}
@@ -846,7 +844,7 @@ s((x_1, \ldots, x_n)) & = h-g \\
 \end{align*}
 \end{enumerate}
 
-\medskip
+
 
 
 
@@ -873,13 +871,11 @@ Finalement, on en déduit que :
 $$ \textrm{dim}(H_1 \cap H_2) =  n-2 $$
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Divers}}}
-\end{center}
 
-\medskip
+\subsection{\large Divers}
+
+
 
 \begin{Exercice}{} \begin{enumerate}
  \item Montrer que l'ensemble $V$ des suites complexes défini par :
@@ -907,8 +903,8 @@ est un $\C$-espace vectoriel.
  \end{align*}
  Ainsi, $w \in V$. 
  \end{itemize}
-Ainsi, $V$ est un sous-espace vectoriel de $\C^\N$.
- \item On confond polynôme et fonction polynômiale. On a $P'(X)=3X^2-2X=(3X-2)X$.
+Ainsi, $V$ est un sous-espace vectoriel de $\C^{\N}$.
+ \item On confond polynôme et fonction polynomiale. On a $P'(X)=3X^2-2X=(3X-2)X$.
  \begin{itemize}
 \item $P$ est dérivable (donc continue) sur $]-\infty,0[$ et pour tout $x \in ]-\infty,0[$,
 $$ P'(x) = (3x-2)x>0$$
@@ -936,11 +932,11 @@ $$ v_{n+3}=v_{n+2}+v_n = 0 $$
 La propriété est donc vraie au rang $n+3$. Ainsi, par principe de récurrence, on en déduit que $v$ est nulle. Ainsi, $\textrm{Ker}(\phi) \subset \lbrace \theta \rbrace$ ($\theta$ est la suite nulle). L'autre inclusion est vérifiée car le noyau de $\phi$ est un sous-espace vectoriel de $\mathbb{C}^{\mathbb{N}}$. Ainsi, $\phi$ est injective.
 
 
-\medskip
+
 
 \noindent L'application $\phi$ est surjective par construction (on définit $(v_n)$ par $v_0=a$, $v_1=b$, $v_2=c$ et pour tout $n\in\N$, $v_{n+3}=v_{n+2}+v_n$, ainsi $v$ est dans $V$ par construction et $\phi(v)=(a,b,c)$). 
 
-\medskip
+
 
 
 \noindent Finalement, $\phi$ est un isomorphisme et ainsi $\textrm{dim}(V)=3$
@@ -964,7 +960,7 @@ $$\left\lbrace\begin{array}{rcl} \alpha+\beta+\gamma&=&0 \\ \beta (r_1-r_0)+\gam
 Sachant que $(r_2-r_1)(r_2-r_0)\neq0$ on trouve $\gamma=0$, par suite comme $r_1-r_0\neq 0$ on trouve $\beta=0$ puis $\alpha=0$, ce qui termine de montrer que la famille est libre. Cette famille est donc une famille libre de $V$, de cardinal $3$ qui est la dimension de $V$ donc c'est une base de $V$. Ainsi,
 $$V=\textrm{Vect}((r_0^n)_{n \geq 0},(r_1^n)_{n \geq 0},(r_2^n)_{n \geq 0})$$
 
-\medskip
+
 
 \noindent On peut résoudre le système plus simplement avec un déterminant de Vandermonde. En effet, le premier système est équivalent à :
 $$ \begin{pmatrix}
@@ -987,7 +983,7 @@ $$ \alpha = \beta = \gamma = 0$$
 \end{enumerate}
 
 
-\medskip
+
 
 
 \begin{Exercice}{} Soient $E$ un $\mathbb{K}$-espace vectoriel et $f \in \mathcal{L}(E)$ tel que :
@@ -1020,7 +1016,7 @@ $f$ est donc un automorphisme de $E$ et on a :
 $$ f^{-1} = \dfrac{f-3 \textrm{Id}_E}{2}$$
 \item Raisonnons par analyse-synthèse.
 
-\medskip
+
 
 \noindent \textit{Analyse.} Supposons que :
 $$\textrm{Ker}(f - \textrm{Id}_E) \oplus \textrm{Ker}(f - 2\textrm{Id}_E) = E$$
@@ -1034,7 +1030,7 @@ y+2z & = f(x)\\
 L'opération $L_2 \leftarrow L_2- L_1$, implique que $z = f(x)-x$. En utilisant $L_1$, on a :
 $$ y= x-z = x -(f(x)-x)= 2x-f(x)$$
 
-\medskip
+
 
 \noindent \textit{Synthèse.} Soit $x \in E$. Posons :
 $$ y= 2x-f(x) \; \hbox{ et } \; z= f(x)-x$$
@@ -1047,7 +1043,7 @@ On a $y+z=x$. Montrons que $y$ appartient à $\textrm{Ker}(f - \textrm{Id}_E)$ :
 \end{align*}
 car $f^2 - 3f + 2 \textrm{Id}_E = \theta$. On montre de même que $z$ appartient à $\textrm{Ker}(f - 2\textrm{Id}_E)$.
 
-\medskip
+
 
 \noindent Finalement, tout vecteur de $E$ s'écrit comme la somme d'un élément de $\textrm{Ker}(f - \textrm{Id}_E)$ et de $\textrm{Ker}(f - 2\textrm{Id}_E)$. De plus, cette décomposition est unique d'après l'analyse. Ainsi, $\textrm{Ker}(f - \textrm{Id}_E)$ et $\textrm{Ker}(f - 2\textrm{Id}_E)$ sont des sous-espaces vectoriels supplémentaires de $E$.
 \end{enumerate}
@@ -1078,7 +1074,7 @@ $$ f(x) = - \dfrac{\alpha}{\beta} x$$
 Il suffit dans ce cas de poser $\lambda_x = - \dfrac{\alpha}{\beta} \cdot$
 \item Soit $(x,y) \in E^2$ tel que $x$ et $y$ soient non nuls.
 
-\medskip
+
 
 \noindent $\rhd$ Supposons que $(x,y)$ est liée. Les vecteurs étant non nuls, il existe donc un scalaire $\mu$ tel que :
 $$ x = \mu y$$
@@ -1090,7 +1086,7 @@ puis sachant que $x= \mu y$ :
 $$ \lambda_x x = \lambda_y  x$$
 Le vecteur $x$ est non nul donc $\lambda_x = \lambda_y$.
 
-\medskip
+
 
 \noindent $\rhd$ Supposons que $(x,y)$ est libre. On sait que :
 $$ f(x+y) = \lambda_{x+y} (x+y) = \lambda_{x+y} x + \lambda_{x+y} y$$
@@ -1107,7 +1103,7 @@ Cette égalité est vraie pour $x=0_E$. On en déduit que $f$ est une homothéti
 \end{enumerate}
 \item Raisonnons par analyse-synthèse.
 
-\medskip
+
 
 \noindent \textit{Analyse.} Soit $f$ de $\mathcal{L}(E)$ commutant avec tous les endomorphismes. Tentons d'utiliser la question précédente. Soit $x \in E$. Montrons l'existence d'un scalaire $\lambda_x$ tel que $f(x)= \lambda_x x$. C'est évident si $x=0_E$. Supposons $x$ non nul. L'espace $F= \textrm{Vect}(x)$ est de dimension $1$. $F$ admet un supplémentaire $G$. Considérons $p$ la projection sur $F$ parallèlement à $G$. D'après l'hypothèse,
 $$ f \circ p = p \circ f$$
@@ -1117,7 +1113,7 @@ Or $p(x)=x$ car $x$ est dans l'image de $p$. De plus, $p \circ f(x)$ est par dé
 $$ f(x) = \lambda_x x$$
 D'après la question précédente, on en déduit que $f$ est une homothétie vectorielle.
 
-\medskip
+
 
 \noindent \textit{Synthèse.} Soit $f$ une homothétie vectorielle de $E$. Il existe un scalaire $\lambda$ tel que pour tout $x \in E$, $f(x)= \lambda x$. Montrons que $f$ commute avec tout endomorphisme de $E$. Soit $g \in \mathcal{L}(E)$. On a pour tout $x \in E$,
 $$ g \circ f(x) = g (f(x)) = g(\lambda x)= \lambda g(x)$$
@@ -1137,7 +1133,7 @@ Ainsi, $f$ commute avec $g$.
 
 %\noindent Dans la suite, $\mathbb{K}= \mathbb{R}$ ou $\mathbb{C}$.
 %
-%\medskip
+%
 %
 %\begin{center}
 %{\large \textit{\underline{Noyaux, images}}}
@@ -1154,7 +1150,7 @@ Ainsi, $f$ commute avec $g$.
 %%\item Que vaut le rang de $f$?
 %%\end{enumerate}
 %%
-%%\medskip
+%%
 %
 %
 %\exo Soit $n \in \mathbb{N}^*$. On pose pour tout $P \in \mathbb{R}_n[X]$, $\Delta(P)= P-P'$.
@@ -1164,14 +1160,14 @@ Ainsi, $f$ commute avec $g$.
 %\item Déterminer le noyau et l'image de $\Delta$.
 %\end{enumerate}
 %
-%\medskip
+%
 %
 
 %    
-%\medskip
+%
 %
 
-%\medskip
+%
 %
 %\exo Soit $f$ un endomorphisme d'un $\mathbb{K}$-espace vectoriel $E$ vérifiant $f^3 = \textrm{Id}_E$. Montrer que :
 %    \[
@@ -1200,7 +1196,7 @@ Ainsi, $f$ commute avec $g$.
 %{\large \textit{\underline{Projections, symétries}}}
 %\end{center}
 %
-%\medskip
+%
 %
 %\exo Soient $E$ un $\mathbb{C}$-espace vectoriel de dimension finie et $u \in \mathcal{L}(E)$. On suppose qu'il existe un projecteur $p$ de $E$ tel que $u = p \circ u - u \circ p$.
 %\begin{enumerate}
@@ -1211,16 +1207,16 @@ Ainsi, $f$ commute avec $g$.
 %\bigskip
 %
 
-%\exo Soient $n \in \mathbb{N}^*$ et $(e_1, \ldots, e_n)$ une base d'un $\mathbb{K}$-espace vectoriel $E$. Posons pour tout $i \in \Interv{1}{n}$,
+%\exo Soient $n \in \mathbb{N}^*$ et $(e_1, \ldots, e_n)$ une base d'un $\mathbb{K}$-espace vectoriel $E$. Posons pour tout $i \in \iii{1}{n}$,
 %$$ F_i = \lbrace u \in \mathcal{L}(E), \, \textrm{Im}(u) \subset \textrm{Vect}(e_i) \rbrace$$
 %Montrer que $\mathcal{L}(E) = F_1 \oplus F_2 \oplus \cdots \oplus F_n$.
 %
-%\medskip
+%
 %
 %\exo Trouver toutes les formes linéaires $\Phi$ de $\mathcal{M}_n(\mathbb{R})$ vérifiant :
 %$$ \forall (A,B) \in \mathcal{M}_n(\mathbb{R})^2, \, \Phi(AB)= \Phi(BA)$$
 %
-%\medskip
+%
 %
 %\exo Soit $f \in \mathcal{L}(\mathbb{R}^6)$ tel que $\textrm{rg}(f^2) = 3$. Quels sont les rangs possibles pour $f$?
 

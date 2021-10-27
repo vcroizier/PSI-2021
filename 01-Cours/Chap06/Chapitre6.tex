@@ -101,7 +101,7 @@ On note alors $f_n \xrightarrow[n \rightarrow + \infty]{\textrm{CVS}} f$.
 \begin{Remarques}{}
 \begin{itemize} 
 \item La limite $f$ est unique quand elle existe car pour tout $x \in I$, $(f_n(x))_{n \geq 0}$ est une suite de scalaires. On dit que $f$ est la \emph{limite simple} de la suite $(f_n)_{n \geq 0}$ sur $I$.
-\item On dit que $(f_n)_{n \geq 0}$ converge simplement sur $I$ si il existe une fonction $f : I \rightarrow \mathbb{K}$ telle que $(f_n)_{n \geq 0}$ converge simplement vers $f$.
+\item On dit que $(f_n)_{n \geq 0}$ converge simplement sur $I$ s'il existe une fonction $f : I \rightarrow \mathbb{K}$ telle que $(f_n)_{n \geq 0}$ converge simplement vers $f$.
 \item Généralement $f$ n'est pas donnée, on l'obtient en déterminant, pour tout $x \in I$, la limite de $(f_n(x))_{n \geq 0}$.
 \end{itemize}
 \end{Remarques}{}
@@ -111,7 +111,7 @@ On note alors $f_n \xrightarrow[n \rightarrow + \infty]{\textrm{CVS}} f$.
 
 \medskip
 
-\begin{Exemple}\label{PremierEx} Étudions la convergence simple sur $\mathbb{R}$ de la suite $(f_n)_{n \geq 1}$ définie par :
+\begin{Exemple}[\label{PremierEx}] Étudions la convergence simple sur $\mathbb{R}$ de la suite $(f_n)_{n \geq 1}$ définie par :
 $$ \forall x \in \mathbb{R}, \quad f_n(x) = \sqrt{x^2 + \frac{1}{n}}$$
 
 \newpage
@@ -123,7 +123,7 @@ $$ \forall x \in \mathbb{R}, \quad f_n(x) = \sqrt{x^2 + \frac{1}{n}}$$
 %Ainsi $(f_n)_{n \geq 0}$ converge simplement sur $\mathbb{R}$ vers la fonction valeur absolue.
 \end{Exemple}
 
-\begin{Exemple}\label{Ex} Étudions la convergence simple  sur $\mathbb{R}_+$ de la suite $(f_n)_{n \geq 0}$ définie par :
+\begin{Exemple}[\label{Ex}] Étudions la convergence simple  sur $\mathbb{R}_+$ de la suite $(f_n)_{n \geq 0}$ définie par :
 $$ \forall x \in \mathbb{R}_+, \quad f_n(x) = \frac{x^n}{x^n+1}$$
 
 %Distinguons plusieurs cas :
@@ -181,7 +181,7 @@ On note dans ce cas : $f_n \xrightarrow[n \rightarrow + \infty]{\textrm{CVU}} f$
 %$$\forall \varepsilon >0, \, \exists N \in \mathbb{N}, \, \forall n \geq N, \,  \sup_{x \in I} \vert f_n(x)-f(x) \vert \leq \varepsilon$$
 La définition de convergence simple de $(f_n)_{n \geq 0}$ vers $f$ est équivalente à :
 $$ \forall x \in I, \,  \forall \varepsilon >0, \, \exists N \in \mathbb{N}, \, \forall n \geq N,  \, \vert f_n(x)-f(x) \vert \leq \varepsilon$$
-L'échange de quantificateur est ici extrêmement important : dans le cas de la convergence simple, le rang $N$ dépend du $x$ alors que dans le cas de la convergence uniforme, ce rang $N$ ne dépend pas de $x$ : la \og vitesse \fg de convergence est uniforme.
+L'échange de quantificateur est ici extrêmement important : dans le cas de la convergence simple, le rang $N$ dépend du $x$ alors que dans le cas de la convergence uniforme, ce rang $N$ ne dépend pas de $x$ : la \og vitesse \fg{} de convergence est uniforme.
 \end{Remarque}
 
 \begin{Proposition}{}  Si une suite $(f_n)_{n \geq 0}$ converge uniformément vers une fonction $f$ sur un intervalle $I$ alors elle converge simplement vers $f$ sur $I$. Ainsi, $f$ est unique et est appelée la \emph{limite uniforme} de $(f_n)_{n \geq 0}$.
@@ -192,7 +192,7 @@ L'échange de quantificateur est ici extrêmement important : dans le cas de la 
 \end{Demonstration}
 
 
-\begin{Remarque}{} On dit que $(f_n)_{n \geq 0}$ converge uniformément sur $I$ si il existe une fonction $f : I \rightarrow \mathbb{K}$ telle que $(f_n)_{n \geq 0}$ converge uniformément vers $f$ sur $I$. Cette définition est peu utilisée car dans la pratique, on commence par étudier la convergence simple et on connaît alors le candidat $f$ pour être la limite uniforme.
+\begin{Remarque}{} On dit que $(f_n)_{n \geq 0}$ converge uniformément sur $I$ s'il existe une fonction $f : I \rightarrow \mathbb{K}$ telle que $(f_n)_{n \geq 0}$ converge uniformément vers $f$ sur $I$. Cette définition est peu utilisée car dans la pratique, on commence par étudier la convergence simple et on connaît alors le candidat $f$ pour être la limite uniforme.
 \end{Remarque}
 
 \medskip
@@ -239,7 +239,7 @@ $$ \phantom{\Vert f \Vert_{\infty} = \sup_{x \in I} \vert f(x) \vert} $$
 \begin{itemize} 
 \item Si $f$ est bornée sur $I$, $\Vert f \Vert_{\infty}$ est bien défini car l'ensemble 
 $$ \lbrace \vert f(x) \vert \, \vert \, x \in I \rbrace$$
-est un sous-ensemble de $\mathbb{R}$ non vide et majorée donc admet une borne supérieure. Remarquons que si $f$ est continue et que $I= [a,b]$ où $a$, $b$ sont deux réels tels que $a<b$ alors la borne supérieure est un maximum.
+est un sous-ensemble de $\mathbb{R}$ non vide et majorée donc admet une borne supérieure. Remarquons que si $f$ est continue sur le segment $I= [a,b]$ où $a$, $b$ sont deux réels tels que $a<b$ alors la borne supérieure est un maximum.
 \item On note parfois $\Vert f \Vert_{I,\infty}$ si l'on souhaite préciser l'intervalle.
 \end{itemize}
 \end{Remarques}{} 
@@ -296,7 +296,7 @@ $$ f(x) = \left\lbrace \begin{array}{ccl}
 
 %
 %
-%\begin{Proposition}{} Soit $(f_n)_{n \geq 0}$ une suite de fonctions définies sur $I$ à valeurs dans $\mathbb{K}$. La suite $(f_n)_{n \geq 0}$ \emph{converge uniformément} vers une fonction $f : I \rightarrow \mathbb{K}$ si et seulement si il existe une suite réelle $(a_n)_{n \geq 0}$ telles que les deux conditions suivantes soient vérifiées :
+%\begin{Proposition}{} Soit $(f_n)_{n \geq 0}$ une suite de fonctions définies sur $I$ à valeurs dans $\mathbb{K}$. La suite $(f_n)_{n \geq 0}$ \emph{converge uniformément} vers une fonction $f : I \rightarrow \mathbb{K}$ si et seulement s'il existe une suite réelle $(a_n)_{n \geq 0}$ telles que les deux conditions suivantes soient vérifiées :
 %
 %\begin{itemize}
 %\item A partir d'un certain rang, $\sup_{x \in I} \vert f_n(x)-f(x) \vert \leq a_n$.
@@ -333,7 +333,7 @@ $$ \forall x \in I, \, \vert f_n(x)-f(x) \vert \leq a_n$$
 ce qui est équivalent à :
 $$ \Vert f_n - f \Vert_{\infty} \leq a_n$$
 Dans ce cas, par théorème d'encadrement, on obtient que $(f_n)_{n \geq 0}$ converge uniformément vers $f$ sur $I$. \emph{Attention} : Le point important est de majorer avec un \emph{terme ne dépendant pas de $x$}.
-\item Si il semble compliqué de majorer, on peut étudier les fonctions $x \mapsto f_n(x)-f(x)$ (dérivabilité, variations) afin de déterminer $\sup_{x \in I} \vert f_n(x)-f(x) \vert$ : la convergence est uniforme vers $f$ si cette expression tend vers $0$ quand $n$ tend vers $+ \infty$ (et ne converge pas uniformément sinon). 
+\item S'il semble compliqué de majorer, on peut étudier les fonctions $x \mapsto f_n(x)-f(x)$ (dérivabilité, variations) afin de déterminer $\sup_{x \in I} \vert f_n(x)-f(x) \vert$ : la convergence est uniforme vers $f$ si cette expression tend vers $0$ quand $n$ tend vers $+ \infty$ (et ne converge pas uniformément sinon). 
 \end{enumerate}
 \end{Methode}
 
@@ -738,13 +738,13 @@ $$  \lim_{x \rightarrow a} \sum_{n=0}^{+ \infty} f_n(x) = \sum_{n=0}^{+ \infty} 
 
 %\medskip
 %
-%La série $\sum_{n \geq 1} f_n$ où $f_n : x \mapsto \frac{1}{n^x}$ converge normalement sur $[a , + \infty[$ (pour tout $a>1$) : il suffit d'adapter un exemple précédent. En particulier, cette série converge normalement sur $[a, + \infty[$. De plus, pour tout $n \geq 2$ et tout $x \geq a$,
-%$$ \lim_{n \rightarrow + \infty} \frac{1}{n^x} = 0$$
-%et 
-%$$ \lim_{n \rightarrow + \infty} \frac{1}{1^x} = 1$$
-%Par interversion limite et somme, on a alors :
-%$$ \lim_{x \rightarrow + \infty} \sum_{n=0}^{+ \infty}\frac{1}{n^x} = \sum_{n=0}^{+ \infty} \lim_{x \rightarrow + \infty} \frac{1}{n^x} = 1$$
-%ce qui donne le résultat.
+% La série $\sum_{n \geq 1} f_n$ où $f_n : x \mapsto \frac{1}{n^x}$ converge normalement sur $[a , + \infty[$ (pour tout $a>1$) : il suffit d'adapter un exemple précédent. En particulier, cette série converge normalement sur $[a, + \infty[$. De plus, pour tout $n \geq 2$ et tout $x \geq a$,
+% $$ \lim_{n \rightarrow + \infty} \frac{1}{n^x} = 0$$
+% et 
+% $$ \lim_{n \rightarrow + \infty} \frac{1}{1^x} = 1$$
+% Par interversion limite et somme, on a alors :
+% $$ \lim_{x \rightarrow + \infty} \sum_{n=0}^{+ \infty}\frac{1}{n^x} = \sum_{n=0}^{+ \infty} \lim_{x \rightarrow + \infty} \frac{1}{n^x} = 1$$
+% ce qui donne le résultat.
 
 \vspace*{8cm}
 \end{Exemple}
