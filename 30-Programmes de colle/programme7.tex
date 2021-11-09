@@ -1,0 +1,140 @@
+\documentclass[twoside,a4paper,french,10pt]{VcCours}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{\vspace{-1.5em}}
+
+\begin{center}
+\large\bf
+Programme de colles\hspace{\stretch{1}}Semaine n\degres7: du 08/11 au 12/11/2021
+\end{center}
+\separationTitre
+
+
+Pour cette khôlle, chaque étudiant aura :
+\begin{itemize}
+\item Une \textbf{question de cours}.
+\item Une démonstration \textbf{(D)} ou un exercice à retravailler.
+\end{itemize}
+
+
+\section*{Chapitre 5 : Matrices et applications linéaires}
+
+% cSpell:ignore Sarrus
+\begin{enumerate}
+\item Calcul matriciel.
+\begin{itemize}
+\item Espace vectoriel $\mathcal{M}_{n,p}(\mathbb{K)}$. Produit de matrices. Matrices particulières. 
+\item Puissances de matrices : par conjecture, par cyclicité, si la matrice est diagonale, d'après la formule du binôme de Newton.
+\item Transposée d'une matrice.
+\item Inversibilité d'une matrice. Quelques propriétés. 
+\end{itemize}
+\item Matrices, vecteurs et applications linéaires.
+\begin{itemize}
+\item Matrice d'un vecteur dans une base. Matrice d'une famille de vecteurs dans une base.
+\item Matrice d'une application linéaire dans des bases données. Image d'un vecteur. Matrices d'une composition d'une application linéaire. En particulier $\textrm{Mat}_{\mathcal{B}}(u^n)$. 
+\item \textbf{Matrice de passage.}
+\item \textbf{Formule de changement de base (théorème 14 et corollaire 15).}
+\item Matrices semblables.
+\end{itemize}
+\item Image, noyau et rang d'une matrice.
+\begin{itemize}
+\item Noyau, image et rang d'une matrice.
+\item Méthodes pratique d'obtention du noyau et de l'image. 
+\end{itemize}
+\item Trace.
+\begin{itemize}
+\item Trace d'une matrice carrée. Trace d'un produit de matrice. Trace d'un endomorphisme. 
+\item \textbf{(D)} Deux matrices semblables ont la même trace.
+\end{itemize}
+\item Déterminant.
+\begin{itemize}
+\item Définition. Quelques propriétés. Cas d'une matrice carrée d'ordre deux, d'ordre trois (Sarrus). 
+\item Opérations élémentaires.
+\item Propriétés élémentaires : déterminant d'un produit, lien avec l'inversibilité, deux matrices semblables ont le même déterminant, matrice d'une transposée.
+\item Déterminant d'une famille de vecteurs : \textit{pratique} pour justifier qu'une famille est une base.
+\item Déterminant d'un endomorphisme.
+\item Méthodes de calcul. Matrice triangulaire. Matrices définies par blocs. Développement par rapport à une ligne ou par rapport à une colonne.
+\item Déterminant de Vandermonde (\textbf{définition et valeur}). \textbf{(D)} : relation de récurrence par une méthode (choisie par l'étudiant).
+\end{itemize} 
+\end{enumerate}
+
+\section*{Chapitre 6 : Suites et séries de fonctions}
+
+\begin{enumerate}
+\item Introduction avec un exemple.
+\item Modes de convergences pour des suites de fonctions. 
+\begin{itemize}
+\item \textbf{Définition de convergence simple}. Limite simple.
+\item \textbf{Définition de convergence uniforme}. 
+    \textbf{Les quantificateurs ont un sens ($\forall$ est différent de $\exists$) et l'ordre est important !!}
+\item convergence uniforme sur un intervalle implique la 
+    convergence simple sur cet intervalle. Limite uniforme.
+\item Convergence uniforme et norme infini. 
+    \textbf{Définition de la norme infini}.
+\item \textbf{(D)} : La norme infini est une norme sur 
+    $\mathcal{B}(I, \mathbb{K})$.
+\item Lien entre convergence uniforme et norme infini.
+\item \textbf{Méthode 2 (étude de la convergence uniforme) : 
+    tout étudiant doit être capable de détailler cette méthode 
+    à l'oral !}
+\item \textbf{Définition : convergence simple et uniforme d'une série de fonctions}.
+\item Une série de fonctions converge uniformément sur $I$ si et seulement si elle converge simplement et si la suite des restes converge uniformément vers $0$.
+\item \textbf{Définition : convergence normale d'une série de fonctions}.
+\item \textbf{(D)} : Théorème 5 (convergence normale implique convergence absolue en tout point et convergence uniforme).
+\item \textbf{Théorème de continuité pour des suites de fonctions et corollaire}. Bien comprendre que travailler sur tout segment peut ici être utile.
+\item \textbf{Théorème de continuité pour des séries de fonctions}.
+\item Théorème de la double limite.
+\end{itemize}
+\end{enumerate}
+
+
+
+% \begin{Exercice}
+%     Soient $F= \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, x+y+z =0 \rbrace$ et $G= \textrm{Vect}((1,1,1))$. Justifier l'existence de la projection sur $F$ parallèlement à $G$ et donner son expression. De même avec la symétrie par rapport à $F$ parallèlement à $G$. 
+% \end{Exercice} 
+
+\begin{Exercice}
+    Posons :
+    $$ \application{f}{\mathbb{R}_2[X]}{\mathbb{R}_2[X]}{P}{(X+1)P'}$$
+
+    \begin{enumerate}
+        \item Montrer que $f$ est un endomorphisme de $ \mathbb{R}_2[X]$.
+        \item Déterminer la matrice de $f$ dans la base canonique $\mathcal{B}$ de $\mathbb{R}_2[X]$.
+        \item Soit $\mathcal{B}'= (1, (X+1),(X+1)^2)$. Montrer que $\mathcal{B}'$ est une base de $\mathbb{R}_2[X]$ et déterminer la matrice de $f$ dans cette base.
+        \item Déterminer le lien entre $\textrm{Mat}_{\mathcal{B}'}(f)$ et $\textrm{Mat}_{\mathcal{B}}(f)$.
+    \end{enumerate}
+\end{Exercice} 
+
+
+% \begin{Exercice}
+%     Étudier la convergence simple  sur $\mathbb{R}_+$ de la suite $(f_n)_{n \geq 0}$ définie par :
+%     $$ \forall x \in \mathbb{R}_+, \quad f_n(x) = \frac{x^n}{x^n+1}$$
+% \end{Exercice} 
+
+\begin{Exercice}
+    On pose pour tout $n \geq 0$ et tout $x \in \mathbb{R}_+$, $f_n(x)= nx^2 e^{-nx}$. Étudier la convergence uniforme de $(f_n)_{n \geq 0}$ sur $\mathbb{R}_+$. 
+\end{Exercice} 
+
+\begin{Exercice}
+    On pose pour tout $n \geq 0$ et tout $x \in \mathbb{R}_+$, $f_n(x)= e^{-nx} \sin(nx)$.
+    \begin{enumerate}
+        \item Étudier la convergence simple de $(f_n)_{n \geq 0}$ sur $\mathbb{R}_+$. 
+        \item Étudier la convergence uniforme $(f_n)_{n \geq 0}$ sur $[a, + \infty[$ où $a>0$. 
+    \end{enumerate}
+\end{Exercice} 
+
+\begin{Exercice}
+    Déterminer pour tout entier $n \geq 1$, le déterminant $D_n$ de taille $n$ suivant :
+    \[
+        D_n =
+        \begin{vmatrix}
+            2 & 1 & {} & {(0)} \\
+            1 & \ddots & \ddots & {} \\
+            {} & \ddots & \ddots & 1 \\
+            {(0)} & {} & 1 & 2 \\
+        \end{vmatrix}_{[n]}
+    \]
+\end{Exercice} 
+
+\end{document}

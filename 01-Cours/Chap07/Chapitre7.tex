@@ -1,31 +1,39 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{Cours}
-\usepackage{delarray}
-\usepackage{fancybox}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\newcommand{\Int}[2]{\ensuremath{\mathchoice%
-	{{\displaystyle\int_{#1}^{#2}}}
-	{{\displaystyle\int_{#1}^{#2}}}
-	{\int_{#1}^{#2}}
-	{\int_{#1}^{#2}}
-	}}
+\documentclass[french,11pt,twoside]{VcCours}
 
+\newenvironment{ApplicationDirecte}{\textbf{Application directe du cours :}
+
+}{}
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\renewcommand{\trou}[1]{{\color{white}#1}}
+%\renewcommand{\trou}[1]{{\color{blue}#1}}
 
 \begin{document}
-% \everymath{\displaystyle}
 
-\maketitle{Chapitre 7}{Fonctions vectorielles et arcs paramétrés}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Chapitre 7 : Fonctions vectorielles et arcs paramétrés}
+
+\tableofcontents
+\separationTitre
 
 
-Dans tout le chapitre, $I$ est un intervalle de $\mathbb{R}$ contenant au moins deux points et $n$ et $m$ sont deux entiers naturels non nul. Sauf indication contraire, $f$ désignera une application définie sur $I$ et à valeurs dans $\mathbb{R}^n$.
+Dans tout le chapitre, $I$ est un intervalle de $\mathbb{R}$ contenant au moins 
+deux points et $n$ et $m$ sont deux entiers naturels non nul. Sauf indication 
+contraire, $f$ désignera une application définie sur $I$ et à valeurs dans 
+$\mathbb{R}^n$.
 
-\medskip
+\bigskip
 
 Le but du chapitre est :
 
 \begin{itemize}
-\item de généraliser aux fonctions à valeurs dans $\mathbb{R}^n$ la notion de continuité et de dérivabilité d'une fonction numérique.
-\item de formaliser certaines notions géométriques utilisées dans d'autres matières scientifiques.
+\item de généraliser aux fonctions à valeurs dans $\mathbb{R}^n$ la notion 
+de continuité et de dérivabilité d'une fonction numérique.
+\item de formaliser certaines notions géométriques utilisées dans d'autres 
+matières scientifiques.
 \end{itemize}
 
 %\section{Norme sur $\mathbb{R}^n$}
@@ -51,6 +59,7 @@ Le but du chapitre est :
 %\begin{Remarque}{} On définit aussi la notion de limite en $- \infty$ et $+ \infty$ : il suffit de comprendre que la norme euclidienne \og remplace \fg la valeur absolue dans $\mathbb{R}^n$.
 %\end{Remarque}
 
+\newpage
 \section{Continuité et dérivabilité}
 \subsection{Fonctions coordonnées}
 Soit $\mathcal{B}=(e_1, \ldots, e_n)$ la base canonique de $\mathbb{R}^n$. Pour tout $x \in I$, il existe des réels $f_1(x), \ldots, f_n(x)$ tel que :
@@ -73,7 +82,7 @@ On définit, comme dans le cas réel, la continuité à gauche et la continuité
 
 %\medskip
 %
-%\begin{Proposition}{continuité composante par composante} Soit $a \in I$. La fonction $f$ est continue en $a$ si et seulement si pour tout $k \in \Interv{1}{n}$, $f_k$ est continue en $a$. 
+%\begin{Proposition}{continuité composante par composante} Soit $a \in I$. La fonction $f$ est continue en $a$ si et seulement si pour tout $k \in \iii{1}{n}$, $f_k$ est continue en $a$. 
 %\end{Proposition}
 %
 %\begin{Demonstration}{} Voir chapitre sur les espaces vectoriels normés.
@@ -138,7 +147,7 @@ $$ f'(a) = (f_1^{'}(a), f_2^{'}(a) ,\ldots, f_n^{'}(a))$$
 %
 %\medskip
 
-%\begin{Proposition}{dérivation composante par composante} Soit $a \in I$. La fonction $f$ est dérivable en $a$ si et seulement si pour tout $k \in \Interv{1}{n}$, $f_k$ est dérivable en $a$. Dans ce cas, on a :
+%\begin{Proposition}{dérivation composante par composante} Soit $a \in I$. La fonction $f$ est dérivable en $a$ si et seulement si pour tout $k \in \iii{1}{n}$, $f_k$ est dérivable en $a$. Dans ce cas, on a :
 %$$ f'(a) = (f_1^{'}(a), f_2^{'}(a) ,\ldots, f_n^{'}(a))$$
 %\end{Proposition}
 
@@ -146,7 +155,9 @@ $$ f'(a) = (f_1^{'}(a), f_2^{'}(a) ,\ldots, f_n^{'}(a))$$
 $$ f'(x) = (- \sin(x), \cos(x))$$
 \end{Exemple}
 
-\begin{Remarque}{} On dit que $f$ admet pour limite $(b_1, \ldots, b_n)$ en $a$ si pour tout $k \in \Interv{1}{n}$, $f_k$ admet pour limite $b_k$ en $a$.
+\begin{Remarque}{} 
+	On dit que $f$ admet pour limite $(b_1, \ldots, b_n)$ en $a$ si pour tout 
+	$k \in \iii{1}{n}$, $f_k$ admet pour limite $b_k$ en $a$.
 \end{Remarque}
 
 \begin{Proposition}{développement limité et dérivabilité} Soient $a \in I$ et $b \in \mathbb{R}^n$. Les assertions suivantes sont équivalentes.
@@ -284,9 +295,9 @@ Si la fonction $f$ est de classe $\mathcal{C}^k$ en tout point de $I$, on dit qu
 %
 %\begin{Proposition}{classe $\mathcal{C}^k$ composante par composante} 
 %\begin{itemize}
-%\item La fonction $f$ est de classe $\mathcal{C}^k$ sur $I$ si et seulement si pour tout $j \in \Interv{1}{n}$, $f_j$ est de classe $\mathcal{C}^k$ sur $I$. Dans ce cas, pour tout $i \in \Interv{1}{k}$ et tout $a \in I$,
+%\item La fonction $f$ est de classe $\mathcal{C}^k$ sur $I$ si et seulement si pour tout $j \in \iii{1}{n}$, $f_j$ est de classe $\mathcal{C}^k$ sur $I$. Dans ce cas, pour tout $i \in \iii{1}{k}$ et tout $a \in I$,
 %$$ f^{(i)}(a) = (f_1^{(i)}(a), f_2^{(i)}(a) ,\ldots, f_n^{(i)}(a))$$
-%\item La fonction $f$ est de classe $\mathcal{C}^{\infty}$ sur $I$ si et seulement si pour tout $j \in \Interv{1}{n}$, $f_j$ est de classe $\mathcal{C}^{\infty}$ sur $I$. Dans ce cas, pour tout $i \in \mathbb{N}^*$  et tout $a \in I$,
+%\item La fonction $f$ est de classe $\mathcal{C}^{\infty}$ sur $I$ si et seulement si pour tout $j \in \iii{1}{n}$, $f_j$ est de classe $\mathcal{C}^{\infty}$ sur $I$. Dans ce cas, pour tout $i \in \mathbb{N}^*$  et tout $a \in I$,
 %$$ f^{(i)}(a) = (f_1^{(i)}(a), f_2^{(i)}(a) ,\ldots, f_n^{(i)}(a))$$
 %\end{itemize}
 %\end{Proposition}
@@ -295,7 +306,7 @@ Si la fonction $f$ est de classe $\mathcal{C}^k$ en tout point de $I$, on dit qu
 
 \begin{Proposition}{} 
 \begin{itemize}
-\item Soient $f : I \rightarrow \mathbb{R}$, $g : I \rightarrow \mathbb{R}$ deux fonctions de classes $\mathcal{C}^k$ sur $I$ et $\lambda \in \mathbb{R}$. Alors $(\lambda f+g)$ est de classe $\mathcal{C}^k$ sur $I$ et on a pour tout $i \in  \Interv{1}{k}$ et tout $a \in I$,
+\item Soient $f : I \rightarrow \mathbb{R}$, $g : I \rightarrow \mathbb{R}$ deux fonctions de classes $\mathcal{C}^k$ sur $I$ et $\lambda \in \mathbb{R}$. Alors $(\lambda f+g)$ est de classe $\mathcal{C}^k$ sur $I$ et on a pour tout $i \in  \iii{1}{k}$ et tout $a \in I$,
 $$ (\lambda f+g)^{(i)}(a) = \lambda f^{(i)}(a) + g^{(i)}(a) $$
 \item  Soient $f : I \rightarrow \mathbb{R}$, $g : I \rightarrow \mathbb{R}$ deux fonctions de classes $\mathcal{C}^{\infty}$ sur $I$ et $\lambda \in \mathbb{R}$. Alors $(\lambda f+g)$ est de classe $\mathcal{C}^{\infty}$ sur $I$ et on a pour tout $i \in \mathbb{N}^*$ et tout $a \in I$,
 $$ (\lambda f+g)^{(i)}(a) = \lambda f^{(i)}(a) + g^{(i)}(a) $$
@@ -308,7 +319,7 @@ $$ (\lambda f+g)^{(i)}(a) = \lambda f^{(i)}(a) + g^{(i)}(a) $$
 %\begin{Proposition}{Composition par une application linéaire}
 %Soient $p \in \mathbb{N}^*$ et $L : \mathbb{R}^n \rightarrow \mathbb{R}^p$ une application linéaire. 
 %\begin{itemize}
-%\item Si $f : I \rightarrow \mathbb{R}^n$ est de classe $\mathcal{C}^k$ sur $I$ alors $L \circ f : I \rightarrow \mathbb{R}^p$ est de classe $\mathcal{C}^k$ sur $I$ et on a pour tout $i \in \Interv{1}{k}$ et tout $a \in I$,
+%\item Si $f : I \rightarrow \mathbb{R}^n$ est de classe $\mathcal{C}^k$ sur $I$ alors $L \circ f : I \rightarrow \mathbb{R}^p$ est de classe $\mathcal{C}^k$ sur $I$ et on a pour tout $i \in \iii{1}{k}$ et tout $a \in I$,
 %$$ (L \circ f)^{(i)}(a) = L (f^{(i)}(a))$$
 %\item  Si $f : I \rightarrow \mathbb{R}^n$ est de classe $\mathcal{C}^{\infty}$ sur $I$ alors $L \circ f : I \rightarrow \mathbb{R}^p$ est de classe $\mathcal{C}^{\infty}$ sur $I$ et on a pour tout $i \in \mathbb{N}^*$ et tout $a \in I$,
 %$$ (L \circ f)^{(i)}(a) = L (f^{(i)}(a))$$
@@ -326,7 +337,8 @@ $$ (\lambda f+g)^{(i)}(a) = \lambda f^{(i)}(a) + g^{(i)}(a) $$
 \begin{Proposition}{composition} Soient $J$ un intervalle de $\mathbb{R}$, $\varphi : J \rightarrow I$ et $f : I \rightarrow \mathbb{R}^n$. Si $\varphi$ est de classe $\mathcal{C}^k$ (resp. $\mathcal{C}^{\infty}$) sur $J$ et si $f$ est de classe $\mathcal{C}^k$ (resp. $\mathcal{C}^{\infty}$) sur I alors $f \circ \varphi : J \rightarrow \mathbb{R}^n$ est de classe $\mathcal{C}^k$ (resp. $\mathcal{C}^{\infty}$) sur $J$. 
 \end{Proposition}
 
-\section{Norme sur $\mathbb{R}^n$}
+\newpage
+\section{Norme sur \texorpdfstring{$\mathbb{R}^n$}{Rⁿ}}
 Pour tout $x=(x_1, \ldots,x_n) \in \mathbb{R}^n$, on pose :
 $$ \Vert x \Vert = \sqrt{x_1^2+ x_2^2+ \cdots + x_n^2}$$
 \begin{Proposition}{} L'application $\Vert \cdot \Vert : \mathbb{R}^n \rightarrow \mathbb{R}_+$ est appelée \emph{norme euclidienne} sur $\mathbb{R}^n$. Elle vérifie les propriétés suivantes :
@@ -364,20 +376,14 @@ $$ \Gamma = f(I) = \lbrace f(t) \, \vert \,  t \in I\rbrace$$
 \medskip
 
 \begin{Exemple} Soient $A=(x_A,y_A) \in \mathbb{R}^2$ et $v= (\alpha, \beta) \in \mathbb{R}^2$ non nul. Posons :
-$$ \begin{array}{ccccl}
-f & : & \mathbb{R} & \rightarrow & \mathbb{R}^2 \\
- & & t & \mapsto & (x_A,y_A) + t (\alpha, \beta) \\
-\end{array}$$
+	\[\application{f}{\R}{\R^2}{t}{(x_A,y_A) + t (\alpha, \beta)}\]
 Alors $(\mathbb{R},f)$ est une courbe paramétrée de classe $\mathcal{C}^{\infty}$ sur $\mathbb{R}$ et son support est la droite du plan $\mathbb{R}^2$ passant par $A$ et de vecteur directeur $v$.
 \end{Exemple}
 
 \medskip
 
 \begin{Exemple} Posons :
-$$ \begin{array}{ccccl}
-f & : & [0,2 \pi] & \rightarrow & \mathbb{R}^2 \\
- & & t & \mapsto & (\cos(t), \sin(t)) \\
-\end{array}$$
+	\[\application{f}{[0,2\pi]}{\R^2}{t}{(\cos(t), \sin(t))}\]
 Déterminons le support de $([0,2\pi],f)$.
 
 \vspace{4cm}
@@ -399,8 +405,9 @@ Déterminons le support de $([0,2\pi],f)$.
 \end{itemize}
 \end{Definition}
 
-\begin{att} Si $f(t_1) = f(t_2)$ (on dit qu'on est en présence d'un \emph{point double}) avec $t_1 \neq t_2$ alors le point $f(t_1)$ peut être régulier sans que $f(t_2)$ le soit.
-\end{att}
+\begin{Remarque}[\alerte]{}
+	Si $f(t_1) = f(t_2)$ (on dit qu'on est en présence d'un \emph{point double}) avec $t_1 \neq t_2$ alors le point $f(t_1)$ peut être régulier sans que $f(t_2)$ le soit.
+\end{Remarque}
 
 \medskip
 
@@ -408,7 +415,7 @@ Dans la suite, $\Vert \cdot \Vert$ sera la norme euclidienne sur $\mathbb{R}^n$.
 
 \medskip
 
-\begin{TheoremeDefinition}{}[tangente en un point régulier]
+\begin{TheoremeDefinition}{tangente en un point régulier}
 Soient $a \in I$ et $f(a)$ un point régulier de $\Gamma$. Alors :
 $$ \dfrac{f(t)-f(a)}{\Vert f(t)-f(a) \Vert} \underset{t \rightarrow a^+}{\longrightarrow} \frac{f'(a)}{\Vert f'(a) \Vert} \et  \dfrac{f(t)-f(a)}{\Vert f(t)-f(a) \Vert} \underset{t \rightarrow a^-}{\longrightarrow} \frac{-f'(a)}{\Vert f'(a) \Vert}$$
 La droite passant par $f(a)$ et dirigée par le vecteur $f'(a)$ (ou pas tout autre vecteur non nul colinéaire à $f'(a)$) est appelée \emph{tangente} à $\Gamma$ en $f(a)$.
@@ -432,10 +439,7 @@ D'un point de vue cinématique, $f'(a)$ est le vecteur vitesse (instantanée) du
 \medskip
 
 \begin{Exemple} Posons :
-$$ \begin{array}{ccccl}
-f & : & [0,2 \pi] & \rightarrow & \mathbb{R}^2 \\
- & & t & \mapsto & (\cos(t), \sin(t)) \\
-\end{array}$$
+\[\application{f}{[0,2\pi]}{\R^2}{t}{(\cos(t), \sin(t))}\]
 Dans un exemple précédent, on a montré que le le support $([0,2\pi],f)$ était le cercle de centre l'origine et de rayon $1$. L'arc paramétré est de classe $\mathcal{C}^{\infty}$ sur $[0,2\pi]$. On a pour tout $t \in [0, 2 \pi]$,
 $$ f'(t) = (-\sin(t),\cos(t))$$
 Le point $f(t)$ est régulier car $f'(t) \neq (0,0)$. Remarquons aussi :
@@ -462,8 +466,8 @@ où $\varepsilon : I \rightarrow \mathbb{R}^2$ a pour limite $(0,0)$ en $a$.
 
 On suppose maintenant l'existence de deux entiers $1 \leq p <q \leq k$ tels que :
 \begin{itemize}
-\item Pour tout $j \in \Interv{1}{p-1}$, $f^{(j)}(a)=(0,0)$.
-\item Pour tout $j \in \Interv{p+1}{q-1}$, $f^{(p)}(a)$ et $f^{(j)}(a)$ sont liées.
+\item Pour tout $j \in \iii{1}{p-1}$, $f^{(j)}(a)=(0,0)$.
+\item Pour tout $j \in \iii{p+1}{q-1}$, $f^{(p)}(a)$ et $f^{(j)}(a)$ sont liées.
 \item La famille $(f^{(p)}(a), f^{(q)}(a))$ est libre.
 \end{itemize}
 
@@ -498,7 +502,6 @@ $$ \begin{pmatrix}
 Cette égalité signifie que pour tout $t \in I$, $t$ proche de $a$ et différent de $a$, le signe de la première coordonnée est du signe de $(t-a)^p$ et la seconde est du signe de $(t-a)^q$. Ainsi, déterminer $p$ et $q$, permet de décrire l'allure de la courbe au voisinage de $f(a)$ selon la parité de $p$ et $q$.
 
 \newpage
-
 \begin{center}
 \textbf{Allure de la courbe au voisinage d'un point}
 \end{center}
@@ -559,15 +562,13 @@ $f(a)$ est un \emph{point de rebroussement de deuxième espèce}
 \medskip
 
 \begin{Exemple} Considérons l'arc paramétré suivant :
-$$ \begin{array}{lllll}
-f & : & \mathbb{R} & \rightarrow & \mathbb{R}^2 \\
-& & t & \mapsto &(t^2+ \cos(t), t- \sin(t)) \\
-\end{array}$$
+\[\application{f}{\R}{\R^2}{t}{(t^2+ \cos(t), t- \sin(t))}\]
 Déterminons les points singuliers de celui-ci et donnons l'allure de la courbe au voisinage de chacun de ces points.
 
-\vspace{9cm}
+%\vspace*{9cm}
 \end{Exemple}
 
+\newpage
 \subsection{Branches infinies}
 On note toujours $f=(x,y)$.
 
@@ -580,10 +581,7 @@ $$ \lim_{t \rightarrow a} \Vert f(t) \Vert = + \infty$$
 
 \medskip
 
-\begin{center}
- \textbf{Étude d'une branche infinie}
- \end{center} 
- 
+\begin{Methode}{Étude d'une branche infinie}
  \begin{enumerate}
  \item Si $x$ ou $y$ a une limite finie en $a$ :
  \begin{itemize}
@@ -605,12 +603,15 @@ $$ \lim_{t \rightarrow a} \Vert f(t) \Vert = + \infty$$
  \end{enumerate}
  \end{itemize}
  \end{enumerate}
- 
+\end{Methode}
+
 \begin{Exemple} Étudions les branches infinies $\pm \infty$ de l'arc paramétré $f=(x,y)$ où pour tout $t \in \mathbb{R}$,
 $$ x(t) = -4t^2+4t \; \hbox{ et } \; y(t)=-t^3+t$$
 
-\vspace{5cm}
+\newpage
+\vspace*{5cm}
 \end{Exemple}
+
 
 %\begin{Exemple} Étudions les branches infinies en $\pm \infty$ de la courbe paramétrée définie par $f=(x,y)$ ou pour tout $t \in \mathbb{R}$,
 %$$ x(t) = -4t^2+4t \; \hbox{ et } \; y(t)=-t^3+t$$
@@ -618,19 +619,17 @@ $$ x(t) = -4t^2+4t \; \hbox{ et } \; y(t)=-t^3+t$$
 %\vspace{5cm}
 %\end{Exemple}
 
+
 \begin{Exemple} Étudions les branches infinies en $\dfrac{\pi}{2}$ de l'arc paramétré définie par $f=(x,y)$ où pour tout $t \in ]0, \pi/2[$,
 $$ x(t) = \tan(t)+\sin(t) \; \hbox{ et } \; y(t)=\dfrac{1}{\cos(t)}$$
 
-\vspace{8cm}
+%\vspace*{12cm}
 \end{Exemple}
-
 \newpage
 
-$\phantom{test}$
-
-\vspace{5cm}
-
-\subsection{Construction d'un arc paramétré  du plan}
+\subsection{Construction d'un arc paramétré du plan}
+\begin{Methode}{Étude d'un arc paramétré du plan}
+	
 On se donne un arc paramétré du plan $\Gamma =(I,f)$ où $f=(x,y)$.
 
 \begin{enumerate}
@@ -655,6 +654,7 @@ $$ x(t_1)=x(t_2) \et y(t_1)=y(t_2) \; \hbox{ où } t_1 \neq t_2$$
 C'est généralement pénible.
 \item On effectue le tracé.
 \end{enumerate}
+\end{Methode}
 
 \subsection{Un exemple de tracé}
 Étudions l'arc paramétré du plan de composantes :
@@ -664,11 +664,11 @@ $$ x : t \mapsto \dfrac{1}{1-t^2}, \; \, y : t \mapsto \dfrac{t^3}{1-t^2}$$
 
 \vspace{1cm}
 
+\newpage
 \textbf{Ensemble d'étude :}
 
 \vspace{2cm}
 
-\newpage
 \textbf{Étude de $x$ et $y$ :}
 
 \vspace{12cm}
@@ -678,11 +678,12 @@ $$ x : t \mapsto \dfrac{1}{1-t^2}, \; \, y : t \mapsto \dfrac{t^3}{1-t^2}$$
 
 \vspace{6cm}
 
+\newpage
 \textbf{Étude des branches infinies :}
 
 \vspace{7cm}
 
-\newpage
+
 \textbf{Tracé de la courbe :}
 
 \vspace{6cm}
@@ -703,13 +704,11 @@ Dans ce paragraphe, $(I,f)$ est un arc paramétré avec $f : I \rightarrow \math
 \begin{Remarque}{} $t \mapsto \Vert f'(t) \Vert$ est continue car $f$ est de classe $\mathcal{C}^1$ sur $I$.
 \end{Remarque}
 
-
-\begin{Exemple} Considérons : $$ \begin{array}{ccccl}
-f & : & [0,2 \pi] & \rightarrow & \mathbb{R}^2 \\
- & & t & \mapsto & (\cos(t), \sin(t)) \\
-\end{array}$$
+\newpage
+\begin{Exemple} Considérons : 
+	\[\application{f}{[0,2\pi]}{\R^2}{t}{(\cos(t), \sin(t))}\]
 Déterminons la longueur de l'arc associé :
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Exemple}
 \end{document}

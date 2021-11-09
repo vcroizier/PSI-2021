@@ -1,0 +1,427 @@
+\documentclass[a4paper,twoside,french,10pt]{VcCours}
+
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\enc}[1]{\begin{center}\fbox{#1}\end{center}}
+
+\begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir non surveillé n\degres4}
+
+\begin{center}
+\large\bf
+Correction
+\end{center}
+\separationTitre
+
+
+\section*{Exercice 1}
+\begin{enumerate}
+%\item La série étudiée est à termes positifs. On a :
+%$$ u_n \underset{+ \infty}{\sim} \dfrac{1}{n^2}$$
+%La série de terme général positif $1/n^2$ est convergente (série de Riemann avec $2>1$) donc par critère de comparaison de séries à termes positifs, on en déduit que la série de terme général $u_n$ converge.
+%\item La série étudiée est à termes positifs (car $\tan(\mathbb{R}_+) \subset \mathbb{R}_+$). On sait que :
+%$$ \tan(x) \underset{0}{\sim} x$$
+%donc sachant que $1/n^2$ tend vers $0$ quand $n$ tend vers $+ \infty$, on en déduit que :
+%$$ u_n \underset{+ \infty}{\sim} \dfrac{1}{n^2}$$
+%La série de terme général positif $1/n^2$ est convergente (série de Riemann avec $2>1$) donc par critère de comparaison de séries à termes positifs, on en déduit que la série de terme général $u_n$ converge.
+\item La série étudiée est à termes positifs. Pour tout entier $n \geq 1$, on a :
+\begin{align*}
+\dfrac{n}{\ln(n^2+2)} & = \dfrac{n}{\ln(n^2) + \ln(1+2/n^2)} \\
+& = \dfrac{n}{2 \ln(n) + \ln(1+2/n^2)} \\
+& \underset{+ \infty}{\sim} \dfrac{n}{2\ln(n)}
+\end{align*}
+par continuité de la fonction logarithme népérien en $1$ et sachant que $\ln(1)=0$. D'après le théorème des croissances comparées, on en déduit que :
+$$ \lim_{n \rightarrow + \infty}  \dfrac{n}{\ln(n^2+2)} = + \infty$$
+En particulier, à partir d'un certain rang,
+$$  \dfrac{n}{\ln(n^2+2)} \geq 1$$
+ou encore :
+$$ \dfrac{1}{\ln(n^2+2)	} \geq \dfrac{1}{n}$$
+La série de terme général positif $1/n$ diverge (série harmonique) donc par critère de comparaison de séries à termes positifs, on en déduit que 
+\enc{la série de terme général $u_n$ diverge}
+%\item Pour tout entier $n \geq 1$,
+%$$ u_n = \dfrac{\ln(n)^{2018}}{n^{0.1}} \times \dfrac{1}{n^{1.1}} \underset{+ \infty}{=} o \left( \dfrac{1}{n^{1.1}} \right)$$
+%par théorème des croissances comparées. La série de terme général positif $1/n^{1.1}$ converge (série de Riemann avec $1.1>1$) donc par critère de comparaison, la série de terme général $u_n$ converge absolument donc converge.
+%\item La série étudiée est à termes positifs. Pour tout entier $n \geq 1$,
+%$$ u_n  = \dfrac{3^n}{5^n} \times \dfrac{(2/3)^n+1}{\ln(n)/5^n + n^2/5^n+1} $$
+%Par théorème des croissances comparées, par quotient et sachant que $2/3 \in ]0,1[$, on a :
+%$$ \lim_{n \rightarrow + \infty}  \dfrac{(2/3)^n+1}{\ln(n)/5^n + n^2/5^n+1} = 1$$
+%Ainsi,
+%$$ u_n \underset{+ \infty}{\sim} \left( \dfrac{3}{5} \right)^n$$
+%La série de terme général positif $(3/5)^n$ est convergente (série géométrique avec $3/5 \in ]0,1[$) donc par critère de comparaison des séries à termes positifs, on en déduit que la série de terme général $u_n$ converge.
+%\item La série étudiée est à termes strictement positifs. Pour tout entier $n \geq 1$, on a :
+%\begin{align*}
+%\dfrac{u_{n+1}}{u_n} & = \dfrac{3^{n+2} ((n+2)!)^2}{(2n+1)!} \times  \dfrac{(2n-1)!}{3^{n+1} ((n+1)!)^2} \\
+%& = \dfrac{3(n+2)^2}{(2n+1)(2n)} \\
+%& \underset{+ \infty}{\sim} \dfrac{3n^2}{4n^2} = \dfrac{3}{4}
+%\end{align*}
+%Ainsi,
+%$$ \lim_{n \rightarrow + \infty} \dfrac{u_{n+1}}{u_n} = \dfrac{3}{4} \in [0,1[$$
+%D'après le critère de D'Alembert, on en déduit que la série de terme général $u_n$ converge.
+\item La série étudiée est une série alternée car pour tout entier $n \geq 0$,
+$$ \sqrt{n+1} - \sqrt{n} \geq 0$$
+Pour tout entier $n \geq 0$, on a :
+\begin{align*}
+ \sqrt{n+1} - \sqrt{n}&  = \dfrac{(\sqrt{n+1} - \sqrt{n})(\sqrt{n+1} + \sqrt{n})}{\sqrt{n+1} + \sqrt{n}} \\
+ & = \dfrac{n+1-n}{\sqrt{n+1} + \sqrt{n}} \\
+ & = \dfrac{1}{\sqrt{n+1} + \sqrt{n}} 
+\end{align*}
+On en déduit que la suite de terme général $\sqrt{n+1} - \sqrt{n}$ est positive, décroissante et converge vers $0$. D'après le critère spécial des séries alternées, on en déduit que 
+\enc{la série de terme général $u_n$ converge}
+\item La série étudiée est à termes positifs. Pour tout entier $n \geq 1$,
+\begin{align*}
+u_n & = \exp \left( n^2 \ln \left( 1 - \dfrac{1}{n} \right) \right) \\
+& \underset{+ \infty}{=}  \exp \left( n^2  \left(-\dfrac{1}{n} - \dfrac{1}{2n^2} + o \left( \dfrac{1}{n^2} \right) \right) \right) \\
+& \underset{+ \infty}{=}  \exp \left( -n - \dfrac{1}{2}+ o (1)\right) \\
+& \underset{+ \infty}{=}  \exp ( -n) \exp \left(-\dfrac{1}{2}+ o (1) \right) \\
+\end{align*}
+Par continuité de l'exponentielle en $-1/2$, on a :
+$$ \lim_{n \rightarrow + \infty} \exp \left(-\dfrac{1}{2}+ o (1) \right) = e^{-1/2}$$
+On en déduit que :
+$$ u_n \underset{+ \infty}{\sim} e^{-1/2} \times e^{-n}  = e^{-1/2} \times (e^{-1})^n$$
+La série de terme général positif $(e^{-1})^n$ converge (série géométrique avec $e^{-1} \in ]0,1[$) donc par critère de comparaison des séries à termes positifs, on en déduit que 
+\enc{la série de terme général $u_n$ converge}
+\end{enumerate}
+
+\section*{Exercice 2} 
+Commençons par étudier la convergence de la suite $(u_n)_{n \geq 0}$. Pour tout entier $n \geq 1$, on a :
+$$0 \leq \vert u_n \vert \leq \dfrac{1}{n}$$
+On en déduit rapidement par théorème d'encadrement que $(u_n)_{n \geq 0}$ converge vers $0$.
+
+\bigskip
+
+\noindent On sait que :
+$$ \cos(x) \underset{0}{=} 1 - \dfrac{x^2}{2} + o(x^2)$$
+Sachant que $(u_n)_{n \geq 0}$ converge vers $0$, on en déduit que :
+$$ \cos(u_{n-1}) \underset{+ \infty}{=} 1 - \dfrac{u_{n-1}^2}{2} + o(u_{n-1}^2)$$
+Ainsi, pour tout entier $n \geq 1$,
+$$ u_n \underset{+ \infty}{=} \dfrac{(-1)^n}{n} \left(1 - \dfrac{u_{n-1}^2}{2} + o(u_{n-1}^2) \right) =  \dfrac{(-1)^n}{n} - (-1)^n \dfrac{u_{n-1}^2}{2n} + o \left( \dfrac{u_{n-1}^2}{n} \right)$$
+\begin{itemize}
+\item La série de terme général $(-1)^n/n$ converge (série harmonique alternée).
+\item Pour tout entier $n \geq 2$,
+$$ 0 \leq \vert u_{n-1} \vert \leq \dfrac{1}{n-1}$$
+donc :
+$$ \left\vert - (-1)^n \dfrac{u_{n-1}^2}{2n} \right\vert \leq \dfrac{1}{2n(n-1)^2}$$
+Or on a :
+$$ \dfrac{1}{2n(n-1)^2} \underset{+ \infty}{\sim} \dfrac{1}{2n^3}$$
+La série de terme général positif $1/n^3$ converge donc par critère de comparaison des séries à termes positifs, on en déduit que la la série de terme général $\dfrac{1}{2n(n-1)^2}$ converge et de nouveau par comparaison, la série de terme général $- (-1)^n \dfrac{u_{n-1}^2}{2n}$ converge absolument donc converge.
+\item D'après le point précédent et par critère de comparaison, la série de terme général $o \left( \dfrac{u_{n-1}^2}{n} \right)$ converge absolument donc converge.
+\end{itemize}
+Par somme, on en déduit que 
+\enc{la série de terme général $u_n$ converge}
+
+
+\section*{Exercice 3}
+\begin{enumerate}
+\item Soit $n\in\N^*$. Alors :
+\begin{align*}
+S_n & =\Sum{k=0}{n}{a_kb_k} \\
+& =a_0b_0+ \Sum{k=1}{n}{a_k(B_k-B_{k-1})}\\
+& =a_0b_0+\Sum{k=1}{n}{a_k B_k}-\Sum{k=1}{n}{a_k B_{k-1}} \\
+& = a_0b_0+\Sum{k=1}{n}{a_k B_k} -\Sum{k=0}{n-1}{ a_{k+1}B_k} \\
+& =a_0 b_0+\Sum{k=1}{n-1}{(a_k-a_{k+1})B_k}+a_n B_n-a_1B_0 \\
+& =a_0b_0+\Sum{k=0}{n-1}{(a_k-a_{k+1})B_k} -(a_0-a_1)B_0+a_nB_n-a_1 b_0 \\
+& =\Sum{k=0}{n-1}{(a_k-a_{k+1})B_k}+a_nB_n 
+\end{align*}
+Ainsi, pour tout entier $n \geq 1$,
+\enc{$S_n = \Sum{k=0}{n-1}{(a_k-a_{k+1})B_k}+a_nB_n$}
+\item 
+\begin{enumerate}
+\item La suite $(a_n)_{n \geq 0}$ converge donc
+\enc{la série télescopique $\Sum{k\geq 0}{}{a_k-a_{k+1}}$ converge} 
+\item Montrons que la suite $(S_n)_{n \geq 0}$ des sommes partielles est convergente. On sait que pour tout entier $n \geq 1$, 
+$$S_n=\Sum{k=0}{n-1}{(a_k-a_{k+1}) B_k}+a_n B_n$$
+La suite $(a_n B_n)_{n \geq 0}$ converge vers $0$ car c'est le produit d'une suite convergente de limite nulle et d'une suite bornée. La suite $(B_n)_{n \geq 0}$ est bornée donc il existe un réel $M>0$ tel que pour tout entier $n \geq 0$,
+$$ \vert B_n \vert \leq M$$
+Ainsi, par décroissance de $(a_n)_{n \geq 0}$ on a pour tout entier $k \geq 0$,
+$$ \vert (a_{k}-a_{k+1}) B_k \vert \leq  M \vert a_k-a_{k+1} \vert =M(a_k-a_{k+1})$$
+D'après la question précédente, la série de terme général $M(a_k-a_{k+1})$ converge donc par critère de comparaison des séries à termes positifs, on en déduit que la série de terme général $(a_k-a_{k+1})B_k$ converge absolument donc converge. Ainsi, on en déduit que $(S_n)_{n \geq 0}$ converge donc 
+\enc{$\sum_{n \geq 0} a_n b_n$ converge}
+
+\item Voici l'énoncé (sans les estimations et le signe) : soit $(a_k)_{k\in\N}$ une suite décroissante de limite nulle. Alors $\Sum{k\geq 0}{}{(-1)^k a_k}$ est une série convergente. Montrons ce résultat : d'après la question précédente, il suffit de montrer que la suite $(B_n)_{n \geq 0}$ définie par :
+$$ B_n= \Sum{k=0}{n}{(-1)^k} $$ 
+est une suite bornée. Or, pour tout entier $n \geq 1$,
+$$ B_n  \in \lbrace 0,1 \rbrace$$
+ce qui donne le résultat.
+
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item D'après l'hypothèse sur $t$, on sait que $e^{it} \neq 1$. Ainsi par somme des termes d'une suite géométrique :
+\begin{align*}
+\Sum{k=1}{n}{e^{ik t}} & =e^{it}\dfrac{1-e^{int}}{1-e^{it}} \\
+& =e^{it}\dfrac{e^{in t/2}}{e^{i t/2}}\dfrac{e^{-int/2}-e^{int/2}}{e^{-it/2}-e^{it/2}} \\
+& =e^{it}\dfrac{e^{in t/2}}{e^{i t/2}}\dfrac{(-2i)\sin(n t/2)}{(-2i)\sin( t/2)} \\
+& =e^{i(n+1) t/2}\dfrac{\sin(n t/2)}{\sin( t/2)}
+\end{align*}
+Ainsi,
+\enc{$\Sum{k=1}{n}{e^{ik t}} = e^{i(n+1) t/2}\dfrac{\sin(n t/2)}{\sin( t/2)}$}
+
+\item Si $\alpha>1$, il est évident que la série étudiée converge absolument donc converge (par comparaison à une série de Riemann convergente). Si $\alpha \leq 0$, le terme général de la série étudiée ne converge pas vers $0$ donc la série étudiée diverge.
+
+\medskip
+
+\noindent Soit $ \alpha \in \left ]0,1\right ]$. Utilisons le résultat de la question 2.(b) avec pour tout entier $n \geq 1$,
+$$ a_n = \dfrac{1}{n^{\alpha}} \, \et \, b_n = e^{i t}$$
+La suite $(a_n)_{n \geq 1}$ est décroissante et converge vers $0$. D'après la question précédente, on a pour tout entier $n \geq 1$,
+$$ \vert B_n \vert = \left |\Sum{k=1}{n}{e^{i t}}\right |\leq \dfrac{1}{\left |\sin( t/2)\right |}$$
+donc la suite $(B_n)_{n \geq 1}$ est bornée. Ainsi, d'après la question $2.(b)$, la série étudiée converge. Finalement,
+\enc{la série étudiée converge si et seulement si $\alpha>0$}
+
+\end{enumerate}
+\end{enumerate}
+
+
+\section*{Corrigé de la partie 1 du Centrale 2 PC 2017.}
+
+\begin{enumerate}
+\item[\textbf{I.A.1)}] Soit $u$ la suite de terme général $1/n$. Alors :
+$$ \lim_{n \rightarrow + \infty} \dfrac{1}{n} = 0$$
+et pour tour tout entier $n \geq 1$, $1/n \neq 0$ donc $u$ appartient à $E$. De plus, pour tout entier $n \geq 1$,
+$$ u_n^c = \dfrac{\vert 1/(n+1)-0 \vert}{\vert 1/n - 0 \vert} = \dfrac{n}{n+1}$$
+donc 
+$$ \lim_{n \rightarrow + \infty} u_n^c = 1$$
+et ainsi, $u$ appartient à $E^c$. Finalement,
+\enc{$E^c$ est non vide}
+\item[\textbf{I.A.2)}] La suite nulle n'appartient à $E$ car ses termes sont tous égaux à sa limite. En particulier, la suite nulle n'appartient pas à $E^c$ donc 
+\enc{$E^c$ n'est pas un sous-espace vectoriel de $\mathbb{R}^{\mathbb{N}}$}
+\item[\textbf{I.A.3)}] Il est évident que $E^c$ est inclus dans $E$. On cherche une suite $u$ convergente telle que $u^c$ ne soit pas convergente. Cherchons simple : tentons de trouver une suite $u$ positive convergeant vers $0$ telle que la suite $(u_{n+1}/u_n)$ ne converge pas. Il suffit de construire une suite dont les suites extraites d'indices pairs et impairs soient \og chaotique \fg. Posons pour tout entier $n \geq 0$,
+$$ u_{2n}=u_{2n+1} = \dfrac{1}{2^n}$$
+Les premiers termes de la suite sont :
+$$ 1, \, 1, \, 1/2, \, 1/2, \, 1/4, \, 1/4 \ldots$$
+La suite $(u_n)_{n \geq 0}$ converge vers $0$ car $(u_{2n})_{n \geq 0}$ et $(u_{2n+1})_{n \geq 0}$ convergent toutes les deux vers $0$. De plus, pour tout entier $n \geq 0$, $u_n \neq 0$ donc $u$ appartient à $E$. On a pour tout entier $n \geq 0$,
+$$ u_{2n}^c = \dfrac{\vert u_{2n+1}-0 \vert}{\vert u_{2n}-0\vert} = \dfrac{1/2^{n}}{1/2^n}= 1$$
+et 
+$$u_{2n+1}^c = \dfrac{\vert u_{2n+2}-0 \vert}{\vert u_{2n+1}-0\vert} = \dfrac{1/2^{n+1}}{1/2^n}= \dfrac{1}{2}$$
+Ainsi,
+$$ \lim_{n \rightarrow + \infty} u_{2n}^c = 1 \neq \dfrac{1}{2} = \lim_{n \rightarrow + \infty} u_{2n+1}^c$$
+donc $u^c$ ne converge pas et ainsi $u$ n'appartient pas $E^c$ mais appartient à $E$. Finalement,
+\enc{$E^c$ est strictement inclus dans $E$}
+\item[\textbf{I.A.4)}] Par hypothèse, La suite $u^c$ est positive et convergente donc $\ell^c \geq 0$ (rappelons qu'elle est nécessairement définie à partir d'un rang $N$ car $u$ appartient à $E$). Supposons par l'absurde que $\ell>1$. Soit $r \in ]1, \ell[$. Par définition de convergence, il existe un rang $N' \in \mathbb{N}$ (supérieur à $N$) tel que pour tout entier $n \geq N'$,
+$$ u_n^c \geq r>1$$
+et ainsi,
+$$ \dfrac{\vert u_{n+1}- \ell \vert}{\vert u_n - \ell \vert} \geq 1$$
+On en déduit que la suite $(\vert u_n- \ell \vert)_{n \geq N'}$ est croissante. Or $u_N'$ est différent de $\ell$ donc :
+$$ \vert u_N' - \ell \vert >0$$
+Ainsi, $(\vert u_n- \ell \vert)_{n \geq N'}$ est croissante et son premier terme est strictement positif : elle ne peut donc pas converger vers $0$ ce qui est absurde car $(u_n)_{n \geq 0}$ converge vers $\ell$. Ainsi, $\ell \leq 1$ et finalement,
+\enc{$\ell \in [0,1]$}
+\item[\textbf{I.B.1)}] Notons $u$, $v$ et $w$ les suites de cette question (dans l'ordre de l'énoncé). On sait que $k$ est strictement positif donc :
+$$ \lim_{n \rightarrow + \infty} \dfrac{1}{(n+1)^k}= 0$$
+Tous les termes de la suite sont strictement positifs donc $u$ appartient à $E$. On a pour tout entier $n \geq 1$,
+$$ u_n^c = \dfrac{\vert 1/(n+1)^k -0 \vert}{\vert 1/n^k - 0 \vert} = \left( \dfrac{n}{n+1} \right)^k$$
+donc 
+$$ \lim_{n \rightarrow + \infty} u_n^c = 1$$
+Ainsi,
+\enc{$u$ appartient à $E^c$ et sa vitesse de convergence est lente}
+Par théorème des croissances comparées ($0 <q<1$), on a :
+$$ \lim_{n \rightarrow + \infty} n^k q^n = 0$$
+Tous les termes de la suite sont strictement positifs (à partir du rang $1$) donc $v$ appartient à $E$. On a pour tout entier $n \geq 1$,
+$$ v_n^c = \dfrac{\vert (n+1)^k q^{k+1} -0 \vert}{\vert n^k  q^k \vert} = q \left( 1+ \dfrac{1}{n} \right)^k $$
+donc 
+$$ \lim_{n \rightarrow + \infty} v_n^c = q$$
+Ainsi,
+\enc{$v$ appartient à $E^c$ et sa vitesse de convergence est géométrique de rapport $q$}
+On sait que :
+$$ \lim_{n \rightarrow + \infty} \dfrac{1}{n!}=0$$
+Tous les termes de la suite sont strictement positifs donc $w$ appartient à $E$. On a pour tout entier $n \geq 1$,
+$$ w_n^c = \dfrac{\vert 1/(n+1)!-0 \vert}{\vert 1/n! - 0 \vert} = \dfrac{1}{n+1}$$
+donc 
+$$ \lim_{n \rightarrow + \infty} w_n^c = 0$$
+Ainsi,
+\enc{$w$ appartient à $E^c$ et sa vitesse de convergence est rapide}
+\item[\textbf{I.B.2)(a)}] Pour tout entier $n \geq 0$,
+$$ v_n = \exp \left( 2^n \ln \left(1+ \dfrac{1}{2^n} \right) \right)$$
+Si $n$ tend vers $+ \infty$, $1/2^n$ tend vers $0$ donc :
+$$  \ln \left(1+ \dfrac{1}{2^n} \right) \underset{+ \infty}{=} \dfrac{1}{2^n} - \dfrac{1}{2} \left( \dfrac{1}{2^n} \right)^2 + o \left(  \left( \dfrac{1}{2^n} \right)^2 \right) \underset{+ \infty}{=} \dfrac{1}{2^n} - \dfrac{1}{2 \times 4^n}  + o \left(   \dfrac{1}{4^n}  \right) $$
+On en déduit que :
+$$ 2^n \ln \left(1+ \dfrac{1}{2^n} \right) \underset{+ \infty}{=}  1 - \dfrac{1}{2^{n+1}}  + o \left(   \dfrac{1}{2^n}  \right) $$
+puis :
+\begin{align*}
+ v_n & \underset{+ \infty}{=} \exp \left(1 - \dfrac{1}{2^{n+1}}  + o \left(   \dfrac{1}{2^n}  \right) \right) \\
+ & \underset{+ \infty}{=} e \times \exp \left( -\dfrac{1}{2^{n+1}}  + o \left(   \dfrac{1}{2^n}  \right) \right) 
+ \end{align*}
+Or :
+$$ \lim_{n \rightarrow + \infty} -\dfrac{1}{2^{n+1}}  + o \left(   \dfrac{1}{2^n}  \right) = 0$$
+donc en utilisant le développement limité de la fonction exponentielle en $0$ à l'ordre $1$ :
+$$ \exp \left( \dfrac{1}{2^{n+1}}  + o \left(   \dfrac{1}{2^n}  \right) \right)  \underset{+ \infty}{=} 1 - \dfrac{1}{2^{n+1}} +  o \left(   \dfrac{1}{2^n}  \right)$$
+Finalement, on a bien :
+$$ \boxed{v_n \underset{+ \infty}{=} e - \dfrac{e}{2^{n+1}}+  o \left(   \dfrac{1}{2^n}  \right)}$$
+\item[\textbf{I.B.2)(b)}] D'après la question précédente,
+$$ \lim_{n \rightarrow + \infty} v_n = e$$
+De plus, pour tout entier $n \geq 1$,
+$$ v_n - e = \dfrac{1}{2^{n}} \left( - \dfrac{e}{2} + o(1) \right)$$
+On a :
+$$ \lim_{n \rightarrow + \infty} - \dfrac{e}{2} + o(1)  = - \dfrac{e}{2} \neq 0$$
+donc à partir d'un certain rang,
+$$   - \dfrac{e}{2} + o(1) \neq 0$$
+et en particulier, $v_n \neq e$. Ainsi, $v$ appartient à $E$. Toujours d'après la question précédente, on a :
+$$ v_n-e \underset{+ \infty}{\sim} -\dfrac{e}{2^{n+1}} \, \et \, v_{n+1}-e \underset{+ \infty}{\sim} -\dfrac{e}{2^{n+2}}$$
+donc :
+$$ v_n^c \underset{+ \infty}{\sim} \dfrac{e/2^{n+2}}{e/2^{n+1}} = \dfrac{1}{2}$$
+On en déduit que :
+\enc{$v$ appartient à $E^c$ et sa vitesse de convergence est géométrique de rapport $\dfrac{1}{2}$}
+ \item[\textbf{I.B.3)(a)}] $I_0$ est bien défini. Soit $n \in \mathbb{N}^*$. La fonction $f_n : \mathbb{R}_+ \rightarrow \mathbb{R}$ définie par :
+ $$ f_n(x) = \ln \left( 1 + \dfrac{x}{n} \right) e^{-x}$$
+est continue sur $\mathbb{R}_+$. On a :
+$$ f_n(x)  \underset{+ \infty}{=} o \left( \dfrac{1}{x^2} \right)$$
+car d'après le théorème des croissances comparées :
+$$ x^2 f_n(x) = x^2 \ln \left( 1 + \dfrac{x}{n} \right) e^{-x} \underset{x \rightarrow + \infty}{\longrightarrow} 0$$
+La fonction $x \mapsto \dfrac{1}{x^2}$ est intégrable sur $[1, + \infty[$ donc par critère de comparaison, $f_n$ aussi. Par continuité sur $[0,1]$, on en déduit que $f_n$ est intégrable sur $\mathbb{R}_+$ donc $I_n$ est bien défini. Ainsi,
+\enc{$(I_n)_{n \geq 0}$ est bien définie}
+Vérifions les hypothèses du théorème de convergence dominée.
+\begin{itemize}
+\item Pour tout entier $n \geq 1$, $f_n$ est continue sur $\mathbb{R}_+$.
+\item Pour tout $x \in \mathbb{R}_+$,
+$$ \lim_{n \rightarrow + \infty} f_n(x) = 0$$
+Ainsi, $(f_n)_{n \geq 1}$ converge simplement vers la fonction $ f : x \mapsto 0$ sur $\mathbb{R}_+$.
+\item Pour tout entier $n \geq 1$ et tout réel positif $x$, on a :
+$$ \vert f_n(x) \vert = \ln \left(1+ \dfrac{x}{n} \right) e^{-x}$$
+car $1+ \dfrac{x}{n} \geq 0$. On a :
+$$1 + \dfrac{x}{n} \leq 1+x$$
+donc par croissance de la fonction logarithme népérien, on en déduit que :
+$$ \ln \left(1+ \dfrac{x}{n} \right) \leq \ln(1+x)$$
+et sachant que $e^{-x}$ est positif,
+$$ \vert f_n(x) \vert \leq \ln(1+x) e^{-x} = f_1(x)$$
+La fonction $f_1$ est intégrable (prouvé précédemment).
+\end{itemize}
+D'après le théorème de convergence dominée, on en déduit que les fonctions $f_n$ sont intégrables (on le savait déjà), que la fonction $f$ est intégrable, que la suite $(I_n)_{n \geq 0}$ converge et que l'on a :
+$$ \lim_{n \rightarrow + \infty} I_n =0$$
+%
+% \int_0^{+ \infty} e^{-x} \dx$$
+%Or pour tout réel $A >0$,
+%$$ \int_0^{A} e^{-x} \dx = -e^{-A} + 1$$
+%Par passage à la limite quand $A$ tend vers $+ \infty$, on en déduit que :
+%$$  \lim_{n \rightarrow + \infty} I_n =1$$
+Remarquons que pour tout entier $n \geq 1$ et tout réel $x > 0$,
+$$ 1+ \dfrac{x}{n+1} < 1 + \dfrac{x}{n}$$
+donc par stricte croissance de la fonction logarithme népérien et stricte positivité de $e^{-x}$, on en déduit que :
+$$ f_{n+1} < f_n(x)$$
+Par stricte positivité de l'intégrale, on en déduit que :
+$$ I_{n+1} < I_n$$
+La suite est strictement décroissante et converge vers $0$ donc ses termes sont tous différents de $0$. On en déduit que :
+\enc{$(I_n)_{n \geq 0}$ appartient à $E$}
+ \item[\textbf{I.B.3)(b)}] Soient $n \geq 1$ et $A>0$. Les fonctions $x \mapsto \ln \left(1+ \dfrac{x}{n}\right)$ et $x \mapsto - e^{-x}$ sont de classe $\mathcal{C}^1$ sur $[0,A]$, de dérivées respectives :
+$$ x \mapsto \dfrac{1/n}{1+x/n} = \dfrac{1}{n+x} \, \et \, x \mapsto e^{-x}$$
+Par intégration par parties, on a :
+\begin{align*}
+\int_0^A \ln \left(1+ \dfrac{x}{n}\right) e^{-x} \dx & = \left[ - \ln \left(1+ \dfrac{x}{n}\right) e^{-x} \right]_0^A + \int_0^A  \dfrac{e^{-x}}{n+x} \dx \\
+& = - \ln \left(1+ \dfrac{A}{n}\right) e^{-A}  + \dfrac{1}{n} \int_0^A  \dfrac{e^{-x}}{1+x/n} \dx \\
+\end{align*}
+On sait que :
+$$ \lim_{A \rightarrow + \infty}\int_0^A \ln \left(1+ \dfrac{x}{n}\right) e^{-x} \dx = I_n$$
+et par théorème des croissances comparées :
+$$ \lim_{A \rightarrow + \infty}  - \ln \left(1+ \dfrac{A}{n}\right) e^{-A} = 0$$
+On en déduit que $\int_0^{+ \infty}  \dfrac{e^{-x}}{1+x/n} \dx$ converge et on a :
+$$ I_n = \dfrac{1}{n} \int_0^{+ \infty}  \dfrac{e^{-x}}{1+x/n} \dx$$
+ou encore :
+$$n I_n =  \int_0^{+ \infty}  \dfrac{e^{-x}}{1+x/n} \dx$$
+Vérifions les hypothèses du théorème de convergence dominée.
+\begin{itemize}
+\item Pour tout entier $n \geq 1$, la fonction :
+$$ x \mapsto  \dfrac{e^{-x}}{1+x/n}$$
+est continue sur $\mathbb{R}_+$.
+\item Pour tout réel $x \geq 0$,
+$$ \lim_{n \rightarrow + \infty} \dfrac{e^{-x}}{1+x/n} = e^{-x}$$
+\item Pour tout entier $n \geq 1$ et tout réel $x \geq 0$,
+$$ \left\vert  \dfrac{e^{-x}}{1+x/n} \right\vert \leq e^{-x}$$
+et la fonction $x \mapsto e^{-x}$ est continue et intégrable sur $\mathbb{R}_+$ (fonction de référence).
+\end{itemize}
+D'après le théorème de convergence dominée, on en déduit que $(nI_n)_{n \geq 1}$ converge et on a :
+$$ \lim_{n \rightarrow + \infty} n I_n = \int_0^{+ \infty} e^{-x} \dx = \lim_{A \rightarrow + \infty} \int_0^{A} e^{-x} \dx = \lim_{A \rightarrow + \infty} -e^{-A} + 1 =1$$
+Ainsi,
+$$ I_n \underset{+ \infty}{\sim} \dfrac{1}{n}$$
+donc :
+$$ I_n^c \underset{+ \infty}{\sim} \dfrac{1/(n+1)}{1/n} = 1$$
+On en déduit que 
+\enc{$(I_n)_{n \geq 0} \in E^c$ et sa vitesse de convergence est lente}
+ \item[\textbf{I.B.4)(a)}] Simple comparaison série intégrale (faite en cours quasiment : remarque 4.9 du chapitre 2).
+  \item[\textbf{I.B.4)(b)}] D'après la question précédente, on a pour tout entier $n \geq 1$,
+  $$ \dfrac{1}{\alpha-1} \left( \dfrac{n}{n+1} \right)^{\alpha-1}  \leq n^{\alpha} (\ell -S_n) \leq \dfrac{1}{\alpha-1}$$
+  Sachant que $\alpha>1$, on a :
+  $$ \lim_{n \rightarrow + \infty} \dfrac{1}{\alpha-1} \left( \dfrac{n}{n+1} \right)^{\alpha-1} =  \lim_{n \rightarrow + \infty} \dfrac{1}{\alpha-1} = \dfrac{1}{\alpha-1}$$
+  D'après le théorème d'encadrement, on en déduit que :
+  $$ \lim_{n \rightarrow + \infty}  n^{\alpha} (\ell -S_n) = \dfrac{1}{\alpha-1}$$
+  et ainsi :
+  $$  \ell - S_n \underset{+ \infty}{\sim} \dfrac{1}{\alpha-1} \times \dfrac{1}{n^{\alpha}}$$
+La suite $(S_n)_{n \geq 1}$ est strictement croissante donc tous ses termes sont différents de $\ell$. D'après le raisonnement précédent, on a :
+$$ S_n^c \underset{+ \infty}{\sim}  \dfrac{1/(\alpha-1) \times 1/(n+1)^{\alpha}}{ 1/(\alpha-1) \times 1/n^{\alpha}} \underset{+ \infty}{\sim} 1$$
+Ainsi,
+\enc{$(S_n)_{n \geq 0} \in E^c$ et sa vitesse de convergence est lente}
+  \item[\textbf{I.C.1)}] Par hypothèse, il existe un rang $N \in \mathbb{N}$ et un réel $M>0$ tel que pour tout entier $n \geq N$, $u_n \neq \ell$ ($\ell$ est la limite de $u$) et tel que :
+  $$  \dfrac{\vert u_{n+1}- \ell \vert }{\vert u_n - \ell \vert^r} \leq M$$
+On en déduit que :
+ $$\dfrac{\vert u_{n+1}- \ell \vert }{\vert u_n - \ell \vert} \leq M \vert u_n - \ell \vert^{r-1}$$
+Sachant que $r>1$ et que $(u_n)_{n \geq 0}$ converge vers $\ell$, on a :
+$$ \lim_{n \rightarrow + \infty} \vert u_n - \ell \vert^{r-1} = 0$$
+Ainsi par théorème d'encadrement :
+$$ \lim_{n \rightarrow + \infty} \dfrac{\vert u_{n+1}- \ell \vert }{\vert u_n - \ell \vert} = 0$$
+donc 
+\enc{la convergence de $u$ est rapide}
+  \item[\textbf{I.C.2(a)}] On reconnaît les sommes partielles d'une série exponentielle à termes strictement positifs. Cette série converge donc $(S_n)_{n \geq 0}$ converge et la stricte croissance implique que les termes sont différents de la somme de celle-ci. Ainsi,
+  \enc{$(S_n)_{n \geq 0}$ appartient à $E$}
+   \item[\textbf{I.C.2(b)}] Pour tout entier $n \geq 0$,
+   $$ s- S_n = \sum_{k=n+1}^{+ \infty} \dfrac{1}{k!} \geq \dfrac{1}{(n+1)!}$$
+   par positivité des termes. On a aussi :
+   $$ s- S_n = \sum_{k=0}^{+ \infty} \dfrac{1}{(k+n+1)!} = \dfrac{1}{(n+1)!} \sum_{k=0}^{+ \infty} \dfrac{(n+1)!}{(k+n+1)!}$$
+   Pour tout entier $k \geq 0$,
+   \begin{align*}
+\dfrac{(n+1)!}{(k+n+1)!} & = \dfrac{1}{(n+2)(n+3)\cdots (n+k+1)} \\
+&  \leq \dfrac{1}{2 \times 2 \times \cdots \times 2} \\
+& = \dfrac{1}{2^k}
+   \end{align*}
+La série de terme général $1/2^k$ converge (série géométrique avec $\vert 1/2 \vert <1$). On en déduit que :
+$$ s- S_n =  \dfrac{1}{(n+1)!} \sum_{k=0}^{+ \infty} \dfrac{(n+1)!}{(k+n+1)!} \leq  \dfrac{1}{(n+1)!} \sum_{k=0}^{+ \infty} \dfrac{1}{2^k}$$
+Ainsi, pour tout entier $n \geq 0$,
+$$\boxed{ \dfrac{1}{(n+1)!} \leq s- S_n \leq  \dfrac{1}{(n+1)!} \sum_{k=0}^{+ \infty} \dfrac{1}{2^k}}$$
+   \item[\textbf{I.C.2(c)}] On sait que :
+   $$  \sum_{k=0}^{+ \infty} \dfrac{1}{2^k} = \dfrac{1}{1-1/2}=2$$
+   Pour tout entier $n \geq 0$, on a (en majorant le numérateur et minorant le dénominateur) :
+   $$ 0 \leq \dfrac{s-S_{n+1}}{s-S_n} \leq \dfrac{2/(n+2)!}{1/(n+1)!} = \dfrac{2}{n+2}$$
+   Par théorème d'encadrement, on en déduit que :
+   $$ \lim_{n \rightarrow + \infty} \dfrac{s-S_{n+1}}{s-S_n} = 0$$
+   donc 
+   \enc{la convergence de la suite $(S_n)_{n \geq 0}$ est rapide}
+ \item[\textbf{I.C.2(d)}] Supposons que la convergence de la suite soit d'ordre $r>1$. Il existe alors une constante $M>0$ et un entier $N \geq 0$ tel que pour tout entier $n \geq N$,
+   $$ \vert S_{n+1}- s \vert \leq M \vert S_n - s \vert^r$$
+   ce qui donne d'après les encadrements de la question (a) :
+   $$ \dfrac{1}{(n+2)!} \leq \vert S_{n+1}- s \vert \leq M \vert S_n - s \vert^r \leq  \dfrac{M 2^r}{(n+1)!^r}$$
+   et ainsi :
+   $$ (n+1)!^{r-1} \leq M 2^r (n+2)$$
+   Ceci est absurde car $n+2$ est négligeable devant $(n+1)!^{r-1}$ car $r>1$. Ainsi,
+   \enc{la convergence de $(S_n)$ n'est pas d'ordre $r$}
+ \item[\textbf{I.C.3(a)}] C'est une conséquence du théorème du point fixe car $f$ est continue sur $I$. Ainsi,
+ \enc{$f(\ell) = \ell$}
+  \item[\textbf{I.C.3(b)}] Supposons que $u$ n'est pas stationnaire. Supposons par l'absurde l'existence d'un entier $n$ tel que $u_n=\ell$. Le réel $\ell$ étant un point fixe, on en déduit que la suite est stationnaire ce qui est absurde. Ainsi, pour tout entier $n \geq 0$, $u_{n} \neq \ell$. Ainsi,
+  \enc{$u \in E$}
+  Pour tout entier $n \geq 0$, on a :
+  $$ \dfrac{\vert u_{n+1}- \ell \vert}{\vert u_n - \ell \vert } =  \dfrac{\vert f(u_n)- f(\ell) \vert}{\vert u_n - \ell \vert } \underset{n \rightarrow + \infty}{\longrightarrow} \vert f'(\ell) \vert$$
+  car $u$ a pour limite $\ell$ et $f$ est dérivable en $\ell$. Ainsi,
+  \enc{$u \in E^c$ et sa vitesse de convergence est $\vert f'(\ell)\vert$}
+  \item[\textbf{I.C.3(c)}] Supposons que $\vert f'(\ell) \vert>1$. Si $u$ n'est pas stationnaire, la suite appartient à $E^c$ d'après la question précédente et $\ell^c = \vert f'(\ell)\vert >1$ et c'est impossible d'après d'après I.A.4. Ainsi,
+  \enc{$u$ est stationnaire}
+  \item[\textbf{I.C.3(d)}] D'après la question $(b)$, $u$ appartient à $E$ car elle n'est pas stationnaire. En particulier,
+  $$ \dfrac{\vert u_{n+1}- \ell \vert }{\vert u_n - \ell \vert^r}$$
+  est définie pour tout $n \geq 0$.
+  \begin{itemize}
+  \item Supposons que pour tout $k \in \iii{1}{r-1}$, $f^{(k)}(\ell)=0$. La fonction $f$ étant $\mathcal{C}^{r}$ sur $I$, on a d'après la formule de Taylor-Young que :
+  \begin{align*}
+  \dfrac{\vert u_{n+1}- \ell \vert }{\vert u_n - \ell \vert^r} & = \dfrac{\vert f(u_n)- f(\ell) \vert }{\vert u_n - \ell \vert^r} \\
+  & = \dfrac{\vert f^{(r)}(\ell)/r!  (u_n- \ell)^r +o ((u_n- \ell)^r  )\vert}{\vert u_n - \ell \vert^r} 
+  \end{align*}
+  ce qui implique que :
+  $$ \lim_{n \rightarrow + \infty}  \dfrac{\vert u_{n+1}- \ell \vert }{\vert u_n - \ell \vert^r} = \dfrac{\vert f^{(r)}(\ell) \vert}{r!}$$
+  La suite de terme général  $\dfrac{\vert u_{n+1}- \ell \vert }{\vert u_n - \ell \vert^r}$ converge donc est bornée et ainsi, la vitesse de convergence de la suite est d'ordre $r$.
+  \item Supposons qu'il existe $k  \in \iii{1}{r-1}$ tel que $f^{(k)}(\ell) \neq 0$. On note $j$ le plus petit entier vérifiant cette propriété ($j$ existe car c'est le minimum d'un ensemble fini non vide). Alors d'après la formule de Taylor-Young, on a :
+   \begin{align*}
+  \dfrac{\vert u_{n+1}- \ell \vert }{\vert u_n - \ell \vert^r} &= \dfrac{\vert f(u_n)- f(\ell) \vert }{\vert u_n - \ell \vert^r} \\ 
+   & = \dfrac{\vert f^{(j)}(\ell)/j!  (u_n- \ell)^j +o ((u_n- \ell)^j  )\vert}{\vert u_n - \ell \vert^r} 
+   \end{align*}
+   ce qui implique que :
+$$   \dfrac{\vert u_{n+1}- \ell \vert }{\vert u_n - \ell \vert^r} \underset{+ \infty}{\sim} \dfrac{K}{\vert u_n - \ell \vert^{r-j}}$$
+où $K>0$ et $r-j>0$. Or $u_n$ tend vers $\ell$ quand $n$ tend vers $+ \infty$ donc :
+$$ \lim_{n \rightarrow + \infty}\dfrac{1}{\vert u_n - \ell \vert^{r-j}} = + \infty$$
+Ainsi, La suite de terme général  $\dfrac{\vert u_{n+1}- \ell \vert }{\vert u_n - \ell \vert^r}$ diverge vers $+ \infty$ donc n'est pas bornée et ainsi, la vitesse de convergence de la suite n'est pas d'ordre $r$.
+  \end{itemize}
+\end{enumerate}
+\end{document}
