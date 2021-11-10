@@ -488,9 +488,15 @@ On obtient par un développement limité de $f$ en $a$ à l'ordre $q$ (par tronc
 $$ f(t) =  f(a) + \dfrac{(t-a)^p}{p!} f^{(p)}(a) \left( 1 + \sum_{j=p+1}^{q-1} \alpha_j \dfrac{(t-a)^{j-p}}{j!} \right) + \dfrac{(t-a)^q}{q!} f^{(q)}(a) + (t-a)^q \eta(t)$$
 où $\eta : I \rightarrow \mathbb{R}^2$ a pour limite $(0,0)$ en $a$.
 
-\begin{Remarque}{} La droite passant par $M(a)$ et dirigée par $f^{(p)}(a)$ est ici aussi appelée \emph{tangente} à $\Gamma$ en $f(a)$ (cela généralise ce que l'on définit pour $p=1$ quand le point est régulier). On montre avec l'égalité précédente que :
-$$ \dfrac{f(t)-f(a)}{\Vert f(t)-f(a) \Vert} \underset{t \rightarrow a^+}{\longrightarrow} \frac{f^{(p)}(a)}{\Vert f^{(p)}(a) \Vert} \et  \dfrac{f(t)-f(a)}{\Vert f(t)-f(a) \Vert} \underset{t \rightarrow a^-}{\longrightarrow} \frac{(-1)^p f^{(p)}(a)}{\Vert f^{(p)}(a) \Vert}$$
+\begin{Remarque}{} 
+La droite passant par $M(a)$ et dirigée par $f^{(p)}(a)$ est ici aussi appelée 
+\emph{tangente} à $\Gamma$ en $f(a)$ (cela généralise ce que l'on définit 
+pour $p=1$ quand le point est régulier). On montre avec l'égalité précédente que :
+$$ \dfrac{f(t)-f(a)}{\Vert f(t)-f(a) \Vert} \underset{t \rightarrow a^+}{\longrightarrow} 
+\frac{f^{(p)}(a)}{\Vert f^{(p)}(a) \Vert} \et  \dfrac{f(t)-f(a)}{\Vert f(t)-f(a) \Vert} 
+\underset{t \rightarrow a^-}{\longrightarrow} \frac{(-1)^p f^{(p)}(a)}{\Vert f^{(p)}(a) \Vert}$$
 \end{Remarque}
+
 En travaillant dans le repère $(f(a), f^{(p)}(a), f^{(q)}(a))$, on déduit de l'égalité précédente que pour tout $t \in I$, $t$ proche de $a$, le point $f(t)$ a pour coordonnées :
 $$ \begin{pmatrix}
 \dfrac{(t-a)^p}{p!}+o((t-a)^p) \\
