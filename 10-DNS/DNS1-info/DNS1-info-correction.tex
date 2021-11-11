@@ -1,0 +1,339 @@
+\documentclass[a4paper,9pt]{report}
+\def\d{\displaystyle}
+\usepackage{Cours}
+\usepackage[procnames]{listings}
+
+\definecolor{keywords}{RGB}{250,50,000}
+\definecolor{comments}{RGB}{0,130,000}
+\definecolor{definitions}{RGB}{0,0,130}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+\definecolor{lblue}{RGB}{173,216,230}
+\definecolor{mygray}{rgb}{0.93,0.93,0.99}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{colorstring}{rgb}{0.55,0.35,0.3}
+
+\lstset{language=Python, 
+		backgroundcolor=\color{mygray},	%Rajoute une couleur en fond
+        basicstyle=\ttfamily\small, 			%Fonte et style de base
+        keywordstyle=\color{keywords},		%Coloration des mots-cles
+        morekeywords={False, True},			%On rajoute des mots-cles
+		ndkeywordstyle=\color{mymauve},      %D'autres types de mots-cles de couleur différente
+        ndkeywords={input, range, len, print, open},    %Les mots-cles en question  	
+        commentstyle=\color{comments},		%Couleur des commentaires
+        stringstyle=\color{colorstring},			%Couleur des chaines de caracteres
+        showstringspaces=false,				%Visualisation des espaces dans les chaines
+        breaklines=true,						%Permet le passage à la ligne (code wrap)
+        numbers=left,                   		%Position de la numerotation des lignes
+  		numbersep=8pt,                  	%La distance entre la numerotation des lignes et le code
+  		numberstyle=\tiny\color{gray}, 	%Le style utilise pour la numerotation
+  		rulecolor=\color{black},         	%A forcer sinon probleme de couleur lors des chgts de lignes avec du texte autre que noirs (commentaires par ex)
+  		showspaces=false,                	%Visualise les espaces partout en rajoutant des _ partout. Ceci écrase 'showstringspaces'
+  		showstringspaces=false,          	%Un _ n'est rajoute que pour les chaines
+  		showtabs=false,                  	%Montre les tab dans les chaines ajoutant un _ particulier
+  		stepnumber=1,                    	%Le pas entre chaque ligne numerotee, si c'est 1, elles le sont toutes.
+  		tabsize=2,   		   				%Taille d'un tab
+  		xleftmargin=2pt,  					%Marge gauche
+        identifierstyle=\color{black},		%Couleur des identifiants
+        procnamekeys={def,class},			%Ce qui définit les fonctions
+        procnamestyle=\color{blue}\textbf,	%Couleur affectee aux fonctions et mise en gras
+        %framexleftmargin=5mm, 
+        %frame=shadowbox, 					%Type de cadre (effet d'ombre)
+        rulesepcolor=\color{gray}}
+
+\newcommand{\mat}
+{\end{array}\right )}
+\newcommand{\Acc}
+{
+\left \{
+\begin{array}}
+\newcommand{\Mat}
+{
+\left (
+\begin{array}}
+\newcommand{\acC}
+{\end{array}\right.}
+\title{test}
+\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+
+\begin{document}
+
+\begin{center}
+\textit{{ {\huge Corrigé DM1}}}
+\end{center}
+
+
+\bigskip
+
+\begin{center}
+ \shadowbox{Introduction}
+\end{center}
+
+\medskip
+
+\begin{enumerate}
+\item On utilise l'instruction {\tt L[i]}.
+\item On utilise l'instruction {\tt L[i][j]}.
+\end{enumerate}
+
+\medskip
+
+\begin{center}
+ \shadowbox{Partie 1 : quelques fonctions utiles}
+\end{center}
+
+\medskip
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Si une grille de Sudoku est complète, chaque ligne, colonne et carré de taille $3 \times 3$ contient les $9$ chiffres de $1$ à $9$ et on a :
+$$ \sum_{k=1}^9 k = \dfrac{9 \times 10}{2} = 45$$
+donc la somme des chiffres fait $45$. La réciproque est fausse : si la grille est remplie avec uniquement le chiffre $5$, la somme sur chaque ligne, colonne et carré est égal à $45$ et pourtant la grille n'est pas complète.
+\item Il suffit de vérifier que chaque chiffre de $1$ à $9$ appartient à cette ligne. Si c'est le cas, sachant que la ligne à $9$ chiffres, elle est complète. Voici une proposition :
+
+\begin{center}
+\begin{minipage}{0.7\textwidth}
+		
+\begin{lstlisting}
+def ligne_complete(L,i):
+    ligne=L[i]
+    for k in range(1,10):
+        if k not in ligne:
+    	    return False
+    return True
+\end{lstlisting}
+
+\end{minipage}
+\end{center}
+
+\item On teste toutes les lignes, les colonnes et les carrés de taille $3 \times 3$ : si l'un n'est pas complet, on renvoie faux. Sinon, on renvoie vrai après avoir tout testé.
+
+\begin{center}
+\begin{minipage}{0.76\textwidth}
+		
+\begin{lstlisting}
+def complet(L):
+    for i in range(0,9):
+        if (not(ligne_complete(L,i)) or not(colonne_complete(L,i)) or not(carre_complet(L,i))):
+    	    return False
+    return True 
+\end{lstlisting}
+
+\end{minipage}
+\end{center}
+\item Voici une proposition : 
+\end{enumerate}
+
+\begin{center}
+\begin{minipage}{0.7\textwidth}
+		
+\begin{lstlisting}
+def ligne(L,i):
+    chiffre =[]
+    for j in range(9):
+        if (L[i][j] not in chiffre) and |[i][j]!=0:
+            chiffre.append([L[i][j])
+    return chiffre
+\end{lstlisting}
+
+\end{minipage}
+\end{center}
+
+
+
+
+\begin{enumerate}
+\setcounter{enumi}{6}
+\item Les cases situés en haut à gauche des carrés $3 \times 3$ sont ceux qui ont des coordonnées de la forme :
+$$ (3a,3b) \; \hbox{ où } (a,b) \in \lbrace 0,1,2 \rbrace^2$$
+On se donne une case $(i,j)$ avec $(i,j) \in \Interv{0}{8}^2$. Cette case appartient au carré dont la case en haut à gauche vaut $(3a,3b)$ si et seulement si :
+$$ 3a \leq i \leq 3a+2 \; \hbox{ et } \; 3b \leq j \leq 3b+2$$
+ce qui est équivalent à :
+$$ a \leq \dfrac{i}{3} \leq a + \dfrac{2}{3} \; \hbox{ et } \; b \leq \dfrac{j}{3} \leq b + \dfrac{2}{3}$$
+Ceci implique que :
+$$  a \leq \dfrac{i}{3} <a+1 \; \hbox{ et } \; b \leq \dfrac{j}{3}<b+1$$
+Sachant que $a$ et $b$ sont des entiers, on en déduit que :
+$$ a = \left\lfloor \dfrac{i}{3} \right\rfloor \; \hbox{ et } \; b = \left\lfloor \dfrac{j}{3} \right\rfloor$$
+et ainsi, la case en haut à gauche du carré $3 \times 3$ auquel appartient la case $(i,j)$ a pour coordonnées :
+$$  (3a,3b)= \left( 3 \times \left\lfloor \dfrac{i}{3} \right\rfloor , 3 \times \left\lfloor \dfrac{j}{3} \right\rfloor \right)$$
+\item On utilise la question précédente :
+
+\begin{center}
+\begin{minipage}{0.7\textwidth}
+		
+\begin{lstlisting}
+def carre(L,i,j):
+    icoin =3*(i//3)
+    jcoin =3*(j//3)
+    chiffre=[]
+    for i in range(icoin,icoin+3):
+        for j in range(jcoin,jcoin+3):
+            if (L[i][j] not in chiffre) and (L[i][j]!=0):
+                chiffre.append(L[i][j]) 
+    return chiffre
+\end{lstlisting}
+
+\end{minipage}
+\end{center}
+\end{enumerate}
+
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item On concatène les listes contenant les chiffres de la ligne $i$, la colonne $j$ et le carré de taille $3 \times 3$ associé à la case $(i,j)$.
+
+\begin{center}
+\begin{minipage}{0.7\textwidth}
+		
+\begin{lstlisting}
+def conflit(L,i,j):
+    return ligne(L,i)+colonne(L,j)+carre(L,i,j)
+\end{lstlisting}
+
+\end{minipage}
+\end{center}
+\item On cherche les chiffres de $0$ à $8$ n'appartenant pas à la liste donnée par la fonction {\tt conflit}.
+
+\begin{center}
+\begin{minipage}{0.7\textwidth}
+		
+\begin{lstlisting}
+def chiffres_ok(L,i,j):
+    ok=[]
+    conflits=conflit(L,i,j)
+    for k in range(1,10):
+        if k not in conflits:
+            ok.append(k)
+    return ok
+\end{lstlisting}
+
+\end{minipage}
+\end{center}
+\end{enumerate}
+
+
+\medskip
+
+\begin{center}
+ \shadowbox{Partie 2 : un algorithme naïf}
+\end{center}
+
+\medskip
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+\item Il suffit de déterminer le nombre d'éléments dans la liste donnée par la fonction {\tt chiffres$\_$ok}.
+
+\begin{center}
+\begin{minipage}{0.7\textwidth}
+\begin{lstlisting}
+def nb_possibles(L,i,j):
+    return len(chiffres_ok(L,i,j))
+\end{lstlisting}
+\end{minipage}
+\end{center}
+
+\item Il y a trois erreurs :
+\begin{itemize}
+\item Le test d'égalité se fait avec deux \og = \fg.
+\item Le premier élément d'une liste a pour indice $0$.
+\item Il faut changer la valeur de la variable {\tt changement} si la grille est modifiée.
+\end{itemize}
+
+\begin{center}
+\begin{minipage}{0.7\textwidth}
+		
+\begin{lstlisting}
+def un_tour(L):
+    changement=False
+    for i in range(1,9):
+        for j in range(1,9):
+            if (L[i][j] == 0):
+                if (nb_possibles(L,i,j) == 1):
+                    L[i][j] = chiffres_ok(L,i,j)[0]
+                    changement=True
+    return changement
+\end{lstlisting}
+\end{minipage}
+\end{center}
+\item Tant qu'il y a un changement, on répète l'utilisation de la fonction {\tt un$\_$tour}.
+
+\begin{center}
+\begin{minipage}{0.7\textwidth}
+		
+\begin{lstlisting}
+def complete(L):
+    bool=un_tour(L)
+    while bool:
+        bool=un_tour(L)
+    return complet(L)
+\end{lstlisting}
+\end{minipage}
+\end{center}
+\end{enumerate}
+
+
+\bigskip
+
+\begin{center}
+ \shadowbox{Partie 3 : la méthode du backtracking}
+\end{center}
+
+\medskip
+
+
+\begin{enumerate}
+\setcounter{enumi}{13}
+\item On utilise une liste par compréhension :
+\begin{center}
+\begin{minipage}{0.9\textwidth}
+		
+\begin{lstlisting}
+def liste_zero(L):
+    return [[i,j] for i in range(0,9) for j in range(0,9) if L[i][j]==0]
+\end{lstlisting}
+\end{minipage}
+\end{center}
+\item Voici une proposition :
+\begin{center}
+\begin{minipage}{0.7\textwidth}
+		
+\begin{lstlisting}
+def remplir(L,Lvide,k):
+    [i,j]=Lvide[k]
+    chiffre=1
+    while chiffre not in chiffres_ok(L,i,j) and chiffre<10:
+        chiffre=chiffre+1
+    return chiffre 
+\end{lstlisting}
+\end{minipage}
+\end{center}
+\item Voici une proposition :
+
+\begin{center}
+\begin{minipage}{0.9\textwidth}
+		
+\begin{lstlisting}
+def resolution(L):
+    Lvide=liste_zero(L) # Liste contenant les (i,j) tels que L[i,j]=0
+    n=len(Lvide)
+    k=0
+    while k>=0 and k<n: 
+        [i,j]=Lvide[k]
+        chiffre=remplir(L,Lvide,k) # On cherche le premier chiffre possible pour la case (i,j)
+        if chiffre==10: # Aucun chiffre possible : on revient en arrière
+            k=k-1
+            L[i][j]=0
+        else: # On avance dans la liste Lvide pour continuer à tester
+            L[i][j]=chiffre
+            k=k+1
+    return L 
+\end{lstlisting}
+\end{minipage}
+\end{center}
+
+
+\end{enumerate}
+
+
+
+\end{document}

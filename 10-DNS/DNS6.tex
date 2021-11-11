@@ -1,0 +1,59 @@
+\documentclass[a4paper,french,11pt,twoside]{VcCours}
+
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+
+\begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir non surveillé n°6}
+\begin{center}
+\large\bf 
+Pour le vendredi 12 novembre 2021
+\end{center}
+\separationTitre
+\vspace{-1.5em}
+\begin{itemize}
+   \item Alistair, Mathis et Barnabé travailleront sur le sujet Centrale-Supélec Mathématiques 2 PC 2018 et feront l'exercices 2 de ce DNS. Ils peuvent, s'ils veulent, traiter aussi les exercices 1 et 3.
+   \item Anta, Marouane et Adama peuvent faire les questions 1 à 15 du sujet Centrale ci-dessus. Ils doivent rendre ce DNS en entier.
+   \item Tous les autres élèves doivent rendre ce DNS en entier.
+\end{itemize}
+\separationTitre
+   
+\section*{Exercice 1}   
+   Soit $n \in \mathbb{N}$. On définit la fonction $f_n : \mathbb{R} \rightarrow \mathbb{R}$ par :
+   $$ \forall x \in \mathbb{R}, \; f_n(x) = \dfrac{x^n}{\sqrt{1+x}}$$
+   
+   \begin{enumerate}
+   \item Étudier les variations de $f_n$ sur $[0,1]$.
+   \item Représenter sur le même graphique les graphes des fonctions $f_0$, $f_1$ et $f_2$.
+   \item Démontrer que $(f_n)_{n \geq 0}$ converge simplement sur $[0,1]$ vers une fonction $f$ que l'on explicitera.
+   \item Montrer, de deux manières différentes, que $(f_n)_{n \geq 0}$ ne converge pas uniformément sur $[0,1]$ vers $f$.
+   \item On définit la suite $(u_n)_{n \geq 0}$ par :
+   $$ \forall n \in \mathbb{N}, \; u_n = \int_0^1 f_n(x) \dx$$
+   \begin{enumerate}
+   \item Montrer que $(u_n)_{n \geq 0}$ est monotone puis qu'elle converge vers $0$.
+   \item Montrer que pour tout entier $n \geq 0$,
+   $$ (n+1) u_n = \dfrac{1}{\sqrt{2}} + \dfrac{1}{2} \int_0^1 \dfrac{x^{n+1}}{(\sqrt{1+x})^3} \dx$$
+   \item En déduire un équivalent de $u_n$ quand $n$ tend vers $+ \infty$.
+   \item En suivant la même démarche que précédemment, déterminer des réels $\alpha$, $\beta$ tels que :
+   $$ u_n \underset{+ \infty}{=} \dfrac{\alpha}{n} + \dfrac{\beta}{n^2} + o \left( \dfrac{1}{n^2} \right)$$
+   \end{enumerate}
+   \end{enumerate}
+   
+\section*{Exercice 2}   
+   Soit $S$ définie par :
+   $$ S(x) = \sum_{n=1}^{+ \infty} \dfrac{(-1)^n}{x+n}$$
+   \begin{enumerate}
+   \item Montrer que $S$ est définie sur $I= ]-1, + \infty[$.
+   \item Montrer que $S$ est continue sur $I$.
+   \item Montrer que $S$ est de classe $\mathcal{C}^1$ sur $I$ et déterminer $S'$. En déduire que $S$ est croissante sur $I$.
+   \item Déterminer la limite de $S$ en $+ \infty$.
+   \item Déterminer la limite de $S$ en $-1^+$.
+   \end{enumerate}
+   
+\section*{Exercice 3}   
+   Soit $(a_n)_{n \geq 0}$ une série à termes positifs telle que la série de terme général $a_n$ converge. Montrer que que la fonction $f$ définie par :
+   $$ f(x) = \sum_{n=0}^{+ \infty} a_n \cos (nx)$$
+   est bien définie et continue sur $\mathbb{R}$. Donner une condition simple pour qu'elle soit de classe $\mathcal{C}^1$ sur $\mathbb{R}$.
+
+
+\end{document}
