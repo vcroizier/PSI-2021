@@ -1,0 +1,169 @@
+\documentclass[french,11pt,twoside]{VcCours}
+\usepackage{hyperref}
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=black,
+      linkcolor=black,
+      citecolor=black,
+}
+\lstnewenvironment{PYout}{\lstset{language=Python,numbers=none,backgroundcolor=\color{white}}}{}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Informatique}{TP d'info n°3 -- Les piles}
+
+\tableofcontents
+\separationTitre
+
+\section{Cours}
+
+\subsection{Introduction}
+Le but de ce TP est définir une nouveau type de structure de données : les piles. 
+Donnons un exemple très simple en considérant une pile d'assiettes :
+
+\medskip
+
+\begin{center}
+\includegraphics[scale=0.2]{assiette}
+\end{center}
+Si l'on considère que les assiettes sont très lourdes, les actions 
+possibles concernant cette pile d'assiettes sont :
+\begin{itemize}
+\item Enlever l'assiette située au sommet de la Pile (si celle-ci n'est pas vide).
+\item Ajouter une assiette au sommet de la Pile.
+\end{itemize}
+
+\medskip
+
+A priori, aucune autre action n'est disponible donc ne peut pas accéder 
+directement à une assiette qui n'est pas au sommet de la pile : 
+il faut dépiler toutes les assiettes situées au dessus de celles 
+qui nous intéressent ...
+
+\medskip
+
+Dans ce TP, on considérera une pile comme une liste sur laquelle on limite les accès : 
+\begin{itemize}
+\item On ne peut insérer des éléments qu'à une seule extrémité que l'on appelle 
+le \textit{sommet} de la pile.
+\item On ne peut retirer un élément de la pile que s'il se situe 
+au sommet de celle-ci.
+\item Si on souhaite accéder à un élément qui n'est pas au sommet, on doit 
+retirer un par un les éléments qui sont au dessus de celui-ci, en partant du sommet.
+\end{itemize}
+
+\medskip
+%cSpell:ignore LIFO
+On appelle ce type de structure de données LIFO : \og Last In, First Out \fg.
+
+\medskip
+
+Voici quelques exemples courant utilisant des piles :
+\begin{itemize}
+\item L'historique d'un navigateur internet : on empile chaque nouvelle page visitée et on dépile quand on clique \og page précédent \fg.
+\item La fonction \og{}Annuler\fg{} dans un logiciel de traitement de texte par exemple : on empile chaque nouvelle action et on dépile quand on annule une action.
+\end{itemize}
+
+\subsection{Structure de Pile}
+La notion de Pile étant abstraite, une des questions de base est de savoir quelles fonctions peuvent être utilisées sur celles-ci, indépendamment du langage choisi et de la manière dont on l'implémente. Voici quelques fonctions usuelles :
+\begin{itemize}
+\item Créer une pile vide.
+\item Tester si une pile est vide.
+\item Empiler un élément à une pile.
+\item Dépiler une pile (enlever le sommet).
+\end{itemize}
+À ces fonctions indispensables peuvent s'ajouter :
+\begin{itemize}
+\item Donner la taille de la pile.
+\item Renvoyer le sommet d'une pile (sans le retirer).
+\item Vider la pile.
+\end{itemize}
+
+\medskip
+
+Une manière de créer des piles avec Python est de considérer des listes 
+$L=[a_n, a_{n-1}, \ldots, a_1]$ où $a_1$ est le sommet de la liste. 
+C'est que l'on fera dans la suite.
+
+% \begin{Remarque}{} 
+%     On peut aussi considérer que le sommet d'une pile représentée par une 
+%     liste est le premier élément de la liste.
+% \end{Remarque} 
+
+\begin{Exemple}%cSpell:ignore depile
+    Donnons les fonctions de bases avec le point de vue précédent. 
+    On les appellera : \code{creer\_pile}, \code{est\_vide}, \code{depiler}, 
+    \code{empiler}.
+\end{Exemple}
+
+%\vspace{9.5cm}
+
+\newpage
+\section{TP}
+Dans toute la suite, les seules fonctions de bases utilisables sont celles 
+données dans le cours. Les autres liées aux listes sont interdites. 
+
+\subsection{Pour se chauffer}
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Écrire une fonction \code{second} prenant en argument une pile et 
+renvoyant le deuxième élément de la Pile si celui-ci existe.
+\item Écrire une fonction \code{second2} prenant en argument une pile et 
+renvoyant le deuxième élément de la Pile si celui-ci existe, et tout ceci en
+laissant la pile dans son état de départ.
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Écrire une fonction \code{retourne} prenant en argument une pile et renvoyant 
+la pile inverse de celle-ci (le sommet de la Pile devient la queue de celle-ci, 
+le deuxième élément de la pile devient l'avant-dernier...).
+\item  Écrire une fonction \code{copie} prenant en argument une pile et 
+renvoyant une copie de celle-ci sans modifier la pile de départ.
+\item Écrire une fonction \code{inverse2} prenant en argument une pile et 
+renvoyant la pile inverse de celle-ci, et tout ceci en
+laissant la pile dans son état de départ.
+\end{enumerate}
+\end{enumerate}
+\subsection{Expressions bien parenthésées}
+Une chaîne de caractère est dite \textit{bien parenthésée} si elle vérifie
+l'une des conditions suivantes :
+\medskip
+\begin{enumerate}
+\item Elle ne contient aucune parenthèse ( ou ).
+\item Elle est de la forme (expr) ou expr est une expression bien parenthésée.
+\item Elle est la concaténation de deux expressions bien parenthésées.
+\end{enumerate}
+
+\medskip
+
+Quelques exemples :
+\begin{itemize}
+\item (), (1), (()()), ()((a)((b()))) sont bien parenthésées.
+\item (, )(, ((truc) ne sont pas bien parenthésées.
+\end{itemize}
+
+\medskip
+
+Écrire une fonction \code{Par} prenant en argument une chaîne de caractères et 
+renvoyant True si celle-ci est bien parenthésée et False sinon. On pourra 
+parcourir la chaîne de caractères de gauche à droite et utiliser une pile liée 
+aux parenthèses ouvrantes présentes dans celle-ci.
+
+
+\subsection{Permutation circulaire d'une pile}
+Écrire une fonction \code{Perm}, prenant en argument une pile $P$ et un entier 
+naturel $k$, renvoyant la permutation circulaire de la Pile $P$ de $k$ rangs. 
+Par exemple si la pile est $P=[1,2,3,4]$ avec $4$ le sommet :
+
+\begin{itemize}
+\item Perm($P,0$)=Perm($P,4$)=$P$.
+\item Perm($P,1$)=Perm$(P,5$)=[4,1,2,3].
+\item Perm($P,2$)=Perm$(P,6$)=[3,4,1,2].
+\item Perm($P,3$)=Perm$(P,7$)=[2,3,4,1].
+\end{itemize} 
+
+\subsection{Notation polonaise}
+Pour les plus rapides : \url{https://lepython.com/files-et-piles/#exercice9}
+\end{document}

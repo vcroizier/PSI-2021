@@ -18,10 +18,7 @@ Dans la suite, $I$ sera un intervalle de $\mathbb{R}$ contenant au moins deux po
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Convergence de suites de fonctions}}}
-\end{center}
-
+\subsection{Convergence de suites de fonctions}
 
 \begin{Exercice}{} Pour tout entier $n \geq 1$, on note $f_n$ la fonction définie sur $\mathbb{R}_+$ par 
 $$ f_n(x) = \frac{x}{n+x}$$
@@ -70,7 +67,6 @@ $$f_n(x) = n^\alpha x(1-x)^n$$
   \end{enumerate}
 \end{Exercice}
 
-\newpage
 \corr 
 
 \begin{enumerate}
@@ -215,7 +211,7 @@ et ainsi, $(f_n)_{n \geq 1}$ converge uniformément vers la fonction nulle sur $
 \begin{Exercice}{} On pose pour tout entier $n \geq 0$ et tout $x \in \mathbb{R}$,
 $$f_{n}(x) =\dfrac{n+2}{n+1}\mathrm{e}^{-n x^{2}}$$
 \begin{enumerate}
-\item \'Etudier la convergence simple de la suite de fonctions $\left(f_{n}\right) _{n \geq 0}$.
+\item Étudier la convergence simple de la suite de fonctions $\left(f_{n}\right) _{n \geq 0}$.
 \item La suite de fonctions  $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniformément sur $\left[ 0,+\infty\right[$ ?
 \item Soit $a>0$. La suite de fonctions $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniformément sur  $[a,+\infty[$ ?	
 \item La suite de fonctions  $\left(f_{n}\right) _{n \geq 0}$ converge-t-elle uniformément sur $]0,+\infty[$? 
@@ -255,15 +251,15 @@ Ainsi, $\left(f_{n}\right) _{n \geq 0}$ ne converge pas uniformément sur $]0,+\
 
 \begin{Exercice}{} \begin{enumerate}
 \item Soient $X$ une partie de $\mathbb{R}$ et $\left( f_{n}\right) _{n \geq 0}$ une suite de fonctions de $X$ dans $\mathbb{R}$ convergeant simplement vers une fonction $f$. \\
-On suppose qu'il existe une suite $\left( x_{n}\right)_{n \geq 0}$ d'éléments de $X$ telle que la suite $\left( f_{n}(x_{n})-f\left( x_{n}\right) \right) _{n \geq 0}$ ne tende pas vers $0$. \medskip
+On suppose qu'il existe une suite $\left( x_{n}\right)_{n \geq 0}$ d'éléments de $X$ telle que $\left( f_{n}(x_{n})-f\left( x_{n}\right) \right) _{n \geq 0}$ ne tende pas vers $0$. \medskip
 
 Démontrer que la suite de fonctions $\left( f_{n}\right) _{n \geq 0}$ ne converge pas uniformément vers $f$ sur $X$.
 
 \item Pour tout $x\in\mathbb{R}$ et tout entier $n \geq 0$, on pose :
 $$f_{n}(x) =\dfrac{\sin \left( nx\right) }{1+n^{2}x^{2}}$$
 	\begin{enumerate}
-	\item \'Etudier la convergence simple de la suite $\left( f_{n}\right)_{n \geq 0}$.
-	\item \'Etudier la convergence uniforme de la suite $\left( f_{n}\right)_{n \geq 0}$ sur $[a,+\infty[$ (avec $a>0$),  puis sur $]0,+\infty[$.
+	\item Étudier la convergence simple de la suite $\left( f_{n}\right)_{n \geq 0}$.
+	\item Étudier la convergence uniforme de la suite $\left( f_{n}\right)_{n \geq 0}$ sur $[a,+\infty[$ (avec $a>0$),  puis sur $]0,+\infty[$.
 	\end{enumerate}
 \end{enumerate}
 \end{Exercice}
@@ -472,13 +468,10 @@ donc $(P_n-P_N)$ converge uniformément vers $f-P_N$ sur $\mathbb{R}$ mais cette
 $$ f(x)-P_N(x)=C$$
 et donc $f(x)=P_N(x)+C$. On en déduit que $f$ est une fonction polynomiale.
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Convergence de séries de fonctions}}}
-\end{center}
 
-\medskip
+\subsection{Convergence de séries de fonctions}
+
 
 \begin{Exercice}{} Étudier la convergence simple, normale et uniforme de $\Sum{n\geq 1}{} f_n$ sur $\mathbb{R}_+^*$ où pour tout entier $n \geq 0$ et tout $x \in \mathbb{R}_+^*$, 
 $$ f_n(x) = \frac{1}{n+n^3x^2}$$
@@ -541,8 +534,8 @@ Par positivité des termes, on a :
 $$ \vert R_n(x) \vert = R_n(x) \geq f_{n+1}(x)$$
 La fonction $f_{n+1}$ est dérivable sur $\mathbb{R}_+$ et pour tout réel $x \geq 0$,
 $$ f_{n+1}'(x) = (n+1)x (2-x \sqrt{n+1})e^{-x \sqrt{n+1}}$$
-Ainsi, la fonction $f_{n+1}$ est positive sur $\mathbb{R}_+$, croissante sur $[0, 2/ \sqrt{n+1}]$ et décroissante sur $[2/\sqrt{n+1}, + \infty[$. On en déduit que $f_{n+1}$ est bornée sur $\mathbb{R}_+$ et :
-$$ \Vert f_{n+1} \Vert_{\infty} = f_{n+1}(2/\sqrt{n+1}) = 4 e^{-2}$$
+Ainsi, la fonction $f_{n+1}$ est positive sur $\mathbb{R}_+$, croissante sur $[0, \tfrac2{\sqrt{n+1}}]$ et décroissante sur $[\tfrac2{\sqrt{n+1}}, + \infty[$. On en déduit que $f_{n+1}$ est bornée sur $\mathbb{R}_+$ et :
+$$ \Vert f_{n+1} \Vert_{\infty} = f_{n+1}(\tfrac2{\sqrt{n+1}}) = 4 e^{-2}$$
 Supposons par l'absurde la série étudiée converge uniformément sur $\mathbb{R}_+$. Alors la suite des restes converge uniformément vers $0$ : à partir d'un certain rang, $R_n$ est bornée et :
 $$ \lim_{n \rightarrow + \infty} \Vert R_n \Vert_{ \infty} = 0$$
 Or pour tout $x \in \mathbb{R}_+$,
@@ -556,8 +549,8 @@ C'est absurde ! Ainsi, la série étudiée ne converge pas uniformément sur $\m
 $$ f_n(x) = \dfrac{\left(-1\right)^{n}e^{-nx}}{n} $$
 
 \begin{enumerate}
-\item \'Etudier la convergence simple sur $\mathbb{R}$  de la série de fonctions $\Sum{n\geq 1}{} f_n.$
-\item \'Etudier la convergence uniforme sur $\left[ 0,+\infty\right[ $  de la série de fonctions $\Sum{n\geq 1}{} f_n.$
+\item Étudier la convergence simple sur $\mathbb{R}$  de la série de fonctions $\Sum{n\geq 1}{} f_n.$
+\item Étudier la convergence uniforme sur $\left[ 0,+\infty\right[ $  de la série de fonctions $\Sum{n\geq 1}{} f_n.$
 \end{enumerate}
 \end{Exercice}
 
@@ -639,14 +632,7 @@ Ainsi $\Vert f_n \Vert_{\infty}$ ne tend pas vers $0$ quand $n$ tend vers $+ \in
 \end{enumerate}
 
 
-\medskip
-
-\begin{center}
-\textit{{ {\large Interversion limite-intégrale}}}
-\end{center}
-
-\medskip
-
+\subsection{Interversion limite-intégrale}
 
 \begin{Exercice}{} On pose pour tout entier $n \geq 1$ et tout $x \in [0,1]$,
 $$f_{n}\left( x\right) =\left( x^{2}+1\right) \dfrac{ne^{x}+xe^{-x}}{n+x} $$
@@ -679,14 +665,7 @@ $$\int_0^1 {(x^2  + 1){\mathrm{e}}^x \,{\mathrm{d}}x}  = 2{\mathrm{e}} - 3$$
 \end{enumerate}
 
 
-\medskip
-
-\begin{center}
-\textit{{ {\large Fonctions définies par une somme}}}
-\end{center}
-
-\medskip
-
+\subsection{Fonctions définies par une somme}
 
 \begin{Exercice}{} Donner l'ensemble de définition et de continuité de la fonction $f$ définie par :
   \[
