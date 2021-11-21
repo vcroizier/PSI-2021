@@ -1,0 +1,96 @@
+\documentclass[twoside,a4paper,landscape,french,10pt]{VcCours}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnseprule{0.4pt}%
+\addtolength\columnsep{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{colle}[4]{{\large\bf\makebox[0cm][l]{#1\hspace{\stretch{-1}}}\hspace{\stretch{1}}#2\hspace{\stretch{1}}\makebox[0cm][r]{\hspace{\stretch{-1}}#3}}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{multicols*}{#4}}{\end{multicols*}\pagebreak}
+\newenvironment{eleve}[1]{\textbf{\large #1}}{\vspace{\stretch{1}}
+\columnbreak}
+\newenvironment{eleveF}[1]{\textbf{\large #1}}{}
+\newcommand{\cours}{\medskip\uwave{Cours :}
+
+\smallskip}
+\newcommand{\exo}[1]{\vspace{\stretch{1}}\uwave{Exercice #1:}
+
+\smallskip}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+-----------------------------------------+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{colle}{MPSI -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
+n\degres8 -- le lundi 22/11/2021}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+  \cours
+  Définition de dérivabilité en un point.
+  
+  Théorème de dérivabilité d'une composée.
+  
+  Théorème de dérivabilité de la réciproque.
+  
+  \exo1
+  Résoudre $\sys{\log_y(x)+\log_x(y)=\frac{50}7\\xy=256}$
+  
+  \exo2
+  Étudier et simplifier $f:x\longmapsto2\arctan(\sqrt{1+x^2}-x)+\arctan(x)$. 
+  
+  \exo3
+  Résoudre $(x^{\lambda})^x=x^{(x^{\lambda})}$ où $\lambda\in\R\setminus\{1\}$.
+  
+  \end{eleve}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{eleve}{}
+  
+    \cours
+  Définition de $\arccos$ et $\arcsin$.
+  
+  Théorème de la bijection monotone.
+  
+  Décomposition unique d'une fonction en somme de fonctions pair/impair.
+  
+  \exo1
+  Résoudre $2\arcsin(x)=\arcsin(2x\sqrt{1-x^2})$
+  
+  \exo2
+  Étudier et simplifier $f:x\longmapsto2\arccos\left(\frac{1-x^2}{1+x^2}\right)$. 
+  
+  \exo3
+  Résoudre $\sys{\ch(x)+\ch(y)=a\ch(\alpha)\\\sh(x)+\sh(y)=a\sh(\alpha)}$ où $a,\alpha\in\R$.
+  
+  \end{eleve}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{eleve}{}
+  
+  \cours
+  Définition de $\ch$ et $\sh$.
+  
+  Formules trigo hyperbolique.
+  
+  Étude de $\arctan$.
+  
+  \exo1
+  Résoudre $\log_x(10)+2\log_{10x}(10)+3\log_{100x}(10)=0$.
+  
+  \exo2
+  Étudier et simplifier\\ $f:x\longmapsto2\arctan\left(\frac{x^2-2x-1}{x^2+2x-1}\right)$.
+  
+  \exo3
+  Calculer $\sum_{k=0}^nk\sh(kx)$.
+  
+  \end{eleve}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{colle}
+  
+  \end{document}
+  

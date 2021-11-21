@@ -1,236 +1,166 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
 
 \begin{document}
-\everymath{\displaystyle}
-\begin{center}
-\textit{{ {\huge TD 9 : Intégrales généralisées}}}
-\end{center}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 9 : Intégrales généralisées}
 
+\tableofcontents
+\separationTitre
 
-\bigskip
+\subsection{Nature d'une intégrale}
 
-\begin{center}
-\textit{{ {\large Nature d'une intégrale}}}
-\end{center}
-
-\medskip
-
-\begin{Exercice}{} Étudier la nature des intégrales suivantes. Préciser la valeur en cas de convergence.
-
+\begin{Exercice}{}
+Étudier la nature des intégrales suivantes. Préciser la valeur en cas de convergence.
 \begin{multicols}{2}
 \begin{enumerate}
-\item $A = \dis \int_1^{+ \infty} \dfrac{1}{x^{3/2}} \dx$
-\item $B = \dis \int_0^{+ \infty} \dfrac{1}{1+x^2} \dx$
-\item $C = \dis \int_0^{+ \infty} x e^{-2x} \dx$
-\item $D= \dis \int_2^{+ \infty} \dfrac{1}{(x-1)(x+1)} \dx$.
+\item $A = \int_1^{+ \infty} \dfrac{1}{x^{3/2}} \dx$
+\item $B = \int_0^{+ \infty} \dfrac{1}{1+x^2} \dx$
+\item $C = \int_0^{+ \infty} x e^{-2x} \dx$
+\item $D= \int_2^{+ \infty} \dfrac{1}{(x-1)(x+1)} \dx$.
 \item $E= \int_{e}^{+ \infty} \dfrac{1}{x\ln(x)} \dx$
 \item $F= \int_0^1 \dfrac{\ln(x)}{(1+x)^2} \dx$
 \end{enumerate}
 \end{multicols}
-\vspace{0.1cm}
 \end{Exercice}
 
 
-
 \begin{Exercice}{} Étudier la nature des intégrales suivantes. 
-
 \begin{multicols}{2}
 \begin{enumerate}
-\item $A = \dis \int_1^{+ \infty} \dfrac{\sin(x)}{x^2} \dx$
-\item $B = \dis \int_1^{+ \infty} \dfrac{\cos(x)}{x^{3/2}+\ln(x)} \dx$
-\item $C = \dis \int_0^{1} \dfrac{1}{\sqrt{1-x^2}} \sin \left(\dfrac{1}{x}\right) \dx$
-\item $D= \dis \int_1^{+ \infty} \dfrac{1}{x} \sin \left(\dfrac{1}{x}\right) \dx$.
-\item $E= \dis \int_{0}^{+ \infty} e^{-x} \sin(x) \dx$
-\item $F= \dis \int_0^{+\infty} \dfrac{\sin(x)}{x^2+4} \dx$
-\item $G= \dis \int_0^{+ \infty} \dfrac{\cos(x)}{\ch(x)} \dx$.
-\item $H= \dis \int_1^{+\infty} \dfrac{\sin(10x)-\sin(5x)}{x^{4/3}} \dx$.
+\item $A = \int_1^{+ \infty} \dfrac{\sin(x)}{x^2} \dx$
+\item $B = \int_1^{+ \infty} \dfrac{\cos(x)}{x^{3/2}+\ln(x)} \dx$
+\item $C = \int_0^{1} \dfrac{1}{\sqrt{1-x^2}} \sin \left(\dfrac{1}{x}\right) \dx$
+\item $D= \int_1^{+ \infty} \dfrac{1}{x} \sin \left(\dfrac{1}{x}\right) \dx$.
+\item $E= \int_{0}^{+ \infty} e^{-x} \sin(x) \dx$
+\item $F= \int_0^{+\infty} \dfrac{\sin(x)}{x^2+4} \dx$
+\item $G= \int_0^{+ \infty} \dfrac{\cos(x)}{\ch(x)} \dx$.
+\item $H= \int_1^{+\infty} \dfrac{\sin(10x)-\sin(5x)}{x^{4/3}} \dx$.
 \end{enumerate}
 \end{multicols}
-\vspace{0.1cm}
 \end{Exercice}
 
 
 \begin{Exercice}{} \begin{enumerate}
-\item Montrer que l'int\'egrale $\dis \int_0^{+ \infty} \frac{\sin(t)}{t}\, \dt$ est convergente.
-\item Montrer que l'int\'egrale $\dis \int_1^{+\infty}\frac{\cos(2t)}{t}\, \dt$ est convergente.
-\item Montrer que l'int\'egrale g\'en\'eralis\'ee $\dis \int_1^{+\infty}\frac{\sin^2(t)}{t} \, \dt$ est divergente. En d\'eduire la divergence de l'int\'egrale g\'en\'eralis\'ee $\dis \int_1^{+\infty}\frac{|\sin(t)|}{t} \, \dt$.
+\item Montrer que l'intégrale $\int_0^{+ \infty} \frac{\sin(t)}{t}\, \dt$ est convergente.
+\item Montrer que l'intégrale $\int_1^{+\infty}\frac{\cos(2t)}{t}\, \dt$ est convergente.
+\item Montrer que l'intégrale généralisée $\int_1^{+\infty}\frac{\sin^2(t)}{t} \, \dt$ est divergente. En déduire la divergence de l'intégrale généralisée $\int_1^{+\infty}\frac{|\sin(t)|}{t} \, \dt$.
 \end{enumerate}
 \end{Exercice}
 
 
-\medskip
+\subsection{Intégrabilité}
 
-\begin{center}
-\textit{{ {\large Intégrabilité}}}
-\end{center}
-
-\medskip
-
-\begin{Exercice}{} Soit $\alpha \in \mathbb{R}$. Étudier, sur les intervalles indiqués, l'int\'egrabilit\'e des fonctions dont les expressions sont données par :
+\begin{Exercice}{} Soit $\alpha \in \mathbb{R}$. Étudier, sur les intervalles indiqués, l'intégrabilité des fonctions dont les expressions sont données par :
 \begin{multicols}{2}
 \begin{itemize}
-\item $f_1(x)=\dis\frac{\sqrt{x^2+x+1}-\sqrt{x^2-x+1}}{x}$ sur \newline $[1,+\infty[$.
-\item $f_2(x)=\dis\frac{\ln^2(x)}{\sqrt{x^3+x}}$ sur $[1,+\infty[$.
-\item $f_3(x)=\dis\frac{\sin(x)}{\sqrt{x(1-x)}}$ sur $]0,1[$.
+\item $f_1(x)=\frac{\sqrt{x^2+x+1}-\sqrt{x^2-x+1}}{x}$ sur \newline $[1,+\infty[$.
+\item $f_2(x)=\frac{\ln^2(x)}{\sqrt{x^3+x}}$ sur $[1,+\infty[$.
+\item $f_3(x)=\frac{\sin(x)}{\sqrt{x(1-x)}}$ sur $]0,1[$.
 \columnbreak
-\item $f_4(x)=\dis\frac{1-\ch(x)}{x^{\alpha}}$ sur $]0,+\infty[$.
-\item $f_5(x)=\dis\frac{x^{\alpha}\ln(x)}{1-x^2}$ sur $]0,1[$.
-\item $f_6(x)=\dis\frac{\ln(x)\ln(1-x)}{x}$ sur $]0,1[$.
+\item $f_4(x)=\frac{1-\ch(x)}{x^{\alpha}}$ sur $]0,+\infty[$.
+\item $f_5(x)=\frac{x^{\alpha}\ln(x)}{1-x^2}$ sur $]0,1[$.
+\item $f_6(x)=\frac{\ln(x)\ln(1-x)}{x}$ sur $]0,1[$.
 \end{itemize}
 \end{multicols}
-
-\vspace{0.1cm}
 \end{Exercice}
-
-
 
 \begin{Exercice}{} Montrer que si $f : \mathbb{R}_+ \rightarrow \mathbb{R}$ est une fonction intégrable sur $\mathbb{R}_+$ admettant une limite en $+ \infty$ alors cette limite est nulle. 
 \end{Exercice} 
 
-
-
-\begin{Exercice}{}  Soit $f :[0, + \infty[ \rightarrow \R$ une fonction continue par morceaux.  On suppose que $f$ est intégrable sur $[0, + \infty[$.  Montrer que :
-  \[
-  \lim_{x \rightarrow + \infty} \int_{x}^{x + 1} f(t) \dt =0 
-  \]
+\begin{Exercice}{}
+  Soit $f :[0, + \infty[ \rightarrow \R$ une fonction continue par morceaux.
+  
+  On suppose que $f$ est intégrable sur $[0, + \infty[$. Montrer que :
+  $\lim_{x \rightarrow + \infty} \int_{x}^{x + 1} f(t) \dt =0$
 \end{Exercice}
-
-
 
 \begin{Exercice}{}
 Soit $f : x \mapsto \sin(x^2)$.
 \begin{enumerate}
-\item Montrer que $\dis \int_{0}^{+ \infty}  f(t) \dt$ converge.
+\item Montrer que $\int_{0}^{+ \infty}  f(t) \dt$ converge.
 \item Montrer que $f$ n'est pas intégrable sur $\mathbb{R}_+$. On pourra commencer par montrer grâce au changement de variable $t=x^2$ que pour tout $n \geq 1$,
 $$ \int_{\sqrt{n \pi}}^{\sqrt{(n+1)\pi}} \vert \sin(x^2) \vert \dx \geq \frac{1}{\sqrt{(n+1) \pi}}$$
 \end{enumerate}
 \end{Exercice}
 
-
-\medskip
-
-\begin{center}
-\textit{{ {\large Changements de variables et intégrations par parties}}}
-\end{center}
-
-\medskip
-
+\subsection{Changements de variables et intégrations par parties}
 
 \begin{Exercice}{} Justifier l'existence puis donner la valeur de :
-  \[
-  I = \int_{0}^{ + \infty} \frac{\dt}{(1 + t^{2})^{2}}
-  \]
+$I = \int_{0}^{ + \infty} \frac{\dt}{(1 + t^{2})^{2}}$
+
 On pourra utiliser le changement de variable $u = \dfrac{1}{t} \cdot$
 \end{Exercice}
-
 
 \begin{Exercice}{}
 \begin{enumerate}
   \item
     Montrer que :
-    \[
-\int_{0}^{ + \infty} \frac{\d x}{x^{3} + 1} = \int_{0}^{ + \infty} \frac{x}{x^{3} + 1}\dx
-    \]
+$\int_{0}^{ + \infty} \frac{\dx}{x^{3} + 1} = \int_{0}^{ + \infty} \frac{x}{x^{3} + 1}\dx$
   \item
     En déduire la valeur de cette intégrale.
   \end{enumerate}
 \end{Exercice} 
 
-
-
-
-
-\begin{Exercice}{} Montrer que les intégrales 
+\begin{Exercice}{} Montrer que les intégrales suivantes convergent et sont égales:
 $$ I=\int_{0}^1 -e^{-x} \ln(x) \dx \quad \hbox{ et } \quad J= \int_{0}^1 \frac{1-e^{-x}}{x} \dx$$
-convergent et sont égales.
 \end{Exercice}
 
+\subsection{Théorème de convergence dominée}
 
-
-
-
-\medskip
-
-\begin{center}
-\textit{{ {\large Théorème de convergence dominée}}}
-\end{center}
-
-\medskip
-
+\begin{multicols}{2}
 \begin{Exercice}{} Déterminer $\lim_{n \to + \infty} \int_{0}^{ + \infty} \frac{\sin(nt)}{nt + t^{2}} \dt$.
 \end{Exercice}
-
-
 
 \begin{Exercice}{} Déterminer $\lim_{n \rightarrow + \infty}\int_{0}^{ + \infty} \frac{x^{n}}{1 + x^{n + 2}} \dx$.
 \end{Exercice}
 
-
-
-
-
 \begin{Exercice}{} Déterminer $\lim_{n \to + \infty} \int_{0}^{n} \biggl( 1 + \frac{x}{n} \biggr)^{\!\!n} \e^{ - 2x} \dx$.
 \end{Exercice}
 
-
-
- \begin{Exercice}{} Déterminer $\dis \lim_{n \rightarrow + \infty} \int_{0}^{ + \infty} \frac{\dx}{x^{n} + \e^{x}} \cdot$
- \end{Exercice}
+\begin{Exercice}{} Déterminer $\lim_{n \rightarrow + \infty} \int_{0}^{ + \infty} \frac{\dx}{x^{n} + \e^{x}} \cdot$
+\end{Exercice}
+\end{multicols}
  
-
-
 \begin{Exercice}{}
 Pour tout $n \geq 1$, on pose $f_n(t) = \left( 1 - \dfrac{t}{n} \right)^{n-1}\ln(t)$ si $t \in ]0,n]$ et $f_n(t)=0$ si $t>n$.
 \begin{enumerate}
-\item Montrer que : $\dis \lim_{n \rightarrow + \infty} \int_{0}^n f_n(t) \dt = \int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt$.
-\item Sachant que quand $n$ tend vers $+ \infty$,
-$$ \sum_{k=1}^n \dfrac{1}{k} = \ln(n)+ \gamma + o(1)$$
-où $\gamma$ est la constante d'Euler, montrer que :
-$$ \int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt = - \gamma$$
+\item Montrer que : $\lim_{n \rightarrow + \infty} \int_{0}^n f_n(t) \dt = \int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt$.
+\item Sachant que : $\sum_{k=1}^n \dfrac{1}{k} \egal_{+\infty} \ln(n)+ \gamma + o(1)$
+où $\gamma$ est la constante d'Euler,
+
+montrer que : $\int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt = - \gamma$
+
 On pourra utiliser le changement de variable $u=\dfrac{t}{n}$ puis une intégration par parties.
 \end{enumerate}
 \end{Exercice}
 
+\subsection{Théorème d'intégration terme à terme}
 
-
-\medskip
-
-\begin{center}
-\textit{{ {\large Théorème d'intégration terme à terme}}}
-\end{center}
-
-\medskip
-
-\begin{Exercice}{} Montrer que $\dis \int_{0}^{+ \infty} \frac{\sin(x)}{e^x-1} \dx = \sum_{n=1}^{+ \infty} \frac{1}{n^2+1}\cdot$
+\begin{Exercice}{} Montrer que $\int_{0}^{+ \infty} \frac{\sin(x)}{e^x-1} \dx = \sum_{n=1}^{+ \infty} \frac{1}{n^2+1}\cdot$
 \end{Exercice}
-
-
 
 \begin{Exercice}{} Soient $a$ et $b$ deux réels strictement positifs.
 \begin{enumerate}
 \item Déterminer une suite de fonctions $(u_n)_{n \geq 0}$, définies sur $]0,1[$ et à valeurs dans $\mathbb{R}$, telles que pour tout réel $t \in ]0,1[$,
 $$ \dfrac{t^{a-1}}{1+t^b} = \sum_{k=0}^{+ \infty} u_k(t)$$
-\item Déterminer la nature de $\dis \sum_{n \geq 0} \int_0^1 \vert u_n(t) \vert \dt$? Qu'en déduit-on ?
+\item Déterminer la nature de $\sum_{n \geq 0} \int_0^1 \vert u_n(t) \vert \dt$? Qu'en déduit-on ?
 \item Montrer que :
 $$ \sum_{n=0}^{+ \infty} \dfrac{(-1)^n}{a+nb} = \int_0^1 \dfrac{t^{a-1}}{1+t^b} \dt$$
 \end{enumerate}
 \end{Exercice}
 
-
- 
-
-
-\begin{Exercice}{}\label{gamma} Soit $I = \dis \int_{0}^{+ \infty} \frac{x}{\sh(x)} \dx$.
+\begin{Exercice}{}\label{gamma}
 
 \begin{enumerate}
-\item Montrer l'existence de $I$.
-\item Montrer que $I= \dis \sum_{n=0}^{+ \infty} \frac{2}{(2n+1)^2}\cdot$
+\item Montrer l'existence de $I = \int_{0}^{+ \infty} \frac{x}{\sh(x)} \dx$.
+\item Montrer que $I= \sum_{n=0}^{+ \infty} \frac{2}{(2n+1)^2}\cdot$
 \end{enumerate}
 \end{Exercice} 
-
-
-
  
 \begin{Exercice}{} Pour $n,m \in \N$, on pose :
   \[
@@ -242,28 +172,17 @@ $$ \sum_{n=0}^{+ \infty} \dfrac{(-1)^n}{a+nb} = \int_0^1 \dfrac{t^{a-1}}{1+t^b} 
   \item
     En déduire que :
     \[
-    \int_{0}^{1} x^{ - x} \d x = \sum_{n = 1}^{ + \infty} n^{ - n}
+    \int_{0}^{1} x^{ - x} \dx = \sum_{n = 1}^{ + \infty} n^{ - n}
     \]
   \end{enumerate}
 \end{Exercice}
 
-
-
-
-\medskip
-
-\begin{center}
-\textit{{ {\large Suites et fonctions définies par des intégrales}}}
-\end{center}
-
-\medskip
+\subsection{Suites et fonctions définies par des intégrales}
 
 \begin{Exercice}{} Pour $n\in\N,$ on pose :
-$$I_n=\dis\int_0^{+\infty} t^ne^{-t} \dt$$
-Justifier l'existence de $I_n$. D\'eterminer une relation liant $I_n$ et $I_{n+1}$ puis en d\'eduire la valeur de $I_n.$
+$$I_n=\int_0^{+\infty} t^ne^{-t} \dt$$
+Justifier l'existence de $I_n$. Déterminer une relation liant $I_n$ et $I_{n+1}$ puis en déduire la valeur de $I_n.$
 \end{Exercice} 
-
-
 
 \begin{Exercice}{} On pose pour tout $n \geq 1$, $u_n = \int_{0}^{+ \infty} \dfrac{\dt}{(1+t^3)^n} \cdot$
 \begin{enumerate}
@@ -273,9 +192,7 @@ Justifier l'existence de $I_n$. D\'eterminer une relation liant $I_n$ et $I_{n+1
 \end{enumerate}
 \end{Exercice} 
 
-
-
-\begin{Exercice}{} On considère $f$ définie par $f(x)= \dis \int_x^{+ \infty} \dfrac{\sin(t)}{t^2} \dt$.
+\begin{Exercice}{} On considère $f$ définie par $f(x)= \int_x^{+ \infty} \dfrac{\sin(t)}{t^2} \dt$.
 \begin{enumerate}
 \item Montrer que $f$ est définie et dérivable sur $\mathbb{R}_+^{*}$.
 \item Montrer que $f(x) \underset{0}{\sim} -\ln(x)$.
@@ -284,31 +201,26 @@ Justifier l'existence de $I_n$. D\'eterminer une relation liant $I_n$ et $I_{n+1
 \end{enumerate}
 \end{Exercice}
 
-
-
-
-
-
 %
 %\exo Donner la nature des intégrales suivantes ($a$ est un réel).
 %
 %\begin{multicols}{3}
 %\begin{enumerate}
-%\item $I_1=\dis \int_{0}^{+ \infty} e^{-x^2} \dx$.
-%\item $I_2= \dis \int_{-\pi/2}^{\pi/2} \ln(1+ \sin(x)) \dx$
-%\item $I_3= \dis \int_{0}^{+ \infty} \dfrac{1+\sin(t)}{1+\sqrt{t^3}} \dt$
-%\item $I_4=  \dis \int_{0}^{1} -e^{-x} \ln(x)  \dx$
-%\item $I_5=  \dis \int_{0}^{+ \infty} \dfrac{1}{ch(t) - \cos(t)} \dt$
-%\item $I_6= \dis \int_{0}^{1} \dfrac{\ln(x)}{\sqrt{x}} \dx$
-%\item $I_7 = \dis \int_{1}^{+ \infty} \frac{\sin(x)}{x^2} \dx$
-%\item $I_8 = \dis \int_{2}^3 \frac{\sin \left( \frac{1}{x-2} \right)}{\sqrt{(x-2)(3-x)}}  \dx$
-%\item $I_{9} = \dis \int_{1}^{+ \infty} \frac{1}{t} \left(e^{\frac{1}{t}}- \cos \left( \frac{1}{t} \right) \right) \dt \; $
-%\item $I_{10} = \dis \int_{1}^{+\infty}  \frac{1}{x} \sin \left( \frac{1}{x} \right) \dx$
-%\item $I_{11} = \dis \int_{1}^{ + \infty} \frac{\arctan(t)}{t^2} \dt$.
-%\item $I_{12} = \dis \int_{1}^{+ \infty} \frac{1}{(x-1)^a (x+1)} \dx$ 
-%\item $I_{13} = \dis \int_{0}^{\pi} \frac{\dx}{(1-\cos(x))^a}$
-%\item $I_{14} = \dis \int_{0}^{\pi/2} \ln(\sin(x)) \dx$
-%\item $I_{15} = \dis \int_{1}^{3} \frac{1}{\sqrt{x^3-1}} \dx$
+%\item $I_1=\int_{0}^{+ \infty} e^{-x^2} \dx$.
+%\item $I_2= \int_{-\pi/2}^{\pi/2} \ln(1+ \sin(x)) \dx$
+%\item $I_3= \int_{0}^{+ \infty} \dfrac{1+\sin(t)}{1+\sqrt{t^3}} \dt$
+%\item $I_4=  \int_{0}^{1} -e^{-x} \ln(x)  \dx$
+%\item $I_5=  \int_{0}^{+ \infty} \dfrac{1}{ch(t) - \cos(t)} \dt$
+%\item $I_6= \int_{0}^{1} \dfrac{\ln(x)}{\sqrt{x}} \dx$
+%\item $I_7 = \int_{1}^{+ \infty} \frac{\sin(x)}{x^2} \dx$
+%\item $I_8 = \int_{2}^3 \frac{\sin \left( \frac{1}{x-2} \right)}{\sqrt{(x-2)(3-x)}}  \dx$
+%\item $I_{9} = \int_{1}^{+ \infty} \frac{1}{t} \left(e^{\frac{1}{t}}- \cos \left( \frac{1}{t} \right) \right) \dt \; $
+%\item $I_{10} = \int_{1}^{+\infty}  \frac{1}{x} \sin \left( \frac{1}{x} \right) \dx$
+%\item $I_{11} = \int_{1}^{ + \infty} \frac{\arctan(t)}{t^2} \dt$.
+%\item $I_{12} = \int_{1}^{+ \infty} \frac{1}{(x-1)^a (x+1)} \dx$ 
+%\item $I_{13} = \int_{0}^{\pi} \frac{\dx}{(1-\cos(x))^a}$
+%\item $I_{14} = \int_{0}^{\pi/2} \ln(\sin(x)) \dx$
+%\item $I_{15} = \int_{1}^{3} \frac{1}{\sqrt{x^3-1}} \dx$
 %\end{enumerate}
 %\end{multicols}
 
@@ -335,12 +247,12 @@ Justifier l'existence de $I_n$. D\'eterminer une relation liant $I_n$ et $I_{n+1
 %\end{enumerate}
 %
 %
-%\exo Calculer $\dis \lim_{n \to + \infty} \int_{0}^{ + \infty} \frac{n!}{\prod_{k = 1}^{n} {(k + x)}} \dx$.
+%\exo Calculer $\lim_{n \to + \infty} \int_{0}^{ + \infty} \frac{n!}{\prod_{k = 1}^{n} {(k + x)}} \dx$.
 
 
 %\exo  \begin{enumerate}
 %  \item
-%    Démontrer la convergence de la série de terme général $\dis a_{n} = \frac{n!}{n^{n}}\cdot$
+%    Démontrer la convergence de la série de terme général $a_{n} = \frac{n!}{n^{n}}\cdot$
 %  \item
 %    Comparer pour $n \geq 1$,
 %    \[

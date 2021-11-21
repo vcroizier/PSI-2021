@@ -2,6 +2,8 @@
 
 \\dis 
 
+\\Interv
+\\iii
 \\pinf
 +\\infty
 \\minf
@@ -52,6 +54,11 @@
 \\begin{Corollaire}{}
 \\end\{cor\}
 \\end{Corollaire}
+\\begin\{att\}
+\\begin{Remarque}[\alerte]{}
+\\end\{att\}
+\\end{Remarque}
+
 
 
 \\begin\{Exa\}\[(.*)\]

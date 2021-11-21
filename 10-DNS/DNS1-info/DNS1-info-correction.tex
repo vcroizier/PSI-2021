@@ -1,75 +1,21 @@
-\documentclass[a4paper,9pt]{report}
-\def\d{\displaystyle}
-\usepackage{Cours}
-\usepackage[procnames]{listings}
+\documentclass[a4paper,twoside,french,10pt]{VcCours}
 
-\definecolor{keywords}{RGB}{250,50,000}
-\definecolor{comments}{RGB}{0,130,000}
-\definecolor{definitions}{RGB}{0,0,130}
-\definecolor{red}{RGB}{160,0,0}
-\definecolor{green}{RGB}{0,150,0}
-\definecolor{lblue}{RGB}{173,216,230}
-\definecolor{mygray}{rgb}{0.93,0.93,0.99}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
-\definecolor{colorstring}{rgb}{0.55,0.35,0.3}
-
-\lstset{language=Python, 
-		backgroundcolor=\color{mygray},	%Rajoute une couleur en fond
-        basicstyle=\ttfamily\small, 			%Fonte et style de base
-        keywordstyle=\color{keywords},		%Coloration des mots-cles
-        morekeywords={False, True},			%On rajoute des mots-cles
-		ndkeywordstyle=\color{mymauve},      %D'autres types de mots-cles de couleur différente
-        ndkeywords={input, range, len, print, open},    %Les mots-cles en question  	
-        commentstyle=\color{comments},		%Couleur des commentaires
-        stringstyle=\color{colorstring},			%Couleur des chaines de caracteres
-        showstringspaces=false,				%Visualisation des espaces dans les chaines
-        breaklines=true,						%Permet le passage à la ligne (code wrap)
-        numbers=left,                   		%Position de la numerotation des lignes
-  		numbersep=8pt,                  	%La distance entre la numerotation des lignes et le code
-  		numberstyle=\tiny\color{gray}, 	%Le style utilise pour la numerotation
-  		rulecolor=\color{black},         	%A forcer sinon probleme de couleur lors des chgts de lignes avec du texte autre que noirs (commentaires par ex)
-  		showspaces=false,                	%Visualise les espaces partout en rajoutant des _ partout. Ceci écrase 'showstringspaces'
-  		showstringspaces=false,          	%Un _ n'est rajoute que pour les chaines
-  		showtabs=false,                  	%Montre les tab dans les chaines ajoutant un _ particulier
-  		stepnumber=1,                    	%Le pas entre chaque ligne numerotee, si c'est 1, elles le sont toutes.
-  		tabsize=2,   		   				%Taille d'un tab
-  		xleftmargin=2pt,  					%Marge gauche
-        identifierstyle=\color{black},		%Couleur des identifiants
-        procnamekeys={def,class},			%Ce qui définit les fonctions
-        procnamestyle=\color{blue}\textbf,	%Couleur affectee aux fonctions et mise en gras
-        %framexleftmargin=5mm, 
-        %frame=shadowbox, 					%Type de cadre (effet d'ombre)
-        rulesepcolor=\color{gray}}
-
-\newcommand{\mat}
-{\end{array}\right )}
-\newcommand{\Acc}
-{
-\left \{
-\begin{array}}
-\newcommand{\Mat}
-{
-\left (
-\begin{array}}
-\newcommand{\acC}
-{\end{array}\right.}
-\title{test}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\enc}[1]{\begin{center}\fbox{#1}\end{center}}
 
 \begin{document}
+\Titre{PSI}{Promotion 2021--2022}{Informatique}{Devoir non surveillé n\degres1}
 
 \begin{center}
-\textit{{ {\huge Corrigé DM1}}}
+\large\bf
+Correction
 \end{center}
+\separationTitre
 
 
-\bigskip
-
-\begin{center}
- \shadowbox{Introduction}
-\end{center}
-
-\medskip
+\section*{Introduction}
 
 \begin{enumerate}
 \item On utilise l'instruction {\tt L[i]}.
@@ -79,7 +25,7 @@
 \medskip
 
 \begin{center}
- \shadowbox{Partie 1 : quelques fonctions utiles}
+ \subsection*{Partie 1 : quelques fonctions utiles}
 \end{center}
 
 \medskip
@@ -145,7 +91,7 @@ def ligne(L,i):
 \setcounter{enumi}{6}
 \item Les cases situés en haut à gauche des carrés $3 \times 3$ sont ceux qui ont des coordonnées de la forme :
 $$ (3a,3b) \; \hbox{ où } (a,b) \in \lbrace 0,1,2 \rbrace^2$$
-On se donne une case $(i,j)$ avec $(i,j) \in \Interv{0}{8}^2$. Cette case appartient au carré dont la case en haut à gauche vaut $(3a,3b)$ si et seulement si :
+On se donne une case $(i,j)$ avec $(i,j) \in \iii{0}{8}^2$. Cette case appartient au carré dont la case en haut à gauche vaut $(3a,3b)$ si et seulement si :
 $$ 3a \leq i \leq 3a+2 \; \hbox{ et } \; 3b \leq j \leq 3b+2$$
 ce qui est équivalent à :
 $$ a \leq \dfrac{i}{3} \leq a + \dfrac{2}{3} \; \hbox{ et } \; b \leq \dfrac{j}{3} \leq b + \dfrac{2}{3}$$
@@ -214,7 +160,7 @@ def chiffres_ok(L,i,j):
 \medskip
 
 \begin{center}
- \shadowbox{Partie 2 : un algorithme naïf}
+ \subsection*{Partie 2 : un algorithme naïf}
 \end{center}
 
 \medskip
@@ -275,7 +221,7 @@ def complete(L):
 \bigskip
 
 \begin{center}
- \shadowbox{Partie 3 : la méthode du backtracking}
+ \subsection*{Partie 3 : la méthode du backtracking}
 \end{center}
 
 \medskip
