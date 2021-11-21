@@ -1,0 +1,183 @@
+\documentclass[twoside,french,11pt]{VcCours}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir surveillé n°3}
+
+\begin{center}
+\large 
+Le samedi 20 novembre 2021
+
+\bigskip
+\textbf{Durée: 3h30}
+
+\bigskip
+\large\underline{\textbf{Calculatrice interdite}}
+\end{center}
+
+\bigskip
+\begin{itemize}
+  \item Le candidat attachera la plus grande importance à la clarté, à la précision et à la concision de la rédaction. Si un candidat est amené à repérer ce qui peut lui sembler être une erreur d'énoncé, il le signalera sur sa copie et devra poursuivre sa composition en expliquant les raisons des initiatives qu'il a été amené à prendre.
+  \item Il est conseillé au candidat de lire l'intégralité du sujet et de repérer les parties qui lui semblent plus abordables.
+  \item Le candidat \fbox{encadrera} ou \underline{soulignera} les résultats. 
+  %\item Les étudiants visant un concours plus dur que CCP traiteront \textbf{obligatoirement} l'exercice $2$.
+  \end{itemize}
+\separationTitre
+
+\newpage
+\section*{Question de cours}
+\begin{enumerate}
+%  \item Soient $F$ et $G$ deux sous-espaces supplémentaires d'un espace vectoriel $E$. Donner la définition de la symétrie vectorielle par rapport à $F$ parallèlement à $G$.
+  \item Donner l'une des trois définitions d'un hyperplan.
+  \item Montrer que deux matrices semblables ont la même trace.
+  \item Donner sans justification la valeur de :
+  $$ \left\vert \begin{array}{ccc}
+  1 & a_1 & (a_1)^2 \\
+  1 & a_2 & (a_2)^2 \\
+  1 & a_3 & (a_3)^2
+  \end{array}\right\vert$$
+  où $(a_1,a_2,a_3) \in \mathbb{C}^3$.
+\end{enumerate}
+
+\vspace{1cm}
+\section*{Problème 1 -- Une série de fonctions} % E3A/E4A Maths B exercice 2
+Soit $\alpha$ un réel strictement positif.
+
+Pour $n$ un entier naturel non nul, on considère l'application $u_n$ de
+$[0;+\infty[$ vers $\R$ définie par:
+\[u_n(x)=\frac{x}{n^{\alpha}(1+nx^2)}\]
+%\begin{enumerate}
+%  \item Étude des modes de convergence de la série $\sum u_n$.
+  \begin{enumerate}
+    \item Montrer que la série $\sum u_n$ converge simplement sur $[0;+\infty[$.
+    \item Démontrer que la série $\sum u_n$ converge normalement sur $[0;+\infty[$
+    si et seulement si $\alpha>\frac{1}{2}$.
+    \indication{on pourra commencer par étudier les variations de la fonction $u_n$.}
+    \item Soient $a,b\in\R$ tels que $0<a<b$.
+    
+    Prouver que la série $\sum u_n$ converge normalement sur $[a,b]$.
+%    \item On suppose... (2 questions) 
+\end{enumerate}
+
+On note $S$ l'application de $[0;+\infty[$ vers $\R$ définie par :
+\[S=\sum_{n=1}^{+\infty}u_n\]
+
+\begin{enumerate}\setcounter{enumi}{3}
+  \item Montrer que, pour tout $\alpha>0$, $S$ est continue sur $]0;+\infty[$.
+  \item Montrer que, pour tout $\alpha>\tfrac12$, $S$ est continue sur $[0;+\infty[$.
+  \item Montrer que, pour tout $\alpha>0$, $S$ est de classe $C^1$ sur $]0;+\infty[$.
+\end{enumerate}
+
+%\end{enumerate}
+
+\vspace{1cm}
+\section*{Problème 2 -- Relation matricielle et endomorphisme}
+
+\subsection*{Partie 1 : un exemple}
+
+On considère la matrice $M=\left(\begin{array}{rrr}
+  0 & 1 & -1\\
+  3 & -7 & 4\\
+  5 & -12 & 7 \end{array}\right) \cdot$
+  
+\medskip  
+  On note $f$ l'endomorphisme de $\R^3$ dont la matrice dans la base canonique est $M.$
+  \begin{enumerate}
+    \item Déterminer une base de Ker$(f).$
+    \item Calculer $M^2$ puis déterminer une base de Ker$(f^2+{\rm Id}_{\R^3}).$
+    \item Déterminer une équation cartésienne définissant  Ker$(f^2+{\rm Id}_{\R^3}).$
+    \item  Montrer que Ker$(f)$ et  Ker$(f^2+{\rm Id}_{\R^3})$ sont supplémentaires dans $\R^3.$
+    \item
+    \begin{enumerate}
+      \item Soit $x\in\Ker(f^2+{\rm Id}_{\R^3}).$ Montrer qu'il existe $z\in \R^3$ tel que $x=f(z).$
+      \item Montrer que  Ker$(f^2+{\rm Id}_{\R^3})=$ Im$(f).$
+    \end{enumerate}
+    \item On pose $u_1=(1,1,1)$ et $u_2=(1,2,3)$. On note $u_3=f(u_2).$
+    \begin{enumerate}
+      \item Donner les coordonnées de $u_3.$
+      \item Montrer que ${\cal U}=(u_1,u_2,u_3)$ est une base de $\R^3.$
+      \item Écrire la matrice $R$ de $f$ dans la base ${\cal U}.$
+      \item Donner une relation matricielle entre $M$ et $R.$
+      \item Écrire la matrice $D$ de $f^2$ dans la base ${\cal U},$ et vérifier que l'on a $D=R^2.$
+    \end{enumerate}
+  \end{enumerate}
+
+  \subsection*{Partie 2 : le cas général}
+
+  Soit $A\in{\cal M}_3(\R)$ une matrice $3\times 3$ à coefficients réels. On suppose que :
+  $$A\neq 0_3\quad \hbox{ et } \quad A^3+A=0_3$$
+
+  On note $E=\R^3$, ${\cal B}=(e_1,e_2,e_3)$ sa base canonique et $u$ l'endomorphisme de $E$ dont la matrice dans la base ${\cal B}$ est $A.$
+  \begin{enumerate}
+    \item Justifier que $u^3+u$ est l'endomorphisme nul et que $u$ n'est pas l'endomorphisme nul.
+    \item 
+    \begin{enumerate}
+      \item Calculer $\det(-{\rm Id_E}).$
+      \item On suppose que $u$ est injectif : montrer que pour tout $x\in E,$ on a $u^2(x)+x=0_E$.\\
+      En déduire une expression de $u^2$ en fonction de ${\rm Id}_E$ et obtenir une contradiction.\\
+      Ainsi, $u$ n'est pas injectif.
+      \item Justifier alors que Ker$(u)$ est de dimension $1$ ou $2.$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+      \item Montrer que $E=\Ker(u)\oplus\Ker(u^2+{\rm Id}_E).$
+      \item Quelles sont alors les valeurs possibles pour $\dim(\Ker(u^2+{\rm Id}_E))$ ?
+    \end{enumerate}
+    \item On pose $F=\Ker(u^2+{\rm Id}_E).$
+    \begin{enumerate}
+      \item Vérifier que $F$ est stable par $u$, c'est-à-dire que si $x\in F$ alors $u(x)\in F.$
+      On note $v$ l'endomorphisme induit par $u$ sur $F$, c'est-à-dire :
+      $$v : \ \left\{\begin{array}{rcl}
+      F & \longrightarrow & F\\
+      x & \longmapsto & v(x)=u(x)\end{array}\right.$$
+      \item Vérifier que $v^2=-{\rm Id}_F.$
+      \item Préciser le déterminant de $v^2$ en fonction de la dimension de $F.$ En déduire que $\dim(F)=2.$
+  %		\item \textbf{Uniquement pour les 5/2 :} Montrer que l'endomorphisme $v$ n'a aucune valeur propre.
+    \end{enumerate}
+    \item On se donne un vecteur $e_1'$ non nul de Ker$(u)$, un vecteur $e_2'$ non nul de $F$ et on pose $e_3'=u(e_2').$
+    \begin{enumerate}
+      \item Montrer que la famille $(e'_2,e'_3)$ d'éléments de $F$ est libre.
+      \item Montrer que la famille ${\cal B}'=(e'_1,e'_2,e'_3)$ est une base de $E$ et écrire la matrice $B$ de $u$ dans cette base.
+      \item Que peut-on dire alors des matrices $A$ et $B$ ?
+    \end{enumerate}
+  \end{enumerate}
+
+\newpage
+\section*{Problème 3 -- Une suite de déterminants}
+Soient $(u_n)_{n \geq 1}$ et $(v_n)_{n \geq 1}$ deux suites de réels strictement positifs.
+
+On pose $\Delta_1=\left|\begin{array}{cc}1 &-v_1\\ u_1 & 1\end{array}\right|$,
+$\Delta_2=\left|\begin{array}{ccc}1 &-v_1 & 0\\ u_1 & 1 & -v_2\\0 & u_2 & 1\end{array}\right|$ et pour $n\geq 3$ :
+$$\Delta_n=\left|\begin{array}{ccccccc}
+1 &-v_1 & 0 &0 & \cdots &\cdots & 0\\
+ u_1 & 1 & -v_2 &0 & \cdots &\cdots & 0\\
+ 0 & u_2 & 1 & -v_3 &\ddots & & 0\\
+ \vdots &\ddots & \ddots & \ddots & \ddots & \ddots & \vdots\\
+  \vdots &  & \ddots & \ddots & \ddots & \ddots & 0\\
+  \vdots &  &   & \ddots & \ddots & \ddots & -v_n\\ 
+  0 & \cdots & \cdots & \cdots & 0 & u_n & 1  
+\end{array}\right|.$$
+Et pour tout $n\in\N^*,$ on pose $a_n=u_nv_n.$
+\begin{enumerate}
+	\item \textit{Question préliminaire} : soient $\alpha$ et $\beta$ des réels strictement positifs.\\ 
+	Vérifier que $(1+\alpha)(1+\beta)\geq(1+\alpha+\beta).$ 
+	\item Calculer $\Delta_1$ et $\Delta_2.$
+	\item Démontrer que pour tout $n\geq 3$, $\Delta_n=\Delta_{n-1}+a_n\Delta_{n-2}.$ 
+	\item Prouver que la suite $(\Delta_n)_{n \geq 1}$ est croissante.
+	\item Montrer que pour tout $n\in\N^*,$ on a $$\Delta_n\leq \prod_{k=1}^n(1+a_k)$$
+  \item Pour $n\in\N^*,$ on note $P_n=	\prod_{k=1}^n(1+a_k),$ $S_n=\sum_{k=1}^n\ln(1+a_k)$ et on suppose dans cette question que la série $\sum_{n\geq 1} a_n$ est convergente.
+  \begin{enumerate}
+    \item Prouver que la suite $(P_n)_{n \geq 1}$ converge.
+    \item Que peut-on en déduire pour la suite $(\Delta_n)_{n \geq 1}$ ?
+  \end{enumerate}
+	\item On suppose maintenant que la suite $(\Delta_n)_{n \geq 1}$ converge.
+  \begin{enumerate}
+	  \item Vérifier que pour tout $n\in\N^*,$ on a $\Delta_n\geq 1.$
+		\item Pour $n\geq 2, $ on pose $t_n=\Delta_n-\Delta_{n-1}.$\\
+		Étudier la nature de la série $\sum_{n\geq 2} t_n.$
+		\item Prouver alors que la série $\sum_{n\geq 1}a_n$ converge.
+  \end{enumerate}
+	\item Quel résultat a-t-on finalement établi ?
+\end{enumerate}
+
+\end{document}
