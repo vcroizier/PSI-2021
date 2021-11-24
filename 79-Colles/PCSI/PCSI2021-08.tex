@@ -1,0 +1,85 @@
+\documentclass[twoside,a4paper,landscape,french,10pt]{VcCours}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnseprule{0.4pt}%
+\addtolength\columnsep{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{colle}[4]{{\large\bf\makebox[0cm][l]{#1\hspace{\stretch{-1}}}\hspace{\stretch{1}}#2\hspace{\stretch{1}}\makebox[0cm][r]{\hspace{\stretch{-1}}#3}}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{multicols*}{#4}}{\end{multicols*}\pagebreak}
+\newenvironment{eleve}[1]{\textbf{\large #1}}{\vspace{\stretch{1}}
+\columnbreak}
+\newenvironment{eleveF}[1]{\textbf{\large #1}}{}
+\newcommand{\cours}{\medskip\uwave{Cours :}
+
+\smallskip}
+\newcommand{\exo}[1]{\vspace{\stretch{1}}\uwave{Exercice #1:}
+
+\smallskip}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+-----------------------------------------+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{colle}{PCSI -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
+n\degres8 -- le jeudi 25/11/2021}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+    \cours
+    Tout sur exp et ln : Def.13.1, énoncé complet du Thm.16, tracé des graphes de exp et ln, tableaux
+de variations, preuve du Thm.16.2.
+
+
+    \exo1
+    Résoudre $(x^{\lambda})^x=x^{(x^{\lambda})}$ où $\lambda\in\R\setminus\{1\}$.
+
+    \exo2
+    Étudier $f:x\longmapsto xe^{\tfrac1x}$.
+
+    \vspace*{\stretch{2}}
+
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+  \cours
+  Tout sur $\exp_a$ et $\log_a$ : Def.18, énoncé complet du Thm.20, calcul des dérivées, tableaux de variations
+
+
+  \exo1
+  Étudier $f:x\longmapsto(1+x^2)^{\tfrac1x}$.
+
+  \exo2
+  Résoudre $\log_x(10)+2\log_{10x}(10)+3\log_{100x}(10)=0$.
+
+  \vspace*{\stretch{2}}
+    
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleveF}{}
+    
+  \cours
+  Tout sur les puissances $\alpha$-ième, $\alpha\in\R$ : Def.24, Prop.26 et Rem. 25 : lien entre l'expression sous
+forme exp − ln et les définitions élémentaires.
+
+  \exo1
+  Étudier et simplifier $f:x\longmapsto2\arctan(\sqrt{1+x^2}-x)+\arctan(x)$. 
+
+  \exo2
+  Résoudre $\sys{\log_y(x)+\log_x(y)=\frac{50}7\\xy=256}$
+
+
+  \vspace*{\stretch{2}}
+  
+\end{eleveF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{colle}%
+\end{document}
+    

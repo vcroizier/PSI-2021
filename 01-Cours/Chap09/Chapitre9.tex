@@ -25,7 +25,7 @@ Dans la suite $\mathbb{K}= \mathbb{R}$ ou $\mathbb{C}$. Si rien n'est précisé,
 \begin{Definition}{}
 Soient $(a,b) \in \mathbb{R}^2$ tel que $a \leq b$ et $f$ une fonction définie sur $[a,b]$.
 
-La fonction $f$ est dite \emph{continue par morceaux} sur le segment $[a,b]$ si il existe une subdivision
+La fonction $f$ est dite \emph{continue par morceaux} sur le segment $[a,b]$ s'il existe une subdivision
 \[a_0 = a < a_1 < a_2 < \dots < a_n =b\]
 telle que les restrictions de $f$ sur chaque intervalle ouvert $]a_i,a_{i+1}[$ (où $i \in \iii0{n-1}$) admettent un prolongement continu à l'intervalle fermé $[a_i,a_{i+1}]$.
 \end{Definition}
@@ -37,6 +37,57 @@ telle que les restrictions de $f$ sur chaque intervalle ouvert $]a_i,a_{i+1}[$ (
 \emph{Exemple d'une courbe d'une fonction continue par morceaux à valeurs réelles}
 \end{center}
 
+\pgfarrowsdeclare{ouvert}{ouvert}
+{
+\arrowsize=0.2pt
+\advance\arrowsize by .5\pgflinewidth
+\pgfarrowsleftextend{-5\arrowsize-.5\pgflinewidth}
+\pgfarrowsrightextend{5\arrowsize}
+}
+{
+\arrowsize=0.2pt
+\advance\arrowsize by .5\pgflinewidth
+\pgfsetdash{}{0pt} % do not dash
+\pgfsetroundjoin % fix join
+\pgfsetroundcap % fix cap
+\pgfpathmoveto{\pgfpoint{5\arrowsize}{0}}
+\pgfpathlineto{\pgfpoint{1\arrowsize}{0}}
+\pgfsetstrokecolor{white}
+\pgfsetlinewidth{2\arrowsize}
+\pgfusepathqstroke
+\pgfpathmoveto{\pgfpoint{5\arrowsize}{5\arrowsize}}
+\pgfpatharc{90}{270}{5\arrowsize}
+\pgfsetstrokecolor{black}
+\pgfsetlinewidth{\arrowsize}
+\pgfusepathqstroke
+}
+\pgfarrowsdeclare{fermé}{fermé}
+{
+\arrowsize=0.2pt
+\advance\arrowsize by .5\pgflinewidth
+\pgfarrowsleftextend{-5\arrowsize-.5\pgflinewidth}
+\pgfarrowsrightextend{5\arrowsize}
+}
+{
+\arrowsize=0.2pt
+\advance\arrowsize by .5\pgflinewidth
+\pgfsetdash{}{0pt} % do not dash
+\pgfsetroundjoin % fix join
+\pgfsetroundcap % fix cap
+\pgfsetplotmarksize{5\arrowsize}
+\pgfplothandlermark{\pgfuseplotmark{*}}
+\pgfplotstreamstart
+\pgfplotstreampoint{\pgfpoint{5\arrowsize}{0}}
+\pgfplotstreamend
+\pgfusepathqstroke
+}
+% \begin{tikzpicture}
+% \draw[help lines] (-4,-2) grid (1,1);
+% \draw[line width=1pt,ouvert-ouvert] (-3,0) -- (-1.5,1) -- (0,0);
+% \draw[line width=1pt,fermé-fermé] (-3,-1) -- (0,-1);
+% %\draw[line width=2pt,red] (-3,0) -- (0,0);
+% \end{tikzpicture}
+
 \begin{center}
  \begin{tikzpicture}[>=stealth,scale=1]
 \draw[->,color=black] (-0.6,0) -- (6.6,0) node[below] {$x$};
@@ -47,10 +98,10 @@ telle que les restrictions de $f$ sur chaque intervalle ouvert $]a_i,a_{i+1}[$ (
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \draw[color=black] (0pt,-10pt) node[left] {\footnotesize $0$};
 \clip(-0.6,-0.6) rectangle (6.6,4.6);
-\draw[smooth,samples=100,domain=0:2] (0,3) node {$\bullet$} plot(\x,{sin(180*\x)+3-\x}) node {$\circ$};
-\draw (2,0) node {$\circ$} (2,4) node {$\bullet$} (6,3) node {$\bullet$};
-\draw[smooth,samples=100,domain=2:5] plot(\x,{\x-1-((\x-3.5)/1.5)^2}) node {$\bullet$};
-\draw[o-o] (5,2)--(6,2);
+\draw[smooth,samples=100,domain=0:2,fermé-ouvert] plot(\x,{sin(180*\x)+3.5-\x});
+\draw (2,0) node {} (2,4) node {$\bullet$} (6,3) node {$\bullet$};
+\draw[smooth,samples=100,domain=2:5,ouvert-fermé] plot(\x,{\x-.5-((\x-3.5)/1.5)^2});
+\draw[ouvert-ouvert] (5,2)--(6,2);
 \end{tikzpicture}
 \end{center}
 
@@ -142,7 +193,7 @@ $$\int_{a}^{b} f(t) \dt  \leq \int_{a}^{b} g(t) \dt $$
 \begin{Proposition}{Stricte positivité}  Soit $f$ une fonction continue sur $[a,b]$ et à valeurs réelles \emph{positives}. 
 
 \begin{itemize}
-\item Si il existe $x_0 \in [a,b]$ tel que $f(x_0)>0$ alors $\Int{a}{b} f(t) \dt>0$.
+\item S'il existe $x_0 \in [a,b]$ tel que $f(x_0)>0$ alors $\Int{a}{b} f(t) \dt>0$.
 \item Si $\Int{a}{b} f(t) \dt =0$ alors $f$ est la fonction nulle sur $[a,b]$.
 \end{itemize}
 \end{Proposition}
@@ -150,11 +201,13 @@ $$\int_{a}^{b} f(t) \dt  \leq \int_{a}^{b} g(t) \dt $$
 \begin{Remarque}[\alerte]{} Cette proposition est fausse en toute généralité si la fonction est continue par morceaux : il suffit de penser à la fonction $f$ définie sur $[0,1]$ par $f(x)=0$ si $x \neq \frac{1}{2}$ et par $f(\frac{1}{2})=1$.
 \end{Remarque}
 
-\begin{Proposition}{} Soit $f$ une fonction continue par morceaux sur $[a,b]$ à valeurs dans $\mathbb{K}$. Alors $\vert f \vert$ est continue par morceaux   sur $[a,b]$ et à valeurs positives et :
+\begin{Proposition}{} Soit $f$ une fonction continue par morceaux sur $[a,b]$ à valeurs dans $\mathbb{K}$. Alors $\vert f \vert$ est continue par morceaux sur $[a,b]$ et à valeurs positives et :
 $$ \left\vert \int_{a}^b f(t) \dt \right\vert \leq \int_{a}^b \vert f(t) \vert \dt $$
 \end{Proposition}
 
-\begin{Proposition}{} Soient $f$, $g$ deux fonctions continues par morceaux sur $[a,b]$ et à valeurs dans $\mathbb{K}$. Si $f$ et $g$ coïncident sauf en un nombre fini de points alors :
+\begin{Proposition}{} Soient $f$, $g$ deux fonctions continues par morceaux sur $[a,b]$ et à valeurs dans $\mathbb{K}$. 
+	
+Si $f$ et $g$ coïncident sauf en un nombre fini de points alors :
 $$ \int_{a}^b f(t) \dt = \int_{a}^b g(t) \dt $$
 \end{Proposition}
 
@@ -384,7 +437,7 @@ Dans le cas contraire, on dit que $\int_a^b f(t)\dt$ \emph{diverge}.
 \item Si $I=]a,b]$, on dit que $\int_a^b f(t)\dt$ \emph{converge} lorsque la fonction $x \mapsto \int_x^b f(t) \dt$ admet une limite finie lorsque $x$ tend vers $a^+$. Dans ce cas, on pose :
 \[ \int_a^b f(t) \dt = \phantom{\lim_{x\to a^+} \int_x^b f(t)\dt} \]
 Dans le cas contraire, on dit que $\int_a^b f(t)\dt$ \emph{diverge}.
-\item Si $I=]a,b[$, on dit que $\int_a^b f(t)\dt$ \emph{converge} si il existe un réel $c \in ]a,b[$ tel que $\int_a^c f(t)\dt$ et $\int_c^b f(t)\dt$ convergent. Dans ce cas, on pose :
+\item Si $I=]a,b[$, on dit que $\int_a^b f(t)\dt$ \emph{converge} s'il existe un réel $c \in ]a,b[$ tel que $\int_a^c f(t)\dt$ et $\int_c^b f(t)\dt$ convergent. Dans ce cas, on pose :
 $$ \int_a^b f(t)\dt = \int_a^c f(t)\dt + \int_c^b f(t)\dt $$
 Le choix est indépendant du réel $c$ (conséquence de la relation de Chasles).
 
@@ -530,9 +583,11 @@ d'après la proposition précédente. Ainsi, l'intégrale est convergente.
 
 \begin{Exemple} Étudions la convergence de $I = \int_{0}^1 t \ln(t) \dt$.
 
-%La fonction $t \mapsto t \ln(t)$ est continue sur $]0,1]$ et est prolongeable par continuité en $0$ car :
+%La fonction $t \mapsto t \ln(t)$ est continue sur $]0,1]$ et est prolongeable 
+%par continuité en $0$ car :
 %$$ \lim_{t \rightarrow 0} t \ln(t) = 0 $$
-%d'après le théorème des croissances comparées. Ainsi l'intégrale $I$ est faussement impropre en $0$ donc convergente.
+%d'après le théorème des croissances comparées. 
+%Ainsi l'intégrale $I$ est faussement impropre en $0$ donc convergente.
 
 %\vspace{3cm}
 \end{Exemple}
@@ -550,7 +605,7 @@ Dans la suite, $a$ et $b$ sont deux éléments de $\overline{\mathbb{R}}$ dans \
 
 \begin{Proposition}{Linéarité de l'intégration} 
 Soient $f,g$ deux fonctions continues par morceaux sur $]a,b]$ à valeurs dans $\mathbb{K}$ et $\lambda \in \mathbb{K}$. Si $\int_{a}^b f(t) \dt$ et $\int_{a}^b g(t) \dt$ convergent alors $\int_{a}^b \lambda f(t) + g(t) \dt$ converge et on a :
-$$ \int_{a}^b \lambda f(t) + g(t) \dt = \lambda \int_{a}^b f(t) \dt + \int_{a}^b g(t) \dt$$
+$$ \int_{a}^b ()\lambda f(t) + g(t)) \dt = \lambda \int_{a}^b f(t) \dt + \int_{a}^b g(t) \dt$$
 \end{Proposition}
 
 \begin{Proposition}{Positivité, croissance}
@@ -606,7 +661,7 @@ $$  \int_{a}^{b} f'(t) g(t) \dt = [f(t) g(t)]_{a}^{b} - \int_{a}^b f(t) g'(t) \d
 
 \begin{Demonstration}{} Pour tout $x \in ]a,b]$, on a par intégration par parties \og usuelle \fg :
 $$ \int_{x}^{b} f'(t) g(t) \dt = f(b)g(b)-f(x)g(x) - \int_{x}^b f(t) g'(t) \dt$$
-La fonction $x \mapsto f(b)g(b)-f(x)g(x)$ admet une limite en $a^+$ ce qui donne le résultat.
+La fonction $x \mapsto f(b)g(b)-f(x)g(x)$ admet une limite finie en $a^+$ ce qui donne le résultat.
 \end{Demonstration}
 
 \begin{Remarque}{} On peut procéder de deux manières pour utiliser la formule d'intégration par parties :
@@ -768,7 +823,7 @@ $\phantom{test}$
 
 Dans la suite, $I$ est un intervalle de $\mathbb{R}$ d'extrémités $a$ et $b$ (éléments de $\overline{\mathbb{R}}$).
 
-\begin{Definition}{} Soit $f : I \rightarrow \mathbb{K}$ une fonction continue par morceaux. On dit que que l'intégrale $\int_{a}^b f(x) \dx$ est \emph{absolument convergente} si $\int_{a}^b \vert f(x) \vert \dx$ est convergente.
+\begin{Definition}{} Soit $f : I \rightarrow \mathbb{K}$ une fonction continue par morceaux. On dit que l'intégrale $\int_{a}^b f(x) \dx$ est \emph{absolument convergente} si $\int_{a}^b \vert f(x) \vert \dx$ est convergente.
 \end{Definition}
 
 \begin{Proposition}{} Soit $f : I \rightarrow \mathbb{K}$ une fonction continue par morceaux. Si l'intégrale $\int_{a}^b f(x) \dx$ est absolument convergente alors elle est convergente et on a :
@@ -799,7 +854,7 @@ $$ \left\vert \int_{a}^b  f(x)  \dx \right\vert \leq \int_{a}^b \vert f(x) \vert
 \vspace{11cm}
 \end{Demonstration}
 
-\begin{Definition}{} Soit $f : I \rightarrow \mathbb{K}$ une fonction continue par morceaux. On dit que que $f$ est \emph{intégrable} sur $I$ si l'intégrale $\int_{a}^b f(x) \dx$ est absolument convergente. Dans ce cas, cette intégrale converge et on pourra noter la valeur de cette intégrale par l'une des notations suivantes :
+\begin{Definition}{} Soit $f : I \rightarrow \mathbb{K}$ une fonction continue par morceaux. On dit que $f$ est \emph{intégrable} sur $I$ si l'intégrale $\int_{a}^b f(x) \dx$ est absolument convergente. Dans ce cas, cette intégrale converge et on pourra noter la valeur de cette intégrale par l'une des notations suivantes :
 $$ \int_{a}^b f(x) \dx, \quad \int_{I} f(x) \dx, \quad \int_I f$$
 \end{Definition}
 
@@ -984,7 +1039,8 @@ $$ I(\alpha, \beta) = \int_{2}^{+ \infty} \frac{\dx}{x^{\alpha} \ln(x)^{\beta}}$
 
 \subsection{Quelques propriétés}
 
-\begin{Theoreme}{} L'ensemble des fonctions continues par morceaux intégrables sur un intervalle $I$ et à valeurs dans $\mathbb{K}$ est $\mathbb{K}$-espace vectoriel.
+\begin{Theoreme}{} L'ensemble des fonctions continues par morceaux intégrables 
+	sur un intervalle $I$ et à valeurs dans $\mathbb{K}$ est un $\mathbb{K}$-espace vectoriel.
 \end{Theoreme}
 
 \begin{Proposition}{} Soit $f$ une fonction \emph{continue} et intégrable sur un intervalle $I$. Alors :
@@ -994,7 +1050,8 @@ $$ \int_{I} \vert f(t) \vert \dt=0 \Longrightarrow f \hbox{ est nulle sur } I $$
 \section{Suites et séries de fonctions intégrables}
 
 \begin{Theoreme}{convergence dominée}
-Soit $(f_n)_{n \geq 0}$ une suite de fonctions continues par morceaux sur $I$ et à valeurs dans $\mathbb{K}$. Supposons que :
+Soit $(f_n)_{n \geq 0}$ une suite de fonctions continues par morceaux sur $I$ 
+et à valeurs dans $\mathbb{K}$. Si :
 \begin{enumerate}
 \item La suite $(f_n)_{n \geq 0}$ converge simplement vers une fonction $f$ continue par morceaux sur $I$.
 \item Il existe une fonction $\varphi : I \rightarrow \mathbb{K}$, continue par morceaux et intégrable sur $I$, telle que pour tout $n \geq 0$, $\vert f_n \vert \leq \varphi$.
