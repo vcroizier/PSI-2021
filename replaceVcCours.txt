@@ -29,7 +29,7 @@
 \\begin\{rems\}
 \\begin{Remarques}{}\n\\begin{itemize}
 \\end\{rems\}
-\\end{itemize}\n\\end{Remarques}{}
+\\end{itemize}\n\\end{Remarques}
 \\begin\{thm\}\[(.*)\]
 \\begin{Theoreme}{$1}
 \\begin\{thm\}
@@ -47,7 +47,7 @@
 \\end\{ex\}
 \\end{Exemple}
 \\begin\{exa\}
-\\begin{ApplicationDirecte}
+\\begin{ApplicationDirecte}{}
 \\end\{exa\}
 \\end{ApplicationDirecte}
 \\begin\{cor\}
@@ -55,9 +55,13 @@
 \\end\{cor\}
 \\end{Corollaire}
 \\begin\{att\}
-\\begin{Remarque}[\alerte]{}
+\\begin{Remarque}[\\alerte]{}
 \\end\{att\}
 \\end{Remarque}
+\\begin\{metho\}
+\\begin{Methode}{}
+\\end\{metho\}
+\\end{Methode}
 
 
 

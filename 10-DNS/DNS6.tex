@@ -7,53 +7,180 @@
 \Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir non surveillé n°6}
 \begin{center}
 \large\bf 
-Pour le vendredi 12 novembre 2021
+Pour le vendredi 03 décembre 2021
 \end{center}
 \separationTitre
-\vspace{-1.5em}
-\begin{itemize}
-   \item Alistair, Mathis et Barnabé travailleront sur le sujet Centrale-Supélec Mathématiques 2 PC 2018 et feront l'exercices 2 de ce DNS. Ils peuvent, s'ils veulent, traiter aussi les exercices 1 et 3.
-   \item Anta, Marouane et Adama peuvent faire les questions 1 à 15 du sujet Centrale ci-dessus. Ils doivent rendre ce DNS en entier.
-   \item Tous les autres élèves doivent rendre ce DNS en entier.
-\end{itemize}
-\separationTitre
+
    
 \section*{Exercice 1}   
-   Soit $n \in \mathbb{N}$. On définit la fonction $f_n : \mathbb{R} \rightarrow \mathbb{R}$ par :
-   $$ \forall x \in \mathbb{R}, \; f_n(x) = \dfrac{x^n}{\sqrt{1+x}}$$
-   
-   \begin{enumerate}
-   \item Étudier les variations de $f_n$ sur $[0,1]$.
-   \item Représenter sur le même graphique les graphes des fonctions $f_0$, $f_1$ et $f_2$.
-   \item Démontrer que $(f_n)_{n \geq 0}$ converge simplement sur $[0,1]$ vers une fonction $f$ que l'on explicitera.
-   \item Montrer, de deux manières différentes, que $(f_n)_{n \geq 0}$ ne converge pas uniformément sur $[0,1]$ vers $f$.
-   \item On définit la suite $(u_n)_{n \geq 0}$ par :
-   $$ \forall n \in \mathbb{N}, \; u_n = \int_0^1 f_n(x) \dx$$
-   \begin{enumerate}
-   \item Montrer que $(u_n)_{n \geq 0}$ est monotone puis qu'elle converge vers $0$.
-   \item Montrer que pour tout entier $n \geq 0$,
-   $$ (n+1) u_n = \dfrac{1}{\sqrt{2}} + \dfrac{1}{2} \int_0^1 \dfrac{x^{n+1}}{(\sqrt{1+x})^3} \dx$$
-   \item En déduire un équivalent de $u_n$ quand $n$ tend vers $+ \infty$.
-   \item En suivant la même démarche que précédemment, déterminer des réels $\alpha$, $\beta$ tels que :
-   $$ u_n \underset{+ \infty}{=} \dfrac{\alpha}{n} + \dfrac{\beta}{n^2} + o \left( \dfrac{1}{n^2} \right)$$
-   \end{enumerate}
-   \end{enumerate}
+Considérons l'arc paramétré du plan défini par :
+$$ x(t) =\cos(t)^3, \; y(t) = \sin(t)^3 $$
+
+\begin{enumerate}
+\item Calculer pour tout $t \in \R$, $x(\pi-t)$, $y(\pi-t)$, $x(\pi/2-t)$ et $y(\pi/2-t)$.
+\item Justifier que l'étude sur $[0,\pi/4]$ suffit à tracer entièrement la courbe.
+\item Étudier l'arc paramétré.
+\end{enumerate}
    
 \section*{Exercice 2}   
-   Soit $S$ définie par :
-   $$ S(x) = \sum_{n=1}^{+ \infty} \dfrac{(-1)^n}{x+n}$$
+Soient $\varphi : \mathbb{R} \rightarrow \mathbb{R}$ définie par :
+$$ \varphi(t) = \left\lbrace \begin{array}{ccl}
+\dfrac{sh(t)}{t} & \hbox{ si } t \neq 0 \\[0.3cm]
+1 & \hbox{ si } t = 0 \\
+\end{array}\right.$$
+et $f : \mathbb{R} \rightarrow \mathbb{R}$ définie par :
+$$ f(x) = \int_x^{2x} \varphi(t) \dt$$
+\begin{enumerate}
+\item Montrer que $f$ est bien définie sur $\mathbb{R}$.
+\item Étudier la parité de $f$.
+\item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et déterminer $f'$. En déduire les variations de $f$.
+\item Déterminer les limites de $f$ en $+ \infty$ et $- \infty$.
+\end{enumerate}
+   
+\section*{Problème : Intégrales de Wallis et formule de Stirling}
+\begin{enumerate}
+   \item Pour tout entier naturel $n$, on pose $W_n = \int_{0}^{\frac{\pi}{2}} \cos(t)^n \dt$.
+   
    \begin{enumerate}
-   \item Montrer que $S$ est définie sur $I= ]-1, + \infty[$.
-   \item Montrer que $S$ est continue sur $I$.
-   \item Montrer que $S$ est de classe $\mathcal{C}^1$ sur $I$ et déterminer $S'$. En déduire que $S$ est croissante sur $I$.
-   \item Déterminer la limite de $S$ en $+ \infty$.
-   \item Déterminer la limite de $S$ en $-1^+$.
+   \item Calculer $W_0$ et $W_1$.
+   \item Montrer que pour tout entier $n \geq 0$, $W_n= \int_{0}^{\frac{\pi}{2}} \sin(t)^n \dt$.
+   \item Montrer que la suite $(W_n)_{n\geq 0}$ est strictement décroissante.
+   \item A l'aide d'une intégration par parties, montrer que pour tout entier $n \geq 0$,
+   $$ W_{n+2} = \left( \frac{n+1}{n+2} \right) W_n $$
+   \item En déduire que pour tout entier $p \geq 0$,
+   $$ W_{2p} = \frac{(2p)!}{2^{2p} (p!)^2} \frac{\pi}{2} \quad \hbox{ et }  \quad W_{2p+1} = \frac{2^{2p} (p!)^2}{(2p+1)!}$$
+   \item Montrer que pour tout entier $n  \geq 0$,
+   $$ W_n W_{n+1} =  \frac{\pi}{2(n+1)}$$
+   \item Montrer que pour tout entier $n \geq 0$,
+   $$1- \frac{1}{n+2}< \frac{W_{n+1}}{W_n}<1$$
+   et en déduire que $W_n \underset{+ \infty}{\sim} W_{n+1}$.
+   \item Montrer que $W_n \underset{+ \infty}{\sim} \sqrt{\frac{\pi}{2n}} \cdot$
    \end{enumerate}
    
-\section*{Exercice 3}   
-   Soit $(a_n)_{n \geq 0}$ une série à termes positifs telle que la série de terme général $a_n$ converge. Montrer que que la fonction $f$ définie par :
-   $$ f(x) = \sum_{n=0}^{+ \infty} a_n \cos (nx)$$
-   est bien définie et continue sur $\mathbb{R}$. Donner une condition simple pour qu'elle soit de classe $\mathcal{C}^1$ sur $\mathbb{R}$.
+   \bigskip
+   
+   \item Soit $(u_n)_{n\geq1}$ la suite définie pour tout $n \geq 1$ par 
+   $$u_n = \dfrac{n! e^n}{n^n \sqrt{n}}$$
+   et $(v_n)_{n \geq 2}$ définie pour tout $n \geq 2$ par $ v_n = \ln(u_n) - \ln(u_{n-1})$.
+   
+   \medskip
+   
+   \begin{enumerate}
+   \item Exprimer simplement $v_n$ en fonction de $n \geq 2$ et donner un développement limité à l'ordre $2$ en $\dfrac{1}{n}$ de $v_n$.
+   \item En déduire que $\sum_{n \geq 2} v_n$ converge. 
+   
+   \noindent Montrer alors que les suites $(\ln(u_n))_{n \geq 1}$ puis $(u_n)_{n \geq 1}$ convergent et donc qu'il existe un réel $K>0$ tel que :
+   $$ n!  \underset{+ \infty}{\sim} K \left( \frac{n}{e} \right)^n \sqrt{n}$$
+   \item En utilisant cet équivalent, donner un équivalent de $W_{2p}$ quand $p$ tend vers $+ \infty$ et en déduire la valeur de $K$ pour retrouver la formule de Stirling.
+   \end{enumerate}
+   \end{enumerate}
 
+
+\section*{Problème facultatif type Centrale}
+
+Il s'agit de calculer par plusieurs méthodes les intégrales $I_n$ 
+définies dans la partie 2.
+
+\subsection*{Partie 1.}
+
+ \begin{enumerate}
+\item Soit $f$ une application de classe $\mathcal{C}^1$ sur $\left[ a, b \right]$ et {\`a} valeurs dans $\R$. Montrer que :
+\[\lim_{x \rightarrow +\infty} \int_a^b f(t) \sin(xt) \, \dt = 0 \]
+On admettra que le résultat reste vrai en remplaçant la fonction $\sin$ par la fonction $\cos$.
+\item On note pour tout $n \in \mathbb{N}$, $J_n = \int_0^{\frac{\pi}{2}} \frac{\sin(nt)}{\sin(t)} \, \dt$.
+\begin{enumerate}
+\item Justifier l'existence de $J_n$ pour tout $n \geq 0$.
+\item Calculer $J_0, J_1, J_2$ et $J_3$.
+\item Montrer que pour tout $n \geq 2$, 
+$$ J_n-J_{n-2} = \left\lbrace \begin{array}{ll} 
+0 & \hbox{ si } n  \hbox{ est impair } \\
+\dfrac{2}{n-1}(-1)^{\frac{n}{2}-1} & \hbox{ si } n \hbox{ est pair } \\
+\end{array}\right.$$
+\item En déduire une expression de $J_n$ en fonction de $n$.
+\item Montrer que $\lim_{n \rightarrow +\infty} \left( J_n - J_{n-1} \right) = 0$ et en déduire que : 
+$$\lim_{n \rightarrow +\infty} J_n = \frac{\pi}{2}$$
+\item Déduire des résultats précédents l'égalité : $\pi = 4 \sum_{n=0}^{+\infty} \frac{(-1)^n}{2n+1}\cdot$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Soit $a$ un réel strictement positif. Justifier l'existence de l'intégrale $\int_0^a \frac{\sin(nt)}{\sin(t)} \ \dt$ pour $n \in \N$.
+\item Soit $a \in \left] 0, \pi \right[$. On admet que l'application $f$ telle que 
+$$f(x) = \frac{1}{x} - \frac{1}{\sin(x)}$$
+pour $x \neq 0$ et $f(0) = 0$ est de classe $\mathcal{C}^\infty$ sur $\left[ 0, a \right]$.
+
+\medskip
+
+Déterminer $\lim_{n \rightarrow +\infty} \left( \int_0^a \frac{\sin(nt)}{t} \, \dt - \int_0^a \frac{\sin(nt)}{\sin(t)} \, \dt \right)\cdot$
+\item En déduire la valeur de : $\lim_{n \rightarrow +\infty} \int_0^a \frac{\sin(nt)}{t} \, \dt$ lorsque $a = \frac{\pi}{2}$, $a < \frac{\pi}{2}$ et $a > \frac{\pi}{2}\cdot$
+\end{enumerate}
+\item En utilisant les résultats précédents et l'intégrale $\int_0^{n \pi} \frac{\sin(t)}{t} \, \dt$, montrer que la fonction :
+$$F : X \mapsto \int_0^X \frac{\sin(t)}{t} \, \dt$$
+admet $\frac{\pi}{2}$ pour limite lorsque $X$ tend vers $+\infty$.
+
+\medskip
+
+On pose dorénavant $I_1 = \int_0^{+\infty} \frac{\sin(t)}{t} \, \dt = \frac{\pi}{2}\cdot$
+\item En démontrant que pour tout $n \geq 0$, 
+$$\int_{n \pi}^{(n+1) \pi} \left\vert \frac{\sin(t)}{t} \right\vert \, \dt \geq \frac{1}{(n+1) \pi} \int_{0}^{\pi} \sin(u) du,$$
+montrer que l'application 
+$ t \mapsto \frac{\sin(t)}{t} $ n'est pas intégrable sur $\left]0, +\infty \right[$.
+\end{enumerate}
+
+\bigskip
+
+\subsection*{Partie 2.}
+
+\bigskip
+
+\begin{enumerate}
+\item Montrer que, pour tout $n \geq 2$, l'application 
+$$t \mapsto \left( \frac{\sin(t)}{t} \right)^n $$
+est intégrable sur $\left]0, +\infty \right[$.
+
+\medskip
+
+On pose alors pour tout $n \geq 2$, $I_n = \int_0^{+\infty} \left( \frac{\sin(t)}{t} \right)^n  \, \dt$.
+\item Montrer que : $I_1 = I_2$ ($I_1$ a été définie dans la partie 1).
+\item Montrer que $\lim_{n \rightarrow +\infty} I_n = 0$.
+\item Montrer que : $I_n > 0$ pour $n \geq 1$. Dans le cas où $n$ est impair, on commencera par prouver les égalités suivantes :
+$$ I_n = \sum_{k=0}^{+ \infty} \int_{k \pi}^{(k+1)\pi} \left( \frac{\sin(t)}{t} \right)^n \dt =  \sum_{k=0}^{+ \infty} \int_{0}^{\pi} (-1)^{nk} \left( \frac{\sin(u)}{u+k \pi} \right)^n du = \sum_{k=0}^{+ \infty} (-1)^{k} \int_{0}^{\pi}  \left( \frac{\sin(u)}{u+k \pi} \right)^n du$$
+puis on utilisera le critère spécial des séries alternées.
+\end{enumerate}
+
+\bigskip
+
+\subsection*{Partie 3.}
+
+\bigskip
+
+Pour $n \in \N$ et $k \in \left\{ 0, \ldots, n-1 \right\}$, on consid{\`e}re les applications  $g_n : \left]0, +\infty \right[ \rightarrow \R$ définies par 
+$$g_n(t) = (\sin(t))^n$$
+et $h_{n,k} : \left]0, +\infty \right[ \rightarrow \R$ définies par 
+$$h_{n,k}(t) = \frac{1}{t^{n-k}}g_n^{(k)}(t)$$
+o{\`u} $g_n^{(k)}$ désigne la dérivée d'ordre $k$ de $g_n$.
+
+\medskip
+
+\begin{enumerate}
+\item Déterminer pour $n \geq 2$, $g_n^{(0)}$, $g_n^{(1)}$ et $g_n^{(2)}$.
+\item Montrer par récurrence sur $k \in \lbrace 0, \ldots, n-1 \rbrace$ l'existence d'un polynôme $P_k$ tel que pour tout $t \in \mathbb{R}_+^{*}$,
+$$ g_n^{(k)}(t) =  \sin(t)^{n-k} P_k(\cos(t))$$
+\item Montrer que, pour tout $k \in \left\{ 0, \ldots, n-2 \right\}$, $h_{n,k}$ est intégrable sur $\left]0, +\infty \right[$.
+\item Montrer que, pour $n \geq 2$ et $k \in \left\{ 0, \ldots, n-2 \right\}$, la valeur de 
+$$(n-k-1)! \int_0^{+\infty} h_{n,k}(t) \, \dt$$
+ ne dépend pas de $k$. On pourra utiliser une intégration par parties pour $n>2$.
+\item Pour $n \geq 2$, prouver que la fonction $G : X \mapsto \int_0^X h_{n,k}(t) \, \dt$ admet en $+\infty$ une limite finie, notée $\int_0^{+\infty} h_{n,k}(t) \, \dt$ et que, pour tout $k \in \left\{ 0, \ldots, n-1 \right\}$ :
+\[ \int_0^{+\infty} h_{n,n-1}(t) \, \dt = (n-k-1)! \int_0^{+\infty} h_{n,k}(t) \, \dt \]
+\item En déduire que pour $n \geq 2$, on a :
+$$I_n= \frac{1}{(n-1)!} \int_0^{+\infty} \frac{1}{t} g_n^{(n-1)}(t) \, \dt$$
+\item 
+\begin{enumerate}
+\item établir pour tout $p \in \N^*$ et tout $t \in \R$ les résultats suivants :
+\[ 4^p (\sin t)^{2p} = \binom{2p}{p} + 2 \sum_{k=1}^p (-1)^k \binom{2p}{p-k} \cos(2kt) \qquad (1) \]
+ \[ 4^p (\sin t)^{2p+1} = \sum_{k=0}^p (-1)^k \binom{2p+1}{p-k} \sin((2k+1)t) \qquad (2) \]
+\item En déduire, en distinguant les cas $n = 2p$ et $n = 2p+1$, une expression de $I_n$ du type $q_n \pi$ o{\`u} $q_n$ est une somme de nombres rationnels (on pourra faire intervenir $I_1$ dans les calculs). On pourra commencer par déterminer toutes les dérivées des fonctions $x \mapsto \cos(\alpha x)$ et $x \mapsto \sin(\alpha x)$ où $\alpha \in \mathbb{R}$.
+\item Retrouver la valeur de $I_2$, puis calculer $I_3$ et $I_4$.
+\end{enumerate}
+\end{enumerate}
 
 \end{document}

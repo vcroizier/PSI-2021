@@ -1,43 +1,34 @@
-\documentclass[a4paper,10pt]{report}
-\newcommand{\pmatrice}[1]{\begin{pmatrix}#1\end{pmatrix}}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
 
 \begin{document}
-\everymath{\displaystyle}
-\begin{center}
-\textit{{ {\huge TD 10 : Réduction}}}
-\end{center}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 10 : Réduction}
 
-\bigskip
+\tableofcontents
+\separationTitre
 
 
 \noindent Dans la suite, $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$ et $n \in \mathbb{N}^*$.
 
-\medskip
+\subsection{Éléments propres}
 
-\begin{center}
-\textit{{ {\large Éléments propres}}}
-\end{center}
-
-\medskip
-
-\begin{Exercice}{\ding{80}] Soient $E = \mathbb{R}[X}$ et $\varphi \in \mathcal{L}(E)$ défini par $\varphi(P)=XP'$. Déterminer les éléments propres de $\varphi$.
+\begin{Exercice}[$\bigstar$]
+  Soient $E = \mathbb{R}[X]$ et $\varphi \in \mathcal{L}(E)$ défini par $\varphi(P)=XP'$. Déterminer les éléments propres de $\varphi$.
 \end{Exercice}
 
 
-
-\begin{Exercice}{} Soient $f$ un endomorphisme d'un $\mathbb{K}$-espace vectoriel de dimension finie et $n \in \mathbb{N}^{*}$. On suppose que $0$ est dans le spectre de $f^n$. Montrer que $0$ est aussi dans le spectre de $f$.
+\begin{Exercice}{} 
+  Soient $f$ un endomorphisme d'un $\mathbb{K}$-espace vectoriel de dimension finie et $n \in \mathbb{N}^{*}$. On suppose que $0$ est dans le spectre de $f^n$. Montrer que $0$ est aussi dans le spectre de $f$.
 \end{Exercice}
 
 
-\medskip
+\subsection{Diagonalisation}
 
-\begin{center}
-\textit{{ {\large Diagonalisation}}}
-\end{center}
-
-\medskip
 
 \begin{Exercice}{} Diagonaliser $\begin{pmatrix}
 0 & 2 & -1 \\
@@ -95,7 +86,7 @@ Déterminer simplement les valeurs propres de $A$. La matrice $A$ est-elle diago
 
 
 
-\begin{Exercice}{\ding{80}} Posons, pour $n \geq 1$, la matrice $A_n$ d'ordre $2n$ suivante :
+\begin{Exercice}[$\bigstar$] Posons, pour $n \geq 1$, la matrice $A_n$ d'ordre $2n$ suivante :
 $$ A_n = \begin{pmatrix}
 1 & 2n & 1 & \cdots & 2n \\
 2 & 2n-1 & 2 & \cdots & 2n-1 \\
@@ -113,13 +104,9 @@ $$ A_n = \begin{pmatrix}
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Polynômes annulateurs}}}
-\end{center}
+\subsection{Polynômes annulateurs}
 
-\medskip
 
 \begin{Exercice}{} Soit $A$ la matrice de $\mathcal{M}_n(\mathbb{R})$ avec des coefficients égaux à $1$, sauf ceux de la diagonale valant $0$.
 
@@ -163,11 +150,11 @@ $$ A_n = \begin{pmatrix}
 \end{Exercice} 
 
 
-\begin{Exercice}{\ding{80}} Soient $n \geq 3$ et $A \in \mathcal{M}_{n}(\mathbb{C})$ une matrice de rang $2$, de trace nulle et telle que $A^n$ soit non nulle. Montrer que $A$ est diagonalisable.
+\begin{Exercice}[$\bigstar$] Soient $n \geq 3$ et $A \in \mathcal{M}_{n}(\mathbb{C})$ une matrice de rang $2$, de trace nulle et telle que $A^n$ soit non nulle. Montrer que $A$ est diagonalisable.
 \end{Exercice}
 
 
-\begin{Exercice}{\ding{80}} Soit $A \in \mathcal{M}_{n}(\mathbb{R})$ telle que :
+\begin{Exercice}[$\bigstar$] Soit $A \in \mathcal{M}_{n}(\mathbb{R})$ telle que :
   \[
   A^{3} - A^{2} + A - I_n = 0_n
   \]
@@ -223,13 +210,9 @@ $$ \varphi(M) = M +2 \, {}^t M$$
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Trigonalisation}}}
-\end{center}
+\subsection{Trigonalisation}
 
-\medskip
 
 \begin{Exercice}{} Soit $A= \begin{pmatrix}
 1 & -3 & 4 \\
@@ -253,19 +236,15 @@ $$ \varphi(M) = M +2 \, {}^t M$$
     
   \item Compléter ces vecteurs en une base de $\R^3$.
     
-  \item \'Ecrire la matrice de $\varphi$ dans cette base.
+  \item Écrire la matrice de $\varphi$ dans cette base.
         
 \end{enumerate}
 \end{Exercice} 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Applications de la réduction}}}
-\end{center}
+\subsection{Applications de la réduction}
 
-\medskip
 
 \begin{Exercice}{} Déterminer un polynôme annulateur de degré $2$ de :
 $$ A = \begin{pmatrix}
@@ -292,13 +271,13 @@ En déduire les puissances de $A$.
 
 \begin{Exercice}{}
 \begin{enumerate}
-\item R\'eduire la matrice $A= \left(\begin{array}{rrr}  2 & 2 & 1\\
+\item Réduire la matrice $A= \left(\begin{array}{rrr}  2 & 2 & 1\\
 1 & 3 & 1\\
-1 & 2 & 2 \end{array}\right) \cdot $\\
+1 & 2 & 2 \end{array}\right) \cdot $
 \item Déterminer alors le commutant de $A$, noté $\mathcal{C}(A)$ et défini par : 
 $${\cal C}(A)=\{M\in{\cal M}_3(\R) \, \vert \, AM=MA\}$$
 \end{enumerate}
-\end{Exercice} 
+\end{Exercice}
 
 
 
@@ -318,7 +297,7 @@ $${\cal C}(A)=\{M\in{\cal M}_3(\R) \, \vert \, AM=MA\}$$
 
 \begin{Exercice}{}
 Soit $A$ la matrice de $\mathcal{M}_{3}\left(\mathbb{R}\right)$
-d\'efinie par
+définie par
 \[
 A=\left(\begin{array}{ccc}
 1 & -1 & -1\\
@@ -328,11 +307,11 @@ A=\left(\begin{array}{ccc}
 \]
 
 \begin{enumerate}
-\item Montrer que la matrice $A$ est diagonalisable. D\'eterminer ses valeurs propres et ses sous-espaces propres.
-\item D\'eterminer une relation entre $A^{2}$, $A$ et $I_{n}$.\\
-En d\'eduire une relation entre $A^{n+1}$, $A^{n}$ et $A^{n-1}$ pour
+\item Montrer que la matrice $A$ est diagonalisable. Déterminer ses valeurs propres et ses sous-espaces propres.
+\item Déterminer une relation entre $A^{2}$, $A$ et $I_{n}$.\\
+En déduire une relation entre $A^{n+1}$, $A^{n}$ et $A^{n-1}$ pour
 tout entier $n\geq1$.
-\item Montrer par r\'ecurrence qu'il existe deux suites $\left(u_{n}\right)_{n\in\mathbb{N}}$
+\item Montrer par récurrence qu'il existe deux suites $\left(u_{n}\right)_{n\in\mathbb{N}}$
 et $\left(v_{n}\right)_{n\in\mathbb{N}}$ telles que
 \[
 \forall n\in\mathbb{N},\quad A^{n}=\left(\begin{array}{ccc}
@@ -341,14 +320,14 @@ v_{n} & u_{n} & v_{n}\\
 v_{n} & v_{n} & u_{n}
 \end{array}\right)
 \]
-qui v\'erifient la relation de r\'ecurrence :
+qui vérifient la relation de récurrence :
 \[
 \forall n\geq1,\quad\left\{ \begin{array}{ccc}
 u_{n+1} & = & u_{n}+2u_{n-1}\\
 v_{n+1} & = & v_{n}+2v_{n-1}
 \end{array}\right.
 \]
-\item D\'eterminer, pour tout entier naturel $n$, l'expression de $u_{n}$
+\item Déterminer, pour tout entier naturel $n$, l'expression de $u_{n}$
 et $v_{n}$ en fonction de $n$.
 \end{enumerate}
 \end{Exercice}
@@ -356,22 +335,18 @@ et $v_{n}$ en fonction de $n$.
 
 
 
-\begin{Exercice}{} Soient $(u_k)_{k \geq 0}$ et $(v_k)_{k \geq 0}$ deux suites \`a termes r\'eels d\'efinies par
+\begin{Exercice}{} Soient $(u_k)_{k \geq 0}$ et $(v_k)_{k \geq 0}$ deux suites \`a termes réels définies par
 $$\left\{\begin{array}{l}u_0=1\\ v_0=2\end{array}\right.\qquad\hbox{et}\qquad \forall k\in\N,\;\left\{\begin{array}{l}u_{k+1}=4u_k-2v_k\\
 v_{k+1}=u_k+v_k\end{array}\right.$$
 Déterminer pour tout entier $k \geq 0$, l'expression de $u_k$ et $v_k$ en fonction de $k$.
 \end{Exercice}
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Matrices définies par blocs}}}
-\end{center}
+\subsection{Matrices définies par blocs}
 
-\medskip
 
-\begin{Exercice}{\ding{80}} Soit $A= \begin{pmatrix}
+\begin{Exercice}[$\bigstar$] Soit $A= \begin{pmatrix}
 1& 2 \\
 2 & 1 \\
 \end{pmatrix}\cdot$
@@ -387,11 +362,11 @@ $B$ est-elle diagonalisable ? Donner les éléments propres de $B$.
 \end{Exercice}
 
 
-\begin{Exercice}{\ding{80}} Soient $A$ et $B$ deux matrices complexes inversibles d'ordres $n \geq 1$. On pose :
-$$ N = \begin{pmatrix}
+\begin{Exercice}[$\bigstar$] Soient $A$ et $B$ deux matrices complexes inversibles d'ordres $n \geq 1$. On pose :
+$ N = \begin{pmatrix}
 0 & B \\
 A & 0
-\end{pmatrix}$$
+\end{pmatrix}$
 \begin{enumerate}
 \item Montrer que $N$ est inversible et déterminer $N^{-1}$.
 \item Calculer $N^2$ et $P(N^2)$ pour $P \in \mathbb{C}[X]$.
@@ -401,13 +376,9 @@ A & 0
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Divers}}}
-\end{center}
+\subsection{Divers}
 
-\medskip
 
 \begin{Exercice}{} Soit $A \in \mathcal{M}_{n}(\mathbb{R})$ dont des valeurs propres réelles sont positives. Montrer que le déterminant de $A$ est positif ou nul.
 \end{Exercice} 
@@ -426,7 +397,7 @@ A & 0
 
 
 
-\begin{Exercice}{\ding{80}} \begin{enumerate}
+\begin{Exercice}[$\bigstar$] \begin{enumerate}
 \item Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension $3$. Montrer que $H$, plan de $E$, est stable par $u \in \mathcal{L}(E)$ si et seulement si il existe $\lambda \in \mathbb{K}$ tel que $\textrm{Im}(u- \lambda \textrm{Id}) \subset H$.
 \item Trouver tous les sous-espaces de $\mathcal{M}_{3,1}(\mathbb{R})$ stables par l'application linéaire canoniquement associée à 
 $$A= \begin{pmatrix}
@@ -439,12 +410,12 @@ $$A= \begin{pmatrix}
 
 
 
-\begin{Exercice}{\ding{80}} Soient $A \in \mathcal{M}_{3,2}(\mathbb{R})$ et $B \in \mathcal{M}_{2,3}(\mathbb{R})$ telles que :
-$$ AB = \begin{pmatrix}
+\begin{Exercice}[$\bigstar$] Soient $A \in \mathcal{M}_{3,2}(\mathbb{R})$ et $B \in \mathcal{M}_{2,3}(\mathbb{R})$ telles que :
+$ AB = \begin{pmatrix}
 1 & 0 & x \\
 0 & 1 & 0 \\
 1 & 0 & 1 
-\end{pmatrix}$$
+\end{pmatrix}$
 où $x \in \mathbb{R}$.
 \begin{enumerate}
 \item La matrice $AB$ est-elle inversible ? Quelles sont les valeurs possibles de $x$ ?
@@ -465,7 +436,7 @@ $$ f(t) = \textrm{det}((A-t I_n)B -x I_n) \; \hbox{ et } g(t) = \textrm{det}(B(A
 \end{Exercice}
 
 
-\begin{Exercice}{\ding{80}}  Soient $f$ et $g$ deux endomorphismes diagonalisables d'un espace vectoriel $E$ de dimension finie. Montrer que si $f$ et $g$ commutent alors il existe une base diagonalisante commune à $f$ et $g$.
+\begin{Exercice}[$\bigstar$]  Soient $f$ et $g$ deux endomorphismes diagonalisables d'un espace vectoriel $E$ de dimension finie. Montrer que si $f$ et $g$ commutent alors il existe une base diagonalisante commune à $f$ et $g$.
 \end{Exercice}
 
 

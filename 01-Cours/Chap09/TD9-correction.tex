@@ -1,18 +1,23 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
+\documentclass[a4paper,twoside,french,10pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
 
 \begin{document}
-\everymath{\displaystyle}
-\begin{center}
-\textit{{ {\huge TD 9 : Intégrales généralisées}}}
-\end{center}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 9 : Intégrales généralisées}
+
+\tableofcontents
+\separationTitre
 
 
-\bigskip
 
-\begin{center}
-\textit{{ {\large Nature d'une intégrale}}}
-\end{center}
+\subsection{Nature d'une intégrale}
+
 
 \medskip
 
@@ -20,10 +25,10 @@
 
 \begin{multicols}{2}
 \begin{enumerate}
-\item $A = \dis \int_1^{+ \infty} \dfrac{1}{x^{3/2}} \dx$
-\item $B = \dis \int_0^{+ \infty} \dfrac{1}{1+x^2} \dx$
-\item $C = \dis \int_0^{+ \infty} x e^{-2x} \dx$
-\item $D= \dis \int_2^{+ \infty} \dfrac{1}{(x-1)(x+1)} \dx$.
+\item $A = \int_1^{+ \infty} \dfrac{1}{x^{3/2}} \dx$
+\item $B = \int_0^{+ \infty} \dfrac{1}{1+x^2} \dx$
+\item $C = \int_0^{+ \infty} x e^{-2x} \dx$
+\item $D= \int_2^{+ \infty} \dfrac{1}{(x-1)(x+1)} \dx$.
 \item $E= \int_{e}^{+ \infty} \dfrac{1}{x\ln(x)} \dx$
 \item $F= \int_0^1 \dfrac{\ln(x)}{(1+x)^2} \dx$
 \end{enumerate}
@@ -109,14 +114,14 @@ On en déduit que $F$ converge et vaut $- \ln(2)$.
 
 \begin{multicols}{2}
 \begin{enumerate}
-\item $A = \dis \int_1^{+ \infty} \dfrac{\sin(x)}{x^2} \dx$
-\item $B = \dis \int_1^{+ \infty} \dfrac{\cos(x)}{x^{3/2}+\ln(x)} \dx$
-\item $C = \dis \int_0^{1} \dfrac{1}{\sqrt{1-x^2}} \sin \left(\dfrac{1}{x}\right) \dx$
-\item $D= \dis \int_1^{+ \infty} \dfrac{1}{x} \sin \left(\dfrac{1}{x}\right) \dx$.
-\item $E= \dis \int_{0}^{+ \infty} e^{-x} \sin(x) \dx$
-\item $F= \dis \int_0^{+\infty} \dfrac{\sin(x)}{x^2+4} \dx$
-\item $G= \dis \int_0^{+ \infty} \dfrac{\cos(x)}{\ch(x)} \dx$.
-\item $H= \dis \int_1^{+\infty} \dfrac{\sin(10x)-\sin(5x)}{x^{4/3}} \dx$.
+\item $A = \int_1^{+ \infty} \dfrac{\sin(x)}{x^2} \dx$
+\item $B = \int_1^{+ \infty} \dfrac{\cos(x)}{x^{3/2}+\ln(x)} \dx$
+\item $C = \int_0^{1} \dfrac{1}{\sqrt{1-x^2}} \sin \left(\dfrac{1}{x}\right) \dx$
+\item $D= \int_1^{+ \infty} \dfrac{1}{x} \sin \left(\dfrac{1}{x}\right) \dx$.
+\item $E= \int_{0}^{+ \infty} e^{-x} \sin(x) \dx$
+\item $F= \int_0^{+\infty} \dfrac{\sin(x)}{x^2+4} \dx$
+\item $G= \int_0^{+ \infty} \dfrac{\cos(x)}{\ch(x)} \dx$.
+\item $H= \int_1^{+\infty} \dfrac{\sin(10x)-\sin(5x)}{x^{4/3}} \dx$.
 \end{enumerate}
 \end{multicols}
 \vspace{0.1cm}
@@ -133,7 +138,7 @@ $$ 0 \leq \left\vert \dfrac{\cos(x)}{x^{3/2}+\ln(x)} \right\vert \leq  \dfrac{1}
 car $\ln(x) \geq 0$, $x^{3/2}>0$ et par décroissance de la fonction inverse sur $\mathbb{R}_+^{*}$. Par positivité des intégrandes et par comparaison à une intégrale de Riemann convergente ($3/2>1$), on en déduit que $B$ converge absolument donc converge.
 \item La fonction $x \mapsto \dfrac{1}{\sqrt{1-x^2}} \sin \left(\dfrac{1}{x}\right) $ est continue sur $]0,1[$ (pour tout $x \in ]0,1[$, $1-x^2 \in ]0,1[$ donc $\sqrt{1-x^2} \neq 0$) : $C$ est impropre en $0$ et $1$. Pour tout réel $x \in ]0,1[$,
 $$ 0 \leq \left\vert  \dfrac{1}{\sqrt{1-x^2}} \sin \left(\dfrac{1}{x}\right) \right\vert \leq \dfrac{1}{\sqrt{1-x^2}} = \dfrac{1}{\sqrt{1-x}\sqrt{1+x}} \leq \dfrac{1}{\sqrt{1-x}}$$
-car $\sqrt{1+x} \geq 1$ et par décroissance de la fonction inverse sur $\mathbb{R}_+^*$. Par changement de variable affine (donc licite), l'intégrale $\dis \int_0^1 \dfrac{1}{\sqrt{1-x}} \dx$ converge si et seulement si $\dis \int_0^1 \dfrac{1}{\sqrt{t}} \dt$ converge, ce qui est le cas (intégrale de Riemann sur $]0,1]$ avec $1/2<1$). Par positivité des intégrandes et par comparaison à une intégrale convergente, on en déduit que $C$ converge absolument donc converge.
+car $\sqrt{1+x} \geq 1$ et par décroissance de la fonction inverse sur $\mathbb{R}_+^*$. Par changement de variable affine (donc licite), l'intégrale $\int_0^1 \dfrac{1}{\sqrt{1-x}} \dx$ converge si et seulement si $\int_0^1 \dfrac{1}{\sqrt{t}} \dt$ converge, ce qui est le cas (intégrale de Riemann sur $]0,1]$ avec $1/2<1$). Par positivité des intégrandes et par comparaison à une intégrale convergente, on en déduit que $C$ converge absolument donc converge.
 \item La fonction $x \mapsto \dfrac{1}{x} \sin \left(\dfrac{1}{x}\right)$ est continue sur $[1, + \infty[$ : $D$ est impropre en $+ \infty$. Pour tout réel $y$, on sait que :
 $$ \vert \sin(y) \vert \leq \vert y \vert$$
 Pour tout réel $x \geq 1$, on a donc :
@@ -167,15 +172,15 @@ Par positivité des intégrandes et par comparaison à une intégrale de Riemann
 \end{enumerate}
 
 \begin{Exercice}{} \begin{enumerate}
-\item Montrer que l'int\'egrale $\dis \int_0^{+ \infty} \frac{\sin(t)}{t}\, \dt$ est convergente.
-\item Montrer que l'int\'egrale $\dis \int_1^{+\infty}\frac{\cos(2t)}{t}\, \dt$ est convergente.
-\item Montrer que l'int\'egrale g\'en\'eralis\'ee $\dis \int_1^{+\infty}\frac{\sin^2(t)}{t} \, \dt$ est divergente. En d\'eduire la divergence de l'int\'egrale g\'en\'eralis\'ee $\dis \int_1^{+\infty}\frac{|\sin(t)|}{t} \, \dt$.
+\item Montrer que l'intégrale $\int_0^{+ \infty} \frac{\sin(t)}{t}\, \dt$ est convergente.
+\item Montrer que l'intégrale $\int_1^{+\infty}\frac{\cos(2t)}{t}\, \dt$ est convergente.
+\item Montrer que l'intégrale généralisée $\int_1^{+\infty}\frac{\sin^2(t)}{t} \, \dt$ est divergente. En déduire la divergence de l'intégrale généralisée $\int_1^{+\infty}\frac{|\sin(t)|}{t} \, \dt$.
 \end{enumerate}
 \end{Exercice}
 
 \corr 
 \begin{enumerate}
-\item La fonction $t\mapsto \dfrac{\sin(t)}{t}$ est continue sur $]0,1]$ et a pour limite $1$ en $0$. L'intégrale est donc faussement impropre en $0$ donc $\dis \int_0^1\frac{\sin(t)}{t}\, \dt$ converge. Les fonctions $t \mapsto \frac{1}{t}$ et $t \mapsto - \cos(t)$ sont de classes $\mathcal{C}^1$ sur $[1, + \infty[$ donc pour tout $x \geq 1$, on a par intégration par parties :
+\item La fonction $t\mapsto \dfrac{\sin(t)}{t}$ est continue sur $]0,1]$ et a pour limite $1$ en $0$. L'intégrale est donc faussement impropre en $0$ donc $\int_0^1\frac{\sin(t)}{t}\, \dt$ converge. Les fonctions $t \mapsto \frac{1}{t}$ et $t \mapsto - \cos(t)$ sont de classes $\mathcal{C}^1$ sur $[1, + \infty[$ donc pour tout $x \geq 1$, on a par intégration par parties :
 \[\int_1^x\frac{\sin(t)}{t}\, \dt=\cos(1)-\frac{\cos(x)}{x}-\int_1^x\frac{\cos(t)}{t^2}\, \dt\]
 Sachant que la fonction cosinus est bornée, on a :
 $$ \lim_{x \rightarrow + \infty} \cos(1)-\frac{\cos(x)}{x} = \cos(1)$$
@@ -183,40 +188,40 @@ Pour tout $t \geq 1$, on a :
 $$ \left\vert \frac{\cos(t)}{t^2} \right\vert \leq \frac{1}{t^2}$$
 Par comparaison avec une intégrale de Riemann convergente, on en déduit que 
 $$ \int_{1}^{+ \infty} \frac{\cos(t)}{t^2} \dt$$
-converge absolument et donc converge. Finalement, $\dis \int_0^{+ \infty} \frac{\sin(t)}{t}\, \dt$ converge.  
+converge absolument et donc converge. Finalement, $\int_0^{+ \infty} \frac{\sin(t)}{t}\, \dt$ converge.  
 \item On obtient de m\^eme  que pour tout $x \geq 1$,
 \[\int_1^x\frac{\cos(2t)}{t}\;dt=\frac{1}{2}\left (\frac{\cos(2x)}{x}-\sin(2)\right )+\int_1^x\frac{\sin(2t)}{t^2}\dt\]
-L'intégrale $\int_1^{+ \infty} \frac{\sin(2t)}{t^2}\;dt$ converge (comparaison similaire à la question précédente). Ainsi, on montre comme \`a la question pr\'ec\'edente que $\dis \int_1^{+\infty}\frac{\cos(2t)}{t}\dt$ converge.
+L'intégrale $\int_1^{+ \infty} \frac{\sin(2t)}{t^2}\;dt$ converge (comparaison similaire à la question précédente). Ainsi, on montre comme \`a la question précédente que $\int_1^{+\infty}\frac{\cos(2t)}{t}\dt$ converge.
 \item On a pour tout $t \in [1, + \infty[$,
 $$\frac{\sin^2(t)}{t}=\frac{1}{2t}-\frac{\cos(2t)}{2t}$$
  et donc pour tout $x \geq 1$,
 \[\int_1^x\frac{\sin^2(t)}{t}\;dt=\frac{\ln(x)}{2}-\int_1^x\frac{\cos(2t)}{2t}\dx\]
 L'intégrale dans le membre de droite tend vers une limite finie quand $x$ tend vers $+ \infty$ d'après la question précédente. On en déduit alors que :
 $$ \lim_{x \rightarrow + \infty} \int_1^x\frac{\sin^2(t)}{t}\dt = + \infty$$
- Ainsi, l'int\'egrale $\dis \int_1^{+\infty}\frac{\sin^2(t)}{t}\dt$ diverge.
+ Ainsi, l'intégrale $\int_1^{+\infty}\frac{\sin^2(t)}{t}\dt$ diverge.
 Comme pour tout $t \in [1, + \infty[$, $\vert \sin(t) \vert \in [0,1]$, on a :
 $$\frac{\vert \sin(t) \vert}{t} \geq \frac{\vert \sin(t)\vert^2}{t} = \frac{\sin^2(t)}{t}\geq0$$
-Par divergence de l'intégrale précédente et par positivité des intégrandes, on en déduit que $\dis \int_1^{+\infty}\frac{|\sin(t)|}{t}\dt$ diverge.
+Par divergence de l'intégrale précédente et par positivité des intégrandes, on en déduit que $\int_1^{+\infty}\frac{|\sin(t)|}{t}\dt$ diverge.
 \end{enumerate}
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Intégrabilité}}}
-\end{center}
+
+\subsection{Intégrabilité}
+
 
 \medskip
 
-\begin{Exercice}{} Soit $\alpha \in \mathbb{R}$. Étudier, sur les intervalles indiqués, l'int\'egrabilit\'e des fonctions dont les expressions sont données par :
+\begin{Exercice}{} Soit $\alpha \in \mathbb{R}$. Étudier, sur les intervalles indiqués, l'intégrabilité des fonctions dont les expressions sont données par :
 \begin{multicols}{2}
 \begin{itemize}
-\item $f_1(x)=\dis\frac{\sqrt{x^2+x+1}-\sqrt{x^2-x+1}}{x}$ sur \newline $[1,+\infty[$.
-\item $f_2(x)=\dis\frac{\ln^2(x)}{\sqrt{x^3+x}}$ sur $[1,+\infty[$.
-\item $f_3(x)=\dis\frac{\sin(x)}{\sqrt{x(1-x)}}$ sur $]0,1[$.
+\item $f_1(x)=\frac{\sqrt{x^2+x+1}-\sqrt{x^2-x+1}}{x}$ sur \newline $[1,+\infty[$.
+\item $f_2(x)=\frac{\ln^2(x)}{\sqrt{x^3+x}}$ sur $[1,+\infty[$.
+\item $f_3(x)=\frac{\sin(x)}{\sqrt{x(1-x)}}$ sur $]0,1[$.
 \columnbreak
-\item $f_4(x)=\dis\frac{1-\ch(x)}{x^{\alpha}}$ sur $]0,+\infty[$.
-\item $f_5(x)=\dis\frac{x^{\alpha}\ln(x)}{1-x^2}$ sur $]0,1[$.
-\item $f_6(x)=\dis\frac{\ln(x)\ln(1-x)}{x}$ sur $]0,1[$.
+\item $f_4(x)=\frac{1-\ch(x)}{x^{\alpha}}$ sur $]0,+\infty[$.
+\item $f_5(x)=\frac{x^{\alpha}\ln(x)}{1-x^2}$ sur $]0,1[$.
+\item $f_6(x)=\frac{\ln(x)\ln(1-x)}{x}$ sur $]0,1[$.
 \end{itemize}
 \end{multicols}
 
@@ -228,7 +233,7 @@ Par divergence de l'intégrale précédente et par positivité des intégrandes,
 \begin{itemize}
 \item Pour tout réel $x \geq 1$, $x^2+x+1 > 0$ et $x^2-x+1=x(x-1)+1 >0$ donc $f_n$ est continue sur $[1, + \infty[$. Utilisons la quantité conjuguée pour montrer l'intégrabilité : pour tout réel $x \geq 1$,
 \begin{align*}
-f_1(x) & =\dis\frac{\sqrt{x^2+x+1}-\sqrt{x^2-x+1}}{x} \\
+f_1(x) & =\frac{\sqrt{x^2+x+1}-\sqrt{x^2-x+1}}{x} \\
 & = \dfrac{x^2+x+1-(x^2-x+1)}{x(\sqrt{x^2+x+1}+\sqrt{x^2-x+1})} \\
 & = \dfrac{2x}{x(\sqrt{x^2+x+1}+\sqrt{x^2-x+1})} \\
 & = \dfrac{2}{x(\sqrt{1+1/x+1/x^2}+ \sqrt{1-1/x+1/x^2)}} \\
@@ -251,7 +256,7 @@ On a :
 $$ \dfrac{1}{\sqrt{x(1-x)}} \underset{0}{\sim} \dfrac{1}{\sqrt{x}}$$
 La fonction $x \mapsto\dfrac{1}{\sqrt{x}}$ est intégrable sur $]0,1/2[$ donc par critère de comparaison, $x \mapsto \dfrac{1}{\sqrt{x(1-x)}}$ aussi et ainsi, toujours par critère de comparaison, $f_3$ aussi. On a :
 $$  \dfrac{1}{\sqrt{x(1-x)}} \underset{1}{\sim} \dfrac{1}{\sqrt{1-x}}$$
-Par changement de variable affine (donc licite), $\dis \int_{1/2}^1 \dfrac{1}{\sqrt{1-x}} \dx$ converge si et seulement si $\dis \int_{0}^{1/2} \dfrac{1}{\sqrt{u}} \textrm{d}u$ converge ce qui est le cas. On conclut comme précédemment que $f_3$ est intégrable sur $]1/2,1[$ et finalement sur $]0,1[$.
+Par changement de variable affine (donc licite), $\int_{1/2}^1 \dfrac{1}{\sqrt{1-x}} \dx$ converge si et seulement si $\int_{0}^{1/2} \dfrac{1}{\sqrt{u}} \textrm{d}u$ converge ce qui est le cas. On conclut comme précédemment que $f_3$ est intégrable sur $]1/2,1[$ et finalement sur $]0,1[$.
 \item La fonction $f_4$ est continue sur $\mathbb{R}_+^*$. Pour tout réel $x>0$,
 $$ \vert f_4(x) \vert = \dfrac{\ch(x)-1}{x^{\alpha}} \underset{+ \infty} {\sim}\dfrac{e^x}{2x^{\alpha}}$$
 Ainsi, par théorème des croissances comparées (si l'on en a besoin suivant la valeur de $\alpha$) :
@@ -323,7 +328,7 @@ Cela contredit l'intégrabilité de $f$ sur $\mathbb{R}_+$ : c'est absurde.
   \]
 \end{Exercice}
 
-\corr La fonction $f$ est intégrable sur $[0, + \infty[$ donc $\dis \int_0^{+ \infty} f(t) \dt$ converge absolument donc converge. Ainsi, il existe un réel $\ell$ tel que :
+\corr La fonction $f$ est intégrable sur $[0, + \infty[$ donc $\int_0^{+ \infty} f(t) \dt$ converge absolument donc converge. Ainsi, il existe un réel $\ell$ tel que :
 $$ \lim_{x \rightarrow + \infty} \int_0^x f(t) \dt = \ell$$
 D'après la relation de Chasles, on a pour tout réel $x>0$,
 $$ \int_{x}^{x + 1} f(t) \dt = \int_{0}^{x + 1} f(t) \dt - \int_{0}^{x} f(t) \dt $$
@@ -337,7 +342,7 @@ Ainsi,
 \begin{Exercice}{}
 Soit $f : x \mapsto \sin(x^2)$.
 \begin{enumerate}
-\item Montrer que $\dis \int_{0}^{+ \infty}  f(t) \dt$ converge.
+\item Montrer que $\int_{0}^{+ \infty}  f(t) \dt$ converge.
 \item Montrer que $f$ n'est pas intégrable sur $\mathbb{R}_+$. On pourra commencer par montrer grâce au changement de variable $t=x^2$ que pour tout $n \geq 1$,
 $$ \int_{\sqrt{n \pi}}^{\sqrt{(n+1)\pi}} \vert \sin(x^2) \vert \dx \geq \frac{1}{\sqrt{(n+1) \pi}}$$
 \end{enumerate}
@@ -361,8 +366,10 @@ La fonction $t \mapsto  \dfrac{1}{t^{3/2}}$ est intégrable sur $[1, + \infty[$ 
 $$ \lim_{A \rightarrow + \infty} -\dfrac{1}{4} \int_1^{A^2} \dfrac{\cos(t)}{2t^{3/2}} \dt  = \ell$$
 Finalement 
 $$ \lim_{A \rightarrow + \infty} \dfrac{1}{2} \int_1^{A^2} \sin(t) t^{-1/2} \dt = 2 \cos(1) + A$$
-On en déduit que $\dis \int_{1}^{+ \infty}  f(t) \dt$ converge et donc $\dis \int_{0}^{+ \infty}  f(t) \dt$ converge par continuité de l'intégrande sur $[0,1]$.
-\item Soit $n \geq 1$. Le changement de variable est déjà justifié dans la question précédente ($[\sqrt{n \pi},\sqrt{(n+1)\pi}]\subset \mathbb{R}_+^*$) :
+On en déduit que $\int_{1}^{+ \infty}  f(t) \dt$ converge et donc $\int_{0}^{+ \infty}  f(t) \dt$ converge par continuité de l'intégrande sur $[0,1]$.
+\item Soit $n \geq 1$.
+
+Le changement de variable est déjà justifié dans la question précédente ($[\sqrt{n \pi},\sqrt{(n+1)\pi}]\subset \mathbb{R}_+^*$) :
 $$ \int_{\sqrt{n \pi}}^{\sqrt{(n+1)\pi}} \vert \sin(x^2) \vert \dx = \int_{n \pi}^{(n+1)\pi} \dfrac{\vert \sin(t) \vert}{2 \sqrt{t}} \dt$$
 Par croissance de la fonction racine carré sur $\mathbb{R}_+^{*}$, on a pour tout $t \in [n \pi,(n+1)\pi]$, 
 $$ 0<2 \sqrt{t} \leq 2 \sqrt{n+1}$$
@@ -390,15 +397,15 @@ Supposons par l'absurde que $f$ est intégrable sur $\mathbb{R}_+$. En particuli
  $$ \lim_{n \rightarrow + \infty} \int_{\sqrt{\pi}}^{\sqrt{(n+1)\pi}} \sin(x^2) \dx = \ell$$
  D'après la relation de Chasles, on a :
  $$ \lim_{n \rightarrow + \infty} \sum_{k=1}^n \int_{\sqrt{k\pi}}^{\sqrt{(k+1)\pi}} \sin(x^2) \dx = \ell$$
- En particulier, la suite de terme général $\dis \sum_{k=1}^n \int_{\sqrt{k\pi}}^{\sqrt{(k+1)\pi}} \sin(x^2) \dx$ est bornée. D'après l'inégalité prouvée, on en déduit que la suite de terme général $\sum_{k=1}^n \dfrac{1}{\sqrt{(k+1)\pi}}$ est majorée. Or on reconnait le terme général d'une série de Riemann divergente ($1/2<1$) qui est une série à terme positifs : d'après le cours, la suite des sommes partielles n'est pas majorée : c'est absurde ! Ainsi, $f$ n'est pas intégrable sur $\mathbb{R}_+$.
+ En particulier, la suite de terme général $\sum_{k=1}^n \int_{\sqrt{k\pi}}^{\sqrt{(k+1)\pi}} \sin(x^2) \dx$ est bornée. D'après l'inégalité prouvée, on en déduit que la suite de terme général $\sum_{k=1}^n \dfrac{1}{\sqrt{(k+1)\pi}}$ est majorée. Or on reconnait le terme général d'une série de Riemann divergente ($1/2<1$) qui est une série à terme positifs : d'après le cours, la suite des sommes partielles n'est pas majorée : c'est absurde ! Ainsi, $f$ n'est pas intégrable sur $\mathbb{R}_+$.
   \end{enumerate}
 
  
 \medskip
 
-\begin{center}
-\textit{{ {\large Changements de variables et intégrations par parties}}}
-\end{center}
+
+\subsection{Changements de variables et intégrations par parties}
+
 
 \medskip
 
@@ -412,7 +419,7 @@ On pourra utiliser le changement de variable $u = \dfrac{1}{t} \cdot$
 
 \corr La fonction $t \mapsto \frac{1}{(1 + t^{2})^{2}}$ est continue sur $\mathbb{R}_+$ et :
 $$ \frac{1}{(1 + t^{2})^{2}} \underset{+ \infty}{\sim} \dfrac{1}{t^4}$$
-On sait que $\dis \int_1^{+ \infty} \dfrac{1}{t^4} \dt$ converge (intégrale de Riemann avec $4>1$) donc par critère de comparaison (les intégrandes sont positives), $\dis  \int_1^{+ \infty}  \frac{1}{(1 + t^{2})^{2}} \dt$ converge et ainsi $I$ converge (par continuité de l'intégrande sur $[0,1]$).
+On sait que $\int_1^{+ \infty} \dfrac{1}{t^4} \dt$ converge (intégrale de Riemann avec $4>1$) donc par critère de comparaison (les intégrandes sont positives), $ \int_1^{+ \infty}  \frac{1}{(1 + t^{2})^{2}} \dt$ converge et ainsi $I$ converge (par continuité de l'intégrande sur $[0,1]$).
 
 \medskip
 
@@ -438,7 +445,7 @@ On en déduit que $I = \dfrac{\pi}{4} \cdot$
   \item
     Montrer que :
     \[
-\int_{0}^{ + \infty} \frac{\d x}{x^{3} + 1} = \int_{0}^{ + \infty} \frac{x}{x^{3} + 1}\dx
+\int_{0}^{ + \infty} \frac{\dx}{x^{3} + 1} = \int_{0}^{ + \infty} \frac{x}{x^{3} + 1}\dx
     \]
   \item
     En déduire la valeur de cette intégrale.
@@ -450,7 +457,7 @@ On en déduit que $I = \dfrac{\pi}{4} \cdot$
 \begin{enumerate}
 \item Notons $I$ la première intégrale. La fonction $x \mapsto \frac{1}{x^{3} + 1}$ est continue sur $\mathbb{R}_+$ (pour tout réel $x \geq 0$, $x^3+1 \geq 1>0$) : L'intégrale $I$ est impropre en $+ \infty$. On a :
 $$  \frac{1}{x^{3} + 1} \underset{+ \infty}{\sim} \dfrac{1}{x^3} $$
-L'intégrale $\dis \int_1^{+\infty} \dfrac{\dx}{x^3}$ converge (intégrale de Riemann avec $3>1$) donc par critère de comparaison (les intégrandes sont positives), on en déduit que $\dis \int_1^{+\infty} \dfrac{\dx}{1+x^3}$ converge et ainsi $I$ converge (par continuité de l'intégrande sur $[0,1]$). 
+L'intégrale $\int_1^{+\infty} \dfrac{\dx}{x^3}$ converge (intégrale de Riemann avec $3>1$) donc par critère de comparaison (les intégrandes sont positives), on en déduit que $\int_1^{+\infty} \dfrac{\dx}{1+x^3}$ converge et ainsi $I$ converge (par continuité de l'intégrande sur $[0,1]$). 
 
 \medskip
 
@@ -468,7 +475,7 @@ et ainsi :
 $$ (1+u)(1-u+u^2) = 1+u^3$$
 On a alors :
 \begin{align*}
-I+I & = \int_{0}^{ + \infty} \frac{\d x}{x^{3} + 1} + \int_{0}^{ + \infty} \frac{x}{x^{3} + 1}\dx\\
+I+I & = \int_{0}^{ + \infty} \frac{\dx}{x^{3} + 1} + \int_{0}^{ + \infty} \frac{x}{x^{3} + 1}\dx\\
 & = \int_{0}^{ + \infty} \frac{1+x}{x^{3} + 1} \dx \\
 & = \int_{0}^{ + \infty} \frac{1}{x^2-x+1} \dx \\
 & = \int_{0}^{ + \infty} \frac{1}{(x-1/2)^2-1/4+1} \dx \\
@@ -535,9 +542,9 @@ donc $-I=-J$ et ainsi $I=J$.
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Théorème de convergence dominée}}}
-\end{center}
+
+\subsection{Théorème de convergence dominée}
+
 
 \medskip
 
@@ -662,7 +669,7 @@ D'après le théorème de convergence dominée, on en déduit que :
 \end{align*}
 
 
- \begin{Exercice}{} Déterminer $\dis \lim_{n \rightarrow + \infty} \int_{0}^{ + \infty} \frac{\dx}{x^{n} + \e^{x}} \cdot$
+ \begin{Exercice}{} Déterminer $\lim_{n \rightarrow + \infty} \int_{0}^{ + \infty} \frac{\dx}{x^{n} + \e^{x}} \cdot$
  \end{Exercice}
  
  \corr Posons pour tout entier $n \geq 0$, $f_n : \mathbb{R}_+ \rightarrow \mathbb{R}$ la fonction définie par :
@@ -700,7 +707,7 @@ Ainsi,
 \begin{Exercice}{}
 Pour tout $n \geq 1$, on pose $f_n(t) = \left( 1 - \dfrac{t}{n} \right)^{n-1}\ln(t)$ si $t \in ]0,n]$ et $f_n(t)=0$ si $t>n$.
 \begin{enumerate}
-\item Montrer que : $\dis \lim_{n \rightarrow + \infty} \int_{0}^n f_n(t) \dt = \int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt$.
+\item Montrer que : $\lim_{n \rightarrow + \infty} \int_{0}^n f_n(t) \dt = \int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt$.
 \item Sachant que quand $n$ tend vers $+ \infty$,
 $$ \sum_{k=1}^n \dfrac{1}{k} = \ln(n)+ \gamma + o(1)$$
 où $\gamma$ est la constante d'Euler, montrer que :
@@ -746,7 +753,7 @@ et la fonction $t \mapsto \dfrac{1}{t^2}$ est intégrable sur $[1, + \infty[$ (i
 D'après le théorème de convergence dominée, on en déduit que $f$ est intégrable sur $\mathbb{R}_+^{*}$ et que :
 $$ \lim_{n \rightarrow + \infty} \int_{0}^{+ \infty} f_n(t) \dt = \int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt$$
 et ainsi :
-$$\dis \lim_{n \rightarrow + \infty} \int_{0}^n f_n(t) \dt = \int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt$$
+$$\lim_{n \rightarrow + \infty} \int_{0}^n f_n(t) \dt = \int_{0}^{+ \infty} \dfrac{\ln(t)}{e^t} \dt$$
 \item Soit $n \geq 1$. Le changement de variable $u : t \mapsto \dfrac{t}{n}$ est licite (car affine) et donne :
 \begin{align*}
 \int_{0}^n f_n(t) \dt & = \int_{0}^n \left(1 - \dfrac{t}{n}\right)^{n-1} \ln(t) \dt \\
@@ -782,13 +789,13 @@ Les fonctions $U : u \mapsto 1-(1-u)^n$ (le choix de cette primitive se fait à 
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Théorème d'intégration terme à terme}}}
-\end{center}
+
+\subsection{Théorème d'intégration terme à terme}
+
 
 \medskip
 
-\begin{Exercice}{} Montrer que $\dis \int_{0}^{+ \infty} \frac{\sin(x)}{e^x-1} \dx = \sum_{n=1}^{+ \infty} \frac{1}{n^2+1}\cdot$
+\begin{Exercice}{} Montrer que $\int_{0}^{+ \infty} \frac{\sin(x)}{e^x-1} \dx = \sum_{n=1}^{+ \infty} \frac{1}{n^2+1}\cdot$
 \end{Exercice}
 
 \corr On utilise le théorème d'intégration terme à terme. Pour tout réel $x>0$, on a :
@@ -799,7 +806,7 @@ où pour tout entier $k \geq 0$, $f_k : \mathbb{R}_+^* \rightarrow \mathbb{R}$ e
 $$ f_k(x) = \dfrac{\sin(x)}{e^x} (e^{-x})^k = \sin(x) e^{-(k+1)x}$$
 
 \begin{itemize}
-\item La série de fonctions $\dis \sum_{n \geq 0} f_n$ converge simplement sur $\mathbb{R}_+^*$ et en notant $S$ sa somme, on a pour tout réel $x>0$,
+\item La série de fonctions $\sum_{n \geq 0} f_n$ converge simplement sur $\mathbb{R}_+^*$ et en notant $S$ sa somme, on a pour tout réel $x>0$,
 $$ S(x)= \sum_{k=0}^{+ \infty} \dfrac{\sin(x)}{e^x-1}$$
 La fonction $S$ est continue sur $\mathbb{R}_+^*$.
 \item Pour tout entier $k \geq 0$, $f_k$ est continue sur $\mathbb{R}_+^*$. Pour tout réel $x>0$ et d'après l'inégalité des accroissements finis (inégalité classique liée au sinus),
@@ -845,7 +852,7 @@ $$ \int_0^{+ \infty} \dfrac{x}{e^x-1} \dx = \sum_{k=0}^{+ \infty} \dfrac{1}{1+(k
 \begin{enumerate}
 \item Déterminer une suite de fonctions $(u_n)_{n \geq 0}$, définies sur $]0,1[$ et à valeurs dans $\mathbb{R}$, telles que pour tout réel $t \in ]0,1[$,
 $$ \dfrac{t^{a-1}}{1+t^b} = \sum_{k=0}^{+ \infty} u_k(t)$$
-\item Déterminer la nature de $\dis \sum_{n \geq 0} \int_0^1 \vert u_n(t) \vert \dt$? Qu'en déduit-on ?
+\item Déterminer la nature de $\sum_{n \geq 0} \int_0^1 \vert u_n(t) \vert \dt$? Qu'en déduit-on ?
 \item Montrer que :
 $$ \sum_{n=0}^{+ \infty} \dfrac{(-1)^n}{a+nb} = \int_0^1 \dfrac{t^{a-1}}{1+t^b} \dt$$
 \end{enumerate}
@@ -868,7 +875,7 @@ Sachant que $a+bk>0$, on en déduit que :
 $$ \lim_{\varepsilon \rightarrow 0}  \int_{\varepsilon}^1 \vert u_k(t) \vert \dt  = \dfrac{1}{a+bk}$$
 et ainsi :
 $$ \int_0^1 \vert u_k(t) \vert \dt = \dfrac{1}{a+bk}$$
-La série de terme général $ \dfrac{1}{a+bk}$ est divergente car à termes positifs et son terme général est équivalent (à constante près) au terme général de la série harmonique. Ainsi, $\dis \sum_{n \geq 0} \int_0^1 \vert u_n(t) \vert \dt$ diverge.
+La série de terme général $ \dfrac{1}{a+bk}$ est divergente car à termes positifs et son terme général est équivalent (à constante près) au terme général de la série harmonique. Ainsi, $\sum_{n \geq 0} \int_0^1 \vert u_n(t) \vert \dt$ diverge.
 
 \medskip
 
@@ -905,11 +912,11 @@ $$\int_0^1 \dfrac{t^{a-1}}{1+t^b} \dx =\sum_{k=0}^{+ \infty} \dfrac{(-1)^k}{a+bk
  
 
 
-\begin{Exercice}{}\label{gamma} Soit $I = \dis \int_{0}^{+ \infty} \frac{x}{\sh(x)} \dx$.
+\begin{Exercice}{}\label{gamma} Soit $I = \int_{0}^{+ \infty} \frac{x}{\sh(x)} \dx$.
 
 \begin{enumerate}
 \item Montrer l'existence de $I$.
-\item Montrer que $I= \dis \sum_{n=0}^{+ \infty} \frac{2}{(2n+1)^2}\cdot$
+\item Montrer que $I= \sum_{n=0}^{+ \infty} \frac{2}{(2n+1)^2}\cdot$
 \end{enumerate}
 \end{Exercice} 
 
@@ -933,7 +940,7 @@ car
 \end{align*}
 et d'après le théorème des croissances comparées :
 $$ \lim_{x \rightarrow + \infty} \dfrac{2x^3}{e^{x}} = 0$$
-L'intégrale $\dis \int_1^{+ \infty} \dfrac{1}{x^2} \dx$ est convergente (intégrale de Riemann avec $2>1$) donc par critère de comparaison (les intégrandes sont positives), on en déduit que $\dis \int_1^{+ \infty} \dfrac{x}{\sh(x)} \dx$ est convergente et ainsi $I$ converge (par fausse impropreté en $0$).
+L'intégrale $\int_1^{+ \infty} \dfrac{1}{x^2} \dx$ est convergente (intégrale de Riemann avec $2>1$) donc par critère de comparaison (les intégrandes sont positives), on en déduit que $\int_1^{+ \infty} \dfrac{x}{\sh(x)} \dx$ est convergente et ainsi $I$ converge (par fausse impropreté en $0$).
 \item Pour tout réel $x>0$,
 \begin{align*}
 \dfrac{x}{\sh(x)} & = \dfrac{2x}{e^x-e^{-x}} \\
@@ -949,9 +956,9 @@ $$ f_k(x) \underset{ + \infty}{=} o \left( \dfrac{1}{x^2} \right)$$
 car 
 $$ \lim_{x \rightarrow + \infty} 2x^3 e^{-(2k+1)x} = 0$$
 d'après le théorème des croissances comparées ($2k+1>0$). La fonction $x \mapsto \dfrac{1}{x^2}$ est intégrable sur $[1, + \infty[$ donc par critère de comparaison $f_k$ l'est aussi et ainsi $f_k$ est donc intégrable sur $\mathbb{R}_+^*$ (par continuité sur $]0,1[$). 
-\item La série de fonctions $\dis \sum_{n \geq 0} f_n$ converge simplement sur $\mathbb{R}_+^*$ vers la fonction continue $S : \mathbb{R}_+^* \rightarrow \mathbb{R}$ définie par :
+\item La série de fonctions $\sum_{n \geq 0} f_n$ converge simplement sur $\mathbb{R}_+^*$ vers la fonction continue $S : \mathbb{R}_+^* \rightarrow \mathbb{R}$ définie par :
 $$ \forall x >0, \; S(x) = \dfrac{x}{\sh(x)}$$
-\item Étudions la nature de $\dis \sum_{n \geq 0} \int_{0}^{+ \infty} \vert f_n(t) \vert \dt$. Pour tout entier $k \geq 0$,
+\item Étudions la nature de $\sum_{n \geq 0} \int_{0}^{+ \infty} \vert f_n(t) \vert \dt$. Pour tout entier $k \geq 0$,
 $$ \int_0^{+ \infty} \vert f_k(t) \vert \dt = 2 \int_0^{+\infty} x e^{-(2k+1)x} \dx$$
 ou encore avec le changement de variable affine (donc licite car $f_k$ est intégrable sur $\mathbb{R}_+^*$) $u : x \mapsto (2k+1)x$ :
 $$  \int_0^{+ \infty} \vert fkn(t) \vert \dt = \dfrac{2}{(2k+1)^2} \int_0^{+\infty} u e^{-u} \textrm{d}u$$
@@ -959,7 +966,7 @@ Par  intégration par parties (bien justifiée), on a :
 $$ \int_0^{+\infty} u e^{-u} \textrm{d}u = 1$$
 On sait que :
 $$ \dfrac{2}{(2k+1)^2} \underset{+ \infty}{\sim} \dfrac{1}{2k^2}$$
-La série de terme général $\dfrac{1}{2k^2}$ converge (série de Riemann avec $2>1$) donc par critère de comparaison pour des séries à termes positifs, on en déduit que $\dis \sum_{n \geq 0} \int_{0}^{+ \infty} \vert f_n(t) \vert \dt$ converge.
+La série de terme général $\dfrac{1}{2k^2}$ converge (série de Riemann avec $2>1$) donc par critère de comparaison pour des séries à termes positifs, on en déduit que $\sum_{n \geq 0} \int_{0}^{+ \infty} \vert f_n(t) \vert \dt$ converge.
 \end{itemize}
 D'après le théorème d'intégration, on en déduit que $S$ est intégrable sur $\mathbb{R}_+^*$ et on a :
 $$ \int_0^{+ \infty} S(x) \dx = \sum_{k=0}^{+ \infty} \int_0^{+ \infty} f_k(x) \dx$$
@@ -979,7 +986,7 @@ $$ \int_0^{+ \infty} \dfrac{x}{\sh(x)} \dx = \sum_{k=0}^{+ \infty} \dfrac{2}{(2k
   \item
     En déduire que :
     \[
-    \int_{0}^{1} x^{ - x} \d x = \sum_{n = 1}^{ + \infty} n^{ - n}
+    \int_{0}^{1} x^{ - x} \dx = \sum_{n = 1}^{ + \infty} n^{ - n}
     \]
   \end{enumerate}
 \end{Exercice}
@@ -1009,14 +1016,14 @@ où pour tout entier $k \geq 0$, $f_k : ]0,1] \rightarrow \mathbb{R}$ est défin
 $$ \forall x \in ]0,1], \; f_k(x) =  \dfrac{(-1)^k x^k \ln(x)^k}{k!}$$
 \begin{itemize}
 \item Pour tout entier $k \geq 0$, $f_k$ est continue sur $]0,1]$ et intégrable sur $]0,1]$ d'après la question précédente ($I_k(k)$ converge ce qui donne le résultat au signe près!).
-\item La série de fonctions $\dis \sum_{n \geq 0} f_n$ converge simplement sur $]0,1]$ et sa somme est $x \mapsto x^{-x}$ qui est continue sur $]0,1]$.
-\item Étudions la nature de $\dis \sum_{n \geq 0} \int_0^1 \vert f_k(x) \vert\dx$. Pour tout entier $k \geq 0$,
+\item La série de fonctions $\sum_{n \geq 0} f_n$ converge simplement sur $]0,1]$ et sa somme est $x \mapsto x^{-x}$ qui est continue sur $]0,1]$.
+\item Étudions la nature de $\sum_{n \geq 0} \int_0^1 \vert f_k(x) \vert\dx$. Pour tout entier $k \geq 0$,
 $$ \int_0^1 \vert f_k(x) \vert\dx = \dfrac{(-1)^k I_k(k)}{k!} = \dfrac{(-1)^k(-1)^k k!}{k! (k+1)^{k+1}} = \dfrac{1}{(k+1)^{k+1}}$$
 Pour tout entier $k \geq 1$, $k+1 \geq 2$ donc : 
 $$ (k+1)^{k+1} \geq (k+1)^2 >0$$
 donc par décroissance de la fonction inverse sur $\mathbb{R}_+^{*}$ :
 $$ 0 \leq \dfrac{1}{(k+1)^{k+1}} \leq \dfrac{1}{(k+1)^2}$$
-La série de terme général positif $\dfrac{1}{(k+1)^2}$ converge (série de Riemann translatée convergente) donc par critère de comparaison, on en déduit que la série de terme général $\dfrac{1}{(k+1)^{k+1}}$ converge et ainsi $\dis \sum_{n \geq 0} \int_0^1 \vert f_k(x) \vert\dx$ converge.
+La série de terme général positif $\dfrac{1}{(k+1)^2}$ converge (série de Riemann translatée convergente) donc par critère de comparaison, on en déduit que la série de terme général $\dfrac{1}{(k+1)^{k+1}}$ converge et ainsi $\sum_{n \geq 0} \int_0^1 \vert f_k(x) \vert\dx$ converge.
 \end{itemize}
 D'après le théorème d'intégration terme à terme, on en déduit que $x \mapsto x^{-x}$ est intégrable sur $]0,1]$ et on a :
 \begin{align*}
@@ -1030,22 +1037,22 @@ D'après le théorème d'intégration terme à terme, on en déduit que $x \maps
 
 \medskip
 
-\begin{center}
-\textit{{ {\large Suites et fonctions définies par des intégrales}}}
-\end{center}
+
+\subsection{Suites et fonctions définies par des intégrales}
+
 
 \medskip
 
 \begin{Exercice}{} Pour $n\in\N,$ on pose :
-$$I_n=\dis\int_0^{+\infty} t^ne^{-t} \dt$$
-Justifier l'existence de $I_n$. D\'eterminer une relation liant $I_n$ et $I_{n+1}$ puis en d\'eduire la valeur de $I_n.$
+$$I_n=\int_0^{+\infty} t^ne^{-t} \dt$$
+Justifier l'existence de $I_n$. Déterminer une relation liant $I_n$ et $I_{n+1}$ puis en déduire la valeur de $I_n.$
 \end{Exercice} 
 
 \corr Soit $n \in \mathbb{N}$. La fonction $t \mapsto  t^ne^{-t}$ est continue sur $\mathbb{R}$ : $I_n$ est impropre en $+ \infty$. On a :
 $$ t^n e^{-t} \underset{ +\infty}{=} o \left( \dfrac{1}{t^2} \right)$$
 car par théorème des croissances comparées :
 $$ \lim_{t \rightarrow + \infty} t^{n+2} e^{-t}=0$$
-L'intégrale $\dis \int_1^{+ \infty} \dfrac{1}{t^2} \dt$ converge (intégrale de Riemann avec $2>1$) donc par critère de comparaison (les intégrandes sont positives), on en déduit que $\dis \int_1^{+ \infty} t^n e^{-t} \dt$ converge et ainsi $I_n$ converge (par continuité de l'intégrande sur $[0,1]$).
+L'intégrale $\int_1^{+ \infty} \dfrac{1}{t^2} \dt$ converge (intégrale de Riemann avec $2>1$) donc par critère de comparaison (les intégrandes sont positives), on en déduit que $\int_1^{+ \infty} t^n e^{-t} \dt$ converge et ainsi $I_n$ converge (par continuité de l'intégrande sur $[0,1]$).
 
 \medskip
 
@@ -1115,7 +1122,7 @@ puis :
 $$ u_n = \exp \left( - \dfrac{1}{3} \ln(n) \right) e^{\ell} e^{o(1)} \underset{+ \infty}{\sim} \dfrac{e^{\ell}}{n^{1/3}}$$
 \end{enumerate}
 
-\begin{Exercice}{} On considère $f$ définie par $f(x)= \dis \int_x^{+ \infty} \dfrac{\sin(t)}{t^2} \dt$.
+\begin{Exercice}{} On considère $f$ définie par $f(x)= \int_x^{+ \infty} \dfrac{\sin(t)}{t^2} \dt$.
 \begin{enumerate}
 \item Montrer que $f$ est définie et dérivable sur $\mathbb{R}_+^{*}$.
 \item Montrer que $f(x) \underset{0}{\sim} -\ln(x)$.
@@ -1146,7 +1153,7 @@ Remarquons maintenant que :
 $$ \dfrac{\sin(t)-t}{t^2} \underset{0}{\sim} \dfrac{-t^3/6}{t^2} = - \dfrac{t}{6}$$
 et ainsi :
 $$ \lim_{t \rightarrow 0}  \dfrac{\sin(t)-t}{t^2} =0$$
-Finalement, l'intégrale $\dis \int_{0}^{1} \dfrac{\sin(t)-t}{t^2} \dt$ est faussement impropre en $0$ donc convergente. Ainsi, il existe $K \in \mathbb{R}$ tel que :
+Finalement, l'intégrale $\int_{0}^{1} \dfrac{\sin(t)-t}{t^2} \dt$ est faussement impropre en $0$ donc convergente. Ainsi, il existe $K \in \mathbb{R}$ tel que :
 $$ \lim_{x \rightarrow 0}  \int_{1}^{+ \infty} \dfrac{\sin(t)}{t^2} \dt + \int_{x}^{1} \dfrac{\sin(t)-t}{t^2} \dt = K$$
 et donc :
 $$ f(x) \underset{0}{=} K + o(1) - \ln(x)$$
@@ -1181,21 +1188,21 @@ Par critère de comparaison (avec des fonctions de références), on en déduit 
 %
 %\begin{multicols}{3}
 %\begin{enumerate}
-%\item $I_1=\dis \int_{0}^{+ \infty} e^{-x^2} \dx$.
-%\item $I_2= \dis \int_{-\pi/2}^{\pi/2} \ln(1+ \sin(x)) \dx$
-%\item $I_3= \dis \int_{0}^{+ \infty} \dfrac{1+\sin(t)}{1+\sqrt{t^3}} \dt$
-%\item $I_4=  \dis \int_{0}^{1} -e^{-x} \ln(x)  \dx$
-%\item $I_5=  \dis \int_{0}^{+ \infty} \dfrac{1}{ch(t) - \cos(t)} \dt$
-%\item $I_6= \dis \int_{0}^{1} \dfrac{\ln(x)}{\sqrt{x}} \dx$
-%\item $I_7 = \dis \int_{1}^{+ \infty} \frac{\sin(x)}{x^2} \dx$
-%\item $I_8 = \dis \int_{2}^3 \frac{\sin \left( \frac{1}{x-2} \right)}{\sqrt{(x-2)(3-x)}}  \dx$
-%\item $I_{9} = \dis \int_{1}^{+ \infty} \frac{1}{t} \left(e^{\frac{1}{t}}- \cos \left( \frac{1}{t} \right) \right) \dt \; $
-%\item $I_{10} = \dis \int_{1}^{+\infty}  \frac{1}{x} \sin \left( \frac{1}{x} \right) \dx$
-%\item $I_{11} = \dis \int_{1}^{ + \infty} \frac{\arctan(t)}{t^2} \dt$.
-%\item $I_{12} = \dis \int_{1}^{+ \infty} \frac{1}{(x-1)^a (x+1)} \dx$ 
-%\item $I_{13} = \dis \int_{0}^{\pi} \frac{\dx}{(1-\cos(x))^a}$
-%\item $I_{14} = \dis \int_{0}^{\pi/2} \ln(\sin(x)) \dx$
-%\item $I_{15} = \dis \int_{1}^{3} \frac{1}{\sqrt{x^3-1}} \dx$
+%\item $I_1=\int_{0}^{+ \infty} e^{-x^2} \dx$.
+%\item $I_2= \int_{-\pi/2}^{\pi/2} \ln(1+ \sin(x)) \dx$
+%\item $I_3= \int_{0}^{+ \infty} \dfrac{1+\sin(t)}{1+\sqrt{t^3}} \dt$
+%\item $I_4=  \int_{0}^{1} -e^{-x} \ln(x)  \dx$
+%\item $I_5=  \int_{0}^{+ \infty} \dfrac{1}{ch(t) - \cos(t)} \dt$
+%\item $I_6= \int_{0}^{1} \dfrac{\ln(x)}{\sqrt{x}} \dx$
+%\item $I_7 = \int_{1}^{+ \infty} \frac{\sin(x)}{x^2} \dx$
+%\item $I_8 = \int_{2}^3 \frac{\sin \left( \frac{1}{x-2} \right)}{\sqrt{(x-2)(3-x)}}  \dx$
+%\item $I_{9} = \int_{1}^{+ \infty} \frac{1}{t} \left(e^{\frac{1}{t}}- \cos \left( \frac{1}{t} \right) \right) \dt \; $
+%\item $I_{10} = \int_{1}^{+\infty}  \frac{1}{x} \sin \left( \frac{1}{x} \right) \dx$
+%\item $I_{11} = \int_{1}^{ + \infty} \frac{\arctan(t)}{t^2} \dt$.
+%\item $I_{12} = \int_{1}^{+ \infty} \frac{1}{(x-1)^a (x+1)} \dx$ 
+%\item $I_{13} = \int_{0}^{\pi} \frac{\dx}{(1-\cos(x))^a}$
+%\item $I_{14} = \int_{0}^{\pi/2} \ln(\sin(x)) \dx$
+%\item $I_{15} = \int_{1}^{3} \frac{1}{\sqrt{x^3-1}} \dx$
 %\end{enumerate}
 %\end{multicols}
 
@@ -1222,12 +1229,12 @@ Par critère de comparaison (avec des fonctions de références), on en déduit 
 %\end{enumerate}
 %
 %
-%\exo Calculer $\dis \lim_{n \to + \infty} \int_{0}^{ + \infty} \frac{n!}{\prod_{k = 1}^{n} {(k + x)}} \dx$.
+%\exo Calculer $\lim_{n \to + \infty} \int_{0}^{ + \infty} \frac{n!}{\prod_{k = 1}^{n} {(k + x)}} \dx$.
 
 
 %\exo  \begin{enumerate}
 %  \item
-%    Démontrer la convergence de la série de terme général $\dis a_{n} = \frac{n!}{n^{n}}\cdot$
+%    Démontrer la convergence de la série de terme général $a_{n} = \frac{n!}{n^{n}}\cdot$
 %  \item
 %    Comparer pour $n \geq 1$,
 %    \[

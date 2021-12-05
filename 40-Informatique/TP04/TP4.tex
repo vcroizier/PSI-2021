@@ -1,0 +1,293 @@
+\documentclass[french,11pt,twoside]{VcCours}
+%cSpell:ignore Fact mystere Fibo Puiss
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Informatique}{TP d'info n°4 -- Récursivité}
+
+\tableofcontents
+\separationTitre
+
+
+\section{Cours}
+
+\subsection{Principe}
+
+\begin{Definition}{}
+    On dit qu'une fonction est \emph{récursive} si elle s'appelle elle-même.
+\end{Definition}
+
+Les fonctions récursives sont régulièrement utilisées quand on étudie un problème qui peut se décomposer en sous-problèmes.
+
+\begin{Exercice}{} On sait que pour tout entier naturel $n$, on a :
+\begin{itemize}
+\item $0!=1$.
+\item $n!=n \times (n-1)!$ si $n \geq 1$. Ainsi, le calcul de $n!$ se ramène à celui de $(n-1)!$.
+\end{itemize}
+Voici donc deux manières (une itérative et une récursive) de définir une fonction factorielle prenant en argument un entier $n$ et renvoyant la valeur de $n!$ :
+\end{Exercice}
+
+\vspace{-2em}
+\begin{multicols}{2}
+\begin{center}
+    \emph{Version itérative}
+\end{center}
+\begin{Python}
+def Fact(n):
+    prod=1
+    for i in range(1,n+1):
+        prod*=i
+    return prod
+\end{Python} 
+\columnbreak
+\begin{center}
+    \emph{Version récursive}
+\end{center}
+\begin{Python}
+def Fact(n):
+    if n==0:
+        return 1
+    return n*Fact(n-1)
+\end{Python} 
+\end{multicols}
+
+\newpage
+Avant d'écrire une fonction récursive, il faut penser à :
+\begin{itemize}
+\item déterminer le cas (ou les) cas de base : la fonction retourne directement une valeur dans ce cas.
+\item déterminer les appels récursifs que l'on va effectuer : comment passer d'un problème à un sous-problème plus petit ?
+\end{itemize}
+\begin{Exercice}{} 
+    Considérons la fonction suivante, qu'affiche \code{mystere(4)} ?
+\end{Exercice}
+
+\begin{Python}
+def mystere(n):
+    if n==1:
+        return 1
+    return n+mystere(n-1)
+\end{Python} 
+
+
+\vspace{4cm}
+
+
+\subsection{Terminaison}
+
+Quand on définit une fonction récursive, il faut savoir prouver que celle-ci se termine. Généralement, il suffit de justifier que nécessairement, après un nombre fini d'appels, on se ramène au cas de base. 
+
+\begin{Exercice}{} Reprenons la fonction, ci-dessous, permettant de calculer la factorielle d'un entier.
+
+Cette fonction se termine nécessairement si $n$ est un entier naturel car si $n=0$, la fonction renvoie $1$ et si $n>0$, on appelle la fonction avec l'argument $n-1$ ($n$ \og diminue \fg). Par contre si $n<0$, la fonction ne se termine pas.
+\end{Exercice}
+\begin{Python}
+def Fact(n):
+    if n==0:
+        return 1
+    return n*Fact(n-1)
+\end{Python} 
+
+\begin{Remarque}{} 
+Il est important de définir des fonctions récursives qui se terminent : il faut donc avoir un (ou plusieurs) cas de base mais aussi vérifier qu'on s'y ramène effectivement. Python limite de toute façon le nombre d'appels récursifs à $1000$ et affichera un joli message d'erreur en cas de problème :
+
+\begin{center}
+\code{RecursionError : maximum recursion depth exceeded}
+\end{center}
+\end{Remarque}
+
+\subsection{Correction d'un algorithme récursif}
+
+Lors de la définition d'une fonction récursive, une question importante est de savoir si celle-ci est correct, c'est-à-dire de savoir si elle fait ce que l'on attend d'elle. Généralement, on peut faire cela par récurrence. 
+
+\begin{Exercice}{} Reprenons la fonction permettant de calculer la factorielle d'un entier.
+
+    Montrons par récurrence que pour tout entier $n \geq 0$, Fact($n$) renvoie $n!$.
+\end{Exercice}
+
+\begin{Python}
+def Fact(n):
+    if n==0
+        return 1
+    return n*Fact(n-1)
+\end{Python} 
+
+\vspace{8cm}
+
+\subsection{Complexité}
+Pour déterminer la complexité temporelle d'une fonction récursive, on détermine usuellement une relation (égalité, inégalité...) de récurrence.
+
+\begin{Exercice}{} Reprenons la fonction permettant de calculer la factorielle d'un entier :
+\end{Exercice}
+
+\begin{Python}
+def Fact(n):
+    if n==0
+        return 1
+    return n*Fact(n-1)
+\end{Python} 
+
+Notons $C(n)$ le nombre d'opérations effectuées par Fact($n$). Si l'on considère qu'un test d'égalité et qu'une multiplication comptent pour une opération, on obtient que pour tout $n \geq 1$,
+$$ C(n) = 2+C(n-1)$$
+et ainsi :
+$$ C(n)= C(0)+2n$$
+Ainsi $C(n)=O(n)$ et pas mieux donc la complexité est \emph{linéaire}.
+
+
+\begin{Remarque}{} Si une fonction $f$ effectue à chaque appel récursif un nombre constant d'opérations et un appel à $f(n-1)$ alors la complexité est linéaire.
+\end{Remarque}
+
+\newpage
+\section{TP}
+\subsection{Suite de Fibonacci}
+Soit $(u_n)_{n\geq 0}$ la suite définie par $u_0=1$, $u_1=1$ et pour tout entier $n \geq 0$ par :
+$$ u_{n+2}=u_{n+1}+u_n$$
+
+\begin{enumerate}
+\item Écrire une fonction Fibo1, sans récursivité, prenant en argument un entier $n$ et qui renvoie $u_n$.
+\item Écrire une fonction Fibo2, avec récursivité, prenant en argument un entier $n$ et qui renvoie $u_n$.
+\item Notons $C_1(n)$ le nombre d'opérations effectuées par Fibo1$(n$). Déterminer $C_1(n)$. Qu'en déduit-on?
+\item Notons $C_2(n)$ le nombre d'opérations effectuées par Fibo2$(n$). Justifier l'existence d'une constante $K> 0$ tel que pour tout entier $n \geq 0$,
+$$ C_{2}(n+2) = K + C_2(n+1)+C_2(n)$$
+Montrer par récurrence que pour tout $n \geq 0$,
+$$ C_2(n) \geq u_n$$
+\item Démontrer l'existence de deux constantes $A,B>0$ telles que pour tout $n \geq 0$,
+$$ C_2(n) \geq  A \left( \frac{1- \sqrt{5}}{2} \right)^n + B \left( \frac{1+ \sqrt{5}}{2} \right)^n  $$
+Qu'en déduit-on?                     
+\end{enumerate}
+\subsection{Algorithme d'Euclide}
+
+On peut utiliser l'algorithme d'Euclide pour déterminer le PGCD de deux entiers naturels non nuls. Le principe de cet algorithme est le suivant : on considère deux entiers naturels non nuls $a$ et $b$ et on effectue le division euclidienne de $a$ par $b$. Il existe alors un unique couple d'entiers $(q,r)$ où $r<b$ et tel que :
+$$a =bq+r$$
+On sait alors que PGCD($a$,$b$)=PGCD($b$,$r$). On recommence ainsi jusqu'à ce que le reste soit nul (ce qui arrive nécessairement car la suite des restes est une suite strictement décroissante d'entiers naturels). Le PGCD de $a$ et $b$ est alors le dernier reste non nul.
+
+Écrire une fonction pgcd prenant en argument deux entiers naturels non nuls $a$ et $b$ et qui renvoie le PGCD de $a$ et $b$.
+
+\subsection{Comment fonctionne **  sur python?}
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Écrire une fonction récursive Puiss1 qui prend en arguments un réel $x$ et un entier $n \geq 0$ et qui renvoie la valeur de $x^n$. On utilisera le simple fait que $x^0=1$ et que $x^{n+1}=x^n \times x$.
+\item Que peut-on dire concernant la complexité temporelle ?
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Pour tout réel $x$, on a :
+$$x^n = \left\lbrace \begin{array}{cll}
+(x^{\frac{n}{2}})^2 & \hbox{ si } n \hbox{ est pair} \\
+x \times (x^{\frac{n-1}{2}})^2  & \hbox{ si } n \hbox{ est impair} \\
+\end{array}\right.$$
+En utilisant cette remarque, écrire une fonction récursive Puiss2 qui prend en arguments un réel $x$ et un entier $n \geq 0$ et qui renvoie la valeur de $x^n$.
+\item Notons pour tout $n \geq 0$, $C(n)$ le nombre d'opérations effectuées par Puiss2$(n)$. Montrer qu'il existe une constante $K>0$ tel que pour tout $n \geq 1$,
+$$ C(n) \leq K + C \left( \left\lfloor\frac{n}{2} \right\rfloor\right)$$
+On peut alors en déduire l'existence de deux réels strictement positifs $A$ et $B$ tels que pour tout entier $n \geq 1$,
+$$ C(n) \leq A \ln(n) +B$$
+et ainsi $C(n)=O(\ln(n))$ : la complexité est au plus logarithmique. C'est cette algorithme qui est utilisé par Python pour le calcul de puissances.
+\end{enumerate}
+\end{enumerate}
+
+
+
+               
+%\subsection{La courbe de Von Koch}
+%La courbe est de Von Koch est ce que l'on appelle une courbe fractale. On peut la construire de la manière suivante à partir d'un segment de droite donné (qui sera dans le TP le segment $[0,1]$) :
+%
+%\begin{itemize}
+%\item On divise ce segment en trois segments de longueurs égales.
+%\item On construit un triangle équilatéral ayant pour base le segment médian de l'étape précédente.
+%\item On supprime le segment étant la base du triangle de l'étape précédente.
+%\item On recommence avec chaque segment de la construction obtenue.
+%\end{itemize}
+%La courbe de Von Koch est la courbe \og limite \fg obtenue lorsque l'on effectue une infinité de fois les étapes précédentes. Voici quelques graphiques (étapes 0, 1, 2 et 3) :
+%
+%\begin{multicols}{2}
+%
+%\begin{center}
+%\includegraphics[scale=0.45]{Koch1}
+%\end{center}
+%
+%\begin{center}
+%\includegraphics[scale=0.45]{Koch3}
+%\end{center}
+%
+%\columnbreak
+%
+%\begin{center}
+%\includegraphics[scale=0.45]{Koch2}
+%\end{center}
+%
+%\begin{center}
+%\includegraphics[scale=0.45]{Koch4}
+%\end{center}
+%\end{multicols}
+%
+%\medskip
+%
+%Le but est d'écrire une fonction \textrm{Koch} dépendant d'un entier naturel $n$ et deux points du plan $A$ et $B$ et qui trace les courbes précédentes après $n$ étapes (en partant du segment $[AB]$). Voici quelques indications :
+%
+%\begin{enumerate}
+%\item Dans le cas où $n$ est nul, vous devez tracer le segment $[AB]$.
+%\item Un point $A$ du plan peut être défini à l'aide de \emph{numpy} (importé comme $np$) de la manière suivante :
+%\begin{center}
+%\begin{boxedminipage}{4.4cm}
+%\begin{Python}
+%A=np.array([[xA],[yA]])
+%\end{Python} 
+%\end{boxedminipage}
+%\end{center}
+%
+%\item L'image d'un point $C$ par la rotation de centre $D$ d'angle $\dfrac{\pi}{3}$ a pour coordonnées : 
+%$$ \begin{pmatrix}
+%x_D \\
+%y_D \\
+%\end{pmatrix} + \begin{pmatrix}
+%\cos ( \pi/3) & - \sin(\pi/3) \\
+%\sin(\pi/3) & \cos(\pi/3) \\
+%\end{pmatrix} \begin{pmatrix}
+%x_C-x_D \\
+%y_C -y_D\\
+%\end{pmatrix}$$
+%\item Pour tracer un segment $[AB]$, on peut utiliser \emph{pylab} (importé comme pl) et la commande :
+%\begin{center}
+%\begin{boxedminipage}{6.2cm}
+%\begin{Python}
+%pl.plot([A[0],B[0]],[A[1],B[1]])
+%pl.axis('equal')
+%\end{Python} 
+%\end{boxedminipage}
+%\end{center}
+%
+%\end{enumerate}
+%
+%\newpage
+
+\subsection{Un petit tracé de courbe}
+Soit $g$ la fonction définie sur $[0,2[$ par :
+$$ g(x) = \left\lbrace \begin{array}{cl}
+x & \hbox{ si } 0 \leq x < 1 \\
+1 & \hbox{ si } 1 \leq x < 2 \\
+\end{array}\right.$$
+
+\begin{enumerate}
+\item Définir la fonction $g$. Tracer sa courbe représentative sur $[0,2[$.
+\item Définir la fonction $f$ donnée de manière récursive sur $[0, + \infty[$ par :
+$$ f(x) = \left\lbrace \begin{array}{cl}
+g(x) & \hbox{ si } 0 \leq x < 2 \\
+\sqrt{x}f(x-2) & \hbox{ si } x \geq 2 \\
+\end{array}\right.$$
+\item Tracer la courbe représentative de $f$ sur $[0,6]$.
+\item Écrire les instructions permettant de calculer, à $10^{-2}$ près, la plus petite valeur $\alpha>0$ tel que $f(\alpha)>4$.
+\end{enumerate}
+
+
+\subsection{Suite de Syracuse}
+\begin{enumerate}
+\item Faire une petite recherche sur internet concernant la conjecture de Syracuse.
+\item Écrire une fonction Syracuse prenant en argument un entier $n$ et un premier terme $u_0$ et renvoyant $u_n$.
+\item Modifier la fonction précédente afin qu'elle affiche les $n+1$ premiers termes de cette suite.
+\end{enumerate}
+
+
+%
+%\subsection{Calcul d'un déterminant}
+%Écrire une fonction récursive permettant de calculer le déterminant d'une matrice carrée d'ordre $n \geq 1$. On pourra utiliser la fonction delete de \emph{numpy}.
+\end{document}
