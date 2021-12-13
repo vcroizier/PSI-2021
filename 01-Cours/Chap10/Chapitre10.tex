@@ -778,51 +778,51 @@ Les valeurs propres sont alors les coefficients diagonaux de toute matrice diago
 \newpage
 
 \vspace*{5cm}
-%Soit $\mathcal{B}=(e_1, \ldots, e_n)$ une base de $E$.
+Soit $\mathcal{B}=(e_1, \ldots, e_n)$ une base de $E$.
+
 %
-%%
-%Supposons que $\textrm{Mat}_{\mathcal{B}}(u)$ soit diagonale : il existe alors $\lambda_1$, $\lambda_2$, $\ldots$, $\lambda_n$ tels que :
-%$$ \textrm{Mat}_{\mathcal{B}} = \begin{pmatrix}
-%\lambda_1 & 0 & \ldots & 0 \\
-%0 & \lambda_2 & \ldots & 0 \\
-%\vdots & & & \vdots \\
-%0 & 0 & \ldots & \lambda_n
-%\end{pmatrix}$$
-%Nécessairement tous les éléments de cette famille sont différents du vecteur nul (sinon la famille ne serait pas libre) et pour tout $i \in \iii{1}{n}$, $f(e_i) = \lambda_i e_i$ donc la famille $\mathcal{B}$ est bien une base de vecteurs propres.
+Supposons que $\textrm{Mat}_{\mathcal{B}}(u)$ soit diagonale : il existe alors $\lambda_1$, $\lambda_2$, $\ldots$, $\lambda_n$ tels que :
+$$ \textrm{Mat}_{\mathcal{B}} = \begin{pmatrix}
+\lambda_1 & 0 & \ldots & 0 \\
+0 & \lambda_2 & \ldots & 0 \\
+\vdots & & & \vdots \\
+0 & 0 & \ldots & \lambda_n
+\end{pmatrix}$$
+Nécessairement tous les éléments de cette famille sont différents du vecteur nul (sinon la famille ne serait pas libre) et pour tout $i \in \iii{1}{n}$, $f(e_i) = \lambda_i e_i$ donc la famille $\mathcal{B}$ est bien une base de vecteurs propres.
+
 %
-%%
-%Réciproquement, si $\mathcal{B}$ est une base de vecteurs propres, on obtient une matrice diagonale (même raisonnement).
-%\end{Demonstration}
+Réciproquement, si $\mathcal{B}$ est une base de vecteurs propres, on obtient une matrice diagonale (même raisonnement).
+\end{Demonstration}
+
+\begin{Theoreme}{} Soit $u \in \mathcal{L}(E)$. Les assertions suivantes sont équivalentes :
+
+\begin{enumerate}
+\item $u$ est diagonalisable.
+\item $\textrm{dim}(E) = \sum_{\lambda \in \textrm{Sp}(u)} \textrm{dim}(E_{\lambda}(u))$.
+\end{enumerate}
+\end{Theoreme}
+
+\begin{Demonstration}{} On raisonne par double implications.
+
 %
-%\begin{Theoreme}{} Soit $u \in \mathcal{L}(E)$. Les assertions suivantes sont équivalentes :
+$\rhd$ Supposons que $u$ est diagonalisable. Par définition, il existe une base $(e_1, \ldots, e_n)$ de $E$ formée de vecteurs propres de $u$. On sait que la somme de sous-espaces propres associés à des valeurs propres distinctes est directe et on sait que tout vecteur propre appartient à un sous-espace propre donc pour tout $i \in \iii{1}{n}$,
+$$ e_i \in \bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u)$$
+Mais tout vecteur de $E$ est combinaison linéaire des éléments de la base $(e_1, \ldots, e_n)$ donc :
+$$E \subset \bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u)$$
+et les sous-espaces propres étant des sous-espaces vectoriels, on a aussi :
+$$  \bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u) \subset E $$
+et ainsi par double inclusion :
+$$ E= \bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u)$$
+et on obtient ainsi 2) grâce à la formule donnant la dimension d'une somme directe de sous-espace vectoriels.
+
 %
-%\begin{enumerate}
-%\item $u$ est diagonalisable.
-%\item $\textrm{dim}(E) = \sum_{\lambda \in \textrm{Sp}(u)} \textrm{dim}(E_{\lambda}(u))$.
-%\end{enumerate}
-%\end{Theoreme}
-%
-%\begin{Demonstration}{} On raisonne par double implications.
-%
-%%
-%$\rhd$ Supposons que $u$ est diagonalisable. Par définition, il existe une base $(e_1, \ldots, e_n)$ de $E$ formée de vecteurs propres de $u$. On sait que la somme de sous-espaces propres associés à des valeurs propres distinctes est directe et on sait que tout vecteur propre appartient à un sous-espace propre donc pour tout $i \in \iii{1}{n}$,
-%$$ e_i \in \bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u)$$
-%Mais tout vecteur de $E$ est combinaison linéaire des éléments de la base $(e_1, \ldots, e_n)$ donc :
-%$$E \subset \bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u)$$
-%et les sous-espaces propres étant des sous-espaces vectoriels, on a aussi :
-%$$  \bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u) \subset E $$
-%et ainsi par double inclusion :
-%$$ E= \bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u)$$
-%et on obtient ainsi 2) grâce à la formule donnant la dimension d'une somme directe de sous-espace vectoriels.
-%
-%%
-%$\rhd$ Supposons maintenant que :
-%$$\textrm{dim}(E) = \sum_{\lambda \in \textrm{Sp}(u)} \textrm{dim}(E_{\lambda}(u)) $$
-%Sachant que $\bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u) \subset E$ et que :
-%$$ \textrm{dim} \left(\bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u) \right) =  \sum_{\lambda \in \textrm{Sp}(u)} \textrm{dim}(E_{\lambda}(u))$$
-%cela implique que :
-%$$ E = \bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u)$$
-%En concaténant des bases des sous-espaces propres, on obtient alors une base de vecteurs propres de $u$ et donc $u$ est diagonalisable.
+$\rhd$ Supposons maintenant que :
+$$\textrm{dim}(E) = \sum_{\lambda \in \textrm{Sp}(u)} \textrm{dim}(E_{\lambda}(u)) $$
+Sachant que $\bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u) \subset E$ et que :
+$$ \textrm{dim} \left(\bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u) \right) =  \sum_{\lambda \in \textrm{Sp}(u)} \textrm{dim}(E_{\lambda}(u))$$
+cela implique que :
+$$ E = \bigoplus_{\lambda \in \textrm{Sp}(u)} E_{\lambda}(u)$$
+En concaténant des bases des sous-espaces propres, on obtient alors une base de vecteurs propres de $u$ et donc $u$ est diagonalisable.
 \end{Demonstration}
 
 \begin{Remarques}{}
@@ -976,7 +976,7 @@ Le résultat est analogue pour les matrices.
 \begin{Demonstration}{} On raisonne par double implications.
 
 %
-%$\rhd$ Supposons que $u$ est diagonalisable. Notons $\lambda_1$, $\ldots$, $\lambda_k$ ($k \geq 1$) les valeurs propres de $u$. On sait d'après la preuve du théorème précédent que :
+%$\rhd$ Supposons que $u$ est diagonalisable. Notons $\lambda_1$, $ù\ldots$, $\lambda_k$ ($k \geq 1$) les valeurs propres de $u$. On sait d'après la preuve du théorème précédent que :
 %$$ E= \bigoplus_{i=1}^k E_{\lambda_i}(u) $$
 %En considérant une base adaptée à cette somme directe, et en notant $\alpha_1$, $\ldots$, $\alpha_k$ les dimensions de $E_{\lambda_1}(u)$, $\ldots$, $E_{\lambda_k}(u)$, la matrice de $u$ dans cette base est de la forme :
 %$$ \begin{pmatrix}
