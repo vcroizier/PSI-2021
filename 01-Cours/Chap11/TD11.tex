@@ -1,34 +1,32 @@
-\documentclass[a4paper,10pt]{report}
-\newcommand{\pmatrice}[1]{\begin{pmatrix}#1\end{pmatrix}}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\renewcommand{\P}{\text{P}}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
 
 \begin{document}
-\everymath{\displaystyle}
-\begin{center}
-\textit{{ {\huge TD 11 : Espaces probabilisés}}}
-\end{center}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 11 : Espaces probabilisés}
 
-\bigskip
+\tableofcontents
+\separationTitre
 
 
-\begin{center}
-\textit{{ {\large Dénombrement et dénombrabilité}}}
-\end{center}
+\subsection{Dénombrement et dénombrabilité}
 
-\medskip
 
-\begin{Exercice}{} Calculer les sommes suivantes ($n \in \mathbb{N}$) : 
-$$\dis\sum_{k=0}^n k \binom{n}{k}, \; \dis\sum_{k=0}^n\dis\frac{1}{k+1} \binom{n}{k} \; \hbox{ et } \; \sum_{k=0}^n \binom{2n+1}{k}$$
+\begin{Exercice}{} Calculer les sommes suivantes ($n \in \N$) : 
+$$\sum_{k=0}^n k \binom{n}{k}, \; \sum_{k=0}^n\frac{1}{k+1} \binom{n}{k} \; \hbox{ et } \; \sum_{k=0}^n \binom{2n+1}{k}$$
 \end{Exercice}
 
-\begin{Exercice}{} Soit $(p, n) \in \mathbb{N}^2$ tel que $p \leq n$. Déterminer la valeur de $\dis\sum_{k=p}^n{k\choose p} \cdot$
+\begin{Exercice}{} Soit $(p, n) \in \N^2$ tel que $p \leq n$. 
+Déterminer la valeur de $\sum_{k=p}^n\binom{k}{p} \cdot$
 
 %={n+1\choose p+1}\cdot$
 \end{Exercice}
 
 
-\begin{Exercice}{}Soient $3$ urnes $U_1,U_2$ et $U_3$ et $n$ boules numérotées ($n \in \mathbb{N}^*$) de 1 à $n$.
+\begin{Exercice}{}Soient $3$ urnes $U_1,U_2$ et $U_3$ et $n$ boules numérotées ($n \in \N^*$) de 1 à $n$.
 \begin{enumerate}
 \item Quel est le nombre total de répartitions de ces boules dans les trois urnes ?
 \item Quel est le nombre total de répartitions qui laissent au moins $U_1$ vide ? au moins une urne vide ?
@@ -54,16 +52,16 @@ Combien de tirages donnent :
 \end{Exercice}
 
 
-\begin{Exercice}{\ding{80}}  Soit $f : \mathbb{N}^2 \rightarrow \mathbb{N}$ définie par :
+\begin{Exercice}[$\bigstar$]  Soit $f : \N^2 \rightarrow \N$ définie par :
 $$ f((p,q)) = \frac{(p+q)(p+q+1)}{2} + q$$
 \begin{enumerate}
 \item Calculer $f((0,0))$, $f((1,0))$, $f((0,1))$, $f((2,0))$ et $f((1,1))$.
-\item Représenter sur un schéma la manière dont $f$ liste les éléments de $\mathbb{N}^2$.
-\item Nous souhaitons montrer que $\mathbb{N}^2$ est dénombrable. 
+\item Représenter sur un schéma la manière dont $f$ liste les éléments de $\N^2$.
+\item Nous souhaitons montrer que $\N^2$ est dénombrable. 
 \begin{enumerate}
 \item Soit $n \geq 0$. Justifier l'existence de :
 $$ m_0 = \max \left\lbrace m \geq 0, \, \frac{m(m+1)}{2} \leq n \right\rbrace$$
-Encadrer alors $n-\dfrac{m_0(m_0+1)}{2}$ et en déduire que $f$ est une surjection de $\mathbb{N}^2$ sur $\mathbb{N}$.
+Encadrer alors $n-\dfrac{m_0(m_0+1)}{2}$ et en déduire que $f$ est une surjection de $\N^2$ sur $\N$.
 \item Montrer que $f$ est injective.
 \item Conclure.
 \end{enumerate}
@@ -73,13 +71,9 @@ Encadrer alors $n-\dfrac{m_0(m_0+1)}{2}$ et en déduire que $f$ est une surjecti
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Équiprobabilité}}}
-\end{center}
+\subsection{Équiprobabilité}
 
-\medskip
 
 
 
@@ -96,7 +90,7 @@ Encadrer alors $n-\dfrac{m_0(m_0+1)}{2}$ et en déduire que $f$ est une surjecti
 
 
 \begin{Exercice}{Le problème des anniversaires}
-On considère un groupe de $n$ personnes ($n \in \mathbb{N}^*$ avec $n \leq 365$).\\
+On considère un groupe de $n$ personnes ($n \in \N^*$ avec $n \leq 365$).\\
 Quelle est la probabilité qu'au moins deux personnes aient leur anniversaire le même jour ?
 \end{Exercice}
 
@@ -118,16 +112,12 @@ Quelle est la probabilité qu'au moins deux personnes aient leur anniversaire le
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Tribu et probabilité}}}
-\end{center}
-
-\medskip
+\subsection{Tribu et probabilité}
 
 
-\begin{Exercice}{\ding{80}}  Soit $\Omega$ un univers muni d'une tribu ${\cal A}$. On se donne un sous-ensemble $\Omega'$ de $\Omega$ et on pose :
+
+\begin{Exercice}[$\bigstar$]  Soit $\Omega$ un univers muni d'une tribu ${\cal A}$. On se donne un sous-ensemble $\Omega'$ de $\Omega$ et on pose :
  $${\cal A}'=\{A\cap \Omega',\ A\in{\cal A}\}$$
 Montrer que ${\cal A}'$ est une tribu sur $\Omega'.$
 \end{Exercice}
@@ -137,7 +127,7 @@ Montrer que ${\cal A}'$ est une tribu sur $\Omega'.$
 \begin{enumerate}
 \item Montrer que $P(E \cup F) \leq P(E) + P(F)$.
 \item Soit $G$ un évènement. Montrer que $P(E \cup F \cup G) \leq P(E) + P(F) + P(G)$.
-\item Écrire cette inégalité pour $\overline{E}$, $\overline{F}$ et $\overline{G}$ et en déduire que si $E,F$ et $G$ sont équiprobables de probabilité $p$ et si $P(E \cap F \cap G)=0$ alors $p \leq \dis \frac{2}{3} \cdot$
+\item Écrire cette inégalité pour $\overline{E}$, $\overline{F}$ et $\overline{G}$ et en déduire que si $E,F$ et $G$ sont équiprobables de probabilité $p$ et si $P(E \cap F \cap G)=0$ alors $p \leq  \frac{2}{3} \cdot$
 \end{enumerate}
 \end{Exercice}
 
@@ -159,13 +149,9 @@ $$ \P(A_1 \cup \cdots \cup A_n) \leq \P(A_1) + \cdots + \P(A_n) \leq P(A_1 \cap 
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Probabilités conditionnelles}}}
-\end{center}
+\subsection{Probabilités conditionnelles}
 
-\medskip
 
 \begin{Exercice}{} On peut distinguer des élèves en trois catégories : ceux qui aiment la chimie, ceux qui n'aiment pas et ceux qui s'en fichent (royalement). Les étudiants des classes PC et PSI du lycée Robespierre sont assez différents : les étudiants en PC aiment la chimie avec une probabilité de $0.6$ et n'aiment pas avec une probabilité de $0.2$ alors que les étudiants en PSI aiment la chimie avec une probabilité de $0.4$ et s'en fichent avec une probabilité de $0.4$. On rencontre un étudiant au hasard et on suppose qu'il a deux fois plus de chance d'être en PSI plutôt qu'en PC.
 
@@ -307,8 +293,8 @@ Pour tout $n\in \N^*$, on note $A_n$ (respectivement $B_n$ et $C_n$) l'événeme
 
 \begin{enumerate}
  \item Donner $a_1, b_1, c_1$.
- \item Donner pour $n \in \mathbb{N}^*$, une relation de récurrence entre $a_{n+1}, b_{n+1}, c_{n+1}$ et $a_n, b_n, c_n$.
- \item Montrer que pour tout $n \in \mathbb{N}^*$, $c_n = (1/2)^n-(1/6)^n$. En déduire $a_n$ et $b_n$ en fonction de $n$.
+ \item Donner pour $n \in \N^*$, une relation de récurrence entre $a_{n+1}, b_{n+1}, c_{n+1}$ et $a_n, b_n, c_n$.
+ \item Montrer que pour tout $n \in \N^*$, $c_n = (1/2)^n-(1/6)^n$. En déduire $a_n$ et $b_n$ en fonction de $n$.
  \item Étudier la convergence des suites $(a_n)_{n \geq 1}, (b_n)_{n \geq 1}, (c_n)_{n \geq 1}$.
 \end{enumerate}
 \end{Exercice}
@@ -394,7 +380,7 @@ Soit $n\in\N.$ On note :
 \begin{enumerate}
 \item 
 \begin{enumerate}
-\item Soit $n \in \mathbb{N}^*$.  Donner la probabilité que l'épreuve s'arrête au $n$-ième lancer sur une somme égale à $5$ (on pourra noter $A_n$ cet évènement).
+\item Soit $n \in \N^*$.  Donner la probabilité que l'épreuve s'arrête au $n$-ième lancer sur une somme égale à $5$ (on pourra noter $A_n$ cet évènement).
 \item Donner la probabilité que l'épreuve s'arrête sur une somme égale à 5.
 \end{enumerate}
 \item Donner la probabilité que l'épreuve s'arrête par l'obtention d'un 10.
@@ -403,7 +389,7 @@ Soit $n\in\N.$ On note :
 \end{Exercice}
 
 
-\begin{Exercice}{} On lance une infinité de fois une pièce équilibrée. On note pour tout $n \in \mathbb{N}^*$, $A_n$ l'évènement \og on obtient au moins une fois la séquence pile pile face au cours des $n$ premiers lancers \fg et $P_n$  l'évènement \og on obtient pile au $n$-ième lancer \fg .
+\begin{Exercice}{} On lance une infinité de fois une pièce équilibrée. On note pour tout $n \in \N^*$, $A_n$ l'évènement \og on obtient au moins une fois la séquence pile pile face au cours des $n$ premiers lancers \fg et $P_n$  l'évènement \og on obtient pile au $n$-ième lancer \fg .
 
 \begin{enumerate}
 \item Donner $P(A_1)$, $P(A_2)$ et $P(A_3)$.
@@ -412,7 +398,7 @@ Soit $n\in\N.$ On note :
 \item Montrer que $A_{n+1} = A_n  \cup (\overline{A_{n-2}} \cap P_{n-1} \cap P_n \cap \overline{P_{n+1}})$.
 \item En déduire un lien entre $P(A_{n+1})$, $P(A_n)$ et $P(A_{n-2})$. 
 \item Montrer que la suite $(P(A_n))_{n \geq 4}$ est croissante. Est-elle convergente ? Si oui, donner sa limite.
-\item Montrer que la famille d'évènements $(A_n)_{n \geq 0}$ est croissante. En déduire $\dis P \bigg{(} \bigcup_{n=1}^{+  \infty} A_n \bigg{)}$. Qu'en déduit-on ?
+\item Montrer que la famille d'évènements $(A_n)_{n \geq 0}$ est croissante. En déduire $ P \bigg{(} \bigcup_{n=1}^{+  \infty} A_n \bigg{)}$. Qu'en déduit-on ?
 \end{enumerate}
 \end{enumerate}
 \end{Exercice}
@@ -422,7 +408,7 @@ Soit $n\in\N.$ On note :
 Soit $p \in ]0,1[$. On note $q=1-p$.\\
 On effectue une infinité de lancers indépendants d'une pièce pour laquelle la probabilité d'obtenir Face est $p$.
 \begin{enumerate}
-\item Pour tout $n \in \mathbb{N}^*$, on note $A_n$ l'événement \og Au cours des $n$ premiers lancers, Face n'est jamais suivi de Pile\fg.
+\item Pour tout $n \in \N^*$, on note $A_n$ l'événement \og Au cours des $n$ premiers lancers, Face n'est jamais suivi de Pile\fg.
 Montrer que :
 $$P(A_n)=\begin{cases}
 {\frac{p^{n+1}-q^{n+1}}{p-q}} & \text{si } p \neq \frac 1 2\\
@@ -435,10 +421,10 @@ Calculer la probabilité de l'événement $A$ : \og Face n'est jamais suivi de P
 
 
 
-\begin{Exercice}{} Un enfant lance un galet pour faire des ricochets sur l'eau. On suppose que la probabilité que le galet ricoche pour la $n$-ième fois sachant qu'il a ricoché les $(n-1)$ coups d'avant, est égale à $\dis \frac{1}{n}\cdot$ On suppose que lors du premier coup, le galet ricoche nécessairement.
+\begin{Exercice}{} Un enfant lance un galet pour faire des ricochets sur l'eau. On suppose que la probabilité que le galet ricoche pour la $n$-ième fois sachant qu'il a ricoché les $(n-1)$ coups d'avant, est égale à $ \frac{1}{n}\cdot$ On suppose que lors du premier coup, le galet ricoche nécessairement.
 \begin{enumerate}
-\item Soit $n \in \mathbb{N}^*$. Déterminer la probabilité $p_n$ que le galet coule après $n$ ricochets réussis.
-\item Montrer que $\dis \sum_{n \geq 1} p_n$ converge, donner sa somme et interpréter.
+\item Soit $n \in \N^*$. Déterminer la probabilité $p_n$ que le galet coule après $n$ ricochets réussis.
+\item Montrer que $ \sum_{n \geq 1} p_n$ converge, donner sa somme et interpréter.
 \end{enumerate}
 \end{Exercice}
 
@@ -446,48 +432,44 @@ Calculer la probabilité de l'événement $A$ : \og Face n'est jamais suivi de P
 
 \begin{Exercice}{} On effectue une succession infinie de lancers indépendants d'une pièce
 donnant Pile avec la probabilité $p\in ]0,1[$ et Face avec la probabilité $%
-q=1-p$.\newline
+q=1-p$.
+
 On s'intéresse dans cet exercice aux successions de lancers amenant un mê%
-me côté.\newline
+me côté.
+
 On dit que la première série est de longueur $n\geq 1$ si les $n$
 premiers lancers ont amené le même côté de la pièce et le $(n+1)$-ième
-l'autre côté.\newline
+l'autre côté.
+
 De même la deuxième série commence au lancer suivant la fin de la première sé%
 rie et se termine (si elle se termine) au lancer précédant un changement de c%
-ôté.\newline
-
-
+ôté.
 \begin{enumerate}
-\item Pour tout $n \in \mathbb{N}^*$, on note $A_n$ l'évènement \og La longueur de la première série est égale à $n$ \fg. Déterminer $P(A_n)$.
+\item Pour tout $n \in \N^*$, on note $A_n$ l'évènement 
+\og La longueur de la première série est égale à $n$ \fg{}. Déterminer $P(A_n)$.
 \item Montrer que :
-\[\sum\limits_{n=1}^{+\infty }P(A_n)=1\]
-Quelle est la probabilité que la première série ne se termine pas?
-
-\item Pour $n \in \mathbb{N}^*$, on note $B_n$ l'évènement \og La longueur de la deuxième série est égale à $n$ \fg .
-
+\[\sum_{n=1}^{+\infty }P(A_n)=1\]
+Quelle est la probabilité que la première série ne se termine pas ?
+\item Pour $n \in \N^*$, on note $B_n$ l'évènement \og La longueur 
+de la deuxième série est égale à $n$ \fg{}.
 \begin{enumerate}
-\item Déterminer pour $(n,k) \in (\mathbb{N}^*)^2$, $P(A_n \cap B_k)$.
-
-\item En déduire que, pour $k\in \mathbb{N}^{* }$, $P(B_k)$.
+\item Déterminer pour $(n,k) \in (\N^*)^2$, $P(A_n \cap B_k)$.
+\item En déduire que, pour $k\in \N^{* }$, $P(B_k)$.
 \end{enumerate}
 \end{enumerate}
 \end{Exercice}
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Divers}}}
-\end{center}
-
-\medskip
+\subsection{Divers}
 
 
-\begin{Exercice}{\ding{80}}  Soit $(A_n)_{n \geq 0}$ une famille d'évènements mutuellement indépendants d'un même espace probabilisé.
+
+\begin{Exercice}[$\bigstar$]  Soit $(A_n)_{n \geq 0}$ une famille d'évènements mutuellement indépendants d'un même espace probabilisé.
 \begin{enumerate}
-\item On suppose que $\dis \sum_{n \geq 0} P(A_n)$ converge. Montrer que :
+\item On suppose que $ \sum_{n \geq 0} P(A_n)$ converge. Montrer que :
 $$ \P \left( \bigcap_{n \geq 0} \overline{A_n} \right) \leq \exp \left(- \sum_{k=0}^{+ \infty} \P(A_k) \right)$$
-\item On suppose que $\dis \sum_{n \geq 0} P(A_n)$ diverge. Montrer que :
+\item On suppose que $ \sum_{n \geq 0} P(A_n)$ diverge. Montrer que :
 $$ \P \left( \bigcap_{n \geq 0} \overline{A_n} \right) = 0$$
 \end{enumerate}
 \end{Exercice}

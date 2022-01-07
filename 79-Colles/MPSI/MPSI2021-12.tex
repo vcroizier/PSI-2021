@@ -1,0 +1,104 @@
+\documentclass[twoside,a4paper,landscape,french,10pt]{VcCours}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnseprule{0.4pt}%
+\addtolength\columnsep{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{colle}[4]{{\large\bf\makebox[0cm][l]{#1\hspace{\stretch{-1}}}\hspace{\stretch{1}}#2\hspace{\stretch{1}}\makebox[0cm][r]{\hspace{\stretch{-1}}#3}}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{multicols*}{#4}}{\end{multicols*}\pagebreak}
+\newenvironment{eleve}[1]{\textbf{\large #1}}{\vspace{\stretch{1}}
+\columnbreak}
+\newenvironment{eleveF}[1]{\textbf{\large #1}}{}
+\newcommand{\cours}{\medskip\uwave{Cours :}
+
+\smallskip}
+\newcommand{\exo}[1]{\vspace{\stretch{1}}\uwave{Exercice #1:}
+
+\smallskip}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+-----------------------------------------+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{colle}{MPSI -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
+n\degres12 -- le lundi 03/01/2022}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+  \cours
+  Propriété de la borne supérieure\\
+  Caractérisation de la borne sup.\\
+  Toute partie non vide et minorée de $\Z$ admet un plus petit élément.
+  
+  
+  \exo1
+  Soit $A$ et $B$ deux parties non vides de $\R$ telles que $\forall(a, b) \in A \times B$, $a\leqslant b$.
+  Montrer que $\sup A$ et $\inf B$ existent et que $\sup A \leqslant \inf B$.
+  
+  Et si $\forall(a, b) \in A \times B$, $a < b$ ?
+  
+  \exo2
+  Soit $n\in\N^*$ et $x\in\R$. Montrer que $E\left(\frac{E(nx)}{n}\right)=E(x)$.
+  
+  
+  \exo3
+  Soit $a\in\C$ tel que $|a|<1$. Montrer que $(a^n)$ converge vers 0.
+  
+  \end{eleve}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{eleve}{}
+  
+  \cours
+  Définition de la partie entière + démo existence/unicité.
+  
+  
+  \exo1
+  Montrer que, pour $x, y\in\R$, $E(x) + E(x + y) + E(y) \leqslant E(2x) + E(2y)$.
+  
+  \exo2
+  Soit $A$ et $B$ deux parties non vides et bornées de $\R$ telles que $A\subset B$.
+  Comparer $\inf A$, $\sup A$, $\inf B$ et $\sup B$.
+  
+  \exo3
+  Soit $n\in\N^*$.
+  \begin{enumerate}
+    \item Montrer que $\exists (a_n, b_n) \in\N^2 / (2 + \sqrt3)^n = a_n + b_n\sqrt3$ et calculer $a_n^2-3b_n^2$.
+    \item Montrer que la partie entière de $(2 + \sqrt3)^n$ est un entier impair.
+    \item (optionnel) Montrer que $\exists!p\in\N / (2 + \sqrt3)^n=\sqrt{p}+\sqrt{p-1}$.
+  \end{enumerate}
+  
+  
+  \end{eleve}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{eleveF}{}
+  
+  \cours
+  Définition: suite convergente/divergente.\\
+  Unicité de la limite + démo
+  
+  \exo1
+  Soit $A =\ensemble{(-1)^n+\frac{1}{n+1}}{n\in\N}$\\
+  Montrer que $A$ est bornée, déterminer $\inf A$ et $\sup A$.
+  
+  \exo2
+  Soit $f:\R^2\rightarrow\R$. Établir
+  \[\sup_{x\in\R}\inf_{y\in\R}f(x,y)\leqslant\inf_{y\in\R}\sup_{x\in\R}f(x,y)\]
+  
+  \exo3
+  Montrer que $\forall x\in\R$, $\forall n\in\N^*$, $\sum_{k=0}^{n-1}E\left(x+\frac{k}{n}\right)=E(nx)$.
+   
+  
+  \end{eleveF}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \end{colle}
+  
+  
+  \end{document}
+  

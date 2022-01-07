@@ -1,22 +1,16 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{Cours}
-\usepackage{delarray}
-\usepackage{fancybox}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\newcommand{\Int}[2]{\ensuremath{\mathchoice%
-	{{\displaystyle\int_{#1}^{#2}}}
-	{{\displaystyle\int_{#1}^{#2}}}
-	{\int_{#1}^{#2}}
-	{\int_{#1}^{#2}}
-	}}
-\usepackage{pstricks-add}
+\documentclass[french,11pt,twoside]{VcCours}
+\newcommand{\dt}{\text{d}t}
 
-
+\renewcommand{\trou}[1]{{\color{white}#1}}
+%\renewcommand{\trou}[1]{{\color{blue}#1}}
 
 \begin{document}
-% \everymath{\displaystyle}
 
-\maketitle{Chapitre 12}{Espaces vectoriels normés}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Chapitre 12 : Espaces vectoriels normés}
+
+\tableofcontents
+\separationTitre
+
 
 Dans tout ce chapitre, $E$ désigne un $\mathbb{K}$-espace vectoriel de \emph{dimension finie} avec $\mathbb{K}= \mathbb{R}$ ou $\mathbb{C}$. La valeur absolue (ou le module selon le cas) d'un réel (ou d'un complexe) $x$, sera noté $\vert x \vert$.
 
@@ -50,13 +44,13 @@ Le couple $(E,N)$ est alors appelé \emph{espace vectoriel normé}. On peut ne p
  \end{Remarque}
  
  \subsection{Exemples}
- \subsubsection{Exemple 1 : $E= \mathbb{K}$}
+ \subsubsection{Exemple 1 : \texorpdfstring{$E= \mathbb{K}$}{E=IK}}
 
 L'application $x \rightarrow \vert x \vert$ est une norme. Si l'on considère $N$ une norme quelconque sur $\mathbb{K}$, alors pour tout $\lambda \in \mathbb{K}$, on a par la propriété d'homogénéité,
 $$ N(\lambda) = N( \lambda \times 1) = \vert \lambda \vert N(1)$$
 et donc $N =N(1) \vert \cdot \vert$. Ainsi, toute norme sur $\mathbb{K}$ est proportionnelle à $\vert \cdot \vert$.
 
-\subsubsection{Exemple 2 : $E$ est un espace préhilbertien réel}
+\subsubsection{Exemple 2 : \texorpdfstring{$E$}{E} est un espace préhilbertien réel}
 
 Soit $E$ un $\mathbb{R}$-espace vectoriel muni d'un produit scalaire $<\cdot \, , \,\cdot>$, c'est-à-dire une application $<\cdot \, , \,\cdot> : E \times E \rightarrow \mathbb{R}$ bilinéaire, symétrique, définie et positive. Alors l'application :
 $$ \begin{array}{ccccl}
@@ -97,11 +91,11 @@ Montrons maintenant l'inégalité triangulaire : pour tout $(x,y) \in E^2$, on a
 %Les normes étant positives, on obtient le résultat.
 \end{itemize}
 
-\subsubsection{Exemple 3 : $E= \mathbb{K}^n$ avec $n \geq 2$}
+\subsubsection{Exemple 3 : \texorpdfstring{$E= \mathbb{K}^n$ avec $n \geq 2$}{E=IKⁿ avec n≥2}}
 
 Pour tout $x=(x_1, x_2, \ldots, x_n) \in \mathbb{K}^n$, on pose :
 
-$$\Vert x \Vert_1  = \phantom{\sum_{i=1}^n \vert x_i \vert} \qquad, \quad \Vert x \Vert_2  = \phantom{\sqrt{\sum_{i=1}^n \vert x_i \vert^2 }} \qquad, \quad \Vert x \Vert_{\infty}  = \phantom{\sup_{i \in \Interv{1}{n}} \vert x_i \vert = \max_{i \in \Interv{1}{n}} \vert x_i \vert }$$
+$$\Vert x \Vert_1  = \phantom{\sum_{i=1}^n \vert x_i \vert} \qquad, \quad \Vert x \Vert_2  = \phantom{\sqrt{\sum_{i=1}^n \vert x_i \vert^2 }} \qquad, \quad \Vert x \Vert_{\infty}  = \phantom{\sup_{i \in \iii{1}{n}} \vert x_i \vert = \max_{i \in \iii{1}{n}} \vert x_i \vert }$$
 Les applications associées sont des normes appelées norme $1$, norme $2$ et norme infini.
 
 \medskip
@@ -120,7 +114,7 @@ $\rhd$ Montrons que la norme $1$ est effectivement une norme.
 %par linéarité de la somme. On a donc bien $ \Vert \lambda x \Vert_1 = \vert \lambda \vert  \, \Vert  x \Vert_1$. 
 %\item Montrons la séparation : soit $x \in \mathbb{K}^n$ tel que $\Vert x \Vert_{1}=0$. Alors :
 %$$\sum_{k=1}^n \vert x_i \vert$$
-%Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls donc pour tout $i \in \Interv{1}{n}$, $\vert x_i \vert = 0$ et donc $x_i=0$. Ainsi $x=0_{\mathbb{K}^n}$.
+%Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls donc pour tout $i \in \iii{1}{n}$, $\vert x_i \vert = 0$ et donc $x_i=0$. Ainsi $x=0_{\mathbb{K}^n}$.
 %\item Montrons l'inégalité triangulaire : soit $(x,y) \in (\mathbb{K}^n)^2$. On a :
 %$$ \Vert x+y \Vert_{1} = \sum_{k=1}^n \vert \lambda x_i+y_i \vert$$
 %D'après l'inégalité triangulaire (dans $\mathbb{R}$ ou $\mathbb{C}$ selon $\mathbb{K}$), on a alors :
@@ -141,7 +135,7 @@ et ainsi par (\ref{InegEucl}), on a bien $\Vert x + y \Vert_2 \leq \Vert x  \Ver
 
 %\medskip
 %
-%$\rhd$ Montrons uniquement l'inégalité triangulaire pour la norme infini (les autres propriétés étant simples à montrer) : soit $(x,y) \in (\mathbb{K}^n)^2$. On a pour tout $i \in \Interv{1}{n}$, d'après l'inégalité triangulaire,
+%$\rhd$ Montrons uniquement l'inégalité triangulaire pour la norme infini (les autres propriétés étant simples à montrer) : soit $(x,y) \in (\mathbb{K}^n)^2$. On a pour tout $i \in \iii{1}{n}$, d'après l'inégalité triangulaire,
 %$$ \vert x_i + y_i \vert \leq \vert x_i \vert + \vert y_i \vert \leq \Vert x \Vert_{\infty} + \Vert y \Vert_{\infty} $$
 %La plus grande majoration étant indépendante de $i$, on a alors :
 %$$ \Vert x+y \Vert_{\infty} = \max_{1 \leq i \leq n} \vert x_i+ y_i \vert \leq \Vert x \Vert_{\infty} + \Vert y \Vert_{\infty}$$
@@ -151,7 +145,7 @@ et ainsi par (\ref{InegEucl}), on a bien $\Vert x + y \Vert_2 \leq \Vert x  \Ver
 \begin{ApplicationDirecte} Montrer que la norme infini est une norme sur $\mathbb{K}^n$.
 \end{ApplicationDirecte}
 
-\subsubsection{Exemple 4 : $E$ est un ensemble de fonctions bornées}
+\subsubsection{Exemple 4 : \texorpdfstring{$E$}{E} est un ensemble de fonctions bornées}
 
 Soient $I$ un intervalle non vide de $\mathbb{R}$ et $\mathcal{B}(I,K)$ l'ensemble des fonctions bornées de $I$ dans $\mathbb{K}$ (qui est un sous-espace vectoriel de $\mathcal{F}(I, \mathbb{K})$). Pour tout $f \in \mathcal{B}(I,K)$, on pose :
 $$ \Vert f \Vert_{\infty} = \sup_{x \in I} \vert f(x) \vert $$
@@ -367,7 +361,7 @@ Montrons que $f$ n'est pas bornée :
 %pour tout $x \in ]0,1[$, $f(x,1) = (\ln(x),\cos(x) + \sin(1))$ donc :
 %$$ \Vert f(x,1) \Vert_1 = \vert \ln(x) \vert + \vert \cos(x) + \sin(1) \vert \geq -\ln(x) -1  + \sin(1)$$
 %Or $\lim_{x \rightarrow 0}  -\ln(x) -1  + \sin(1) = + \infty$ donc la définition de $f$ bornée ne peut être vérifiée pour aucun réel positif $M$.
-\end{itemize}
+\end{enumerate}
 \end{Exemples}
 
 \begin{ApplicationDirecte} Montrer que $A = \lbrace (x,y)\in\R^2 \, \vert \, x^2+y^4=1 \rbrace$ est bornée dans $\mathbb{R}^2$.
@@ -413,6 +407,7 @@ Montrons que $f$ n'est pas bornée :
 %\end{align*}
 %Ainsi $\lambda x+ (1-\lambda y) \in B(a,r)$. On a donc bien montré que $B(a,r)$ était convexe (même preuve pour $B_f(a,r)$).
 
+%cSpell:ignore Pacman
 \begin{ApplicationDirecte} Pacman est-il convexe ?
 \end{ApplicationDirecte} 
 
@@ -494,7 +489,7 @@ $$ (\sin(n),n^2) = \sin(n) e_1 + n^2e_2$$
 \begin{Theoreme}{} En gardant les notations précédentes, les assertions suivantes sont équivalentes :
 \begin{itemize}
 \item La suite $(u_n)_{n \geq 0}$ converge.
-\item Pour tout $i \in \Interv{1}{p}$, la suite $(u_{n,i})_{n \geq 0}$ converge.
+\item Pour tout $i \in \iii{1}{p}$, la suite $(u_{n,i})_{n \geq 0}$ converge.
 \end{itemize}
 Quand celles-ci sont vraies, on a :
 $$ \lim_{n \rightarrow + \infty} u_n = \sum_{i=1}^p \left(\lim_{n \rightarrow + \infty} u_{n,i} \right) e_i $$
@@ -520,7 +515,7 @@ $$ \lim_{n \rightarrow + \infty} u_n = \sum_{i=1}^p \left(\lim_{n \rightarrow + 
 %%$$ \lim_{n \rightarrow + \infty} \Vert u_n - \ell \Vert_{\infty} = 0$$
 %%ou encore :
 %%$$ \lim_{n \rightarrow + \infty} \left( \max_{1 \leq i \leq n} \vert u_{n,i}- \ell_i \vert \right)$$
-%%Or, pour tout $i \in \Interv{1}{p}$ et tout $n \geq 0$,
+%%Or, pour tout $i \in \iii{1}{p}$ et tout $n \geq 0$,
 %%$$ 0 \leq \vert u_{n,i}- \ell_i \vert \leq \max_{1 \leq i \leq n} \vert u_{n,i}- \ell_i \vert $$
 %%Par théorème d'encadrement, la suite de terme général $ \vert u_{n,i}- \ell_i \vert $ converge donc vers $0$ et ainsi $(u_{n,i})_{n \geq 0}$ converge vers $\ell_i$.
 %
@@ -528,9 +523,9 @@ $$ \lim_{n \rightarrow + \infty} u_n = \sum_{i=1}^p \left(\lim_{n \rightarrow + 
 %
 %\medskip
 %
-%$\rhd$ Supposons que pour tout $i \in \Interv{1}{p}$, la suite $(u_{n,i})_{n \geq 0}$ converge vers un scalaire $\ell_i$.
+%$\rhd$ Supposons que pour tout $i \in \iii{1}{p}$, la suite $(u_{n,i})_{n \geq 0}$ converge vers un scalaire $\ell_i$.
 %
-%% Considérons la norme $1$ (légitime car $E$ est de dimension finie). On a pour tout $i \in \Interv{1}{p}$,
+%% Considérons la norme $1$ (légitime car $E$ est de dimension finie). On a pour tout $i \in \iii{1}{p}$,
 %%$$ \lim_{n \rightarrow + \infty} \vert u_{n,i} - \ell_i \vert = 0$$
 %%Ainsi, par somme de suites convergentes :
 %%$$ \Vert u_n - \ell \Vert_{1} = \sum_{i=1}^p \vert u_{n,i} - \ell_i \vert  \underset{n \rightarrow + \infty}{\longrightarrow} 0$$
@@ -604,7 +599,7 @@ $$ \phantom{\forall a \in A, \, \exists r>0 \, \vert \, B(a,r) \subset A}$$
 \item $E$ et $\varnothing$ sont des ouverts de $E$.
 \item Les intervalles ouverts de $\mathbb{R}$ sont des ouverts de $\mathbb{R}$.
 \item On admet que le produit cartésien d'ouverts est un ouvert. Par exemple $]-1,1[ \times \mathbb{R}_{+}^*$ est un ouvert de $\mathbb{R}^2$.
-\end{itemize}
+\end{enumerate}
 \end{Exemples}
 
 \medskip
@@ -709,7 +704,7 @@ Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé, $A$ une partie de $E
 \begin{enumerate}
 \item L'ensemble $[-1,1[$ n'est pas un fermé.
 \item Pour tout $A \subset E$, $\overline{A}$ est un fermé.
-\end{itemize}
+\end{enumerate}
 \end{Exemples}
 
 \begin{Proposition}{} Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé et $A$ une partie de $E$. Les propositions suivantes sont équivalentes :
@@ -866,10 +861,10 @@ Les fonctions $f_k : A \rightarrow \mathbb{K}$ sont appelées les \emph{fonction
 \begin{Proposition}{} 
 
 \begin{itemize}
-\item Soit $a \in \overline{A}$. La fonction $f$ admet une limite en $a$ si et seulement si pour tout $k \in\Interv{1}{n}$, $f_k$ admet une limite en $a$. Dans ce cas, on a :
+\item Soit $a \in \overline{A}$. La fonction $f$ admet une limite en $a$ si et seulement si pour tout $k \in\iii{1}{n}$, $f_k$ admet une limite en $a$. Dans ce cas, on a :
 $$ \lim_{x \rightarrow a} f(x) =  \sum_{k=1}^n \big{(} \lim_{x \rightarrow a} f_k(x) \big{)} e_k$$
-\item Soit $a \in A$. La fonction $f$ est continue en $a$ si et seulement si pour tout $k \in\Interv{1}{n}$, $f_k$ est continue en $a$.
-\item La fonction $f$ est continue sur $A$ si et seulement si pour tout $k \in\Interv{1}{n}$, $f_k$ est continue sur $A$.
+\item Soit $a \in A$. La fonction $f$ est continue en $a$ si et seulement si pour tout $k \in\iii{1}{n}$, $f_k$ est continue en $a$.
+\item La fonction $f$ est continue sur $A$ si et seulement si pour tout $k \in\iii{1}{n}$, $f_k$ est continue sur $A$.
 \end{itemize}
 \end{Proposition}
 
@@ -925,7 +920,7 @@ Soient $E$, $F$, $G$ trois espaces vectoriels de dimension finie, $A \subset E$,
 \end{enumerate}
 \end{Proposition}
 
-\begin{Proposition}{} Toute application polynômiale de sur $\mathbb{K}^n$, c'est-à-dire toute fonction de la forme :
+\begin{Proposition}{} Toute application polynomiale de sur $\mathbb{K}^n$, c'est-à-dire toute fonction de la forme :
 $$ (x_1, \ldots, x_n) \mapsto \sum_{0 \leq i_1, \ldots, i_n \leq N} a_{i_1, \ldots, i_n} x_1^{i_1} \cdots x_n^{i_n} \quad (N \geq 0),$$
 est continue sur $\mathbb{K}^n$.
 \end{Proposition}
@@ -996,10 +991,9 @@ $$ \phantom{\forall (x,y) \in E^2, \quad \Vert f(x)-f(y) \Vert_F \leq k \Vert x-
 On dit que $f$ est \emph{lipschitzienne} si il existe $k \in \mathbb{R}_+$ tel que $f$ soit $k$-lipschitzienne.
 \end{Definition}
 
-\begin{att} Les normes étant équivalentes, le fait pour une fonction d'être lipschitzienne ne dépend pas des normes choisies mais le fait d'être lipschitzienne de rapport $k$ l'est !
-\end{att}
+\begin{Remarque}[\alerte]{} Les normes étant équivalentes, le fait pour une fonction d'être lipschitzienne ne dépend pas des normes choisies mais le fait d'être lipschitzienne de rapport $k$ l'est !
+\end{Remarque}
 
-\medskip
 
 \begin{Exemples}
 \begin{enumerate}
@@ -1015,7 +1009,7 @@ On dit que $f$ est \emph{lipschitzienne} si il existe $k \in \mathbb{R}_+$ tel q
 %$$ \vert \ln(x) - \ln(y) \vert \leq \vert x-y \vert $$
 \item Soit $\Vert \cdot \Vert$ est une norme sur $E$. Alors l'application de $E$ dans $\mathbb{R}$ définie par $x \mapsto \Vert x \Vert$ est $1$-lipschitzienne. En effet, d'après une forme de l'inégalité triangulaire :
 $$ \forall (x,y) \in E^2, \quad \vert \Vert x \Vert - \Vert y \Vert \vert \leq \Vert x -y \Vert $$
-\end{itemize}
+\end{enumerate}
 \end{Exemples}
 
 \begin{Theoreme}{} Toute fonction lipschitzienne est continue. 

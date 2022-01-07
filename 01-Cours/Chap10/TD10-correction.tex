@@ -1,35 +1,33 @@
-\documentclass[a4paper,10pt]{report}
-\newcommand{\pmatrice}[1]{\begin{pmatrix}#1\end{pmatrix}}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,10pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
 
 \begin{document}
-\everymath{\displaystyle}
-\begin{center}
-\textit{{ {\huge TD 10 : Réduction}}}
-\end{center}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 10 : Réduction}
 
-\bigskip
+\tableofcontents
+\separationTitre
 
 
-\noindent Dans la suite, $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$ et $n \in \mathbb{N}^*$.
+Dans la suite, $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$ et $n \in \mathbb{N}^*$.
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Éléments propres}}}
-\end{center}
+\subsection{Éléments propres}
 
-\medskip
 
 \begin{Exercice}{} Soient $E = \mathbb{R}[X]$ et $\varphi \in \mathcal{L}(E)$ défini par $\varphi(P)=XP'$. Déterminer les éléments propres de $\varphi$.
 \end{Exercice}
 
 \corr Raisonnons par analyse-synthèse. 
 
-\medskip
 
-\noindent \textit{Analyse.} Soit $\lambda \in \mathbb{R}$ une valeur propre de $\varphi$. Il existe donc un polynôme non nul de $E$ tel que $\varphi(P)=\lambda P$ ou encore $XP' = \lambda P$. On a donc pour tout réel $x$ :
+\textit{Analyse.} Soit $\lambda \in \mathbb{R}$ une valeur propre de $\varphi$. Il existe donc un polynôme non nul de $E$ tel que $\varphi(P)=\lambda P$ ou encore $XP' = \lambda P$. On a donc pour tout réel $x$ :
 $$ x P'(x) = \lambda P(x)$$
 En particulier, $P$ est solution sur $]0,1[$ de l'équation différentielle linéaire homogène du premier ordre suivant :
 $$ y' - \dfrac{\lambda}{x} y = 0$$
@@ -39,16 +37,14 @@ Si $\lambda$ n'est pas un entier naturel, toutes les dérivées de $x \mapsto x^
 $$ \lambda (\lambda-1) \times \cdots (\lambda-n+1) x^{\lambda -n}$$
 ce qui est impossible car $P$ est un polynôme donc à partir d'un certains rang, toutes ses dérivées sont nulles. Si $\lambda$ est un entier naturel, on en déduit que $P= K X^n$.
 
-\medskip
 
-\noindent \textit{Synthèse.} Pour tout entier $n \geq 0$,
+\textit{Synthèse.} Pour tout entier $n \geq 0$,
 $$ \varphi(X^n) = X(X^n)'=X(nX^{n-1})=nX^n$$
 Sachant que $X^n$ est non nul, on en déduit que c'est un vecteur propre de $\varphi$ associé à la valeur propre de $n$.
 
-\medskip
 
-\noindent D'après l'analyse-synthèse, on sait que le spectre de $\varphi$ est $\mathbb{N}$ et que pour tout entier $n \geq 0$,
-$$ E_{n}(\varphi) = \textrm{Vect}(X^n)$$
+D'après l'analyse-synthèse, on sait que le spectre de $\varphi$ est $\mathbb{N}$ et que pour tout entier $n \geq 0$,
+$$ E_{n}(\varphi) = \Vect(X^n)$$
 
 \begin{Exercice}{} Soient $f$ un endomorphisme d'un $\mathbb{K}$-espace vectoriel de dimension finie et $n \in \mathbb{N}^{*}$. On suppose que $0$ est dans le spectre de $f^n$. Montrer que $0$ est aussi dans le spectre de $f$.
 \end{Exercice}
@@ -57,13 +53,9 @@ $$ E_{n}(\varphi) = \textrm{Vect}(X^n)$$
 $$ \textrm{det}(f^n) = \textrm{det}(f)^n$$
 On en déduit que $\textrm{det}(f)$ est nul donc $f$ n'est pas inversible et ainsi $f$ n'est pas injective (l'espace vectoriel est de dimension finie) et $0$ est valeur propre de $f$.
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Diagonalisation}}}
-\end{center}
+\subsection{Diagonalisation}
 
-\medskip
 
 \begin{Exercice}{} Diagonaliser $\begin{pmatrix}
 0 & 2 & -1 \\
@@ -255,9 +247,8 @@ $$A_n =[C_1 \, \vert \, C_2 \, \vert \, C_1 \, \vert \, C_2 \, \vert \, \cdots \
 où $C_1$ et $C_2$ sont non nulles et non colinéaires ($1 \times (2n-1)-2\times 2n \neq 0$).
 \item La matrice $A_n$ est de rang $2$ donc d'après le théorème du rang, le noyau de $A_n$ est de dimension $2n-2$. 
 
-\medskip
 
-\noindent La somme des termes d'une ligne est constante égale à :
+La somme des termes d'une ligne est constante égale à :
 $$ \lambda = n(2n+1)$$
 On a ainsi :
 $$ A_n \begin{pmatrix}
@@ -278,9 +269,8 @@ donc $X = \begin{pmatrix}
 1 \\
 \end{pmatrix}$ (étant non nul) est un vecteur propre de $A_n$ associé à la valeur propre $\lambda$.
 
-\medskip
 
-\noindent Le polynôme caractéristique de $A_n$ est unitaire et de degré $2n$. Il est divisible par $X^{2n-2}$ et par $(X- n(2n+1))$ donc il existe un réel $\mu$ tel que :
+Le polynôme caractéristique de $A_n$ est unitaire et de degré $2n$. Il est divisible par $X^{2n-2}$ et par $(X- n(2n+1))$ donc il existe un réel $\mu$ tel que :
 $$ \chi_{A_n}(X) = X^{2n-2} (X- n(2n+1)) (X- \mu)$$
 Ce polynôme est donc scindé donc d'après le cours, la trace de $A_n$ est égale à la somme des valeurs propres. On en déduit que :
 \begin{align*}
@@ -307,13 +297,9 @@ Ainsi, $A_n$ est diagonalisable.
 %vecteurs propres.
 \end{enumerate}
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Polynômes annulateurs}}}
-\end{center}
+\subsection{Polynômes annulateurs}
 
-\medskip
 
 \begin{Exercice}{} Soit $A$ la matrice de $\mathcal{M}_n(\mathbb{R})$ avec des coefficients égaux à $1$, sauf ceux de la diagonale valant $0$.
 
@@ -348,18 +334,16 @@ Sachant que $n \geq 1$, $P$ est un polynôme annulateur de $A$ scindé à racine
 \begin{enumerate}
 \item On peut juste dire que $X^3+9X=X(X^2+9)$ est un polynôme annulateur de $A$ et utiliser le résultat hors-programme du cours mais je pense qu'il faut le reprouver ici...
 
-\medskip
 
-\noindent Soit $\lambda$ une valeur propre éventuelle de $A$ et $X$ un vecteur propre associé. Remarquons que :
+Soit $\lambda$ une valeur propre éventuelle de $A$ et $X$ un vecteur propre associé. Remarquons que :
 $$ A^3 X= A^2(AX)= \lambda A^2X = \lambda A(AX) = \lambda^2 AX = \lambda^3 X$$
 donc
 $$ (A^3+9A)X = \lambda ^3 X+ 9 \lambda X = (\lambda^3+9)X$$
 Or $ A^3+9A=0_n$ donc $(\lambda^3+9\lambda)X= 0_{n,1}$ et $X$ étant non nul, $\lambda^3+9\lambda=0$. Ainsi, $\lambda$ est racine de $Y^3+9Y$ dont les racines sont $0$, $3i$ et $-3i$.
 \item Le polynôme $X(X-3i)(X+3i)$ est scindé à racines simples dans $\mathbb{C}$ et est un polynôme annulateur de $A$ donc $A$ est diagonalisable dans $\mathbb{C}$.
 
-\medskip
 
-\noindent La seule valeur propre réelle éventuelle de $A$ est $0$. Si $A$ est diagonalisable dans $\mathbb{R}$ alors $A$ est semblable à la matrice nulle donc est nulle ce qui faux d'après l'énoncé donc $A$ n'est pas diagonalisable dans $\mathbb{R}$.
+La seule valeur propre réelle éventuelle de $A$ est $0$. Si $A$ est diagonalisable dans $\mathbb{R}$ alors $A$ est semblable à la matrice nulle donc est nulle ce qui faux d'après l'énoncé donc $A$ n'est pas diagonalisable dans $\mathbb{R}$.
 
 \item Soit $n$ un entier impair. Supposons par l'absurde que $A$ est inversible. On sait que :
 $$ A^3 = -9A$$
@@ -422,11 +406,10 @@ Finalement, l'ensemble des polynômes qui sont annulateurs de $A$ est l'ensemble
 \corr 
 
 \begin{enumerate}
-\item La matrice $A$ est nilpotente : il existe un entier $k \geq 1$ tel que $A^k = 0_n$. Le polynôme $X^k$ est donc annulateur de $A$. Les valeurs propres de $A$ appartiennent à l'ensemble des racines de tout polynôme annulateur de $A$ (hors-programme à connaitre) donc la seule valeur propre possible de $A$ est $0$. Le polynôme $\chi_A$ est unitaire, de degré $n$ et scindé (tout polynôme de degré supérieur ou égal à $1$ l'est dans $\mathbb{C}[X]$) donc nécessairement $\chi_A(X)=X^n$.
+\item La matrice $A$ est nilpotente : il existe un entier $k \geq 1$ tel que $A^k = 0_n$. Le polynôme $X^k$ est donc annulateur de $A$. Les valeurs propres de $A$ appartiennent à l'ensemble des racines de tout polynôme annulateur de $A$ (hors-programme à connaître) donc la seule valeur propre possible de $A$ est $0$. Le polynôme $\chi_A$ est unitaire, de degré $n$ et scindé (tout polynôme de degré supérieur ou égal à $1$ l'est dans $\mathbb{C}[X]$) donc nécessairement $\chi_A(X)=X^n$.
 
-\medskip
 
-\noindent \textit{Remarque.} En particulier, d'après le théorème de Cayley-Hamilton, on en déduit que $A^n=0_n$. Par exemple une matrice nilpotente de $\mathcal{M}_5(\mathbb{C})$ vérifie nécessairement $M^5=0_5$.
+\textit{Remarque.} En particulier, d'après le théorème de Cayley-Hamilton, on en déduit que $A^n=0_n$. Par exemple une matrice nilpotente de $\mathcal{M}_5(\mathbb{C})$ vérifie nécessairement $M^5=0_5$.
 \item Si $A \in \mathcal{M}_n(\mathbb{R})$, $A \in \mathcal{M}_n(\mathbb{C})$ donc d'après la question précédente (la définition de $\chi_A$ ne dépend pas du corps), $\chi_A(X)=X^n$.
 \end{enumerate}
 
@@ -464,9 +447,8 @@ Les valeurs propres complexes éventuelles de $A$ sont donc $-i$, $i$ et $1$. Al
 $$ \chi_A(X)= (X+i)^{m(-i)} (X+i)^{m(i)} (X-i)^{m(1)}$$
 avec $m(k)$ la multiplicité (éventuellement nulle) de $k \in \lbrace -i, i ,1 \rbrace \cdot$
 
-\medskip
 
-\noindent La matrice $A$ est à coefficients réels donc $\chi_A$ est un polynôme de $\mathbb{R}[X]$ donc $m(-i)=m(i)$. Ainsi,
+La matrice $A$ est à coefficients réels donc $\chi_A$ est un polynôme de $\mathbb{R}[X]$ donc $m(-i)=m(i)$. Ainsi,
 $$ \chi_A(X) = (X+i)^{m(i)} (X+i)^{m(i)} (X-i)^{m(1)}$$
 Sachant que $\chi_A$ est scindé sur $\mathbb{C}$, on sait d'après le cours que :
 $$ \textrm{det}(A) = (-i)^{m(i)} (i)^{m(i)} 1^{m(1)} = (-i^2)^{m(i)} = 1$$
@@ -520,7 +502,7 @@ f & -h
 & = \lambda f(M)+f(N)
 \end{align*}
 De plus, pour tout $M \in \mathcal{M}_2(\mathbb{R})$, $f(M) \in \mathcal{M}_2(\mathbb{R})$. Ainsi, $f$ est un endomorphisme de $\mathcal{M}_2(\mathbb{R})$.
-\item Il est clair que $f^2 = \textrm{Id}$. Ainsi, $X^2-1= (X-1)(X+1)$ est un polynôme annulateur scindé à racines simples de $f$ donc $f$ est diagonalisable. Les valeurs propres de $f$ sont nécessairement racines de ce polynôme (hors-programme à connaitre) donc les valeurs propres possibles de $f$ sont $-1$ et $1$. Ainsi, $0$ n'est pas valeur propre de $f$ donc $f$ est bijective.
+\item Il est clair que $f^2 = \textrm{Id}$. Ainsi, $X^2-1= (X-1)(X+1)$ est un polynôme annulateur scindé à racines simples de $f$ donc $f$ est diagonalisable. Les valeurs propres de $f$ sont nécessairement racines de ce polynôme (hors-programme à connaître) donc les valeurs propres possibles de $f$ sont $-1$ et $1$. Ainsi, $0$ n'est pas valeur propre de $f$ donc $f$ est bijective.
 \item Les valeurs propres possibles de $f$ sont $-1$ et $1$.
 \begin{itemize}
 \item Soit $M= \begin{pmatrix}
@@ -542,7 +524,7 @@ c & d \\
 1 & 0
 \end{pmatrix} 
 \end{align*}
-Ainsi, $E_1(M) = \textrm{Vect}(M_1)$ où :
+Ainsi, $E_1(M) = \Vect(M_1)$ où :
 $$ M_1 = \begin{pmatrix}
 0 & 1 \\
 1 & 0
@@ -570,7 +552,7 @@ b & -d \\
 0 & 1 \\ 
 \end{pmatrix} 
 \end{align*}
-Ainsi, $E_1(M) = \textrm{Vect}(M_2,M_3,M_4)$ où :
+Ainsi, $E_1(M) = \Vect(M_2,M_3,M_4)$ où :
 $$ M_2 = \begin{pmatrix} 1 & 0 \\
 0 & 0 \\ 
 \end{pmatrix} , \; M_3= \begin{pmatrix}
@@ -633,11 +615,10 @@ f(\lambda M + N) & = 2 \textrm{Tr}(\lambda M + N) A \\
 \end{align*}
 Ainsi, $f$ est un endomorphisme de $\mathcal{M}_n(\mathbb{R})$.
 
-\medskip
 %
-%\noindent 
+%
 
-\noindent Pour tout $M \in \mathcal{M}_n(\mathbb{R})$, on a :
+Pour tout $M \in \mathcal{M}_n(\mathbb{R})$, on a :
 \begin{align*}
 f(f(M)) & =  2\textrm{Tr}(f(M)) A \\
 & = 2\textrm{Tr}(2\textrm{Tr}(M) A) A \\
@@ -646,11 +627,10 @@ f(f(M)) & =  2\textrm{Tr}(f(M)) A \\
 \end{align*}
 Ainsi, $X^2-2\textrm{Tr}(A)X= X(X- 2 \textrm{Tr}(A))$ est un polynôme annulateur de $f$. Si la trace de $A$ est non nulle, ce polynôme est scindé à racines simples donc $f$ est diagonalisable. Si la trace de $A$ est nulle alors $X^2$ est un polynôme annulateur de $f$ donc la seule valeur propre possible de $f$ est $0$ donc si $f$ était diagonalisable, $f$ serait nulle (sa matrice dans n'importe quelle base serait semblable à la matrice nulle) ce qui est faux car $A$ est non nulle (car inversible). Finalement, $f$ est diagonalisable si et seulement si la trace de $A$ est non nulle.
 
-\medskip
 
-\noindent \textit{Remarque.} Supposons que la trace de $A$ soit non nulle. Soit $M \in \mathcal{M}_n(\mathbb{R})$. Alors $M$ appartient au noyau de $f$ si et seulement si sa trace est nulle ($A$ est non nulle car inversible). Or la trace est une forme linéaire donc son noyau est un hyperplan de $\mathcal{M}_n(\mathbb{R})$ donc de dimension $n^2-1$. On remarque facilement que :
+\textit{Remarque.} Supposons que la trace de $A$ soit non nulle. Soit $M \in \mathcal{M}_n(\mathbb{R})$. Alors $M$ appartient au noyau de $f$ si et seulement si sa trace est nulle ($A$ est non nulle car inversible). Or la trace est une forme linéaire donc son noyau est un hyperplan de $\mathcal{M}_n(\mathbb{R})$ donc de dimension $n^2-1$. On remarque facilement que :
 $$ f(A) = 2 \textrm{Tr}(A) A$$
-donc $A$ est un vecteur propre de $f$ associée à la valeur propre $2 \textrm{Tr}(A)$. La dimension du sous-espace propre associée à $2 \textrm{Tr}(A)$ est $1$ (car le noyau est de dimension $n^2-1$ et que la somme des dimensions des sous-espaces est égale à $n^2$ car $f$ est diagonalisable). Ainsi, $E_{2\textrm{Tr}(A)}(f) = \textrm{Vect}(A)$.
+donc $A$ est un vecteur propre de $f$ associée à la valeur propre $2 \textrm{Tr}(A)$. La dimension du sous-espace propre associée à $2 \textrm{Tr}(A)$ est $1$ (car le noyau est de dimension $n^2-1$ et que la somme des dimensions des sous-espaces est égale à $n^2$ car $f$ est diagonalisable). Ainsi, $E_{2\textrm{Tr}(A)}(f) = \Vect(A)$.
 
 \begin{Exercice}{}  Pour tout $M \in \mathcal{M}_n(\mathbb{R})$, on pose :
 $$ \varphi(M) = M +2 \, {}^t M$$
@@ -706,13 +686,9 @@ Ainsi, $E_{3}(\varphi) = \mathcal{S}_n(\mathbb{R})$ dont la dimension est $\dfra
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Trigonalisation}}}
-\end{center}
+\subsection{Trigonalisation}
 
-\medskip
 
 \begin{Exercice}{} Soit $A= \begin{pmatrix}
 1 & -3 & 4 \\
@@ -745,9 +721,8 @@ Donc le vecteur non nul $\begin{pmatrix}
 1 \\
 \end{pmatrix}$ appartient à $E_{-1}(A)$. Or $C_2$ et $C_3$ sont non colinéaires donc le rang de $A+I_3$ est supérieur ou égal à $2$ et donc égal à $2$ d'après le théorème du rang. Ainsi $E_{-1}(A)$ est de dimension $1$ alors que la multiplicité de $1$ en tant que racine de $\chi_A$ vaut $2$. Ainsi, $A$ n'est pas diagonalisable.
 
-\medskip
 
-\noindent La matrice $A$ est trigonalisable car $\chi_A$ est scindé.
+La matrice $A$ est trigonalisable car $\chi_A$ est scindé.
 \item Déterminons une base de $E_3(A)$ (qui est de dimension $1$ car $3$ est une valeur propre simple de $A$) :
 $$ A- 3I_3 = \begin{pmatrix}
 -2 & -3 & 4 \\
@@ -762,9 +737,8 @@ Donc le vecteur non nul $\begin{pmatrix}
 2 \\
 \end{pmatrix}$ appartient à $E_{3}(A)$, qui est de dimension $1$, donc forme une base de cet espace. 
 
-\medskip
 
-\noindent Posons :
+Posons :
 $$ X_1 = \begin{pmatrix}
 1 \\
 2 \\
@@ -839,7 +813,7 @@ $$ P^{-1} = \begin{pmatrix}
     
   \item Compléter ces vecteurs en une base de $\R^3$.
     
-  \item \'Ecrire la matrice de $\varphi$ dans cette base.
+  \item Écrire la matrice de $\varphi$ dans cette base.
         
 \end{enumerate}
 \end{Exercice} 
@@ -926,13 +900,9 @@ $$ \textrm{Mat}_{\mathcal{B}'}(\varphi) = \begin{pmatrix}
 \end{pmatrix}$$
 \end{enumerate}
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Applications de la réduction}}}
-\end{center}
+\subsection{Applications de la réduction}
 
-\medskip
 
 \begin{Exercice}{} Déterminer un polynôme annulateur de degré $2$ de :
 $$ A = \begin{pmatrix}
@@ -956,9 +926,8 @@ A^2 & = (2J-I_3)^2 \\
 \end{align*}
 Ainsi, $X^2-4X-5=(X+1)(X-5)$ est un polynôme annulateur de $A$.
 
-\medskip
 
-\noindent Pour tout entier $n \geq 1$, d'après le théorème de division euclidienne, il existe un unique couple $(Q_n,R_n)$ de $\mathbb{R}[X]^2$ tel que :
+Pour tout entier $n \geq 1$, d'après le théorème de division euclidienne, il existe un unique couple $(Q_n,R_n)$ de $\mathbb{R}[X]^2$ tel que :
 $$ X^n = Q_n(X) (X+1)(X-5) + R_n(X)$$
 et tel que $\textrm{deg}(R_n)<\textrm{deg}((X+1)(X-2))=2$. Ainsi, il existe deux réels $a_n$ et $b_n$ tels que :
 $$ R_n(X)= a_n X + b$$
@@ -997,15 +966,15 @@ $$ A^n = \dfrac{5^n-(-1)^n}{6}  A + \left((-1)^n + \dfrac{5^n-(-1)^n}{6}\right) 
 \item Par simple calcul, on a :
 $$ \chi_A(X)=(X+1)(X-1)(X-3)$$
 Ainsi $A$ a trois valeurs propres distinctes et appartient à $\mathcal{M}_3(\mathbb{R})$ donc $A$ est diagonalisable. Même si ce n'est pas demandé, donnons les sous-espaces propres :
-$$ E_{-1}(A) = \textrm{Vect} \left( \begin{pmatrix}
+$$ E_{-1}(A) = \Vect \left( \begin{pmatrix}
 0 \\
 0 \\
 1
-\end{pmatrix} \right), \; E_{1}(A) = \textrm{Vect} \left( \begin{pmatrix}
+\end{pmatrix} \right), \; E_{1}(A) = \Vect \left( \begin{pmatrix}
 1 \\
 0 \\
 2
-\end{pmatrix} \right) \hbox{ et } E_{3}(A) = \textrm{Vect} \left( \begin{pmatrix}
+\end{pmatrix} \right) \hbox{ et } E_{3}(A) = \Vect \left( \begin{pmatrix}
 1 \\
 1 \\
 1
@@ -1046,13 +1015,13 @@ Une matrice $N$ vérifiant cette égalité est nécessairement diagonale car com
 $$ a^7+ 4a^3+1= -1, \; b^7+ 4b^3+1= 1 \hbox{ et } c^7+ 4c^3+1= 3 $$
 ou encore :
 $$ a^7+ 4a^3= -2, \; b^7+ 4b^3= 0 \hbox{ et } c^7+ 4c^3= 2 $$
-La fonction polynômiale $x \mapsto x^7+4x^3$ est strictement croissante et continue sur $\mathbb{R}$ (par somme). D'après le théorème de bijection monotone, elle est bijective de $\mathbb{R}$ sur $\mathbb{R}$ (les limites en $+ \infty$ et $- \infty$ sont évidentes). Il existe donc un unique triplet de réels $(a,b,c)$ vérifiant les trois égalités précédentes. Il est évident que $b=0$ et que $c=-a$ (par imparité). Trouver une valeur pour $a$ ne semble pas évident ... Une méthode de dichotomie donne $a \approx -0.771557$. En se rappelant que $N=P^{-1}MP$, il existe donc une unique matrice $M$ de $\mathcal{M}_3(\mathbb{R})$ telle que $P(M)=A$ et cette matrice est définie par :
+La fonction polynomiale $x \mapsto x^7+4x^3$ est strictement croissante et continue sur $\mathbb{R}$ (par somme). D'après le théorème de bijection monotone, elle est bijective de $\mathbb{R}$ sur $\mathbb{R}$ (les limites en $+ \infty$ et $- \infty$ sont évidentes). Il existe donc un unique triplet de réels $(a,b,c)$ vérifiant les trois égalités précédentes. Il est évident que $b=0$ et que $c=-a$ (par imparité). Trouver une valeur pour $a$ ne semble pas évident ... Une méthode de dichotomie donne $a \approx -0.771557$. En se rappelant que $N=P^{-1}MP$, il existe donc une unique matrice $M$ de $\mathcal{M}_3(\mathbb{R})$ telle que $P(M)=A$ et cette matrice est définie par :
 $$ M = P \textrm{diag}(a,0,-a) P^{-1}$$
 \end{enumerate}
 
 \begin{Exercice}{}
 \begin{enumerate}
-\item R\'eduire la matrice $A= \left(\begin{array}{rrr}  2 & 2 & 1\\
+\item Réduire la matrice $A= \left(\begin{array}{rrr}  2 & 2 & 1\\
 1 & 3 & 1\\
 1 & 2 & 2 \end{array}\right) \cdot $\\
 \item Déterminer alors le commutant de $A$, noté $\mathcal{C}(A)$ et défini par : 
@@ -1122,17 +1091,17 @@ a & b & 0 \\
 d & e & 0 \\
 0 & 0 & i \\
 \end{pmatrix}, \, (a,b,d,e,i) \in \mathbb{R}^5 \right\rbrace \\
-& = \textrm{Vect}(E_{1,1}, E_{1,2}, E_{2,1}, E_{2,2},E_{3,3})
+& = \Vect(E_{1,1}, E_{1,2}, E_{2,1}, E_{2,2},E_{3,3})
 \end{align*}
 Pour tout $M \in \mathcal{M}_n(\mathbb{R})$,
 \begin{align*}
 M \in \mathcal{C}(A) & \Longleftrightarrow P^{-1}MP \in \mathcal{C}(D) \\
-& \Longleftrightarrow  P^{-1}MP \in \textrm{Vect}(E_{1,1}, E_{1,2}, E_{2,1}, E_{2,2},E_{3,3}) \\
+& \Longleftrightarrow  P^{-1}MP \in \Vect(E_{1,1}, E_{1,2}, E_{2,1}, E_{2,2},E_{3,3}) \\
 & \Longleftrightarrow \exists (a,b,c,d,e) \in \mathbb{R}^5 \, \vert \, P^{-1}MP = aE_{1,1}+bE_{1,2}+c E_{2,1}+d E_{2,2}+eE_{3,3} \\
 & \Longleftrightarrow \exists (a,b,c,d,e) \in \mathbb{R}^5 \, \vert \, M = aPE_{1,1}P^{-1}+bPE_{1,2}P^{-1}+c PE_{2,1}P^{-1}+d PE_{2,2}P^{-1}+ePE_{3,3}P^{-1} \\
 \end{align*}
 Ainsi,
-$$ \mathcal{C}(A) = \textrm{Vect}(PE_{1,1}P^{-1},PE_{1,2}P^{-1},PE_{2,1}P^{-1},PE_{2,2}P^{-1},PE_{3,3}P^{-1}) $$
+$$ \mathcal{C}(A) = \Vect(PE_{1,1}P^{-1},PE_{1,2}P^{-1},PE_{2,1}P^{-1},PE_{2,2}P^{-1},PE_{3,3}P^{-1}) $$
 La famille $(E_{1,1}, E_{1,2}, E_{2,1}, E_{2,2}, E_{3,3})$ est libre (sous-famille de la base canonique de $\mathcal{M}_n(\mathbb{R})$) donc par injectivité de l'endomorphisme de $\mathcal{M}_n(\mathbb{R})$ définie par $M \mapsto PMP^{-1}$, la famille :
 $$(PE_{1,1}P^{-1},PE_{1,2}P^{-1},PE_{2,1}P^{-1},PE_{2,2}P^{-1},PE_{3,3}P^{-1})$$
 est libre ce qui implique que $\mathcal{C}(A)$ est de dimension $5$.
@@ -1201,9 +1170,8 @@ Ainsi, $b=c=d=g=f=h=0$ donc :
 $$ N = \textrm{diag}(a,b,c)$$
 Or $N^2= D=\textrm{diag}(0,1,2)$ donc $a=0$, $b= -1$ ou $1$ et $c= - \sqrt{2}$ ou $\sqrt{2}$. Réciproquement, toute matrice de cette forme vérifie bien $N^2=D$.
 
-\medskip
 
-\noindent Avec le raisonnement précédent, on en déduit que $B^2=A$ si et seulement si :
+Avec le raisonnement précédent, on en déduit que $B^2=A$ si et seulement si :
 $$ P^{-1} B P = \textrm{diag}(0, \pm 1, \pm \sqrt{2})$$
 ou encore :
 $$ B = P \textrm{diag}(0, \pm 1, \pm \sqrt{2}) P^{-1}$$
@@ -1212,7 +1180,7 @@ ce qui donne $4$ solutions car $N \mapsto P^{-1}MP$ est un endomorphisme injecti
 
 \begin{Exercice}{}
 Soit $A$ la matrice de $\mathcal{M}_{3}\left(\mathbb{R}\right)$
-d\'efinie par
+définie par
 \[
 A=\left(\begin{array}{ccc}
 1 & -1 & -1\\
@@ -1222,11 +1190,11 @@ A=\left(\begin{array}{ccc}
 \]
 
 \begin{enumerate}
-\item Montrer que la matrice $A$ est diagonalisable. D\'eterminer ses valeurs propres et ses sous-espaces propres.
-\item D\'eterminer une relation entre $A^{2}$, $A$ et $I_{n}$.\\
-En d\'eduire une relation entre $A^{n+1}$, $A^{n}$ et $A^{n-1}$ pour
+\item Montrer que la matrice $A$ est diagonalisable. Déterminer ses valeurs propres et ses sous-espaces propres.
+\item Déterminer une relation entre $A^{2}$, $A$ et $I_{n}$.\\
+En déduire une relation entre $A^{n+1}$, $A^{n}$ et $A^{n-1}$ pour
 tout entier $n\geq1$.
-\item Montrer par r\'ecurrence qu'il existe deux suites $\left(u_{n}\right)_{n\in\mathbb{N}}$
+\item Montrer par récurrence qu'il existe deux suites $\left(u_{n}\right)_{n\in\mathbb{N}}$
 et $\left(v_{n}\right)_{n\in\mathbb{N}}$ telles que
 \[
 \forall n\in\mathbb{N},\quad A^{n}=\left(\begin{array}{ccc}
@@ -1235,14 +1203,14 @@ v_{n} & u_{n} & v_{n}\\
 v_{n} & v_{n} & u_{n}
 \end{array}\right)
 \]
-qui v\'erifient la relation de r\'ecurrence :
+qui vérifient la relation de récurrence :
 \[
 \forall n\geq1,\quad\left\{ \begin{array}{ccc}
 u_{n+1} & = & u_{n}+2u_{n-1}\\
 v_{n+1} & = & v_{n}+2v_{n-1}
 \end{array}\right.
 \]
-\item D\'eterminer, pour tout entier naturel $n$, l'expression de $u_{n}$
+\item Déterminer, pour tout entier naturel $n$, l'expression de $u_{n}$
 et $v_{n}$ en fonction de $n$.
 \end{enumerate}
 \end{Exercice}
@@ -1322,13 +1290,11 @@ Or d'après la question précédente, la matrice $A$ est semblable à $D$ donc i
 $$ A^2 = (PDP^{-1})^2 = PD^2P^{-1} = P(D+2I_3)P^{-1} = PDP^{-1} + 2I_3 = A+2 I_3$$
 Ainsi, $A^2 = A + 2 I_3$. 
 
-\medskip
 
-\noindent \textit{Remarque}. Sinon on calcule tout simplement $A^2$... Mais c'est moins drôle !
+\textit{Remarque}. Sinon on calcule tout simplement $A^2$... Mais c'est moins drôle !
 
-\medskip
 
-\noindent En multipliant, pour $n \geq 1$, l'égalité précédente par $A^{n-1}$, on obtient :
+En multipliant, pour $n \geq 1$, l'égalité précédente par $A^{n-1}$, on obtient :
 $$A^{n+1} = A^{n} + 2 A^{n-1}$$
 
 \item On raisonne à l'aide d'une démonstration par récurrence. Pour tout entier $n \geq 0$, on pose $$ \mathcal{P}_n : \hbox{\og} \  \exists (u_n, v_n) \in \mathbb{R}^2 \, \vert \;  A^n  = \left( {\begin{array}{*{20}{c}}
@@ -1363,14 +1329,14 @@ v_{n} & u_{n} & v_{n}\\
 v_{n} & v_{n} & u_{n}
 \end{array}\right)
 \]
-qui v\'erifient la relation de r\'ecurrence
+qui vérifient la relation de récurrence
 \[
 \forall n\geq 1,\quad\left\{ \begin{array}{ccc}
 u_{n+1} & = & u_{n}+2u_{n-1}\\
 v_{n+1} & = & v_{n}+2v_{n-1}
 \end{array}\right.
 \]
-\item Les suites $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ sont des suites récurrentes linéaires d'ordre deux (avec la même relation). L'équation caractéristique associée admet deux racines distinctes qui sont $-1$ et $2$. Il existe donc quatre r\'eels $\alpha, \beta, \gamma, \delta$ tels que pour tout $n \in \mathbb{N}$,
+\item Les suites $(u_n)_{n \geq 0}$ et $(v_n)_{n \geq 0}$ sont des suites récurrentes linéaires d'ordre deux (avec la même relation). L'équation caractéristique associée admet deux racines distinctes qui sont $-1$ et $2$. Il existe donc quatre réels $\alpha, \beta, \gamma, \delta$ tels que pour tout $n \in \mathbb{N}$,
 $$ u _n = \alpha 2^n + \beta (-1)^n \et v_n  = \gamma 2^n + \delta (-1)^n$$
 La prise en compte des conditions initiales $u_0=u_1=1$ permet de conclure que 
 $$\forall n \geq 0, \; u_{n} = \frac{1}{3}\left(2^{n+1} + (-1)^n\right)$$ 
@@ -1379,7 +1345,7 @@ $$ \forall n \geq 0, \; v_{n} = \frac{1}{3} \left( (-1)^n - 2^{n} \right) $$
 \end{enumerate}
 
 
-\begin{Exercice}{} Soient $(u_k)_{k \geq 0}$ et $(v_k)_{k \geq 0}$ deux suites \`a termes r\'eels d\'efinies par
+\begin{Exercice}{} Soient $(u_k)_{k \geq 0}$ et $(v_k)_{k \geq 0}$ deux suites \`a termes réels définies par
 $$\left\{\begin{array}{l}u_0=1\\ v_0=2\end{array}\right.\qquad\hbox{et}\qquad \forall k\in\N,\;\left\{\begin{array}{l}u_{k+1}=4u_k-2v_k\\
 v_{k+1}=u_k+v_k\end{array}\right.$$
 Déterminer pour tout entier $k \geq 0$, l'expression de $u_k$ et $v_k$ en fonction de $k$.
@@ -1391,49 +1357,45 @@ u_k \\
 v_k \\
 \end{pmatrix}$$
 et
-$$ A=\pmatrice{4&-2\\1&1} $$
+$$ A=\matrice{4&-2\\1&1} $$
 On montre par récurrence immédiate que pour tout entier $k \geq 0$,
 $$ X_k=A^k X_0$$
 Le calcul du polynôme caractéristique de $A$ donne :
 $$ \chi_A(X) = (X-2)(X-3)$$
 Ainsi, $A$ appartient à $\mathcal{M}_2(\mathbb{R})$ et a deux valeurs propres distinctes donc elle est diagonalisable. On a :
-$$ A - 2I_2 = \pmatrice{2&-2\\1&-1}$$
+$$ A - 2I_2 = \matrice{2&-2\\1&-1}$$
 La somme des deux colonnes est nulle donc $V_1=\begin{pmatrix}
 1 \\
 1 \\
 \end{pmatrix}$
 est non nul et appartient à $\ker(A-2I_2)$ qui est de dimension $1$ car $2$ est valeur propre simple de $A$. On a aussi :
-$$A-3I_2=\pmatrice{1&-2\\1&-2}$$ 
+$$A-3I_2=\matrice{1&-2\\1&-2}$$ 
 donc $V_2=\begin{pmatrix}
 2 \\
 1 \\
 \end{pmatrix}$ est non nul et appartient à $\ker(A-3I_2)$ qui est de dimension $1$ car $2$ est valeur propre simple de $A$. La famille $(V_1,V_2)$ est donc une base de vecteurs propres de $A$ et si l'on note 
-$$P=\pmatrice{1&2 \\ 1&1}$$
+$$P=\matrice{1&2 \\ 1&1}$$
 la matrice de passage de la base canonique \`a cette base de vecteurs propres , on a donc $A=PDP^{-1}$ avec 
-$$D=\pmatrice{2&0\\0&3}$$
+$$D=\matrice{2&0\\0&3}$$
 Pour tout entier $k \geq 0$, on a (d'après la formule de changement de base appliquée à $u^k$ où $u$ est l'endomorphisme canoniquement associé à $A$) :
 $$A^k=PD^kP^{-1}$$
 Par calcul, on a : 
-$$P^{-1}=\pmatrice{-1&2\\1&-1}$$
+$$P^{-1}=\matrice{-1&2\\1&-1}$$
 puis sachant que $D$ est diagonale : 
-$$D^k=\pmatrice{2^k&0\\0&3^k}$$ 
+$$D^k=\matrice{2^k&0\\0&3^k}$$ 
 et enfin 
-$$A^k=\pmatrice{1&2 \\ 1&1}\times\pmatrice{2^k&0\\0&3^k}\times \pmatrice{-1&2\\1&-1} = \pmatrice{2 \times 3^k-2^k & -2 \times 3^k+2^{k+1}\\[0.15cm]3^k-2^k& -3^k+2^k}$$
+$$A^k=\matrice{1&2 \\ 1&1}\times\matrice{2^k&0\\0&3^k}\times \matrice{-1&2\\1&-1} = \matrice{2 \times 3^k-2^k & -2 \times 3^k+2^{k+1}\\[0.15cm]3^k-2^k& -3^k+2^k}$$
 On sait que pour tout $k \geq 0$,
 $$X_k=A^kX_0$$
 donc :
-$$\pmatrice{u_k\\v_k}=A^k\pmatrice{1\\2}$$
+$$\matrice{u_k\\v_k}=A^k\matrice{1\\2}$$
 d'o\`u finalement :
 \[
 u_k=3 \times 2^k-2 \times 3^k \quad \textrm{ et } \quad v_k=3 \times 2^k-3^k 
 \]
-\medskip
 
-\begin{center}
-\textit{{ {\large Matrices définies par blocs}}}
-\end{center}
+\subsection{Matrices définies par blocs}
 
-\medskip
 
 \begin{Exercice}{} Soit $A= \begin{pmatrix}
 1& 2 \\
@@ -1454,10 +1416,10 @@ $B$ est-elle diagonalisable ? Donner les éléments propres de $B$.
 \item Le déterminant de $A$ est non nul donc $A$ est inversible. Le calcul du polynôme caractéristique donne :
 $$ \chi_A(X) = (X+1)(X-3)$$
 Donc $A$ admet deux valeurs propres distinctes, $-1$ et $3$, et appartient à $\mathcal{M}_2(\mathbb{R})$ donc elle est diagonalisable. En calculant $A+I_2$ et $A-3I_2$, on obtient :
-$$ E_{-1}(A) = \textrm{Vect} \left( \begin{pmatrix}
+$$ E_{-1}(A) = \Vect \left( \begin{pmatrix}
 1 \\
 -1 \\
-\end{pmatrix}\right) \hbox{ et } E_{3}(A) = \textrm{Vect} \left( \begin{pmatrix}
+\end{pmatrix}\right) \hbox{ et } E_{3}(A) = \Vect \left( \begin{pmatrix}
 1 \\
 1 \\
 \end{pmatrix}\right)$$
@@ -1511,7 +1473,7 @@ $$ \textrm{dim}(E_0(B)) + \textrm{dim}(E_{-2}(B)) + \textrm{dim}(E_6(B))  \leq \
 donc :
 $$ \textrm{dim}(E_0(B)) + \textrm{dim}(E_{-2}(B)) + \textrm{dim}(E_6(B))  = \textrm{dim}(\mathcal{M}_{4,1}(\mathbb{R}))$$
 On en déduit que $B$ est diagonalisable et que $-2$ et $6$ sont valeurs propres simples et que $E_0(B)$ est de dimension $2$ donc :
-$$ E_0(B) = \textrm{Vect} \left(\begin{pmatrix}
+$$ E_0(B) = \Vect \left(\begin{pmatrix}
 1 \\
 0 \\
 -1 \\
@@ -1521,12 +1483,12 @@ $$ E_0(B) = \textrm{Vect} \left(\begin{pmatrix}
 1 \\
 0 \\
 -1
-\end{pmatrix}\right), \;  E_{-2}(B) = \textrm{Vect} \left( \begin{pmatrix}
+\end{pmatrix}\right), \;  E_{-2}(B) = \Vect \left( \begin{pmatrix}
 1 \\
 -1 \\
 1 \\
 -1
-\end{pmatrix}\right) \hbox{ et } E_{6}(B) = \textrm{Vect} \left(\begin{pmatrix}
+\end{pmatrix}\right) \hbox{ et } E_{6}(B) = \Vect \left(\begin{pmatrix}
 1 \\
 1 \\
 1 \\
@@ -1574,13 +1536,11 @@ P(BA) & 0 \\
 \end{pmatrix}$$
 \item Supposons que $N$ est diagonalisable. Alors $N^2$ est diagonalisable et il existe donc un polynôme annulateur scindé à racines simples $P$ tel que $P(N^2)=0_{2n}$ et donc d'après la question précédente, $P(AB)=0_n$. Ainsi, $AB$ a un polynôme annulateur scindé à racines simples et est donc diagonalisable.
 
-\medskip
 
-\noindent On pourrait se passer de la question précédente en remarquant que si $f$ est l'endomorphisme de $\mathbb{R}^{2n}$ canoniquement associé à $N^2$ alors $f$ est diagonalisable et $AB$ est la matrice de l'endomorphisme induit par $f$ sur l'espace engendré par $n$ derniers vecteurs de la base canonique de $\mathbb{R}^{2n}$ donc $AB$ est aussi diagonalisable.
+On pourrait se passer de la question précédente en remarquant que si $f$ est l'endomorphisme de $\mathbb{R}^{2n}$ canoniquement associé à $N^2$ alors $f$ est diagonalisable et $AB$ est la matrice de l'endomorphisme induit par $f$ sur l'espace engendré par $n$ derniers vecteurs de la base canonique de $\mathbb{R}^{2n}$ donc $AB$ est aussi diagonalisable.
 
-\medskip
 
-\noindent Supposons maintenant que $AB$ est diagonalisable. Sachant que $A$ est inversible, on a :
+Supposons maintenant que $AB$ est diagonalisable. Sachant que $A$ est inversible, on a :
 $$ AB=A(BA)A^{-1}$$
 Donc $AB$ et $BA$ sont semblables et ainsi $BA$ est aussi diagonalisable et ces deux matrices sont semblables à une matrice diagonale $D$ : il existe deux matrices $P$, $Q$, d'ordre $n$ et inversibles tels que $AB=PDP^{-1}$ et $BA= QDQ^{-1}$. Un calcul par blocs donne :
 $$ N^2 = \begin{pmatrix}
@@ -1614,13 +1574,9 @@ est un polynôme annulateur scindé à racines simples de $N$ (les $\lambda_i$ s
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Divers}}}
-\end{center}
+\subsection{Divers}
 
-\medskip
 
 \begin{Exercice}{} Soit $A \in \mathcal{M}_{n}(\mathbb{R})$ dont des valeurs propres réelles sont positives. Montrer que le déterminant de $A$ est positif ou nul.
 \end{Exercice} 
@@ -1672,9 +1628,8 @@ Soit $h \in H$. On a :
 $$ u(h) = u(h)- \lambda h + \lambda h$$
 On sait que $u(h) - \lambda h \in H$ et $\lambda h \in H$ donc sachant que $H$ est un espace vectoriel, on obtient que $u(h) \in H$ ce qui donne le résultat.
 
-\medskip
 
-\noindent Supposons maintenant que $H$ est stable par $u$ :
+Supposons maintenant que $H$ est stable par $u$ :
 $$ \forall h \in H, \; u(h) \in H$$
 $H$ admet un supplémentaire engendré par un vecteur non nul $a$. Soit $x \in E$. Il existe un unique vecteur $h \in H$ et un unique scalaire $\lambda$ tel que $x=h + \alpha a$. Par linéarité de $u$, on a :
 $$ u(x) = u(h) + \alpha u(a)$$
@@ -1693,7 +1648,7 @@ car $u(h)$, $h'$ et $h$ appartient à $H$ qui est un espace vectoriel. Finalemen
 \item Notons $f \in \mathcal{L}(\mathcal{M}_{3,1}(\mathbb{K}))$ l'application linéaire canoniquement associée à $A$. Les sous-espaces stables triviaux de $f$ sont $\lbrace 0_{\mathcal{M}_{3,1}(\mathbb{K})} \rbrace$ et $\mathcal{M}_{3,1}(\mathbb{K})$. Il reste à déterminer les sous-espaces stables de $f$ de dimension $1$ et $2$. D'après le cours, les droites vectorielles stables par $f$ sont les droites engendrées par des vecteurs propres. Le calcul du polynôme caractéristique donne :
 $$ \chi_A(X) = (X-2)(X^2+8X+23)$$
 La seule valeur propre réelle de $A$ est $2$ donc la seule droite vectorielle de $f$ est $E_2(f)$, c'est-à-dire (par la méthode habituelle) :
-$$ E_2(f) = \textrm{Vect} \left( \begin{pmatrix}
+$$ E_2(f) = \Vect \left( \begin{pmatrix}
 1 \\
 0 \\
 -1 
@@ -1705,7 +1660,7 @@ $$ A - 2I_3 = \begin{pmatrix}
 -2 & 2 & -2 \\
 \end{pmatrix} $$
 L'image de $A-2I_3$ est de dimension $2$ et ses deux premières colonnes sont non colinéaires donc finalement, le seul plan stable par $f$ est :
-$$ \textrm{Vect} \left( \begin{pmatrix}
+$$ \Vect \left( \begin{pmatrix}
 -3 \\
 -2 \\
 -2 \\
@@ -1739,7 +1694,7 @@ où $x \in \mathbb{R}$.
 %où $\lambda \in \mathbb{R}$. 
 
 \item Le polynôme caractéristique de $AB$ vaut (après calculs) $X(X-1)(X-2)$, $AB$ a donc $3$ valeurs propres distinctes et est d'ordre $3$ donc est diagonalisable. On obtient facilement que :
-$$ E_{0}(AB) = \textrm{Vect}(X_0), \; E_{1}(AB) = \textrm{Vect}(X_1) \hbox{ et } E_{2}(AB) = \textrm{Vect}(X_2)$$
+$$ E_{0}(AB) = \Vect(X_0), \; E_{1}(AB) = \Vect(X_1) \hbox{ et } E_{2}(AB) = \Vect(X_2)$$
 où 
 $$ X_0 = \begin{pmatrix}
 1 \\
@@ -1806,14 +1761,13 @@ $$ f(t) = \textrm{det}((A-t I_n)B -x I_n) \; \hbox{ et } g(t) = \textrm{det}(B(A
 \end{align*}
 Ainsi, $\chi_{AB}= \chi_{BA}$.
 
-\medskip
 
-\noindent \textit{Remarque.} On peut aussi remarquer que :
+\textit{Remarque.} On peut aussi remarquer que :
 $$ AB=  A(BA)A^{-1}$$
 Ainsi, $AB$ et $BA$ sont semblables donc ont le même polynôme caractéristique.
 \item Soit $x \in \mathbb{K}$ fixé. La matrice $A$ a un nombre fini de valeurs propres donc pour une infinité de scalaire $t$, $A-t I_n$ est inversible et donc d'après la question précédente :
 $$ f(t)=g(t)$$
-Or, les applications $f$ et $g$ sont polynômiales car leurs coefficients le sont (par développement). Elles coïncident en une infinité de scalaires dont sont égales. En particulier, $f(0)=g(0)$ et donc :
+Or, les applications $f$ et $g$ sont polynomiales car leurs coefficients le sont (par développement). Elles coïncident en une infinité de scalaires dont sont égales. En particulier, $f(0)=g(0)$ et donc :
 $$ \textrm{det}(AB-xI_n)= \textrm{det}(BA-xI_n)$$
 Ceci est vrai pour tout scalaire $x$. On en déduit que $\chi_{AB}= \chi_{BA}$.
 \end{enumerate}

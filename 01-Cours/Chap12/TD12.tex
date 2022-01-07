@@ -1,26 +1,24 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\renewcommand{\P}{\text{P}}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+\newcommand{\dt}{\text{d}t}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 12 : Espaces vectoriels normés}
 
-\begin{center}
-\textit{{ {\huge TD 12 : Espaces vectoriels normés}}}
-\end{center}
+\tableofcontents
+\separationTitre
 
 
-\bigskip
 
-\noindent Dans la suite, $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$ et $n$, $p$ seront deux entiers naturels non nuls.
+Dans la suite, $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$ et $n$, $p$ seront deux entiers naturels non nuls.
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Normes}}}
-\end{center}
+\subsection{Normes}
 
-\medskip
 
 
 
@@ -59,8 +57,7 @@ Montrer que $A \mapsto \Vert A \Vert_{1}$ et $A \mapsto \Vert A \Vert_{\infty}$ 
 %\end{itemize}
 %Ainsi, $A \mapsto \Vert A \Vert_1$ est une norme sur $\mathcal{M}_{n,p}(\mathbb{K})$.
 %
-%\medskip
-%
+%%
 %\noindent $\rhd$ Montrons que $A \mapsto \Vert A \Vert_{\infty}$ définit une norme sur $\mathcal{M}_{n,p}(\K)$.
 %
 %\begin{itemize}
@@ -107,8 +104,7 @@ $$ N((x,y)) = \sup_{t \in [0,1]} \vert x+ty \vert$$
 %\begin{enumerate}
 %\item Soit $(x,y) \in \mathbb{R}^3$. La fonction $t \mapsto \vert x+ty \vert$ est continue sur le segment $[0,1]$ donc bornée et admet un maximum sur ce segment. Ainsi, $N((x,y))$ est bien défini.
 %
-%\medskip
-%
+%%
 %\noindent Montrons que $N$ est une norme sur $\mathbb{R}^2$. Pour gagner en efficacité, remarquons que :
 %$$ N((x,y)) = \Vert f_{x,y} \Vert_{\infty}$$
 %où $f_{x,y} : t \mapsto x+ty$ et $\Vert \cdot \Vert_{\infty}$ est la norme infini sur $[0,1]$.
@@ -146,8 +142,7 @@ $$ N((x,y)) = \sup_{t \in [0,1]} \vert x+ty \vert$$
 %\end{align*}
 %Voici une représentation graphique :
 %
-%\medskip
-%
+%%
 %\begin{center}
 %\includegraphics[scale=0.4]{BouleU}
 %\end{center}
@@ -269,13 +264,9 @@ Montrer que $N$ définit une norme sur $\R_n [X]$.
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Comparaisons de normes, normes équivalentes}}}
-\end{center}
+\subsection{Comparaisons de normes, normes équivalentes}
 
-\medskip
 
 \begin{Exercice}{} On considère deux normes définies sur $E= \mathcal{C}([0,1], \mathbb{R})$ de la manière suivante :
 $$ \forall f \in E, \; \Vert f \Vert_1 = \int_0^1 \vert f(t) \vert \dt \; \hbox{ et } \; \Vert f \Vert_{\infty} = \max_{x \in [0,1]} \vert f(x) \vert$$
@@ -290,7 +281,7 @@ Représenter graphiquement les fonctions $f_1$, $f_2$ et $f_3$.
 \end{enumerate}
 \end{Exercice}
 
-\begin{Exercice}{\ding{80}}
+\begin{Exercice}[$\bigstar$]
 \begin{enumerate}
 \item Montrer que $N$, définie par :
 $$ N(f) = \sup_{[0,1]} \vert f''+2f'+f \vert $$
@@ -307,8 +298,7 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 %\begin{enumerate}
 %\item Soit $f \in E$. Alors $f$ est de classe $\mathcal{C}^2$ sur $[0,1]$ donc $f''+2f'+f$ est continue sur le segment $[0,1]$ et donc bornée sur celui-ci. Ainsi $N(f)$ existe. L'application $N$ est donc bien définie.
 %
-%\medskip
-%
+%%
 %\noindent Remarquons que pour tout $f \in E$,
 %$$ N(f) = \Vert f''+2f"+f \Vert_{\infty}$$
 %En utilisant que la norme infini est une norme sur $E$, toutes les propriétés à vérifier sont immédiates sauf la séparation. Soit $f \in E$ tel que $N(f)=0$. En utilisant que la norme infini est une norme sur $E$, on en déduit que $f''+2f"+f=0$ et en particulier $f$ est solution de l'équation différentielle linéaire homogène d'ordre deux suivante :
@@ -350,13 +340,9 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 %La valeur $a = 1-2e^{-1}$ est donc minimale.
 %\end{enumerate}
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Ouverts, fermés, bornés}}}
-\end{center}
+\subsection{Ouverts, fermés, bornés}
 
-\medskip
 
 
 
@@ -415,7 +401,7 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 %Ainsi, $A$ est borné.
 %\end{enumerate}
 
-\begin{Exercice}{} Repr\'esenter graphiquement les ensembles suivants. Sont-ils des ouverts ? Des ferm\'es ? Des parties bornées ?
+\begin{Exercice}{} Représenter graphiquement les ensembles suivants. Sont-ils des ouverts ? Des fermés ? Des parties bornées ?
 \begin{enumerate}
 \item $A = \lbrace (x,y)\in\R^2 \, \vert \, x^2 < 1 \hbox{ et } y> 1\rbrace$
 \item $B = \lbrace (x,y)\in\R^2 \, \vert \, x^2 < 1 \hbox{ et } y \geq 1\rbrace$
@@ -485,7 +471,7 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 %\end{itemize}
 %\end{enumerate}
 
-\begin{Exercice}{} Montrer que $\left\{P\in\R_n[X], \, \dis\int_0^1P(t)dt= 1\right\}$ est un fermé.
+\begin{Exercice}{} Montrer que $\left\{P\in\R_n[X], \, \int_0^1P(t)dt= 1\right\}$ est un fermé.
 \end{Exercice}
 
 %\corr Soit $F$ cet ensemble. Remarquons que :
@@ -522,12 +508,11 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 %$$ B(a,r) \subset A \subset B$$
 %donc $a \in  \mathring{B}$. Ainsi, $\mathring{A} \subset \mathring{B}$.
 %
-%\medskip
-%
+%%
 %\noindent Soit $x \in \overline{A}$. Il existe une suite d'éléments de $A$ (donc de $B$ car $A \subset B$) convergeant vers $x$. Donc $x \in \overline{B}$.
 
 
-\begin{Exercice}{\ding{80}} Soit $F$ un sous-espace vectoriel d'un espace vectoriel normé $E$, distinct de $E$. Montrer que $F$ est d'intérieur vide.
+\begin{Exercice}[$\bigstar$] Soit $F$ un sous-espace vectoriel d'un espace vectoriel normé $E$, distinct de $E$. Montrer que $F$ est d'intérieur vide.
 \end{Exercice}
 
 %\corr Supposons par l'absurde que $F$ n'est pas d'intérieur vide. Il existe donc un vecteur $a$ de $E$ et un réel strictement positif $r>0$ tel que :
@@ -585,8 +570,7 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 %0 & 1 \\
 %\end{pmatrix}$ n'est pas diagonalisable car cette matrice admet pour unique valeur propre $1$ : si elle était diagonalisable, elle serait semblable à $I_2$ donc égale à $I_2$ ce qui est faux. Ainsi, $\mathcal{D}$ n'est pas un fermé de $\mathcal{M}_2(\mathbb{R})$.
 %
-%\medskip
-%
+%%
 %\noindent On a : 
 %$$ \lim_{\varepsilon \rightarrow 0} \begin{pmatrix}
 %0 & \varepsilon \\
@@ -598,7 +582,7 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 %\end{pmatrix}$ tend vers $0_2$ quand $\varepsilon$ tend vers $0$ et chacune de ces matrices n'est pas diagonalisable car cette matrice admet pour unique valeur propre $0$ : si elle était diagonalisable, elle serait semblable à $0_2$ donc égale à $0_2$ ce qui est faux. Ainsi, $\mathcal{D}$ n'est pas un ouvert de $\mathcal{M}_2(\mathbb{R})$.
 
 
-\begin{Exercice}{\ding{80}} Soit $E= \mathcal{M}_n(\mathbb{R})$. On note $\mathcal{N}$ l'ensemble des matrices nilpotentes de $E$.
+\begin{Exercice}[$\bigstar$] Soit $E= \mathcal{M}_n(\mathbb{R})$. On note $\mathcal{N}$ l'ensemble des matrices nilpotentes de $E$.
 
 \begin{enumerate}
 \item Montrer que si $A$ est une matrice nilpotente de $E$ alors $A^n=0_n$.
@@ -646,8 +630,7 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 %$$ \textrm{det}(A+ \varepsilon I_n)  = \varepsilon^n \neq 0$$
 %Ainsi, $A+ \varepsilon I_n$ est inversible et répond donc à la question.
 %
-%\medskip
-%
+%%
 %\noindent Montrons que $\mathcal{N}$ est d'intérieur vide. Si par l'absurde $\mathcal{N}$ n'était pas d'intérieur vide, il existerait une matrice $A \in \mathcal{N}$ et une boule ouverte $B$ de rayon $r>0$ centrée en $A$ telle que $B \subset N$. D'après la question précédente, il existe une matrice $P$ inversible appartenant à $B$ et donc à $\mathcal{N}$. C'est absurde car une matrice inversible ne peut pas être nilpotente (une matrice nilpotence admet $0$ pour valeur propre). Ainsi, par l'absurde, on a montré que $\mathcal{N}$ était d'intérieur vide.
 %\end{enumerate}
 %\end{enumerate}
@@ -658,8 +641,7 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 
 %\corr Procédons en trois étapes.
 %
-%\medskip
-%
+%%
 %\noindent $\rhd$ Montrons que $\mathcal{S}$ est convexe, c'est-à-dire :
 %$$ \forall (A,B) \in \mathcal{S}^2, \; \forall \lambda \in [0,1], \; \lambda A+(1-\lambda)B \in \mathcal{S}$$
 %Soient $(A,B) \in \mathcal{S}^2$ et $\lambda \in [0,1]$. En notant $A=(a_{i,j})$ et $B=(b_{i,j})$, on a :
@@ -674,8 +656,7 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 %\end{align*}
 %Ainsi, $\lambda A+ (1- \lambda)B$ appartient à $\mathcal{S}$. Finalement, $\mathcal{S}$ est convexe.
 %
-%\medskip
-%
+%%
 %\noindent Montrons que $S$ est un fermé de $\mathcal{M}_n(\mathbb{R})$. Soit $(A_k)_{k \geq 0}$ une suite d'éléments de $S$ convergeant vers $A=(a_{i,j}) \in \mathcal{M}_n(\mathbb{R})$. Montrons que $A$ appartient à $\mathcal{S}$. Notons pour tout $k \geq 0$, $A_k = (a_{i,j}^k)$. Par convergence composante par composante, on a pour tout $(i,j) \in \Interv{1}{n}^2$,
 %$$ \lim_{k \rightarrow + \infty} a_{i,j}^k = a_{i,j}$$
 %Or les matrices $A_k$ appartiennent à $\mathcal{S}$ donc tous les coefficients $a_{i,j}^k$ appartient à $[0,1]$ donc par passage à la limite, $a_{i,j} \in [0,1]$. De, pour tout entier $k \geq 0$ et tout entier $i \in \Interv{1}{n}$,
@@ -684,8 +665,7 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 %$$ \sum_{p=1}^n a_{i,p} = 1$$
 %On en déduit que $A$ appartient à $\mathcal{S}$. Ainsi, $\mathcal{S}$ est fermé.
 %
-%\medskip
-%
+%%
 %\noindent $\rhd$ Utilisons la norme $1$ définie dans un autre exercice. Pour toute matrice $A=(a_{i,j})$ de $\mathcal{M}_n(\mathbb{R})$,
 %\begin{align*}
 %\Vert A \Vert_1 & = \sum_{i = 1}^{n} \sum_{j = 1}^{n} \vert a_{i,j} \vert \\
@@ -694,13 +674,9 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 % & = n
 %\end{align*}
 %Ainsi, $\mathcal{S}$ est inclus dans la sphère de centre la matrice nulle et de rayon $n$ donc $\mathcal{S}$ est bornée.
-\medskip
 
-\begin{center}
-\textit{{ {\large Fonctions à valeurs réelles}}}
-\end{center}
+\subsection{Fonctions à valeurs réelles}
 
-\medskip
 
 
 
@@ -731,8 +707,7 @@ $$ f((x,y)) = \left\lbrace \begin{array}{cl}
 
 %\corr La fonction $f$ est continue en tout point $(x,y) \neq (0,0)$ par quotient de fonctions polynômiales et sachant que dans ce cas, $x^6+y^4 \neq 0$. 
 %
-%\medskip
-%
+%%
 %\noindent Étudions la continuité de $f$ en $(0,0)$. Celle-ci est continue en $(0,0)$ si :
 %$$ \lim_{(x,y) \rightarrow (0,0)} f((x,y)) =f((0,0))= 0$$
 %Pour tout réel $x$ non nul,
@@ -767,7 +742,7 @@ $$ f((x,y)) = \left\lbrace \begin{array}{cl}
 
 
 
-\begin{Exercice}{} Montrer que $\dis \max \left\lbrace x^5y^5 e^{z-2} \, \vert \, (x,y,z) \in (\mathbb{R}_+)^3 \hbox{ vérifiant } x+y+z =1 \right\rbrace$ existe.
+\begin{Exercice}{} Montrer que $ \max \left\lbrace x^5y^5 e^{z-2} \, \vert \, (x,y,z) \in (\mathbb{R}_+)^3 \hbox{ vérifiant } x+y+z =1 \right\rbrace$ existe.
 \end{Exercice}
 
 %\corr La fonction $(x,y,z) \mapsto x^5y^5 e^{z-2}$ est continue sur $\mathbb{R}^3$ (par produit de fonctions qui le sont). Il suffit de montrer que :
@@ -788,14 +763,11 @@ $$ f((x,y)) = \left\lbrace \begin{array}{cl}
 %\end{align*}
 %Ainsi, $K$ est inclus dans la sphère unité donc est borné.
 %\end{itemize}
-%L'ensemble $K$ est compact donc $\dis \max \left\lbrace x^5y^5 e^{z-2} \, \vert \, (x,y,z) \in (\mathbb{R}_+)^3 \hbox{ vérifiant } x+y+z =1 \right\rbrace$ existe.
-\newpage
+%L'ensemble $K$ est compact donc $ \max \left\lbrace x^5y^5 e^{z-2} \, \vert \, (x,y,z) \in (\mathbb{R}_+)^3 \hbox{ vérifiant } x+y+z =1 \right\rbrace$ existe.
 
-\begin{center}
-\textit{{ {\large Fonctions lipschitziennes}}}
-\end{center}
 
-\medskip
+\subsection{Fonctions lipschitziennes}
+
 
 
 \begin{Exercice}{} Soit $I$ un intervalle de $\mathbb{R}$.
@@ -843,7 +815,7 @@ sont aussi $k$-lipschitziennes.
 
 
 
-\begin{Exercice}{\ding{80}} Soit $A$ une partie non vide d'un espace vectoriel normé $E$. Pour tout $x \in E$, on pose :
+\begin{Exercice}[$\bigstar$] Soit $A$ une partie non vide d'un espace vectoriel normé $E$. Pour tout $x \in E$, on pose :
 $$d(x,A) = \inf_{a \in A} \Vert x- a \Vert$$
 
 \begin{enumerate}
@@ -886,8 +858,7 @@ $$ \forall x \in E, \quad d(x,A)=0 \Longleftrightarrow x \in A $$
 %$$ 0 \leq d(x,A) \leq \Vert x-x\Vert = 0$$
 %donc $d(x,A)=0$.
 %
-%\medskip
-%
+%%
 %\noindent Supposons maintenant que $d(x,A)=0$. Alors :
 %$$ \inf_{a \in A} \Vert x- a \Vert = 0$$
 %Il existe donc une suite $(a_n)_{n \geq 0}$ d'éléments de $A$ tel que :
@@ -919,7 +890,7 @@ $$ \forall x \in E, \quad d(x,A)=0 \Longleftrightarrow x \in A $$
 
 
 %\exo Fixons une norme $X\longmapsto \Vert X \Vert$ sur $\mathcal{M}_{n,1}(\R)$. On définit trois applications $N_1$, $N_2$ et $N_3$ de $\mathcal{M}_n(\R)$ dans $\mathbb{R}_+$ par :
-%$$\forall A\in {\cal M}_n(\R),\qquad N_1(A)=\dis\sup_{X\in{\cal  M}_{n,1}(\R)\setminus\{0\}}\dis\frac{\|AX\|}{\|X\|},\quad N_2(A)=\dis\sup_{\|X\|\leq 1}\|AX\| \quad\hbox{et}\quad N_3(A)=\dis\sup_{\|X\|= 1}\|AX\|.$$
+%$$\forall A\in {\cal M}_n(\R),\qquad N_1(A)=\sup_{X\in{\cal  M}_{n,1}(\R)\setminus\{0\}}\frac{\|AX\|}{\|X\|},\quad N_2(A)=\sup_{\|X\|\leq 1}\|AX\| \quad\hbox{et}\quad N_3(A)=\sup_{\|X\|= 1}\|AX\|.$$
 %
 %\begin{enumerate}
 %	\item Démontrer que $N_1=N_2=N_3$ et que ces applications définissent une norme sur $\mathcal{M}_n(\R)$. On note désormais $N$ cette norme.
@@ -930,8 +901,7 @@ $$ \forall x \in E, \quad d(x,A)=0 \Longleftrightarrow x \in A $$
 %\end{enumerate}
 %
 
-%\medskip
-%
+%%
 %%\exo 
 %%
 %%\begin{enumerate}
