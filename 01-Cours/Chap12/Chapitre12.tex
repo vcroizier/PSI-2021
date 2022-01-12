@@ -34,13 +34,13 @@ Dans tout ce chapitre, $E$ désigne un $\mathbb{K}$-espace vectoriel de \emph{di
 % Pour tout $(x,y) \in E^2$, $N(x+y) \leq N(x)+ N(y)$ (\emph{inégalité triangulaire}).
  \end{itemize}
  
-Le couple $(E,N)$ est alors appelé \emph{espace vectoriel normé}. On peut ne pas préciser la norme si il n'y a pas d'ambiguïté.
+Le couple $(E,N)$ est alors appelé \emph{espace vectoriel normé}. On peut ne pas préciser la norme s'il n'y a pas d'ambiguïté.
 \end{Definition}
  
  \begin{Remarque}{} On note souvent $\Vert x \Vert$ au lieu de $N(x)$.
  \end{Remarque}
  
- \begin{Remarque}{} $N(0_E) = N(0 \times 0_E) = \vert 0 \vert N(0_E) = 0$. Ainsi, pour la séparation, il suffit de montrer que pour tout $x \in E$, $N(x)=0$ implique $x=0_E$.
+ \begin{Remarque}{} $N(0_E) = N(0 \times 0_E) = \vert 0 \vert N(0_E) = 0$. Ainsi, pour la séparation, il suffit de montrer que $\forall x \in E$, $N(x)=0\Longrightarrow x=0_E$.
  \end{Remarque}
  
  \subsection{Exemples}
@@ -63,22 +63,22 @@ est une norme sur $E$. En effet :
 \item Cette application est bien définie par positivité du produit scalaire et est bien à valeurs dans $\mathbb{R}_+$.
 \item Montrons l'homogénéité  : soient $\lambda \in \mathbb{R}$ et $x \in E$, on a :
 
-\vspace{2cm}
+\vspace*{2cm}
 %$$ \Vert \lambda x \Vert^2  = (\lambda x, \lambda x) = \lambda^2 (x,x) = \lambda^2 \Vert x \Vert^2$$
 %par bilinéarité. Ainsi, par positivité de l'application : 
 %$$ \Vert \lambda x \Vert = \vert \lambda \vert \vert x \vert$$
 \item Montrons la séparation : pour tout $x \in E$, 
 
-\vspace{2cm}
+\vspace*{2cm}
 %$$ \Vert x \Vert= 0 \Rightarrow (x,x) = 0 \Rightarrow x=0_E$$
 %car le produit scalaire est défini.
 \item L'inégalité triangulaire est une conséquence de l'inégalité de Cauchy-Schwarz (revoir la preuve dans le cours de première année) :
 $$ \forall (x,y) \in E^2, \; \vert (x,y) \vert \leq \Vert x \Vert \, \Vert y \Vert$$
-\newpage
+
 
 Montrons maintenant l'inégalité triangulaire : pour tout $(x,y) \in E^2$, on a :
  
-\vspace{6cm}
+\vspace*{6cm}
 
 %\begin{align*}
 %\Vert x+y \Vert^2 & = (x+y,x+y) \\
@@ -95,8 +95,8 @@ Montrons maintenant l'inégalité triangulaire : pour tout $(x,y) \in E^2$, on a
 
 Pour tout $x=(x_1, x_2, \ldots, x_n) \in \mathbb{K}^n$, on pose :
 
-$$\Vert x \Vert_1  = \phantom{\sum_{i=1}^n \vert x_i \vert} \qquad, \quad \Vert x \Vert_2  = \phantom{\sqrt{\sum_{i=1}^n \vert x_i \vert^2 }} \qquad, \quad \Vert x \Vert_{\infty}  = \phantom{\sup_{i \in \iii{1}{n}} \vert x_i \vert = \max_{i \in \iii{1}{n}} \vert x_i \vert }$$
-Les applications associées sont des normes appelées norme $1$, norme $2$ et norme infini.
+$$\Vert x \Vert_1  = \phantom{\sum_{i=1}^n \vert x_i \vert} \qquad, \quad \Vert x \Vert_2  = \phantom{\sqrt{\sum_{i=1}^n \vert x_i \vert^2 }} \qquad, \quad \Vert x \Vert_{\infty}  = \phantom{\sup_{i \in \ii{1}{n}} \vert x_i \vert = \max_{i \in \ii{1}{n}} \vert x_i \vert }$$
+Les applications associées sont des normes appelées norme $1$, norme $2$ et norme infinie.
 
 \medskip
 
@@ -106,15 +106,16 @@ Les applications associées sont des normes appelées norme $1$, norme $2$ et no
 
 $\rhd$ Montrons que la norme $1$ est effectivement une norme. 
 
+\newpage
 
-\vspace{11cm}
+\vspace*{6cm}
 %\begin{itemize}
 %\item Montrons l'homogénéité : soient $\lambda \in \mathbb{K}$ et $x \in \mathbb{K}^n$. On a :
 %$$ \Vert \lambda x \Vert_1 = \sum_{k=1}^n \vert \lambda x_i \vert = \sum_{k=1}^n \vert \lambda \vert \, \vert x_i \vert =  \vert \lambda \vert \left(\sum_{k=1}^n \vert \lambda \vert \, \vert x_i \vert \right)$$
 %par linéarité de la somme. On a donc bien $ \Vert \lambda x \Vert_1 = \vert \lambda \vert  \, \Vert  x \Vert_1$. 
 %\item Montrons la séparation : soit $x \in \mathbb{K}^n$ tel que $\Vert x \Vert_{1}=0$. Alors :
 %$$\sum_{k=1}^n \vert x_i \vert$$
-%Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls donc pour tout $i \in \iii{1}{n}$, $\vert x_i \vert = 0$ et donc $x_i=0$. Ainsi $x=0_{\mathbb{K}^n}$.
+%Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls donc pour tout $i \in \ii{1}{n}$, $\vert x_i \vert = 0$ et donc $x_i=0$. Ainsi $x=0_{\mathbb{K}^n}$.
 %\item Montrons l'inégalité triangulaire : soit $(x,y) \in (\mathbb{K}^n)^2$. On a :
 %$$ \Vert x+y \Vert_{1} = \sum_{k=1}^n \vert \lambda x_i+y_i \vert$$
 %D'après l'inégalité triangulaire (dans $\mathbb{R}$ ou $\mathbb{C}$ selon $\mathbb{K}$), on a alors :
@@ -135,21 +136,21 @@ et ainsi par (\ref{InegEucl}), on a bien $\Vert x + y \Vert_2 \leq \Vert x  \Ver
 
 %\medskip
 %
-%$\rhd$ Montrons uniquement l'inégalité triangulaire pour la norme infini (les autres propriétés étant simples à montrer) : soit $(x,y) \in (\mathbb{K}^n)^2$. On a pour tout $i \in \iii{1}{n}$, d'après l'inégalité triangulaire,
+%$\rhd$ Montrons uniquement l'inégalité triangulaire pour la norme infinie (les autres propriétés étant simples à montrer) : soit $(x,y) \in (\mathbb{K}^n)^2$. On a pour tout $i \in \ii{1}{n}$, d'après l'inégalité triangulaire,
 %$$ \vert x_i + y_i \vert \leq \vert x_i \vert + \vert y_i \vert \leq \Vert x \Vert_{\infty} + \Vert y \Vert_{\infty} $$
 %La plus grande majoration étant indépendante de $i$, on a alors :
 %$$ \Vert x+y \Vert_{\infty} = \max_{1 \leq i \leq n} \vert x_i+ y_i \vert \leq \Vert x \Vert_{\infty} + \Vert y \Vert_{\infty}$$
 %ce qui est le résultat attendu.
 \end{Demonstration}
 
-\begin{ApplicationDirecte} Montrer que la norme infini est une norme sur $\mathbb{K}^n$.
+\begin{ApplicationDirecte}{} Montrer que la norme infinie est une norme sur $\mathbb{K}^n$.
 \end{ApplicationDirecte}
 
 \subsubsection{Exemple 4 : \texorpdfstring{$E$}{E} est un ensemble de fonctions bornées}
 
-Soient $I$ un intervalle non vide de $\mathbb{R}$ et $\mathcal{B}(I,K)$ l'ensemble des fonctions bornées de $I$ dans $\mathbb{K}$ (qui est un sous-espace vectoriel de $\mathcal{F}(I, \mathbb{K})$). Pour tout $f \in \mathcal{B}(I,K)$, on pose :
+Soient $I$ un intervalle non vide de $\mathbb{R}$ et $\mathcal{B}(I,\K)$ l'ensemble des fonctions bornées de $I$ dans $\mathbb{K}$ (qui est un sous-espace vectoriel de $\mathcal{F}(I, \mathbb{K})$). Pour tout $f \in \mathcal{B}(I,\K)$, on pose :
 $$ \Vert f \Vert_{\infty} = \sup_{x \in I} \vert f(x) \vert $$
-On définit ainsi la \emph{norme infini} (ou \emph{norme de la convergence uniforme}). C'est une norme sur $\mathcal{B}(I,K)$ (voir cours sur les suites et séries de fonctions).
+On définit ainsi la \emph{norme infinie} (ou \emph{norme de la convergence uniforme}). C'est une norme sur $\mathcal{B}(I,\K)$ (voir cours sur les suites et séries de fonctions).
 % : appellation justifiée un peu plus tard dans l'année). Vérifions que ceci est bien une norme :
 %
 %\begin{itemize}
@@ -162,7 +163,7 @@ On définit ainsi la \emph{norme infini} (ou \emph{norme de la convergence unifo
 %ce qui est le résultat attendu.
 %\end{itemize}
 
-\begin{ApplicationDirecte} Pour tout $(x,y) \in \mathbb{R}^2$, on pose :
+\begin{ApplicationDirecte}{} Pour tout $(x,y) \in \mathbb{R}^2$, on pose :
 $$ N((x,y)) = \int_{0}^1 \vert x+ty \vert \dt$$
 Montrer que l'application $N$ est bien définie et que c'est une norme sur $\mathbb{R}^2$.
 \end{ApplicationDirecte}
@@ -173,7 +174,7 @@ Montrer que l'application $N$ est bien définie et que c'est une norme sur $\mat
 
 \begin{Demonstration}{} 
 
-\vspace{7cm}
+\vspace*{7cm}
 %Soit $(x,y) \in E^2$. On a :
 %$$ \Vert x \Vert = \Vert x-y + y \Vert \leq \Vert x-y \Vert + \Vert y \Vert$$
 %et ainsi :
@@ -195,9 +196,9 @@ Soit $(E, \Vert \cdot \Vert)$ un espace vectoriel normé. La \emph{distance} ass
 %
 %\newpage
 %$\phantom{test}$
-%\vspace{-0.5cm}
+%\vspace*{-0.5cm}
 \begin{Demonstration}{}
-\vspace{6cm}
+\vspace*{6cm}
 %Les deux premiers points sont clairs. Pour le troisième point, il suffit de remarquer que :
 %$$ \Vert x-z \Vert = \Vert x-y + y-z \Vert$$
 %et d'appliquer l'inégalité triangulaire liée à la norme.
@@ -260,7 +261,7 @@ Or $\max{(\vert x \vert, \vert y \vert)} <1$ si et seulement si \phantom{$\vert 
 
 Voici les représentions graphiques (remarquons que $B_1 \subset B_2 \subset B_{\infty}$) :
 
-\vspace{4cm}
+\vspace*{4cm}
 %\begin{center}
 %\includegraphics[scale=0.4]{Boulesunites}
 %\end{center}
@@ -282,19 +283,26 @@ On appelle \emph{suite} d'éléments de $E$ toute application $u : \mathbb{N} \r
 
 \medskip
 
-\begin{Exemple} Soient $p \in \mathbb{N}^{*}$ et $A \in \mathcal{M}_p(\mathbb{K})$. On définit une suite $(u_n)_{n \geq 0}$ d'éléments de $\mathcal{M}_p(\mathbb{K})$ en posant pour tout $n \geq 0$, $u_n = A^n$. 
+\begin{Exemple} 
+    Soient $p \in \mathbb{N}^{*}$ et $A \in \mathcal{M}_p(\mathbb{K})$. 
+    
+    On définit une suite $(u_n)_{n \geq 0}$ d'éléments de $\mathcal{M}_p(\mathbb{K})$ en posant pour tout $n \geq 0$, $u_n = A^n$. 
 \end{Exemple}
 
 \subsection{Normes équivalentes}
 
-\begin{Definition}{} Deux normes sur $E$, $N_1$ et $N_2$, sont équivalentes si :
+\begin{Definition}{}
+    Deux normes sur $E$, $N_1$ et $N_2$, 
+    sont dites \emph{équivalentes} si :
 
-\vspace{1cm}
+\vspace*{1cm}~
 \end{Definition}
 
-\begin{Exemple} Montrons que les normes $1$, $2$ et infini sont \emph{équivalentes} sur $\mathbb{R}^n$ :
+\begin{Exemple} Montrons que les normes $1$, $2$ et infini sont équivalentes sur $\mathbb{R}^n$ :
 
-\vspace{7cm}
+\newpage
+
+\vspace*{3cm}
 \end{Exemple}
 
 \begin{Theoreme}{Admis} Dans un espace vectoriel de dimension finie, les normes sont équivalentes.
@@ -308,7 +316,7 @@ Dorénavant, l'espace vectoriel $E$ sera de \emph{dimension finie}.
 Soit $(E, \Vert \cdot \Vert)$ un espace vectoriel normé.
 
 \begin{enumerate}
-\item Si $A$ est une partie de $E$, on dit que $A$ est \emph{bornée} si il existe un réel $M \geq 0$ tel que pour tout $a \in A$, $\Vert a \Vert \leq M$, ce qui équivalent à $A \subset B_f(0_E,M)$.
+\item Si $A$ est une partie de $E$, on dit que $A$ est \emph{bornée} s'il existe un réel $M \geq 0$ tel que pour tout $a \in A$, $\Vert a \Vert \leq M$, ce qui équivalent à $A \subset B_f(0_E,M)$.
 \item Si $(u_n)_{n \geq 0}$ est une suite de $E$, on dit que $(u_n)_{n \geq 0}$ est \emph{bornée} si $\lbrace u_n \, \vert \, n \geq 0\rbrace$ est bornée.
 
 % ce qui équivalent à l'existence d'un réel $M \geq 0$ tel que pour tout $n \geq 0$, $\Vert u_n \Vert \leq M$.
@@ -321,11 +329,11 @@ Soit $(E, \Vert \cdot \Vert)$ un espace vectoriel normé.
 
 Ainsi, $(u_n)_{n \geq 0}$ est bornée si et seulement si :
 
-\vspace{1cm}
+\vspace*{1cm}
 
 et $f : X \rightarrow E$ est bornée si et seulement si :
 
-\vspace{1.3cm}
+\vspace*{1.3cm}
 
 \begin{Theoreme}{} Les définitions précédentes ne dépendent pas de la norme utilisée car $E$ est de dimension finie.
 \end{Theoreme}
@@ -341,12 +349,12 @@ et $f : X \rightarrow E$ est bornée si et seulement si :
 %$$ \Vert x \Vert = \Vert x-a + a \Vert \leq \Vert x - a \Vert + \Vert a \Vert \leq r+ \Vert a \Vert$$
 %En posant $M = r+ \Vert a \Vert$, la définition est vérifiée.
 
-\vspace{2cm}
+\vspace*{2cm}
 On montre de même qu'une boule fermée ou qu'une sphère est bornée.
 \item Soit $A = \lbrace (x,y) \in (\mathbb{R}^+)^2 \, \vert \, x+2y \leq 5 \rbrace$. Montrons que $A$ est bornée dans $\mathbb{R}^2$.
 
-\vspace{4cm}
-%\item Considérons $\mathcal{B}(\mathbb{R}_+, \mathbb{R})$ muni de la norme infini. On pose pour tout $n \geq 0$ et tout $x \in \mathbb{R}_+$,
+\vspace*{4cm}
+%\item Considérons $\mathcal{B}(\mathbb{R}_+, \mathbb{R})$ muni de la norme infinie. On pose pour tout $n \geq 0$ et tout $x \in \mathbb{R}_+$,
 %$$ f_n(x) = e^{-nx}$$
 %On crée ainsi une suite $(f_n)_{n \geq 0}$ d'éléments de $\mathcal{B}(\mathbb{R}_+, \mathbb{R})$ et il est clair que pour tout $n \geq 0$, $\Vert f_n \Vert_{\infty} = 1$ donc cette suite est bornée.
 %\item \textbf{METTRE EXEMPLE DANS R2 ou R3}
@@ -357,28 +365,28 @@ f & : & ]0,1]^2 & \rightarrow & \mathbb{R}^2 \\
 \end{array}$$
 Montrons que $f$ n'est pas bornée : 
 
-\vspace{4cm}
+\vspace*{4cm}
 %pour tout $x \in ]0,1[$, $f(x,1) = (\ln(x),\cos(x) + \sin(1))$ donc :
 %$$ \Vert f(x,1) \Vert_1 = \vert \ln(x) \vert + \vert \cos(x) + \sin(1) \vert \geq -\ln(x) -1  + \sin(1)$$
 %Or $\lim_{x \rightarrow 0}  -\ln(x) -1  + \sin(1) = + \infty$ donc la définition de $f$ bornée ne peut être vérifiée pour aucun réel positif $M$.
 \end{enumerate}
 \end{Exemples}
 
-\begin{ApplicationDirecte} Montrer que $A = \lbrace (x,y)\in\R^2 \, \vert \, x^2+y^4=1 \rbrace$ est bornée dans $\mathbb{R}^2$.
+\begin{ApplicationDirecte}{} Montrer que $A = \lbrace (x,y)\in\R^2 \, \vert \, x^2+y^4=1 \rbrace$ est bornée dans $\mathbb{R}^2$.
 \end{ApplicationDirecte}
 
 \subsection{Parties convexes}
 
 \begin{Definition}{} Soit $C$ une partie d'un espace vectoriel $E$. On dit que $C$ est \emph{convexe} si :
 
-\vspace{1cm}
+\vspace*{1cm}~
 
 %pour tout $(x,y) \in C^2$ et pour tout $\lambda \in [0,1]$, $\lambda x + (1- \lambda)y \in C$. 
 \end{Definition}
 
 \begin{Remarques}{}
 \begin{itemize} 
-\item $C$ est convexe si et seulement si il contient tout segment dont il contient les extrémités.
+\item $C$ est convexe si et seulement s'il contient tout segment dont il contient les extrémités.
 \item La notion d'ensemble convexe ne fait pas intervenir de norme.
 \end{itemize}
 \end{Remarques}{}
@@ -388,13 +396,13 @@ Montrons que $f$ n'est pas bornée :
 \end{center}
 
 \begin{center}
-\includegraphics[scale=0.5]{Convexes}
+\includegraphics[scale=0.4]{Convexes}
 \end{center}
 
 \textbf{Exemple important : les boules unités fermées ou ouvertes sont convexes.}
 
 
-\vspace{6cm}
+\vspace*{6cm}
 %Fixons $a \in E$ et $r \in \mathbb{R}_+$. Soient $(x,y) \in B(a,r)^2$ et $\lambda \in [0,1]$. On a :
 %
 %\begin{align*}
@@ -408,7 +416,7 @@ Montrons que $f$ n'est pas bornée :
 %Ainsi $\lambda x+ (1-\lambda y) \in B(a,r)$. On a donc bien montré que $B(a,r)$ était convexe (même preuve pour $B_f(a,r)$).
 
 %cSpell:ignore Pacman
-\begin{ApplicationDirecte} Pacman est-il convexe ?
+\begin{ApplicationDirecte}{} Pacman est-il convexe ?
 \end{ApplicationDirecte} 
 
 \section{Convergence de suites}
@@ -418,10 +426,10 @@ Montrons que $f$ n'est pas bornée :
 \begin{itemize}
 \item Soit $\ell \in E$. On dit que $(u_n)_{ n\geq 0}$ \emph{converge} vers $\ell$ (ou que $u_n$ tend vers $\ell$ quand $n$ tend vers $+ \infty$) si :
 
-\vspace{1cm}
+\vspace*{1cm}
 
 %$$ \forall \varepsilon >0, \, \exists N \in \mathbb{N} \, \vert \, \forall n  \geq N, \, \Vert u_n - \ell \Vert  \leq \varepsilon$$
-\item La suite $(u_n)$ est dite \emph{convergente} si il existe un vecteur $\ell \in E$, appelé \emph{limite}, tel que $(u_n)_{n \geq 0}$ converge vers $\ell$.
+\item La suite $(u_n)$ est dite \emph{convergente} s'il existe un vecteur $\ell \in E$, appelé \emph{limite}, tel que $(u_n)_{n \geq 0}$ converge vers $\ell$.
 \item Si une suite ne converge pas, on dit qu'elle \emph{diverge}.
 \end{itemize}
 \end{Definition}
@@ -429,7 +437,7 @@ Montrons que $f$ n'est pas bornée :
 \begin{Theoreme}{} Si une suite d'éléments d'un espace vectoriel normé converge, il y a \emph{unicité} de la limite. On note celle-ci $\lim_{n \rightarrow + \infty} u_n$.
 \end{Theoreme}
 
-\begin{Remarque}{} $(u_n)_{n \geq 0}$ converge vers $\ell$ si et seulement si $\Vert u_n - \ell \Vert$ tend vers $0$ quand $n \rightarrow + \infty$.  Cette remarque à deux intérêts : se ramener à une suite de réels positifs et montrer que celle-ci converge vers $0$ (ce qui est plus simple que de montrer qu'une suite tend vers un vecteur quelconque) même si il faut avoir de l'intuition pour déterminer la limite.
+\begin{Remarque}{} $(u_n)_{n \geq 0}$ converge vers $\ell$ si et seulement si $\Vert u_n - \ell \Vert$ tend vers $0$ quand $n \rightarrow + \infty$.  Cette remarque à deux intérêts : se ramener à une suite de réels positifs et montrer que celle-ci converge vers $0$ (ce qui est plus simple que de montrer qu'une suite tend vers un vecteur quelconque) même s'il faut avoir de l'intuition pour déterminer la limite.
 \end{Remarque}
 
 \begin{Theoreme}{} La notion de convergence de suite ne dépend pas de la norme choisie si l'on travaille sur un espace vectoriel de \emph{dimension finie}.
@@ -448,11 +456,11 @@ Montrons que $f$ n'est pas bornée :
 %
 %\medskip
 %
-%$\rhd$ Considérons la norme infini : il semble intuitif de dire que cette suite converge vers $(0,0)$. Pour tout $n \geq 1$,
+%$\rhd$ Considérons la norme infinie : il semble intuitif de dire que cette suite converge vers $(0,0)$. Pour tout $n \geq 1$,
 %$$ \Vert u_n - (0,0) \Vert_{ \infty} = \phantom{\left\Vert \left(  \dfrac{1}{n}, \dfrac{1}{n^2} \right) \right\Vert_{\infty} = \max\left( \dfrac{1}{n}, \dfrac{1}{n^2} \right) = \dfrac{1}{n}  \underset{n \rightarrow + \infty}{\longrightarrow} 0}$$
 %Ainsi, la suite $(u_n)_{n \geq 1}$ converge vers $(0,0)$ dans $(\mathbb{R}^2, \Vert \cdot \Vert_{\infty})$.
 
-\vspace{6cm}
+\vspace*{6cm}
 \end{Exemple}
 
 %La définition de convergence dépend à priori de la norme employée sur l'espace. Le théorème suivant (que nous admettons) est crucial pour la suite.
@@ -460,7 +468,7 @@ Montrons que $f$ n'est pas bornée :
 %\begin{Theoreme}{} La notion de convergence de suite ne dépend pas de la norme choisie si l'on travaille sur un espace vectoriel de \emph{dimension finie}.
 %\end{Theoreme}
 
-\begin{Exemple} Pour étudier la convergence d'une suite d'éléments de $\mathbb{K}^n$ avec $n \in \mathbb{N}^*$, on peut utiliser la norme que l'on souhaite (par exemple la norme $1$, la norme $2$ ou la norme infini). L'idée de la preuve dans ce cadre précis est qu'il est facile de comparer les boules pour ces trois normes.
+\begin{Exemple} Pour étudier la convergence d'une suite d'éléments de $\mathbb{K}^n$ avec $n \in \mathbb{N}^*$, on peut utiliser la norme que l'on souhaite (par exemple la norme $1$, la norme $2$ ou la norme infinie). L'idée de la preuve dans ce cadre précis est qu'il est facile de comparer les boules pour ces trois normes.
 \end{Exemple}
 
 \begin{Proposition}{} Soit $(u_n)_{n \geq 0}$ une suite d'éléments d'un espace vectoriel normé $(E, \Vert \cdot \Vert)$.
@@ -489,7 +497,7 @@ $$ (\sin(n),n^2) = \sin(n) e_1 + n^2e_2$$
 \begin{Theoreme}{} En gardant les notations précédentes, les assertions suivantes sont équivalentes :
 \begin{itemize}
 \item La suite $(u_n)_{n \geq 0}$ converge.
-\item Pour tout $i \in \iii{1}{p}$, la suite $(u_{n,i})_{n \geq 0}$ converge.
+\item Pour tout $i \in \ii{1}{p}$, la suite $(u_{n,i})_{n \geq 0}$ converge.
 \end{itemize}
 Quand celles-ci sont vraies, on a :
 $$ \lim_{n \rightarrow + \infty} u_n = \sum_{i=1}^p \left(\lim_{n \rightarrow + \infty} u_{n,i} \right) e_i $$
@@ -511,33 +519,35 @@ $$ \lim_{n \rightarrow + \infty} u_n = \sum_{i=1}^p \left(\lim_{n \rightarrow + 
 %$\rhd$ Supposons que la suite $(u_n)_{n \geq 0}$ converge vers un vecteur $\ell = (\ell_1, \ldots, \ell_p)$ de $E$.
 %
 %
-%%En utilisant la norme infini (légitime car $E$ est de dimension finie) on a alors :
+%%En utilisant la norme infinie (légitime car $E$ est de dimension finie) on a alors :
 %%$$ \lim_{n \rightarrow + \infty} \Vert u_n - \ell \Vert_{\infty} = 0$$
 %%ou encore :
 %%$$ \lim_{n \rightarrow + \infty} \left( \max_{1 \leq i \leq n} \vert u_{n,i}- \ell_i \vert \right)$$
-%%Or, pour tout $i \in \iii{1}{p}$ et tout $n \geq 0$,
+%%Or, pour tout $i \in \ii{1}{p}$ et tout $n \geq 0$,
 %%$$ 0 \leq \vert u_{n,i}- \ell_i \vert \leq \max_{1 \leq i \leq n} \vert u_{n,i}- \ell_i \vert $$
 %%Par théorème d'encadrement, la suite de terme général $ \vert u_{n,i}- \ell_i \vert $ converge donc vers $0$ et ainsi $(u_{n,i})_{n \geq 0}$ converge vers $\ell_i$.
 %
-%\vspace{7cm}
+%\vspace*{7cm}
 %
 %\medskip
 %
-%$\rhd$ Supposons que pour tout $i \in \iii{1}{p}$, la suite $(u_{n,i})_{n \geq 0}$ converge vers un scalaire $\ell_i$.
+%$\rhd$ Supposons que pour tout $i \in \ii{1}{p}$, la suite $(u_{n,i})_{n \geq 0}$ converge vers un scalaire $\ell_i$.
 %
-%% Considérons la norme $1$ (légitime car $E$ est de dimension finie). On a pour tout $i \in \iii{1}{p}$,
+%% Considérons la norme $1$ (légitime car $E$ est de dimension finie). On a pour tout $i \in \ii{1}{p}$,
 %%$$ \lim_{n \rightarrow + \infty} \vert u_{n,i} - \ell_i \vert = 0$$
 %%Ainsi, par somme de suites convergentes :
 %%$$ \Vert u_n - \ell \Vert_{1} = \sum_{i=1}^p \vert u_{n,i} - \ell_i \vert  \underset{n \rightarrow + \infty}{\longrightarrow} 0$$
 %%Ainsi $(u_n)_{n \geq 0}$ converge vers $\ell = (\ell_1, \ldots, \ell_p)$.
 %
-%\vspace{7cm}
+%\vspace*{7cm}
 %\end{Demonstration}
 
-\begin{ApplicationDirecte} Calculer $\lim_{n \rightarrow + \infty} \begin{pmatrix}
+\begin{ApplicationDirecte}{} Calculer $\lim_{n \rightarrow + \infty} \begin{pmatrix}
 \frac{1}{n} & \cos \left( \frac{1}{n} \right) \\
-1 & arctan(n) \\
-\end{pmatrix}$ (des normes sur des espaces de matrices sont données en TD).
+1 & \arctan(n) \\
+\end{pmatrix}$
+
+(des normes sur des espaces de matrices sont données en TD).
 \end{ApplicationDirecte}
 
 \section{Topologie d'un espace vectoriel de dimension finie}
@@ -549,7 +559,7 @@ $$ \lim_{n \rightarrow + \infty} u_n = \sum_{i=1}^p \left(\lim_{n \rightarrow + 
 
 \begin{Definition}{} Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé, $A$ une partie de $E$ et $a \in A$. On dit que $a$ est un \emph{point intérieur} de $A$ si :
 
-\vspace{1cm}
+\vspace*{1cm}~
 % il existe un réel $r>0$ tel que $B(a,r) \subset A$.
 \end{Definition}
 
@@ -560,19 +570,19 @@ $$ \exists r>0, \, \forall x \in E, \, \Vert x-a \Vert < r \Rightarrow x \in A$$
 \begin{center}
 \emph{Un exemple de point intérieur}
 
-\includegraphics[scale=0.5]{Ouvert}
+\includegraphics[scale=0.45]{Ouvert}
 \end{center}
 
 \begin{Exemple} Soit $(u_n)_{n \geq 0}$ une suite d'éléments d'un espace vectoriel normé $(E, \Vert \cdot \Vert)$ convergeant vers un point intérieur $a$ d'une partie $A$ de $E$. Montrons qu'à partir d'un certain rang, tous les termes de la suite sont dans $A$.
 
 
-\vspace{3cm}
+\vspace*{3cm}
 %\medskip
 %
 %Le point $a$ étant intérieur, il existe un réel $r>0$ tel que pour tout $x \in E$, si $\Vert x- a \Vert<r$ alors $x \in A$. La suite $(u_n)_{n \geq 0}$ converge vers $a$ donc par définition de la convergence (en prenant $\varepsilon=r>0$), il existe un rang $N \in \mathbb{N}$ tel que pour tout entier $n \geq N$, $\Vert u_n -a \Vert <r$ et ainsi pour tout $n \geq N$, $u_n \in A$.
 \end{Exemple}
 
-\begin{ApplicationDirecte} Représenter graphiquement l'ensemble suivant de $\mathbb{R}^2$ :
+\begin{ApplicationDirecte}{} Représenter graphiquement l'ensemble suivant de $\mathbb{R}^2$ :
 $$ A= \lbrace (x,y) \in \mathbb{R}^2 \, \vert \,  y \geq x^2 \hbox{ et } y \leq 2 \rbrace$$
 Justifier graphiquement que $(0,1)$ est un point intérieur de $A$ mais que $(1,1)$ n'en est pas un.
 \end{ApplicationDirecte}
@@ -612,7 +622,7 @@ Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé, $a \in E$, $r \in \m
 \includegraphics[scale=0.4]{BouleOuv}
 \end{center}
 
-\vspace{4cm}
+\vspace*{4cm}
 
 %
 %Posons $\varepsilon = r - \Vert b-a \Vert$. Alors $\varepsilon>0$ car $b \in B(a,r)$ et pour tout $x \in B(b, \varepsilon)$, on a :
@@ -629,7 +639,8 @@ Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé, $a \in E$, $r \in \m
 
 \begin{Definition}{} 
 Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé, $A$ une partie de $E$ et $a \in E$. On dit que $a$ est un \emph{point adhérent} de $A$ si :
-\vspace{1cm}
+
+\vspace*{0.5cm}~
 %
 %pour tout réel $r>0$, $B(a,r) \cap A \neq \varnothing$.
 \end{Definition}
@@ -651,7 +662,7 @@ Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé, $A$ une partie de $E
 
 \begin{Demonstration}{} On procède par double implications.
 %
-%$\rhd$ Supposons que le point $a$ est adhérent à $A$. Pour tout entier naturel $n \geq 1$, on a $B(a, \frac{1}{n}) \cap A \neq \varnothing$ et ainsi il existe $x_n \in B(a,\frac{1}{n}) \cap A$. On a donc pour tout $n \geq 1$,
+%$\rhd$ Supposons que le point $a$ est adhérent à $A$. Pour tout entier naturel $n \geq 1$, on a $B(a, \frac{1}{n}) \cap A \neq \varnothing$ et ains'il existe $x_n \in B(a,\frac{1}{n}) \cap A$. On a donc pour tout $n \geq 1$,
 %$$ \Vert x_n - a \Vert \leq \frac{1}{n}$$
 %Par Théorème d'encadrement, on montre que $x_n \underset{n \rightarrow + \infty}{\rightarrow} a$ et cette suite est bien une suite d'éléments de $A$.
 %
@@ -661,20 +672,20 @@ Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé, $A$ une partie de $E
 %$$ \Vert x_n - a \Vert < r $$
 %et ainsi $x_n \in B(a,r) \cap A$ et en particulier $B(a,r) \cap A \neq \varnothing$.
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Demonstration}
 
 %\newpage
 %$\phantom{}$
 
-%\vspace{7cm}
+%\vspace*{7cm}
 
 \begin{Exemple} Montrons que la matrice $\begin{pmatrix}
 0 & 1 \\
 0 & 0 \\
 \end{pmatrix}$ est adhérente à l'ensemble des matrices inversibles de $\mathcal{M}_2(\mathbb{R})$ :
 
-\vspace{3cm}
+\vspace*{3cm}
 %
 % (carrées d'ordre $2$). En effet, on a :
 %$$A_n = \begin{pmatrix}
@@ -726,21 +737,23 @@ Soient $(E, \Vert \cdot \Vert)$ un espace vectoriel normé, $A$ une partie de $E
 %
 %$\rhd$ Supposons que $^cA$ soit un ouvert. Montrons que $A$ est fermé. Soit $a \in \overline{A}$ : si $a \notin A$ alors $a \in ^cA$ qui est ouvert donc il existe un réel strictement positif $r$ tel que $B(a,r) \subset ^cA$. Or $a$ un est un point adhérent à $A$ donc il existe un élément $x \in A$ tel que $x B(a,r)$ ce qui est absurde.
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Demonstration}
 
 %\newpage
 %
 %\phantom{test}
 %
-%\vspace{5cm}
+%\vspace*{5cm}
 
 \begin{Corollaire}{} Les boules fermées et les sphères sont fermées.
 \end{Corollaire}
 
 \begin{Demonstration}{}
 
-\vspace{8cm}
+\newpage
+
+\vspace*{8cm}
 
 \end{Demonstration}
 
@@ -839,7 +852,7 @@ $$ \lim_{x \rightarrow a} f(x) = f(a) $$
 %%On a ainsi montré que $(f(a_n))_{n \geq 0}$ convergeait vers $\ell$.
 %
 %
-%\vspace{7cm}
+%\vspace*{7cm}
 %
 %$\rhd$ Supposons que pour toute suite $(a_n)_{n \geq 0}$ d'éléments de $A$ convergente vers $a$, $(f(a_n))_{n \geq 0}$ converge vers $\ell$. Supposons par l'absurde que $f$ n'admette pas $\ell$ pour limite en $a$.
 %%
@@ -849,7 +862,7 @@ $$ \lim_{x \rightarrow a} f(x) = f(a) $$
 %%$$ \Vert f(x) - \ell \Vert_F > \varepsilon$$
 %%C'est absurde et on obtient alors le résultat souhaité.
 %
-%\vspace{8cm}
+%\vspace*{8cm}
 %\end{Demonstration}
 
 \subsection{Composantes d'une fonction}
@@ -861,10 +874,10 @@ Les fonctions $f_k : A \rightarrow \mathbb{K}$ sont appelées les \emph{fonction
 \begin{Proposition}{} 
 
 \begin{itemize}
-\item Soit $a \in \overline{A}$. La fonction $f$ admet une limite en $a$ si et seulement si pour tout $k \in\iii{1}{n}$, $f_k$ admet une limite en $a$. Dans ce cas, on a :
+\item Soit $a \in \overline{A}$. La fonction $f$ admet une limite en $a$ si et seulement si pour tout $k \in\ii{1}{n}$, $f_k$ admet une limite en $a$. Dans ce cas, on a :
 $$ \lim_{x \rightarrow a} f(x) =  \sum_{k=1}^n \big{(} \lim_{x \rightarrow a} f_k(x) \big{)} e_k$$
-\item Soit $a \in A$. La fonction $f$ est continue en $a$ si et seulement si pour tout $k \in\iii{1}{n}$, $f_k$ est continue en $a$.
-\item La fonction $f$ est continue sur $A$ si et seulement si pour tout $k \in\iii{1}{n}$, $f_k$ est continue sur $A$.
+\item Soit $a \in A$. La fonction $f$ est continue en $a$ si et seulement si pour tout $k \in\ii{1}{n}$, $f_k$ est continue en $a$.
+\item La fonction $f$ est continue sur $A$ si et seulement si pour tout $k \in\ii{1}{n}$, $f_k$ est continue sur $A$.
 \end{itemize}
 \end{Proposition}
 
@@ -956,12 +969,14 @@ est continue donc par somme et produit, on obtient le résultat.
 %\item On utilise la caractérisation séquentielle. Soit $(a_n)_{n \geq 0}$ une suite d'éléments de $\lbrace x \in E \, \vert \, f(x)\geq 0 \rbrace$ convergente de limite $a \in E$. On sait que pour tout $n \geq 0$, $f(a_n) \geq 0$ donc par passage à la limite et par continuité de $f$, on a $f(a) \geq 0$ donc $a \in \lbrace x \in E \, \vert \, f(x)\geq 0 \rbrace$ ce qui donne le résultat.
 %\item Même idée que précédemment.
 %\end{itemize}
+\vspace*{13cm}
+
 \end{Demonstration}
 
-\newpage
+
 \begin{Exemple} Montrons que le cercle unité $\mathbb{U} = \lbrace (x,y) \in \mathbb{R}^2 \, \vert \, x^2+y^2=1 \rbrace$ est un fermé de $\mathbb{R}^2$.
 
-\vspace{4cm}
+\vspace*{4cm}
 
 %\medskip
 %
@@ -981,14 +996,14 @@ est continue donc par somme et produit, on obtient le résultat.
 \medskip
 
 
-\begin{ApplicationDirecte} Montrer que la fonction $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par $f((x,y))= xy$ est bornée et atteint ses bornes sur le cercle unité $\mathbb{U}$.
+\begin{ApplicationDirecte}{} Montrer que la fonction $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par $f((x,y))= xy$ est bornée et atteint ses bornes sur le cercle unité $\mathbb{U}$.
 \end{ApplicationDirecte}
 
 \subsection{Les applications lipschitziennes}
 
 \begin{Definition}{} Soit $k \in \mathbb{R}_+$. On dit que $f : E \rightarrow F$ est $k$-\emph{lipschitzienne} si :
 $$ \phantom{\forall (x,y) \in E^2, \quad \Vert f(x)-f(y) \Vert_F \leq k \Vert x-y \Vert_E}$$
-On dit que $f$ est \emph{lipschitzienne} si il existe $k \in \mathbb{R}_+$ tel que $f$ soit $k$-lipschitzienne.
+On dit que $f$ est \emph{lipschitzienne} s'il existe $k \in \mathbb{R}_+$ tel que $f$ soit $k$-lipschitzienne.
 \end{Definition}
 
 \begin{Remarque}[\alerte]{} Les normes étant équivalentes, le fait pour une fonction d'être lipschitzienne ne dépend pas des normes choisies mais le fait d'être lipschitzienne de rapport $k$ l'est !
@@ -999,9 +1014,8 @@ On dit que $f$ est \emph{lipschitzienne} si il existe $k \in \mathbb{R}_+$ tel q
 \begin{enumerate}
 \item Montrons que $\ln$ est $1$-lipschitzienne sur $[1, + \infty[$.
 
-\medskip
 
-\vspace{5cm}
+\vspace*{6cm}
 %
 %La fonction $\ln$ est dérivable sur $[1, + \infty[$ et pour tout $x \in [1, + \infty[$,
 %$$ \vert f'(x) \vert = \frac{1}{x} \leq 1$$
@@ -1035,15 +1049,15 @@ $$ \forall (x,y) \in E^2, \quad \vert \Vert x \Vert - \Vert y \Vert \vert \leq \
 %On en déduit alors le résultat souhaité. 
 %\end{itemize}
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Demonstration}
 
 \begin{Remarque}{} La réciproque est fausse. La fonction $f : x \mapsto \sqrt{x}$ est continue sur $[0,1]$ mais n'est pas lipschitzienne. En effet :
 
-\vspace{6cm}
+\vspace*{6cm}~
 \end{Remarque}
 
-\begin{ApplicationDirecte} Montrer que toute norme est continue sur $E$. En déduire que toute sphère est fermée.
+\begin{ApplicationDirecte}{} Montrer que toute norme est continue sur $E$. En déduire que toute sphère est fermée.
 \end{ApplicationDirecte}
 
 \subsection{Applications linéaires et multilinéaires}
@@ -1052,7 +1066,7 @@ $$ \forall (x,y) \in E^2, \quad \vert \Vert x \Vert - \Vert y \Vert \vert \leq \
 \end{Theoreme}
 
 \begin{Demonstration}{} 
-%Soit $\mathcal{B}= (e_1, \ldots, e_n)$ une base de $E$. Pour tout $x \in E$, on note $(x_1, \ldots, x_n)$ ses coordonnées dans la base $\mathcal{B}$. On définit la norme infini $\Vert \cdot \Vert_{\infty}$ sur $E$ par :
+%Soit $\mathcal{B}= (e_1, \ldots, e_n)$ une base de $E$. Pour tout $x \in E$, on note $(x_1, \ldots, x_n)$ ses coordonnées dans la base $\mathcal{B}$. On définit la norme infinie $\Vert \cdot \Vert_{\infty}$ sur $E$ par :
 %$$ \Vert x \Vert_{\infty} = \max_{1 \leq i \leq n} \vert x_i \vert $$
 %Par linéarité de $f$, on a alors :
 %\begin{align*}
@@ -1066,8 +1080,9 @@ $$ \forall (x,y) \in E^2, \quad \vert \Vert x \Vert - \Vert y \Vert \vert \leq \
 %& \leq k \Vert x-y \Vert_{\infty} \\
 %\end{align*}
 %et ainsi $u$ est lipschitzienne de rapport $k$.
+\newpage
 
-\vspace{9cm}
+\vspace*{8cm}
 \end{Demonstration}
 
 
@@ -1085,10 +1100,10 @@ $$ \forall (x,y) \in E^2, \quad \vert \Vert x \Vert - \Vert y \Vert \vert \leq \
 %\medskip
 %Par exemple, l'ensemble des matrices carrées $\mathcal{M}_n(\mathbb{K})$ de trace nulle est un fermé de $\mathcal{M}_n(\mathbb{K})$.
 
-\vspace{5cm}
+\vspace*{7cm}
 \end{Exemple}
 
-\begin{ApplicationDirecte} Montrer que $\{ M\in{\cal M}_n(\R), \ \textrm{tr}(M)>0\}$ est un ouvert de ${\cal M}_n(\R)$.
+\begin{ApplicationDirecte}{} Montrer que $\{ M\in{\cal M}_n(\R), \ \textrm{tr}(M)>0\}$ est un ouvert de ${\cal M}_n(\R)$.
 \end{ApplicationDirecte}
 
 
@@ -1097,14 +1112,14 @@ $$ \forall (x,y) \in E^2, \quad \vert \Vert x \Vert - \Vert y \Vert \vert \leq \
 
 \begin{Exemple} Le déterminant de $\mathcal{M}_n(\mathbb{K})$ (vu comme $(\mathbb{K}^n)^n)$ à valeurs dans $\mathbb{K}$ est continue car multilinéaire par rapport à chacune de ses colonnes. Montrons que l'ensemble des matrices inversibles de $\mathcal{M}_n(\mathbb{R})$ est un ouvert de $\mathcal{M}_n(\mathbb{R})$.
 
-\vspace{4cm}
+\vspace*{6cm}
 %
 % On a :
 %$$ A = \lbrace M \in \mathcal{M}_n(\mathbb{R}) \, \vert \, \textrm{det}(M)=0 \rbrace$$
 %Le déterminant étant continue, on obtient le résultat.
 \end{Exemple}
 
-\begin{ApplicationDirecte} Montrer que l'application $f : \mathcal{M}_n(\mathbb{R})^2 \rightarrow \mathcal{M}_n(\mathbb{R})$ définie par $f((A,B))= AB$ est continue sur $\mathcal{M}_n(\mathbb{R})^2$.
+\begin{ApplicationDirecte}{} Montrer que l'application $f : \mathcal{M}_n(\mathbb{R})^2 \rightarrow \mathcal{M}_n(\mathbb{R})$ définie par $f((A,B))= AB$ est continue sur $\mathcal{M}_n(\mathbb{R})^2$.
 \end{ApplicationDirecte}
 
 \begin{Remarque}{} Un produit scalaire $(x,y) \in E^2 \longmapsto <x,y>$ défini sur un $\mathbb{R}$-espace vectoriel $E$ de dimension finie est une application continue car bilinéaire.

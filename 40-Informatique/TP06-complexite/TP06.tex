@@ -1,0 +1,263 @@
+\documentclass[french,11pt,twoside]{VcCours}
+%cSpell:ignore Fact mystere Fibo Puiss
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Informatique}{TP d'info n°4 -- Complexité}
+
+\tableofcontents
+\separationTitre
+
+
+\section{Cours}
+
+\subsection{Introduction}
+
+L'analyse de la complexité d'un programme en informatique consiste 
+à mesurer deux grandeurs :
+
+\begin{enumerate}
+\item Le temps de calcul pour exécuter les opérations.
+\item La place mémoire nécessaire pour exécuter ce programme.
+\end{enumerate}
+
+\medskip 
+
+Le premier point est l'étude de la \emph{complexité en temps} 
+(combien d'opérations sont nécessaires pour exécuter le programme ?) 
+et le deuxième est l'étude de la \emph{complexité en mémoire} 
+(combien d'espace mémoire est nécessaire pour exécuter le programme?). 
+
+\medskip
+
+Dans ce chapitre, on étudiera presque uniquement la complexité en temps. 
+On considérera que les opérations élémentaires (test, affectation, 
+opération arithmétique) ont le même coût. Il faut bien comprendre que c'est 
+une simplification du problème : les coûts ne sont pas nécessairement 
+les mêmes et deux types d'ordinateurs différents ne fonctionnent pas 
+de la même manière.
+
+\medskip
+
+\begin{Exercice}{} Soient $n \geq 1$ et $P : x \mapsto a_0 + a_1 x + \cdots + a_n x^n$ une fonction polynomiale. Déterminons le coût du calcul de $P(x)$ pour un réel $x$ :
+
+\vspace{6cm}
+
+%Pour calculer $P(x)$ de manière directe, on a besoin :
+%
+%\begin{itemize}
+%\item de $n$ additions.
+%\item de $1+2+ \cdots + n = \dfrac{n(n+1)}{2}$ multiplications.
+%\end{itemize}
+%Ainsi, le coût du calcul de $P(x)$ vaut :
+%$$ \mathcal{C}(n) = n + \frac{n(n+1)}{2} = \frac{n(n+3)}{2}$$
+\end{Exercice}
+
+\subsection{Une remarque sur la taille des instances}
+On exprime la complexité à l'aide des données nécessaires pour écrire l'algorithme. Ces données sont appelées les \emph{instances}. Par exemple :
+
+\begin{itemize}
+\item Si on souhaite trier une liste à $n$ éléments, on peut choisir $n$ comme instance.
+\item Si on crée un algorithme lié à un polynôme, on peut choisir son degré comme instance. 
+\item Si l'on souhaite savoir si un entier $n$ est premier, on peut choisir $n$ comme instance.
+\end{itemize}
+
+\medskip
+
+\begin{Remarque}[\alerte]{}
+
+    Considérons un entier naturel $n$ non nul. Celui-ci s'écrit de manière unique sous la forme :
+$$ n = a_{p-1}2^{p-1} + \cdots + a_1 2^1 + a_0 2^0$$
+où $p \in \mathbb{N}^*$, pour tout $i \in \ii{0}{p-2}$, $a_i \in \lbrace 0,1 \rbrace$ et $a_{p-1}=1$.
+
+\medskip
+
+On a donc besoin de $p$ bits pour stocker le développement binaire de $n$. 
+On peut alors choisir $p$ comme instance plutôt que $n$. 
+Exprimons $p$ en fonction de $n$ :
+
+\vspace{7cm}
+\medskip
+
+\end{Remarque}
+
+% \newpage
+
+% $\phantom{ test}$
+
+% \vspace{2cm}
+
+\subsection{Comment comparer les ordres de grandeur ?}
+
+Si l'on considère un algorithme dont l'instance est un entier $n$ et que l'on note $\mathcal{C}(n)$ le coût (en calcul ou en mémoire selon ce que l'on veut faire) de cet algorithme, il semble naturel (par exemple si $n$ est la longueur d'une liste) que plus $n$ est grand, plus le coût devrait augmenter. Dans ce cas, quels sont les ordres de grandeurs classiques ?
+
+\medskip
+
+On considère dans la suite que toutes les suites sont à termes strictement positifs.
+
+\begin{Definition}{} Soient $u$ et $v$ deux suites. 
+    On dit que $u$ est dominée par $v$ et on note $u=O(v)$ (ou $u\ll v$) 
+    lorsque la suite $\dfrac{u}{v}$ est bornée, c'est-à-dire si il existe 
+    un réel $M>0$ tel que pour tout $n \geq 0$,
+    $$ \frac{u_n}{v_n} \leq M$$
+\end{Definition} 
+
+Remarquons que $O$ est transitive : si $u,v,w$ sont trois suites 
+et si $u=O(v)$ et $v=O(w)$ alors $u=O(w)$.
+
+\medskip
+
+Il est important de retenir les ordres de grandeurs suivants (en notant abusivement $u_n$ au lieu de $u$) : 
+$$ 1\ll \ln(n) \ll n \ll n \ln(n) \ll n^2 \ll n^3 \ll 2^n \ll n! \ll n^n$$
+
+\begin{Exercice}{} Soient $n \geq 1$ et $P : x \mapsto a_0 + a_1 x + \cdots + a_n x^n$ une fonction polynomiale. Pour calculer $P(x)$, on a montré que le coût des opérations est égal à :
+$$ \mathcal{C}(n) = \frac{n(n+3)}{2}$$
+Ainsi :
+$$ \mathcal{C}(n) = O(n^2)$$
+car :
+$$ \frac{n(n+3)}{2n^2} \sim \frac{1}{2}$$
+donc $\left(\frac{\mathcal{C}(n)}{n^2} \right)$ est convergente donc bornée.
+\end{Exercice}
+
+\begin{Remarque}{} Dire que la complexité est en $O(n^2)$ manque de précision car d'une part cela implique aussi que la complexité est en $O(n^3)$, $O(n!)$ mais d'autre part rien ne précise si l'on ne peut pas faire mieux. On définit alors une nouvelle notion : on dit par exemple que la complexité est $O(n^2)$ \og et pas mieux \fg si l'on a $\mathcal{C}(n)=O(n^2)$ mais aussi $n^2 = O(\mathcal{C}(n))$.
+\end{Remarque}
+
+\begin{Exercice}{} Dans l'exemple précédent, la complexité est en $O(n^2)$ et pas mieux. Il suffit de remarquer que :
+$$ \mathcal{C}(n) \sim \frac{n^2}{2}$$
+\end{Exercice}
+
+\begin{Remarque}{} Si il existe $\lambda >0$ tel que :
+$$ \mathcal{C}(n) \sim \lambda u_n$$
+alors la complexité est en $O(u_n)$ et pas mieux.
+\end{Remarque}
+
+\subsection{Quels sont les ordres de grandeurs les plus utilisés?}
+
+Notons $\mathcal{C}(n)$ le coût d'exécution d'un programme (par exemple obtenu à l'aide de $n$ opérations élémentaires).  Voici les ordres de grandeurs les plus utilisés (par ordre de croissance). On dit que la complexité est :
+
+\begin{itemize}
+\item au plus constante si $\mathcal{C}(n)=O(1)$ et constante si $\mathcal{C}(n)=O(1)$ et pas mieux.
+\item au plus logarithmique si $\mathcal{C}(n)=O(\ln(n))$ et logarithmique si $\mathcal{C}(n)=O(\ln(n))$ et pas mieux.
+\item au plus linéaire si $\mathcal{C}(n)=O(n)$ et linéaire si $\mathcal{C}(n)=O(n)$ et pas mieux.
+\item au plus quasi-linéaire si $\mathcal{C}(n)=O(n\ln(n))$ et quasi-linéaire si $\mathcal{C}(n)=O(n\ln(n))$ et pas mieux.
+\item au plus quadratique si $\mathcal{C}(n)=O(n^2)$ et quadratique si $\mathcal{C}(n)=O(n^2)$ et pas mieux.
+\item au plus exponentielle si $\mathcal{C}(n)=O(q^n)$ (pour un certain $q>1$) et exponentielle si $\mathcal{C}(n)=O(q^n)$ et pas mieux.
+\end{itemize}
+
+\subsection{Quelques méthodes pour trouver l'ordre de grandeur}
+Soient $j,k$ des entiers tels que $j<k$ et $A$, $B$ et $C$ des instructions ne \emph{dépendant pas} de $j$ ou de $k$.
+
+\begin{itemize}
+\item L'instruction \og Si A alors B sinon C \fg{} a un coût au plus égal à :
+$$ \hbox{Cout(A)+ Maximum(Cout(B),Cout(C))}$$
+\item L'instruction \og Pour i allant de j à k faire A \fg{} a pour coût :
+$$ (k-j+1)\hbox{Cout(A)}$$
+\item  L'instruction \og Tant que A faire B \fg{} a pour coût :
+$$ \hbox{(Nombre d'itérations)} \times \hbox{(Cout(A)+Cout(B))}$$
+\end{itemize}
+
+\begin{Exercice}{} Donnons le coût de l'algorithme suivant : 
+\end{Exercice}
+\begin{minipage}{\linewidth}
+\begin{Python}
+S=0
+for i in range(n):
+    for j in range(n):
+        S=S+1
+\end{Python} 
+\end{minipage}
+
+\vspace{4cm}
+
+
+
+\subsection{Un exemple : le tri par Sélection}
+
+\begin{Python}
+def TriSelect(L):
+    n=len(L)
+    for i in range(n-1):
+        for j in range(i+1,n):
+            if L[j]<L[i]:
+                L[j],L[i]=L[i],L[j]
+    return(L)
+\end{Python} 
+Comment fonctionne le tri par sélection ?
+
+\vspace{4cm}
+
+Pour l'étude de la complexité d'un tri, on s'intéresse généralement au nombre de comparaisons effectuées. Ce tri par sélection, pour une liste de longueur $n$, effectue un nombre de comparaisons égal à :
+
+\vspace{3cm}
+
+\newpage
+\section{TP}
+\subsection{Extrait modifié CCP MP}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Écrire à l'aide d'une boucle for une fonction \code{factorielle} qui prend en argument un entier naturel $n$ et qui renvoie $n!$.
+\item Déterminer le nombre de multiplications qu'effectue \code{factorielle}($n$).
+\end{enumerate}
+\item On considère la fonction suivante nommée \code{mystere} :
+\begin{Python}
+def mystere(n):
+    s=0
+    for k in range(n+1):
+        s=s+factorielle(k)
+    return s
+\end{Python} 
+\begin{enumerate}
+\item Quelle valeur renvoie \code{mystere}(4) ?
+\item Déterminer le nombre de multiplications qu'effectue \code{mystere}($n$).
+\item Proposer une amélioration du script de la fonction \code{mystere} afin d'obtenir une complexité linéaire (liée au nombre de multiplications uniquement).
+\end{enumerate}
+\end{enumerate}
+\subsection{Algorithme de Horner}
+Soient $x \in \mathbb{R}$ et $P \in \mathbb{R}[X]$ de degré $n \geq 1$ de la forme :
+$$ P(X) = a_n X^n + a_{n-1} X^{n-1} + \cdots + a_1 X + a_0 $$
+Pour calculer $P(x)$, on peut remarquer que :
+\begin{align*}
+P(x) & = (a_n x^{n-1} + \cdots + a_1)x + a_0 \\
+& = ((a_n x^{n-2} + \cdots + a_2)x + a_1)x + a_0 \\
+& = ((\cdots(a_n x + a_{n-1})x + \cdots)x + a_1)x + a_0
+\end{align*}
+Ainsi, pour calculer $P(x)$, il suffit d'utiliser une variable $R$ valant $a_n$, puis $a_nx+a_{n-1}$ puis ... On pourra identifier le polynôme $P$ avec la liste $[a_n, \ldots, a_0]$.
+
+\begin{enumerate}
+\item Écrire une fonction Horner prenant en argument un polynôme et un réel $x$ et qui renvoie $P(x)$ en utilisant l'algorithme de Horner.
+\item Déterminer la complexité en temps (addition, multiplication) selon le degré de $P$.
+\end{enumerate}
+
+\subsection{Matrices creuses}
+
+Une matrice carrée est dite creuse si elle contient majoritairement des coefficients nuls (disons $x/100$ dans ce TP). On a alors deux manières de représenter cette matrice :
+
+\begin{itemize}
+\item En utilisant le type array de numpy : on représente cette matrice par un tableau à deux dimensions.
+\item En utilisant une liste qui ne contient que les coefficients non nuls de la matrice. Dans ce cas, chaque élément de cette liste est une liste à 3 éléments $(i,j,a)$ où $i$ est le numéro de la ligne de la matrice, $j$ le numéro de la colonne de la matrice et $a$ le coefficient $a_{i,j}$.
+\end{itemize}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Écrire une fonction \code{somme1} prenant en argument un tableau à deux dimensions (correspondant à une matrice creuse de taille $n \times n$) et qui renvoie la somme des coefficients.
+\item Que peut-on dire de la complexité en mémoire dans ce cas ? De la complexité en temps ?
+\end{enumerate}
+\item \begin{enumerate}
+\item Écrire une fonction \code{somme2} prenant en argument une liste (correspondant à une matrice creuse de taille $n \times n$) et qui renvoie la somme des coefficients.
+\item Que peut-on dire de la complexité en mémoire dans ce cas ? De la complexité en temps ?
+\end{enumerate}
+\item Déterminer l'existence critique d'une valeur de $x$ à partir de laquelle une méthode l'emporte sur l'autre.
+\end{enumerate}
+
+\subsection{Extrait modifié PT}
+
+\begin{enumerate}
+\item Soit l'entier $n=1234$. Quel est le quotient de la division euclidienne de $n$ par $10$? Et le reste? Que se passe t-il si on recommence la division par $10$ à partir de $q$ ?
+\item Écrire une suite d'instructions calculant la somme des cubes des chiffres de l'entier $1234$.
+\item Écrire une fonction \code{somcube}, d'argument $n$, renvoyant la somme des cubes des chiffres de l'entier $n$.
+\item Déterminer la complexité de la fonction \code{somcube} (on comptera les affectations et les opérations).
+\end{enumerate}
+
+\end{document}
