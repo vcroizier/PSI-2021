@@ -1,30 +1,27 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\renewcommand{\P}{\text{P}}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 14 : Espaces préhilbertiens réels, espaces euclidiens}
+
+\tableofcontents
+\separationTitre
+
+% cSpell:ignore orthonormaliser
 
 
-\begin{center}
-\textit{{ {\huge TD 14 : Espaces préhilbertiens réels, }}}
-
-\textit{{ {\huge espaces euclidiens}}}
-\end{center}
-
-\bigskip
-
-\noindent Si rien n'est précisé dans un exercice, le produit scalaire utilisé est noté $< \cdot , \cdot >$ et la norme associée est notée $\Vert \cdot \Vert$.
+Si rien n'est précisé dans un exercice, le produit scalaire utilisé est noté $< \cdot , \cdot >$ et la norme associée est notée $\Vert \cdot \Vert$.
 
 
-\medskip
+\subsection{Produit scalaire, orthogonalité}
 
-\begin{center}
-\textit{{ {\large Produit scalaire, orthogonalité}}}
-\end{center}
 
-\medskip
 
 \begin{Exercice}{} On pose pour tout $(P,Q) \in \mathbb{R}[X]^2$,
 $$ <P,Q> = \sum_{n=0}^{+ \infty} P(n) Q(n) e^{-n} $$
@@ -37,7 +34,7 @@ Justifier que cela définit un produit scalaire sur $\mathbb{R}[X]$.
 %$$ P(n)Q(n) e^{-n} \underset{+ \infty}{=} o \left( \dfrac{1}{n^2} \right)$$
 %La série de terme général positif $1/n^2$ converge (série de Riemann avec $2>1$) donc par critère de comparaison la série de terme général $P(n)Q(n) e^{-n}$ converge absolument donc converge. Ainsi, $<P,Q>$ est bien défini.
 %
-%\medskip
+%
 %
 %\noindent Vérifions les différents points de la définition.
 %
@@ -73,7 +70,7 @@ Justifier que cela définit un produit scalaire sur $\mathbb{R}[X]$.
 %$$ t \mapsto  \dfrac{P(t)Q(t)}{\sqrt{1-t}} $$
 %aussi et $<P,Q>$ est donc bien défini.
 %
-%\medskip
+%
 %
 %\noindent Vérifions les différents points de la définition.
 %
@@ -255,7 +252,7 @@ Montrer que $x$ et $y$ sont orthogonaux.
 %On a donc montré l'équivalence souhaitée.
 %\end{enumerate}
 
-\begin{Exercice}{\ding{80}] Soit $H= \mathcal{C}([0,1},\mathbb{R})$ muni du produit scalaire suivant :
+\begin{Exercice}[$\bigstar$]{} Soit $H= \mathcal{C}([0,1],\mathbb{R})$ muni du produit scalaire suivant :
 $$ \forall (f,g) \in H^2, \, <f,g> = \int_{0}^1 f(t) g(t) \dt $$
 Considérons $F= \lbrace f \in H, \, f(0)=0 \rbrace \cdot$
 
@@ -278,7 +275,7 @@ Considérons $F= \lbrace f \in H, \, f(0)=0 \rbrace \cdot$
 %\end{itemize}
 %Ainsi, $F$ est un sous-espace vectoriel de $H$.
 %
-%\medskip
+%
 %
 %\noindent Soit $g \in F^{\perp}$. Posons $h$ la fonction de $F$ définie par :
 %$$ \forall t \in [0,1], \; h(t)=tg(t)$$
@@ -396,11 +393,11 @@ Montrer que $F$ et $G$ sont des sous-espaces supplémentaires orthogonaux  de $E
 % \end{align*}
 % car $f(1)=0$ et $f(0)=0$. Ainsi, $F$ et $G$ sont orthogonaux dans $E$ (en particulier, ils sont en somme directe).
 % 
-% \medskip
+% 
 % 
 % \noindent Raisonnons par analyse-synthèse pour montrer que $F$ et $G$ sont supplémentaires dans $E$.
 % 
-% \medskip
+% 
 % 
 % \noindent \textit{Analyse.} Soit $f \in E$. On suppose l'existence de $(f_1,f_2) \in F \times G$ tel que $f=f_1+f_2$. La fonction $f_2$ est solution de $y''=y$ dont on connait l'ensemble des solutions : il existe deux réels $\lambda$ et $\mu$ tels que pour tout $x \in [0,1]$,
 % $$ f_2(x) = \lambda e^x + \mu e^{-x}$$
@@ -421,7 +418,7 @@ Montrer que $F$ et $G$ sont des sous-espaces supplémentaires orthogonaux  de $E
 % & = f(0) - \dfrac{f(1)-f(0)}{e^{-1}-e} 
 % \end{align*}
 % On vient donc de déterminer $f_2$ donc $f_1$.
-% \medskip
+% 
 % 
 % \noindent \textit{Synthèse.} Soit $f \in E$. Posons $f_2 : [0,1] \rightarrow \mathbb{R}$ définie par :
 % $$ \forall x \in [0,1], \, f_2(x)= \left(f(0) - \dfrac{f(1)-f(0)}{e^{-1}-e} \right) e^x + \dfrac{f(1)-f(0)}{e^{-1}-e} e^{-x}$$
@@ -440,7 +437,7 @@ Montrer que $F$ et $G$ sont des sous-espaces supplémentaires orthogonaux  de $E
 % Pour tout $f \in E$, il existe donc un couple $(f_1,f_2) \in F \times G$ tel que $f=f_1+f_2$. Cette décomposition est unique d'après l'analyse (on le savait par somme directe !). Ainsi, $E= F \oplus G$.
 % 
  
-\begin{Exercice}{\ding{80}} Soit $H$ un espace préhilbertien. On suppose qu'il existe une famille $\mathcal{F}=(e_1, \ldots, e_n)$ ($n \geq 1$) de vecteurs unitaires de $H$ telle que :
+\begin{Exercice}[$\bigstar$]{} Soit $H$ un espace préhilbertien. On suppose qu'il existe une famille $\mathcal{F}=(e_1, \ldots, e_n)$ ($n \geq 1$) de vecteurs unitaires de $H$ telle que :
 $$ \forall x \in H, \; \Vert x \Vert^2= \sum_{k=1}^n <x,e_k>^2 $$
 Montrer que $\mathcal{F}$ est une base orthonormée de $H$.
 \end{Exercice}
@@ -454,7 +451,7 @@ Montrer que $\mathcal{F}$ est une base orthonormée de $H$.
 %On en déduit que $(e_1, \ldots, e_n)$ est une famille orthogonale, de vecteurs non nuls car unitaires donc c'est aussi une famille libre. Posons :
 %$$ F = \textrm{Vect}(\mathcal{F})$$
 %
-%\medskip
+%
 %
 %\noindent Soit $x \in H$. Si $x$ est orthogonal à $F$ alors :
 %$$ \Vert x \Vert^2= \sum_{k=1}^n <x,e_k>^2 = \sum_{k=1}^n  0 = 0$$
@@ -468,13 +465,11 @@ Montrer que $\mathcal{F}$ est une base orthonormée de $H$.
 %
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Projection orthogonale}}}
-\end{center}
 
-\medskip
+\subsection{Projection orthogonale}
+
+
 
 \begin{Exercice}{} Donner la matrice de la projection orthogonale sur le plan d'équation $x-2y+z=0$ dans la base canonique de $\mathbb{R}^3$ muni du produit scalaire usuel.
 \end{Exercice}
@@ -483,7 +478,7 @@ Montrer que $\mathcal{F}$ est une base orthonormée de $H$.
 %$$ n = \dfrac{1}{\sqrt{6}} (1,-2,1)$$
 %forme une base orthonormée de $F^{\perp}$. 
 %
-%\medskip
+%
 %
 %\noindent Notons $p$ (resp. $q$) la projection orthogonale sur $F$ (resp. $F^{\perp}$). Alors $p+q=\textrm{Id}$. D'après le cours, on sait que pour tout $(x,y,z) \in \mathbb{R}^3$,
 %\begin{align*}
@@ -509,7 +504,7 @@ Montrer que $\mathcal{F}$ est une base orthonormée de $H$.
 %\item Rappeler le produit scalaire usuel sur $\mathcal{M}_{2}(\mathbb{R})$. 
 \item Montrer que $F=\left\{\left(\begin{array}{cc} a & b\\ -b & a \end{array}\right),\ (a,b)\in\R^2\right
 \}$ est un sous-espace vectoriel de ${\cal M}_2(\R).$
-\item Trouver une base de $F^{\perp}$ et d\'eterminer le projet\'e orthogonal de $N=\left(\begin{array}{cc} 1&1\\ 1&1 \end{array}\right)$ sur $F^{\perp}$.
+\item Trouver une base de $F^{\perp}$ et déterminer le projeté orthogonal de $N=\left(\begin{array}{cc} 1&1\\ 1&1 \end{array}\right)$ sur $F^{\perp}$.
 \end{enumerate}
 \end{Exercice}
 
@@ -568,14 +563,14 @@ Montrer que $\mathcal{F}$ est une base orthonormée de $H$.
 %\end{pmatrix}$$
 %Les vecteurs $M_3$ et $M_4$ sont non colinéaires donc $(M_3,M_4)$ est une base de $F^{\perp}$.
 %
-%\medskip
+%
 %
 %\noindent Il est évident que :
 %$$ N= M_1+M_4$$
 %avec $M_1 \in F$ et $M_2 \in F^{\perp}$. L'espace $F$ est de dimension finie donc $F$ et $F^{\perp}$ sont supplémentaires orthogonaux. On en déduit que le projeté de $N$ sur $F^{\perp}$ est $M_4$.
 %\end{enumerate}
 
-\begin{Exercice}{\ding{80}} Soit $E$ un espace vectoriel euclidien de dimension supérieure à $2$.  Soient $x$ et $y$ deux vecteurs distincts de $E$ tels que $$< x, y> =\Vert y \Vert^{2}$$
+\begin{Exercice}[$\bigstar$]{} Soit $E$ un espace vectoriel euclidien de dimension supérieure à $2$.  Soient $x$ et $y$ deux vecteurs distincts de $E$ tels que $$< x, y> =\Vert y \Vert^{2}$$
  Montrer qu'il existe un unique hyperplan $H$ de $E$ tel que $y = p_{H}(x)$ où $p_H$ est la projection orthogonale sur $H$.
  \end{Exercice}
  
@@ -601,20 +596,18 @@ Montrer que $\mathcal{F}$ est une base orthonormée de $H$.
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Calcul de distances}}}
-\end{center}
 
-\medskip
+\subsection{Calcul de distances}
+
+
 
 \begin{Exercice}{} Considérons $\R^4$ muni de son produit scalaire usuel. Soient $e_1=(1,0,1,0)$ et $e_2=(1,-1,1,-1)$ et $F=\textrm{Vect}(e_1,e_2)$.
 \begin{enumerate}
-    \item  D\'eterminer une base orthonormale de $F.$
-    \item  D\'eterminer la matrice dans la base canonique de $\R^4$ du projecteur orthogonal
+    \item  Déterminer une base orthonormale de $F.$
+    \item  Déterminer la matrice dans la base canonique de $\R^4$ du projecteur orthogonal
 sur $F.$
-    \item  D\'eterminer la distance du vecteur $(1,1,1,1)$ au sous-espace vectoriel  $F.$
+    \item  Déterminer la distance du vecteur $(1,1,1,1)$ au sous-espace vectoriel  $F.$
 \end{enumerate}
 \end{Exercice}
 
@@ -655,7 +648,7 @@ sur $F.$
 %$$ (1,0,1,0)-(0,-1,0,-1) = (1,1,1,1)$$
 %Donc $(1,1,1,1)$ appartient à $F$ donc la distance de vecteur à $F$ vaut $0$.
 %
-%\medskip
+%
 %
 %\noindent Sinon, on peut aussi utiliser l'égalité suivante :
 %$$ \textrm{d}((1,1,1,1),F) = \Vert (1,1,1,1)-p_F((1,1,1,1) \Vert$$
@@ -704,9 +697,9 @@ $$ \forall (P,Q) \in \mathbb{R}_n[X]^2, \; <P,Q> = \sum_{k=0}^{n} P^{(k)}(1)Q^{(
 
 \item Montrer que pour tout $A\in{\cal M}_n(\R)$, on a  $|$tr$(A)|\leq \sqrt{n\hbox{tr}(^t\!AA)}.$
 	
-\item On note $S_n(\R)$ (resp. $A_n(\R)$)	le sous-espace vectoriel des matrices sym\'etriques (resp. antisym\'etriques). Montrer qu'ils sont suppl\'ementaires orthogonaux.
+\item On note $S_n(\R)$ (resp. $A_n(\R)$)	le sous-espace vectoriel des matrices symétriques (resp. antisymétriques). Montrer qu'ils sont supplémentaires orthogonaux.
 
-\item Déterminer $\dis\inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2$ pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donn\'ee.
+\item Déterminer $\inf_{M\in{\cal S}_n(\R)}\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2$ pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donnée.
 \item Soit $A\in{\cal M}_n(\R)$. Montrer que $\textrm{Ker}(A)^{\perp}= \textrm{Im}(^t\!A)$.
 \end{enumerate}
 \end{Exercice}
@@ -735,16 +728,16 @@ $$ \forall (P,Q) \in \mathbb{R}_n[X]^2, \; <P,Q> = \sum_{k=0}^{n} P^{(k)}(1)Q^{(
 %On en déduit que $\mathcal{S}_n(\mathbb{R})$ et $\mathcal{A}_n(\mathbb{R})$ sont orthogonaux.
 %\item Rappelons que pour une matrice $B=(b_{i,j})$ de $\mathcal{M}_n(\mathbb{R})$, on a :
 %$$ \Vert B \Vert^2 = <B,B> = \sum_{1 \leq i,j \leq n} {b_{i,j}}^2$$
-%Ainsi, pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donn\'ee,
-%$$ \inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2  = \inf_{M\in{\cal S}_n(\R)} \Vert A-M \Vert^2 $$
+%Ainsi, pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donnée,
+%$$ \inf_{M\in{\cal S}_n(\R)}\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2  = \inf_{M\in{\cal S}_n(\R)} \Vert A-M \Vert^2 $$
 %On sait que $\mathcal{S}_n(\mathbb{R})$ est un sous-espace vectoriel de dimension finie donc en notant $p$ la projection orthogonale sur $\mathcal{S}_n(\mathbb{R})$ (qui est la projection sur $\mathcal{S}_n(\mathbb{R})$ parallèlement à $\mathcal{A}_n(\mathbb{R})$ d'après la question précédente) on a :
 %\begin{align*}
-% \inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 & = \Vert A-p(A) \Vert^2 \\
+% \inf_{M\in{\cal S}_n(\R)}\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 & = \Vert A-p(A) \Vert^2 \\
 % & = \left\Vert A- \dfrac{A+^tA}{2} \right\Vert^2 \\
 % & =  \left\Vert \dfrac{A-^tA}{2} \right\Vert^2 
 % \end{align*}
 % ce qui donne :
-% $$  \inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 = \dfrac{1}{4} \sum_{1 \leq i,j \leq n} (a_{i,j}-a_{j,i})^2$$
+% $$  \inf_{M\in{\cal S}_n(\R)}\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 = \dfrac{1}{4} \sum_{1 \leq i,j \leq n} (a_{i,j}-a_{j,i})^2$$
 %\end{enumerate}
 
 
@@ -753,7 +746,7 @@ $$ <P,Q> = \sum_{k=0}^n P(a_k) Q(a_k)$$
 où $a_0$, $\ldots$, $a_n$ sont $n$ réels distincts deux à deux $(n \geq 2)$.
 \begin{enumerate}
 \item Montrer que cela définit un produit scalaire sur $\mathbb{R}_n[X]$.
-\item Montrer brièvement que $F= \dis \left\lbrace P \in \mathbb{R}_n[X] \, \vert \, \sum_{k=0}^n P(a_k)=0 \right\rbrace$ est un espace vectoriel. Donner sa dimension et son orthogonal.
+\item Montrer brièvement que $F= \left\lbrace P \in \mathbb{R}_n[X] \, \vert \, \sum_{k=0}^n P(a_k)=0 \right\rbrace$ est un espace vectoriel. Donner sa dimension et son orthogonal.
 \item Déterminer la distance de $X^n$ à $F$.
 \end{enumerate}
 \end{Exercice}
@@ -762,14 +755,14 @@ où $a_0$, $\ldots$, $a_n$ sont $n$ réels distincts deux à deux $(n \geq 2)$.
 %\item Remarquons pour commencer que pour tout $(P,Q) \in \mathbb{R}_n[X]^2$, $<P,Q> \in \mathbb{R}$.
 %\begin{itemize}
 %\item La symétrie est évidente par commutativité du produit de réels.
-%\item La linéarité par rapport à la première variable est claire (linéarité de $\dis \sum$) et donc la bilinéarité aussi (par symétrie).
+%\item La linéarité par rapport à la première variable est claire (linéarité de $\sum$) et donc la bilinéarité aussi (par symétrie).
 %\item Soit $P \in \mathbb{R}_n[X]$. Alors :
 %$$ <P,P> =  \sum_{k=0}^n P(a_k)^2 \geq 0$$
 %Si $<P,P>=0$, sachant qu'une somme de termes positifs est nulle si et seulement si tous les termes sont nuls, on en déduit que :
 %$$ P(a_0)= P(a_1) = \cdots = P(a_n)$$
 %Les réels $a_0$, $\ldots$, $a_n$ sont deux à deux distincts donc $P$ admet $n+1$ racines distinctes et est de degré inférieur ou égal à $n$ donc $P$ est le polynôme nul.
 %
-%\medskip
+%
 %
 %\noindent Ainsi, $(P,Q) \mapsto <P,Q>$ définit un produit scalaire sur $\mathbb{R}_n[X]$.
 %\end{itemize}
@@ -782,8 +775,8 @@ où $a_0$, $\ldots$, $a_n$ sont $n$ réels distincts deux à deux $(n \geq 2)$.
 %\item L'espace $F$ est un hyperplan de $\mathbb{R}_n[X]$ et $1$ génère son orthogonal donc :
 %\begin{align*}
 %\textrm{d}(X^n, F) & = \dfrac{\vert <X^n,1> \vert}{\Vert 1 \Vert} \\
-%& = \dfrac{\dis\left\vert \sum_{k=0}^n a_k^n \right\vert }{\sqrt{<1,1>}} \\
-%& = \dfrac{\dis\left\vert \sum_{k=0}^n a_k^n \right\vert }{\sqrt{n+1}} 
+%& = \dfrac{\left\vert \sum_{k=0}^n a_k^n \right\vert }{\sqrt{<1,1>}} \\
+%& = \dfrac{\left\vert \sum_{k=0}^n a_k^n \right\vert }{\sqrt{n+1}} 
 %\end{align*}
 %\end{enumerate}
 
@@ -810,7 +803,7 @@ où $a_0$, $\ldots$, $a_n$ sont $n$ réels distincts deux à deux $(n \geq 2)$.
 %$$ P(t)Q(t) e^{-t} \underset{+ \infty}{=} o \left( \dfrac{1}{t^2} \right)$$
 %La fonction $t \mapsto \dfrac{1}{t^2}$ est intégrable sur $[1, + \infty[$ donc par critère de comparaison $t \mapsto P(t)Q(t)e^{-t}$ est aussi intégrable sur $[1, + \infty[$ et donc sur $\mathbb{R}_+$ par continuité sur $[0,1]$. On en déduit que l'intégrale définissant $<P,Q>$ converge donc l'application est bien définie.
 %
-%\medskip
+%
 %
 %\noindent La linéarité par rapport à la première variable est évidente (par linéarité de l'intégrale), la symétrie aussi donc la bilinéarité est vérifiée. Soit $P \in \mathbb{R}[X]$. Alors par positivité de l'intégrale :
 %$$ <P,P> = \int_0^{+ \infty} P(t)^2 e^{-t} \dt \geq 0$$
@@ -820,7 +813,7 @@ où $a_0$, $\ldots$, $a_n$ sont $n$ réels distincts deux à deux $(n \geq 2)$.
 %$$ \forall t \geq 0, \; P(t)=0$$
 %On en déduit que $P$ a une infinité de racines donc $P$ est le polynôme nul.
 %
-%\medskip
+%
 %
 %\noindent Ainsi, $< \cdot \, , \, \cdot>$ est un produit scalaire sur $\mathbb{R}[X]^2$.
 %\item Soit $(p,q) \in \mathbb{N}^2$. Alors (voir le chapitre sur l'intégration pour la valeur de $\Gamma$) :
@@ -864,16 +857,14 @@ où $a_0$, $\ldots$, $a_n$ sont $n$ réels distincts deux à deux $(n \geq 2)$.
 % \end{align*}
 %\end{enumerate}
 
-\medskip
-
-\begin{center}
-\textit{{ {\large Divers}}}
-\end{center}
-
-\medskip
 
 
-\begin{Exercice}{\ding{80}] Considérons $H= \mathbb{R}[X}$ muni du produit scalaire :
+\subsection{Divers}
+
+
+
+
+\begin{Exercice}[$\bigstar$]{} Considérons $H= \mathbb{R}[X]$ muni du produit scalaire :
 $$ \forall (P,Q) \in H^2, \; <P,Q> = \int_{0}^1 P(t) Q(t) \dt $$
 On pose pour tout $n \in \mathbb{N}$, $P_n(X)= ((X^2-X)^n)^{(n)}$.
 

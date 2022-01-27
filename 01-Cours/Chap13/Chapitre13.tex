@@ -1,31 +1,22 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{Cours}
-\usepackage{delarray}
-\usepackage{fancybox}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\newcommand{\Int}[2]{\ensuremath{\mathchoice%
-	{{\displaystyle\int_{#1}^{#2}}}
-	{{\displaystyle\int_{#1}^{#2}}}
-	{\int_{#1}^{#2}}
-	{\int_{#1}^{#2}}
-	}}
-\usepackage{pstricks-add}
+\documentclass[french,11pt,twoside]{VcCours}
+\newcommand{\dt}{\text{d}t}
 
-
+\renewcommand{\trou}[1]{{\color{white}#1}}
+%\renewcommand{\trou}[1]{{\color{blue}#1}}
 
 \begin{document}
-% \everymath{\displaystyle}
 
-\maketitle{Chapitre 13}{Fonctions définies par une intégrale}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Chapitre 13 : Fonctions définies par une intégrale}
+
+\tableofcontents
+\separationTitre
+
 
 Dans ce chapitre, $I$ est un intervalle de $\mathbb{R}$ non vide et non réduit à un point.
 \section{Théorème fondamental de l'analyse}
 
 \begin{Theoreme}{} Soient $f$ une fonction continue sur $I$ à valeurs dans $\mathbb{R}$ et $a \in I$. Alors la fonction 
-$$ \begin{array}{cllll}
-F & : & I & \rightarrow & \mathbb{R} \\
- & & x & \mapsto & \int_{a}^x f(t) \dt \\
-\end{array}$$
+$$\application{F}{I}{\R}{x}{\int_{a}^x f(t) \dt}$$
 est l'unique primitive de $f$ s'annulant en $a$. En particulier $F$ est de classe $\mathcal{C}^1$ sur $I$ et $F'=f$.
 \end{Theoreme} 
 
@@ -34,13 +25,15 @@ $$ F(x) = \int_{0}^x e^{-t^2} \dt$$
 est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et pour tout réel $x$, on a $F'(x)=e^{-x^2}$.
 \end{Exemple}
 
-\medskip
 
 \begin{Exemple} Soit $f$ la fonction définie sur $\mathbb{R}$ par $\displaystyle{f(x)=\int_x^{2x} e^{-t^2}\;\text{d}t}$.
 \begin{enumerate}
 \item Montrons que $f$ est bien définie et que c'est une fonction impaire.
 
-\vspace{5cm}
+\newpage
+\vspace*{3cm}
+%\vspace{5cm}
+
 \item Montrons que $f$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et calculer $f'$.
 
 \vspace{5cm}
@@ -48,7 +41,6 @@ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et pour tout réel $x$, on a $F'(
 \item Étudions les variations de $f$.
 
 \vspace{5cm}
-\newpage
 
 \item Étudions les limites de $f$ en $+ \infty$ et $- \infty$.
 
@@ -56,8 +48,8 @@ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et pour tout réel $x$, on a $F'(
 \end{enumerate}
 \end{Exemple}
 
-\medskip
 
+\newpage
 \begin{Exemple} Soient $f$ une fonction continue et intégrable sur $\mathbb{R}$ et $h$ la fonction définie pour tout réel $x$ par :
 $$ h(x) = \int_x^{+ \infty} f(t) \dt$$
 Montrons que $h$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et déterminons sa dérivée.
@@ -66,9 +58,11 @@ Montrons que $h$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et déterminons 
 %\begin{Exemple} Soit $f$ définie par $f(x) = \int_{x}^{3x-1} \frac{e^t}{t} dt$. Donnons l'ensemble de définition de $f$, de dérivabilité de $f$ et l'expression de $f'$.
 
 \vspace{11.5cm}
+
+\vspace{\stretch{1}}
 \end{Exemple}
 
-\begin{ApplicationDirecte} Soit $f$ la fonction définie sur $\mathbb{R}^*$ par $f(x) = \int_{x}^{2x} \dfrac{\ch(t)}{t} \dt$.
+\begin{ApplicationDirecte}{} Soit $f$ la fonction définie sur $\mathbb{R}^*$ par $f(x) = \int_{x}^{2x} \dfrac{\ch(t)}{t} \dt$.
 
 \begin{enumerate}
 \item Justifier que $f$ est bien définie sur $\mathbb{R}^*$. 
@@ -78,6 +72,7 @@ Montrons que $h$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et déterminons 
 \end{enumerate}
 \end{ApplicationDirecte}
 
+\newpage
 \section{Intégrales à paramètres}
 
 Dans cette section, $A$ et $I$ désignent deux intervalles de $\mathbb{R}$ et $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$. Dans la suite, on considère des fonctions $f : (x,t) \in A \times I \rightarrow \mathbb{K}$.
@@ -113,23 +108,21 @@ est définie et continue sur $A$.
 $$ F(x) = \int_{1}^{+ \infty} \frac{1}{x+t^3} \dt$$
 Justifions que $F$ est bien définie et continue sur $\mathbb{R}_+$.
 
-\vspace{8.5cm}
+\newpage
+
+%\vspace{8.5cm}
 \end{Exemple}
 
 \begin{Exemple} Soit $F$ définie par 
 $$ F(x) = \int_{0}^{+ \infty} \frac{\ln(1+xt)}{1+t^2} \dt$$
 Justifions que $F$ est bien définie et continue sur $\mathbb{R}_+$.
 
-\vspace{8.5cm}
+\vspace*{10cm}
 \end{Exemple}
 
-\newpage
 
-$\phantom{test}$
 
-\vspace{6cm}
-
-\begin{ApplicationDirecte} Soit $F$ définie par 
+\begin{ApplicationDirecte}{} Soit $F$ définie par 
 $$ F(x) = \int_{0}^{+ \infty} \frac{e^{-xt}}{1+t^2} \dt$$
 Justifier que $F$ est bien définie et continue sur $\mathbb{R}_+$.
 \end{ApplicationDirecte} 
@@ -154,7 +147,7 @@ que l'on appelle la \emph{dérivée partielle} de $f$ par rapport à $x$.
 \vspace{4cm}
 \end{Exemple}
 
-\begin{ApplicationDirecte} Soit $f : \mathbb{R} \times \mathbb{R}_+^{*} \rightarrow \mathbb{R}$ définie par :
+\begin{ApplicationDirecte}{} Soit $f : \mathbb{R} \times \mathbb{R}_+^{*} \rightarrow \mathbb{R}$ définie par :
 $$ f(x,t) = t^x$$
 Justifier que $f$ admet une dérivée partielle par rapport à $x$ et donner son expression. 
 \end{ApplicationDirecte}
@@ -181,33 +174,34 @@ $$ F'(x) = \int_{I}  \dfrac{\partial f}{\partial x}(x,t) \dt$$
 \end{itemize}
 \end{Remarques}{}
 
+\newpage
 \begin{Exemple} Soit $F$ définie par :
 $$ F(x) = \int_{0}^{+ \infty} \frac{\sin(xt)}{t} e^{-t} \dt$$
 Justifions que $F$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$, déterminons $F'$ et déduisons-en une expression simple de $F$.
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Exemple}
 
-\newpage
 
-\begin{ApplicationDirecte} Soit $F$ définie par :
+\begin{ApplicationDirecte}{} Soit $F$ définie par :
 $$ F(x) = \int_{0}^{+ \infty} e^{-t^2} \ch(2xt) \dt$$
 Justifier que $F$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ (on vérifiera l'hypothèse de domination sur $[-a,a]$ pour tout $a>0$).
 \end{ApplicationDirecte}
 
+\newpage
 \subsection{Généralisation : dérivée d'ordre supérieur}
 \begin{Theoreme}{}
 Soient $f : A \times I \rightarrow \mathbb{K}$ et $k \geq 2$. On suppose que :
 \begin{itemize}
 \item Pour tout $x \in A$, $t \mapsto f(x,t)$ est continue par morceaux et intégrable sur $I$.
 \item Pour tout $t \in I$, $x \mapsto f(x,t)$ est de classe $\mathcal{C}^k$ sur $A$.
-\item Pour tout $j \in \Interv{1}{k-1}$, pour tout $x \in A$, $t \mapsto \dfrac{\partial^j f}{\partial x^j}(x,t)$ est continue par morceaux et intégrable sur $I$.
+\item Pour tout $j \in \ii{1}{k-1}$, pour tout $x \in A$, $t \mapsto \dfrac{\partial^j f}{\partial x^j}(x,t)$ est continue par morceaux et intégrable sur $I$.
 \item Il existe une fonction $\varphi : I \rightarrow \mathbb{R}_+$ continue par morceaux et intégrable sur $I$ telle que pour tout $(t,x) \in A \times I$,
 $$ \left\vert \dfrac{\partial^k f}{\partial x^k}(x,t) \right\vert \leq \varphi(t)$$
 \end{itemize}
 Alors la fonction 
 $$ F : x \mapsto \int_{I} f(x,t) \dt$$
-est définie et de classe $\mathcal{C}^k$ sur $A$ et pour tout $j \in \Interv{1}{k}$ et tout $x \in A$,
+est définie et de classe $\mathcal{C}^k$ sur $A$ et pour tout $j \in \ii{1}{k}$ et tout $x \in A$,
 $$ F^{(j)}(x) = \int_{I}  \dfrac{\partial^{j} f}{\partial x^j}(x,t) \dt$$
 \end{Theoreme}
 
@@ -241,6 +235,6 @@ Exprimons, pour tout réel $x>0$, $\Gamma(x+1)$ en fonction de $\Gamma(x)$ et de
 
 Déterminer $\Gamma(n)$ pour tout $n \geq 1$.
 
-\vspace{5cm}
+%\vspace{5cm}
 
 \end{document}

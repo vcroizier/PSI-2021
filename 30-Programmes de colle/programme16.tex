@@ -1,0 +1,150 @@
+\documentclass[twoside,a4paper,french,10pt]{VcCours}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{\vspace{-1.5em}}
+
+\begin{center}
+\large\bf
+Programme de colles\hspace{\stretch{1}}Semaine n\degres16 du 24/01 au 28/01/2022
+\end{center}
+\separationTitre
+
+
+Pour cette khôlle, chaque étudiant aura :
+\begin{itemize}
+\item Une ou deux \textbf{question de cours}.
+\item Une démonstration \textbf{(D)} ou un exercice à retravailler.
+\end{itemize} 
+  
+
+\section*{Chapitre 12 : Espaces vectoriels normés}
+    \begin{enumerate}
+    \item Espaces vectoriels normés.
+    \begin{itemize}
+    \item Définition d'une norme.
+    \item Exemples : norme sur un espace préhilbertien réel, normes usuelles sur $\mathbb{K}^n$, norme de la convergence uniforme.
+    \item Une inégalité triangulaire.
+    \item Distance associée à une norme. 
+    \end{itemize}
+    \item Rudiments de topologie.
+    \begin{itemize}
+    \item Boule ouverte et fermée, sphère, boule unité, sphère unité
+    \item Suites d'éléments dans un espace vectoriel.
+    \item Normes équivalentes.
+    \item Parties, suites et applications bornées.
+    \item Définition : \textbf{ensemble convexe}. \textbf{(D)} : Les boules sont convexes. 
+    \end{itemize}
+    \item Convergence de suites.
+    \begin{itemize}
+    \item Convergence de suite. Propriétés usuelles.
+    \item Lien entre convergence et suites coordonnées.
+    \end{itemize}
+    \item Topologie d'un espace vectoriel normé.
+    \begin{itemize}
+    \item Point intérieur d'une partie $A$, intérieur d'une partie $A$.
+    \item \textbf{Partie ouverte}.
+    \item \textbf{(D)} : une boule ouverte est un ouvert.
+    \item Point adhérent d'une partie $B$, adhérence d'une partie $B$.
+    \item \textbf{Partie fermée}. Critère lié aux suites (\textbf{Très utile en pratique}).
+    \item Une partie $A$ d'un espace vectoriel normé ($E$, $\Vert \cdot \Vert$) est fermée si et seulement si son complémentaire est une partie ouverte.
+    \item Corollaire : une boule fermée est un fermé.
+    \item Frontière d'une partie.
+    \end{itemize}
+    \item Fonctions entres espaces vectoriels normés.
+    \begin{itemize}
+    \item Différents cas de limites. Continuité en un point, sur une partie.
+    \item Caractérisation séquentielle.
+    \item Limite et composantes d'une fonction.
+    \item Opérations usuelles.
+    \item Une application polynomiale sur $\mathbb{K}^n$ à valeurs dans $\mathbb{K}$ est continue.
+    \item Si $f : E \rightarrow \mathbb{R}$ est continue, $\lbrace x \in E, \, f(x)>0 \rbrace$ est un ouvert de $E$, $\lbrace x \in E, \, f(x) \geq 0 \rbrace$ est un fermé de $E$ et $\lbrace x \in E, \, f(x)=0 \rbrace$ est un fermé de $E$. \textbf{(IMPORTANT)} 
+    \item Soit $K$ une partie fermée bornée sur un espace $E$ de dimension finie (ce qu'on appelle un compact). Alors toute application $f : K \rightarrow \mathbb{R}$ est bornée et atteint ses bornes sur $K$. 
+    \end{itemize}
+    \item Applications lipschitziennes, linéaires et multilinéaires.
+    \begin{itemize}
+    \item \textbf{Définition application lipschitzienne}.
+    \item Toute fonction lipschitzienne est continue.
+    \item Si $u \in \mathcal{L}(E,F)$ alors $u$ est lipschitzienne (les espaces sont de dimension finies).
+    \item Continuité des applications multilinéaires.
+    \end{itemize}
+    \end{enumerate}
+
+
+    \section*{Chapitre 13 : Fonctions définies par une intégrale}
+
+      \begin{enumerate}
+      \item Théorème fondamental de l'analyse. \textbf{Énoncé}.
+      \item Intégrales à paramètres.
+      \begin{itemize}
+      \item \textbf{Énoncé du théorème de continuité}.
+      \item \textbf{Énoncé du théorème de dérivabilité (Théorème de Leibniz).}
+      \item Généralisation : dérivées d'ordres supérieurs.
+      \end{itemize}
+      \end{enumerate}
+
+\medskip
+      \textbf{Révisions :} Des exercices peuvent être demandés sur tout le chapitre lié à l'intégration (convergence et divergence d'intégrales, intégrabilité, IPP et changement de variable, théorème de convergence dominée et théorème d'intégration terme à terme).
+      
+\bigskip
+
+    \begin{Exercice}
+      Soient $f$ une fonction continue et intégrable sur $\mathbb{R}$ et $h$ la 
+      fonction définie sur $\R$ par :
+      $ h(x) = \int_x^{+ \infty} f(t) dt$
+
+      Montrer que $h$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et déterminer sa dérivée.
+    \end{Exercice}
+
+      \begin{Exercice}
+        Soit $F$ définie par 
+      $ F(x) = \int_{0}^{+ \infty} \frac{\ln(1+xt)}{1+t^2} \dt$
+
+      Justifions que $F$ est bien définie et continue sur $\mathbb{R}_+$.
+    \end{Exercice}
+
+    %   \begin{Exercice}
+    %     Soit $F$ définie par :
+    %   $ F(x) = \int_{0}^{+ \infty} \frac{\sin(xt)}{t} e^{-t} \dt$
+
+    %   Justifier que $F$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et déterminer $F'$. En déduire une expression simple de $F$.
+    % \end{Exercice}
+       
+      \begin{Exercice}
+      On définit la fonction $\Gamma$ d'Euler, pour tout réel $x>0$, par :
+      $$ \Gamma(x) = \int_{0}^{+ \infty} t^{x-1} e^{-t} \dt$$
+      
+      \begin{enumerate}
+      \item Montrons que $t \mapsto  t^{x-1} e^{-t}$ est intégrable sur $]0, + \infty[$ si et seulement si $x>0$.
+      \item Justifier que $\Gamma$ est de classe $\mathcal{C}^1$ sur $]0, + \infty[$.
+      \item Exprimer pour tout réel $x>0$, $\Gamma(x+1)$ en fonction de $\Gamma(x)$ et de $x$.
+      \item Déterminer $\Gamma(n)$ pour tout $n \geq 1$.
+      \end{enumerate}
+    \end{Exercice}
+
+
+
+\begin{Exercice}
+  Pour tout $A = (a_{i,j})_{1 \leq i,j \leq n} \in \mathcal{M}_{n}(\mathbb{C})$, on pose :
+  $\Vert A \Vert = \max_{1 \leq i \leq n} \sum_{j = 1}^{n}  \vert a_{i,j} \vert$
+  \begin{enumerate}
+  \item Montrer que $A \mapsto \Vert A \Vert$ définit une norme sur $\mathcal{M}_{n}(\mathbb{C})$.
+  \item Montrer cette norme est une \textit{norme d'algèbre}, c'est-à-dire vérifiant :
+  \[
+  \forall A,B \in \mathcal{M}_{n}(\mathbb{C}),  \; \Vert AB \Vert \leq \Vert A \Vert \, \Vert B \Vert
+  \]
+  \end{enumerate}
+\end{Exercice}
+
+\begin{Exercice} 
+  Montrer que $\ln$ est $1$-lipschitzienne sur $[1, + \infty[$.
+\end{Exercice}
+
+% \begin{Exercice} 
+%   Montrer que les normes $1$, $2$ et $\infty$ sont équivalentes sur $\mathbb{R}^n$.
+% \end{Exercice}
+
+
+    
+\end{document}

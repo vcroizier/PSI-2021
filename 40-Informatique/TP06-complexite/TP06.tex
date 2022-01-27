@@ -2,7 +2,7 @@
 %cSpell:ignore Fact mystere Fibo Puiss
 \begin{document}
 
-\Titre{PSI}{Promotion 2021--2022}{Informatique}{TP d'info n°4 -- Complexité}
+\Titre{PSI}{Promotion 2021--2022}{Informatique}{TP d'info n°6 -- Complexité}
 
 \tableofcontents
 \separationTitre
@@ -38,9 +38,11 @@ de la même manière.
 
 \medskip
 
-\begin{Exercice}{} Soient $n \geq 1$ et $P : x \mapsto a_0 + a_1 x + \cdots + a_n x^n$ une fonction polynomiale. Déterminons le coût du calcul de $P(x)$ pour un réel $x$ :
+\begin{Exercice}{} Soient $n \geq 1$ et 
+$P : x \mapsto a_0 + a_1 x + \cdots + a_n x^n$ une fonction polynomiale. 
+Déterminons le coût du calcul de $P(x)$ pour un réel $x$ :
 
-\vspace{6cm}
+\vspace*{4cm}
 
 %Pour calculer $P(x)$ de manière directe, on a besoin :
 %
@@ -75,16 +77,9 @@ On a donc besoin de $p$ bits pour stocker le développement binaire de $n$.
 On peut alors choisir $p$ comme instance plutôt que $n$. 
 Exprimons $p$ en fonction de $n$ :
 
-\vspace{7cm}
-\medskip
+\vspace*{4cm}~
 
 \end{Remarque}
-
-% \newpage
-
-% $\phantom{ test}$
-
-% \vspace{2cm}
 
 \subsection{Comment comparer les ordres de grandeur ?}
 
@@ -110,21 +105,26 @@ Il est important de retenir les ordres de grandeurs suivants (en notant abusivem
 $$ 1\ll \ln(n) \ll n \ll n \ln(n) \ll n^2 \ll n^3 \ll 2^n \ll n! \ll n^n$$
 
 \begin{Exercice}{} Soient $n \geq 1$ et $P : x \mapsto a_0 + a_1 x + \cdots + a_n x^n$ une fonction polynomiale. Pour calculer $P(x)$, on a montré que le coût des opérations est égal à :
-$$ \mathcal{C}(n) = \frac{n(n+3)}{2}$$
-Ainsi :
+$$\mathcal{C}(n)=\frac{n(n+3)}{2} \sim \frac{1}{2}n^2$$
+Donc $\left(\frac{\mathcal{C}(n)}{n^2} \right)$ est convergente donc bornée.
+Donc
 $$ \mathcal{C}(n) = O(n^2)$$
-car :
-$$ \frac{n(n+3)}{2n^2} \sim \frac{1}{2}$$
-donc $\left(\frac{\mathcal{C}(n)}{n^2} \right)$ est convergente donc bornée.
 \end{Exercice}
 
-\begin{Remarque}{} Dire que la complexité est en $O(n^2)$ manque de précision car d'une part cela implique aussi que la complexité est en $O(n^3)$, $O(n!)$ mais d'autre part rien ne précise si l'on ne peut pas faire mieux. On définit alors une nouvelle notion : on dit par exemple que la complexité est $O(n^2)$ \og et pas mieux \fg si l'on a $\mathcal{C}(n)=O(n^2)$ mais aussi $n^2 = O(\mathcal{C}(n))$.
+\vspace{-1em}
+\begin{Remarque}{} Dire que la complexité est en $O(n^2)$ manque de précision 
+    car d'une part cela implique aussi que la complexité est en $O(n^3)$, 
+    $O(n!)$ mais d'autre part rien ne précise si l'on ne peut pas faire mieux. 
+    On définit alors une nouvelle notion : on dit par exemple que la complexité 
+    est $O(n^2)$ \og et pas mieux \fg{} si l'on a $\mathcal{C}(n)=O(n^2)$ mais 
+    aussi $n^2 = O(\mathcal{C}(n))$.
 \end{Remarque}
 
 \begin{Exercice}{} Dans l'exemple précédent, la complexité est en $O(n^2)$ et pas mieux. Il suffit de remarquer que :
 $$ \mathcal{C}(n) \sim \frac{n^2}{2}$$
 \end{Exercice}
 
+\vspace{-1em}
 \begin{Remarque}{} Si il existe $\lambda >0$ tel que :
 $$ \mathcal{C}(n) \sim \lambda u_n$$
 alors la complexité est en $O(u_n)$ et pas mieux.
@@ -155,6 +155,7 @@ $$ (k-j+1)\hbox{Cout(A)}$$
 $$ \hbox{(Nombre d'itérations)} \times \hbox{(Cout(A)+Cout(B))}$$
 \end{itemize}
 
+\vspace{-1em}
 \begin{Exercice}{} Donnons le coût de l'algorithme suivant : 
 \end{Exercice}
 \begin{minipage}{\linewidth}
@@ -166,7 +167,7 @@ for i in range(n):
 \end{Python} 
 \end{minipage}
 
-\vspace{4cm}
+\vspace{3cm}
 
 
 
@@ -176,18 +177,20 @@ for i in range(n):
 def TriSelect(L):
     n=len(L)
     for i in range(n-1):
+        M,k=L[i],i
         for j in range(i+1,n):
-            if L[j]<L[i]:
-                L[j],L[i]=L[i],L[j]
-    return(L)
+            if L[j]<M:
+                M,k=L[j],j
+        L[i],L[k]=L[k],L[i]
+    return L
 \end{Python} 
 Comment fonctionne le tri par sélection ?
 
-\vspace{4cm}
+\vspace{3cm}
 
 Pour l'étude de la complexité d'un tri, on s'intéresse généralement au nombre de comparaisons effectuées. Ce tri par sélection, pour une liste de longueur $n$, effectue un nombre de comparaisons égal à :
 
-\vspace{3cm}
+\vspace*{3cm}
 
 \newpage
 \section{TP}

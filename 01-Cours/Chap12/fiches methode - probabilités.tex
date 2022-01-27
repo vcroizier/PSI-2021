@@ -1,0 +1,62 @@
+\documentclass[french,12pt,twoside]{VcCours}
+
+\newcommand{\boite}[1]{\colorbox{lightgray}{#1}}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+    \large\textbf{\large Ce qu'il faut savoir (en plus du cours) sur les probabilités.}
+\end{center}
+
+\begin{itemize}
+  \item \underline{Calcul de la probabilité d'une union :}
+  
+        
+        $P(A\cup B)=\cas{P(A)+P(B)\ \textrm{si $A$ et $B$ sont incompatibles}\\
+                         P(A)+P(B)-P(A\cap B)\\
+                         1-P(\overline{A}\cap\overline{B})\ \textrm{éventuellement}}$
+
+        
+        $P\left(\bigcup_{i=1}^nA_i\right)=\cas{1\ \textrm{si les $A_i$ forment un système complet d'événements}\\
+                                        \sum_{i=1}^nP(A_i)\ \textrm{si les $A_i$ sont 2 à 2 incompatibles}\\
+                                        1-P\left(\bigcap_{i=1}^n\overline{A_i}\right)}$
+                                        
+      $P\left(\bigcup_{i=1}^{+\infty}A_i\right)=\cas{1\ \textrm{si les $A_i$ forment un système complet d'événements}\\
+      \sum_{i=1}^{+\infty}P(A_i)\ \textrm{si les $A_i$ sont 2 à 2 incompatibles ($\sigma$-additivité)}\\
+      \lim_{n\to+\infty}P(A_n)\ \textrm{si $(A_i)_i$ est une suite croissante d'événements (continuité croissante)}\\
+      \lim_{n\to+\infty}P\left(\bigcup_{i=1}^n A_i\right)\\
+      1-P\left(\bigcap_{i=1}^{+\infty}\overline{A_i}\right)}$
+  \item \underline{Calcul de la probabilité d'une intersection :}
+  
+        
+                $P(A\cap B)=\cas{0\ \textrm{si $A$ et $B$ sont incompatibles}\\
+                         P(A)P(B)\ \textrm{si $A$ et $B$ sont indépendants}\\
+                         P(A)P_A(B)\textrm{ ou }P_B(A)P(B)\\
+                         P(A)+P(B)-P(A\cup B)\ \textrm{rarement utilisé}}$
+
+        
+        $P\left(\bigcap_{i=1}^nA_i\right)=\cas{\prod_{i=1}^nP(A_i)\ \textrm{si les $A_i$ sont mutuellement indépendants}\\
+            P(A_1)P_{A_1}(A_2)P_{A_1\cap A_2}(A_3)\ldots P_{A_1\cap\ldots\cap A_{n-1}}(A_n)\ \textrm{formule des probabilités composées}}$
+
+        $P\left(\bigcap_{i=1}^{+\infty}A_i\right)=\cas{\lim_{n\to+\infty}P(A_n)\ \textrm{si $(A_i)_i$ est une suite décroissante d'évts (continuité décroissante)}\\
+        \lim_{n\to+\infty}P\left(\bigcap_{i=1}^nA_i\right)}$
+  \item \underline{Calcul d'une probabilité conditionnelle :}
+  
+        En général, il vaut mieux revenir à la définition: $P_B(A)=\frac{P(A\cap B)}{P(B)}$.
+
+  \vspace{-.5em}      
+  \item \underline{Autres remarques utiles :}
+  	\begin{itemize}
+	  \item Il est souvent intéressant de s'intéresser à l'événement contraire: $P(A)=1-P(\overline{A})$.
+	  \item Si on veut $P(A)$ alors qu'on connaît $P_?(A)$, il faut penser à la formule des probabilités totales.
+
+              Il faut alors penser à dire qu'il y a un système complet d'événements $(B_i)_i$, ou que les $B_i$ sont 2 à 2 incompatibles et alors que $\sum P(B_i)=1$. (autrement dit : \og{} Ne me faites pas une Barnabé !\fg{})
+	  \item Toutes les formules précédent sont valables si on remplace partout $P$ par $P_C$. 
+	  \item Dans le cas de l'équiprobabilité, il est souvent possible de calculer tous ces probabilités à l'aide du dénombrement.
+	\end{itemize}
+                
+  
+\end{itemize}
+
+\end{document}

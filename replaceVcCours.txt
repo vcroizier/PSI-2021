@@ -43,7 +43,7 @@
 \\end\{prop\}
 \\end{Proposition}
 \\begin\{ex\}
-\\begin{Exemple}
+\\begin{Exemple}{}
 \\end\{ex\}
 \\end{Exemple}
 \\begin\{exa\}

@@ -1,0 +1,244 @@
+\documentclass[twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir surveillé n°4}
+
+\begin{center}
+\large 
+Le samedi 15 janvier 2022
+
+\bigskip
+\textbf{Durée: 3h30}
+
+\bigskip
+\large\underline{\textbf{Calculatrice interdite}}
+\end{center}
+
+\bigskip
+\begin{itemize}
+  \item Le candidat attachera la plus grande importance à la clarté, à la précision et à la concision de la rédaction. Si un candidat est amené à repérer ce qui peut lui sembler être une erreur d'énoncé, il le signalera sur sa copie et devra poursuivre sa composition en expliquant les raisons des initiatives qu'il a été amené à prendre.
+  \item Il est conseillé au candidat de lire l'intégralité du sujet et de repérer les parties qui lui semblent plus abordables.
+  \item Le candidat \fbox{encadrera} ou \underline{soulignera} les résultats.
+  \item Les étudiants visant e3a-CCP traiteront : \textbf{les exercices 1 et 2 et les problèmes 3 et 4}.
+  \item Les étudiants visant un concours plus dur traiteront :
+  \textbf{les exercices 1 et 2 et les problèmes 4 et 5}.
+  \item Si un étudiant a traité tout ce qu'il savait faire, il peut rendre sa copie et recevoir en contrepartie une feuille
+  contenant des indications. Il composera alors sur une nouvelle copie les questions qu'il souhaite.
+  \end{itemize}
+\separationTitre
+
+\vspace{1cm}
+\section*{Questions de cours}
+\begin{enumerate}
+  \item Citer la définition de probabilité $P$ sur $(\Omega,\AAA)$ (dont fait partie la $\sigma$-additivité).
+  \item Citer la formule des probabilités composées.
+  \item Citer le théorème de la formule des probabilités totales dans le cas dénombrable.
+  \item Citer le théorème de la continuité croissante et décroissante.
+\end{enumerate}
+
+\newpage
+\section*{Exercice 1 : Intégrales impropres}
+\begin{enumerate}
+  \item On considère l'intégrale $I=\int_{1}^{+\infty}\frac{\ln(t)}{t^3}\dt$.
+  
+  Justifier son existence puis la calculer en intégrant par parties.
+  \item On considère l'intégrale $J=\int_{0}^{1}\frac{x}{\sqrt{1-x}}\dx$.
+  
+  En posant $t=\sqrt{1-x}$, montrer que l'intégrale $J$ converge et calculer sa valeur.
+  % \item On considère la série $\sum_{n\geq0}f_n$ où
+  %       \[\application{f_n}{[1;+\infty}{\R}{x}{e^{-nx}}\]
+
+  %       Déterminer la fonction somme de cette série est $S(x)=\frac{e^x}{e^x-1}$ et montrer que
+  %       \[\sum_{n=0}^{+\infty}\frac{e^{-n}}{n}=\ln(e-1)\]
+\end{enumerate}
+
+\section*{Exercice 2 : Probabilités discrètes}
+Cet exercice propose l'étude de deux jeux indépendants.
+\begin{enumerate}
+  \item Le premier jeu consiste à lancer une pièce jusqu'à ce qu'elle donne pile.
+        La probabilité que la pièce donne pile est noté $p\in]0;1[$ et on pose $q=1-p$.
+
+        Puis, si on note $N$ le nombre de faces obtenu, avant d'avoir pile,
+        on place dans une urne $1$ pièce d'or et $2^N-1$ fausses pièces 
+        (identiques au touché et de même masse que celle en or). On tire une pièce dans l'urne.
+
+        On pose les événements suivants :
+        \begin{itemize}
+          \item $F_k$ :\og{}Obtenir face au $k$-ème lancer.\fg{}
+          \item $A_n$ :\og{}Obtenir pile pour la première fois au $n$-ème lancer.\fg{}
+          \item $G$ :\og{}Tirer la pièce en or.\fg{}
+        \end{itemize}
+        \begin{enumerate}
+          \item En exprimant l'événement $A_n$ à l'aide des $F_k$, déterminer $P(A_n)$.
+
+                Donner la valeur de $P_{A_n}(G)$.
+          \item La suite $(A_n)_{n\geq1}$ est-elle un système complet d'événement ?
+
+                Montrer que $\sum_{n=1}^{+\infty}P(A_n)=1$.
+          \item Montrer que la probabilité de gagner la pièce d'or est $\frac{2p}{1+p}$.
+          \item On a gagné la pièce en or, quelle est la probabilité d'avoir 
+          obtenu pile au premier lancer ?
+        \end{enumerate}
+  \item On considère une urne qui contient $1$ boule rouge et $3$ boules noires.
+  
+        On tire une boule et :
+        \begin{itemize}
+          \item Si elle est rouge, le jeu s'arrête.
+          \item Si elle est noire, on rajoute des boules noire puis on procède au tirage suivant.
+        \end{itemize}
+        L'ajout de boules noires est fait de sorte que pour le $n$-ème tirage on ait exactement $(n+1)^2$ 
+        boules dont $1$ rouge (ce qui est cohérent avec le contenu de l'urne au départ).
+
+        On pose les événements suivants :
+        \begin{itemize}
+          \item $R_k$ :\og{}Obtenir la boule rouge au $k$-ème tirage.\fg{}
+          \item $C_n$ :\og{}N'obtenir que des boules noires aux $n$ premiers tirages.\fg{}
+          \item $T$ :\og{}Le jeu s'arrête.\fg{}
+        \end{itemize}
+        \begin{enumerate}
+          \item Donner $P(R_k)$ puis montrer que $P(C_n)=\frac{n+2}{2(n+1)}$.
+
+          \item Exprimer $\overline{T}$ à l'aide des $C_n$.
+
+                Quelle est la probabilité que le ne s'arrête jamais ?
+        \end{enumerate}
+      \end{enumerate}
+
+\section*{Problème 3 : Matrices nilpotentes d'ordre $3$}
+  On considère la matrice $A = \begin{pmatrix}
+  0 & 0 & 0 \\
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  \end{pmatrix} \cdot$
+  
+  \begin{enumerate}
+  \item Déterminer les valeurs propres et les sous-espaces propres de la matrice $A$.
+  
+  La matrice $A$ est-elle diagonalisable ?
+  \item Calculer $A^2$ et $A^3$.
+  \item On considère $\mathcal{S}$ l'ensemble des matrices $M$ de $\mathcal{M}_3(\mathbb{R})$ telles que $AM=MA$.
+  \begin{enumerate}
+  \item Soit $\alpha$, $\beta$ et $\gamma$ trois réels et $M=\alpha I_3 + \beta A + \gamma A^2$. Vérifier que $M \in \mathcal{S}$.
+  \item Réciproquement, si $a$, $b$, $c$, $d$, $e$, $f$, $g$, $h$ et $i$ des réels tels que $M = \begin{pmatrix}
+  a & b & c \\
+  d & e & f \\
+  g & h & i \\
+  \end{pmatrix} \in \mathcal{S}$. 
+  
+  Déterminer, en fonction des coefficients de $M$, trois réels $\alpha$, $\beta$ et $\gamma$ tels que $M= \alpha I_3 + \beta A + \gamma A^2$.
+  \item En déduire une condition nécessaire et suffisante pour appartenir à $\mathcal{S}$.
+  \end{enumerate}
+  
+  \item On considère $\mathcal{S}'$ l'ensemble des matrices $M$ de $\mathcal{M}_3(\mathbb{R})$ telles que $M^3=0_3$ et $M^2 \neq 0_3$.
+  \begin{enumerate}
+  \item Soit $P \in \mathcal{M}_3(\mathbb{R})$ inversible et $M=PAP^{-1}$. Vérifier que $M \in \mathcal{S}'$.
+  
+  Dans la suite, tout vecteur de $\mathbb{R}^3$ sera assimilé à une matrice colonne de $\mathcal{M}_{3,1}(\mathbb{R})$ de sorte que, pour tout vecteur $X$ de $\mathbb{R}^3$, le produit matriciel $MX$ soit correctement défini.
+  \item Soit $M = \begin{pmatrix}
+  -1 & 1 & 1 \\
+  1 & 1 & -1 \\
+  0 & 2 & 0 \\
+  \end{pmatrix} \cdot$
+  \begin{enumerate}
+  \item Vérifier que $M \in \mathcal{S}'$.
+  
+  On considère $f$ l'endomorphisme de $\mathbb{R}^3$ canoniquement associé à $M$.
+  \item Prouver qu'il existe un vecteur $X \in \mathbb{R}^3$ tel que $M^2X$ soit non nul.
+  \item Montrer que la famille $\mathcal{B} = (X,MX,M^2X)$ est une base de $\mathbb{R}^3$.
+  \item Déterminer la matrice de $f$ dans la base $\mathcal{B}$.
+  \item En déduire qu'il existe $P \in \mathcal{M}_3(\mathbb{R})$ inversible telle que $M=PAP^{-1}$.
+  \end{enumerate}
+  \end{enumerate}
+  \end{enumerate}
+  %\item On cherche à généraliser ce qui a été montré dans la question précédente. Pour cela on considère $M \in \mathcal{S}'$ et $f$ l'endomorphisme de $\mathbb{R}^3$ dont $M$ est la matrice dans la base canonique.
+  %\begin{enumerate}
+  %\item Prouver qu'il existe un vecteur $X \in \mathbb{R}^3$ tel que $M^2X$ soit non nul.
+  %\item En déduire qu'il existe $P \in \mathcal{M}_3(\mathbb{R})$ inversible telle que $M=PAP^{-1}$.
+  %\end{enumerate}
+  %\item En déduire une condition nécessaire et suffisante pour appartenir à $\mathcal{S}'$.
+  %\end{enumerate}
+    
+
+  
+\section*{Problème 4 : Étude d'un endomorphisme sur un espace de polynômes}
+  Pour tout entier naturel $n$, on note $\mathbb{R}_n[X]$ l'espace vectoriel des polynômes à coefficients réels de degré inférieur ou égal à $n$. Si $I$ est un intervalle de $\mathbb{R}$ et $f : I \rightarrow \mathbb{R}$ une fonction bornée sur $I$, on rappelle que :
+  $$ \Vert f \Vert_{\infty} = \sup_{x \in I} \vert f(x) \vert$$
+    \begin{enumerate}
+  \item 
+  \begin{enumerate}
+  \item Pour tout entier naturel $n$, montrer l'existence de $I_n =  \int_0^{+ \infty} t^n e^{-t} \dt$.
+  \item Justifier que pour tout entier $n$, $I_{n+1}=(n+1)I_n$. En déduire la valeur de $I_n$.
+  \end{enumerate}
+  \item Pour tout $P \in \mathbb{R}_2[X]$, on pose :
+  $$ \forall x \in \mathbb{R}, \; T(P)(x) = \int_0^{+ \infty} e^{-t} P(x+t) \dt$$
+  \begin{enumerate}
+  \item Montrer que $T$ est un endomorphisme de $\mathbb{R}_2[X]$ et déterminer sa matrice $M$ dans la base canonique de $\mathbb{R}_2[X]$.
+  \item La matrice $M$ est-elle diagonalisable ?
+  \end{enumerate}
+  \item Soit $D$ l'endomorphisme de $\mathbb{R}_n[X]$ associant à tout polynôme $P$ son polynôme dérivé $P'$.
+  \begin{enumerate}
+  \item Soient $P$ et $\mathbb{R}_n[X]$ et $(x,t) \in \mathbb{R}^2$. Déterminer des réels $b_0(x)$, $b_1(x)$, $\ldots$, $b_n(x)$ tels que :
+  $$ P(x+t) = \sum_{k=0}^n b_k(x) t^k$$
+  \item Pour tout $P \in \mathbb{R}_n[X]$, on pose :
+  $$ \forall x \in \mathbb{R}, \; T(P)(x) = \int_0^{+ \infty} e^{-t} P(x+t) \dt$$
+  Montrer que $T$ est un endomorphisme de $\mathbb{R}_n[X]$ et déterminer des réels $a_0$, $a_1$, $\ldots$, $a_n$ tels que pour tout $P \in \mathbb{R}_n[X]$,
+  $$ T(P) = \sum_{k=0}^n a_k D^k(P)$$
+  \item Déterminer les éléments propres de $T$.
+  \end{enumerate}
+  \item Soit $g : \mathbb{R} \rightarrow \mathbb{R}$ une fonction continue et bornée. Justifier que les solutions sur $\mathbb{R}$ de l'équation différentielle :
+  $$ y'-y+g=0$$
+  sont les fonctions de la forme :
+  $$ x \mapsto k e^x + e^x \int_x^{+ \infty} e^{-t} g(t) \dt$$
+  où $k \in \mathbb{R}$.
+  \item Soit $g : \mathbb{R} \rightarrow \mathbb{R}$ une fonction continue et bornée.
+  \begin{enumerate}
+  \item On définit $T_g : \mathbb{R} \rightarrow \mathbb{R}$ par :
+  $$ \forall x \in \mathbb{R}, \; T_g(x) = \int_0^{+ \infty} e^{-t} g(t+x) \dt$$
+  Justifier que $T_g$ est bien définie puis que :
+  $$ \forall x \in \mathbb{R}, \; T_g(x) = e^x \int_x^{+ \infty} e^{-u} g(u) \textrm{d}u$$
+  En déduire que $T_g$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et préciser la relation entre $(T_g)'$, $T_g$ et $g$.
+  \item En supposant $g$ non nulle, déterminer si il existe $\lambda \in \mathbb{R}$ tel que $T_g= \lambda g$.
+  \item Montrer que $T_g$ est bornée sur $\mathbb{R}$ et majorer $\Vert T_g \Vert_{\infty}$ à l'aide de $\Vert g \Vert_{\infty}$.
+  \item Montrer que si $g$ tend vers $0$ en $+ \infty$, $T_g$ aussi.
+  \end{enumerate}
+  \item 
+  \begin{enumerate}
+  \item Pour tout réel $A$, justifier l'existence et calculer $ \int_A^{+ \infty} e^{(i-1)t} \dt$.
+  \item Soit $F$ le sous-espace vectoriel  de $\mathcal{C}(\mathbb{R}, \mathbb{R})$ engendré par les fonctions cosinus et sinus. Montrer que $g \mapsto T_g$ définit un endomorphisme de $F$ et écrire sa matrice dans la base (cosinus, sinus). $N$ est-elle diagonalisable dans $\mathcal{M}_2(\mathbb{R})$?
+  \end{enumerate}
+  \end{enumerate}
+  
+  
+  
+  
+  
+
+  
+\section*{Problème 5 : Racine carré}
+  Soient $E$ un $\C$-espace vectoriel de dimension $n>0$ et $u$ un endomorphisme de $E$.
+  \begin{enumerate}
+  \item On suppose que $u$ est un automorphisme de $E$ tel que $u^2$ soit diagonalisable.
+  \begin{enumerate}
+  \item Rappeler une condition nécessaire et suffisante concernant les propriétés d'un polynôme annulateur d'un endomorphisme $f$ de $E$ pour que $f$ soit diagonalisable.
+  \item Montrer que $u$ est diagonalisable.
+  \end{enumerate}
+  \item Soit $v$ un automorphisme de $E$ diagonalisable à valeurs propres réelles strictement positives.
+  \begin{enumerate}
+  \item On suppose qu'il existe un automorphisme $u$ de $E$, à valeurs propres réelles strictement positives et tel que $u^2=v$.
+  \begin{itemize}
+  \item Montrer que les sous-espaces propres de $v$ sont stables par $u$.
+  \item Montrer que l'endomorphisme induit par $u$ sur tout sous-espace propre de $v$ est diagonalisable.
+  \item Soit $\lambda$ une valeur propre de $v$, montrer que le sous-espace propre de $v$ associé à la valeur propre $\lambda$ est égal au sous-espace propre de $u$ associé à la valeur propre $\sqrt{\lambda}$.
+  \item En déduire que $u$ est unique.
+  \end{itemize}
+  \item Montrer l'existence d'un automorphisme $u$ de $E$, à valeurs propres réelles strictement positives, tel que $u^2=v$.
+  \item Soit $u$ l'unique automorphisme de $E$  à valeurs propres réelles strictement positives vérifiant $u^2=v$, montrer qu'il existe un polynôme $P$ tel que $u=P(v)$.
+  \end{enumerate}
+  \end{enumerate}
+  
+
+\end{document}

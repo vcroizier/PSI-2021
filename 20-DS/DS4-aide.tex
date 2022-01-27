@@ -1,0 +1,124 @@
+\documentclass[twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir surveillé n°4}
+
+\begin{center}
+\textbf{\Large Indications}
+\end{center}
+
+\separationTitre
+
+\section*{Exercice 1 : Intégrales impropres}
+\begin{enumerate}
+  \item Critère de comparaison pour la convergence.
+  \item Lors d'un changement de variables, les deux intégrales ont même nature.
+\end{enumerate}
+
+\section*{Exercice 2 : Probabilités discrètes}
+\begin{enumerate}
+  \item \begin{enumerate}
+          \item $A_n$ est une intersection de $F_k$ et $\overline{F_k}$, on utilise l'indépendance mutuelle.
+          \item Calcul de somme en utilisant $P(A_n)=q^{n-1}p$.
+          \item Utiliser les probabilités totales. On y voit la somme d'une série géométrique.
+          \item Définition de probabilité conditionnelle suivit des probabilités composées.
+        \end{enumerate}
+  \item \begin{enumerate}
+          \item $P(R_k)=\frac{1}{(k+1)^2}$.
+          
+                Pour $P(C_n)$, écrire $C_n$ comme une intersection des $R_k$.
+                Puis utiliser l'indépendance. Pour simplifier le produit, on peut faire un télescopage.
+          \item Utiliser la continuité décroissante.
+        \end{enumerate}
+      \end{enumerate}
+
+\section*{Problème 3 : Matrices nilpotentes d'ordre $3$}
+  \begin{enumerate}
+  \item Trouver l'unique valeur propre, puis la dimension de son sous espace propre associé.
+  \item Produit matriciel.
+  \item \begin{enumerate}
+  \item Montrer que $AM=MA$.
+  \item Calculer $AM$ et $MA$.
+  \item \ldots
+  \end{enumerate}
+  \item \begin{enumerate}
+  \item Pour montrer que $M^2\neq0$, on pourra raisonner par l'absurde.
+  \item \begin{enumerate}
+  \item Calculer $M^2$ et $M^3$.
+  \item Donner un exemple.
+  \item On peut calculer le déterminant de la matrice de la famille.
+  \item Calculer les images de la base et les décomposer sur cette même base.
+  \item Lien entre les matrices d'un endomorphisme.
+  \end{enumerate}
+  \end{enumerate}
+  \end{enumerate}
+  
+
+  
+\section*{Problème 4 : Étude d'un endomorphisme sur un espace de polynômes}
+  \begin{enumerate}
+  \item 
+  \begin{enumerate}
+  \item Montrer que $t^ne^{-t}=o\left(\frac{1}{n^2}\right)$.
+  \item Intégration par partie. Récurrence avec $I_n=n!$.
+  \end{enumerate}
+  \item \begin{enumerate}
+  \item Calculer $T(1)$, $T(X)$, $T(X^2)$.
+  \item Déterminer la dimension de l'unique sous-espace propre.
+  \end{enumerate}
+  \item \begin{enumerate}
+  \item Utiliser la formule de Taylor pour le polynôme $t\mapsto P(x+t)$.
+  \item Utiliser la linéarité de l'intégrale et la question 1)b).
+  \item Écrire la matrice de $T$ dans la base canonique de $\R_n[X]$. 
+  En déduire l'unique valeur propre. Déterminer la dimension du sous-espace propre. Il y a un vecteur propre évident.
+  \end{enumerate}
+  \item L'énoncé souffle que $h(x)=e^x \int_x^{+ \infty} e^{-t} g(t) \dt$ est une solution particulière de l'équation différentielle. Il faut le vérifier.
+
+  Pour cela on fait $\int_{x}^{+\infty}=\int_{0}^{+\infty}-\int_{0}^{x}$ et on utilise le théorème fondamental de l'analyse. 
+  \begin{enumerate}
+  \item ...
+  \item Trouver une relation entre $g'$ et $g$. Résoudre l'équation différentielle ainsi trouvée. Prendre en compte le fait que $g$ est borné.
+  \item Majoration de $|T_g|$.
+  \item Montrer que si $g$ tend vers $0$ en $+ \infty$, $T_g$ aussi.
+  \end{enumerate}
+  \item ...
+  \begin{enumerate}
+  \item Utiliser la definition de "tendre vers $0$".
+  \item Calculer $T_g(x)$ pour $g(t)=e^{ix}$.
+  
+  En déduire la matrice de $T_g$ dans la base donnée.
+  \end{enumerate}
+  \end{enumerate}
+  
+  
+  
+  
+  
+
+  
+\section*{Problème 5 : Racine carré}
+  \begin{enumerate}
+  \item \begin{enumerate}
+  \item \ldots
+  \item \ldots
+  \end{enumerate}
+  \item 
+  \begin{enumerate}
+  \item 
+  \begin{itemize}
+  \item $u$ et $v$ commutent.
+  \item Déterminer un polynôme annulateur de $v$ en regardant $v^2$.
+  \item \ldots
+  \item Image d'une base bien choisie.
+  \end{itemize}
+  \item La question précédente est "l'Analyse", ici c'est la "synthèse".
+  \item Le penser sur des matrices diagonales.
+  \end{enumerate}
+  \end{enumerate}
+  
+
+\end{document}
