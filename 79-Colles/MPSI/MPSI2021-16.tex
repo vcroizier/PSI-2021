@@ -1,0 +1,97 @@
+\documentclass[twoside,a4paper,landscape,french,10pt]{VcCours}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnseprule{0.4pt}%
+\addtolength\columnsep{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{colle}[4]{{\large\bf\makebox[0cm][l]{#1\hspace{\stretch{-1}}}\hspace{\stretch{1}}#2\hspace{\stretch{1}}\makebox[0cm][r]{\hspace{\stretch{-1}}#3}}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{multicols*}{#4}}{\end{multicols*}\pagebreak}
+\newenvironment{eleve}[1]{\textbf{\large #1}}{\vspace{\stretch{1}}
+\columnbreak}
+\newenvironment{eleveF}[1]{\textbf{\large #1}}{}
+\newcommand{\cours}{\medskip\uwave{Cours :}
+
+\smallskip}
+\newcommand{\exo}[1]{\vspace{\stretch{1}}\uwave{Exercice #1:}
+
+\smallskip}
+
+\begin{document}
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%+-----------------------------------------+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{colle}{MPSI -- Groupe n°}{Colleur: Vincent Croizier}{Semaine
+n\degres16 -- le lundi 31/01/2022}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+\cours
+Définition concave, inégalité de Jensen\\
+Exo2: $f$ et $g$ cont. sur $[a,b]$ dér. sur $]a,b[$, $g'$ ne s'annule pas. $\exists c\in]a,b[/\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(c)}{g'(c)}$.
+
+\exo1
+\begin{enumerate}
+  \item $f:\R\longrightarrow\R$ et $g:\R\longrightarrow\R$ convexes implique $g\circ f$ convexe.
+  \item $f:\R\longrightarrow\R_+^*$. Montrer que $\ln\circ f$ convexe implique $f$ convexe.  
+\end{enumerate}
+
+\exo2
+Critère spécial des séries alternées.
+
+\vspace*{\stretch{1}}
+
+
+
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleve}{}
+
+\cours
+Théorème des trois pentes.\\
+exo:$f(x)=x\exp(1/\ln(x))$ se prolonge par continuité sur $[0;1]$.
+
+\exo1
+$f:[a,b]\longrightarrow[c,d]$ convexe bijective et croissante. $a\leq u_0\leq v_0\leq b$
+\[u_{n+1}=\frac{u_n+v_n}{2}\et v_{n+1}=f^{-1}\left(\frac{f(u_n)+f(v_n)}{2}\right)\]
+Mq $u$ et $v$ convergent vers une même limite.
+
+\exo2
+$f$ une fonction dérivable sur $\R$ et admettant une même limite en $-\infty$ et $+\infty$.
+
+Montrer qu'il existe $c\in\R$ tel que $f'(c)=0$.
+\vspace*{\stretch{1}}
+
+\end{eleve}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eleveF}{}
+
+\cours
+$f$ convexe ssi $f'$ croissante + démo\\
+Mq $\frac2{\pi}x\leq\sin(x)\leq x$ sur $]0;\pi/2[$.
+
+\exo1
+Monter que $f(x)=\ln(1+e^x)$ est convexe sur $\R$, puis
+\[\forall x_1,\ldots,x_n\in\R_+^*,
+1+\left(\prod_{k=1}^nx^k\right)^{\frac1n}\leq\left(\prod_{k=1}^n(1+x^k)\right)^{\frac1n}\]
+
+\exo2
+$f$ une fonction dérivable sur $\R$ telle que $f(0)=f(a)=f'(0)=0$ avec $a>0$.
+
+Montrer que la courbe de $f$ admet une tangente en $b>0$ passant par l'origine.
+
+
+\vspace*{\stretch{1}}
+
+\end{eleveF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{colle}
+
+
+\end{document}

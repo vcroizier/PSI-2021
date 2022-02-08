@@ -1,0 +1,465 @@
+\documentclass[twoside,french,11pt]{VcCours}
+\renewcommand{\l}{\LL(E)}
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\ud}{\,d} % pour respecter l'\'enonc\'e de Centrale
+\newcommand{\abs}[1]{\left| #1 \right|} % valeur absolue
+\DeclareMathOperator*{\mypetito}{o}
+\DeclareMathOperator*{\mygrando}{O}
+\newcommand{\petito}[1][]{\ifthenelse{\equal{#1}{}}{\mypetito\limits}
+  {{\mypetito\limits_{#1}}}}
+\newcommand{\grando}[1][]{\ifthenelse{\equal{#1}{}}{\mygrando\limits}
+  {{\mygrando\limits_{#1}}}}
+\newcommand{\intervalle}[4]{\mathopen{}\mathclose\bgroup\left#1#2\mathclose{}\mathpunct{};#3\aftergroup\egroup\right#4}
+\newcommand{\intff}[2]{\intervalle{[}{#1}{#2}{]}}
+\newcommand{\intof}[2]{\intervalle{]}{#1}{#2}{]}}
+\newcommand{\intfo}[2]{\intervalle{[}{#1}{#2}{[}}
+\newcommand{\intoo}[2]{\intervalle{]}{#1}{#2}{[}}
+\newcommand{\interentier}[2]{\intervalle\llbracket{#1}{#2}\rrbracket}
+\newcommand{\Ns}{\mathbb{N}^*}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Concours Blanc 2022}{Épreuve de Mathématiques\\{\large Type CCINP-Centrale}}
+\fancyhead[CE,CO]{\bf{Concours Blanc 2022 -- Épreuve de Mathématiques}}
+
+\begin{center}
+\large 
+Le mardi $1^{\text{er}}$ février 2022
+
+\bigskip
+\textbf{Durée: 4h}
+
+\bigskip
+\large\underline{\textbf{Calculatrice interdite}}
+\end{center}
+
+\bigskip
+\begin{itemize}
+  \item Le candidat attachera la plus grande importance à la clarté, à la précision et à la concision de la rédaction. 
+  Si un candidat est amené à repérer ce qui peut lui sembler être une erreur d'énoncé, il le signalera sur sa copie et 
+  devra poursuivre sa composition en expliquant les raisons des initiatives qu'il a été amené à prendre.
+  \item Il est conseillé au candidat de lire l'intégralité du sujet et de repérer les parties qui lui semblent plus abordables.
+  \item Le candidat \fbox{encadrera} ou \underline{soulignera} les résultats.
+  \end{itemize}
+\separationTitre
+
+
+\newpage  
+\section*{Problème 1}
+\centerline{\bf Notations et objectifs.}
+\bigskip
+Dans tout ce problème, $n$ est un entier naturel supérieur ou égal à $2$ et $E$ est un espace vectoriel de dimension finie $n$ sur $\R$.\\
+$\l$ désigne l'ensemble des endomorphismes de $E$ et $GL(E)$ l'ensemble des endomorphismes de $E$ qui sont bijectifs.\\
+On note $0$ l'endomorphisme nul et $\id$ l'application identité.\\
+Pour tout endomorphisme $f$, $\Ker (f)$ et $\Ima(f)$ désigneront respectivement le noyau et l'image de $f$.\\
+L'ensemble des valeurs propres de $f$ sera noté Sp($f$) et on notera~:
+$$
+\RR(f)= \{h \in \l | h^2=f \}
+$$
+où $h^2=h \circ h$.\\
+$\R[X]$ désigne l'espace des polynômes à coefficients réels.\\
+Étant donné $f \in \l$ et $P \in \R[X]$ donné par $P(X)= \sum_{k=0}^{\ell} a_k X^k$, on définit $P(f) \in \l$ par~:
+$$
+P(f)=\sum_{k=0}^\ell a_k f^k
+$$
+o\`u $f^0=\id$ et pour $k \in \N^*$, $f^k=\underset{\rm k \ fois} {\underbrace{f \circ \cdots \circ f}}$.\\
+Si $f_1,\ldots,f_q$ désignent $q$ endomorphismes de $E$ ($q \in \N^*$) alors $\prod_{1 \le i \le q} f_i$ désignera l'endomorphisme de $E$ suivant : $f_1 \circ \cdots \circ f_q$.\\
+Pour tout entier $p$ non nul, $\MM_p(\R)$ désigne l'espace des matrices carrées à $p$ lignes et $p$ colonnes à coefficients dans $\R$.\\
+$I_p$ est la matrice identité de $\MM_p(\R)$.\\
+L'objectif du problème est d'étudier des conditions nécessaires ou suffisantes à l'existence de racines carrées d'un endomorphisme $f$ et de décrire dans certains cas l'ensemble $\RR(f)$. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vskip 1.8cm
+\centerline{\bf Partie I}
+\bigskip
+{\bf A)} On désigne par $f$ l'endomorphisme de $\R^3$ dont la matrice dans la base canonique est donnée par~:
+$$
+A=
+\begin{pmatrix}
+8 & 4 & -7 \\
+-8 & -4 & 8 \\
+0 & 0 & 1
+\end{pmatrix}
+$$
+
+\begin{enumerate}
+\item Montrer que $f$ est diagonalisable.
+\item Déterminer une base $(v_1,v_2,v_3)$ de $\R^3$ formée de vecteurs propres de $f$ et donner la matrice $D$ de $f$ dans cette nouvelle base. \textit{On ordonnera les vecteurs propres dans l'ordre croissant des valeurs propres}.
+\item Soit $P$ la matrice de passage de la base canonique à la base $(v_1,v_2,v_3)$. Soit un entier $m \ge 1$. Sans calculer l'inverse de $P$, exprimer $A^m$ en fonction de $D$, $P$ et $P^{-1}$.
+\item Calculer $P^{-1}$, puis déterminer la matrice de $f^m$ dans la base canonique.
+\item Déterminer toutes les matrices de $\MM_3(\R)$ qui commutent avec la matrice $D$ trouvée à la question 2.
+\item Montrer que si $H \in \MM_3(\R)$ vérifie $H^2=D$, alors $H$ et $D$ commutent.
+\item Déduire de ce qui précède toutes les matrices $H$ de $\MM_3(\R)$ vérifiant $H^2=D$, puis déterminer tous les endomorphismes $h$ de $\R^3$ vérifiant $h^2=f$ en donnant leur matrice dans la base canonique.
+\end{enumerate}
+
+
+
+\bigskip
+
+
+{\bf B)} Soient $f$ et $j$ les endomorphismes de $\R^3$ dont les matrices respectives $A$ et $J$ dans la base canonique sont données par~:
+$$
+A=
+\begin{pmatrix}
+2 & 1 & 1 \\
+1 & 2 & 1 \\
+1 & 1 & 2
+\end{pmatrix}
+\ \hbox{et} \ 
+J=
+\begin{pmatrix}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+\end{pmatrix}
+$$
+\begin{enumerate}
+\item Calculer $J^m$ pour tout entier $m \ge 1$.
+\item En déduire que pour tout $m \in \N^*$, $f^m=\id + \frac13 (4^m-1) j$. Cette relation est-elle encore valable pour $m=0$ ?
+\item Montrer que $f$ admet deux valeurs propres distinctes $\lambda$ et $\mu$ telles que $\lambda<\mu$.
+\item Montrer qu'il existe un unique couple $(p,q)$ d'endomorphismes de $\R^3$ tel que pour tout entier $m \ge 0$, $f^m=\lambda^m p + \mu^m q$ et montrer que ces endomorphismes $p$ et $q$ sont linéairement indépendants.
+\item Après avoir calculé $p^2$, $q^2$, $p \circ q$ et $q \circ p$, trouver tous les endomorphismes $h$, combinaisons linéaires de $p$ et $q$ qui vérifient $h^2=f$.
+\item Montrer que $f$ est diagonalisable et trouver une base de vecteurs propres de $f$. Écrire la matrice $D$ de $f$, puis la matrice de $p$ et de $q$ dans cette nouvelle base.
+\item Déterminer une matrice $K$ de $\MM_2(\R)$ non diagonale telle que $K^2=I_2$, puis une matrice $Y$ de $\MM_3(\R)$ non diagonale telle que $Y^2=D$. \textit{On pourra construire $Y$ par blocs à l'aide de $K$.}
+\item En déduire qu'il existe un endomorphisme $h$ de $\R^3$ vérifiant $h^2=f$ qui n'est pas combinaison linéaire de $p$ et $q$.
+\item Montrer que tous les endomorphismes $h$ de $\R^3$ vérifiant $h^2=f$ sont diagonalisables.
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vskip 2cm
+\centerline{\bf Partie II}
+\bigskip
+Soit $f$ un endomorphisme de $E$. On suppose qu'il existe $(\lambda,\mu) \in \R^2$ et deux endomorphismes non nuls $p$ et $q$ de $E$ tels que :
+$$
+\lambda \not= \mu \ \hbox{et} \ 
+\left\{
+\begin{array}{l}
+\id = p+ q \\
+f = \lambda p + \mu q \\
+f^2 = \lambda^2 p + \mu^2 q
+\end{array}
+\right.
+$$
+\begin{enumerate}
+\item \textit{Question de cours.} Montrer que si $Q$ est un polynôme annulateur de $f$ alors toute valeur propre de $f$ est racine de $Q$.
+\item Calculer $(f-\lambda \id) \circ (f-\mu \id)$. En déduire que $f$ est diagonalisable.
+\item Montrer que $\lambda$ et $\mu$ sont valeurs propres de $f$ et qu'il n'y en a pas d'autres.
+\item Déduire de la relation trouvée dans la question 2 que $p \circ q = q \circ p =0$ puis montrer que $p^2=p$ et $q^2=q$.
+\item On suppose jusqu'à la fin de cette partie que $\lambda \mu \not= 0$.\\
+Montrer que $f$ est un isomorphisme et écrire $f^{-1}$ comme combinaison linéaire de $p$ et $q$.
+\item Montrer que pour tout $m \in \Z$~:
+$$
+f^m = \lambda^m p + \mu^m q
+$$
+\item  Soit $F$ le sous-espace de $\l$ engendré par $p$ et $q$. Déterminer la dimension de $F$.
+\item On suppose dans la suite de cette partie que $\lambda$ et $\mu$ sont strictement positifs. Déterminer $\RR(f) \cap F$.
+\item Soit $k$ un entier supérieur ou égal à $2$. Déterminer une matrice $K$ de $\MM_k(\R)$ non diagonale et vérifiant $K^2=I_k$. \textit{On utilisera la question 7 de I.B en construisant une matrice par blocs définie à l'aide de $I_{k-2}$.}
+\item Montrer que si l'ordre de multiplicité de la valeur propre $\lambda$ est supérieur ou égal à $2$, alors il existe un endomorphisme $p' \in \l \setminus F$ tel que ${p'}^2=p$ et $p' \circ q = q \circ p' = 0$.
+\item En déduire que si $\dim(E) \ge 3$, alors $\RR(f) \not\subset F$.
+\end{enumerate}
+
+\vspace{2cm}
+\section*{Problème 2}
+
+\medskip
+
+\textbf{Plan du problème}\smallbreak
+
+\medskip
+
+Dans les préliminaires, on établit quelques généralités utiles par
+la suite sur les fonctions intégrables. Elles sont illustrées par la partie
+{\bf I} et utilisées pour établir les résultats de la partie {\bf II}. 
+%Dans les parties {\bf III} et {\bf IV}, on étudie le comportement asymptotique de quelques suites et séries en utilisant les idées qui précèdent.\medbreak
+
+\medskip
+
+\textbf{Rappels et notations}\smallbreak
+
+\begin{itemize}
+\item Soient $f$ et $g$ deux fonctions de variable réelle et \`a valeurs réelles ne s'annulant pas au voisinage d'un élément $b \in \R\cup\{+\infty, -\infty\}$, sauf éventuellement en ce point. $f$ et $g$ sont dites équivalentes en $b$ si et seulement si leur quotient tend vers $1$ en $b$. On notera alors $f\thicksim g$ en $b$. $f$ est dite négligeable devant $g$ en $b$ si et seulement si le quotient $f/g$ tend vers $0$ en $b$. On notera alors $f=\petito(g)$ en $b$.\smallbreak
+\item Soient $(u_n) $ et $(v_n)$ deux suites réelles de termes non nuls \`a partir d'un certain rang. Les suites $(u_n)$ et $(v_n)$ sont dites équivalentes si et seulement si la suite $(w_n)$ définie pour $n$ assez grand par $w_n = \dfrac{u_n}{v_n}_{\mathstrut}^{\mathstrut}$ converge vers $1$; on note alors $u_n \thicksim v_n$. La suite $(u_n)$ est dite négligeable devant $(v_n)$ si et seulement si $(w_n)$ converge vers $0$; on note alors $u_n = \petito(v_n)$. \smallbreak
+\item Pour une série $\sum u_n$ de nombres réels, on note $(S_n)_{n\in \N}$ la suite de ses sommes partielles:
+\[
+\forall \, n\in \N,\ S_n = \sum_{k=0}^n u_k \,
+\]
+Si de plus $\sum u_n$ est convergente, on note $(R_n)_{n\in \N}$ la suite de ses restes:
+\[
+\forall\, n\in \N,\ R_n = \sum_{k=n+1}^{+\infty}u_k\,
+\]
+
+\item $\ln$ désigne le logarithme népérien.\smallbreak
+\item On notera, en cas d'existence, $\int_a^b f \, $ à la place de $\int_a^b f(t) \dt$.
+\end{itemize}
+
+\medskip
+\newpage
+\textbf{\large Préliminaires}\medbreak
+
+\medskip
+
+Soient $a\in \R$ et $b\in \intoo{a}{+\infty}\cup\{+\infty\}$, $f$ et $g$ deux
+applications continues par morceaux sur $\intfo{a}b$  \`a valeurs strictement
+positives.
+\begin{enumerate}
+\item On suppose que $g$ est intégrable sur $\intfo{a}b$.
+\begin{enumerate}
+\item  Montrer qu'en $b$,  la relation $f=\petito(g)$ entra\^\i ne
+\[
+\int_x^b f=\petito\left (\int_x^b g\right )
+\]
+\textit{On commencera par réécrire l'hypothèse $f=\petito(g)$ à l'aide de la définition de limite.}
+\item Montrer que la relation $f\thicksim g$ en $b$ entra\^\i ne $\int_x^b
+f\thicksim \int_x^bg$
+
+(on justifiera l'intégrabilité de $f$ sur les intervalles $\intfo{x}b$ considérés).\medbreak
+
+\end{enumerate}
+\item On suppose que $g$ n'est pas intégrable sur $\intfo{a}b$.
+
+\begin{enumerate}
+\item Déterminer $\lim_{x \rightarrow b^{-}} \int_a^x
+g$.
+\item On suppose qu'en $b$, $f=\petito(g)$. Soit $\varepsilon>0$. Justifier l'existence d'un réel $x_0 \in [a,b[$ tel que pour tout $x \in [x_0,b[$,
+$$  \int_a^x f   \leq \int_a^{x_0} f  + \varepsilon \int_{x_0}^x g $$
+\item Montrer qu'en $b$, la relation $f=\petito(g)$ entra\^\i ne
+\[
+\int_a^x f=\petito\left (\int_a^x g\right )
+\]
+
+Montrer \`a l'aide d'exemples (\textit{on pensera aux intégrales de Riemann}) que l'on ne peut en général rien dire de
+l'intégrabilité de $f$ sur $\intfo{a}b$.\smallbreak
+
+\item Montrer qu'en $b$,  la relation $f\thicksim g$ entra\^\i ne $\int_a^x
+f\thicksim \int_a^xg$.\smallbreak
+
+Que dire de l'intégrabilité de $f$ sur $\intfo{a}b$~?
+\end{enumerate}
+\end{enumerate}\bigbreak
+
+\bigskip
+
+\centerline{\it \textbf{\Large  Partie I\,.}}
+
+\medskip
+
+Dans cette partie, on appliquera aussi les résultats des préliminaires aux intervalles de la forme $\intof{a}b$, avec des fonctions équivalentes ou négligeables au voisinage de $a$ (la généralisation  est évidemment valable). 
+
+\medskip
+
+
+\begin{enumerate}
+\item  ~
+\begin{enumerate}
+\item  Déterminer un équivalent simple en $0^+$ de 
+\[
+\int_x^1\frac{\e^t}{\arcsin(t)}\ud t
+\]
+
+\item En déduire un équivalent simple en $0^+$ de $\int_{x^3}^{x^2}\frac{\e^t}{\arcsin(t)}\ud t\,.$\smallbreak
+
+\end{enumerate}
+
+\item ~
+\begin{enumerate}
+\item Justifier que $t \mapsto \dfrac{1}{\ln(t)}$ n'est pas intégrable sur $[2, + \infty[$.
+\item \`A l'aide d'une intégration par parties, montrer qu'en $+\infty$ on a:
+\[
+\int_2^x\frac{\ud t}{\ln(t)}\thicksim \frac{x}{\ln(x)}
+\]
+\item Montrer que pour tout entier $n \geq 0$ : 
+\[
+  \int_2^x\frac{\ud t}{\ln(t)}=\left[\sum_{k=0}^{n}\frac{k!t}{\ln^{k+1}(t)}\right]_2^x +(n+1)!\int_2^x\frac{\ud t}{\ln^{n+2}(t)}
+\]
+\item Si $n$ est un entier naturel, établir le développement asymptotique suivant en $+\infty$ :
+\[
+\int_2^x\frac{\ud t}{\ln(t)}=\sum_{k=0}^n\frac{k!x}{\ln^{k+1}(x)}+\petito\left ( \frac{x}{\ln^{n+1}(x)}\right )
+\]
+\end{enumerate}
+
+\item Justifier le développement asymptotique suivant en $+\infty$ :
+\[
+\int_1^x\frac{e^t}{t^2+1}\ud t=\frac{e^x}{x^2}+\frac{2e^x}{x^3}+\petito\left
+(\frac{e^x}{x^3}\right )
+\]
+
+\end{enumerate}\bigbreak
+
+\bigskip
+
+\centerline{\it \textbf{\Large  Partie II.}}\medbreak
+
+\medskip
+
+Soient $a$ un nombre réel et $f$ une application de classe ${\cal C}^1$ sur
+$\intfo{a}{+\infty}$ \`a valeurs strictement positives. On suppose que le quotient
+$\dfrac{xf'(x)}{f(x)}^{\mathstrut}$ tend vers une limite finie $\alpha$ en $+\infty$.
+
+\medskip
+
+\begin{enumerate}
+\item Montrer \`a l'aide des préliminaires que $\dfrac{\ln(f(x))}{\ln(x)}$
+tend vers $\alpha$ quand $x$ tend vers $+\infty$ ({\it on pourra distinguer le cas $\alpha=0$.})\medbreak
+
+\item On suppose dans cette question  $\alpha<-1$.
+\begin{enumerate}
+\item Montrer que $f$ est intégrable sur $\intfo{a}{+\infty}$. On commencera par montrer que pour un réel $\beta$ tel $\alpha < \beta <-1$, on a pour $x$ assez grand,
+$$\ln(f(x)) \leq  \beta \ln(x)$$
+
+\smallbreak
+
+\item Montrer qu'en $+\infty$ on a $\int_x^{+\infty}\!f\thicksim \dfrac{-xf(x)}{\alpha+1}$ ({\it on pourra  considérer $x \mapsto \dfrac{xf(x)}{\alpha +1}$ comme une primitive et utiliser les préliminaires.})\medbreak
+\end{enumerate}
+
+\item  On suppose dans cette question  $\alpha>-1$.
+\begin{enumerate}
+
+\item Étudier l'intégrabilité de $f$ sur $\intfo{a}{+\infty}$.\smallbreak
+
+\item Montrer qu'en $+\infty$ on a
+\[
+\int_a^xf\thicksim \frac{xf(x)}{\alpha +1}
+\]
+
+\item Donner un exemple d'application de classe ${\cal C}^1$ sur
+$\intfo{a}{+\infty}$ \`a valeurs strictement positives telles qu'en $+\infty$ le
+quotient $\dfrac{\ln(f(x))}{\ln(x)}$ tende vers une limite $\alpha>-1$, mais
+telle que l'on n'ait pas $\int_a^xf\thicksim \dfrac{xf(x)}{\alpha +1}\,\cdot$\smallbreak
+\end{enumerate}
+\item ~
+\begin{enumerate}
+\item  Étudier l'intégrabilité sur $\intfo{2}{+\infty}$ des applications $x\mapsto
+\dfrac{1}{x(\ln(x))^\beta}$ selon $\beta\in \R$.\smallbreak
+
+\item Étudier, \`a l'aide des questions précédentes, l'intégrabilité sur
+$\intfo{2}{+\infty}$ des applications $x\mapsto \dfrac{1}{x^\gamma(\ln(x))^\beta}$
+selon $\beta\in \R$ et $\gamma\in \R$.\medbreak
+\end{enumerate}
+\item  Que conclure quant \`a l'intégrabilité de $f$ sur $\intfo{a}{+\infty}$ dans le
+cas $\alpha=-1$~? \textit{On utilisera 4.(a)}.
+\end{enumerate}\bigbreak
+
+% \bigskip
+
+% \centerline{\it \textbf{\Large  Partie III.}}\medbreak
+
+% \medskip
+
+%  Dans cette partie, on considère une application $f$ de classe ${\cal C}^1$ sur $\R ^+$, \`a valeurs strictement positives.\smallbreak
+
+% On suppose qu'en $+\infty$, $\dfrac{f'(x)}{f(x)}$ tend vers $\alpha \in \R$.\smallbreak
+
+% On considère la série de terme général $f(n)$. On note $(S_n)_{n\in \N}$ la suite de ses sommes partielles et $(R_n)_{n\in \N}$ la suite de ses restes quand la série converge.\smallbreak
+
+% On associe \`a $f$ deux applications $u$ et $v$ continues par morceaux sur $\R ^+$ et définies par :
+% \[ 
+% \text{pour tout } n \in \Ns\text{ et pour tout } x \in \intfo{n-1}n, \ u(x)=f(n) \text{ et } v(x)=\int _{n-1}^n f(t)\ud t.
+% \]
+% On pose enfin, pour tout $x \in \R ^+$, $h(x)=\e ^{-\alpha x} f(x)$.\smallbreak
+
+% \medskip
+
+% \begin{enumerate}
+% \item  
+% Soit $\varepsilon  >0$ fixé. Montrer l'existence d'un réel $x_0 \geq 0$ tel que pour tout $u \geq x_0$,
+% $$ 0 \leq \dfrac{h'(u)}{h(u)} \leq \varepsilon$$
+% En déduire que pour tout entier $n \geq x_0+1$ et pour tout $t \in [n-1,n]$,
+% $$ \left\vert \ln \left( \dfrac{h(t)}{h(n)} \right) \right\vert \leq \varepsilon$$
+% \textit{On écrira $ \ln \left( \dfrac{h(t)}{h(n)} \right)$ comme une intégrale.}\\
+% En déduire finalement un rang $n_0 \geq 1$ tel que pour tout $n \geqslant n_0$ et tout $t \in \intff{n-1}n$, on a :
+% \[
+% \abs{h(t)-h(n)} \leqslant(\e ^\varepsilon  -1) h(n)
+% \]
+
+
+
+
+% \smallbreak
+
+% \item  
+% On suppose dans cette question que $\alpha $ n'est pas nul. Calculer pour $n \geq 1$,
+% $$ h(n) \int_{n-1}^n e^{\alpha t} \dt$$
+% Déduire de la question précédente que lorsque $n$ tend vers $+\infty$, on a :
+% \[
+% \int _{n-1}^n f(t)\ud t \thicksim \dfrac{1-\e ^{-\alpha}}{\alpha} f(n)
+% \]
+
+% \item  On suppose encore dans cette question que $\alpha $ n'est pas nul.  
+% \begin{enumerate}
+% \item  Exprimer pour $k \in \N ^\ast$ les intégrales $\int _{k-1}^k v(t)\ud t$ et $\int _{k-1}^k u(t)\ud t$ \`a l'aide de $f$.\smallbreak
+
+
+% %\`A  l'aide des préliminaires, établir les résultats suivants:\smallbreak
+
+
+% \item Montrer que si $f$ est intégrable sur $\R ^+$, alors la série de terme général $f(n)$ converge et on a, quand $n$ tend vers $+\infty$,
+%  \[
+%  R_n \thicksim \dfrac{\alpha}{1-\e ^{-\alpha}} \int _n ^{+\infty} f(t)\ud t
+%  \]
+% On admet que si $f$ n'est pas intégrable sur $\R ^+$, alors la série de terme général $f(n)$ diverge et on a, quand $n$ tend vers $+\infty$, 
+% \[
+% S_n \thicksim \dfrac{\alpha}{1-\e ^{-\alpha}} \int _0^n f(t)\ud t
+% \]
+% De même, si $\alpha=0$, on admet que la série de terme général $f(n)$ est convergente si et seulement si $f$ est intégrable sur $\R ^+$, avec $R_n \thicksim \int _n ^{+\infty}f(t)\ud t$ en cas de convergence et $S_n \thicksim \int _0^n f(t)\ud t$ en cas de divergence.
+% \end{enumerate}
+
+% \end{enumerate}
+
+% \bigskip
+
+% \centerline{\it \textbf{\Large  Partie IV.}}\medbreak
+
+% \medskip
+
+% \begin{enumerate}
+
+% \item \`A l'aide de ce qui précède, déterminer un équivalent simple des sommes suivantes quand $n$ tend vers $+\infty$. 
+
+% \begin{enumerate}
+% \item $\sum _{k=1}^n \dfrac{1}{k} \cdot$
+
+% \item  $\sum _{k=1}^n \ln k$.
+
+% \item $\sum _{k=1}^n 2^k \ln k$.
+% \end{enumerate}
+% \item Retrouver un équivalent en $+ \infty$ de $\sum_{k=1}^n \dfrac{1}{k}$ à l'aide d'une méthode usuelle.
+
+
+% \item Soient $(a_n)_{n\in \N}$ et $(b_n)_{n\in\N}$ deux suites réelles strictement positives équivalentes.\smallbreak
+
+% On note pour tout $n\in\N$,
+% \[
+% S_n(a)=\sum_{k=0}^na_k \quad\text{et}\quad S_n(b)=\sum_{k=0}^nb_k 
+% \]
+% Dans le cas o\`u ces séries convergent, on note pour tout $n\in\N$,
+% \[
+% R_n(a)=\sum_{k=n+1}^{+\infty}a_k \quad\text{et}\quad R_n(b)=\sum_{k=n+1}^{+\infty}b_k 
+% \]
+
+% \begin{enumerate}
+% \item  Montrer que si $\sum a_n$ converge, alors quand $n$ tend vers $+\infty$, on a $R_n(a)\thicksim R_n(b)$.\smallbreak
+
+% \item Montrer que si $\sum a_n$ diverge, alors quand $n$ tend vers $+\infty$, on a $S_n(a)\thicksim S_n(b)$.\medbreak
+
+% \end{enumerate}
+
+% \item Déduire de ce qui précède les résultats suivants lorsque $n$ tend vers $+\infty$~:
+
+% \begin{enumerate}
+% \item $\sum_{k=1}^n\dfrac{1}{k}=\ln(n)+\gamma+\frac{1}{2n}+\petito\left(\frac{1}{n}\right)\cdot$\smallbreak
+% \textit{On commencera par déterminer un équivalent en $+ \infty$ de $a_n$ définie pour tout entier $n \geq 2$ par :}
+% $$ a_n = \dfrac{1}{n} - (\ln(n)- \ln(n-1)$$
+
+% \item $n! = \delta n^{n+\frac{1}{2}}\e^{-n}\left(1+\dfrac{1}{12 n}+\petito\left(\frac{1}{n}\right)\right)$, o\`u $\gamma$ et $\delta$ sont deux constantes qu'on ne demande pas d'expliciter.\smallbreak
+% \textit{On commencera par déterminer un équivalent en $+ \infty$ de $a_n$ définie pour tout entier $n \geq 2$ par :}
+% $$ a_n = 1+ \left( n- \dfrac{1}{2} \right) \ln \left(1- \dfrac{1}{n} \right)  $$
+% \item Que vaut $\delta$~?
+% \end{enumerate}
+% \end{enumerate}
+
+\end{document}

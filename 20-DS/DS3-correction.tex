@@ -1,0 +1,381 @@
+\documentclass[twoside,french,11pt]{VcCours}
+\newcommand{\enc}[1]{\fbox{#1}}
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir surveillé n°3}
+
+\begin{center}
+\large\bf
+Correction
+\end{center}
+\separationTitre
+
+
+\section*{Problème 1 -- Une série de fonctions} % E3A/E4A Maths B exercice 2
+\emph{En vidéo... à venir.}
+
+
+\section*{Problème 2 -- Relation matricielle et endomorphisme}
+
+\subsection*{Partie 1 : un exemple}
+  \begin{enumerate}
+    \item Les deux premières colonnes de $M$ ne sont pas colinéaires donc le rang de $M$ (qui est celui de $f$) est supérieur ou égal à $2$. Si l'on note $C_1,C_2,C_3$ les colonnes de $M$, on remarque que $C_1+C_2+C_3=0$ est la colonne nulle. Par conséquent le vecteur $(1,1,1)$ (qui est non nul) appartient donc à $\textrm{Ker}(f)$ donc $\dim($Ker$(f)\geq 1.$ D'après le théorème du rang, on a rg$(f)\leq 2$ et donc  rg$(f)=2$ et $\dim($Ker$(f))=1.$ Finalement :
+  
+  \enc{$((1,1,1))$ est une base de Ker$(f)$}
+  
+  %
+  \item Le calcul donne :
+  $$M^2=\left(\begin{array}{rrr}
+  -2 & 5 & -3\\
+  -1 & 4 & -3\\
+  -1 & 5 & -4 \end{array}\right)$$
+  Et donc 
+  $$M^2+I_3=\left(\begin{array}{rrr}
+  -1 & 5 & -3\\
+  -1 & 5 & -3\\
+  -1 & 5 & -3 \end{array}\right)$$
+  Cette matrice est clairement de rang 1 et donc son noyau est de dimension 2. Or $5C_1+C_2$ et $3C_1-C_3$ sont nulles donc les vecteurs $(5,1,0)$ et $(3,0,-1)$ sont dans le noyau de $f$ et sont non colinéaires donc forment une famille libre et donc une base de Ker$(f^2+{\rm Id}_E)$. Ainsi :
+  \enc{Ker$(f^2+{\rm Id}_E)=\Vect((5,1,0), (3,0,-1))$}
+  
+  \item Soit $(x,y,z) \in \mathbb{R}^3$. On a par produit matriciel :
+  
+  $$(x,y,z)\in\hbox{Ker}(f^2+{\rm Id}_E)  \Longleftrightarrow  (M^2+I_3)\left(\begin{array}{c}x\\y\\z\end{array}\right)=0 \ \Longleftrightarrow \ x-5y+3z=0$$
+  Ainsi,
+  \enc{Ker$(f^2+{\rm Id}_E) = \lbrace (x,y,z) \in \mathbb{R}^3 \, \vert \, x-5y+3z=0\rbrace$}
+  
+  
+  \item La famille $((5,1,0),(3,0,-1))$  est une base de Ker$(f^2+{\rm Id}_E)$ et la famille $((1,1,1))$ est une base de Ker$(f)$. Pour montrer que Ker$(f^2+{\rm Id}_E)$ et Ker$(f)$ sont supplémentaires dans $\R^3$, il suffit de montrer que la famille obtenue en concaténant ces deux bases (c'est-à-dire la famille $((5,1,0),(3,0,-1),(1,1,1))$) est une base de $\R^3.$ On calcule le déterminant de la matrice de cette famille dans la base canonique :
+  $$\left|\begin{array}{rrr}
+  5 & 3 & 1\\
+  1 & 0 & 1\\
+  0 & -1 & 1 \end{array}\right|=1 \neq0$$ 
+  Ainsi, $(5,1,0),(3,0,-1),(1,1,1))$ est une base de $\R^3$ et :
+  
+  \enc{$\R^3=$Ker$(f^2+{\rm Id}_E)\oplus$Ker$(f)$}
+  
+  
+  \item 
+  
+  \begin{enumerate}
+  \item Soit $x\in$Ker$(f^2+{\rm Id}_E).$ On a :
+   $$(f^2+{\rm Id}_E)(x)=\tilde{0}=f(f(x))+x$$
+  et donc $x=-f(f(x))=f(-f(x))$ par linéarité de $f$. En posant $z=-f(x) \in \mathbb{R}^3$, on a ainsi :
+    
+  \enc{$\exists z\in \R^3,\ x=f(z)$}
+  
+  \item D'après la question précédente, on sait que Ker$(f^2+{\rm Id}_E)\subset $ Im$(f).$ D'après le théorème du rang, sachant que le noyau de $f$ est de dimension $1$, on obtient que l'image de $f$ est de dimension $2$. D'après la somme directe obtenue en question 4., on sait aussi que $\dim($Ker$(f^2+{\rm Id}_E))=2.$ Ainsi,
+  \enc{Ker$(f^2+{\rm Id}_E)=$Im$(f)$}
+    
+    
+    
+  \end{enumerate}
+  
+  
+  
+  \item 
+  
+  
+  \begin{enumerate}
+    \item On a :
+    $$M\left(\begin{array}{c}1\\2\\3\end{array}\right)=\left(\begin{array}{c}-1\\1\\2\end{array}\right)$$
+  donc 
+  \enc{$u_3=(-1,1,2)$}
+  \item On a :
+  $$\left|\begin{array}{rrr}
+  1 & 1 & -1\\
+  1 & 2 & 1\\
+  1 & 3 & 2 \end{array}\right|=-1 \neq0$$
+  donc 
+  \enc{${\cal U}=(u_1,u_2,u_3)$ est une base de $\R^3$}
+  \item On exprime les images de $u_1, u_2, u_3$ par $f$ dans la base $(u_1,u_2,u_3).$ On a évidemment $f(u_1)=0$ et $f(u_2)=u_3$. Déterminons $f(u_3).$ On a :
+  $$M\left(\begin{array}{c}-1\\1\\2\end{array}\right)=\left(\begin{array}{c}-1\\-2\\-3\end{array}\right)$$
+  donc $f(u_3)=-u_2.$ On a ainsi :
+    
+  \enc{$R=\textrm{Mat}_{\cal U}(f)=\left(\begin{array}{rrr}
+  0 & 0 & 0\\
+  0 & 0 & -1\\
+  0 & 1 & 0 \end{array}\right)$}
+    
+    \item La formule de changement de bases implique que :
+    $$\boxed{R=P^{-1}MP}$$
+  où
+  $$\boxed{P=P_{{\cal B},{\cal U}}=\left(\begin{array}{rrr}
+  1 & 1 & -1\\
+  1 & 2 & 1\\
+  1 & 3 & 2 \end{array}\right)}$$
+  \item On a $f(f(u_1))=f(\tilde{0})=\tilde{0}$ ($f$ est linéaire), $f(f(u_2))=f(u_3)=-u_2$ et $f(f(u_3))=f(-u_2)=-u_3$. Ainsi :
+  $$\boxed{D=\textrm{Mat}_{\cal U}(f^2)=\left(\begin{array}{rrr}
+  0 & 0 & 0\\
+  0 & -1 & 0\\
+  0 & 0 & -1 \end{array}\right)}$$
+  On retrouve ce résultat, en effectuant le produit $R\times R$ qui donne $D.$
+    
+    
+    
+  \end{enumerate}
+  \end{enumerate}
+  
+  \subsection*{Partie 2 : le cas général}
+ 
+  \begin{enumerate}
+    \item Puisque $A=\textrm{M}_{\cal B}(u)$ et puisque $A^3+A=0_3$ et $A\neq 0_3,$ on a bien 
+  \enc{$u^3+u=\theta$ et $u\neq \theta$}
+    
+    \item \begin{enumerate}
+    \item On a :
+  \enc{$\det(-{\rm Id}_E)=\det(-I_3)=(-1)^3=-1$}
+  \item On suppose que $u$ est injectif. Pour tout $x\in E,$ on a $(u^3+u)(x)=0$ et donc par linéarité de $u$, $u(u^2(x)+x)=\tilde{0}.$ Ainsi, $u^2(x)+x\in$Ker$(u).$ Sachant que $u$ est injective, son noyau est réduit au vecteur nul et donc :
+  \enc{$u^2(x)+x=\tilde{0}$}
+  \noindent On a pour tout $x\in E,$ $u^2(x)=-\textrm{Id}_E(x)$ donc :
+  \enc{$u^2=-{\rm Id}_E$}
+    
+  \noindent On pose $\lambda=\det(u)\in\R.$ On a donc 
+  $$\det(u^2)=\det(u)^2=\lambda^2=\det(-{\rm Id}_E)=-1$$ 
+  ce qui est impossible car $\lambda\in\R.$ Par conséquent,
+  \enc{$u$ n'est pas injectif}
+  
+  \item Par conséquent, Ker$(u)$ n' est pas réduit au vecteur nul. De plus, Ker$(u)$ n'est pas l'espace $E$ car $u\neq \theta.$ Donc :
+  
+  \enc{$\dim($Ker$(u))=1$ ou $2$}	
+    
+  \end{enumerate}
+  
+    
+    \item 
+    \begin{enumerate}
+    \item On procède par analyse-synthèse. 
+    
+    \medskip
+    
+  \noindent \textit{Analyse :} Soit $x\in E.$ Supposons l'existence de deux vecteurs $y\in$Ker$(u^2+{\rm Id}_E)$ et $z\in$Ker$(u)$ tels que $x=y+z.$ Par linéarité de $u$ et sachant que $z$ est dans le noyau de $u$ :
+    
+  $$u(x)=u(y)+u(z)=u(y)$$
+  puis en utilisant que $y$ est dans le noyau de $u^2+{\rm Id}_E$,
+  $$u^2(x)=u^2(y)=-y$$
+  Ainsi, $y=-u^2(x)$ et $z=x-y=x+u^2(x).$
+    
+    \medskip
+    
+  \noindent \textit{Synthèse :} Soit $x \in E$. Posons :
+  $$ y = -u^2(x) \; \et \; z=x+u^2(x)$$
+  On a clairement $x=y+z$. On a par linéarité de $u$ :
+  $$u(z)=u(x+u^2(x))=(u^3+u)(x)=\tilde{0}$$
+   car $u^3+u=\theta$.  De même :
+  $$(u^2+{\rm Id}_E)(y)=-(u^4+u^2)(x)=(u^3+u)(u(x))=\tilde{0}$$
+  car $u^3+u=\theta.$
+  
+  \medskip
+  
+  \textit{Conclusion :} On a montré que pour tout $x\in E$, il existe un unique $y\in$Ker$(u^2+{\rm Id}_E)$ et un unique $z\in$Ker$(u)$ tels que $x=y+z$ (l'unicité provient de l'analyse). Ainsi,
+  
+  \enc{$E=$Ker$(u)\oplus$Ker$(u^2+{\rm Id}_E)$}
+  
+  \item D'après la question précédente, $\dim(E)=3=\dim($Ker$(u))+\dim($Ker$(u^2+{\rm Id}_E))$  et donc :
+  \enc{$\dim($Ker$(u^2+{\rm Id}_E))=1$ ou $2$ }
+  
+  
+    
+  \end{enumerate}
+  
+  \item 
+  \begin{enumerate}
+  \item Soit $x\in F.$ on a $u^2(x)=-x.$ On applique $u$ à cette égalité : 
+  $$u^3(x)=u(-x)$$
+  et donc $u^2(u(x))=-u(x).$ Par définition, on a bien $u(x)\in F$ et donc 
+  \enc{$F$ est stable par $u$}
+  \item Pour tout $x\in F$, on a $v^2(x)=u^2(x)=-x=-{\rm Id}_F(x)$ donc :
+  \enc{ $v^2=-{\rm Id}_F$}
+  \item On a $\textrm{det}(v^2)=\textrm{det}(-{\rm Id}_E)=(-1)^{\dim(F)}.$ Si $\dim(F)=1,$ alors $\textrm{det}(v^2)=(\det(v))^2=-1$ ce qui est absurde puisque $\det(v)\in \R.$ Ainsi,
+  \enc{$\dim(F)=2$}
+    
+  %\item Supposons l'existence d'un réel $\lambda$, une valeur propre de $v.$ Par définition, il existe $x\in F$ non nul tel que $v(x)=\lambda x.$ Ainsi :
+  %$$v(v(x))=v(\lambda x)=\lambda v(x)=\lambda^2 x$$
+  %Mais on a aussi 
+  %$$v(v(x))=v^2(x)=-{\rm Id}_E(x)=-x$$ 
+  %Ainsi, $\lambda^2 x=-x$ et comme $x$ n'est pas nul, on a $\lambda^2=-1.$ Ceci n'est pas possible, car $\lambda$ est réel. Par conséquent, 
+  %\enc{ $v$ ne possède aucune valeur propre.}
+  
+  \end{enumerate}
+  
+    
+    \item 
+    \begin{enumerate}
+    \item Soit $(\lambda, \mu)\in\R^2$ tel que $\lambda e'_2+\mu e'_3=\tilde{0}.$ On a donc 
+    $$\lambda e'_2+\mu u(e'_2)=0$$ 
+    En appliquant $u$ et en utilisant que $u^2(e_2')=-e'_2$ (puisque $e'_2\in F$), on trouve :
+  $$\lambda u(e'_2)+\mu u^2(e'_2)=\tilde{0}=\lambda e'_3-\mu e'_2$$
+  On élimine alors $e'_3$ par une combinaison linéaire des deux égalités :
+  $$\lambda(\lambda e'_2+\mu e'_3)-\mu(\lambda e'_3-\mu e'_2)=0=(\lambda^2+\mu^2)e'_2$$
+  Et sachant que $e'_2\neq 0$, on trouve 
+  $$\lambda^2+\mu^2=0$$
+   et  donc forcément, $\lambda=\mu=0.$ 
+    
+  \enc{$(e'_2, e'_3)$ est libre}
+    
+  \item Puisque $\dim(F)=2,$ $(e'_2, e'_3)$ est une base de $F.$ De plus, Ker$(u)$ est de dimension $1$ et donc $(e'_1)$ est une base de Ker$(u).$ La somme directe $E=$Ker$(u)\oplus F$ donne alors par concaténation que :
+  
+  \enc{${\cal B}'=(e'_1,e'_2, e'_3)$ est une base de $E$}
+  
+  \noindent On a $u(e'_1)=0,  u(e'_2)=e'_3$ et $u(e'_3)=u^2(e'_2)=-e'_2$ donc 
+  $$\boxed{B=\textrm{M}_{{\cal B}'}(u)=\left(\begin{array}{rrr}
+  0 & 0 & 0\\
+  0 & 0 & -1\\
+  0 & 1 & 0 \end{array}\right)}$$
+    \item $A$ et $B$ sont les matrices d'un même endomorphisme $u$ de $E$ donc 
+    \enc{ $A$ et $B$ sont semblables}
+    
+    
+  \end{enumerate}
+  
+    
+  \end{enumerate}
+  
+
+\section*{Problème 3 -- Une suite de déterminants}
+\begin{enumerate}
+	\item Soient $\alpha$ et $\beta$ des réels strictement positifs. Alors :
+	$$ (1+\alpha)(1+\beta) = 1 + \alpha + \beta + \alpha \beta$$
+	Or $\alpha \beta \geq 0$ donc 
+\enc{$(1+\alpha)(1+\beta)\geq(1+\alpha+\beta)$}
+\item On a : 
+$$ \Delta_1=\left|\begin{array}{cc} 1&-v_1\\u_1&1\end{array}\right|=1+u_1v_1$$
+et 
+$$
+ \Delta_2  =  \left|\begin{array}{ccc} 1&-v_1&0\\u_1&1&-v_2\\0&u_2&1\end{array}\right|$$
+ En développant par rapport à la première colonne, on a :
+ $$ \Delta_2 = 1 \times \left|\begin{array}{cc}1&-v_2\\u_2&1\end{array}\right|  -u_1 \left|\begin{array}{cc} -v_1&0\\u_2&1 \\\end{array}\right| = 1+ u_2 v_2 + u_1 v_1$$
+Donc 
+\enc{$\Delta_1=1+u_1v_1$ et $\Delta_2=1+u_1v_1+u_2v_2$} 
+\item Soit $n \geq 3$. On a : 
+$$\Delta_n=\left|\begin{array}{ccccccc}
+1 &-v_1 & 0 &0 & \cdots &\cdots & 0\\
+ u_1 & 1 & -v_2 &0 & \cdots &\cdots & 0\\
+ 0 & u_2 & 1 & -v_3 &\ddots & & 0\\
+ \vdots &\ddots & \ddots & \ddots & \ddots & \ddots & \vdots\\
+  \vdots &  & \ddots & \ddots & \ddots & \ddots & 0\\
+  \vdots &  &   & \ddots & \ddots & \ddots & -v_n\\ 
+  0 & \cdots & \cdots & \cdots & 0 & u_n & 1  
+\end{array}\right|$$
+En développant par rapport à la dernière ligne, on a :
+\begin{align*}
+ \Delta_n& = (-1)^{n+1+n} u_n\left|\begin{array}{ccccccc}
+1 &-v_1 & 0 &0 & \cdots &\cdots & 0\\
+ u_1 & 1 & -v_2 &0 & \cdots &\cdots & 0\\
+ 0 & u_2 & 1 & -v_3 &\ddots & & 0\\
+ \vdots &\ddots & \ddots & \ddots & \ddots & -v_{n-1} & \vdots\\
+  \vdots &  & \ddots & \ddots & \ddots & 1 & 0\\
+  \vdots &  &   & \ddots & 0 & u_{n-1} & -v_n\\ 
+\end{array}\right| \\
+& + (-1)^{2n}\left|\begin{array}{ccccccc}
+1 &-v_1 & 0 &0 & \cdots &\cdots & 0\\
+ u_1 & 1 & -v_2 &0 & \cdots &\cdots & 0\\
+ 0 & u_2 & 1 & -v_3 &\ddots & & 0\\
+ \vdots &\ddots & \ddots & \ddots & \ddots & \ddots & \vdots\\
+  \vdots &  & \ddots & \ddots & \ddots & \ddots & 0\\
+  \vdots &  &   & \ddots & \ddots & \ddots & -v_{n-1}\\ 
+  0 & \cdots & \cdots & \cdots & 0 & u_{n-1} & 1  
+\end{array}\right| 
+\end{align*}
+On a donc :
+$$  \Delta_n  =- u_n\left|\begin{array}{ccccccc}
+1 &-v_1 & 0 &0 & \cdots &\cdots & 0\\
+ u_1 & 1 & -v_2 &0 & \cdots &\cdots & 0\\
+ 0 & u_2 & 1 & -v_3 &\ddots & & 0\\
+ \vdots &\ddots & \ddots & \ddots & \ddots & -v_{n-1} & \vdots\\
+  \vdots &  & \ddots & \ddots & \ddots & 1 & 0\\
+  \vdots &  &   & \ddots & 0 & u_{n-1} & -v_n\\ 
+\end{array}\right|  + \Delta_{n-1} $$
+En développant le déterminant par rapport à la dernière colonne, on obtient alors :
+$$ \Delta_n = -u_n \times (-v_n) \Delta_{n-2} + \Delta_{n-1}$$
+et finalement :
+$$ \boxed{\Delta_n=\Delta_{n-1}+a_n\Delta_{n-2}}$$ 
+\item Pour tout entier $n \geq 3$,
+$$ \Delta_n - \Delta_{n-1} = a_n \Delta_{n-2}$$
+Montrons à l'aide d'une récurrence double que :
+$$\forall n\in\N^*, \Delta_n\geq 0$$
+\begin{itemize}
+\item On sait que $\Delta_1$ et $\Delta_2$ sont positifs par somme de termes qui le sont donc la propriété est vérifiée au rang $1$ et au rang $2$.
+\item Soit $n \geq 1$ tel que la propriété soit vérifiée au rang $n$ et au rang $n+1$. On saut que :
+$$ \Delta_{n+2}=\Delta_{n+1}+a_{n+2}\Delta_{n}$$
+Or $a_{n+2}$ est positif par produit de termes qui le sont et $\Delta_n$ et $\Delta_{n+1}$ sont positifs par hypothèse de récurrence. Ainsi, par somme et produit,
+$$ \Delta_{n+2} \geq 0$$
+donc la propriété est vraie au rang $n+2$.
+\item La propriété est vraie au rang $1$ et est héréditaire donc par principe de récurrence, elle est vraie pour tout $n \geq 1$.
+\end{itemize}
+On en déduit que pour tout entier $n \geq 3$,
+$$\Delta_n - \Delta_{n-1} = a_n \Delta_{n-2} \geq 0$$
+car $a_n \geq 0$ et $\Delta_{n-2} \geq 0$. Ainsi, $(\Delta_n)_{n \geq 2}$ est croissante. Or :
+$$\Delta_{2}-\Delta_{1}=u_2v_2\geq 0$$
+donc finalement,
+\enc{$(\Delta_n)_{n \geq 1}$ est croissante}
+	
+	
+	
+	\item Montrons par récurrence que pour tout entier $n \geq 1$,
+	$$\Delta_n\leq \prod_{k=1}^n(1+a_k)$$
+	\begin{itemize}
+	\item  On a l'égalité pour $n=1$ et 
+	$$\Delta_2= 1+u_2v_2+u_1v_1\leq (1+a_1)(1+a_2)$$
+par la question préliminaire donc la propriété est vérifiée aux rangs $1$ et $2$.
+\item Soit $n \geq 1$ tel que la propriété soit vérifiée au rang $n$ et $n+1$. Alors par positivité des termes : 
+\begin{align*}
+ \Delta_{n+2} & \leq   \prod_{k=1}^{n+1}(1+a_k)+a_{n+2}\prod_{k=1}^{n}(1+a_k) \\
+ & = \ \prod_{k=1}^{n}(1+a_k)(1+a_{n+1}+a_{n+2}) \\
+ & \leq  \prod_{k=1}^{n}(1+a_k)(1+a_{n+1})(1+a_{n+2}) 
+ \end{align*}
+d'après la question préliminaire. Ainsi, on a :
+$$ \Delta_{n+2} \leq \prod_{k=1}^{n+2}(1+a_k)$$
+et la propriété est donc vraie au rang $n+2$.
+\item Par principe de récurrence, la propriété est vraie pour tout entier $n \geq 1$.
+	\end{itemize}
+Finalement, pour tout entier $n \geq 1$,
+\enc{$\Delta_n\leq \prod_{k=1}^n(1+a_k)$}
+\item 
+	
+\begin{enumerate}
+	\item Pour tout entier $k \geq 1$, 
+	$$1 + a_k>0$$
+	donc pour tout entier $n \geq 1$, $P_n>0$ et on a :
+	$$ \ln(P_n) = \sum_{k=1}^n \ln(1+a_k) = S_n$$
+La série de terme général $\ln(1+a_n)$ est à termes positifs et $a_n$ tend vers $0$ quand $n$ tend vers $+ \infty$ car la série de terme général positif $a_n$ converge donc :
+$$ \ln(1+a_n) \underset{+ \infty}{\sim} a_n$$
+Par critère de comparaison des séries à termes positifs, on en déduit que la série de terme général $\ln(1+a_n)$ converge donc la suite de sommes partielles $(S_n)_{n \geq 1}$ converge vers un réel $S$ donc :
+$$ \lim_{n \rightarrow + \infty} \ln(P_n) = S$$
+et par continuité de la fonction exponentielle en $S$ : 
+$$ \lim_{n \rightarrow + \infty} P_n = e^S$$
+Ainsi,
+\enc{$(P_n)_{n \geq 1}$ converge}
+
+		\item On sait que pour tout entier $n \geq 1$,
+		$$ \Delta_n \leq P_n$$
+La suite $(P_n)_{n \geq 1}$ converge donc en particulier est majorée. On en déduit que $(\Delta_n)_{n \geq 1}$ aussi et on sait qu'elle est croissante donc 
+\enc{$(\Delta_n)_{n \geq 1}$ converge}
+\end{enumerate}
+	
+	\item 
+	
+\begin{enumerate}
+	\item La suite $(\Delta_n)_{n \geq 1}$ est croissante et 
+	$$ \Delta_1 = 1+u_1v_1 \geq 1$$
+	car $u_1$ et $v_1$ sont positifs. Ainsi, pour tout $n\in\N^*$,
+	 $$\boxed{\Delta_n\geq 1}$$
+\item La suite $(\Delta_n)_{n \geq 1}$ converge donc la série télescopique de terme général $\Delta_n-\Delta_{n-1}$ converge donc 
+\enc{$\sum_{n\geq 2} t_n$ converge}
+		
+		\item Pour tout entier $n \geq 3$,
+$$ t_n=a_n\Delta_{n-2}\geq a_n\geq 0$$
+d'après la question 7(a). Par critère de comparaison des séries à termes positifs et puisque la série $\sum_{n\geq 2}t_n$ converge, on en déduit que
+ 
+ \enc{la série $\sum_{n\geq 1} a_n$ converge}
+		
+\end{enumerate}
+	
+	\item On a montré que :
+	\enc{La suite $(\Delta_n)_{n \geq 1}$ converge si et seulement si la série $\sum_{n\geq 1} a_n$ converge}
+	
+	
+	
+\end{enumerate}
+
+
+\end{document}
