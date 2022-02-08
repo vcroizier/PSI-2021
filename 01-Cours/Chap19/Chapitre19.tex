@@ -1,61 +1,57 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{Cours}
-\usepackage{delarray}
-\usepackage{fancybox}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\newcommand{\Int}[2]{\ensuremath{\mathchoice%
-	{{\displaystyle\int_{#1}^{#2}}}
-	{{\displaystyle\int_{#1}^{#2}}}
-	{\int_{#1}^{#2}}
-	{\int_{#1}^{#2}}
-	}}
-\usepackage{pstricks-add}
+\documentclass[french,11pt,twoside]{VcCours}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
 
-
+\renewcommand{\trou}[1]{{\color{white}#1}}
+%\renewcommand{\trou}[1]{{\color{blue}#1}}
 
 \begin{document}
-% \everymath{\displaystyle}
 
-\maketitle{Chapitre 19}{Calcul différentiel}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Chapitre 19 : Calcul différentiel}
 
-\noindent Dans tout le chapitre, $p$ sera un entier naturel non nul.
+\tableofcontents
+\separationTitre
+
+
+Dans tout le chapitre, $p$ sera un entier naturel non nul.
 
 \medskip
 
-\noindent Le but de ce chapitre est l'étude de fonctions de $\mathbb{R}^p$ dans $\mathbb{R}$. Par exemple, posons :
+Le but de ce chapitre est l'étude de fonctions de $\mathbb{R}^p$ dans $\mathbb{R}$. Par exemple, posons :
 $$ f : (x,y,z) \in \mathbb{R}^3 \rightarrow xe^y\sin(z) $$ 
 La fonction $f$ est continue (d'après le cours sur espaces vectoriels normés) mais que peut-on dire plus ? On sait étudier plus précisément les fonctions de $\mathbb{R}$ dans $\mathbb{R}$ en utilisant la notion de dérivabilité : le but est donc de généraliser cette notion.
 
 \medskip
 
-\noindent Dans tout le chapitre, $U$ sera un \textit{ouvert} de $\mathbb{R}^p$, $\Vert \cdot \Vert$ sera une norme sur $\mathbb{R}^p$ et $\mathcal{B}= (e_1, \ldots, e_p)$ la base canonique de $\mathbb{R}^p$.
+Dans tout le chapitre, $U$ sera un \emph{ouvert} de $\mathbb{R}^p$, $\Vert \cdot \Vert$ sera une norme sur $\mathbb{R}^p$ et $\mathcal{B}= (e_1, \ldots, e_p)$ la base canonique de $\mathbb{R}^p$.
 
-\section{Fonctions de classe $\mathcal{C}^1$}
+\newpage
+\section{Fonctions de classe \texorpdfstring{$\mathcal{C}^1$}{C¹}}
 \subsection{Dérivées partielles}
-\begin{defin} Soient $f : U \rightarrow \mathbb{R}$, $a =(a_1, \ldots, a_p) \in U$ et $i \in \Interv{1}{p}$. On dit que $f$ admet une \textit{dérivée partielle} en $a$ par rapport à la $i$-ème variable si la fonction :
+\begin{Definition}{} Soient $f : U \rightarrow \mathbb{R}$, $a =(a_1, \ldots, a_p) \in U$ et $i \in \ii{1}{p}$. On dit que $f$ admet une \emph{dérivée partielle} en $a$ par rapport à la $i$-ème variable si la fonction :
 $$ t \mapsto f(a_1, \ldots, a_{i-1}, t, a_{i+1}, \ldots, a_p) $$
 est dérivable en $a_i$. Lorsque c'est le cas, on note cette dérivée $\partial_i f(a)$ ou $\dfrac{\partial f}{\partial x_i }(a)\cdot$
-\end{defin}
+\end{Definition}
 
 
 
-\begin{ex} Reprenons l'exemple de début de chapitre : 
+\begin{Exemple}{} Reprenons l'exemple de début de chapitre : 
  $$f : (x,y,z) \in \mathbb{R}^3 \rightarrow xe^y\sin(z)$$
 Soit $a=(1,0,1)$. La fonction :
 $$ t \mapsto f(1,t,1) = e^t \sin(1)$$
 est dérivable en $0$ et sa dérivée vaut $\sin(1)$. Ainsi $\partial_2 f((1,0,1))=\sin(1)$.
-\end{ex}
+\end{Exemple}
 
 \medskip
 
-\begin{rem} Si $f$ est définie \og par morceaux \fg, on revient à la définition de dérivabilité. En particulier si $f$ est définie sur un ouvert $U$ de $\mathbb{R}^2$ et si $(a,b) \in U$, on pourra étudier les limites de 
+\begin{Remarque}{} Si $f$ est définie \og par morceaux \fg, on revient à la définition de dérivabilité. En particulier si $f$ est définie sur un ouvert $U$ de $\mathbb{R}^2$ et si $(a,b) \in U$, on pourra étudier les limites de 
 $$ \dfrac{f(a+h,b)-f(a,b)}{h} \; \hbox{ et } \; \dfrac{f(a,b+h)-f(a,b)}{h}$$
 quand $h$ tend vers $0$ pour l'existence des dérivées partielles en $(a,b)$. On généralise pour une fonction définie sur un ouvert de $\mathbb{R}^p$.
-\end{rem}
+\end{Remarque}
 
 \medskip
 
-\begin{ex} Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ l'application définie par :
+\begin{Exemple}{} Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ l'application définie par :
 $$ f((x,y)) = \left\lbrace \begin{array}{ccl}
 \dfrac{x^3-y^3}{x^2+y^2} & \hbox{ si } (x,y) \neq (0,0) \\[0.3cm]
 0 & \hbox{ si } (x,y)=(0,0) \\
@@ -76,7 +72,7 @@ $$ f((x,y)) = \left\lbrace \begin{array}{ccl}
 %\end{itemize}
 
 \vspace{8cm}
-\end{ex}
+\end{Exemple}
 
 \newpage
 
@@ -84,44 +80,51 @@ $\phantom{test}$
 
 \vspace{4cm}
 
-\begin{rems}
-\item L'hypothèse que $\Omega$ soit un ouvert est importante : pour étudier la dérivabilité de 
+\begin{Remarques}{}
+\begin{itemize}
+\item L'hypothèse que $\Omega$ soit un ouvert est importante : 
+our étudier la dérivabilité de 
 $$  t \mapsto f(a_1, \ldots, a_{i-1}, t, a_{i+1}, \ldots, a_p) $$
-en $a=(a_1, \ldots, a_n)$, on souhaite que si $t$ soit proche de $a_i$ alors $(a_1, \ldots, a_{i-1}, t, a_{i+1}, \ldots, a_p)$ appartienne toujours à $\Omega$. En fait, la $i$-ième application partielle est définie sur l'ensemble suivant :
+en $a=(a_1, \ldots, a_n)$, on souhaite que si $t$ soit proche de $a_i$ 
+alors $(a_1, \ldots, a_{i-1}, t, a_{i+1}, \ldots, a_p)$ appartienne 
+toujours à $\Omega$. En fait, la $i$-ième application partielle 
+est définie sur l'ensemble suivant :
 $$ \lbrace t \in \mathbb{R} \, \vert \, (a_1, \ldots, a_{i-1}, t, a_{i+1}, \ldots, a_p) \in U \rbrace$$
-\item Si $p=2$, on note généralement $\dfrac{\partial f}{\partial x}(a)$ au lieu de $\partial_1 f(a)$ et $\dfrac{\partial f}{\partial y}(a)$ au lieu de $\partial_2 f(a)$.
-\end{rems}
+\item Si $p=2$, on note généralement $\dfrac{\partial f}{\partial x}(a)$ 
+au lieu de $\partial_1 f(a)$ et $\dfrac{\partial f}{\partial y}(a)$ 
+au lieu de $\partial_2 f(a)$.
+\end{itemize}
+\end{Remarques}
 
-\begin{defin} Si $f : U \rightarrow \mathbb{R}$ admet une dérivée partielle par rapport à la $i$-ème variable en tout point de $U$ alors la fonction définie sur $U$ et à valeurs dans $\mathbb{R}$ définie par :
+\begin{Definition}{} Si $f : U \rightarrow \mathbb{R}$ admet une dérivée partielle par rapport à la $i$-ème variable en tout point de $U$ alors la fonction définie sur $U$ et à valeurs dans $\mathbb{R}$ définie par :
 $$ a \mapsto \partial_i f(a)$$
-est appelée \textit{dérivée partielle} de $f$ par rapport à la $i$-ième variable.
-\end{defin}
+est appelée \emph{dérivée partielle} de $f$ par rapport à la $i$-ième variable.
+\end{Definition}
 
 \subsection{Différentielle}
 
-\begin{defin} Une fonction $f : U \rightarrow \mathbb{R}$ est dite de \textit{classe} $\mathcal{C}^1$ sur $U$ si $f$ admet des dérivées partielles sur $U$, par rapport à toutes ses variables, et si celles-ci sont continues sur $U$.
-\end{defin}
+\begin{Definition}{} Une fonction $f : U \rightarrow \mathbb{R}$ est dite de \emph{classe} $\mathcal{C}^1$ sur $U$ si $f$ admet des dérivées partielles sur $U$, par rapport à toutes ses variables, et si celles-ci sont continues sur $U$.
+\end{Definition}
 
-\begin{thm} Soit $f: U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$. Alors $f$ admet en tout point $a \in U$ le développement limité à l'ordre $1$ suivant :
+\begin{Theoreme}{} Soit $f: U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$. Alors $f$ admet en tout point $a \in U$ le développement limité à l'ordre $1$ suivant :
 $$ f(a+h) = f(a) + \dfrac{\partial f}{\partial x_1}(a) h_1 + \dfrac{\partial f}{\partial x_2}(a) h_2 + \cdots + \dfrac{\partial f}{\partial x_p}(a) h_p + \Vert h \Vert \varepsilon(h)$$
 où $\varepsilon : \mathbb{R}^p \rightarrow \mathbb{R}$ a pour limite $0$ en $(0, 0, \ldots,0)$.
-\end{thm}
+\end{Theoreme}
 
-\begin{rem} On peut aussi écrire :
+\begin{Remarque}{} On peut aussi écrire :
 $$ f(a+h) = f(a) + \dfrac{\partial f}{\partial x_1}(a) h_1 + \dfrac{\partial f}{\partial x_2}(a) h_2 + \cdots + \dfrac{\partial f}{\partial x_p}(a) h_p + o(\Vert h \Vert)$$
-\end{rem}
+\end{Remarque}
 
-\begin{defin} Soient $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $a \in U$. On appelle \textit{différentielle} de $f$ en $a$ la forme linéaire suivante :
+\begin{Definition}{} Soient $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $a \in U$. On appelle \emph{différentielle} de $f$ en $a$ la forme linéaire suivante :
 $$ \begin{array}{cccll}
 \textrm{d}f(a) & : & \mathbb{R}^p & \rightarrow & \mathbb{R} \\
 & & (h_1, \ldots, h_p) & \mapsto & \dfrac{\partial f}{\partial x_1}(a) h_1 + \dfrac{\partial f}{\partial x_2}(a) h_2 + \cdots + \dfrac{\partial f}{\partial x_p}(a) h_p \\
 \end{array}$$
 L'image de $h \in \mathbb{R}^p$ par $\textrm{d}f(a)$ est usuellement notée $\textrm{d}f(a) \cdot h$ au lieu de $\textrm{d}f(a)(h)$.
-\end{defin}
+\end{Definition}
 
-\newpage
-
-\begin{rems}
+\begin{Remarques}{}
+\begin{itemize}
 \item La fonction $f$ est définie sur $U$ et $\textrm{d}f$ est définie sur $\mathbb{R}^p$ tout entier.
 \item Si $f : U \rightarrow \mathbb{R}$ est de classe $\mathcal{C}^1$ sur $U$ on a donc pour tout $a \in U$,
 $$ f(a+h)=f(a) + \textrm{d}f(a) \cdot h + o (\Vert h \Vert)$$
@@ -130,104 +133,105 @@ $$ f(a+h)=f(a) + h f'(a) + o(h)$$
 Dans le cas de plusieurs variables, le terme 
 $$   \textrm{d}f(a) \cdot h = \dfrac{\partial f}{\partial x_1}(a) h_1 + \dfrac{\partial f}{\partial x_2}(a) h_2 + \cdots + \dfrac{\partial f}{\partial x_p}(a) h_p$$
 généralise $f'(a)h$ en prenant compte des accroissements de $f$ dans toutes les directions.
-\end{rems}
+\end{itemize}
+\end{Remarques}
 
-\begin{cor} Soient $I$ un intervalle de $\mathbb{R}$ et $f : I \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$. Alors pour tout $a \in I$, 
+\begin{Corollaire}{} Soient $I$ un intervalle de $\mathbb{R}$ et $f : I \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$. Alors pour tout $a \in I$, 
 $$\textrm{d}f(a) : h \in \mathbb{R} \rightarrow f'(a)h$$
-\end{cor}
+\end{Corollaire}
 
-\begin{prop} Si $f$ est de classe $\mathcal{C}^1$ sur $U$ alors $f$ est continue sur $U$.
-\end{prop}
+\begin{Proposition}{} Si $f$ est de classe $\mathcal{C}^1$ sur $U$ alors $f$ est continue sur $U$.
+\end{Proposition}
 
-\begin{preuve} Évident avec le développement limité de $f$ en $a$ et le fait que $\textrm{d}f(a)$ soit continue.
-\end{preuve}
+\begin{Demonstration}{} Évident avec le développement limité de $f$ en $a$ et le fait que $\textrm{d}f(a)$ soit continue.
+\end{Demonstration}
 
 \subsection{Gradient}
 
-\begin{defin} Soient $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $a \in U$. Le vecteur :
+\begin{Definition}{} Soient $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $a \in U$. Le vecteur :
 $$ \nabla f(a) = \left(\dfrac{\partial f}{\partial x_1}(a), \ldots,   \dfrac{\partial f}{\partial x_p}(a) \right) $$
-est appelé \textit{gradient} de $f$ en $a$. La fonction $\nabla f : U \rightarrow \mathbb{R}^p$ est appelée \textit{gradient} de $f$.
-\end{defin}
+est appelé \emph{gradient} de $f$ en $a$. La fonction $\nabla f : U \rightarrow \mathbb{R}^p$ est appelée \emph{gradient} de $f$.
+\end{Definition}
 
-\begin{rem} En utilisant le produit scalaire usuel sur $\mathbb{R}^p$, on a pour tout $h \in \mathbb{R}^p$,
+\begin{Remarque}{} En utilisant le produit scalaire usuel sur $\mathbb{R}^p$, on a pour tout $h \in \mathbb{R}^p$,
 $$ \textrm{d}f(a) \cdot h = < \nabla f(a),h>$$
-\end{rem}
+\end{Remarque}
 \subsection{Quelques propriétés}
 
-\begin{prop} 
+\begin{Proposition}{} 
 \begin{itemize}
-\item Toute fonction polynômiale définie sur un ouvert est de classe $\mathcal{C}^1$ sur celui-ci.
+\item Toute fonction polynomiale définie sur un ouvert est de classe $\mathcal{C}^1$ sur celui-ci.
 \item Toute application linéaire de $\mathbb{R}^p$ dans $\mathbb{R}$ est de classe $\mathcal{C}^1$.
 \item Toute fonction rationnelle définie sur un ouvert dont le dénominateur ne s'annule pas est de $\mathcal{C}^1$ sur cet ouvert.
 \end{itemize}
-\end{prop}
+\end{Proposition}
 
-\begin{prop} Soient $f : U \rightarrow \mathbb{R}$ et $g :  U \rightarrow \mathbb{R}$ deux fonctions de classe $\mathcal{C}^1$ et $\lambda \in \mathbb{R}$. Alors $\lambda f+g$ est de classe $\mathcal{C}^1$ sur $U$ et pour tout $a \in U$,
+\begin{Proposition}{} Soient $f : U \rightarrow \mathbb{R}$ et $g :  U \rightarrow \mathbb{R}$ deux fonctions de classe $\mathcal{C}^1$ et $\lambda \in \mathbb{R}$. Alors $\lambda f+g$ est de classe $\mathcal{C}^1$ sur $U$ et pour tout $a \in U$,
 $$ \textrm{d}(\lambda f + g)(a) = \lambda \textrm{d}f(a)+\textrm{d}g(a)$$
 et en particulier :
-$$ \forall i \in \Interv{1}{p}, \; \dfrac{\partial (\lambda f +g)}{\partial x_i}(a) = \lambda \dfrac{\partial f}{\partial x_i}(a) +  \dfrac{\partial g}{\partial x_i}(a)$$
-\end{prop}
+$$ \forall i \in \ii{1}{p}, \; \dfrac{\partial (\lambda f +g)}{\partial x_i}(a) = \lambda \dfrac{\partial f}{\partial x_i}(a) +  \dfrac{\partial g}{\partial x_i}(a)$$
+\end{Proposition}
 
-\begin{rem} En particulier, l'ensemble $\mathcal{C}^1(U, \mathbb{R})$ est un $\mathbb{R}$-espace vectoriel.
-\end{rem}
+\begin{Remarque}{} En particulier, l'ensemble $\mathcal{C}^1(U, \mathbb{R})$ est un $\mathbb{R}$-espace vectoriel.
+\end{Remarque}
 
-\begin{prop} Soient $f : U \rightarrow \mathbb{R}$ et $g :  U \rightarrow \mathbb{R}$ deux fonctions de classe $\mathcal{C}^1$. Alors $fg$ est de classe $\mathcal{C}^1$ sur $U$ et pour tout $a \in U$,
+\begin{Proposition}{} Soient $f : U \rightarrow \mathbb{R}$ et $g :  U \rightarrow \mathbb{R}$ deux fonctions de classe $\mathcal{C}^1$. Alors $fg$ est de classe $\mathcal{C}^1$ sur $U$ et pour tout $a \in U$,
 $$ \textrm{d}(fg)(a) =\textrm{d}f(a)g(a) + f(a) \textrm{d}g(a)$$
 et en particulier :
-$$ \forall i \in \Interv{1}{p}, \; \dfrac{\partial (fg)}{\partial x_i}(a) = \dfrac{\partial f}{\partial x_i}(a) g(a) +f(a)  \dfrac{\partial g}{\partial x_i}(a)$$
-\end{prop}
+$$ \forall i \in \ii{1}{p}, \; \dfrac{\partial (fg)}{\partial x_i}(a) = \dfrac{\partial f}{\partial x_i}(a) g(a) +f(a)  \dfrac{\partial g}{\partial x_i}(a)$$
+\end{Proposition}
 
-\begin{prop} Soient $f : U \rightarrow \mathbb{R}^*$ une fonction de classe $\mathcal{C}^1$. Alors $\dfrac{1}{f}$ est de classe $\mathcal{C}^1$ sur $U$ et pour tout $a \in U$,
+\begin{Proposition}{} Soient $f : U \rightarrow \mathbb{R}^*$ une fonction de classe $\mathcal{C}^1$. Alors $\dfrac{1}{f}$ est de classe $\mathcal{C}^1$ sur $U$ et pour tout $a \in U$,
 $$\textrm{d}(1/f)(a) = - \dfrac{1}{f(a)^2} \textrm{d}f(a)$$
 et en particulier :
-$$ \forall i \in \Interv{1}{p}, \; \dfrac{\partial (1/f)}{\partial x_i}(a) = - \dfrac{1}{f(a)^2} \dfrac{\partial f }{\partial x_i}(a)$$
-\end{prop}
+$$ \forall i \in \ii{1}{p}, \; \dfrac{\partial (1/f)}{\partial x_i}(a) = - \dfrac{1}{f(a)^2} \dfrac{\partial f }{\partial x_i}(a)$$
+\end{Proposition}
 
 
 
 \section{Règle de la chaîne}
 \subsection{Propriété et conséquences}
-\begin{thm}[Règle de la chaîne] Soient $I$ un intervalle de $\mathbb{R}$ et $x_1$, $x_2$, $\ldots$, $x_p$ des fonctions de classe $\mathcal{C}^1$ sur $I$ et à valeurs dans $\mathbb{R}$. Soit $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$. On suppose que pour tout $t \in I$,
+\begin{Theoreme}{Règle de la chaîne} Soient $I$ un intervalle de $\mathbb{R}$ et $x_1$, $x_2$, $\ldots$, $x_p$ des fonctions de classe $\mathcal{C}^1$ sur $I$ et à valeurs dans $\mathbb{R}$. Soit $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$. On suppose que pour tout $t \in I$,
 $$ (x_1(t), \ldots, x_p(t)) \in U$$
 Alors la fonction $g : I \rightarrow \mathbb{R}$ définie pour tout $t \in I$ par :
 $$ g(t)=f(x_1(t), \ldots, x_p(t))$$
 est définie et de classe $\mathcal{C}^1$ sur $I$ et pour tout $t \in I$,
 $$ g'(t) = \sum_{i=1}^p x_i'(t) \dfrac{\partial f}{\partial x_i}(x_1(t), \ldots, x_p(t))$$
-\end{thm}
+\end{Theoreme}
 
 \medskip
 
-\begin{att} $\dfrac{\partial f}{\partial x_i}$ est une notation pour la dérivée partielle par rapport à la $i$-ième variable et n'a rien à voir avec la fonction $x_i$.
-\end{att}
+\begin{Remarque}[\alerte]{} $\dfrac{\partial f}{\partial x_i}$ est une notation pour la dérivée partielle par rapport à la $i$-ième variable et n'a rien à voir avec la fonction $x_i$.
+\end{Remarque}
 
 \medskip
 
-\begin{ex} Soient $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $r \in \mathbb{R}$. On suppose que $f$ est homogène de degré $r$, c'est-à-dire :
+\begin{Exemple}{} Soient $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $r \in \mathbb{R}$. On suppose que $f$ est homogène de degré $r$, c'est-à-dire :
 $$ \forall (x,y) \in \mathbb{R}^2, \; \forall t >0, \; f(tx,ty) = t^r f(x,y)$$
 Montrons que pour tout $(x,y) \in \mathbb{R}^2$,
 $$ x \dfrac{\partial f}{\partial x}(x,y) + y \dfrac{\partial f}{\partial y}(x,y) =r f(x,y)$$
 
 \vspace{5cm}
-\end{ex}
+\end{Exemple}
 
 
 \newpage
 
-\begin{rem} La formule précédente s'écrit :
+\begin{Remarque}{} La formule précédente s'écrit :
 $$ \forall t \in I, \; g'(t) =\textrm{d}f(\gamma(t)) \cdot \gamma'(t)$$
-où $\gamma =(x_1, \ldots, x_p)$. La fonction $g'$ représente la \textit{dérivée de $f$ le long de l'arc} $(I, \gamma)$.
-\end{rem}
+où $\gamma =(x_1, \ldots, x_p)$. La fonction $g'$ représente la \emph{dérivée de $f$ le long de l'arc} $(I, \gamma)$.
+\end{Remarque}
 
 \medskip
 
-\noindent On s'intéresse maintenant à la situation suivante : 
+On s'intéresse maintenant à la situation suivante : 
 
 $$ \begin{array}{ccccccc}
 V \subset \mathbb{R}^2 & \overset{(x,y)}{\rightarrow} & U \subset \mathbb{R}^2 & \overset{f}{\rightarrow} & \mathbb{R} \\
 (u,v) & \mapsto & (x(u,v),y(u,v)) & \mapsto & f(x(u,v),y(u,v)) \\
 \end{array}$$
 
-\begin{prop} Soient $V$ un ouvert de $\mathbb{R}^2$, $x$ et $y$ deux fonctions de classe $\mathcal{C}^1$ sur $V$ et à valeurs réelles. Soient $U$ un ouvert de $\mathbb{R}^2$ et $f : U \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ sur $U$. On suppose que pour tout $(u,v) \in V$,
+\begin{Proposition}{} Soient $V$ un ouvert de $\mathbb{R}^2$, $x$ et $y$ deux fonctions de classe $\mathcal{C}^1$ sur $V$ et à valeurs réelles. Soient $U$ un ouvert de $\mathbb{R}^2$ et $f : U \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ sur $U$. On suppose que pour tout $(u,v) \in V$,
 $$ (x(u,v),y(u,v)) \in U$$
 Alors la fonction $g : V \rightarrow \mathbb{R}$ définie pour tout $(u,v) \in V$ par 
 $$ g(u,v) = f(x(u,v),y(u,v))$$
@@ -236,17 +240,17 @@ est de classe $\mathcal{C}^1$ sur $V$ et pour tout $(u,v) \in V$,
 \dfrac{\partial g}{\partial u} (u,v) = \dfrac{\partial f}{\partial x}(x(u,v),y(u,v)) \dfrac{\partial x}{\partial u}(u,v) + \dfrac{\partial f}{\partial y}(x(u,v),y(u,v)) \dfrac{\partial y}{\partial u}(u,v) \\
 \dfrac{\partial g}{\partial v} (u,v) = \dfrac{\partial f}{\partial x}(x(u,v),y(u,v)) \dfrac{\partial x}{\partial v}(u,v) + \dfrac{\partial f}{\partial y}(x(u,v),y(u,v)) \dfrac{\partial y}{\partial v}(u,v) \\
 \end{align*}
-\end{prop}
+\end{Proposition}
 
-\noindent \textbf{Exemple fondamental : passage en coordonnées polaires.}
+\textbf{Exemple fondamental : passage en coordonnées polaires.}
 
-\noindent Soit $(x,y) \in \mathbb{R}^2$. Il existe alors $r \in \mathbb{R}_+$ et $\theta \in \mathbb{R}$ tels que :
+Soit $(x,y) \in \mathbb{R}^2$. Il existe alors $r \in \mathbb{R}_+$ et $\theta \in \mathbb{R}$ tels que :
 $$ (x,y) = (r \cos(\theta), r \sin(\theta))$$
-On appelle $r$ et $\theta$ les \textit{coordonnées polaires} de $(x,y)$. Il n'y a évidemment pas unicité de ces coordonnées : Si $(x,y)=(0,0)$, $r=0$ et tout réel $\theta$ convient et si $(x,y)$ est différent de $(0,0)$, $\theta$ est \og défini \fg modulo $2\pi$. 
+On appelle $r$ et $\theta$ les \emph{coordonnées polaires} de $(x,y)$. Il n'y a évidemment pas unicité de ces coordonnées : Si $(x,y)=(0,0)$, $r=0$ et tout réel $\theta$ convient et si $(x,y)$ est différent de $(0,0)$, $\theta$ est \og défini \fg modulo $2\pi$. 
 
 \medskip
 
-\noindent Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$. On pose pour tout $(r, \theta) \in \mathbb{R}^2$,
+Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$. On pose pour tout $(r, \theta) \in \mathbb{R}^2$,
 $$ g(r, \theta)= f(r \cos(\theta), r \sin(\theta))$$
 Justifions que $g$ est $\mathcal{C}^1$ sur $\mathbb{R}^2$ et déterminons ses dérivées partielles.
 
@@ -256,47 +260,47 @@ Justifions que $g$ est $\mathcal{C}^1$ sur $\mathbb{R}^2$ et déterminons ses d�
 
 \subsection{Fonctions constantes}
 
-\begin{prop} Soit $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ sur $U$ un ouvert \textit{convexe}. Alors $f$ est constante si et seulement si pour tout $i \in \Interv{1}{p}$, $\dfrac{\partial f}{\partial x_i}=0$.
-\end{prop}
+\begin{Proposition}{} Soit $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ sur $U$ un ouvert \emph{convexe}. Alors $f$ est constante si et seulement si pour tout $i \in \ii{1}{p}$, $\dfrac{\partial f}{\partial x_i}=0$.
+\end{Proposition}
 
-\begin{prop} Soit $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ sur $U$ un ouvert \textit{convexe} avec $p \geq 2$. Supposons que :
+\begin{Proposition}{} Soit $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ sur $U$ un ouvert \emph{convexe} avec $p \geq 2$. Supposons que :
 $$ \dfrac{\partial f }{\partial x_1} = 0$$
 Alors la fonction $f$ ne \og dépend pas \fg{} de sa première variable : il existe un ouvert convexe $Z$ de $\mathbb{R}^{p-1}$ et une fonction $g : Z \rightarrow \mathbb{R}$ tel que pour tout $(x_1, \ldots, x_p) \in U$, $(x_2, \ldots,x_p) \in Z$ et 
 $$f(x_1, \ldots, x_p) = g(x_2, \ldots, x_p) $$
-\end{prop}
+\end{Proposition}
 
-\begin{rem} On généralise évidemment aux autres variables.
-\end{rem}
+\begin{Remarque}{} On généralise évidemment aux autres variables.
+\end{Remarque}
 
 \section{Problèmes d'extrema}
-\noindent Dans toute cette section, on considère une fonction $f : U \rightarrow \mathbb{R}$ où $U$ est un ouvert de $\mathbb{R}^p$.
+Dans toute cette section, on considère une fonction $f : U \rightarrow \mathbb{R}$ où $U$ est un ouvert de $\mathbb{R}^p$.
 
-\begin{defin} Soit $a \in U$.
+\begin{Definition}{} Soit $a \in U$.
 \begin{itemize}
-\item On dit que $f$ admet un \textit{minimum local} en $a$ si et il existe $r >0$ tel que $B(a,r) \subset U$ et tel que pour tout $x \in B(a,r)$, $f(x) \geq f(a)$.
-\item On dit que $f$ admet un \textit{minimum global} en $a$ si pour tout $x \in U$, $f(x) \geq f(a)$.
+\item On dit que $f$ admet un \emph{minimum local} en $a$ si et il existe $r >0$ tel que $B(a,r) \subset U$ et tel que pour tout $x \in B(a,r)$, $f(x) \geq f(a)$.
+\item On dit que $f$ admet un \emph{minimum global} en $a$ si pour tout $x \in U$, $f(x) \geq f(a)$.
 \end{itemize}
-\end{defin}
+\end{Definition}
 
-\begin{rem} On définit de même la notion de maximum local et maximum global.
-\end{rem}
+\begin{Remarque}{} On définit de même la notion de maximum local et maximum global.
+\end{Remarque}
 
-\begin{defin}
-Soient $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $a \in U$. On dit que $a$ est un \textit{point critique} de $f$ si $\nabla f (a)$ est le vecteur nul, c'est-à-dire :
-$$ \forall i \in \Interv{1}{p}, \; \dfrac{\partial f}{\partial x_i}(a)= 0 $$
-\end{defin}
+\begin{Definition}{}
+Soient $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $a \in U$. On dit que $a$ est un \emph{point critique} de $f$ si $\nabla f (a)$ est le vecteur nul, c'est-à-dire :
+$$ \forall i \in \ii{1}{p}, \; \dfrac{\partial f}{\partial x_i}(a)= 0 $$
+\end{Definition}
 
-\begin{prop}
+\begin{Proposition}{}
 Si $f : U \rightarrow \mathbb{R}$ est de classe $\mathcal{C}^1$ sur $U$ et admet un extremum local en $a \in U$ alors $a$ est un point critique de $f$.
-\end{prop}
+\end{Proposition}
 
-\begin{preuve}
+\begin{Demonstration}{}
 
 \vspace{5cm}
-\end{preuve}
+\end{Demonstration}
 
-\newpage
-\begin{rem}
+
+\begin{Remarque}{}
 Attention c'est une condition nécessaire ! Considérons par exemple :
 $$ \begin{array}{cccll}
 f& : & \mathbb{R} & \rightarrow & \mathbb{R} \\
@@ -304,7 +308,7 @@ f& : & \mathbb{R} & \rightarrow & \mathbb{R} \\
 \end{array}$$
 
 \vspace{5cm}
-\end{rem}
+\end{Remarque}
 
 \medskip
 
@@ -321,7 +325,7 @@ f& : & \mathbb{R} & \rightarrow & \mathbb{R} \\
 
 \medskip
 
-\begin{ex} Justifions l'existence et déterminons le maximum de la fonction $f$ définie sur l'ensemble $K=\lbrace (x,y) \in \mathbb{R}^2  \, \vert \, x \geq 0, \,  y \geq 0 \hbox{ et } x+y \leq 1\rbrace$ par : 
+\begin{Exemple}{} Justifions l'existence et déterminons le maximum de la fonction $f$ définie sur l'ensemble $K=\lbrace (x,y) \in \mathbb{R}^2  \, \vert \, x \geq 0, \,  y \geq 0 \hbox{ et } x+y \leq 1\rbrace$ par : 
   \[
   f(x,y) = xy(1-x-y)
   \]
@@ -336,98 +340,100 @@ f& : & \mathbb{R} & \rightarrow & \mathbb{R} \\
 %  \]
   
   \vspace{10cm}
-\end{ex}
+\end{Exemple}
 
-\newpage
 
 \section{Dérivées partielles d'ordre deux}
 
-\begin{defin} Soit $f : U \rightarrow \mathbb{R}$ une fonction. On dit que $f$ est de classe $\mathcal{C}^2$ sur $U$ si $f$ est de classe $\mathcal{C}^1$ sur $U$ et si les dérivées partielles de $f$ sont $\mathcal{C}^1$ sur $U$.
-\end{defin}
+\begin{Definition}{} Soit $f : U \rightarrow \mathbb{R}$ une fonction. On dit que $f$ est de classe $\mathcal{C}^2$ sur $U$ si $f$ est de classe $\mathcal{C}^1$ sur $U$ et si les dérivées partielles de $f$ sont $\mathcal{C}^1$ sur $U$.
+\end{Definition}
 
-\noindent Pour tout $(i,j) \in \Interv{1}{p}^2$, $\dfrac{\partial f}{\partial x_i} \left( \dfrac{\partial f}{\partial x_j} \right)$ est généralement notée $\dis \dfrac{\partial^2 f}{\partial x_i \partial x_j}$ ou $\partial^2_{i,j} f$.
+Pour tout $(i,j) \in \ii{1}{p}^2$, $\dfrac{\partial f}{\partial x_i} \left( \dfrac{\partial f}{\partial x_j} \right)$ est généralement notée $\dfrac{\partial^2 f}{\partial x_i \partial x_j}$ ou $\partial^2_{i,j} f$.
 
-\noindent De plus si $i=j$, on écrit $\dfrac{\partial^2 f}{\partial x_i^2}$ au lieu de $\dis \dfrac{\partial^2 f}{\partial x_i \partial x_i}\cdot$
+De plus si $i=j$, on écrit $\dfrac{\partial^2 f}{\partial x_i^2}$ au lieu de $\dfrac{\partial^2 f}{\partial x_i \partial x_i}\cdot$
 
 \medskip
 
 
-\begin{rem} Les résultats concernant les opérations sur les fonctions de classe $\mathcal{C}^1$, les propriétés des fonctions polynômiales, applications linéaires, fractions rationnelles, se généralisent aux fonctions de classes $\mathcal{C}^2$.
-\end{rem}
+\begin{Remarque}{} Les résultats concernant les opérations sur les fonctions de classe $\mathcal{C}^1$, les propriétés des fonctions polynomiales, applications linéaires, fractions rationnelles, se généralisent aux fonctions de classes $\mathcal{C}^2$.
+\end{Remarque}
 
-\begin{thm}[Schwarz]
-Si $f$ est de classe $\mathcal{C}^2$ sur $U$ alors pour tout $(i,j) \in \Interv{1}{p}^2$,
+\begin{Theoreme}{Schwarz}
+Si $f$ est de classe $\mathcal{C}^2$ sur $U$ alors pour tout $(i,j) \in \ii{1}{p}^2$,
 $$ \dfrac{\partial^2 f}{\partial x_i \partial x_j} = \dfrac{\partial^2 f}{\partial x_j \partial x_i}$$
-\end{thm}
+\end{Theoreme}
 
-\begin{ex} Soit :
+\begin{Exemple}{} Soit :
 $$\begin{array}{cccll}
 f& : & \mathbb{R} & \rightarrow & \mathbb{R} \\
 & & (x,y) & \mapsto & x^2+y^3-4xy 
 \end{array}$$
 
 \vspace{5cm}
-\end{ex}
+\end{Exemple}
 
 \section{Courbes et surfaces}
-\noindent Dans le chapitre lié aux arcs paramétrés, nous avons étudié les arcs paramétrés plans de la forme $(x,y)$. Nous allons maintenant donner des résultats concernant des courbes ou des surfaces définies par une équation cartésienne de la forme $f(x,y)=0$ ou $f(x,y,z)=0$ où $f$ est une fonction définie sur un ouvert de $\mathbb{R}^2$ ou $\mathbb{R}^3$ à valeurs dans $\mathbb{R}$.
+Dans le chapitre lié aux arcs paramétrés, nous avons étudié les arcs paramétrés plans de la forme $(x,y)$. Nous allons maintenant donner des résultats concernant des courbes ou des surfaces définies par une équation cartésienne de la forme $f(x,y)=0$ ou $f(x,y,z)=0$ où $f$ est une fonction définie sur un ouvert de $\mathbb{R}^2$ ou $\mathbb{R}^3$ à valeurs dans $\mathbb{R}$.
 
 \medskip
 
-\noindent Dans cette section, on considère $\mathbb{R}^2$ ou $\mathbb{R}^3$ muni du produit scalaire usuel.
+Dans cette section, on considère $\mathbb{R}^2$ ou $\mathbb{R}^3$ muni du produit scalaire usuel.
 
 \subsection{Courbes définies par une équation cartésienne}
 \medskip
 
-\noindent On appelle courbe du plan \textit{définie par une équation cartésienne} tout ensemble $\mathcal{C}$ de $\mathbb{R}^2$ défini par :
+On appelle courbe du plan \emph{définie par une équation cartésienne} tout ensemble $\mathcal{C}$ de $\mathbb{R}^2$ défini par :
 $$ \mathcal{C} = \lbrace (x,y) \in U \, \vert \, f(x,y)=0 \rbrace$$
 où $f : U \rightarrow \mathbb{R}$ est une fonction de classe $\mathcal{C}^1$ définie sur un ouvert $U$ de $\mathbb{R}^2$.
 
 \medskip
 
-\begin{exems}
+\begin{Exemples}{}
+\begin{enumerate}
 \item Considérons $\mathcal{C}$ le cercle unité de $\mathbb{R}^2$.
 
 \vspace{5cm}
 \item Soit $g : I \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ sur un intervalle non vide $I$ de $\mathbb{R}$.
 
 \vspace{5cm}
-\end{exems}
+\end{enumerate}
+\end{Exemples}
 
-\begin{defin} Soit $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $\mathcal{C}$ la courbe définie par :
+\begin{Definition}{} Soit $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $\mathcal{C}$ la courbe définie par :
 $$ \mathcal{C} = \lbrace (x,y) \in U \, \vert \, f(x,y)=0 \rbrace$$
-\noindent On appelle \textit{point régulier} de $\mathcal{C}$ tout point $(x_0,y_0) \in \mathcal{C}$ tel que :
+On appelle \emph{point régulier} de $\mathcal{C}$ tout point $(x_0,y_0) \in \mathcal{C}$ tel que :
 $$ \nabla f(x_0,y_0) \neq (0,0)$$
-\end{defin}
-\noindent Ainsi, un point régulier de $\mathcal{C}$ est un point de cette courbe qui n'est pas un point critique de $f$.
+\end{Definition}
 
-\begin{thm} Gardons les notations de la définition précédente. Soit $(x_0,y_0)$ un point régulier de $\mathcal{C}$. Alors il existe $r>0$, $\eta>0$ et $\gamma : ]- \eta, \eta[ \rightarrow U$ de classe $\mathcal{C}^1$ tels que :
+Ainsi, un point régulier de $\mathcal{C}$ est un point de cette courbe qui n'est pas un point critique de $f$.
+
+\begin{Theoreme}{} Gardons les notations de la définition précédente. Soit $(x_0,y_0)$ un point régulier de $\mathcal{C}$. Alors il existe $r>0$, $\eta>0$ et $\gamma : ]- \eta, \eta[ \rightarrow U$ de classe $\mathcal{C}^1$ tels que :
 \begin{itemize}
 \item $\gamma(0)= (x_0,y_0)$.
 \item $(]-\eta,\eta[, \gamma)$ est un arc paramétré régulier où $\gamma$ est injective.
 \item Pour tout $(x,y) \in B((x_0,y_0),r)$, on a :
 $$ f(x,y)=0 \Longleftrightarrow \exists t \in ]- \eta, \eta[, \; (x,y)=\gamma(t)$$
 \end{itemize}
-On appelle $(]-\eta,\eta[, \gamma)$ un \textit{paramétrage local} de $\mathcal{C}$ au voisinage de $(x_0,y_0)$.
-\end{thm}
+On appelle $(]-\eta,\eta[, \gamma)$ un \emph{paramétrage local} de $\mathcal{C}$ au voisinage de $(x_0,y_0)$.
+\end{Theoreme}
 
 \medskip
 
-\noindent Autrement dit, au voisinage d'un point régulier, une courbe définie par une équation cartésienne (donc de manière implicite) peut être explicitée comme l'image d'un arc paramétré ($x$ et $y$ s'expriment en fonction du paramètre $t$).
+Autrement dit, au voisinage d'un point régulier, une courbe définie par une équation cartésienne (donc de manière implicite) peut être explicitée comme l'image d'un arc paramétré ($x$ et $y$ s'expriment en fonction du paramètre $t$).
 
 \medskip
 
-\begin{defip} Soit $f : U \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ sur $U$ et $\mathcal{C}$ la courbe de $\mathbb{R}^2$ définie par $f(x,y)=0$. Soit $(x_0,y_0)$ un point régulier de $\mathcal{C}$.
+\begin{TheoremeDefinition}{} Soit $f : U \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ sur $U$ et $\mathcal{C}$ la courbe de $\mathbb{R}^2$ définie par $f(x,y)=0$. Soit $(x_0,y_0)$ un point régulier de $\mathcal{C}$.
 \begin{itemize}
 \item La courbe $\mathcal{C}$ possède une tangente en $(x_0,y_0)$ d'équation :
 $$ \dfrac{\partial f}{\partial  x}(x_0,y_0)(x-x_0) + \dfrac{\partial f}{\partial y}(x_0,y_0) (y-y_0)=0$$
-\item On appelle \textit{normale} à $\mathcal{C}$ au point $(x_0,y_0)$ la droite passant par $(x_0,y_0)$ et dirigée par :
+\item On appelle \emph{normale} à $\mathcal{C}$ au point $(x_0,y_0)$ la droite passant par $(x_0,y_0)$ et dirigée par :
 $$ \nabla f(x_0,y_0) = \left(\dfrac{\partial f}{\partial  x}(x_0,y_0), \dfrac{\partial f}{\partial  y}(x_0,y_0) \right)$$
 On dit que $ \nabla f(x_0,y_0)$ est orthogonal à $\mathcal{C}$ au point $(x_0,y_0)$.
 \end{itemize}
-\end{defip}
+\end{TheoremeDefinition}{}
 
-%\noindent \textbf{Idée de la preuve}
+%\textbf{Idée de la preuve}
 %
 %\vspace{7cm}
 %
@@ -438,7 +444,7 @@ On dit que $ \nabla f(x_0,y_0)$ est orthogonal à $\mathcal{C}$ au point $(x_0,y
 %
 %\vspace{4cm}
 
-\begin{ex} Soit $\mathcal{C}$ la courbe d'équation :
+\begin{Exemple}{} Soit $\mathcal{C}$ la courbe d'équation :
 $$ x^3+3y^2+6xy+4=0$$
 Déterminons les points réguliers de $\mathcal{C}$ et l'équation de la tangente à $\mathcal{C}$ en ces points.
 
@@ -446,10 +452,10 @@ Déterminons les points réguliers de $\mathcal{C}$ et l'équation de la tangent
 
 $\phantom{}$
 \vspace{10cm}
-\end{ex}
+\end{Exemple}
 
-\begin{defin} Soient $f : U \rightarrow \mathbb{R}$ et $\lambda \in \mathbb{R}$. On appelle \textit{ligne de niveau} $\lambda$ de $f$ le sous-ensemble de $U$ d'équation $f(x,y)=\lambda$.
-\end{defin}
+\begin{Definition}{} Soient $f : U \rightarrow \mathbb{R}$ et $\lambda \in \mathbb{R}$. On appelle \emph{ligne de niveau} $\lambda$ de $f$ le sous-ensemble de $U$ d'équation $f(x,y)=\lambda$.
+\end{Definition}
 
 \begin{center}
 \textbf{Exemples de lignes de niveaux : $z=f(x,y)$}
@@ -459,49 +465,52 @@ $\phantom{}$
 \includegraphics[scale=0.5]{niv}
 \end{center}
 
-\begin{prop} Soient $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $\lambda \in \mathbb{R}$.
+\begin{Proposition}{} Soient $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $\lambda \in \mathbb{R}$.
 
-\noindent Soit $(x_0,y_0)$ un point régulier de la ligne de niveau $\lambda$ de $f$, c'est-à-dire : $f(x_0,y_0)=\lambda$ et $\nabla f (x_0,y_0) \neq (0,0)$. Alors $\nabla  f (x_0,y_0)$ est orthogonal  à la ligne de niveau $\lambda$ de $f$ et orienté dans le sens des valeurs croissantes de $f$ : il existe $\delta >0$ tel que 
+Soit $(x_0,y_0)$ un point régulier de la ligne de niveau $\lambda$ de $f$, c'est-à-dire : $f(x_0,y_0)=\lambda$ et $\nabla f (x_0,y_0) \neq (0,0)$. Alors $\nabla  f (x_0,y_0)$ est orthogonal  à la ligne de niveau $\lambda$ de $f$ et orienté dans le sens des valeurs croissantes de $f$ : il existe $\delta >0$ tel que 
 $$ t \mapsto f((x_0,y_0) + t \nabla  f (x_0,y_0))$$
 soit strictement croissante sur $]-\delta, \delta[$.
-\end{prop}
+\end{Proposition}
 
-\begin{ex} Étudions les lignes de niveaux de $f : (x,y) \mapsto x^2+y^2$.
+\begin{Exemple}{} Étudions les lignes de niveaux de $f : (x,y) \mapsto x^2+y^2$.
 
 \vspace{6cm}
-\end{ex}
+\end{Exemple}
 
 
 
 \subsection{Surfaces définies par une équation cartésienne}
 \medskip
 
-\noindent On appelle surface de l'espace \textit{définie par une équation cartésienne} tout ensemble $\mathcal{S}$ de $\mathbb{R}^3$ défini par :
+On appelle surface de l'espace \emph{définie par une équation cartésienne} tout ensemble $\mathcal{S}$ de $\mathbb{R}^3$ défini par :
 $$ \mathcal{S} = \lbrace (x,y,z) \in U \, \vert \, f(x,y,z)=0 \rbrace$$
 où $f : S \rightarrow \mathbb{R}$ est une fonction de classe $\mathcal{C}^1$ définie sur un ouvert $U$ de $\mathbb{R}^3$.
 
 \medskip
 
-\begin{exems}
+\begin{Exemples}{}
+\begin{enumerate}
 \item Considérons $\mathcal{S}$ la sphère unité de $\mathbb{R}^3$.
 
 \vspace{5cm}
 \item Soit $g : Z \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ sur un ouvert $Z$ de $\mathbb{R}^2$. La surface représentative $\mathcal{S}_g$ de $g$ est définie par les triplets $(x,y,z)$ où $(x,y) \in Z$ et $z \in \mathbb{R}$ tels que $z=g(x,y)$. Cette égalité est équivalente à $f(x,y,z) =0$ où :
 $$ f : (x,y,z) \mapsto z-g(x,y) $$
-\end{exems}
+\end{enumerate}
+\end{Exemples}
 
-\begin{defin} Soient $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $\mathcal{S}$ la surface définie par :
+\begin{Definition}{} Soient $f : U \rightarrow \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ et $\mathcal{S}$ la surface définie par :
 $$ \mathcal{S} = \lbrace (x,y,z) \in U \, \vert \, f(x,y,z)=0 \rbrace$$
-\noindent On appelle \textit{point régulier} de $\mathcal{C}$ tout point $(x_0,y_0,z_0) \in \mathcal{S}$ tel que :
+On appelle \emph{point régulier} de $\mathcal{C}$ tout point $(x_0,y_0,z_0) \in \mathcal{S}$ tel que :
 $$ \nabla f(x_0,y_0,z_0) \neq (0,0,0)$$
-\end{defin}
-\noindent Ainsi, un point régulier de $\mathcal{S}$ est un point de cette surface qui n'est pas un point critique de $f$.
+\end{Definition}
 
-\begin{defin} Soient $f : U \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ sur $U$ et $\mathcal{S}$ la surface de $\mathbb{R}^3$ définie par $f(x,y,z)=0$. Soit $(x_0,y_0,z_0)$ un point régulier de $\mathcal{S}$.
+Ainsi, un point régulier de $\mathcal{S}$ est un point de cette surface qui n'est pas un point critique de $f$.
 
-\noindent On appelle \textit{plan tangent} à $\mathcal{S}$ en $(x_0,y_0,z_0)$ le plan orthogonal à $\nabla f(x_0,y_0,z_0)$ et passant par $(x_0,y_0,z_0)$. C'est donc le plan d'équation :
+\begin{Definition}{} Soient $f : U \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ sur $U$ et $\mathcal{S}$ la surface de $\mathbb{R}^3$ définie par $f(x,y,z)=0$. Soit $(x_0,y_0,z_0)$ un point régulier de $\mathcal{S}$.
+
+On appelle \emph{plan tangent} à $\mathcal{S}$ en $(x_0,y_0,z_0)$ le plan orthogonal à $\nabla f(x_0,y_0,z_0)$ et passant par $(x_0,y_0,z_0)$. C'est donc le plan d'équation :
 $$ \dfrac{\partial f}{\partial x}(x_0,y_0,z_0) (x-x_0) +  \dfrac{\partial f}{\partial y}(x_0,y_0,z_0) (y-y_0) +  \dfrac{\partial f}{\partial z}(x_0,y_0,z_0) (z-z_0) = 0$$
-\end{defin}
+\end{Definition}
 
 \medskip
 
@@ -513,31 +522,31 @@ $$ \dfrac{\partial f}{\partial x}(x_0,y_0,z_0) (x-x_0) +  \dfrac{\partial f}{\pa
 \includegraphics[scale=1]{tan}
 \end{center}
 
-\begin{defin} Soient $f : U \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ et $\mathcal{S}$ la surface définie par $f(x,y,z)=0$. On appelle \textit{courbe tracée sur la surface} $\mathcal{S}$ tout arc paramétré $(I, \gamma)$ où $I$ est un intervalle non vide de $\mathbb{R}$ et $ \gamma =(x,y,z) : I \rightarrow \mathbb{R}^3$ vérifie :
+\begin{Definition}{} Soient $f : U \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ et $\mathcal{S}$ la surface définie par $f(x,y,z)=0$. On appelle \emph{courbe tracée sur la surface} $\mathcal{S}$ tout arc paramétré $(I, \gamma)$ où $I$ est un intervalle non vide de $\mathbb{R}$ et $ \gamma =(x,y,z) : I \rightarrow \mathbb{R}^3$ vérifie :
 $$ \forall t \in I, \; (x(t),y(t),z(t)) \in \mathcal{S}$$
-\end{defin}
+\end{Definition}
 
-\begin{prop} Soit $\Gamma$ le support d'une courbe tracée $(I, \gamma)$ sur la surface $\mathcal{S}$ d'équation $f(x,y,z)=0$ où $f : U \rightarrow \mathbb{R}$ est de classe $\mathcal{C}^1$.  Soit $(x_0,y_0,z_0)= \gamma(t_0)  \in \mathcal{S}$ un point régulier de $\mathcal{S}$ et un point régulier de $\Gamma$. Alors la tangente à $\Gamma$ en $\gamma(t_0)$ est contenue dans le plan tangent à $\mathcal{S}$ en $(x_0,y_0,z_0)$.
-\end{prop}
+\begin{Proposition}{} Soit $\Gamma$ le support d'une courbe tracée $(I, \gamma)$ sur la surface $\mathcal{S}$ d'équation $f(x,y,z)=0$ où $f : U \rightarrow \mathbb{R}$ est de classe $\mathcal{C}^1$.  Soit $(x_0,y_0,z_0)= \gamma(t_0)  \in \mathcal{S}$ un point régulier de $\mathcal{S}$ et un point régulier de $\Gamma$. Alors la tangente à $\Gamma$ en $\gamma(t_0)$ est contenue dans le plan tangent à $\mathcal{S}$ en $(x_0,y_0,z_0)$.
+\end{Proposition}
 
-%\begin{preuve}
+%\begin{Demonstration}{}
 %
 %\vspace{7cm}
-%\end{preuve}
+%\end{Demonstration}
 
 
 
 \section{Exemples de résolution d'équations aux dérivées partielles}
-\noindent Dans de nombreux domaines scientifiques, la résolution des équations aux dérivées partielles est primordiale. Si $f : U \rightarrow \mathbb{R}$ est solution d'une équation aux dérivées partielles, il est parfois possible d'utiliser un changement de variable pour déterminer explicitement celle-ci. On souhaite écrire $f(x)$, où $x \in U$, sous la forme :
+Dans de nombreux domaines scientifiques, la résolution des équations aux dérivées partielles est primordiale. Si $f : U \rightarrow \mathbb{R}$ est solution d'une équation aux dérivées partielles, il est parfois possible d'utiliser un changement de variable pour déterminer explicitement celle-ci. On souhaite écrire $f(x)$, où $x \in U$, sous la forme :
 $$ f(x) = g(\varphi(x)) = g(\varphi_1(x), \ldots, \varphi_p(x))$$
 où $\varphi= (\varphi_1, \ldots, \varphi_p)$ est une fonction bijective de $U$ sur un ouvert $V$ de $\mathbb{R}^p$. Dans ce cas, $g = f \circ \varphi^{-1}$. 
 
 \medskip
 
-\noindent L'idée est d'obtenir une équation aux dérivées partielles plus simple vérifiée par $g$ en \og injectant \fg $f= g \circ \varphi^{-1}$ dans l'équation de départ. Évidemment, il est important de vérifier que les fonctions manipulées sont de classe $\mathcal{C}^1$...
+L'idée est d'obtenir une équation aux dérivées partielles plus simple vérifiée par $g$ en \og injectant \fg $f= g \circ \varphi^{-1}$ dans l'équation de départ. Évidemment, il est important de vérifier que les fonctions manipulées sont de classe $\mathcal{C}^1$...
 
 \subsection{Équations aux dérivées partielles de base}
-\noindent Soit $f$, $g$ et $\varphi$ définies comme précédemment (on suppose ces fonctions de classe $\mathcal{C}^1$ sur leurs ensembles de définition). On note $y_1$ et $y_2$ les variables de la fonction $g$ (on se restreint à ce cas pour l'exemple).
+Soit $f$, $g$ et $\varphi$ définies comme précédemment (on suppose ces fonctions de classe $\mathcal{C}^1$ sur leurs ensembles de définition). On note $y_1$ et $y_2$ les variables de la fonction $g$ (on se restreint à ce cas pour l'exemple).
 
 \begin{itemize}
 \item Si $\dfrac{\partial g}{\partial y_1} =0$ sur $V$ et si $V$ est convexe alors $g$ ne dépend pas de sa première variable : il existe une fonction $F$ définie sur un intervalle ouvert $I$ de $\mathbb{R}$ tel que pour tout $(y_1,y_2) \in V$, $y_2 \in I$ et $g(y_1,y_2)=F(y_2)$. La réciproque est claire.
@@ -550,9 +559,9 @@ où $F$ et $G$ sont de classe $\mathcal{C}^2$ sur des intervalles ouverts de $\m
 
 \medskip
 
-\noindent Dès que $g$ est connue, on obtient $f$...
+Dès que $g$ est connue, on obtient $f$...
 \subsection{Exemple 1 : transformation affine}
-\noindent Résoudre sur $\mathbb{R}^2$ l'équation au dérivées partielles suivante :
+Résoudre sur $\mathbb{R}^2$ l'équation au dérivées partielles suivante :
 $$ \dfrac{\partial f}{\partial x}(x,y) - 3 \dfrac{\partial f}{\partial y}(x,y) = 0$$
 en utilisant le changement de variable suivant :
 $$ \left\lbrace \begin{array}{ccl}
@@ -567,11 +576,11 @@ $\phantom{}$
 
 
 \subsection{Une remarque sur les coordonnées polaires}
-\noindent Fixons $\alpha \in [-\pi,\pi[$. Et considérons l'ensemble $U$ du plan défini comme $\mathbb{R}^2 \setminus D$ où $D$ est la demi-droite formée des points $(x,y)$, dont l'argument de $x+iy$ est égal à $\alpha$, et du point $(0,0)$. Ce qui donne :
+Fixons $\alpha \in [-\pi,\pi[$. Et considérons l'ensemble $U$ du plan défini comme $\mathbb{R}^2 \setminus D$ où $D$ est la demi-droite formée des points $(x,y)$, dont l'argument de $x+iy$ est égal à $\alpha$, et du point $(0,0)$. Ce qui donne :
 
 \vspace{3cm}
 
-\noindent Dans ce cas, l'application :
+Dans ce cas, l'application :
 $$ \begin{array}{cccll}
 \Phi & : & \mathbb{R}_+^{*} \times ]\alpha, \alpha + 2 \pi[ & \rightarrow & U \\
 & & (r, \theta) & \mapsto & (r \cos(\theta), r \sin(\theta)) \\
@@ -581,7 +590,7 @@ $$ (x,y) = \Phi(r ,\theta)$$ implique que $r= \sqrt{x^2+y^2}$ et
 $$ \cos(\theta) = \dfrac{x}{\sqrt{x^2+y^2}} \hbox{ et } \sin(\theta) = \dfrac{y}{\sqrt{x^2+y^2}} $$
 
 \subsection{Exemple 2 : coordonnées polaires}
-\noindent Soit $\mathcal{U} = \mathbb{R}_+^{*} \times \mathbb{R}$. Déterminons toutes les fonctions $f : \mathcal{U} \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ telles pour tout $(x,y) \in \mathcal{U}$, $\nabla f (x,y)$ soit colinéaire à $(x,y)$.
+Soit $\mathcal{U} = \mathbb{R}_+^{*} \times \mathbb{R}$. Déterminons toutes les fonctions $f : \mathcal{U} \rightarrow \mathbb{R}$ de classe $\mathcal{C}^1$ telles pour tout $(x,y) \in \mathcal{U}$, $\nabla f (x,y)$ soit colinéaire à $(x,y)$.
 \newpage
 
 $\phantom{test}$
@@ -590,27 +599,27 @@ $\phantom{test}$
 
 \section{Compléments (sur les fonctions vectorielles)}
 
-\begin{prop}[Composition par une application linéaire]
+\begin{Proposition}{Composition par une application linéaire}
 Soient $p \in \mathbb{N}^*$ et $L : \mathbb{R}^n \rightarrow \mathbb{R}^p$ une application linéaire. Si $f : I \rightarrow \mathbb{R}^n$ est dérivable en $a \in I$ alors $L \circ f : I \rightarrow \mathbb{R}^p$ est dérivable en $a$ et on a :
 $$ (L \circ f)'(a) = L (f'(a))$$
-\end{prop}
+\end{Proposition}
 
-\begin{preuve} Pour tout $x \in I$, $x \neq a$, on a :
+\begin{Demonstration}{} Pour tout $x \in I$, $x \neq a$, on a :
 $$ \dfrac{(L \circ f)(x) - (L \circ f)(a) }{x-a} = L \left( \frac{f(x)-f(a)}{x-a} \right)$$
 par linéarité de $L$. Or $f$ est dérivable en $a$ donc :
 $$ \frac{f(x)-f(a)}{x-a} \underset{x \rightarrow a}{\longrightarrow} f'(a)$$
 Sachant que $L$ est une application linéaire sur un espace vectoriel de dimension finie, $L$ est donc continue sur $\mathbb{R}^n$ et donc en particulier en $f'(a)$. Ainsi :
 $$ L \left( \frac{f(x)-f(a)}{x-a} \right) \underset{x \rightarrow a}{\longrightarrow} L(f'(a))$$
 ce qui donne le résultat.
-\end{preuve}
+\end{Demonstration}
 
 
-\begin{prop}[Composition par une application bilinéaire]
+\begin{Proposition}{Composition par une application bilinéaire}
 Soient $(m,p) \in (\mathbb{N}^*)^2$ et $B : \mathbb{R}^n \times \mathbb{R}^m \rightarrow \mathbb{R}^p$ une application bilinéaire. Si $f : I \rightarrow \mathbb{R}^n$ et $g : I \rightarrow \mathbb{R}^m$ sont dérivables en $a \in I$ alors $B(f,g):  I \rightarrow \mathbb{R}^p$ est dérivable en $a$ et on a :
 $$ B(f,g)'(a)= B(f'(a),g(a))+B(f(a),g'(a))$$
-\end{prop}
+\end{Proposition}
 
-\begin{preuve}
+\begin{Demonstration}{}
 Pour tout $x \in I$, $x \neq a$, on a par bilinéarité de $B$ :
 
 \begin{align*}
@@ -622,53 +631,53 @@ $$ g(x) \underset{x \rightarrow a}{\longrightarrow} g(a), \; \frac{f(x)-f(a)}{x-
 De plus, $B$ est bilinéaire sur $\mathbb{R}^n \times \mathbb{R}^m$ donc continue sur cet espace donc :
 $$ \frac{B(f,g)(x)-B(f,g)(a)}{x-a}   \underset{x \rightarrow a}{\longrightarrow}  B(f'(a),g(a))+ B(f(a),g'(a))$$
 ce qui donne le résultat.
-\end{preuve}
+\end{Demonstration}
 
-\begin{cor} Soient $f : I \rightarrow \mathbb{R}^n$ et $\alpha : I \rightarrow \mathbb{R}$ deux fonctions dérivables en $a \in I$. Alors $\alpha f $ est dérivable en $a$ et on a :
+\begin{Corollaire}{} Soient $f : I \rightarrow \mathbb{R}^n$ et $\alpha : I \rightarrow \mathbb{R}$ deux fonctions dérivables en $a \in I$. Alors $\alpha f $ est dérivable en $a$ et on a :
 $$ (\alpha f)'(a) = \alpha'(a) f(a) + \alpha(a) f'(a)$$
-\end{cor}
+\end{Corollaire}
 
-\begin{preuve} Bilinéarité du produit.
-\end{preuve}
+\begin{Demonstration}{} Bilinéarité du produit.
+\end{Demonstration}
 
-\begin{cor} Soient $< \cdot , \cdot>$ un produit scalaire sur $\mathbb{R}^n$ et $f: I \rightarrow \mathbb{R}^n$, $g : I \rightarrow \mathbb{R}^n$ deux fonctions dérivables en $a \in I$. Alors la fonction $<f,g> \, :  I \rightarrow \mathbb{R}$ est dérivable en $a$ et :
+\begin{Corollaire}{} Soient $< \cdot , \cdot>$ un produit scalaire sur $\mathbb{R}^n$ et $f: I \rightarrow \mathbb{R}^n$, $g : I \rightarrow \mathbb{R}^n$ deux fonctions dérivables en $a \in I$. Alors la fonction $<f,g> \, :  I \rightarrow \mathbb{R}$ est dérivable en $a$ et :
 $$ <f,g>'(a) = <f'(a),g(a)>+<f(a),g'(a)>$$
-\end{cor}
+\end{Corollaire}
 
-\begin{preuve} $< \cdot , \cdot> \, : \mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R}$ est bilinéaire.
-\end{preuve}
+\begin{Demonstration}{} $< \cdot , \cdot> \, : \mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R}$ est bilinéaire.
+\end{Demonstration}
 %
-%\begin{exa} Rappelons que si $< \cdot , \cdot>$ est un produit scalaire sur $\mathbb{R}^n$, on définit la norme euclidienne par :
+%\begin{ApplicationDirecte}{} Rappelons que si $< \cdot , \cdot>$ est un produit scalaire sur $\mathbb{R}^n$, on définit la norme euclidienne par :
 %$$ \forall x \in \mathbb{R}^n, \; \Vert x \Vert = \sqrt{<x,x>}$$
 %Montrer que si $f : I \rightarrow\mathbb{R}^n$ est dérivable en $a \in I$ alors $\Vert f \Vert^2$ est dérivable en $a$ et on a :
 %$$ (\Vert f \Vert^2)'(a) = 2 <f(a),f'(a)>$$
-%\end{exa}
+%\end{ApplicationDirecte}
 
 %\begin{nota}
 %Si $x,y$ sont deux éléments de $\mathbb{R}^2$ et si $\mathcal{B}$ est une base de $\mathbb{R}^2$, on note :
 %$$ \textrm{det}_{\mathcal{B}}(x,y) = \textrm{det}(\textrm{Mat}_{\mathcal{B}}(x,y))$$
 %\end{nota}
 
-\begin{cor} Soient $\mathcal{B}$ une base de  $\mathbb{R}^2$ et $f: I \rightarrow \mathbb{R}^2$, $g : I \rightarrow \mathbb{R}^2$ deux fonctions dérivables en $a \in I$. Alors la fonction $\textrm{det}_{\mathcal{B}}(f,g)$ est dérivable en $a$ et :
+\begin{Corollaire}{} Soient $\mathcal{B}$ une base de  $\mathbb{R}^2$ et $f: I \rightarrow \mathbb{R}^2$, $g : I \rightarrow \mathbb{R}^2$ deux fonctions dérivables en $a \in I$. Alors la fonction $\textrm{det}_{\mathcal{B}}(f,g)$ est dérivable en $a$ et :
 $$ (\textrm{det}_{\mathcal{B}}(f,g))'(a) = \textrm{det}_{\mathcal{B}}(f'(a),g(a)) + \textrm{det}_{\mathcal{B}}(f(a),g'(a))$$
-\end{cor}
+\end{Corollaire}
 
-\begin{preuve} $\textrm{det}_{\mathcal{B}}$ est bilinéaire.
-\end{preuve}
+\begin{Demonstration}{} $\textrm{det}_{\mathcal{B}}$ est bilinéaire.
+\end{Demonstration}
 
-\begin{prop}[Composition par une application linéaire]
+\begin{Proposition}{Composition par une application linéaire}
 Soient $p \in \mathbb{N}^*$ et $L : \mathbb{R}^n \rightarrow \mathbb{R}^p$ une application linéaire. 
 \begin{itemize}
-\item Si $f : I \rightarrow \mathbb{R}^n$ est de classe $\mathcal{C}^k$ sur $I$ alors $L \circ f : I \rightarrow \mathbb{R}^p$ est de classe $\mathcal{C}^k$ sur $I$ et on a pour tout $i \in \Interv{1}{k}$ et tout $a \in I$,
+\item Si $f : I \rightarrow \mathbb{R}^n$ est de classe $\mathcal{C}^k$ sur $I$ alors $L \circ f : I \rightarrow \mathbb{R}^p$ est de classe $\mathcal{C}^k$ sur $I$ et on a pour tout $i \in \ii{1}{k}$ et tout $a \in I$,
 $$ (L \circ f)^{(i)}(a) = L (f^{(i)}(a))$$
 \item  Si $f : I \rightarrow \mathbb{R}^n$ est de classe $\mathcal{C}^{\infty}$ sur $I$ alors $L \circ f : I \rightarrow \mathbb{R}^p$ est de classe $\mathcal{C}^{\infty}$ sur $I$ et on a pour tout $i \in \mathbb{N}^*$ et tout $a \in I$,
 $$ (L \circ f)^{(i)}(a) = L (f^{(i)}(a))$$
 \end{itemize}
-\end{prop}
+\end{Proposition}
 
-\begin{thm}[formule de Leibniz]
+\begin{Theoreme}{formule de Leibniz}
 Soient $(m,p) \in (\mathbb{N}^*)^2$ et $B : \mathbb{R}^n \times \mathbb{R}^m \rightarrow \mathbb{R}^p$ une application bilinéaire.  Si $f : I \rightarrow \mathbb{R}^n$ et $g : I \rightarrow \mathbb{R}^m$ sont de classes $\mathcal{C}^k$ sur $I$ alors $B(f,g):  I \rightarrow \mathbb{R}^p$ est de classe $\mathcal{C}^k$ sur $I$ et on a :
 $$ B(f,g)^{(k)}(a)=  \sum_{i=0}^{k} \binom{k}{i} B(f^{(i)},g^{(k-i)})$$
-\end{thm}
+\end{Theoreme}
 
 \end{document}
