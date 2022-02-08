@@ -1,22 +1,20 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 16 : Variables aléatoires discrètes}
 
-\begin{center}
-\textit{{ {\huge TD 16 : Variables aléatoires discrètes}}}
-\end{center}
+\tableofcontents
+\separationTitre
 
 
-\medskip
+\subsection{Loi d'une variable aléatoire}
 
-\begin{center}
-\textit{{ {\large Loi d'une variable aléatoire}}}
-\end{center}
-
-\medskip
 
 \begin{Exercice}{} On effectue une suite de lancers d'une pièce équilibrée jusqu'à obtenir au moins une fois un Pile et un Face. On note alors $X$ le nombre de tirages effectués.
 
@@ -28,7 +26,7 @@
 \end{Exercice}
 
 \begin{Exercice}{}
- Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}^*$ telle que pour tout $k \in \mathbb{N}^*$, $\dis P(X=k)=a3^{-k}$ où $a \in \mathbb{R}$.
+ Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}^*$ telle que pour tout $k \in \mathbb{N}^*$, $P(X=k)=a3^{-k}$ où $a \in \mathbb{R}$.
 \begin{enumerate}
 \item Déterminer $a$ pour que l'on définisse bien ainsi une loi de probabilité.
 \item $X$ a-t-elle plus de chance de prendre des valeurs paires ou impaires ?
@@ -64,14 +62,21 @@ $X$ admet-elle une variance? Justifier.
 
 
 
-\begin{Exercice}{} Soient $p\in \left] 0,1\right[$ et $r\in\mathbb{N}^*$.\\
-On dépose une bactérie dans une enceinte fermée à l'instant $t=0$ (le temps est exprimé en secondes).\\
-On envoie un rayon laser par seconde dans cette enceinte.\\
-Le premier rayon laser est envoyé à l'instant $t=1$.\\
-La bactérie a la probabilité $p$ d'être touchée par le rayon laser.\\
-Les tirs de laser sont indépendants.\\
-La bactérie ne meurt que lorsqu'elle a été touchée $r$ fois par le rayon laser.\\
-Soit $X$ la variable aléatoire égale à la durée de vie de la bactérie.\\
+\begin{Exercice}{} Soient $p\in \left] 0,1\right[$ et $r\in\mathbb{N}^*$.
+
+On dépose une bactérie dans une enceinte fermée à l'instant $t=0$ (le temps est exprimé en secondes).
+
+On envoie un rayon laser par seconde dans cette enceinte.
+
+Le premier rayon laser est envoyé à l'instant $t=1$.
+
+La bactérie a la probabilité $p$ d'être touchée par le rayon laser.
+
+Les tirs de laser sont indépendants.
+
+La bactérie ne meurt que lorsqu'elle a été touchée $r$ fois par le rayon laser.
+
+Soit $X$ la variable aléatoire égale à la durée de vie de la bactérie.
 \begin{enumerate}
 \item \textit{Préliminaire.} Soient $q \in \mathbb{N}^*$ et $x \in ]-1,1[$. Montrer que : 
 $$ \sum\limits_{k=q}^{+\infty}\dbinom{k}{q}x^{k-q}=\dfrac{1}{(1-x)^{q+1}}$$
@@ -95,33 +100,29 @@ Prouver que $X$ admet une espérance et la calculer.
 \end{Exercice}
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Lois usuelles}}}
-\end{center}
+\subsection{Lois usuelles}
 
-\medskip
 
 \begin{Exercice}{} On désigne par $n$ un entier naturel supérieur ou égal à 2. On note $p$ un réel de $]0,1[$ et on pose $q = 1-p$. On dispose d'une pièce donnant Pile avec la probabilité $p$ et Face avec la probabilité $q$.
 
-\noindent On lance cette pièce et on arrête les lancers dans l'une des deux situations suivantes :
+On lance cette pièce et on arrête les lancers dans l'une des deux situations suivantes :
 \begin{itemize}
  \item Soit si l'on a obtenu Pile.
  \item Soit si l'on a obtenu $n$ fois Face.
 \end{itemize}
 %
-%\noindent Pour tout entier naturel $k$ non nul, on note $P_k$ (respectivement $F_k$) l'événement \og on a obtenu Pile (respectivement Face) au $k^{ieme}$ lancer \fg.
+%Pour tout entier naturel $k$ non nul, on note $P_k$ (respectivement $F_k$) l'événement \og on a obtenu Pile (respectivement Face) au $k^{ieme}$ lancer \fg.
 
-\noindent On note $T_n$ le nombre de lancers effectués, $X_n$ le nombre de Pile obtenus et enfin $Y_n$ le nombre de Face obtenus. 
+On note $T_n$ le nombre de lancers effectués, $X_n$ le nombre de Pile obtenus et enfin $Y_n$ le nombre de Face obtenus. 
 \begin{enumerate}
  \item  Déterminer la loi de $T_n$.
  \item  Déterminer l'espérance de $T_n$.
 % \begin{enumerate}
-%  \item Pour tout $k$ de $\Interv{1}{n-1}$, déterminer, en distinguant le cas $k=1$, la probabilité $P(T_n = k)$.
+%  \item Pour tout $k$ de $\ii{1}{n-1}$, déterminer, en distinguant le cas $k=1$, la probabilité $P(T_n = k)$.
 %  \item Déterminer $P(T_n = n)$.
-%  \item Vérifier par le calcul que $\dis \sum_{k=1}^n P(T_n = k) = 1$.
-%  \item Vérifier que l'espérance de $T_n$ est $\dis \frac{1-q^n}{1-q}\cdot$
+%  \item Vérifier par le calcul que $\sum_{k=1}^n P(T_n = k) = 1$.
+%  \item Vérifier que l'espérance de $T_n$ est $\frac{1-q^n}{1-q}\cdot$
 % \end{enumerate}
  \item Déterminer la loi et l'espérance de $X_n$.
 % \begin{enumerate}
@@ -130,7 +131,7 @@ Prouver que $X$ admet une espérance et la calculer.
 % \end{enumerate}
  \item Loi de $Y_n$.
  \begin{enumerate}
-  \item Déterminer, pour tout $k$ de $\Interv{1}{n-1}$, la probabilité $P(Y_n = k)$.
+  \item Déterminer, pour tout $k$ de $\ii{1}{n-1}$, la probabilité $P(Y_n = k)$.
   \item Déterminer $P(Y_n = n)$.
   \item Écrire une égalité liant les variables aléatoires $T_n$, $X_n$ et $Y_n$, puis en déduire $E(Y_n)$.
 \end{enumerate}
@@ -168,9 +169,9 @@ Déterminer la loi de $Y$.
 
 \begin{Exercice}{} Soit $n \geq 2$. On considère $n$ variables aléatoires indépendantes $X_1$, $X_2$, $\ldots$ et $X_n$, suivant chacune une loi de Bernoulli de paramètres respectifs $1$, $\tfrac{1}{2}$, $\ldots$ et $\tfrac{1}{n}\cdot$
 
-\noindent Trouver la loi de la variable aléatoire $X$ qui vaut $0$ si :
+Trouver la loi de la variable aléatoire $X$ qui vaut $0$ si :
 $$ X_1= X_2= \cdots = X_n = 1$$
-et qui vaut $\min \lbrace k \in \Interv{1}{n} \, \vert \, X_k =0 \rbrace$ sinon.
+et qui vaut $\min \lbrace k \in \ii{1}{n} \, \vert \, X_k =0 \rbrace$ sinon.
 \end{Exercice} 
 
 \begin{Exercice}{} Soit $p \in ]0,1[$. On se donne une pièce qui tombe sur pile avec la probabilité $p$. On lance cette pièce jusqu'à obtenir deux piles et on note $X$ le nombre de face(s) obtenu(s).
@@ -221,19 +222,15 @@ Déterminer la probabilité que la matrice $A$ soit diagonalisable.
 \item Justifier sans calcul que $E(X) \leq E(Y)$ et vérifier cela par calcul.
 \end{enumerate}
 \end{Exercice}
-\medskip
 \newpage
 
-\begin{center}
-\textit{{ {\large Loi d'une couple}}}
-\end{center}
+\subsection{Loi d'une couple}
 
-\medskip
 
 \begin{Exercice}{} Soient $X$ et $Y$ deux variables indépendantes suivant la loi de Bernoulli de paramètre $p \in ]0,1[$. Déterminer la loi de $Z= \max(X,Y)$.
 \end{Exercice}
 
-\begin{Exercice}{} Soit $n$ un entier naturel non nul. On dispose de $n$ boites numérotées de $1$ à $n$ et on sait que la boite $i \in \Interv{1}{n}$ contient $i$ boules numérotées de $1$ à $n$. On choisit au hasard une urne et on tire une boule dans celle-ci. Soient $X$ le numéro de la boite et $Y$ le numéro de la boule. 
+\begin{Exercice}{} Soit $n$ un entier naturel non nul. On dispose de $n$ boites numérotées de $1$ à $n$ et on sait que la boite $i \in \ii{1}{n}$ contient $i$ boules numérotées de $1$ à $n$. On choisit au hasard une urne et on tire une boule dans celle-ci. Soient $X$ le numéro de la boite et $Y$ le numéro de la boule. 
 
 \begin{enumerate}
 \item Déterminer la loi du couple $(X,Y)$.
@@ -248,7 +245,7 @@ Soit $X$ la variable aléatoire égale au nombre de voitures se présentant au g
 \item Déterminer le nombre moyen de voitures arrivant au péage en une heure.
 \item Quelle est la probabilité qu'une voiture donnée se présente au guichet numéro 1.
 \item Calculer $P_{(N=n)}(X=k)$ pour tout $(k,n) \in \mathbb{N}^2$.
-\item Justifier que pour tout $k \in \mathbb{N}$, $\displaystyle{P(X=k)=\sum_{n=k}^{+\infty}P_{[N=n]}(X=k) P(N=n).}$
+\item Justifier que pour tout $k \in \mathbb{N}$, ${P(X=k)=\sum_{n=k}^{+\infty}P_{[N=n]}(X=k) P(N=n).}$
 \item En déduire la loi de probabilité de $X$ (on reconnaîtra une loi usuelle). Préciser espérance et variance.
 \end{enumerate}
 \end{Exercice}
@@ -274,13 +271,9 @@ Déterminer les lois marginales de $X$ et de $Y$. Les variables $X$ et $Y$ sont-
 
 \newpage
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Fonctions génératrices}}}
-\end{center}
+\subsection{Fonctions génératrices}
 
-\medskip
 
 \begin{Exercice}{}  Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}^*$ telle que pour tout $k \in \mathbb{N}^*$,
 $$ \P(X=k) = \dfrac{k-1}{2^k}$$
@@ -292,21 +285,21 @@ $$ \P(X=k) = \dfrac{k-1}{2^k}$$
 \end{enumerate}
 \end{Exercice}
 
-\begin{Exercice}{} Soit $X$ une variable al\'eatoire telle que $X(\Omega)=\N$ dont la loi est donnée par :
-$$\forall n\in\N,\qquad P(X=n)=an^2\dis\frac{\lambda^n}{n!}$$
+\begin{Exercice}{} Soit $X$ une variable aléatoire telle que $X(\Omega)=\N$ dont la loi est donnée par :
+$$\forall n\in\N,\qquad P(X=n)=an^2\frac{\lambda^n}{n!}$$
 où $a \in \mathbb{R}$.
 \begin{enumerate}
-	\item D\'eterminer sa fonction g\'en\'eratrice $G_X.$ En d\'eduire la valeur de $a.$
+	\item Déterminer sa fonction génératrice $G_X.$ En déduire la valeur de $a.$
 	
-	\item Calculer l'esp\'erance de $X.$
+	\item Calculer l'espérance de $X.$
 \end{enumerate}
 \end{Exercice}
 
-\begin{Exercice}{} Soit $X$ une variable al\'eatoire \`a valeurs dans $\N$ dont la fonction g\'en\'eratrice est définie par :
+\begin{Exercice}{} Soit $X$ une variable aléatoire \`a valeurs dans $\N$ dont la fonction génératrice est définie par :
 $$\forall t\in\R,\qquad G_X(t)=ae^{1+t^2}$$
 
 \begin{enumerate}
-	\item D\'eterminer $a.$
+	\item Déterminer $a.$
 	
 	\item Donner la loi de $X$ et calculer $E(X)$ et $V(X).$
 	
@@ -332,7 +325,7 @@ Soit $X$ une variable suivant une loi de Poisson de paramètre $\lambda>0$.
 \begin{enumerate}
 \item Montrer que pour tout $n \geq 0$,
 $$ \P(X \leq n) = \dfrac{1}{n!} \int_{\lambda}^{+ \infty} e^{-t} t^n \dt$$
-\item En déduire un équivalent de $\dis \int_{\lambda}^{+ \infty} e^{-t} t^n \dt$ quand $n$ tend vers $+ \infty$.
+\item En déduire un équivalent de $\int_{\lambda}^{+ \infty} e^{-t} t^n \dt$ quand $n$ tend vers $+ \infty$.
 \item Donner la fonction génératrice $G_X$ de $X$. Que valent $g_X(1)$ et $g_X(-1)$? En déduire la probabilité que $X$ soit paire.
 \item Pour $Y$ une variable aléatoire suivant une loi uniforme sur $\lbrace 1,2 \rbrace$, calculer $\P(XY$ soit paire).
 \end{enumerate}
@@ -342,11 +335,8 @@ $$ \P(X \leq n) = \dfrac{1}{n!} \int_{\lambda}^{+ \infty} e^{-t} t^n \dt$$
 \newpage
 
 
-\begin{center}
-\textit{{ {\large Résultats asymptotiques}}}
-\end{center}
+\subsection{Résultats asymptotiques}
 
-\medskip
 
 \begin{Exercice}{} Soit $X$ une variable aléatoire suivant une loi géométrique de paramètre $\tfrac{1}{n}$ où $n$ est un entier supérieur ou égal à $2$.
 

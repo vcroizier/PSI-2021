@@ -1,24 +1,22 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+% cSpell:ignore orthonormaliser
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 18 : Endomorphismes d'un espace euclidien}
 
-\begin{center}
-\textit{{ {\huge TD 18 : Endomorphismes d'un espace euclidien}}}
-\end{center}
+\tableofcontents
+\separationTitre
 
-\medskip
 
-\medskip
+\subsection{Isométries vectorielles et matrices orthogonales}
 
-\begin{center}
-\textit{{ {\large Isométries vectorielles et matrices orthogonales}}}
-\end{center}
-
-\medskip
 
 \begin{Exercice}{} 
 \begin{enumerate}
@@ -69,9 +67,8 @@
 %$$ f^2(P) = f(f(P))=f(P(1-X))= P(1-(1-X))=P(X)$$
 %Ainsi, $f^2= \textrm{Id}$ et donc $f$ est une symétrie de $\mathbb{R}_2[X]$ et donc en particulier un automorphisme vérifiant $f^{-1}=f$.
 %
-%\medskip
-%
-%\noindent L'application $f$ est une isométrie si et seulement si elle envoie une base orthonormée de $\mathbb{R}_2[X]$ sur une base orthonormée de $\mathbb{R}_2[X]$. D'après la question précédente, la famille $(1,X,X^2/2)$ est orthonormale, donc libre, et est formée de $3$ éléments qui est la dimension de $\mathbb{R}_2[X]$ donc c'est une base orthonormale de $\mathbb{R}_2[X]$. On a :
+%%
+%L'application $f$ est une isométrie si et seulement si elle envoie une base orthonormée de $\mathbb{R}_2[X]$ sur une base orthonormée de $\mathbb{R}_2[X]$. D'après la question précédente, la famille $(1,X,X^2/2)$ est orthonormale, donc libre, et est formée de $3$ éléments qui est la dimension de $\mathbb{R}_2[X]$ donc c'est une base orthonormale de $\mathbb{R}_2[X]$. On a :
 %$$ f(1)=1, \; f(X)=1-X \hbox{ et } f(X^2/2) = \dfrac{(1-X)^2}{2}$$
 %Remarquons que :
 %$$ \Vert 1-X \Vert^2 = (1-0)^2 + (-1)^2+ 0^2 = 2$$
@@ -95,8 +92,8 @@
 %0 & \ldots & 0 & a_{n,n} \end{pmatrix}$$
 %La norme de la première colonne vaut $1$ donc $a_{1,1} = \pm 1$. La deuxième colonne est orthogonale à la première donc :
 %$$ \pm a_{1,2} + 0 \times a_{2,2} = 0$$
-%donc $a_{1,2}=0$. La norme de la deuxième colonne vaut $1$ donc $a_{2,2} = \pm 1$. On continue ainsi de suite (la colonne $k \in \Interv{2}{n}$ est orthogonale à toutes les précédentes donc ses coefficients $a_{i,k}$ sont nuls pour $i=1, \ldots, k-1$ et la norme de cette colonne valant $1$, on en déduit que $a_{k,k}= \pm 1$). Ainsi,
-%$$ A= \textrm{diag}(\pm 1, \pm 1, \ldots, \pm 1)$$
+%donc $a_{1,2}=0$. La norme de la deuxième colonne vaut $1$ donc $a_{2,2} = \pm 1$. On continue ainsi de suite (la colonne $k \in \ii{2}{n}$ est orthogonale à toutes les précédentes donc ses coefficients $a_{i,k}$ sont nuls pour $i=1, \ldots, k-1$ et la norme de cette colonne valant $1$, on en déduit que $a_{k,k}= \pm 1$). Ainsi,
+%$$ A= \diag(\pm 1, \pm 1, \ldots, \pm 1)$$
 %Réciproquement, les matrices de cette forme sont orthogonales et triangulaires supérieures.
 
 \begin{Exercice}{} Soit $A \in \mathcal{M}_n(\mathbb{R})$.
@@ -105,8 +102,8 @@
 \item Déterminer une expression simple de $~^tX A X$ où $X$ est le vecteur colonne de $\mathcal{M}_{n,1}(\mathbb{R})$ dont tous les coefficients valent $1$.  
 \item Supposons que $A$ soit orthogonale.
 \begin{enumerate}
-\item Montrer que : $\dis \left\vert \sum_{1 \leq i,j \leq n} a_{i,j} \right\vert \leq n$.
-\item Montrer que : $\dis  \sum_{1 \leq i,j \leq n} \vert a_{i,j} \vert  \leq n \sqrt{n}$.
+\item Montrer que : $\left\vert \sum_{1 \leq i,j \leq n} a_{i,j} \right\vert \leq n$.
+\item Montrer que : $ \sum_{1 \leq i,j \leq n} \vert a_{i,j} \vert  \leq n \sqrt{n}$.
 \end{enumerate}
 \end{enumerate}
 \end{Exercice}
@@ -130,20 +127,20 @@
 %\item Remarquons que $~^tX A X$ est le produit scalaire (usuel de $\mathcal{M}_{n,1}(\mathbb{R})$ de $X$ avec $AX$. D'après l'inégalité de Cauchy-Schwarz, on a :
 %$$ \vert ~^tX A X \vert \leq \Vert X \Vert \times \Vert AX \Vert$$
 %$A$ est orthogonale donc conserve la norme donc $\Vert AX \Vert = \Vert X\vert = \sqrt{n}$. On en déduit bien que :
-%$$ \dis \left\vert \sum_{1 \leq i,j \leq n} a_{i,j} \right\vert \leq n$$
+%$$ \left\vert \sum_{1 \leq i,j \leq n} a_{i,j} \right\vert \leq n$$
 %\item D'après l'inégalité triangulaire, on a :
-%$$ \dis \left\vert \sum_{1 \leq i,j \leq n} a_{i,j} \right\vert \leq \dis \vert \sum_{1 \leq i,j \leq n} \vert a_{i,j}  \vert$$
-%Soit $i \in \Interv{1}{n}$. D'après l'inégalité de Cauchy-Schwarz sur $\mathbb{R}^n$ (muni du produit scalaire usuel), on a :
+%$$ \left\vert \sum_{1 \leq i,j \leq n} a_{i,j} \right\vert \leq \vert \sum_{1 \leq i,j \leq n} \vert a_{i,j}  \vert$$
+%Soit $i \in \ii{1}{n}$. D'après l'inégalité de Cauchy-Schwarz sur $\mathbb{R}^n$ (muni du produit scalaire usuel), on a :
 %$$ \sum_{j=1}^n \vert a_{i,j}  \vert \leq \left(\sum_{j=1}^n \vert a_{i,j}  \vert^2 \right)^{1/2}  \left(\sum_{j=1}^n 1  \vert^2 \right)^{1/2}$$
 %La matrice $A$ est orthogonale donc la norme de chacune de ses colonnes vaut $1$ donc :
 %$$  \sum_{j=1}^n \vert a_{i,j}  \vert \leq  \sqrt{n}$$
 %Ainsi :
-%$$ \dis \left\vert \sum_{1 \leq i,j \leq n} a_{i,j} \right\vert \leq \sum_{i=1}^n \sqrt{n} = n \sqrt{n}$$
+%$$ \left\vert \sum_{1 \leq i,j \leq n} a_{i,j} \right\vert \leq \sum_{i=1}^n \sqrt{n} = n \sqrt{n}$$
 %\end{enumerate}
 %\end{enumerate}
 
 
-\begin{Exercice}{\ding{80}} Montrer que si $u$ est une isométrie de $E$, espace euclidien, alors $\textrm{Ker}(u-\textrm{Id})$ et $\textrm{Im}(u-\textrm{Id})$ sont supplémentaires et orthogonaux. Calculer pour tout $x \in E$,
+\begin{Exercice}[$\bigstar$]{} Montrer que si $u$ est une isométrie de $E$, espace euclidien, alors $\textrm{Ker}(u-\textrm{Id})$ et $\textrm{Im}(u-\textrm{Id})$ sont supplémentaires et orthogonaux. Calculer pour tout $x \in E$,
 $$  \lim_{n \rightarrow + \infty} \dfrac{1}{n} \sum_{k=1}^n u^k(x)$$
 \end{Exercice}
 
@@ -159,9 +156,8 @@ $$  \lim_{n \rightarrow + \infty} \dfrac{1}{n} \sum_{k=1}^n u^k(x)$$
 %\end{align*}
 %C'est ce que l'on voulait montrer. Ainsi $\textrm{Ker}(u-\textrm{Id})$ et $\textrm{Im}(u-\textrm{Id})$ sont supplémentaires et orthogonaux. 
 %
-%\medskip
-%
-%\noindent Soit $x \in E$. D'après le résultat précédent, il existe un unique couple $(z,w) \in \textrm{Ker}(u-\textrm{Id}) \times \textrm{Im}(u-\textrm{Id})$ tel que $x=z+w$.
+%%
+%Soit $x \in E$. D'après le résultat précédent, il existe un unique couple $(z,w) \in \textrm{Ker}(u-\textrm{Id}) \times \textrm{Im}(u-\textrm{Id})$ tel que $x=z+w$.
 %
 %\begin{itemize}
 %\item Le vecteur $z$ appartient à $\textrm{Ker}(u-\textrm{Id})$ donc $u(z)=z$ et pour tout $n \geq 1$,
@@ -188,15 +184,11 @@ $$  \lim_{n \rightarrow + \infty} \dfrac{1}{n} \sum_{k=1}^n u^k(x)$$
 %$$ \lim_{n \rightarrow + \infty} \dfrac{1}{n} \sum_{k=1}^n u^k(x) =  p(x)$$
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Endomorphismes et matrices symétriques}}}
-\end{center}
+\subsection{Endomorphismes et matrices symétriques}
 
-\medskip
 
-\begin{Exercice}{} Soit un entier $n\geq 1.$ On consid\`{e}re la matrice carr\'{e}e d'ordre $n$ \`{a} coefficients r\'{e}els :
+\begin{Exercice}{} Soit un entier $n\geq 1.$ On considère la matrice carr\'{e}e d'ordre $n$ \`{a} coefficients r\'{e}els :
 \begin{equation*}
 A_n=\begin{pmatrix}
 2 & -1 & 0 & \cdots & 0 \\ 
@@ -255,7 +247,7 @@ Pour $n\geq 1$, on d\'{e}signe par $D_{n}$ le d\'{e}terminant de $A_n$.
 %\begin{enumerate}
 %\item La matrice $A$ est symétrique réelle donc diagonalisable dans une base orthonormée (pour le produit scalaire usuel) de vecteurs propres.
 %\item On note $e=\left( \vec{u},\vec{v},\vec{w}\right) $ la base canonique de $\mathbb{R}^3$. On note $(\:|\:)$ le produit scalaire canonique sur $\mathbb{R}^3$. Soit $f$ l'endomorphisme canoniquement associé à $A$. $A$ est symétrique réelle et $e$ est une base orthonormée, donc $f$ est un endomorphisme symétrique et, d'après le théorème spectral,  $f$ est diagonalisable dans une base orthonormée de vecteurs propres. On sait également que les sous-espaces propres sont orthogonaux donc il suffit de trouver une base orthonormée de chaque sous-espace propre pour construire une base orthonormée de vecteurs propres. On a facilement que :
-%$$E_3 (f) = \textrm{Vect} (1, - 1,1)\text{ et }E_0 (f) = \lbrace (x,y,z) \in \mathbb{R}^3 \, \,vert \, x - y + z = 0\rbrace$$
+%$$E_3 (f) = \Vect (1, - 1,1)\text{ et }E_0 (f) = \lbrace (x,y,z) \in \mathbb{R}^3 \, \,vert \, x - y + z = 0\rbrace$$
 %Ainsi :
 %$$\vec{u} = \dfrac{1}{{\sqrt 3 }}(\vec{i} - \vec{j} + \vec{k})$$
 %forme une base orthonormée de $E_3 (f)$. De même,
@@ -282,10 +274,10 @@ Pour $n\geq 1$, on d\'{e}signe par $D_{n}$ le d\'{e}terminant de $A_n$.
 %$$ B^k = ({}^t A A)^k = ({}^t A)^k A^k = 0_n$$
 %D'après la question précédente, on en déduit que $B=0_n$. En particulier sa trace est nulle donc :
 %$$ \textrm{Tr}({}^t A A) = 0$$
-%On reconnait le produit scalaire usuel sur $\mathcal{M}_n(\mathbb{R})$ donc par défini-positivité, on en déduit que $A=0_n$.
+%On reconnaît le produit scalaire usuel sur $\mathcal{M}_n(\mathbb{R})$ donc par défini-positivité, on en déduit que $A=0_n$.
 %\end{enumerate}
 
-\begin{Exercice}{\ding{80}} Soient $f$ un endomorphisme symétrique d'un espace euclidien $E$ et $(a,b) \in \mathbb{R}^2$ tel que $a \leq b$. Montrer que :
+\begin{Exercice}[$\bigstar$]{} Soient $f$ un endomorphisme symétrique d'un espace euclidien $E$ et $(a,b) \in \mathbb{R}^2$ tel que $a \leq b$. Montrer que :
 $$ \textrm{Sp}(f) \cap ]a,b[ = \varnothing \; \Longrightarrow \; \forall x \in E, \; <f(x)-ax,f(x)-bx> \geq 0$$
 \end{Exercice}
 
@@ -293,7 +285,7 @@ $$ \textrm{Sp}(f) \cap ]a,b[ = \varnothing \; \Longrightarrow \; \forall x \in E
 %$$ x=  x_1 e_1 + \cdots +  x_n e_n$$ 
 %Alors par linéarité de $f$, on a :
 %$$ f(x)-ax = \sum_{i=1}^n x_i f(e_i) - \sum_{i=1}^n  a x_i e_i =  \sum_{i=1}^n (\lambda_i-a) x_i  e_i $$
-%car pour tout $i \in \Interv{1}{n}$, $e_i$ est un vecteur propre de $f$ associé à la valeur propre $\lambda_i$. De même, on a :
+%car pour tout $i \in \ii{1}{n}$, $e_i$ est un vecteur propre de $f$ associé à la valeur propre $\lambda_i$. De même, on a :
 %$$ f(x)-bx = \sum_{i=1}^n (\lambda_i-b) x_i  e_i $$
 %Ainsi :
 %\begin{align*}
@@ -304,19 +296,18 @@ $$ \textrm{Sp}(f) \cap ]a,b[ = \varnothing \; \Longrightarrow \; \forall x \in E
 %$$ <f(x)-ax,f(x)-bx> = \sum_{i=1}^n \sum_{j=1}^n (\lambda_i - a)(\lambda_j-b) x_i x_j \delta_{i,j}$$
 %donc
 %$$ <f(x)-ax,f(x)-bx> = \sum_{i=1}^n (\lambda_i - a)(\lambda_i-b) x_i^2$$
-%Par hypothèse, pour tout $i \in \Interv{1}{n}$, $\lambda_i \notin [a,b]$ donc :
+%Par hypothèse, pour tout $i \in \ii{1}{n}$, $\lambda_i \notin [a,b]$ donc :
 %$$ (\lambda_i - a)(\lambda_i-b) \geq 0$$
 %et finalement :
 %$$ <f(x)-ax,f(x)-bx> \geq 0$$
 
-\begin{Exercice}{\ding{80}} Résoudre l'équation $X ~^tX X= I_n$ d'inconnue $X \in \mathcal{M}_n(\mathbb{R})$.
+\begin{Exercice}[$\bigstar$]{} Résoudre l'équation $X ~^tX X= I_n$ d'inconnue $X \in \mathcal{M}_n(\mathbb{R})$.
 \end{Exercice}
 
 %\corr Raisonnons par analyse-synthèse.
 %
-%\medskip
-%
-%\noindent \textit{Analyse.} Soit $X \in \mathcal{M}_n(\mathbb{R})$ telle $X ~^tX X= I_n$. Alors :
+%%
+%\textit{Analyse.} Soit $X \in \mathcal{M}_n(\mathbb{R})$ telle $X ~^tX X= I_n$. Alors :
 %$$ ~^t (X ~^tX X) =  ~^t(I_n)= I_n$$
 %donc
 %$$ ~^tX X ~^tX = I_n$$
@@ -332,12 +323,11 @@ $$ \textrm{Sp}(f) \cap ]a,b[ = \varnothing \; \Longrightarrow \; \forall x \in E
 %$$ PD^3 ~^tP=I_n$$
 %Ainsi, $D^3$ est semblable à $I_n$ donc égale à $I_n$. On en déduit que que les coefficients diagonaux sont des réels dont le cube vaut $1$ donc sont forcément égaux à $1$. Ainsi, $D=I_n$ donc $X=I_n$.
 %
-%\medskip
-%
-%\noindent \textit{Synthèse.} La matrice $I_n$ est solution de l'équation.
+%%
+%\textit{Synthèse.} La matrice $I_n$ est solution de l'équation.
 
 
-\begin{Exercice}{\ding{80}} Soit $f$ un endomorphisme symétrique d'un espace euclidien $E$. Posons :
+\begin{Exercice}[$\bigstar$]{} Soit $f$ un endomorphisme symétrique d'un espace euclidien $E$. Posons :
   \[
   k = \max_{\lambda \in \textrm{Sp}(f)} \vert \lambda \vert
   \]
@@ -382,7 +372,7 @@ On note $\mathcal{S}_n(\mathbb{R})^+$ (resp. $\mathcal{S}_n(\mathbb{R})^{++}$) l
 \item Montrer que : $S \in \mathcal{S}_n^{++} \Longleftrightarrow \textrm{Sp}_{\mathbb{R}}(S) \subset \mathbb{R}_+^{*}$.
 \end{enumerate}
 \item Soient $p \geq 1$ et $S_1, \ldots, S_p$ des matrices symétriques positives. Montrer que :
-$$ \sum_{k=1}^p S_k = 0_n  \, \Longleftrightarrow \;  \forall k \in \Interv{1}{p}, \, S_k = 0_n $$
+$$ \sum_{k=1}^p S_k = 0_n  \, \Longleftrightarrow \;  \forall k \in \ii{1}{p}, \, S_k = 0_n $$
 \end{enumerate}
 \end{Exercice}
 
@@ -399,13 +389,13 @@ $$ \sum_{k=1}^p S_k = 0_n  \, \Longleftrightarrow \;  \forall k \in \Interv{1}{p
 %^{t}XSX=\lambda ^{t}XX=\lambda \left\Vert X\right\Vert ^{2}
 %\]
 %
-%$X$ \'etant non nul on a donc 
+%$X$ étant non nul on a donc 
 %\[
 %\lambda =\frac{^{t}XSX}{\left\Vert X\right\Vert ^{2}} \geq 0
 %\]
 %car $S$ est positive.
 %
-%\item Supposons que toutes les valeurs propres de $S$ soient positives. Toute matrice sym\'etrique r\'eelle est diagonalisable dans une base orthonorm\'ee et donc il existe $P$ orthogonale et $D$ diagonale $S=PD^{t}P$. On a alors pour toute matrice colonne $X$ :
+%\item Supposons que toutes les valeurs propres de $S$ soient positives. Toute matrice symétrique réelle est diagonalisable dans une base orthonormée et donc il existe $P$ orthogonale et $D$ diagonale $S=PD^{t}P$. On a alors pour toute matrice colonne $X$ :
 %$$^{t}XSX={}^{t}XPD^{t}PX={}^{t}\left( X^{t}P\right) D(^{t}PX)={}^{t}YDY$$
 %en posant $Y={}^{t}PX$. On a donc en développant le produit :
 %$$^{t}XSX= \sum_{i=1}^{n}d_{i}y_{i}^{2} \geq 0$$
@@ -420,13 +410,13 @@ $$ \sum_{k=1}^p S_k = 0_n  \, \Longleftrightarrow \;  \forall k \in \Interv{1}{p
 %^{t}XSX=\lambda ^{t}XX=\lambda \left\Vert X\right\Vert ^{2}
 %\]
 %
-%$X$ \'etant non nul on a donc 
+%$X$ étant non nul on a donc 
 %\[
 %\lambda =\frac{^{t}XSX}{\left\Vert X\right\Vert ^{2}} > 0
 %\]
 %car $S$ est strictement est positive.
 %
-%\item Supposons que toutes les valeurs propres de $S$ soient strictement positives. Toute matrice sym\'etrique r\'eelle est diagonalisable dans une base orthonorm\'ee et donc il existe $P$ orthogonale et $D$ diagonale $S=PD^{t}P$. On a alors pour toute matrice colonne $X$ :
+%\item Supposons que toutes les valeurs propres de $S$ soient strictement positives. Toute matrice symétrique réelle est diagonalisable dans une base orthonormée et donc il existe $P$ orthogonale et $D$ diagonale $S=PD^{t}P$. On a alors pour toute matrice colonne $X$ :
 %$$^{t}XSX={}^{t}XPD^{t}PX={}^{t}\left( X^{t}P\right) D(^{t}PX)={}^{t}YDY$$
 %en posant $Y={}^{t}PX$. On a donc en développant le produit :
 %$$^{t}XSX= \sum_{i=1}^{n}d_{i}y_{i}^{2} > 0$$
@@ -438,17 +428,14 @@ $$ \sum_{k=1}^p S_k = 0_n  \, \Longleftrightarrow \;  \forall k \in \Interv{1}{p
 %$$\sum_{k=1}^p S_k = 0_n$$
 %Par linéarité de la trace, on en déduit que :
 %$$ \sum_{k=1}^p \textrm{Tr}(S_k) = 0$$
-%Or pour tout $k \in \Interv{1}{p}$, la trace de $S_k$ est la somme de ses valeurs propres (elle est diagonalisable) qui sont positives ou nulle. Une somme de termes positifs ou nul étant nul si et seulement si tous les termes sont non nuls, on en déduit que pour tout $k \in \Interv{1}{p}$, $S_k$ n'admet que $0$ comme valeur propre. Or $S_k$ est diagonalisable donc semblable à la matrice nulle donc nulle.
+%Or pour tout $k \in \ii{1}{p}$, la trace de $S_k$ est la somme de ses valeurs propres (elle est diagonalisable) qui sont positives ou nulle. Une somme de termes positifs ou nul étant nul si et seulement si tous les termes sont non nuls, on en déduit que pour tout $k \in \ii{1}{p}$, $S_k$ n'admet que $0$ comme valeur propre. Or $S_k$ est diagonalisable donc semblable à la matrice nulle donc nulle.
 %\end{enumerate}
 
 
 \newpage
 
-\begin{center}
-\textit{{ {\large Isométries vectorielles en dimension $2$ ou $3$}}}
-\end{center}
+\subsection{Isométries vectorielles en dimension \texorpdfstring{$2$ ou $3$}{2 ou 3}}
 
-\medskip
 
 \begin{Exercice}{} Montrer qu'il existe une infinité de matrices $R \in \mathcal{M}_3(\mathbb{R})$ telles que
 $$  R^2 = \begin{pmatrix}
@@ -475,7 +462,7 @@ $$  R^2 = \begin{pmatrix}
 %\end{pmatrix}$$
 %On a donc répondu à la question.
 
-\begin{Exercice}{\ding{80}}
+\begin{Exercice}[$\bigstar$]{}
 \begin{enumerate}
 \item Une matrice $M \in \mathcal{M}_2(\mathbb{R})$ vérifie $M^2+4I_2=0_2$ et $S=~^tM M = M ~^tM$. Trouver un polynôme annulateur de degré $2$ de $S$. En déduire que $\dfrac{1}{2}M$ est orthogonale.
 \item Trouver toutes les matrices $M \in \mathcal{M}_2(\mathbb{R})$ vérifiant $M^2+4I_2=0_2$ et $~^tM M = M ~^tM$.
@@ -513,7 +500,7 @@ $$  R^2 = \begin{pmatrix}
 %Réciproquement, on vérifie que ces deux matrices sont solutions.
 %\end{enumerate}
 
-\begin{Exercice}{\ding{80}} Soit $\theta \in \mathbb{R} \setminus \lbrace p \pi \, \vert \, p \in \mathbb{Z} \rbrace \cdot$
+\begin{Exercice}[$\bigstar$]{} Soit $\theta \in \mathbb{R} \setminus \lbrace p \pi \, \vert \, p \in \mathbb{Z} \rbrace \cdot$
 \begin{enumerate}
 \item Calculer pour tout $n \geq 1$,
 $$ S_n = \dfrac{1}{n} \sum_{k=1}^n \cos(k \theta) \hbox{ et } T_n =\dfrac{1}{n} \sum_{k=1}^n \sin(k \theta)$$
@@ -670,11 +657,11 @@ est la matrice d'un endomorphisme $u$ de $E$ dans une base orthonormée directe 
 %2 \\
 %1 \\
 %\end{pmatrix}$ est non nul, on en déduit que :
-%$$ \textrm{Ker}(M-I_2) = \textrm{Vect}(X)$$
+%$$ \textrm{Ker}(M-I_2) = \Vect(X)$$
 %En notant $\mathcal{B}=(e_1,e_2)$ la base orthonormée directe pour laquelle $M= \textrm{Mat}_{\mathcal{B}}(u)$, on en déduit que :
-%$$ \textrm{Ker}(u- \textrm{Id}) = \textrm{Vect}(2e_1+e_2)$$
+%$$ \textrm{Ker}(u- \textrm{Id}) = \Vect(2e_1+e_2)$$
 %L'orthogonal de  $\textrm{Ker}(u- \textrm{Id})$ est de dimension $1$ (car cet espace est une droite vectorielle dans un espace de dimension $2$) et on trouve facilement un vecteur orthogonal de $2e_1+e_2$ :
-%$$  \textrm{Ker}(u- \textrm{Id})^{\perp} =  \textrm{Vect}(-e_1+2e_2)$$
+%$$  \textrm{Ker}(u- \textrm{Id})^{\perp} =  \Vect(-e_1+2e_2)$$
 
 
 
@@ -739,9 +726,8 @@ En déduire la nature de $f$ ainsi que ses éléments caractéristiques.
 %L'ensemble des vecteurs invariants par $f$ est donc la droite $\Delta=\mathrm{Vect}(i+j)$.
 %\end{enumerate}
 %\item Sachant que $\mathrm{dim}\,\Delta=1$, d'après les résultats sur la réduction d'une isométrie vectorielle en dimension 3, $f$ est nécessairement une rotation. On oriente l'axe $\Delta$ de cette rotation par le vecteur $i+j$.
-%\medskip
-%
-%\noindent Déterminons l'angle $\theta$ de la rotation $f$. On sait que :
+%%
+%Déterminons l'angle $\theta$ de la rotation $f$. On sait que :
 %$$ 1+2\cos\theta=\mathrm{tr}(A)$$
 %On en déduit que :
 %$$\cos(\theta)=\frac{1}{2}$$
@@ -798,9 +784,9 @@ est la matrice d'un endomorphisme $u$ de $E$ dans une base orthonormée directe 
 %-1 & -2 & -1 \\
 %\end{pmatrix}$$
 %En notant $C_1$, $C_2$ et $C_3$ les colonnes de cette matrice, on remarque que $C_1-C_3= \tilde{0}$ donc $e_1-e_3$ est non nul et appartient à $D$ qui est de dimension $1$. Ainsi :
-%$$ D= \textrm{Vect}(e_1-e_3)$$
+%$$ D= \Vect(e_1-e_3)$$
 %ou encore :
-%$$ D = \textrm{Vect}(a) \; \hbox{ où } a = \dfrac{1}{\sqrt{2}} (e_1-e_3)$$
+%$$ D = \Vect(a) \; \hbox{ où } a = \dfrac{1}{\sqrt{2}} (e_1-e_3)$$
 %est un vecteur unitaire de $D$. On oriente alors $D^{\perp}$ par le choix de $a$. Alors $u$ est une rotation d'axe $D$ et on note $\theta$ une mesure de l'angle de celle-ci. On sait que :
 %$$ \textrm{Tr}(u) = 2 \cos(\theta) + 1 $$
 %donc

@@ -1,45 +1,45 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
+
+% cSpell:ignore impropreté
+
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Correction du TD 15 : Séries entières}
 
+\tableofcontents
+\separationTitre
 
-\begin{center}
-\textit{{ {\huge TD 15 : Séries entières}}}
-\end{center}
+\subsection{Rayon de convergence, somme}
 
-\bigskip
-
-\begin{center}
-\textit{{ {\large Rayon de convergence, somme}}}
-\end{center}
-
-\medskip
 
 \begin{Exercice}{} Déterminer le rayon de convergence $R$ des séries entières suivantes :
 
 \begin{multicols}{3}
 \begin{enumerate}
-\item $\dis \Sum{n \geq 1}{} \dfrac{z^n}{n^2}$
-\item $\dis \Sum{n \geq 0}{} n^3 z^n$
-\item $\dis \Sum{n \geq 1}{} n^{(-1)^n}z^n$
-\item $\dis \Sum{n \geq 0}{} (n^3-2n^2+1)z^n$
+\item $\Sum{n \geq 1}{} \dfrac{z^n}{n^2}$
+\item $\Sum{n \geq 0}{} n^3 z^n$
+\item $\Sum{n \geq 1}{} n^{(-1)^n}z^n$
+\item $\Sum{n \geq 0}{} (n^3-2n^2+1)z^n$
 \columnbreak
-\item $\dis \Sum{n \geq 0}{} \dfrac{z^{2n}}{3^n}$
-\item $\dis \Sum{n \geq 1}{} \ln(n) z^n$
-\item $\dis \Sum{n \geq 1}{} \dfrac{\arctan n}{n^2}z^n$
-\item $\dis \Sum{n \geq 1}{} \textrm{sh}(n) z^n$
+\item $\Sum{n \geq 0}{} \dfrac{z^{2n}}{3^n}$
+\item $\Sum{n \geq 1}{} \ln(n) z^n$
+\item $\Sum{n \geq 1}{} \dfrac{\arctan n}{n^2}z^n$
+\item $\Sum{n \geq 1}{} \textrm{sh}(n) z^n$
 \columnbreak
-\item $\dis \Sum{n \geq 1}{} n! z^n$
-\item $\dis \Sum{n \geq 1}{}\ln\left(1+\sin \left(\dfrac{1}{n}\right) \right)$
-\item $\dis \Sum{n \geq 0}{} (3+4ni) z^n$
-\item $\dis \Sum{n \geq 0}{}   \left(\dis \prod_{k=0}^n\dfrac{1}{(2k+1)}\right) z^n$
+\item $\Sum{n \geq 1}{} n! z^n$
+\item $\Sum{n \geq 1}{}\ln\left(1+\sin \left(\dfrac{1}{n}\right) \right)$
+\item $\Sum{n \geq 0}{} (3+4ni) z^n$
+\item $\Sum{n \geq 0}{}   \left(\prod_{k=0}^n\dfrac{1}{(2k+1)}\right) z^n$
 \end{enumerate}
 \end{multicols}
 
-\medskip
 
 \end{Exercice}
 
@@ -65,14 +65,14 @@ D'après le critère de D'Alembert,
 \item Si $\vert z\vert>\sqrt{3}$, alors $\dfrac{\vert z\vert^2}{3}>1$ et $\Sum{n \geq 0}{} \dfrac{z^{2n}}{3^n}$ diverge grossièrement. 
 \end{itemize}
 Ainsi, $R=\sqrt{3}$.
-\item Comme $(\ln n)_{n\geq 1}$ ne converge pas vers $0$, $\dsp\sum \ln n \times 1^n$ diverge grossièrement donc $R\leq 1$. De plus, pour tout $r \in [0,1[$, la suite $((\ln n)r^n)_{n\geq 1}$ converge vers $0$ par croissances comparées donc $R\geq 1$. Ainsi, $R=1$.
+\item Comme $(\ln n)_{n\geq 1}$ ne converge pas vers $0$, $\sum \ln n \times 1^n$ diverge grossièrement donc $R\leq 1$. De plus, pour tout $r \in [0,1[$, la suite $((\ln n)r^n)_{n\geq 1}$ converge vers $0$ par croissances comparées donc $R\geq 1$. Ainsi, $R=1$.
 \item Sachant que :
-$$\dsp\lim_{n\to +\infty}\arctan n=\dfrac{\pi}{2}$$
+$$\lim_{n\to +\infty}\arctan n=\dfrac{\pi}{2}$$
 On a :
 \[
 \dfrac{\arctan n}{n^2} \underset{ +\infty}{\sim}\dfrac{\pi}{2n^2}
 \]
-Donc la série $\dsp\Sum{n \geq 1}{} \dfrac{\arctan n}{n^2}z^n$ a même rayon de convergence que la série $\dsp\Sum{n \geq 1}{}  \dfrac{z^n}{n^2}$, qui a même rayon de convergence que la série $\dsp\Sum{n \geq 1}{}  z^n$. Ainsi, $R=1$.
+Donc la série $\Sum{n \geq 1}{} \dfrac{\arctan n}{n^2}z^n$ a même rayon de convergence que la série $\Sum{n \geq 1}{}  \dfrac{z^n}{n^2}$, qui a même rayon de convergence que la série $\Sum{n \geq 1}{}  z^n$. Ainsi, $R=1$.
 \item  On a :
 $$\textrm{sh}(n) \underset{+ \infty}{\sim} \dfrac{e^n}{2}$$
 La série étudiée a donc le même rayon de convergence que $\Sum{n \geq 0}{}  \dfrac{e^n}{2} \times z^n = \Sum{n \geq 0}{}  \dfrac{(ez)^n}{2}$. Remarquons maintenant que :
@@ -90,13 +90,13 @@ Donc la série entière $\Sum{n \geq 1}{}\ln\left(1+\sin\dfrac{1}{n}\right)z^n$ 
 \]
 Donc la série entière $\Sum{n \geq 0}{} (3+4ni)z^n$ a même rayon de convergence que la série entière $\Sum{n \geq 0}{} nz^n$, qui a le même rayon de convergence que la série entière $\Sum{n \geq 0}{} z^n$. Ainsi, $R=1$.
 \item Posons pour tout entier $n \geq 0$,
-$$a_n = \dis \prod_{k=0}^n\dfrac{1}{(2k+1)} $$
+$$a_n = \prod_{k=0}^n\dfrac{1}{(2k+1)} $$
 Alors pour tout $z \in \mathbb{C}$ non nul, 
 \begin{align*}
-\dfrac{\vert a_{n+1} z^{n+1} \vert }{\vert a_n z^n \vert} & =\left\vert\dfrac{\dis \left(\prod_{k=0}^{n+1}\frac{1}{(2k+1)}\right)z^{n+1}}{\dis \left(\prod_{k=0}^n\frac{1}{(2k+1)}\right)z^n}\right\vert \\
+\dfrac{\vert a_{n+1} z^{n+1} \vert }{\vert a_n z^n \vert} & =\left\vert\dfrac{\left(\prod_{k=0}^{n+1}\frac{1}{(2k+1)}\right)z^{n+1}}{\left(\prod_{k=0}^n\frac{1}{(2k+1)}\right)z^n}\right\vert \\
 & =\dfrac{\vert z\vert }{2n+3}\underset{n \rightarrow +\infty}{\longrightarrow}0<1
 \end{align*}
-D'après le critère de d'Alembert, la série $\Sum{n \geq 0}{} \left(\dis \prod_{k=0}^n\frac{1}{(2k+1)}\right)z^n$ converge absolument pour tout $z\in\mathbb{C}^*$ donc $R=+\infty$. 
+D'après le critère de d'Alembert, la série $\Sum{n \geq 0}{} \left(\prod_{k=0}^n\frac{1}{(2k+1)}\right)z^n$ converge absolument pour tout $z\in\mathbb{C}^*$ donc $R=+\infty$. 
 \end{enumerate}
 
 \begin{Exercice}{} Déterminer le rayon de convergence $R$ de la série entière $\Sum{n\geq 1}{} a_n z^n$, où $a_n$ désigne : 
@@ -128,9 +128,8 @@ Déterminer le rayon de convergence de $\Sum{n\geq 0}{} \sin \left( \dfrac{n \pi
 
 \corr Soit $R$ ce rayon de convergence. La suite de terme général $\sin \left( \dfrac{n \pi}{3} \right)$ est bornée donc $R \geq 1$ et cette suite diverge (cyclicité d'une suite non constante) donc la série diverge pour $x=1$ donc $R \leq 1$. Ainsi, $R=1$.
 
-\medskip
 
-\noindent Soit $x \in ]-1,1[$. Remarquons que pour tout $n \geq 0$,
+Soit $x \in ]-1,1[$. Remarquons que pour tout $n \geq 0$,
 $$ \sin \left( \dfrac{n \pi}{3} \right) x^n = \Im m (e^{in \pi/3} x^n) = \Im m ((xe^{i \pi/3})^n)$$
 On sait que $\vert xe^{i \pi/3} \vert <1$ donc la série de terme général $(xe^{i \pi/3})^n$ converge et on a :
 \begin{align*}
@@ -191,7 +190,7 @@ On en déduit alors que pour $x \in ]-1,1[$, $x \neq 0$, on a :
 $$ S(x) =  \dfrac{3x}{1-x}  + \dfrac{6\ln(1-x)}{x^2} + \dfrac{6}{x} +3$$
 et on a $S(0)= 0$. Remarquons que $S$ n'est pas définie en $-1$ et $1$ (divergence grossière).
 
-\begin{Exercice}{} Soit $\theta\in\mathbb{R}$. Après avoir justifié la convergence, calculer $\dsp\sum_{n=0}^{+\infty}\dfrac{\sin(n\theta)}{3^nn!}$.
+\begin{Exercice}{} Soit $\theta\in\mathbb{R}$. Après avoir justifié la convergence, calculer $\sum_{n=0}^{+\infty}\dfrac{\sin(n\theta)}{3^nn!}$.
 \end{Exercice}
 
 \corr Pour tout entier naturel $n$, on a : 
@@ -210,9 +209,8 @@ $$ \sum_{n=0}^{+\infty}\dfrac{\sin(n\theta)}{3^nn!} = \e^{\frac{\cos\theta}{3}}\
 
 \corr La série $\Sum{n \geq 0}{} x^n$ a même rayon de convergence que  la série $\Sum{n \geq 0}{} nx^n$ qui a lui même le même rayon de convergence de $\Sum{n \geq 0}{} n^2x^n$. Ainsi, le rayon de convergence de cette série vaut $1$.
 
-\medskip
 
-\noindent Pour tout $x \in ]-1,1[$, on a :
+Pour tout $x \in ]-1,1[$, on a :
 $$ \sum_{n=0}^{+\infty}x^n  =  \dfrac{1}{1-x} $$
 donc par dérivation terme à terme :
 $$ \sum_{n=0}^{+\infty} nx^{n-1}  =  \dfrac{1}{(1-x)^2} $$
@@ -223,7 +221,7 @@ $$ \sum_{n=0}^{+\infty} n^2 x^{n-1} = \dfrac{(1-x)^2\times 1-(-2(1-x))x}{(1-x)^4
 puis en multipliant par $x$ :
 $$ \sum_{n=0}^{+\infty} n^2 x^{n}= \dfrac{(1-x)^2\times 1-(-2(1-x))x}{(1-x)^4} \times x  = \dfrac{x(x+1)}{(1-x)^3}$$
 
-\begin{Exercice}{\ding{80}} Le but de cet exercice est de justifier l'existence et calculer la valeur de la somme :  
+\begin{Exercice}[$\bigstar$]{} Le but de cet exercice est de justifier l'existence et calculer la valeur de la somme :  
 \[
 A=\sum_{n=1}^{+\infty}\dfrac{1}{n2^n}\cos\left(\dfrac{2n\pi}{3}\right)
 \]
@@ -243,7 +241,6 @@ A=\sum_{n=1}^{+\infty}\dfrac{1}{n2^n}\cos\left(\dfrac{2n\pi}{3}\right)
 \]
 Or la série $\Sum{n \geq 1}{} x^n$ a pour rayon de convergence $1$ donc on en déduit que $R\geq 1$.
 
-\medskip
 
 D'autre part, la suite $(u_n)_{n \geq 0}=\left(\cos\left(2n\pi/3\right)\right)_{n \geq 0}$ ne converge pas vers $0$, car sa suite extraite $(u_{3n})_{n \geq 0}$ est constante égale à $1$. Ainsi, la série numérique $\Sum{n \geq 1}{} u_n$ est grossièrement divergente donc $R\leq 1$. On en déduit que $R=1$.
 \item On note $S$ la somme de la série entière (au moins) définie sur $]-1,1[$.
@@ -265,7 +262,7 @@ $$ S(x)=S(0)-\dfrac{1}{2}\int_0^x\dfrac{2t+1}{t^2+t+1} \dt=-\dfrac{1}{2}\ln(1+x+
 \end{itemize}
 \item On remarque que $A=S(1/2)$ avec $1/2\in ]-1,1[$, donc $A$ existe et vaut : 
 \[
-A=\dsp\sum_{n=1}^{+\infty}\dfrac{1}{n2^n}\cos\left(\dfrac{2n\pi}{3}\right)=S\left(\dfrac{1}{2}\right)=-\dfrac{1}{2}\ln\left(1+\dfrac{1}{2}+\dfrac{1}{4}\right)=-\dfrac{1}{2}\ln\left(\dfrac{7}{4}\right)
+A=\sum_{n=1}^{+\infty}\dfrac{1}{n2^n}\cos\left(\dfrac{2n\pi}{3}\right)=S\left(\dfrac{1}{2}\right)=-\dfrac{1}{2}\ln\left(1+\dfrac{1}{2}+\dfrac{1}{4}\right)=-\dfrac{1}{2}\ln\left(\dfrac{7}{4}\right)
 \]
 \end{enumerate}
 
@@ -290,14 +287,14 @@ $$ ]-1,1[ \subset \mathcal{D} \subset [-1,1]$$
 \begin{itemize}
 \item Pour $z=1$, remarquons que :
 $$ \sin \left( \frac{1}{\sqrt{n}} \right) \underset{+ \infty}{\sim} \dfrac{1}{\sqrt{n}} $$
-Les deux termes généraux sont positifs (la fonction sinus est positive sur $[0,1]$) et la série de terme général $\dfrac{1}{\sqrt{n}}$ diverge (série de Riemann divergente). Par critère de comparaison, on en déduit que la série de terme général $\dis \sin \left( \frac{1}{\sqrt{n}} \right)$ diverge. Ainsi, $1 \notin \mathcal{D}$.
-\item La suite de terme général $\dfrac{1}{\sqrt{n}}$ est décroissante et ses termes appartiennent à $[0,1]$ où la fonction sinus est croissante et positive donc la suite de terme général $\dis \sin \left( \frac{1}{\sqrt{n}} \right)$ est décroissante, positive et converge vers $0$. D'après le critère spécial des séries alternées, on en déduit que $-1 \in \mathcal{D}$.
+Les deux termes généraux sont positifs (la fonction sinus est positive sur $[0,1]$) et la série de terme général $\dfrac{1}{\sqrt{n}}$ diverge (série de Riemann divergente). Par critère de comparaison, on en déduit que la série de terme général $\sin \left( \frac{1}{\sqrt{n}} \right)$ diverge. Ainsi, $1 \notin \mathcal{D}$.
+\item La suite de terme général $\dfrac{1}{\sqrt{n}}$ est décroissante et ses termes appartiennent à $[0,1]$ où la fonction sinus est croissante et positive donc la suite de terme général $\sin \left( \frac{1}{\sqrt{n}} \right)$ est décroissante, positive et converge vers $0$. D'après le critère spécial des séries alternées, on en déduit que $-1 \in \mathcal{D}$.
 \end{itemize}
 Ainsi,
 $$ \mathcal{D}= [-1,1[$$
 \end{enumerate}
 
-\begin{Exercice}{} Soit $\dis f : x \mapsto \sum_{n = 2}^{ + \infty} \frac{( - 1)^{n}}{n(n - 1)}x^{n}.$
+\begin{Exercice}{} Soit $f : x \mapsto \sum_{n = 2}^{ + \infty} \frac{( - 1)^{n}}{n(n - 1)}x^{n}.$
 
   \begin{enumerate}
   \item
@@ -314,7 +311,7 @@ $$ \mathcal{D}= [-1,1[$$
   \begin{enumerate}
   \item Pour tout entier $n \geq 2$,
   $$ \left\vert \frac{( - 1)^{n}}{n(n - 1)} \right\vert = \dfrac{1}{n(n-1)} \underset{+ \infty}{\sim} \dfrac{1}{n^2}$$
-Par comparaison, la série entière $\dis \Sum{n \geq 2}{} \frac{( - 1)^{n}}{n(n - 1)}x^{n}$ a le même rayon de convergence que $\dis \Sum{n \geq 2}{} \dfrac{1}{n^2}x^{n}$ qui a le même rayon de convergence que $\dis \Sum{n \geq 2}{} n^2 \times \dfrac{1}{n^2} x^{n} = \dis \Sum{n \geq 2}{} x^n$ qui vaut $1$. Ainsi, $f$ est définie sur $\mathcal{D}$ où
+Par comparaison, la série entière $\Sum{n \geq 2}{} \frac{( - 1)^{n}}{n(n - 1)}x^{n}$ a le même rayon de convergence que $\Sum{n \geq 2}{} \dfrac{1}{n^2}x^{n}$ qui a le même rayon de convergence que $\Sum{n \geq 2}{} n^2 \times \dfrac{1}{n^2} x^{n} = \Sum{n \geq 2}{} x^n$ qui vaut $1$. Ainsi, $f$ est définie sur $\mathcal{D}$ où
 $$ ]-1,1[ \subset \mathcal{D} \subset [-1,1]$$
 Remarquons que pour tout entier entier $n \geq 2$ et $x \in [-1,1]$,
 $$ \left\vert \dfrac{(-1)^n x^n }{n(n-1)} \right\vert = \dfrac{1}{n(n-1)} $$
@@ -340,7 +337,7 @@ $$ f(-1) = \lim_{x \rightarrow 1^{-}} f(x) =  1$$
   \end{enumerate}
   
   
-  \begin{Exercice}{} Soit $\dis f : x \mapsto \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n+1}}{n(2n+1)} x^{2n+1}$.
+  \begin{Exercice}{} Soit $f : x \mapsto \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n+1}}{n(2n+1)} x^{2n+1}$.
 
 \begin{enumerate}
 \item Déterminer l'ensemble de définition de $f$.
@@ -358,7 +355,7 @@ $$ f(-1) = \lim_{x \rightarrow 1^{-}} f(x) =  1$$
 $$ a_n = \left\vert \dfrac{(-1)^{n+1}}{n(2n+1)} x^{2n+1} \right\vert = \dfrac{1}{n(2n+1)} \vert x \vert ^{2n+1} >0$$
 Alors 
 $$ \dfrac{a_{n+1}}{a_n} = \dfrac{n(2n+1)}{(n+1)(2n+3)} \vert x \vert^2 \underset{n \rightarrow + \infty}{\longrightarrow} \vert x \vert^2$$
-D'après le critère de d'Alembert, on en déduit que la série de terme général $a_n$ converge si $\vert x \vert<1$ et diverge si $\vert x \vert >1$. Ainsi, la série entière $\dis \Sum{n \geq 1}{} \dfrac{(-1)^{n+1}}{n(2n+1)} x^{2n+1}$ a pour rayon de convergence $1$. On en déduit que $f$ est définie sur $\mathcal{D}$ où :
+D'après le critère de d'Alembert, on en déduit que la série de terme général $a_n$ converge si $\vert x \vert<1$ et diverge si $\vert x \vert >1$. Ainsi, la série entière $\Sum{n \geq 1}{} \dfrac{(-1)^{n+1}}{n(2n+1)} x^{2n+1}$ a pour rayon de convergence $1$. On en déduit que $f$ est définie sur $\mathcal{D}$ où :
 $$ ]-1,1[ \subset \mathcal{D} \subset [-1,1]$$
 Remarquons maintenant que pour tout entier $n \geq 1$ et $x \in [-1,1]$,
 $$ \left\vert \dfrac{(-1)^{n+1}}{n(2n+1)} x^{2n+1} \right\vert= \dfrac{1}{n(2n+1)} \leq \dfrac{1}{2n^2}$$
@@ -393,7 +390,7 @@ et ainsi :
 $$ \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n+1}}{n(2n+1)} = \ln(2)-2 + \dfrac{\pi}{2}$$
 \end{enumerate}
 
-\begin{Exercice}{\ding{80}} Soit $\Sum{n \geq 0}{} a_n z^n$ une série entière de rayon de convergence $R>0$. Montrer que  la série $\Sum{n \geq 0}{} \dfrac{a_n}{n!}z^n$ a un rayon de convergence infini. 
+\begin{Exercice}[$\bigstar$]{} Soit $\Sum{n \geq 0}{} a_n z^n$ une série entière de rayon de convergence $R>0$. Montrer que  la série $\Sum{n \geq 0}{} \dfrac{a_n}{n!}z^n$ a un rayon de convergence infini. 
 \end{Exercice}
 
 \corr Soit $r\in ]0,R[$. Par définition du rayon de convergence, $(a_n r^n)_{n \geq 0}$ est donc bornée : 
@@ -407,7 +404,7 @@ Soit $z\in\mathbb{C}$. On a alors pour tout entier $n \geq 0$,
 \end{align*}
 Or la série exponentielle $\Sum{n \geq 0}{} \dfrac{(z/r)^n}{n!}$ converge absolument pour tout $z\in\mathbb{C}$, donc par critère de comparaison pour des séries à termes positifs, on en déduit que $\Sum{n \geq 0}{} \dfrac{a_n}{n!} z^n$ converge aussi absolument pour tout $z\in\mathbb{C}$. Ainsi, la série $\Sum{n \geq 0}{} \dfrac{a_n}{n!} z^n$ a un rayon de convergence infini.
 
-\begin{Exercice}{\ding{80}} Déterminer le rayon de convergence $R$ de $\dis \sum_{n \geq 0} x^{n^2}$. Déterminer un équivalent simple en $R^{-}$ de la somme de cette série entière.
+\begin{Exercice}[$\bigstar$]{} Déterminer le rayon de convergence $R$ de $\sum_{n \geq 0} x^{n^2}$. Déterminer un équivalent simple en $R^{-}$ de la somme de cette série entière.
 \end{Exercice}
 
 \begin{corr} On pose pour tout $n \geq 0$, $a_n=1$ si $n$ est un carré et $a_n =0$ si $n$ n'est pas un carré. La suite $(a_n)_{n \geq 0}$ est clairement bornée donc le rayon de convergence de la série est supérieur ou égal à $1$. Remarquons que la sous-suite $(a_{n^2})$ converge vers $1$. La série diverge donc grossièrement pour $z=1$.Finalement, le rayon de convergence de la série vaut $1$.
@@ -416,9 +413,8 @@ Or la série exponentielle $\Sum{n \geq 0}{} \dfrac{(z/r)^n}{n!}$ converge absol
 %$$ (n+1)^2-n^2 = 2n+1>1$$
 %Autrement dit, la différence entre deux carrés consécutifs est strictement plus grande que $1$. On en déduit que pour tout $n \geq 1$, $n^2+1$ n'est pas un carré et on en déduit que la sous-suite $(a_{n^2+1})_{n \geq 1}$ converge vers $0$. L'existence de ces deux sous-suites ne convergeant pas vers le même nombre implique que $(a_n)$ diverge donc le rayon de convergence est inférieur à $1$. Finalement, le rayon de convergence de la série vaut $1$.
 
-\medskip
 
-\noindent Utilisons une comparaison série-intégrale pour étudier le comportement de la somme $S$ de cette série entière en $1^{-}$. Soit $x \in [0,1[$. La fonction $t \mapsto x^{t^2} = e^{t^2 \ln(x)}$ est continue sur $\mathbb{R}_+$ et décroissante sur $\mathbb{R}_+$ (car $\ln(x)<0$). Par croissance de l'intégrale, on en déduit que pour tout $k \geq 1$,
+Utilisons une comparaison série-intégrale pour étudier le comportement de la somme $S$ de cette série entière en $1^{-}$. Soit $x \in [0,1[$. La fonction $t \mapsto x^{t^2} = e^{t^2 \ln(x)}$ est continue sur $\mathbb{R}_+$ et décroissante sur $\mathbb{R}_+$ (car $\ln(x)<0$). Par croissance de l'intégrale, on en déduit que pour tout $k \geq 1$,
 $$ \int_{k}^{k+1} x^{t^2} \dt \leq x^{k^2} \leq \int_{k-1}^{k} x^{t^2} \dt$$
 Puis par sommation de $1$ à $N \geq 1$ :
 $$ \int_{1}^{N+1} x^{t^2} \dt \leq \sum_{k=1}^N x^{k^2} \leq \int_{0}^{N} x^{t^2} \dt$$
@@ -441,13 +437,9 @@ $$S(x) \underset{x \rightarrow 1^{-}}{\sim} \dfrac{C}{\sqrt{1-x}}$$
 \end{corr}
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Développement en série entière}}}
-\end{center}
+\subsection{Développement en série entière}
 
-\medskip
 
 \begin{Exercice}{} Développer en série entière $x \mapsto \e^{-x}\sin x$.
 \end{Exercice}
@@ -455,9 +447,9 @@ $$S(x) \underset{x \rightarrow 1^{-}}{\sim} \dfrac{C}{\sqrt{1-x}}$$
 \corr Les fonctions $x\mapsto\e^{-x}$ et $\sin$ sont développables en série entière, donc leur produit $f$ l'est aussi, et on a pour tout $x\in\mathbb{R}$ : 
 \[
 \begin{array}{rcl}
-f(x) &= & \e^{-x}\sin x=\Im\mathrm{m}[\e^{(-1+i)x}]=\Im\mathrm{m}\left[\dsp\sum_{n=0}^{+\infty}\dfrac{(-1+i)^n}{n!}x^n\right]\\
+f(x) &= & \e^{-x}\sin x=\Im\mathrm{m}[\e^{(-1+i)x}]=\Im\mathrm{m}\left[\sum_{n=0}^{+\infty}\dfrac{(-1+i)^n}{n!}x^n\right]\\
 \vspace*{-0.2cm}\\
-& = & \dsp\sum_{n=0}^{+\infty}\dfrac{\Im\mathrm{m}[(\sqrt{2})^n\e^{i\frac{3n\pi}{4}}]}{n!}x^n=\sum_{n=0}^{+\infty}\dfrac{(\sqrt{2})^n}{n!}\sin\left(\dfrac{3n\pi}{4}\right)x^n
+& = & \sum_{n=0}^{+\infty}\dfrac{\Im\mathrm{m}[(\sqrt{2})^n\e^{i\frac{3n\pi}{4}}]}{n!}x^n=\sum_{n=0}^{+\infty}\dfrac{(\sqrt{2})^n}{n!}\sin\left(\dfrac{3n\pi}{4}\right)x^n
 \end{array}
 \]
 
@@ -473,17 +465,17 @@ f(x) & = \dfrac{1}{(x-2)(x-3)}\\
 & =-\dfrac{1}{3}\sum_{n=0}^{+\infty}\dfrac{x^n}{3^n}+\dfrac{1}{2}\sum_{n=0}^{+\infty}\dfrac{x^n}{2^n}
 \end{align*} 
 car $\vert x/3 \vert <1$ et $\vert x/2 \vert <1$. Finalement, $f$ est développable en série entière sur $]-2,2[$ et pour tout $x \in ]-2,2[$, on a :
-$$ f(x) = \dsp\sum_{n=0}^{+\infty}\left(  \dfrac{1}{2^{n+1}}-\dfrac{1}{3^{n+1}}\right)x^n$$
+$$ f(x) = \sum_{n=0}^{+\infty}\left(  \dfrac{1}{2^{n+1}}-\dfrac{1}{3^{n+1}}\right)x^n$$
 
-\begin{Exercice}{} Développer en série entière $x \mapsto \dsp\int_0^x\sin(t^2)\mathrm{d}t$.
+\begin{Exercice}{} Développer en série entière $x \mapsto \int_0^x\sin(t^2)\mathrm{d}t$.
 \end{Exercice}
 
 \corr Pour tout $t\in\mathbb{R}$ : 
 \[
-\sin(t^2)=\dsp\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!}t^{4n+2}
+\sin(t^2)=\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!}t^{4n+2}
 \]
 Notons $f$ la fonction étudiée. Par théorème d'intégration terme à terme, il vient alors que pour tout $x\in\mathbb{R}$ : 
-$$f(x)=\dsp\int_0^x\dsp\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!}t^{4n+2}\mathrm{d}t=\dsp\dsp\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!}\int_0^xt^{4n+2}\mathrm{d}t=\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!(4n+3)}x^{4n+3}$$
+$$f(x)=\int_0^x\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!}t^{4n+2}\mathrm{d}t=\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!}\int_0^xt^{4n+2}\mathrm{d}t=\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!(4n+3)}x^{4n+3}$$
 
 \begin{Exercice}{} On pose $f(x)=\dfrac{1}{(x+1)^{2}(3-x)} \cdot$
 \begin{enumerate}
@@ -497,7 +489,7 @@ $$f(x)=\dsp\int_0^x\dsp\sum_{n=0}^{+\infty}\dfrac{(-1)^n}{(2n+1)!}t^{4n+2}\mathr
 \item Il existe des réels $a$, $b$ et $c$ tels que pour tout $x \in \mathbb{R} \setminus \lbrace -1,3 \rbrace$,
 $$ f(x) = \dfrac{a}{x+1} + \dfrac{b}{(x+1)^2} +  \dfrac{c}{3-x}$$
 En mettant au même dénominateur et par identification, on en déduit que :
-$$ \forall x \in \mathbb{R} \setminus \lbrace -1,3 \rbrace , \; \dis f(x)=\dfrac{1}{16}\times\dfrac{1}{x+1}+\dfrac{1}{4}\times\dfrac{1}{(x+1)^2}+\dfrac{1}{16}\times\dfrac{1}{3-x}$$
+$$ \forall x \in \mathbb{R} \setminus \lbrace -1,3 \rbrace , \; f(x)=\dfrac{1}{16}\times\dfrac{1}{x+1}+\dfrac{1}{4}\times\dfrac{1}{(x+1)^2}+\dfrac{1}{16}\times\dfrac{1}{3-x}$$
 Les primitives de $f$ sur $\left]-1,3\right[$ sont donc les fonctions $F$ définies sur cet intervalle par :
 $$F(x)=\dfrac{1}{16}\ln \left( \dfrac{x+1}{3-x}\right) -\dfrac{1}{4}\times\dfrac{1}{(x+1)}+C$$
 où $C\in\mathbb{R}$. Or on a :
@@ -513,8 +505,14 @@ $$\dfrac{1}{3-x}=\dfrac{1} {3\left( 1-\dfrac{x}{3}\right) }$$
 Si $\vert x \vert <3$, on a donc d'après le cours :
 $$\dfrac{1}{3-x}=\dfrac{1}{3}\sum\limits_{n=0}^{+\infty}\dfrac{x^n}{3^n}$$
 Finalement, $f$ est développable en série entière et on a pour tout $x \in ]-1,1[$,
-$$ f(x) = \dfrac{1}{16} \sum\limits_{n=0}^{+\infty}(-1)^{n}x^n
-+\dfrac{1}{4}\sum\limits_{n=0}^{+\infty}(-1)^{n}(n+1)x^{n}+\dfrac{1}{16}\times \dfrac{1}{3}\displaystyle\sum\limits_{n=0}^{+\infty}\dfrac{x^n}{3^n} = \displaystyle\sum\limits_{n=0}^{+\infty}\left(\dfrac{(-1)^n}{16}+\dfrac{(-1)^n(n+1)}{4}+\dfrac{1}{16\times3^{n+1}} \right) x^n$$
+\begin{align*}
+f(x)
+&= \dfrac{1}{16} \sum\limits_{n=0}^{+\infty}(-1)^{n}x^n
++\dfrac{1}{4}\sum\limits_{n=0}^{+\infty}(-1)^{n}(n+1)x^{n}
++\dfrac{1}{16}\times \dfrac{1}{3}\sum\limits_{n=0}^{+\infty}\dfrac{x^n}{3^n}\\
+&= \sum\limits_{n=0}^{+\infty}\left(\dfrac{(-1)^n}{16}
++\dfrac{(-1)^n(n+1)}{4}+\dfrac{1}{16\times3^{n+1}} \right) x^n
+\end{align*}
 Le rayon de convergence de la série est supérieure ou égal à $1$ et de plus, pour $x=1$, la série diverge grossièrement ($n+1$ tend vers $+ \infty$ quand $n$ tend vers $+ \infty$). Ainsi, le rayon de la convergence vaut $1$.
 \item Notons pour tout $n \geq 0$, les coefficients $a_n$ de la série entière étudiée.  D'après le cours, on a pour tout $n \geq 0$,
 $$ a_n = \dfrac{f^n(0)}{n!}$$
@@ -543,7 +541,7 @@ Soit $x \in ]-1,1[$. Pour tout $t \in ]0,1]$, $xt \in ]-1,1[$ donc :
 $$ \ln(1+xt) = \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n-1}}{n} x^n t^n$$
 et donc :
 $$ \dfrac{\ln(1+xt)}{t} = \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n-1}}{n} x^n t^{n-1}$$
-La série entière $\dis \sum_{n \geq 1} \dfrac{(-1)^{n-1}}{n} x^n t^n$ a pour rayon de convergence $+ \infty$ si $x=0$ et en utilisant le critère de D'Alembert, $\dfrac{1}{\vert x \vert}$ si $x \neq 0$. Dans tous les cas, le rayon de convergence est strictement plus grand que $1$ donc la série entière converge uniformément sur $[0,1]$ donc par intégration terme à terme, on en déduit que :
+La série entière $\sum_{n \geq 1} \dfrac{(-1)^{n-1}}{n} x^n t^n$ a pour rayon de convergence $+ \infty$ si $x=0$ et en utilisant le critère de D'Alembert, $\dfrac{1}{\vert x \vert}$ si $x \neq 0$. Dans tous les cas, le rayon de convergence est strictement plus grand que $1$ donc la série entière converge uniformément sur $[0,1]$ donc par intégration terme à terme, on en déduit que :
 \begin{align*}
 g(x) & = \int_{0}^1 \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n-1}}{n} x^n t^{n-1} \\
 & = \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n-1}}{n} x^n \int_{0}^1 t^{n-1} \dt \\
@@ -567,15 +565,11 @@ $$ g'(x) = \int_{0}^1 \dfrac{1}{1+xt} \dt$$
 et ainsi :
 $$ g'(x) = \dfrac{1}{x} [ \ln(1+xt) ]_0^1 = \dfrac{\ln(1+x)}{x}$$
 \end{enumerate}
-\medskip
 
-\begin{center}
-\textit{{ {\large Intégration terme à terme}}}
-\end{center}
+\subsection{Intégration terme à terme}
 
-\medskip
 
-\begin{Exercice}{} Montrer que $\dis \int_{0}^1 \dfrac{\ln(1+t)}{t}\dt = \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n-1}}{n^2} \cdot$
+\begin{Exercice}{} Montrer que $\int_{0}^1 \dfrac{\ln(1+t)}{t}\dt = \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n-1}}{n^2} \cdot$
 \end{Exercice}
 
 \corr Pour tout $t \in ]0,1[$, on a :
@@ -601,8 +595,8 @@ $$ \int_0^1 \dfrac{\ln(1+t)}{t} \dt = \sum_{n=1}^{+ \infty} \int_0^1 f_n(x) \dx 
 
 \begin{Exercice}{}
 \begin{enumerate}
-\item Justifier l'existence de $I= \dis \int_{0}^1 \ln(x) \ln(1-x) \dx$.
-\item Montrer que $I =\dis \sum_{n=1}^{+ \infty} \dfrac{1}{n(n+1)^2}$ puis calculer $I$ sachant que $\dis \sum_{n=1}^{+ \infty} \dfrac{1}{n^2} = \dfrac{\pi^2}{6}\cdot$
+\item Justifier l'existence de $I= \int_{0}^1 \ln(x) \ln(1-x) \dx$.
+\item Montrer que $I =\sum_{n=1}^{+ \infty} \dfrac{1}{n(n+1)^2}$ puis calculer $I$ sachant que $\sum_{n=1}^{+ \infty} \dfrac{1}{n^2} = \dfrac{\pi^2}{6}\cdot$
 \end{enumerate}
 \end{Exercice}
 
@@ -618,16 +612,14 @@ $$ \lim_{x \rightarrow 0 }   \ln(x) \ln(1-x) =  \lim_{x \rightarrow 0 }  -x \ln(
 L'intégrale est donc faussement impropre en $0$.
 \item On obtient de même que l'intégrale est faussement impropre en $1$.
 %$$  \ln(x) \ln(1-x) = \ln(1+x-1) \ln(1-x)\underset{1}{\sim} (x-1) \ln(1-x)$$
-%La fonction $x \mapsto (x-1) \ln(1-x)$ est prolongeable par continuité en $1$ (elle a pour limite $0$ en $1$ d'après le théorème des croissances comparées) donc $\dis \int_{1/2}^{1} (x-1) \ln(1-x)\dx$ converge. Par critère de comparaison (les intégrandes étant positives), on en déduit que $\dis \int_{1/2}^{1} \ln(x) \ln(1-x) \dx$ converge.
+%La fonction $x \mapsto (x-1) \ln(1-x)$ est prolongeable par continuité en $1$ (elle a pour limite $0$ en $1$ d'après le théorème des croissances comparées) donc $\int_{1/2}^{1} (x-1) \ln(1-x)\dx$ converge. Par critère de comparaison (les intégrandes étant positives), on en déduit que $\int_{1/2}^{1} \ln(x) \ln(1-x) \dx$ converge.
 \end{itemize}
-Ainsi, $\dis \int_{0}^1 \ln(x) \ln(1-x) \dx$ converge.
+Ainsi, $\int_{0}^1 \ln(x) \ln(1-x) \dx$ converge.
 
-%\medskip
+%
+\textit{Remarque.} Pour étudier l'impropreté en $1$, on peut utiliser le changement de variable $u : t \mapsto 1-t$ et se ramener à l'impropreté en $0$.
 
-\noindent \textit{Remarque.} Pour étudier l'impropreté en $1$, on peut utiliser le changement de variable $u : t \mapsto 1-t$ et se ramener à l'impropreté en $0$.
 
-
-\medskip
 \item On utilise le théorème d'intégration terme à terme. Pour tout $x \in ]0,1[$, on a :
 $$ \ln(1-x) = - \sum_{n=1}^{+ \infty} \dfrac{x^n}{n}$$
 et donc :
@@ -636,7 +628,7 @@ Posons pour tout $n \geq 1$ et tout $x \in ]0,1[$, $f_n(x)=  - \dfrac{x^n \ln(x)
 
 \begin{itemize}
 \item Pour tout $n \geq 1$, $f_n$ est continue sur $]0,1[$. La fonction $f_0$ est intégrable sur $]0,1[$ (fonction de référence) et pour $n \geq 1$, $f_n$ se prolonge par continuité en $0$ d'après le théorème de croissances comparées donc $f_n$ est aussi intégrable sur $]0,1[$.
-\item La série de fonctions $\dis \sum_{n \geq 1} f_n$ converge simplement sur $]0,1[$ vers la fonction $x \mapsto \ln(x) \ln(1-x)$.
+\item La série de fonctions $\sum_{n \geq 1} f_n$ converge simplement sur $]0,1[$ vers la fonction $x \mapsto \ln(x) \ln(1-x)$.
 \item Soit $n \geq 1$. On a :
 $$\int_{0}^1 \vert f_n(x) \vert dx  = \int_{0}^1  - \dfrac{x^n \ln(x)}{n} \dx$$
 Les fonctions $u: x \mapsto -\dfrac{x^{n+1}}{n+1}$ et $v: x \mapsto \ln(x)$ sont de classe $\mathcal{C}^1$ sur $]0,1[$, de dérivées respectives $x \mapsto -x^n$ et $x \mapsto \dfrac{1}{x}$ et le produit $uv$ admet une limite nulle en $0$ (par théorème des croissances comparées) et une limite nulle en $1$. Par théorème d'intégration par parties, on a :
@@ -677,19 +669,15 @@ Pour $k=0$ c'est évident. Pour $k \geq 1$, il suffit de montrer que :
 $$ 2^k \leq \dfrac{(2k)!}{k!} = (2k) \times (2k-1) \times \cdots \times (k+1)$$
 Il y a $k$ termes dans le produit et chaque terme est supérieur ou égal à $2$ car $k \geq 1$. Le résultat est donc prouvé.
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Divers}}}
-\end{center}
+\subsection{Divers}
 
-\medskip
 
 
 \begin{Exercice}{} On pose $a_0=1$, $a_1=1$ et pour tout $n \geq 0$, $a_{n+2} = a_{n+1} + (n+1)a_n$.
 \begin{enumerate}
 \item Montrer que pour tout $n \geq 0$, $\dfrac{a_n}{n!} \leq 1$.
-\item Montrer que $f$, définie par $f(x) = \dis \sum_{k=0}^{+ \infty} \dfrac{a_k}{k!}x^k$, est solution d'une équation différentielle du premier ordre que l'on résoudra.
+\item Montrer que $f$, définie par $f(x) = \sum_{k=0}^{+ \infty} \dfrac{a_k}{k!}x^k$, est solution d'une équation différentielle du premier ordre que l'on résoudra.
 \item Exprimer pour tout $p \geq 0$, $a_{2p}$ et $a_{2p+1}$.
 \end{enumerate}
 \end{Exercice}
@@ -697,13 +685,11 @@ Il y a $k$ termes dans le produit et chaque terme est supérieur ou égal à $2$
 \corr \begin{enumerate}
 \item Montrons par récurrence double que pour tout $n \geq 0$, $\dfrac{a_n}{n!} \leq 1$.
 
-\medskip
 
-\noindent La propriété est clairement vraie au rang $0$ et $1$.
+La propriété est clairement vraie au rang $0$ et $1$.
 
-\medskip
 
-\noindent Soit $n \in \mathbb{N}$ tel que $a_n \leq n!$ et $a_{n+1} \leq (n+1)!$. Montrons que :
+Soit $n \in \mathbb{N}$ tel que $a_n \leq n!$ et $a_{n+1} \leq (n+1)!$. Montrons que :
 $$ a_{n+2} \leq (n+2)!$$
 On a :
 \begin{align*}
@@ -714,7 +700,7 @@ a_{n+2} & = a_{n+1} + (n+1)a_n \\
 & = (n+2)!
 \end{align*}
 C'est ce qu'il fallait prouver. Ainsi, pour tout $n \geq 0$, $\dfrac{a_n}{n!} \leq 1$.
-\item La série entière $\dis \sum x^k $ a pour rayon de convergence $1$ et d'après la question précédente, pour tout $n \geq 0$, $0 \leq \dfrac{a_n}{n!} \leq 1$ donc par critère de comparaison, on en déduit que la série entière $\dis \sum \dfrac{a_k}{k!}x^k$ a un rayon de convergence supérieur ou égal à $1$. Ainsi, $f$ est définie et $\mathcal{C}^{\infty}$ sur (au moins) $]-1,1[$. Par dérivation terme à terme, on a pour tout $x \in ]-1,1[$,
+\item La série entière $\sum x^k $ a pour rayon de convergence $1$ et d'après la question précédente, pour tout $n \geq 0$, $0 \leq \dfrac{a_n}{n!} \leq 1$ donc par critère de comparaison, on en déduit que la série entière $\sum \dfrac{a_k}{k!}x^k$ a un rayon de convergence supérieur ou égal à $1$. Ainsi, $f$ est définie et $\mathcal{C}^{\infty}$ sur (au moins) $]-1,1[$. Par dérivation terme à terme, on a pour tout $x \in ]-1,1[$,
 \begin{align*}
 f'(x) & = \sum_{k=1}^{+ \infty} \dfrac{a_k}{(k-1)!} x^{k-1} \\
 & = a_1 + \sum_{k=2}^{+ \infty} \dfrac{a_k}{(k-1)!} x^{k-1} \\
@@ -754,10 +740,10 @@ a_{2p+1} & = (2p+1)! \sum_{j=0}^p \dfrac{c_{2j}}{(2p+1-2j)!} \\
 \end{align*}
 \end{enumerate}
 
-\begin{Exercice}{\ding{80}} Soit $(a_n)_{n \geq 0}$ une suite de réels telle que $na_n$ tend vers $0$ quand $n$ tend vers $+ \infty$.
+\begin{Exercice}[$\bigstar$]{} Soit $(a_n)_{n \geq 0}$ une suite de réels telle que $na_n$ tend vers $0$ quand $n$ tend vers $+ \infty$.
 \begin{enumerate}
-\item Montrer que $\dis \sum_{n \geq 0} a_n x^n$ a un rayon de convergence supérieur ou égal à $1$.
-\item Montrer que $\dis \sum_{n=0}^{+ \infty} a_n x^n = o(\ln(1-x))$ quand $x$ tend vers $1^{-}$.
+\item Montrer que $\sum_{n \geq 0} a_n x^n$ a un rayon de convergence supérieur ou égal à $1$.
+\item Montrer que $\sum_{n=0}^{+ \infty} a_n x^n = o(\ln(1-x))$ quand $x$ tend vers $1^{-}$.
 \end{enumerate}
 \end{Exercice}
 
@@ -765,7 +751,7 @@ a_{2p+1} & = (2p+1)! \sum_{j=0}^p \dfrac{c_{2j}}{(2p+1-2j)!} \\
 \begin{enumerate}
 \item D'après l'hypothèse,
 $$ a_n \underset{+ \infty}{=} o \left(\dfrac{1}{n}\right)$$
-La série entière $\dis \sum \dfrac{z^n}{n}$ a un rayon de convergence égal à $1$ (série entière usuelle) donc par critère de comparaison, la série entière $\dis \sum a_n z^n$ a une rayon de convergence supérieur ou égal à $1$.
+La série entière $\sum \dfrac{z^n}{n}$ a un rayon de convergence égal à $1$ (série entière usuelle) donc par critère de comparaison, la série entière $\sum a_n z^n$ a une rayon de convergence supérieur ou égal à $1$.
 \item Posons pour tout $x \in ]0,1[$,
 $$ f(x) = \sum_{n=0}^{+ \infty} a_n x^n$$
 D'après l'hypothèse, 
@@ -794,7 +780,7 @@ On en déduit que $f(x)= o(\ln(1-x))$ quand $x$ tend vers $1^{-}$.
 \begin{Exercice}{} Soit $(u_n)_{n \geq 0}$ la suite définie par $u_0 >0$ et pour tout $n \geq 0$, $u_{n+1}= \ln(1+u_n)$.
 \begin{enumerate}
 \item Prouver la convergence et déterminer la limite de cette suite.
-\item Déterminer le rayon de convergence de $\dis \sum_{n \geq 0} u_n x^n$.
+\item Déterminer le rayon de convergence de $\sum_{n \geq 0} u_n x^n$.
 \item Soit $(v_n)_{n \geq 1}$ une suite de réels convergeant vers $\ell \in \mathbb{R}$. Montrer que $(w_n)_{n \geq 1}$ définie par :
 $$ w_n = \dfrac{1}{n} \sum_{k=1}^n v_k$$
 converge vers $\ell$.
@@ -817,7 +803,7 @@ L'étude de la fonction $x \mapsto \ln(1+x) - x$ sur $\mathbb{R}_+$ montre que l
 $$ u_{n+1} = \ln(1+u_n) \underset{+ \infty}{\sim} u_n $$
 et sachant que $(u_n)_{n \geq 0}$ est strictement positive :
 $$ \lim_{n \rightarrow + \infty} \left\vert \dfrac{u_{n+1}}{u_n} \right\vert = 1$$
-D'après le critère de D'Alembert, on en déduit que la série entière $\dis \sum_{n \geq 0} u_n x^n$ a pour rayon de convergence $1$.
+D'après le critère de D'Alembert, on en déduit que la série entière $\sum_{n \geq 0} u_n x^n$ a pour rayon de convergence $1$.
 \item C'est la preuve du Théorème de Césaro (voir TD1).
 \item Soit $n \geq 1$. Sachant que $(u_n)$ tend vers $0$, on a :
 \begin{align*}
@@ -844,7 +830,7 @@ $$ u_n \underset{+ \infty}{\sim} \dfrac{2}{n}$$
 \end{enumerate}
 \end{corr}
 
-\begin{Exercice}{\ding{80}} Soit $(u_n)_{n \geq 0}$ la suite définie par $u_0=0$ et pour tout $n \geq 0$ par 
+\begin{Exercice}[$\bigstar$]{} Soit $(u_n)_{n \geq 0}$ la suite définie par $u_0=0$ et pour tout $n \geq 0$ par 
 $$ \dfrac{u_{n+1}}{u_n} = \dfrac{n+a}{n+b}$$
 où $a$ et $b$ sont deux réels strictement positifs. On pose pour tout $n \geq 1$, $v_n = \ln(n^{b-a}u_n)$.
 \begin{enumerate}
@@ -874,22 +860,20 @@ et ainsi,
 $$ v_{n+1}-v_n \underset{+ \infty}{=}  O \left( \dfrac{1}{n^2} \right)$$
 Par critère de comparaison, on  en déduit que la série de terme général $v_{n+1}-v_n$ converge absolument et donc converge.
 
-\medskip
 
-\noindent La série de terme général $v_{n+1}-v_n$ est téléscopique et convergente donc $(v_n)_{n \geq 0}$ converge donc il existe un réel $\ell$ tel que :
+La série de terme général $v_{n+1}-v_n$ est télescopique et convergente donc $(v_n)_{n \geq 0}$ converge donc il existe un réel $\ell$ tel que :
 $$ \lim_{n \rightarrow + \infty} \ln(n^{b-a} u_n) = \ell$$
 donc par continuité de l'exponentielle en $\ell$ :
 $$ \lim_{n \rightarrow + \infty} n^{b-a} u_n = e^{\ell}$$
 et ainsi,
 $$ u_n \underset{+ \infty}{\sim} \dfrac{e^{\ell}}{n^{b-a}}$$
-Remarquons que $e^{\ell} \neq 0$ et que les séries étudiées sont à termes positifs. Par comparaison à une série de Riemann, on en déduit que $\dis \sum u_n$ converge si et seulement si $b-a>1$.
+Remarquons que $e^{\ell} \neq 0$ et que les séries étudiées sont à termes positifs. Par comparaison à une série de Riemann, on en déduit que $\sum u_n$ converge si et seulement si $b-a>1$.
 \item Supposons que $b>a+1$. La suite $(u_n)_{n \geq 1}$ est à termes strictement positifs et on pour tout $n \geq 0$,
 $$ \dfrac{u_{n+1}}{u_n} = \dfrac{n+a}{n+b} \underset{+ \infty}{\sim} 1$$
 D'après le critère de D'Alembert, on en déduit que le rayon de convergence de la série entière étudiée vaut $1$. Cette série converge pour $x=1$ d'après la question précédente et la série converge absolument pour $x=-1$ (on revient au cas $x=1$ par convergence absolue) et donc converge. Ainsi, $f$ est définie sur $[-1,1]$.
 
-\medskip
 
-\noindent On sait que pour tout $n \geq 0$,
+On sait que pour tout $n \geq 0$,
 $$ (n+b) u_{n+1} = (n+a) u_n$$
 donc :
 $$ (n+1) u_{n+1} + (b-1) u_{n+1} = n u_n + au_n $$
@@ -924,7 +908,7 @@ $f$ coïncide donc avec la somme d'une série entière sur $\mathbb{R}^*$ (cette
 \begin{Exercice}{} \begin{enumerate}
 \item Déterminer le rayon de convergence de la série entière $\Sum{n \geq 0}{} \dfrac{x^n}{(2n)!} \cdot$
 
-\noindent On note $S$ la somme de cette série entière.
+On note $S$ la somme de cette série entière.
 \item Donner le développement en série entière en 0 de la fonction $x\mapsto \text{ch}(x)$  et précisez le rayon de convergence.
 \item \begin{enumerate}
 	\item Déterminer $S$.
@@ -944,14 +928,14 @@ Alors
 $$ \dfrac{u_{n+1}}{u_n} = \dfrac{ \vert x \vert }{(2n+2)(2n+1)} \underset{n \rightarrow + \infty}{\longrightarrow} 0$$
 D'après le critère de d'Alembert, on en déduit que la série $\Sum{n \geq 0}{} {\dfrac{{x^n }}{{(2n)!}}} $ converge absolument (donc converge) pour tout $x \in \mathbb{R}$ donc le rayon de convergence de cette série entière est $R =  + \infty $.
 \item C'est du cours :
-$$\forall x\in \mathbb{R} , \; \textrm{ch} (x) = \displaystyle\sum\limits_{n = 0}^{ + \infty } {\dfrac{{x^{2n} }}{{(2n)!}}} $$ 
+$$\forall x\in \mathbb{R} , \; \textrm{ch} (x) = \sum\limits_{n = 0}^{ + \infty } {\dfrac{{x^{2n} }}{{(2n)!}}} $$ 
 et le rayon de convergence du développement en série entière de $\textrm{ch}$  est égal à $ + \infty $.
 \item 
 \begin{enumerate}
 \item Soit $x \geq 0$. Alors $x= t^2$ (avec $t = \sqrt{x}$) et 
-$$S(x) = \displaystyle\sum\limits_{n = 0}^{ + \infty } {\dfrac{{x^n }}{{(2n)!}}}  = \displaystyle\sum\limits_{n = 0}^{ + \infty } {\dfrac{{t^{2n} }}{{(2n)!}}}  = \textrm{ch} (t) = \textrm{ch}( \sqrt x) $$
+$$S(x) = \sum\limits_{n = 0}^{ + \infty } {\dfrac{{x^n }}{{(2n)!}}}  = \sum\limits_{n = 0}^{ + \infty } {\dfrac{{t^{2n} }}{{(2n)!}}}  = \textrm{ch} (t) = \textrm{ch}( \sqrt x) $$
 Pour $x < 0$, on peut écrire $x =  - t^2 $ (avec $t=\sqrt{-x}$) et 
-$$S(x) = \displaystyle\sum\limits_{n = 0}^{ + \infty } {\dfrac{{x^n }}{{(2n)!}}}  = \displaystyle\sum\limits_{n = 0}^{ + \infty } {\dfrac{{( - 1)^n t^{2n} }}{{(2n)!}}}  = \cos (t) = \cos (\sqrt { - x}) $$
+$$S(x) = \sum\limits_{n = 0}^{ + \infty } {\dfrac{{x^n }}{{(2n)!}}}  = \sum\limits_{n = 0}^{ + \infty } {\dfrac{{( - 1)^n t^{2n} }}{{(2n)!}}}  = \cos (t) = \cos (\sqrt { - x}) $$
 \item La fonction $f$ est la fonction $S$. Or $S$ est  de classe $\mathcal{C}^\infty $ sur $\mathbb{R}$ car développable en série entière à l'origine avec un rayon de convergence égal à $+\infty$. Ainsi, $f$ est  de classe $\mathcal{C}^\infty  $ sur $\mathbb{R}$.
 \end{enumerate}
 \end{enumerate}

@@ -1,22 +1,22 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Correction du TD 16 : Variables aléatoires discrètes}
 
-\begin{center}
-\textit{{ {\huge TD 16 : Variables aléatoires discrètes}}}
-\end{center}
+\tableofcontents
+\separationTitre
 
 
-\medskip
+\subsection{Loi d'une variable aléatoire}
 
-\begin{center}
-\textit{{ {\large Loi d'une variable aléatoire}}}
-\end{center}
-
-\medskip
 
 \begin{Exercice}{} On effectue une suite de lancers d'une pièce équilibrée jusqu'à obtenir au moins une fois un Pile et un Face. On note alors $X$ le nombre de tirages effectués.
 
@@ -52,7 +52,7 @@ $$ E(X) = \dfrac{1}{(1- 1/2)^2} -1= 3$$
 \end{enumerate}
 
 \begin{Exercice}{}
- Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}^*$ telle que pour tout $k \in \mathbb{N}^*$, $\dis P(X=k)=a3^{-k}$ où $a \in \mathbb{R}$.
+ Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}^*$ telle que pour tout $k \in \mathbb{N}^*$, $P(X=k)=a3^{-k}$ où $a \in \mathbb{R}$.
 \begin{enumerate}
 \item Déterminer $a$ pour que l'on définisse bien ainsi une loi de probabilité.
 \item $X$ a-t-elle plus de chance de prendre des valeurs paires ou impaires ?
@@ -114,9 +114,8 @@ et donc par deux à deux incompatibilité :
 \end{align*}
 \item D'après l'énoncé, on a $G=(-1)^n N$. D'après le théorème de transfert, $G$ admet une espérance si et seulement si la série de terme général $(-1)^n n \P(X=n)$ converge absolument ce qui est équivalent à la convergence de la série de terme général $n \P(X=n)$.
 
-\medskip
 
-\noindent  On sait que pour tout $x \in ]-1,1[$,
+ On sait que pour tout $x \in ]-1,1[$,
 $$ \dfrac{1}{1-x} = \sum_{k=0}^{+ \infty} x^k$$
 Par dérivation terme à terme (somme d'une série entière), on a pour tout $x \in ]-1,1[$ :
 $$ \dfrac{1}{(1-x)^2} = \sum_{k=1}^{+ \infty} k x^{k-1}$$
@@ -149,8 +148,8 @@ $X$ admet-elle une variance? Justifier.
 $$ \forall x \in \mathbb{R} \setminus \lbrace -2,-1,0 \rbrace, \; R(x)= \dfrac{1}{2x}-\dfrac{1}{x+1}+\dfrac{1}{2(x+2)}$$
 \item Soit $N\in \mathbb{N}^*$. On a :
 \begin{align*}
-\P(X\leq N) & =\lambda\displaystyle\sum\limits_{n=1}^{N}\left(\frac{1}{2n}-\frac{1}{n+1}+\frac{1}{2(n+2)}\right) \\
-& =\lambda\left(  \dfrac{1}{2}\displaystyle\sum\limits_{n=1}^{N}\dfrac{1}{n}-\displaystyle\sum\limits_{n=2}^{N+1}\dfrac{1}{n}+\frac{1}{2}\displaystyle\sum\limits_{n=3}^{N+2}\dfrac{1}{n}\right) 
+\P(X\leq N) & =\lambda\sum\limits_{n=1}^{N}\left(\frac{1}{2n}-\frac{1}{n+1}+\frac{1}{2(n+2)}\right) \\
+& =\lambda\left(  \dfrac{1}{2}\sum\limits_{n=1}^{N}\dfrac{1}{n}-\sum\limits_{n=2}^{N+1}\dfrac{1}{n}+\frac{1}{2}\sum\limits_{n=3}^{N+2}\dfrac{1}{n}\right) 
 \end{align*}
 Par télescopage, on obtient alors :
 $$\P(X\leq N)=\lambda\left( \dfrac{1}{2}+\dfrac{1}{4}-\dfrac{1}{2}-\dfrac{1}{N+1}+\dfrac{1}{2(N+1)}+\dfrac{1}{2(N+2)}\right) $$ 
@@ -164,26 +163,33 @@ $$ n \P(X=n) = \frac{4}{(n+1)(n+2)} \underset{+ \infty}{\sim} \dfrac{4}{n^2}$$
 La série de terme général $\tfrac{1}{n^2}$ converge (série de Riemann convergente) donc par critère de comparaison de séries à termes positifs, on en déduit que la série de terme général $n \P(X=n)$ converge. Ainsi, $X$ admet une espérance. Pour tout entier $n \geq 1$, on a :
 
 \begin{align*}
-\displaystyle\sum\limits_{k=1}^{n}k \P(X=k) & =\displaystyle\sum\limits_{k=1}^{n}\dfrac{4}{(k+1)(k+2)} \\
-& =4\displaystyle\sum\limits_{k=1}^{n}\left(\dfrac{1}{k+1}-\dfrac{1}{k+2} \right) \qquad \hbox{(théorème belge)}\\
+\sum\limits_{k=1}^{n}k \P(X=k) & =\sum\limits_{k=1}^{n}\dfrac{4}{(k+1)(k+2)} \\
+& =4\sum\limits_{k=1}^{n}\left(\dfrac{1}{k+1}-\dfrac{1}{k+2} \right) \qquad \hbox{(théorème belge)}\\
 &   =2-\dfrac{4}{n+2}
 \end{align*}
 par télescopage. On en déduit que :
-$$\lim\limits_{n\mapsto+\infty}\displaystyle\sum\limits_{k=1}^{n}k \P(X=k)=2$$
+$$\lim\limits_{n\mapsto+\infty}\sum\limits_{k=1}^{n}k \P(X=k)=2$$
 et ainsi, $E(X)=2$.
 \item La variable aléatoire $X$ admet une variance si et seulement $X^2$ admet une espérance. C'est équivalent d'après le théorème de transfert et la positivité des termes à la convergence de la série de terme général $n^2 \P(X=n)$. Pour tout entier $n \geq 1$,
 $$ n^2 \P(X=n) = \frac{4n}{(n+1)(n+2)} \underset{+ \infty}{\sim} \dfrac{4}{n}$$
 La série de terme général $\tfrac{1}{n}$ diverge (série harmonique) donc par critère de comparaison de séries à termes positifs, on en déduit que la série de terme général $n^2 \P(X=n)$ diverge. Ainsi, $X$ n'admet pas de variance.
 \end{enumerate}
 
-\begin{Exercice}{} Soient $p\in \left] 0,1\right[$ et $r\in\mathbb{N}^*$.\\
-On dépose une bactérie dans une enceinte fermée à l'instant $t=0$ (le temps est exprimé en secondes).\\
-On envoie un rayon laser par seconde dans cette enceinte.\\
-Le premier rayon laser est envoyé à l'instant $t=1$.\\
-La bactérie a la probabilité $p$ d'être touchée par le rayon laser.\\
-Les tirs de laser sont indépendants.\\
-La bactérie ne meurt que lorsqu'elle a été touchée $r$ fois par le rayon laser.\\
-Soit $X$ la variable aléatoire égale à la durée de vie de la bactérie.\\
+\begin{Exercice}{} Soient $p\in \left] 0,1\right[$ et $r\in\mathbb{N}^*$.
+
+On dépose une bactérie dans une enceinte fermée à l'instant $t=0$ (le temps est exprimé en secondes).
+
+On envoie un rayon laser par seconde dans cette enceinte.
+
+Le premier rayon laser est envoyé à l'instant $t=1$.
+
+La bactérie a la probabilité $p$ d'être touchée par le rayon laser.
+
+Les tirs de laser sont indépendants.
+
+La bactérie ne meurt que lorsqu'elle a été touchée $r$ fois par le rayon laser.
+
+Soit $X$ la variable aléatoire égale à la durée de vie de la bactérie.
 \begin{enumerate}
 \item \textit{Préliminaire.} Soient $q \in \mathbb{N}^*$ et $x \in ]-1,1[$. Montrer que : 
 $$ \sum\limits_{k=q}^{+\infty}\dbinom{k}{q}x^{k-q}=\dfrac{1}{(1-x)^{q+1}}$$
@@ -207,14 +213,14 @@ Les deux égalités impliquent que :
 $$ \sum_{k=q}^{+ \infty} \dfrac{n!}{(n-q)!} x^{n-q} = \dfrac{q!}{(1-x)^{q+1}}$$
 ou encore :
 $$ \sum\limits_{k=q}^{+\infty}\dbinom{k}{q}x^{k-q}=\dfrac{1}{(1-x)^{q+1}}$$
-\item La bactérie peut mourir uniquement après $r$ secondes donc $X(\Omega)=\lbrace r, r+1, \ldots \rbrace$. Soit $n\in \lbrace r, r+1, \ldots \rbrace$. L'évènement $(X=n)$ se réalise si et seulement si $n$ tirs de laser ont été nécessaires pour tuer la bactérie. Cela signifie que sur les $n-1$ premiers tirs de laser, la bactérie est  touchée $(r-1)$ fois et non touchée  $\left( (n-1)-(r-1)\right)$ fois et enfin elle est touchée au $n$-ième tir. Lors des $n-1$ premiers tirs, on reconnait la répétition de $n-1$ épreuves de Bernoulli identiques et indépendantes (avec $r-1$ succès où le succès est \og la bactérie est touchée \fg ayant une probabilité égale à $p$). Les tirs étant supposés indépendants et la probabilité d'être touché lors du $n$-ième tir valant $p$, on en déduit que :
+\item La bactérie peut mourir uniquement après $r$ secondes donc $X(\Omega)=\lbrace r, r+1, \ldots \rbrace$. Soit $n\in \lbrace r, r+1, \ldots \rbrace$. L'évènement $(X=n)$ se réalise si et seulement si $n$ tirs de laser ont été nécessaires pour tuer la bactérie. Cela signifie que sur les $n-1$ premiers tirs de laser, la bactérie est  touchée $(r-1)$ fois et non touchée  $\left( (n-1)-(r-1)\right)$ fois et enfin elle est touchée au $n$-ième tir. Lors des $n-1$ premiers tirs, on reconnaît la répétition de $n-1$ épreuves de Bernoulli identiques et indépendantes (avec $r-1$ succès où le succès est \og la bactérie est touchée \fg ayant une probabilité égale à $p$). Les tirs étant supposés indépendants et la probabilité d'être touché lors du $n$-ième tir valant $p$, on en déduit que :
 $$\P(X=n)=\dbinom{n-1}{r-1}p^{r-1}(1-p)^{(n-1)-(r-1)}\times p = \dbinom{n-1}{r-1}p^{r}(1-p)^{n-r}$$
 \item La variable aléatoire $X$ admet une espérance si et seulement la série de terme général $n \P(X=n)$ converge absolument ($n \geq r$) ce qui est équivalent à la convergence de cette série (par positivité des termes). Soit $n\in \lbrace r, r+1, \ldots \rbrace$. On a :
 $$nP(X=n)=n\dbinom{n-1}{r-1}p^{r}(1-p)^{n-r}=n\dfrac{(n-1)!}{(n-r)!(r-1)!}p^{r}(1-p)^{n-r}=r\dfrac{n!}{(n-r)!r!}p^{r}(1-p)^{n-r}$$
 ou encore :
 $$nP(X=n)=r \dbinom{n}{r}p^{r}(1-p)^{n-r} = rp^r \times \dbinom{n}{r} (1-p)^{n-r}$$
 Par hypothèse, $p\in \left]0,1 \right[$ donc $(1-p)\in \left]0,1 \right[$. D'après la question $1$, on en déduit que la série de terme général $nP(X=n)$ converge et donc $E(X)$ existe. On a de plus :
-$$E(X)=\displaystyle\sum\limits_{n= r}^{+\infty} nP(X=n)=r p^r\displaystyle\sum\limits_{n= r}^{+\infty}\dbinom{n}{r}(1-p)^{n-r}
+$$E(X)=\sum\limits_{n= r}^{+\infty} nP(X=n)=r p^r\sum\limits_{n= r}^{+\infty}\dbinom{n}{r}(1-p)^{n-r}
 =r \dfrac{p^r}{\left( 1-(1-p)\right)^{r+1} } $$
 ce qui donne finalement :
 $$E(X)=\dfrac{r}{p}$$
@@ -231,9 +237,9 @@ $$E(X)=\dfrac{r}{p}$$
 \end{Exercice}
 
 \corr \begin{enumerate}
-\item Pour tout $k \in \Interv{1}{n}$, $X_k$ suit une loi uniforme sur $\Interv{1}{6}$. Elles ont donc la même fonction de répartition. Pour tout $x \in \mathbb{R}$, on a :
+\item Pour tout $k \in \ii{1}{n}$, $X_k$ suit une loi uniforme sur $\ii{1}{6}$. Elles ont donc la même fonction de répartition. Pour tout $x \in \mathbb{R}$, on a :
 $$ F(x) = \P(X \leq x)$$
-Pour obtenir l'expression de $F$, il suffit de remarquer que si $x<1$ alors $F(x)=0$, si $x \geq 6$, $F(x)=1$ et si $x \in [i,i+1[$ où $i \in \Interv{1}{5}$,
+Pour obtenir l'expression de $F$, il suffit de remarquer que si $x<1$ alors $F(x)=0$, si $x \geq 6$, $F(x)=1$ et si $x \in [i,i+1[$ où $i \in \ii{1}{5}$,
 $$ F(x) = \sum_{k=1}^{i} \P(X = k) = \dfrac{i}{6}$$
 Ainsi, pour tout $x \in \mathbb{R}$,
 $$ F(x) = \left\lbrace \begin{array}{cl}
@@ -299,7 +305,7 @@ $$ \lim_{n \rightarrow + \infty} G_n(x) =1$$
 \end{itemize}
 Ainsi, $(G_n)$ converge simplement sur $\mathbb{R}$ vers la fonction $g : \mathbb{R} \rightarrow \mathbb{R}$ définie pour tout $x \in \mathbb{R}$ par $g(x) = 0$ si $x<1$ et $g(x)=1$ si $x \geq 1$. 
 
-\noindent Pour tout $x \in \mathbb{R}$, sachant que $G_n$ est positive sur $\mathbb{R}$,
+Pour tout $x \in \mathbb{R}$, sachant que $G_n$ est positive sur $\mathbb{R}$,
 $$ \vert G_n(x) -g(x) \vert = \left\lbrace \begin{array}{cl}
 0& \hbox{ si } x < 1 \\
 (1-F(x))^n & \hbox{ si } x \geq 1  \\
@@ -313,33 +319,29 @@ Par théorème d'encadrement, on en déduit que $(G_n)$ converge uniformément s
 
 \newpage
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Lois usuelles}}}
-\end{center}
+\subsection{Lois usuelles}
 
-\medskip
 
 \begin{Exercice}{} On désigne par $n$ un entier naturel supérieur ou égal à 2. On note $p$ un réel de $]0,1[$ et on pose $q = 1-p$. On dispose d'une pièce donnant Pile avec la probabilité $p$ et Face avec la probabilité $q$.
 
-\noindent On lance cette pièce et on arrête les lancers dans l'une des deux situations suivantes :
+On lance cette pièce et on arrête les lancers dans l'une des deux situations suivantes :
 \begin{itemize}
  \item Soit si l'on a obtenu Pile.
  \item Soit si l'on a obtenu $n$ fois Face.
 \end{itemize}
 %
-%\noindent Pour tout entier naturel $k$ non nul, on note $P_k$ (respectivement $F_k$) l'événement \og on a obtenu Pile (respectivement Face) au $k^{ieme}$ lancer \fg.
+%Pour tout entier naturel $k$ non nul, on note $P_k$ (respectivement $F_k$) l'événement \og on a obtenu Pile (respectivement Face) au $k^{ieme}$ lancer \fg.
 
-\noindent On note $T_n$ le nombre de lancers effectués, $X_n$ le nombre de Pile obtenus et enfin $Y_n$ le nombre de Face obtenus. 
+On note $T_n$ le nombre de lancers effectués, $X_n$ le nombre de Pile obtenus et enfin $Y_n$ le nombre de Face obtenus. 
 \begin{enumerate}
  \item  Déterminer la loi de $T_n$.
  \item  Déterminer l'espérance de $T_n$.
 % \begin{enumerate}
-%  \item Pour tout $k$ de $\Interv{1}{n-1}$, déterminer, en distinguant le cas $k=1$, la probabilité $P(T_n = k)$.
+%  \item Pour tout $k$ de $\ii{1}{n-1}$, déterminer, en distinguant le cas $k=1$, la probabilité $P(T_n = k)$.
 %  \item Déterminer $P(T_n = n)$.
-%  \item Vérifier par le calcul que $\dis \sum_{k=1}^n P(T_n = k) = 1$.
-%  \item Vérifier que l'espérance de $T_n$ est $\dis \frac{1-q^n}{1-q}\cdot$
+%  \item Vérifier par le calcul que $\sum_{k=1}^n P(T_n = k) = 1$.
+%  \item Vérifier que l'espérance de $T_n$ est $\frac{1-q^n}{1-q}\cdot$
 % \end{enumerate}
  \item Déterminer la loi et l'espérance de $X_n$.
 % \begin{enumerate}
@@ -348,7 +350,7 @@ Par théorème d'encadrement, on en déduit que $(G_n)$ converge uniformément s
 % \end{enumerate}
  \item Loi de $Y_n$.
  \begin{enumerate}
-  \item Déterminer, pour tout $k$ de $\Interv{0}{n-1}$, la probabilité $P(Y_n = k)$.
+  \item Déterminer, pour tout $k$ de $\ii{0}{n-1}$, la probabilité $P(Y_n = k)$.
   \item Déterminer $P(Y_n = n)$.
   \item Écrire une égalité liant les variables aléatoires $T_n$, $X_n$ et $Y_n$, puis en déduire $E(Y_n)$.
 \end{enumerate}
@@ -361,21 +363,20 @@ Par théorème d'encadrement, on en déduit que $(G_n)$ converge uniformément s
 $$(T_n=1) = P_1$$
 et ainsi :
 \[ P(T_n=1) = P(P_1) = p\]
-La variable aléatoire $T_n$ prend la valeur $k \in \Interv 2 {n-1} $ si et seulement si on obtient Face aux $(k-1)$ premiers lancers et Pile au $k\ieme$ lancer. Ainsi :
+La variable aléatoire $T_n$ prend la valeur $k \in \ii 2 {n-1} $ si et seulement si on obtient Face aux $(k-1)$ premiers lancers et Pile au $k\ieme$ lancer. Ainsi :
 $$ (T_n = k) = F_1\cap F_2\cap \dots F_{k-1} \cap P_k$$
-D'après la formule des probabilités composées, sachant que $\dis \bigcap_{i=1}^{k-1} F_i$ est de probabilité non nulle,  on a : 
+D'après la formule des probabilités composées, sachant que $\bigcap_{i=1}^{k-1} F_i$ est de probabilité non nulle,  on a : 
 $$ P(T_n=k) = P(F_1)\times P_{F_1}(F_2)\times \dots P_{\cap_{i=1}^{k-2} F_i}(F_{k-1}) \times P_{\cap_{i=1}^{k-1} F_i}(P_k)$$
 ce qui donne $P(T_n=k) = q^{k-1}p$. Remarquons que cette formule reste vraie pour $k=1$.
 
-\medskip
 
-\noindent La partie s'arrête au $n\ieme$ lancer si et seulement si : \og on obtient le premier Pile au $n\ieme$ lancer \fg ou \og on a obtenu $n$ fois Face\fg. Donc :
+La partie s'arrête au $n\ieme$ lancer si et seulement si : \og on obtient le premier Pile au $n\ieme$ lancer \fg ou \og on a obtenu $n$ fois Face\fg. Donc :
 \begin{align*}
-(T_n=n) &= \l(F_1 \cap F_2 \cap \dots \cap F_{n-1} \cap P_n\r) \cup \l(F_1 \cap F_2 \cap \dots \cap F_{n} \r)\\
-&= \l(F_1 \cap F_2 \cap \dots \cap F_{n-1}\r)\cap (P_n\cup F_n)\\
-&=\l(F_1 \cap F_2 \cap \dots \cap F_{n-1}\r)
+(T_n=n) &= \left(F_1 \cap F_2 \cap \dots \cap F_{n-1} \cap P_n\right) \cup \left(F_1 \cap F_2 \cap \dots \cap F_{n} \right)\\
+&= \left(F_1 \cap F_2 \cap \dots \cap F_{n-1}\right)\cap (P_n\cup F_n)\\
+&=\left(F_1 \cap F_2 \cap \dots \cap F_{n-1}\right)
 \end{align*}
-car $P_n$ est l'événement contraire de $F_n$. D'après la formule des probabilités composées, sachant que $\dis \bigcap_{i=1}^{k-2} F_i$ est de probabilité non nulle, on a :
+car $P_n$ est l'événement contraire de $F_n$. D'après la formule des probabilités composées, sachant que $\bigcap_{i=1}^{k-2} F_i$ est de probabilité non nulle, on a :
 $$P(T_n=n) = P(F_1)\times P_{F_1}(F_2)\times \dots \times P_{\cap_{i=1}^{k-2} F_i}(F_{k-1}) $$
 ce qui implique que $P(T_n=n) = q^{n-1}$.
 
@@ -392,17 +393,17 @@ ce qui implique que $P(T_n=n) = q^{n-1}$.
  & = \frac{1-q^n}{1-q}  
 \end{align*}
 
-\noindent \textit{Remarque :} dans la quatrième ligne, à la place du changement d'indice, on pouvait utiliser le Théorème Belge dans la première somme en disant que $k=k-1+1$, en découpant la somme en deux, ce qui faisait apparaitre une somme télescopique.
+\textit{Remarque :} dans la quatrième ligne, à la place du changement d'indice, on pouvait utiliser le Théorème Belge dans la première somme en disant que $k=k-1+1$, en découpant la somme en deux, ce qui faisait apparaître une somme télescopique.
 \item On s'arrête dès que l'on obtient un Pile, donc $X_n \leq 1$. L'événement $[X_n = 0]$ se produit si on obtient $n$ fois Face, c'est-à-dire :
 $$(X_n=0) = \bigcap_{j=1}^n F_j$$
-Ainsi, $X_n(\Omega) = \{0,1\}$. La formule des probabilités composées nous donne, sachant que $\dis \bigcap_{i=1}^{n-1} F_i$ a une probabilité non nulle :
+Ainsi, $X_n(\Omega) = \{0,1\}$. La formule des probabilités composées nous donne, sachant que $\bigcap_{i=1}^{n-1} F_i$ a une probabilité non nulle :
 $$ P(X_n=0) = P(F_1) \times P_{F_1}(F_2) \times \cdots \times P_{\cap_{i=1}^{n-1} F_i}(F_n) = q^n$$
 On en déduit que $P(T_n=1) = 1-P(T_n=0) = 1-q^n$. Finalement, $X_n$ suit une loi de Bernoulli de paramètre $1-q^n$. D'après le cours, on a $E(X_n) = 1-q^n$.
 \item 
 \begin{enumerate}
-\item Soit $k \in \Interv 0{n-1}$, $(Y_n=k)$ se réalise si et seulement si on obtient Face aux $k$ premiers lancers et Pile au $(k+1)\ieme$ :
+\item Soit $k \in \ii 0{n-1}$, $(Y_n=k)$ se réalise si et seulement si on obtient Face aux $k$ premiers lancers et Pile au $(k+1)\ieme$ :
 $$(Y_n=k) = \left( \bigcap_{j=1}^k F_j \right) \cap P_{k+1}$$
-D'après les formules des probabilités composées, sachant que la probabilité de $\dis \bigcap_{j=1}^k F_j$ est non nulle, on a :
+D'après les formules des probabilités composées, sachant que la probabilité de $\bigcap_{j=1}^k F_j$ est non nulle, on a :
 \[ P(Y_n=k) = P(F_1) P_{F_1}(F_2) \times \cdots P_{\cap_{i=1}^k F_i}(P_{k+1}) \]
 donc 
 $$ P(Y_n = k) = q^k (1-q)$$
@@ -485,8 +486,7 @@ $$\P(Y=5k-15)= \P(X=k)$$
 %Notons $A$ l'ensemble dont les éléments sont les 10 boules initialement dans l'urne.\\
 % $\Omega$  est constitué de toutes les parties à 5 éléments  de $A$. Donc $\mathrm{card}\,\Omega=\dbinom{10}{5}$.\\
 %
-% \medskip
-% Soit $k\in\llbracket0,2\rrbracket$.\\
+% % Soit $k\in\llbracket0,2\rrbracket$.\\
 %L'événement $(X=k)$ est réalisé lorsque le joueur tire $k$ boules blanches et $(5-k)$ boules noires dans l'urne.
 %Il a donc $\dbinom{2}{k}$ possibilités pour le choix des boules blanches et $\dbinom{8}{5-k}$ possibilités pour le choix des boules noires.\\
 %Donc :\ $\forall\:k\in\llbracket0,2\rrbracket$, $P(X=k)=\dfrac{\dbinom{2}{k}\times\dbinom{8}{5-k}}{\dbinom{10}{5}}$.\\
@@ -502,16 +502,16 @@ $$\P(Y=5k-15)= \P(X=k)$$
 
 \begin{Exercice}{} Soit $n \geq 2$. On considère $n$ variables aléatoires indépendantes $X_1$, $X_2$, $\ldots$ et $X_n$, suivant chacune une loi de Bernoulli de paramètres respectifs $1$, $\tfrac{1}{2}$, $\ldots$ et $\tfrac{1}{n}\cdot$
 
-\noindent Trouver la loi de la variable aléatoire $X$ qui vaut $0$ si :
+Trouver la loi de la variable aléatoire $X$ qui vaut $0$ si :
 $$ X_1= X_2= \cdots = X_n = 1$$
-et qui vaut $\min \lbrace k \in \Interv{1}{n} \, \vert \, X_k =0 \rbrace$ sinon.
+et qui vaut $\min \lbrace k \in \ii{1}{n} \, \vert \, X_k =0 \rbrace$ sinon.
 \end{Exercice} 
 
-\corr  D'après l'énoncé, $X(\Omega) = \Interv{0}{n}$. On a :
+\corr  D'après l'énoncé, $X(\Omega) = \ii{0}{n}$. On a :
 $$ (X=0)= (X_1=1) \cap (X_2=1) \cap \cdots \cap (X_n=1)$$
 et donc par indépendance des variables :
 $$ \P(X=0) = \P(X_1=1) \times \P(X_2=1) \times \cdots \times \P(X_n=1) = 1 \times \dfrac{1}{2} \times \cdots \times \dfrac{1}{n} = \dfrac{1}{n!} $$
-Soit $i \in \Interv{1}{n}$. La variable $X$ est égale à $i$ si les $(i-1)$-ièmes premières variables valent $1$ et la $i$-ième vaut $0$. Ainsi,
+Soit $i \in \ii{1}{n}$. La variable $X$ est égale à $i$ si les $(i-1)$-ièmes premières variables valent $1$ et la $i$-ième vaut $0$. Ainsi,
 $$(X=i) = \left(\bigcap_{k=1}^{i-1} (X_k=1)\right) \cap (X_i=0)$$
 et donc par indépendance des variables :
 $$ \P(X=i) = \prod_{k=1}^{i-1} \P(X_k=1) \times \P(X_i=0) = \dfrac{1}{(i-1)!} \left(1 - \dfrac{1}{i}\right)$$
@@ -530,7 +530,7 @@ $$ \P(X=i) = \prod_{k=1}^{i-1} \P(X_k=1) \times \P(X_i=0) = \dfrac{1}{(i-1)!} \l
 $$ (X=k) = A_k \cap P_{k+1}$$
 et donc :
 $$ \P(X=k) = \P(A_k) \P_{A_k}(P_{k+1}) = \binom{k+1}{k} (1-p)^k p \times p  = (k+1) p^2 (1-p)^k $$
-La probabilité de $A_k$ étant justifiée par le fait que l'on reconnait une répétition d'épreuves de Bernoulli identiques et indépendantes.
+La probabilité de $A_k$ étant justifiée par le fait que l'on reconnaît une répétition d'épreuves de Bernoulli identiques et indépendantes.
 \item $X$ admet une espérance si et seulement la série de terme général $k \P(X=k)$ converge absolument ce qui est équivalent (vu la positivité des termes) à la convergence de la série de terme général $k(k+1)p^2 (1-p)^k$.
 On sait que pour tout $x \in ]-1,1[$,
 $$ \dfrac{1}{1-x} = \sum_{k=0}^{+ \infty} x^k$$
@@ -603,9 +603,8 @@ et pour $k \geq 2$, $k-1 \geq 1$, donc :
 \end{align*}
 Remarquons que cette égalité est aussi vraie pour $k=1$.
 
-\medskip
 
-\noindent Étudions maintenant $T=X-Y$. Sachant que $X(\Omega)= Y(\Omega) = \mathbb{N}^*$, on a $T(\Omega)= \mathbb{Z}$. Soit $k \in \mathbb{Z}$. Alors :
+Étudions maintenant $T=X-Y$. Sachant que $X(\Omega)= Y(\Omega) = \mathbb{N}^*$, on a $T(\Omega)= \mathbb{Z}$. Soit $k \in \mathbb{Z}$. Alors :
 $$ (T=k)= (X-Y=k) = (X=Y+k)$$
 On sait que $((Y=n))_{n \geq 1}$ est un système complet d'évènements de probabilités non nulles donc d'après la formule des probabilités totales, on a :
 $$\P(T=k)  = \sum_{n=1}^{+ \infty} \P(Y=n) \P_{(Y=n)}(X=Y+k) = \sum_{n=1}^{+ \infty} \P(Y=n) \P(X=n+k) $$
@@ -628,14 +627,12 @@ Si $k<0$ alors pour tout $n \geq 1$, $n+k \geq 1$ si et seulement si $n \geq 1-k
 Ainsi, pour tout $k \geq 0$,
 $$ \P(T=k) = \dfrac{p(1-p)^{\vert k \vert}}{2-p}$$
 
-\medskip
 
-\noindent \textit{Remarque.} On peut utiliser une raisonnement par symétrie pour le cas $k <0$ car :
+\textit{Remarque.} On peut utiliser une raisonnement par symétrie pour le cas $k <0$ car :
 $$ (X-Y=k) = (Y-X=-k)$$
 
-\medskip
 
-\noindent Les variables $Z$ et $T$ ne sont pas indépendantes car :
+Les variables $Z$ et $T$ ne sont pas indépendantes car :
 $$ (Z=1) \cap (T=2) = (X =1) \cap (Y = 1) \cap (Y-X =2)$$
 est de probabilité nulle alors que $(Z=1)$ et $(T=2)$ ont une probabilité non nulle.
 
@@ -662,7 +659,7 @@ admet une espérance et donner la.
 
 \corr $X(\Omega)= \mathbb{N}$ donc $Y$ est bien défini. D'après le théorème de transfert, $Y$ admet une espérance si et seulement si la série de terme général $\tfrac{1}{k+1} \P(X=k)$ converge absolument ce qui équivalent à la convergence par positivité des termes. Pour tout entier $k \geq 0$,
 $$ \dfrac{1}{k+1} \P(X=k) = e^{-\lambda} \dfrac{\lambda^k}{(k+1)!} = \dfrac{e^{-\lambda}}{\lambda} \times \dfrac{\lambda^{k+1}}{(k+1)!}$$
-On reconnait le terme général d'une série exponentielle donc convergente. Ainsi, $Y$ admet une espérance et on a :
+On reconnaît le terme général d'une série exponentielle donc convergente. Ainsi, $Y$ admet une espérance et on a :
 \begin{align*}
 E(Y) & = \dfrac{e^{-\lambda}}{\lambda} \sum_{k=0}^{+ \infty}\dfrac{\lambda^{k+1}}{(k+1)!} \\
 & = \dfrac{e^{-\lambda}}{\lambda} \sum_{k=1}^{+ \infty}\dfrac{\lambda^{k}}{k!} \\
@@ -737,7 +734,7 @@ $$ \P(X \neq Y) = 1 - \dfrac{p}{2-p} = \dfrac{2(1-p)}{2-p}$$
 \corr 
 
 \begin{enumerate}
-\item D'après l'énoncé, $Y(\Omega) = \Interv{1}{n}$. Soit $k \in Y(\Omega)$. L'évènement $(Y=k)$ se réalise si et seulement si $X=k$ ou si $X$ est nul et que le compteur affiche la valeur $k$. Ainsi :
+\item D'après l'énoncé, $Y(\Omega) = \ii{1}{n}$. Soit $k \in Y(\Omega)$. L'évènement $(Y=k)$ se réalise si et seulement si $X=k$ ou si $X$ est nul et que le compteur affiche la valeur $k$. Ainsi :
 $$ (Y=k) = (X=k) \cup ((X=0) \cap (Y=k))$$
 Par incompatibilité et sachant que $(X=0)$ a une probabilité non nulle, on en déduit que :
 \begin{align*}
@@ -747,19 +744,15 @@ Par incompatibilité et sachant que $(X=0)$ a une probabilité non nulle, on en 
  \end{align*}
  \item Par construction, $Y$ a toujours une valeur plus grande que $X$ donc par croissance, $E(Y) \geq E(X)$. Remarquons maintenant que :
  $$ E(X) = \sum_{k=0}^n k \P(X=k) =  \sum_{k=1}^n k \P(X=k)$$
- et d'après la question précédente, si $k \in \Interv{1}{n}$,
+ et d'après la question précédente, si $k \in \ii{1}{n}$,
  $$ \P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}  \leq \P(Y=k)$$
  Ainsi,
  $$ E(X) \leq \sum_{k=1}^n k \P(Y=k) = E(Y)$$
 \end{enumerate}
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Loi d'une couple}}}
-\end{center}
+\subsection{Loi d'une couple}
 
-\medskip
 
 \begin{Exercice}{} Soient $X$ et $Y$ deux variables indépendantes suivant la loi de Bernoulli de paramètre $p \in ]0,1[$. Déterminer la loi de $Z= \max(X,Y)$.
 \end{Exercice}
@@ -772,7 +765,7 @@ donc
 $$ \P(Z=1) = 1- (1-p)^2$$
 Finalement, on en déduit que $Z$ suit la loi de Bernoulli de paramètre $1-(1-p)^2$.
 
-\begin{Exercice}{} Soit $n$ un entier naturel non nul. On dispose de $n$ boites numérotées de $1$ à $n$ et on sait que la boite $i \in \Interv{1}{n}$ contient $i$ boules numérotées de $1$ à $i$. On choisit au hasard une urne et on tire une boule dans celle-ci. Soient $X$ le numéro de la boite et $Y$ le numéro de la boule. 
+\begin{Exercice}{} Soit $n$ un entier naturel non nul. On dispose de $n$ boites numérotées de $1$ à $n$ et on sait que la boite $i \in \ii{1}{n}$ contient $i$ boules numérotées de $1$ à $i$. On choisit au hasard une urne et on tire une boule dans celle-ci. Soient $X$ le numéro de la boite et $Y$ le numéro de la boule. 
 
 \begin{enumerate}
 \item Déterminer la loi du couple $(X,Y)$.
@@ -785,16 +778,16 @@ Finalement, on en déduit que $Z$ suit la loi de Bernoulli de paramètre $1-(1-p
 
 \begin{enumerate}
 \item La valeur de $Y$ est nécessairement plus petite que $X$ donc :
-$$ (X,Y)(\Omega) = \lbrace (i,j) \in \Interv{1}{n}^2 \, \vert \, j \leq i \rbrace$$
+$$ (X,Y)(\Omega) = \lbrace (i,j) \in \ii{1}{n}^2 \, \vert \, j \leq i \rbrace$$
 Soit $(i,j) \in (X,Y)(\Omega)$. Alors :
 $$ \P((X,Y)=(i,j)) = \P((X=i) \cap (Y=j)) = \P(X=i) \P_{(X=i)}(Y=j)$$
-car $(X=i)$ a une probabilité non nulle. La variable $X$ suit une loi uniforme sur $\Interv{1}{n}$ et si l'on pioche dans l'urne $i$, on a une chance sur $i$ d'obtenir la boule $j$ (car $j \leq i$). Ainsi,
+car $(X=i)$ a une probabilité non nulle. La variable $X$ suit une loi uniforme sur $\ii{1}{n}$ et si l'on pioche dans l'urne $i$, on a une chance sur $i$ d'obtenir la boule $j$ (car $j \leq i$). Ainsi,
 $$ \P((X,Y)=(i,j)) = \dfrac{1}{n} \times \dfrac{1}{i} = \dfrac{1}{ni}$$
 \item On a :
 $$ (X=Y) = \bigcup_{i=1}^n ((X,Y)=(i,i))$$
 Par deux à deux incompatibilité et d'après la question précédente, on en déduit que :
 $$ \P(X=Y) = \sum_{i=1}^n \P((X,Y)=(i,i)) = \dfrac{1}{n} \sum_{i=1}^n \dfrac{1}{i}$$
-\item Soit $j \in \Interv{1}{n}$. D'après la formule des probabilités totales appliquée au système complet d'évènements $((X=i))_{1 \leq i \leq n}$, on a :
+\item Soit $j \in \ii{1}{n}$. D'après la formule des probabilités totales appliquée au système complet d'évènements $((X=i))_{1 \leq i \leq n}$, on a :
 $$ \P(Y=j) = \sum_{i=1}^n \P((X,Y)=(i,j)) = \sum_{i=j}^n \P((X,Y)=(i,j))$$
 car $\P((X,Y)=(i,j))=0$ si $j>i$. D'après la première question, on a :
 $$ \P(Y=j) =\sum_{i=j}^n \dfrac{1}{ni} = \dfrac{1}{n} \sum_{i=j}^n \dfrac{1}{i}$$
@@ -816,7 +809,7 @@ Soit $X$ la variable aléatoire égale au nombre de voitures se présentant au g
 \item Déterminer le nombre moyen de voitures arrivant au péage en une heure.
 \item Quelle est la probabilité qu'une voiture donnée se présente au guichet numéro 1.
 \item Calculer $P_{(N=n)}(X=k)$ pour tout $(k,n) \in \mathbb{N}^2$.
-\item Justifier que pour tout $k \in \mathbb{N}$, $\displaystyle{P(X=k)=\sum_{n=k}^{+\infty}P_{(N=n)}(X=k) P(N=n).}$
+\item Justifier que pour tout $k \in \mathbb{N}$, ${P(X=k)=\sum_{n=k}^{+\infty}P_{(N=n)}(X=k) P(N=n).}$
 \item En déduire la loi de probabilité de $X$ (on reconnaîtra une loi usuelle). Préciser espérance et variance.
 \end{enumerate}
 \end{Exercice}
@@ -916,24 +909,24 @@ Déterminer les lois marginales de $X$ et de $Y$. Les variables $X$ et $Y$ sont-
 
 \corr On sait que $Y(\Omega)=\mathbb{N}$. Soit $k\in\mathbb{N}$. On a :
 \begin{align*}
- P(Y=k)& =\displaystyle\sum\limits_{j=0}^{+\infty} P((X=j) \cap (Y=k)) \\
- & =\displaystyle\sum\limits_{j=0}^{+\infty}\dfrac{(j+k)\left( \tfrac{1}{2}\right) ^{j+k}}{\text{e}\:j!\:k!}
+ P(Y=k)& =\sum\limits_{j=0}^{+\infty} P((X=j) \cap (Y=k)) \\
+ & =\sum\limits_{j=0}^{+\infty}\dfrac{(j+k)\left( \tfrac{1}{2}\right) ^{j+k}}{\text{e}\:j!\:k!}
  \end{align*}
 Or :
- $$\displaystyle\sum\limits_{j\geq 0}^{}\dfrac{j\left(\tfrac{1}{2} \right) ^{j+k}}{\text{e}\:j!\:k!}=\dfrac{\left(\tfrac{1}{2} \right)^{k+1}}{\text{e}\:k!}\displaystyle\sum\limits_{j\geq 1}^{}\dfrac{\left(\tfrac{1}{2} \right)^{j-1}}{(j-1)!}$$
-Ainsi $\displaystyle\sum\limits_{j\geq 0}^{}\dfrac{j\left(\tfrac{1}{2} \right)^{j+k}}{\text{e}\:j!\:k!}$ converge et on a :
+ $$\sum\limits_{j\geq 0}^{}\dfrac{j\left(\tfrac{1}{2} \right) ^{j+k}}{\text{e}\:j!\:k!}=\dfrac{\left(\tfrac{1}{2} \right)^{k+1}}{\text{e}\:k!}\sum\limits_{j\geq 1}^{}\dfrac{\left(\tfrac{1}{2} \right)^{j-1}}{(j-1)!}$$
+Ainsi $\sum\limits_{j\geq 0}^{}\dfrac{j\left(\tfrac{1}{2} \right)^{j+k}}{\text{e}\:j!\:k!}$ converge et on a :
 \begin{align*}
-\sum\limits_{j=0}^{+\infty}\dfrac{j\left(\tfrac{1}{2} \right)^{j+k}}{\text{e}\:j!\:k!}& =\frac{\left(\tfrac{1}{2} \right)^{k+1}}{\text{e}\:k!}\displaystyle\sum\limits_{j=1}^{+\infty}\dfrac{\left(\tfrac{1}{2} \right)^{j-1}}{(j-1)!} \\
+\sum\limits_{j=0}^{+\infty}\dfrac{j\left(\tfrac{1}{2} \right)^{j+k}}{\text{e}\:j!\:k!}& =\frac{\left(\tfrac{1}{2} \right)^{k+1}}{\text{e}\:k!}\sum\limits_{j=1}^{+\infty}\dfrac{\left(\tfrac{1}{2} \right)^{j-1}}{(j-1)!} \\
 & =\dfrac{\left(\tfrac{1}{2} \right)^{k+1}}{\text{e}\:k!}\text{e}^{\tfrac{1}{2}} \\
 & =\dfrac{\left(\tfrac{1}{2} \right)^{k+1}}{k!\sqrt{\mathrm{e}}}
 \end{align*}
 De même,  
 \begin{align*}
-\displaystyle\sum\limits_{j\geq 0}^{}\dfrac{k\left(\tfrac{1}{2} \right)^{j+k}}{\text{e}\:j!\:k!}=\frac{k\left(\tfrac{1}{2} \right)^{k}}{\text{e}\:k!}\displaystyle\sum\limits_{j\geq 0}^{}\dfrac{\left(\tfrac{1}{2} \right)^{j}}{j!}
+\sum\limits_{j\geq 0}^{}\dfrac{k\left(\tfrac{1}{2} \right)^{j+k}}{\text{e}\:j!\:k!}=\frac{k\left(\tfrac{1}{2} \right)^{k}}{\text{e}\:k!}\sum\limits_{j\geq 0}^{}\dfrac{\left(\tfrac{1}{2} \right)^{j}}{j!}
 \end{align*}
-donc $\displaystyle\sum\limits_{j\geq 0}^{}\dfrac{k\left(\tfrac{1}{2} \right)^{j+k}}{\text{e}\:j!\:k!}$ converge et on a :
+donc $\sum\limits_{j\geq 0}^{}\dfrac{k\left(\tfrac{1}{2} \right)^{j+k}}{\text{e}\:j!\:k!}$ converge et on a :
 \begin{align*}
-\displaystyle\sum\limits_{j=0}^{+\infty}\dfrac{k\left(\tfrac{1}{2} \right)^{j+k}}{\text{e}\:j!\:k!}& =\frac{k\left(\tfrac{1}{2} \right)^{k}}{\text{e}\:k!}\displaystyle\sum\limits_{j=0}^{+\infty}\dfrac{\left(\tfrac{1}{2} \right)^{j}}{j!} \\
+\sum\limits_{j=0}^{+\infty}\dfrac{k\left(\tfrac{1}{2} \right)^{j+k}}{\text{e}\:j!\:k!}& =\frac{k\left(\tfrac{1}{2} \right)^{k}}{\text{e}\:k!}\sum\limits_{j=0}^{+\infty}\dfrac{\left(\tfrac{1}{2} \right)^{j}}{j!} \\
 & =\dfrac{k\left(\tfrac{1}{2} \right)^{k}}{\text{e}\:k!}\text{e}^{\tfrac{1}{2}}\\
 =\dfrac{k\left(\tfrac{1}{2} \right)^{k}}{k!\sqrt{\mathrm{e}}}
 \end{align*}
@@ -946,13 +939,9 @@ Pour des raisons de symétrie, $X$ et $Y$ ont la même loi donc $X(\Omega)=\math
 $$P(X=j)=\dfrac{(\tfrac{1}{2}+j)\left(\tfrac{1}{2} \right)^{j}}{j!\sqrt{\mathrm{e}}}$$
 Les variables $X$ et $Y$ ne sont pas indépendantes car $P(X=0,Y=0)=0$ et $P(X=0)P(Y=0)\neq 0$.
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Fonctions génératrices}}}
-\end{center}
+\subsection{Fonctions génératrices}
 
-\medskip
 
 \begin{Exercice}{}  Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}^*$ telle que pour tout $k \in \mathbb{N}^*$,
 $$ \P(X=k) = \dfrac{k-1}{2^k}$$
@@ -1003,13 +992,13 @@ $$ E(X) = \dfrac{16}{4} = 4$$
 
 
 
-\begin{Exercice}{} Soit $X$ une variable al\'eatoire telle que $X(\Omega)=\N$ dont la loi est donnée par :
-$$\forall n\in\N,\qquad P(X=n)=an^2\dis\frac{\lambda^n}{n!}$$
+\begin{Exercice}{} Soit $X$ une variable aléatoire telle que $X(\Omega)=\N$ dont la loi est donnée par :
+$$\forall n\in\N,\qquad P(X=n)=an^2\frac{\lambda^n}{n!}$$
 où $a \in \mathbb{R}$.
 \begin{enumerate}
-	\item D\'eterminer sa fonction g\'en\'eratrice $G_X.$ En d\'eduire la valeur de $a.$
+	\item Déterminer sa fonction génératrice $G_X.$ En déduire la valeur de $a.$
 	
-	\item Calculer l'esp\'erance de $X.$
+	\item Calculer l'espérance de $X.$
 \end{enumerate}
 \end{Exercice}
 
@@ -1041,11 +1030,11 @@ $$ E(X) = a \lambda (3 \lambda +1 ) e^{\lambda}$$
 \end{enumerate}
 
 
-\begin{Exercice}{} Soit $X$ une variable al\'eatoire \`a valeurs dans $\N$ dont la fonction g\'en\'eratrice est définie par :
+\begin{Exercice}{} Soit $X$ une variable aléatoire \`a valeurs dans $\N$ dont la fonction génératrice est définie par :
 $$\forall t\in\R,\qquad G_X(t)=ae^{1+t^2}$$
 
 \begin{enumerate}
-	\item D\'eterminer $a.$
+	\item Déterminer $a.$
 	
 	\item Donner la loi de $X$ et calculer $E(X)$ et $V(X).$
 	
@@ -1132,7 +1121,7 @@ Soit $X$ une variable suivant une loi de Poisson de paramètre $\lambda>0$.
 \begin{enumerate}
 \item Montrer que pour tout $n \geq 0$,
 $$ \P(X \leq n) = \dfrac{1}{n!} \int_{\lambda}^{+ \infty} e^{-t} t^n \dt$$
-\item En déduire un équivalent de $\dis \int_{\lambda}^{+ \infty} e^{-t} t^n \dt$ quand $n$ tend vers $+ \infty$.
+\item En déduire un équivalent de $\int_{\lambda}^{+ \infty} e^{-t} t^n \dt$ quand $n$ tend vers $+ \infty$.
 \item Donner la fonction génératrice $G_X$ de $X$. Que valent $g_X(1)$ et $g_X(-1)$? En déduire la probabilité que $X$ soit paire.
 \item Pour $Y$ une variable aléatoire suivant une loi uniforme sur $\lbrace 1,2 \rbrace$, calculer $\P(XY$ soit paire).
 \end{enumerate}
@@ -1163,7 +1152,7 @@ $$ \P(X \leq n) = \sum_{k=0}^n \P(X=k) = \sum_{k=0}^n e^{-\lambda} \dfrac{\lambd
 Ainsi, pour tout $n \geq 0$,
 $$ \P(X \leq n) = \dfrac{1}{n!} \int_{\lambda}^{+ \infty} e^{-t} t^n \dt$$
 \item Pour tout $n \geq 0$,
-$$ \dis \int_{\lambda}^{+ \infty} e^{-t} t^n \dt = n! \P(X \leq n)$$
+$$ \int_{\lambda}^{+ \infty} e^{-t} t^n \dt = n! \P(X \leq n)$$
 Or :
 $$ \P(X \leq n) = \sum_{k=0}^n \P(X=k) \underset{n \rightarrow + \infty}{\longrightarrow} \sum_{k=0}^{+ \infty} \P(X=k) = 1$$
 donc 
@@ -1185,13 +1174,9 @@ $$ P(XY \hbox{ soit paire}) = \dfrac{1+e^{-2\lambda}}{4} + \dfrac{1}{2}$$
 
 \end{enumerate}
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Résultats asymptotiques}}}
-\end{center}
+\subsection{Résultats asymptotiques}
 
-\medskip
 
 \begin{Exercice}{} Soit $X$ une variable aléatoire suivant une loi géométrique de paramètre $\tfrac{1}{n}$ où $n$ est un entier supérieur ou égal à $2$.
 

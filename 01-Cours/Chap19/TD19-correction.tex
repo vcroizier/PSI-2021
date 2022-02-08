@@ -1,24 +1,22 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Correction du TD 19 : Calcul différentiel}
 
-\begin{center}
-\textit{{ {\huge TD 19 : Calcul différentiel}}}
-\end{center}
+\tableofcontents
+\separationTitre
 
-\medskip
 
-\medskip
+\subsection{Un peu de continuité ...}
 
-\begin{center}
-\textit{{ {\large Un peu de continuité ...}}}
-\end{center}
-
-\medskip
 
 
 \begin{Exercice}{} Étudier la continuité de $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par $ f((x,y))=  \max(x,y)$.
@@ -30,12 +28,12 @@ et
 $$ \max(x,y)-\min(x,y) = \vert x-y \vert$$
 On en déduit que :
 $$ f(x,y)= \max(x,y) = \dfrac{x+y+ \vert x-y \vert}{2}$$
-Les fonctions polynômiales (en les composantes) sont bornées sur $\mathbb{R}^2$ et la valeur absolue l'est sur $\mathbb{R}$ donc par composition, $f$ est continue sur $\mathbb{R}^2$.
+Les fonctions polynomiales (en les composantes) sont bornées sur $\mathbb{R}^2$ et la valeur absolue l'est sur $\mathbb{R}$ donc par composition, $f$ est continue sur $\mathbb{R}^2$.
 
 \begin{Exercice}{} Étudier la continuité de $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par $f((x,y))= \ln(1 + \sqrt{x^2+y^2})$.
 \end{Exercice}
 
-\corr La fonction $(x,y) \mapsto x^2+y^2$ est polynômiale (en les composantes) donc continue sur $\mathbb{R}^2$ et à valeurs positives, $t \mapsto \sqrt{t}$ est continue sur $\mathbb{R}_+$ et à valeurs positives donc :
+\corr La fonction $(x,y) \mapsto x^2+y^2$ est polynomiale (en les composantes) donc continue sur $\mathbb{R}^2$ et à valeurs positives, $t \mapsto \sqrt{t}$ est continue sur $\mathbb{R}_+$ et à valeurs positives donc :
 $$ (x,y) \mapsto 1+ \sqrt{x^2+y^2}$$
 est continue et strictement positive sur $\mathbb{R}^2$. La fonction $\ln$ est continue sur $\mathbb{R}_+^{*}$ donc $f$ est continue sur $\mathbb{R}^2$.
 
@@ -46,11 +44,10 @@ $$ f((x,y)) = \left\lbrace \begin{array}{cl}
 \end{array}\right.$$
 \end{Exercice}
 
-\corr La fonction $f$ est continue en tout point $(x,y) \neq (0,0)$ par quotient de fonctions polynômiales et sachant que dans ce cas, $x^6+y^4 \neq 0$. 
+\corr La fonction $f$ est continue en tout point $(x,y) \neq (0,0)$ par quotient de fonctions polynomiales et sachant que dans ce cas, $x^6+y^4 \neq 0$. 
 
-\medskip
 
-\noindent Étudions la continuité de $f$ en $(0,0)$. Celle-ci est continue en $(0,0)$ si :
+Étudions la continuité de $f$ en $(0,0)$. Celle-ci est continue en $(0,0)$ si :
 $$ \lim_{(x,y) \rightarrow (0,0)} f((x,y)) =f((0,0))= 0$$
 Pour tout réel $x$ non nul,
 $$ f((x,x^2)) = \dfrac{x^6}{x^6+x^8} = \dfrac{1}{1+x^2}$$
@@ -81,13 +78,9 @@ Ainsi, si $(x,y)$ tend vers $(0,0)$, on en déduit par théorème d'encadrement 
 $$  \lim_{(x,y) \rightarrow (0,0)} f((x,y)) =f((0,0))= 0$$
 et donc $f$ est continue en $(0,0)$.
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Dérivées partielles, fonctions de classe $\mathcal{C}^1$}}}
-\end{center}
+\subsection{Dérivées partielles, fonctions de classe \texorpdfstring{$\mathcal{C}^1$}{C¹}}
 
-\medskip
 
 \begin{Exercice}{} Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par :
 $$ f((x,y)) = \left\lbrace \begin{array}{cl}
@@ -112,13 +105,11 @@ Soit $(x,y)\in\mathbb{R}^2$. On a $|x|\leq \Vert (x,y) \Vert_2$ et $|y|\leq \Ver
 $$ 0 \leq |f(x,y)-f(0,0)|=\dfrac{|x||y|}{\Vert (x,y) \Vert_2}\leq\dfrac{\left(\Vert (x,y) \Vert_2\right) ^2}{||(x,y)||_2}=\Vert (x,y) \Vert_2\underset{(x,y)\to (0,0)}{\longrightarrow} 0$$
 On en déduit que $f$ est continue en $(0,0)$ et donc finalement sur $\mathbb{R}^2$.
 
-\medskip
-Ainsi $f$ est continue sur $\mathbb{R}^2 $.\\
+Ainsi $f$ est continue sur $\mathbb{R}^2 $.
 \item Par opérations sur les fonctions admettant des dérivées partielles, $f$ admet des dérivées partielles en tout point de $\mathbb{R}^2 \setminus \left\{ {(0,0)} \right\}$.
 
-\medskip
 
-\noindent Pour tout réel $t \neq 0$, on a :
+Pour tout réel $t \neq 0$, on a :
 $$ \dfrac{1}{t}\left( {f(t,0) - f(0,0)} \right) = 0$$
 donc 
 $$\mathop {\lim }\limits_{t \to 0} \dfrac{1}{t}\left( {f(t,0) - f(0,0)} \right) = 0$$
@@ -182,7 +173,7 @@ On en déduit que $f$ est de classe $C^1$ sur $\mathbb{R}^2$.
 \begin{Exercice}{} Soit $f \in \mathcal{C}^2(\mathbb{R}^2, \mathbb{R})$. Déterminer $g''(0)$ où $g : x \mapsto f(0,x)+f(x,x^2)$.
 \end{Exercice}
 
-\corr La fonction $f$ est de classe $\mathcal{C}^2$ sur $\mathbb{R}^2$ et $x \mapsto x^2$ aussi donc par composition, $g$ est de classe $\mathcal{C}^2$ sur $\mathbb{R}$. D'après la règle de la chaine, on a pour tout $x \in \mathbb{R}$,
+\corr La fonction $f$ est de classe $\mathcal{C}^2$ sur $\mathbb{R}^2$ et $x \mapsto x^2$ aussi donc par composition, $g$ est de classe $\mathcal{C}^2$ sur $\mathbb{R}$. D'après la règle de la chaîne, on a pour tout $x \in \mathbb{R}$,
 $$ g'(x) = \dfrac{\partial f}{\partial y}(0,x) + \dfrac{\partial f}{\partial x}(x,x^2) + 2x \dfrac{\partial f}{\partial y}(x,x^2)$$
 puis 
 \begin{align*}
@@ -193,11 +184,8 @@ puis
  $$ g''(0) =  \dfrac{\partial^2 f}{\partial y^2}(0,0) +  \dfrac{\partial^2 f}{\partial x^2}(0,0) + 2 \dfrac{\partial f}{\partial y}(0,0) $$
  
  
- \medskip
- 
- \begin{center}
-\textit{{ {\large Problèmes d'extrema}}}
-\end{center}
+  
+ \subsection{Problèmes d'extrema}
 
 \begin{Exercice}{} Soit $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par :
 $$ \forall (x,y) \in \mathbb{R}^2, \; f(x,y) = x^{2} + xy + y^{2} - 3x - 6y$$
@@ -238,13 +226,9 @@ De manière évidente, le seul point critique est $(0,0)$. Le seul point critiqu
 $$ f((x,0))-f((0,0)) = x^3$$
 et $x^3$ est négatif si $x<0$ et positif si $x>0$. Ainsi, $f$ n'admet ni un minimum, ni un maximum, en $(0,0)$. Cette fonction n'admet pas d'extremum local sur $\mathbb{R}^2$.
  
-\medskip
 
-\begin{center}
-\textit{{ {\large Courbe et surfaces}}}
-\end{center}
+\subsection{Courbe et surfaces}
 
-\medskip
 
 \begin{Exercice}{} Montrer que l'équation $x\ln(y)+y \ln(x) = \ln(2)$ définit localement une courbe paramétrée de classe $\mathcal{C}^1$ au voisinage du point $(1,2)$. Déterminer l'équation de la tangente à cette courbe en ce point.
 \end{Exercice}
@@ -271,9 +255,8 @@ Tout point $(a,b,c)$ de $\mathcal{S}$ vérifie $abc=1$ donc les réels $a$, $b$ 
 $$  \nabla f(a,b,c) \neq (0,0,0)$$
 Ainsi, tout point de $\mathcal{S}$ est régulier. 
 
-\medskip
 
-\noindent Soit $(a,b,c)$ un point (régulier) de $\mathcal{S}$. L'équation du plan tangent à $\mathcal{S}$ au point $(a,b,c)$ est :
+Soit $(a,b,c)$ un point (régulier) de $\mathcal{S}$. L'équation du plan tangent à $\mathcal{S}$ au point $(a,b,c)$ est :
 $$ bc(x-a)+ac(y-b)+ab(z-c)=0$$
 ou encore :
 $$ bcx+acy+abz -3abc=0$$
@@ -281,13 +264,9 @@ Or $abc=1$ donc l'équation se réécrit :
 $$ bcx+acy+abz -3=0$$
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Équation aux dérivées partielles}}}
-\end{center}
+\subsection{Équation aux dérivées partielles}
 
-\medskip
 
 
 

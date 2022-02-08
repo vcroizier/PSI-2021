@@ -1,28 +1,20 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\DeclareMathOperator{\e}{e}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{TD 17 : Équations différentielles}
 
-\begin{center}
-\textit{{ {\huge TD 17 : Équations différentielles}}}
-\end{center}
-
-
-%\medskip
-%
-%\noindent Dans tout le corrigé, $\mathcal{S}_H$ sera l'ensemble des solutions de l'équation homogène de l'équation considérée et $\mathcal{S}$ l'ensemble des solutions de celle-ci.
+\tableofcontents
+\separationTitre
 
 
-\medskip
+\subsection{Équations différentielles linéaires d'ordre \texorpdfstring{$1$}{1}}
 
-\begin{center}
-\textit{{ {\large Équations différentielles linéaires d'ordre $1$}}}
-\end{center}
-
-\medskip
 
 \begin{Exercice}{} Résoudre $y' \sin(t)-y \cos(t)+1=0$ sur $]0,\pi[$.
 \end{Exercice}
@@ -30,17 +22,17 @@
 %\corr La fonction sinus est strictement positive sur $]0, \pi[$ donc l'équation se réécrit :
 %$$ y' - \dfrac{\cos(t)}{\sin(t)} y + \dfrac{1}{\sin(t)} = 0$$
 %L'équation considérée est une équation différentielle linéaire du premier ordre à coefficient et second membre continue. On a :
-%$$ \mathcal{S}_H = \textrm{Vect}(f_h)$$
+%$$ \mathcal{S}_H = \Vect(f_h)$$
 %où $f_h : \mathbb{R} \rightarrow \mathbb{R}$ est définie par :
 %$$ \forall x \in \mathbb{R}, \; f_h(x) = e^{ \ln( \vert \sin(t) \vert)} = \sin(t)$$
 %La fonction cosinus est une solution évidente. On en déduit que :
-%$$ \mathcal{S} = \cos +  \textrm{Vect}(\sin)$$
+%$$ \mathcal{S} = \cos +  \Vect(\sin)$$
 
 \begin{Exercice}{} Résoudre $y'+4y = t^2 e^{-4t}$ sur $\mathbb{R}$. 
 \end{Exercice}
 
 %\corr L'équation considérée est une équation différentielle linéaire du premier ordre à coefficient et second membre continue. On a :
-%$$ \mathcal{S}_H = \textrm{Vect}(f_h)$$
+%$$ \mathcal{S}_H = \Vect(f_h)$$
 %où $f_h : \mathbb{R} \rightarrow \mathbb{R}$ est définie par :
 %$$ \forall x \in \mathbb{R}, \; f_h(x) = e^{-4x}$$
 %Utilisons la méthode de la variation de la constante pour déterminer une solution particulière. Soit $k \mathbb{R} \rightarrow \mathbb{R}$ une fonction dérivable. Soit $f : \mathbb{R} \rightarrow \mathbb{R}$ définie par :
@@ -54,13 +46,13 @@
 %ce qui est encore équivalent à (sachant que l'exponentielle ne s'annule pas) :
 %$$ \forall x \in \mathbb{R}, \; k'(x) = x^2$$
 %Ainsi, $k : x \mapsto \tfrac{x^3}{3}$ convient et $f : x \mapsto \tfrac{x^3}{3} e^{-4x}$ est une solution particulière. On en déduit que :
-%$$ \mathcal{S} = f +  \textrm{Vect}(f_h)$$
+%$$ \mathcal{S} = f +  \Vect(f_h)$$
 
 \begin{Exercice}{} Résoudre $y'+y = e^t \cos(t)$ sur $\mathbb{R}$.
 \end{Exercice}
 
 %\corr L'équation considérée est une équation différentielle linéaire du premier ordre à coefficient et second membre continue. On a :
-%$$ \mathcal{S}_H = \textrm{Vect}(f_h)$$
+%$$ \mathcal{S}_H = \Vect(f_h)$$
 %où $f_h : \mathbb{R} \rightarrow \mathbb{R}$ est définie par :
 %$$ \forall x \in \mathbb{R}, \; f_h(x) = e^{-x}$$
 %Pour obtenir une solution particulière, \og complexifions \fg{} le problème en considérant cette équation différentielle :
@@ -75,11 +67,10 @@
 %Soit $f : \mathbb{R} \rightarrow \mathbb{R}$ définie par :
 %$$ \forall t \in \mathbb{R}, \; f(t) = \dfrac{2}{5} e^t \cos(t) + \dfrac{1}{5} e^t \sin(t) $$
 %On en déduit que :
-%$$ \mathcal{S} = f +  \textrm{Vect}(f_h)$$
+%$$ \mathcal{S} = f +  \Vect(f_h)$$
 
-\begin{Exercice}{} On considère les deux équations suivantes:\\
+\begin{Exercice}{} On considère les deux équations suivantes:
 $$ (H) \; \;  2xy'-3y=0  \qquad \hbox{ et } \qquad (E) \; \; 2xy'-3y=\sqrt{x} $$
-
 \begin{enumerate}
 \item Résoudre l'équation $(H)$ sur l'intervalle $\left]  0,+\infty\right[ $.
 \item Résoudre l'équation $(E)$ sur l'intervalle $\left]  0,+\infty\right[   $ puis sur l'intervalle $\left[ 0,+\infty\right[ $.
@@ -91,7 +82,7 @@ $$ (H) \; \;  2xy'-3y=0  \qquad \hbox{ et } \qquad (E) \; \; 2xy'-3y=\sqrt{x} $$
 %$$ y' - \dfrac{3}{2x} y = 0$$
 %Une primitive de $x \mapsto -\tfrac{3}{2x}$ sur $\mathbb{R}_+^{*}$ sur $\mathbb{R}_+^*$ est donnée par :
 %$$ x \mapsto - \dfrac{3}{2} \ln(x)$$
-%On en déduit que l'ensemble des solutions de $(H)$ est $\textrm{Vect}(f_0)$ où $f_0 : \mathbb{R}_+^* \rightarrow \mathbb{R}$ est définie par :
+%On en déduit que l'ensemble des solutions de $(H)$ est $\Vect(f_0)$ où $f_0 : \mathbb{R}_+^* \rightarrow \mathbb{R}$ est définie par :
 %$$ \forall x>0, \; f_0(x) = \exp ( \tfrac{3}{2} \ln(x)) = x^{3/2}$$
 %
 %\item Utilisions la méthode de la variation de la constante pour déterminer une solution particulière. Soient $k : \mathbb{R}_+^* \rightarrow \mathbb{R}$ une fonction dérivable et $g : \mathbb{R}_+^* \rightarrow \mathbb{R}$ définies par :
@@ -108,12 +99,11 @@ $$ (H) \; \;  2xy'-3y=0  \qquad \hbox{ et } \qquad (E) \; \; 2xy'-3y=\sqrt{x} $$
 %$$ \forall x>0, \; k'(x) = \dfrac{1}{2x^2}$$
 %La fonction $k : x \mapsto - \dfrac{1}{2x}$ convient donc une solution particulière $g : \mathbb{R}_+^* \rightarrow \mathbb{R}$ de $(E)$ est définie par :
 %$$ \forall x>0, \; g(x) = - \dfrac{1}{2x} x^{3/2} =- \dfrac{\sqrt{x}}{2}$$
-%On en déduit que l'ensemble des solutions de $(E)$ est $g + \textrm{Vect}(f_0)$.
+%On en déduit que l'ensemble des solutions de $(E)$ est $g + \Vect(f_0)$.
 %Déterminons l'ensemble des solutions de $(E)$ sur $[0, + \infty[$ par analyse-synthèse.
 %
-%\medskip
-%
-%\noindent \textit{Analyse.} Soit $f : \mathbb{R}_+ \rightarrow \mathbb{R}$ une solution de $E$ sur $\mathbb{R}$. Alors $f$ est dérivable sur $\mathbb{R}_+$. En particulier, $f$ est solution de $(E)$ sur $\mathbb{R}_+^{*}$ donc il existe un réel $k$ tel que pour tout réel $x>0$,
+%%
+%\textit{Analyse.} Soit $f : \mathbb{R}_+ \rightarrow \mathbb{R}$ une solution de $E$ sur $\mathbb{R}$. Alors $f$ est dérivable sur $\mathbb{R}_+$. En particulier, $f$ est solution de $(E)$ sur $\mathbb{R}_+^{*}$ donc il existe un réel $k$ tel que pour tout réel $x>0$,
 %$$ f(x)= - \dfrac{\sqrt{x}}{2} - k x^{3/2}$$
 %La fonction $f$ est continue en $0$ et :
 %$$ \lim_{x \rightarrow 0^+} f(x) = 0$$
@@ -121,9 +111,8 @@ $$ (H) \; \;  2xy'-3y=0  \qquad \hbox{ et } \qquad (E) \; \; 2xy'-3y=\sqrt{x} $$
 %$$ \dfrac{f(x)-f(0)}{x-0} =- \dfrac{1}{2\sqrt{x}} - k \sqrt{x} \underset{x \rightarrow 0^+}{\longrightarrow} - \infty$$
 %Ainsi, $f$ n'est pas dérivable en $0$ ce qui est absurde.
 %
-%\medskip
-%
-%\noindent \textit{Synthèse}. L'équation différentielle $(E)$ n'a pas de solution sur $\mathbb{R}_+$.
+%%
+%\textit{Synthèse}. L'équation différentielle $(E)$ n'a pas de solution sur $\mathbb{R}_+$.
 %\end{enumerate}
 
 
@@ -146,17 +135,15 @@ $$ (H) \; \;  2xy'-3y=0  \qquad \hbox{ et } \qquad (E) \; \; 2xy'-3y=\sqrt{x} $$
 %$$x \mapsto \mu\exp(2\ln (-x)) = \mu(-x)^2 = \mu x^2$$
 %où $\mu \in \mathbb R$.
 %
-%\noindent Déterminons les solutions de (E) par analyse-synthèse.
+%Déterminons les solutions de (E) par analyse-synthèse.
 %
-%\medskip
-%
-%\noindent \textit{Analyse.} Résolvons alors l'équation (E) sur $\mathbb R$. Soit $x \mapsto y(x)$ une solution de (E) . Sa restriction à $\mathbb R_+^*$ vérifie (E$_+$) et sa restriction à $\mathbb R_-^*$ vérifie (E$_-$). De ce fait, il existe deux réels $\lambda$ et $\mu$ tels que :
+%%
+%\textit{Analyse.} Résolvons alors l'équation (E) sur $\mathbb R$. Soit $x \mapsto y(x)$ une solution de (E) . Sa restriction à $\mathbb R_+^*$ vérifie (E$_+$) et sa restriction à $\mathbb R_-^*$ vérifie (E$_-$). De ce fait, il existe deux réels $\lambda$ et $\mu$ tels que :
 %$$y \mapsto \left\{\begin{array}{ll} \lambda x^2 & \text{ si } x > 0 \\ \mu x^2 & \text{ si } x < 0\\\end{array} \right.$$
 %La fonction $y$ est dérivable en $0$ donc continue en $0$. On a donc nécessairement $y(0)=0$. L'étude de la dérivabilité (par les taux d'accroissements) n'impose pas de condition sur $\lambda$ et $\mu$.
 %
-%\medskip
-%
-%\noindent \textit{Synthèse.} Soit $y$ une solution de la forme précédente.
+%%
+%\textit{Synthèse.} Soit $y$ une solution de la forme précédente.
 %
 %\begin{itemize}
 %\item Elle est continue sur $\mathbb R^*$ de manière évidente et elle est continue en $0$ car on vérifie aisément que :
@@ -189,22 +176,19 @@ $$ (H) \; \;  2xy'-3y=0  \qquad \hbox{ et } \qquad (E) \; \; 2xy'-3y=\sqrt{x} $$
 %$$x \mapsto \mu\exp(\ln (-x)) = \mu(-x) = -\mu x$$
 %où $\mu \in \mathbb R$.
 %
-%\medskip
+%%
+%Résolvons (E) par analyse-synthèse.
 %
-%\noindent Résolvons (E) par analyse-synthèse.
-%
-%\medskip
-%
-%\noindent \textit{Analyse.} Soit $x \mapsto y(x)$ une solution de (E). Sa restriction à $\mathbb R_+^*$ vérifie (E$_+$) et sa restriction à $\mathbb R_-^*$ vérifie (E$_-$). De ce fait, il existe deux réels $\lambda$ et $\mu$ tels que :
+%%
+%\textit{Analyse.} Soit $x \mapsto y(x)$ une solution de (E). Sa restriction à $\mathbb R_+^*$ vérifie (E$_+$) et sa restriction à $\mathbb R_-^*$ vérifie (E$_-$). De ce fait, il existe deux réels $\lambda$ et $\mu$ tels que :
 %$$y \mapsto \left\{\begin{array}{ll} \lambda x & \text{ si } x > 0 \\-\mu x & \text{ si } x < 0 \\ \end{array}\right.$$
 %De plus, par continuité en $0$, $y$ s'annule en $0$ (en considérant les limites à gauche et à droite en $0$ de $y$).
 %De plus, $y$ est dérivable en $0$. On a :
 %$$\dfrac{y(x)-y(0)}{x-0} = \dfrac{y(x)}{x} \underset{x\to0^-}{\longrightarrow} -\mu \text{ et } \dfrac{y(x)-y(0)}{x-0} = \dfrac{y(x)}{x} \underset{x\to0^+}{\longrightarrow} \lambda $$
 %Donc nécessairement $-\mu = \lambda $ et de ce fait, $y$ est de la forme $x \mapsto \gamma x$ en posant $\gamma = \lambda  = -\mu$.
 %
-%\medskip
-%
-%\noindent \textit{Synthèse.} Il est clair que toutes les fonctions de la forme $x \mapsto \gamma x$ sont des solutions de (E). 
+%%
+%\textit{Synthèse.} Il est clair que toutes les fonctions de la forme $x \mapsto \gamma x$ sont des solutions de (E). 
 
 \begin{Exercice}{} Déterminer les solutions définies sur $]0,+\infty[$ de l'équation 
 $ x \ln(x)y'+ y = 0$.
@@ -221,25 +205,18 @@ $ x \ln(x)y'+ y = 0$.
 %$$x \mapsto \lambda \exp(-\ln(|\ln x|)) = \frac{\lambda}{|\ln x|}$$
 %où $\lambda \in \mathbb{R}$. Comme $\ln x$ est de signe constant sur l'intervalle $I_0$ et aussi sur l'intervalle $I_1$, ces fonctions sont les fonctions de la forme $x \mapsto \dfrac{\lambda}{\ln x}$ (quitte à remplacer $\lambda$ par $-\lambda$)
 %
-%\medskip
+%%
+%Résolvons (E) par analyse-synthèse.
 %
-%\noindent Résolvons (E) par analyse-synthèse.
+%%
+%\textit{Analyse.} Soit $y$ une solution de (E) sur $\mathbb R_+^*$. Sa restriction à $I_0$ est donc de la forme $x \mapsto \frac{\lambda_0}{\ln x}$. Or $y$ est continue en $1$ donc nécessairement $\lambda_0 = 0$ et la restriction de $y$ à $I_0$ est la fonction nulle. De même, on trouve que la restriction de $y$ à $I_1$ est aussi la fonction nulle.
 %
-%\medskip
-%
-%\noindent \textit{Analyse.} Soit $y$ une solution de (E) sur $\mathbb R_+^*$. Sa restriction à $I_0$ est donc de la forme $x \mapsto \frac{\lambda_0}{\ln x}$. Or $y$ est continue en $1$ donc nécessairement $\lambda_0 = 0$ et la restriction de $y$ à $I_0$ est la fonction nulle. De même, on trouve que la restriction de $y$ à $I_1$ est aussi la fonction nulle.
-%
-%\medskip
-%
-%\noindent \textit{Synthèse.} La fonction nulle est bien solution de (E) sur $\mathbb R_+^*$. 
+%%
+%\textit{Synthèse.} La fonction nulle est bien solution de (E) sur $\mathbb R_+^*$. 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Systèmes d'équations différentielles}}}
-\end{center}
+\subsection{Systèmes d'équations différentielles}
 
-\medskip
 
 \begin{Exercice}{} Résoudre le système suivant :
 $$\left\{\begin{array}{rcl}
@@ -319,9 +296,9 @@ z' & =& x+2y+2z \\
 %1& 0 & 1 \\
 %0& 1 & 1 \\
 %-1 & -2 & 1 \\
-%\end{pmatrix}, \; D= \textrm{diag}(1,1,5)$$
+%\end{pmatrix}, \; D= \diag(1,1,5)$$
 %La méthode du cours permet d'obtenir que : 
-%$$\mathcal{S}_{\mathbb{R}} = \textrm{Vect}_{\mathbb{R}} (f_1,f_2,f_3)$$
+%$$\mathcal{S}_{\mathbb{R}} = \Vect_{\mathbb{R}} (f_1,f_2,f_3)$$
 %où $f_1$, $f_2$ et $f_3$ sont des fonctions de $\mathbb{R}$ dans $\mathcal{M}_{3,1}(\mathbb{R})$ définies par :
 %$$ f_1(t)= X_1 e^{t}, \; f_2(t) = X_2 e^{t} \hbox{ et } f_3(t) =X_3 e^{5t} $$
 
@@ -358,13 +335,13 @@ z' & =& -2x+3y+z \\
 %1+i\\
 %\end{pmatrix} \hbox{ et }  X_3 = \overline{X_2} $$
 %Deux valeurs propres étant complexes, on commence par résoudre ce système dans $\mathbb{C}$. La méthode usuelle donne :
-%$$\mathcal{S}_{\mathbb{C}} = \textrm{Vect}_{\mathbb{C}} (f_1,f_2,f_3)$$
+%$$\mathcal{S}_{\mathbb{C}} = \Vect_{\mathbb{C}} (f_1,f_2,f_3)$$
 %où $f_1$, $f_2$ et $f_3$ sont des fonctions de $\mathbb{R}$ dans $\mathcal{M}_{3,1}(\mathbb{C})$ définies par :
 %$$ f_1(t)= X_1 e^{2t}, \; f_2(t) = X_2 e^{2it} \hbox{ et } f_3(t) = \overline{X_2} e^{-2i t} = \overline{f_2(t)}$$
 %Par combinaison linéaire,
 %$$ g_2=\Re e(f_2) = \dfrac{f_2+ \overline{f_2}}{2} \hbox{ et } g_3=\Im m(f_2) = \dfrac{f_2- \overline{f_2}}{2i}$$
 %sont des solutions à valeurs réelles du système. Ainsi, $f_1$, $g_2$ et $g_3$ sont trois solutions à valeurs réelles du système et toute solution à valeurs réelles (qui est en particulier une solution à valeurs complexes) s'écrit comme combinaison linéaire de ces trois fonctions (d'après le raisonnement dans $\mathbb{C}$ précédent et opérations sur un espace engendré). La famille $(f_1,g_2,g_3)$ est donc une famille génératrice à $3$ éléments de l'ensemble des solutions qui est de dimension $3$ d'après le cours. Ainsi,
-%$$ \mathcal{S}_{\mathbb{R}} = \textrm{Vect}(f_1,g_2,g_3)$$
+%$$ \mathcal{S}_{\mathbb{R}} = \Vect(f_1,g_2,g_3)$$
 %
 
 
@@ -406,7 +383,7 @@ x'' \\
 %\item Par simple calcul, on a :
 %$$ \chi_A(X) = (X+3)(X+1)^2$$
 %La méthode usuelle permet de montrer que :
-%$$ E_{-3}(A) = \textrm{Vect}(X_1) \; \hbox{ et } \;  E_{-1}(A) = \textrm{Vect}(X_2)$$
+%$$ E_{-3}(A) = \Vect(X_1) \; \hbox{ et } \;  E_{-1}(A) = \Vect(X_2)$$
 %où
 %$$ X_1 = \begin{pmatrix}
 %1 \\
@@ -500,19 +477,15 @@ x'' \\
 %$$ x(t) = Me^{-3t} + K \left( \dfrac{3}{4}  + \dfrac{t}{2}   \right) e^{-t} + Ce^{-t}$$
 %\end{enumerate}
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Équations différentielles linéaires d'ordre $2$}}}
-\end{center}
+\subsection{Équations différentielles linéaires d'ordre \texorpdfstring{$2$}{2}}
 
-\medskip
 
 \begin{Exercice}{} Résoudre $y''-4y'+3y=e^x$.
 \end{Exercice}
 
 %\corr L'équation considérée est une équation différentielle linéaire du second ordre à coefficients constants et second membre continue. L'équation caractéristique de l'équation homogène associée est $x^2-4x+3=0$ qui a deux solutions, $1$ et $3$. Ainsi,
-%$$ \mathcal{S}_H = \textrm{Vect}(f_1,f_2)$$
+%$$ \mathcal{S}_H = \Vect(f_1,f_2)$$
 %où $f_1 : x \mapsto e^x$ et $f_2 : x \mapsto e^{3x}$. Sachant que $1$ est solution de l'équation caractéristique, on cherche une solution particulière de l'équation sous la forme :
 %$$ g : x \mapsto a x e^x$$
 %où $a \in \mathbb{R}$. La fonction $g$ est dérivable sur $\mathbb{R}$ et on a :
@@ -526,7 +499,7 @@ x'' \\
 %ce qui se réécrit :
 %$$  \forall x \in \mathbb{R}, \; -2a=1$$
 %Ainsi, $a= -\dfrac{1}{2}$ convient. On en déduit que :
-%$$ \mathcal{S} = g +  \textrm{Vect}(f_1,f_2)$$
+%$$ \mathcal{S} = g +  \Vect(f_1,f_2)$$
 
 \begin{Exercice}{} Déterminer les solutions réelles de l'équation $y'' - 3y' + 2y = \cos(3x)$.
 \end{Exercice}
@@ -549,13 +522,9 @@ x'' \\
 %$$ x \mapsto \lambda e^{x} + \mu e^{2x} - \dfrac{7}{130} \cos(3x) - \dfrac{9}{130} \sin(3x)$$
 %où $\lambda, \mu \in \mathbb{R}$.
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Équations différentielles et séries entières}}}
-\end{center}
+\subsection{Équations différentielles et séries entières}
 
-\medskip
 
 \begin{Exercice}{} Soit l'équation différentielle: $x(x-1)y''+3xy'+y=0$.
 \begin{enumerate}
@@ -568,26 +537,26 @@ Est-ce que toutes les solutions de $x(x-1)y''+3xy'+y=0$ sur $\left]0,1 \right[$ 
 
 %\corr 
 %\begin{enumerate}
-%\item Soit $\displaystyle \Sum{n \geq 0}{} a_n x^n$ une série entière de rayon de convergence $R > 0$ et de somme $S$. Pour tout $x \in \left] { - R,R} \right[$,
-%$$S(x) = \displaystyle\sum\limits_{n = 0}^{ + \infty } {a_n x^n } $$
+%\item Soit $ \Sum{n \geq 0}{} a_n x^n$ une série entière de rayon de convergence $R > 0$ et de somme $S$. Pour tout $x \in \left] { - R,R} \right[$,
+%$$S(x) = \sum\limits_{n = 0}^{ + \infty } {a_n x^n } $$
 %Par dérivation terme à terme (deux fois), on a :
-%$$ S'(x) = \displaystyle\sum\limits_{n = 1}^{ + \infty } {na_n x^{n - 1} } \text{ et }S''(x) = \displaystyle\sum\limits_{n = 2}^{ + \infty } {n(n - 1)a_n x^{n - 2} }  = \displaystyle\sum\limits_{n = 1}^{ + \infty } {(n + 1)na_{n + 1} x^{n - 1} } $$
+%$$ S'(x) = \sum\limits_{n = 1}^{ + \infty } {na_n x^{n - 1} } \text{ et }S''(x) = \sum\limits_{n = 2}^{ + \infty } {n(n - 1)a_n x^{n - 2} }  = \sum\limits_{n = 1}^{ + \infty } {(n + 1)na_{n + 1} x^{n - 1} } $$
 %On en déduit (après simplifications) que pour tout $x \in \left] { - R,R} \right[$ :
-%$$ x(x - 1)S''(x) + 3xS'(x) + S(x) = \displaystyle\sum\limits_{n = 0}^{ + \infty } {\left( {(n + 1)^2 a_n  - n(n + 1)a_{n + 1} } \right)x^n } $$
+%$$ x(x - 1)S''(x) + 3xS'(x) + S(x) = \sum\limits_{n = 0}^{ + \infty } {\left( {(n + 1)^2 a_n  - n(n + 1)a_{n + 1} } \right)x^n } $$
 %Par unicité des coefficients d'un développement en série entière, la fonction $S$ est solution sur $\left] { - R,R} \right[$ de l'équation étudiée si, et seulement si, 
 %$$\forall n \in \mathbb{N}, \, na_{n + 1}  = (n + 1)a_n $$
 %ce qui est équivalent à :
 %$$\forall n \in \mathbb{N}, \, a_n  = na_1 $$
 %Le rayon de convergence de la série entière de terme général $nx^n$ est le même que celui de la série entière de terme général $x^n$ donc $1$. Ainsi,  les fonctions développables en série entière solutions de l'équation sont de la forme :
-%$$x \mapsto a_1 \displaystyle\sum\limits_{n = 0}^{ + \infty } {nx^n }  = a_1 x\displaystyle\sum\limits_{n = 1}^{ + \infty } nx^{n-1} = \dfrac{a_1 x}{(1-x)^2}$$
+%$$x \mapsto a_1 \sum\limits_{n = 0}^{ + \infty } {nx^n }  = a_1 x\sum\limits_{n = 1}^{ + \infty } nx^{n-1} = \dfrac{a_1 x}{(1-x)^2}$$
 %où $a_1 \in \mathbb{R}$ (par dérivation terme à terme de la somme de la série géométrique). Réciproquement, en remontant les calculs, celles-ci sont bien solutions de l'équation.
 %\item Notons $(E)$ l'équation :
 %$$x(x-1)y''+3xy'+y=0$$
-%Montrons que les solutions de $(E)$ sur $\left] 0,1\right[$ ne sont pas toutes développables en série entière à l'origine.  Raisonnons par l'absurde : supposons que toutes les solutions de $(E)$ sur $\left] 0,1\right[$ sont développables en série entière à l'origine. D'après la question $1$, l'ensemble des solutions de $(E)$ sur $\left] 0,1\right[$ est $\textrm{Vect}(f)$ où $f$ est la fonction définie par 
+%Montrons que les solutions de $(E)$ sur $\left] 0,1\right[$ ne sont pas toutes développables en série entière à l'origine.  Raisonnons par l'absurde : supposons que toutes les solutions de $(E)$ sur $\left] 0,1\right[$ sont développables en série entière à l'origine. D'après la question $1$, l'ensemble des solutions de $(E)$ sur $\left] 0,1\right[$ est $\Vect(f)$ où $f$ est la fonction définie par 
 %$$\forall\:x\in \left] 0,1\right[, \; f(x)=\dfrac{x}{(1-x)^2}$$
 %Or, sur $]0,1[$, l'équation $(E)$ se réécrit (sachant que $x \mapsto x(1-x)$ ne s'annule pas sur cet intervalle) :
 %$$ y'' + \dfrac{3}{1-x}y' + \dfrac{1}{x(x-1)} y = 0$$
-%On reconnait une équation différentielle du second ordre homogène à coefficients continues. Son ensemble des solutions est un plan vectoriel d'après le cours : ça ne peut donc pas être $\textrm{Vect}(f)$. Ainsi, par l'absurde, on a montré l'existence de solution de $x(x-1)y''+3xy'+y=0$ sur $\left]0,1 \right[$ non développables en série entière à l'origine.
+%On reconnaît une équation différentielle du second ordre homogène à coefficients continues. Son ensemble des solutions est un plan vectoriel d'après le cours : ça ne peut donc pas être $\Vect(f)$. Ainsi, par l'absurde, on a montré l'existence de solution de $x(x-1)y''+3xy'+y=0$ sur $\left]0,1 \right[$ non développables en série entière à l'origine.
 %\end{enumerate}
 
 \begin{Exercice}{} \begin{enumerate}
@@ -625,7 +594,7 @@ Est-ce que toutes les solutions de $x(x-1)y''+3xy'+y=0$ sur $\left]0,1 \right[$ 
 %$$ a_{2n+1} = (-1)^n \dfrac{2^n (2n) \times \cdots 2}{(2n) \times(2n-1) \times \cdots \times 3 \times 2} a_1 = (-1)^n \dfrac{4^n n!}{(2n+1)!} a_1$$
 %Déterminons le rayon de convergence de $\Sum{n \geq 0}{} a_n x^n$. Remarquons que :
 %$$ \sum_{n \geq 0} a_n x^n = \sum_{n \geq 0} a_{2n} x^{2n} + \sum_{n \geq 0} a_{2n+1} x^{2n+1}$$
-%Le rayon de convergence de $\Sum{n \geq 0}{} a_{2n} x^{2n}$ vaut $+ \infty$ (on reconnait une série exponentielle). Si $a_1=0$, le rayon de convergence de la deuxième série entière vaut aussi $+ \infty$. Supposons que $a_1 \neq 0$. Soit $x \in \mathbb{R}^*$. Posons pour tout entier $n \geq 0$,
+%Le rayon de convergence de $\Sum{n \geq 0}{} a_{2n} x^{2n}$ vaut $+ \infty$ (on reconnaît une série exponentielle). Si $a_1=0$, le rayon de convergence de la deuxième série entière vaut aussi $+ \infty$. Supposons que $a_1 \neq 0$. Soit $x \in \mathbb{R}^*$. Posons pour tout entier $n \geq 0$,
 %$$ u_n = \vert a_1 a_{2n+1} x^{2n+1} \vert >0$$
 %Alors :
 %$$ \dfrac{u_{n+1}}{u_n} = \dfrac{4^{n+1} (n+1)!}{(2n+3)!} \times \dfrac{(2n+1)!}{4^n n!} x^2 = \dfrac{4 (n+1)}{(2n+3)(2n+2)}x^2 = \dfrac{2}{(2n+2)(2n+2)} x^2$$
@@ -703,13 +672,9 @@ Est-ce que toutes les solutions de $x(x-1)y''+3xy'+y=0$ sur $\left]0,1 \right[$ 
 %$$ \arcsin(x)^2 = \sum_{n=1}^{+ \infty} 2^{2n-2} \dfrac{(n-1)!^2}{(2n)!} x^{2n}$$
 %\end{enumerate}
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Changement de fonction, changement de variables}}}
-\end{center}
+\subsection{Changement de fonction, changement de variables}
 
-\medskip
 
 \begin{Exercice}{} On cherche à résoudre l'équation différentielle :
 $$ (E) \qquad t^2\,f''(t) + 3 t f''(t)+f(t)  = \dfrac{1}{t} $$
@@ -852,13 +817,9 @@ On posera $z=(1+x^2)y$.
 %$$ x \mapsto \dfrac{\lambda e^x + \mu e^{-x}}{1+x^2}$$
 %où $\lambda, \mu \in \mathbb{R}$.
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Divers}}}
-\end{center}
+\subsection{Divers}
 
-\medskip
 
 
 
@@ -873,9 +834,8 @@ $$ \forall (x,y) \in \mathbb{R}^2, \; f(x+y)=f(x)f(y)$$
 
 %\corr Raisonnons par analyse-synthèse.
 %
-%\medskip
-%
-%\noindent \textit{Analyse.} Soit $f : \mathbb{R} \rightarrow \mathbb{C}$ une fonction dérivable vérifiant la condition souhaitée. En posant $(x,y)=(0,0)$, on a :
+%%
+%\textit{Analyse.} Soit $f : \mathbb{R} \rightarrow \mathbb{C}$ une fonction dérivable vérifiant la condition souhaitée. En posant $(x,y)=(0,0)$, on a :
 %$$ f(0)=f(0)^2$$
 %donc $f(0)=0$ ou $f(0)=1$. Fixons $y \in \mathbb{R}$. On sait que pour tout $x \in \mathbb{R}$,
 %$$ f(x+y) = f(x)f(y)$$
@@ -889,9 +849,8 @@ $$ \forall (x,y) \in \mathbb{R}^2, \; f(x+y)=f(x)f(y)$$
 %$$ f(y) = K e^{\alpha y}$$
 %où $\alpha = f'(0)$. Si $f(0)=0$, on obtient $K=0$ et si $f(0)=1$ alors $K=1$.
 %
-%\medskip
-%
-%\noindent \textit{Synthèse.} Si $f$ est la fonction nulle ou si $f$ est de la forme $x \mapsto e^{\alpha x}$ avec $\alpha \in \mathbb{C}$, on vérifie facilement que $f$ est solution de notre problème de départ.
+%%
+%\textit{Synthèse.} Si $f$ est la fonction nulle ou si $f$ est de la forme $x \mapsto e^{\alpha x}$ avec $\alpha \in \mathbb{C}$, on vérifie facilement que $f$ est solution de notre problème de départ.
 %
 
 
@@ -915,10 +874,10 @@ $$ \forall (x,y) \in \mathbb{R}^2, \; f(x+y)=f(x)f(y)$$
 %$$ \dfrac{e^{-xt}}{\sqrt{1+t}} \geq \dfrac{1}{\sqrt{1+t}}$$
 %et 
 %$$ \dfrac{1}{\sqrt{1+t}} \underset{+ \infty}{\sim} \dfrac{1}{\sqrt{t}}$$
-%On sait que $\dis \int_1^{+ \infty} \dfrac{1}{\sqrt{t}} \dt$ est une intégrale de Riemann divergente donc par critère de comparaison (les fonctions sont positives sur $[1, + \infty[$), $\dis \int_1^{+ \infty}  \dfrac{1}{\sqrt{1+t}}  \dt$ est divergente et de nouveau par critère de comparaison, $\dis \int_1^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}}$ diverge et ainsi, $f(x)$ n'est pas défini.
+%On sait que $\int_1^{+ \infty} \dfrac{1}{\sqrt{t}} \dt$ est une intégrale de Riemann divergente donc par critère de comparaison (les fonctions sont positives sur $[1, + \infty[$), $\int_1^{+ \infty}  \dfrac{1}{\sqrt{1+t}}  \dt$ est divergente et de nouveau par critère de comparaison, $\int_1^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}}$ diverge et ainsi, $f(x)$ n'est pas défini.
 %\item Soit $x \in \mathbb{R}_+^*$. Pour tout réel positif $t$,
 %$$ 0 \leq  \dfrac{e^{-xt}}{\sqrt{1+t}} \leq e^{-xt}$$
-%L'intégrale de référence $\dis \int_0^{+ \infty} e^{-xt} \dt$ est convergente (car $x>0$) donc par critère de comparaison (les fonctions sont positives), $ \int_0^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}}$ converge et ainsi, $f(x)$ est bien défini.
+%L'intégrale de référence $\int_0^{+ \infty} e^{-xt} \dt$ est convergente (car $x>0$) donc par critère de comparaison (les fonctions sont positives), $ \int_0^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}}$ converge et ainsi, $f(x)$ est bien défini.
 %\end{itemize}
 %Finalement, $f$ est définie sur $\mathcal{D}= \mathbb{R}_+^*$.
 %\item Soit $g : \mathbb{R}_+^* \times \mathbb{R}_+ \rightarrow \mathbb{R}$ définie par :
