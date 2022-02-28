@@ -1,26 +1,21 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{Cours}
-\usepackage{delarray}
-\usepackage{fancybox}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\newcommand{\Int}[2]{\ensuremath{\mathchoice%
-	{{\displaystyle\int_{#1}^{#2}}}
-	{{\displaystyle\int_{#1}^{#2}}}
-	{\int_{#1}^{#2}}
-	{\int_{#1}^{#2}}
-	}}
-\usepackage{pstricks-add}
+\documentclass[french,11pt,twoside]{VcCours}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
 
-
+\renewcommand{\trou}[1]{{\color{white}#1}}
+%\renewcommand{\trou}[1]{{\color{blue}#1}}
 
 \begin{document}
-% \everymath{\displaystyle}
 
-\maketitle{Chapitre 17}{Équations différentielles}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Chapitre 17 : Équations différentielles}
+
+\tableofcontents
+\separationTitre
+
 
 Dans tout le chapitre, $I$ est un intervalle de $\mathbb{R}$ contenant au moins deux éléments. La notation $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$ et $n,p$ sont deux entiers naturels non nul.
 
-\section{Équations différentielles scalaires linéaires d'ordre $1$}
+\section{Équations différentielles scalaires linéaires d'ordre \texorpdfstring{$1$}{1}}
 \subsection{Définition} 
 
 \begin{Definition}{} Soient $\alpha$, $\beta$ et $\gamma$ trois fonctions définies sur $I$ à valeurs dans $\mathbb{K}$. L'équation 
@@ -255,7 +250,7 @@ où $\alpha$, $\beta$ et $\gamma$ trois fonctions définies sur $I$. Si $\alpha$
   \]
 \end{ApplicationDirecte}
 
-\section{Systèmes différentiels linéaires d'ordre $1$}
+\section{Systèmes différentiels linéaires d'ordre \texorpdfstring{$1$}{1}}
 \subsection{Une remarque}
 Dans la suite, nous considérerons des fonctions définies sur un intervalle $I$ à valeurs dans $\mathcal{M}_{n,p}(\mathbb{R})$ de la forme :
 $$ A : t \mapsto \begin{pmatrix}
@@ -396,12 +391,12 @@ $$  \mathcal{S} =X_p + \textrm{Vect}_{\mathbb{K}}(Y_1, \ldots, Y_n)$$
 qui signifie que tout élément de $S$ s'écrit comme $X_p$ plus un élément de $\mathcal{S}_H$.
 \end{Remarque}
 
-\section{Systèmes différentiels linéaires d'ordre $1$ à coefficients constants}
+\section{Systèmes différentiels linéaires d'ordre \texorpdfstring{$1$}{1} à coefficients constants}
 Dans cette section, on considère le système différentiel linéaire d'ordre $1$ suivant :
 $$ (\mathcal{E}) \quad X'=AX+B(t)$$
 où $A \in \mathcal{M}_n(\mathbb{K})$ et $B : I  \rightarrow \mathcal{M}_{n,1}(\mathbb{K})$.
 On note $(\mathcal{E}_H)$ le système homogène associé.
-\subsection{Premier cas : si $A$ est diagonalisable}
+\subsection{Premier cas : si \texorpdfstring{$A$}{A} est diagonalisable}
 Dans ce cas, il existe une matrice $D \in \mathcal{M}_n(\mathbb{K})$ diagonale et une matrice $P \in \mathcal{M}_n(\mathbb{K})$ inversible telles que :
 $$ A=PDP^{-1}$$
 On a $D= \textrm{diag}(\lambda_1, \ldots, \lambda_n)$ où les $\lambda_i$ sont les valeurs propres de $A$ (éventuellement avec répétitions).
@@ -420,11 +415,11 @@ Y'=DY \\
 \end{array}\right. \\
 & \Longleftrightarrow \left\lbrace \begin{array}{l}
 Y=P^{-1}X \\
-\forall i \in \Interv{1}{n}, \; \forall t \in  \mathbb{R},  \; y_i'(t)=\lambda_i y_i(t)  \\
+\forall i \in \iii{1}{n}, \; \forall t \in  \mathbb{R},  \; y_i'(t)=\lambda_i y_i(t)  \\
 \end{array}\right. \qquad \qquad \hbox{ où } Y= ~^t(y_1, \ldots, y_n) \\
 & \Longleftrightarrow \left\lbrace \begin{array}{l}
 X=PY \\
-\forall i \in \Interv{1}{n}, \; \exists c_i \in  \mathbb{R} \, \vert \, \forall t \in \mathbb{R}, \; y_i(t)=c_i e^{\lambda_i t}  \\
+\forall i \in \iii{1}{n}, \; \exists c_i \in  \mathbb{R} \, \vert \, \forall t \in \mathbb{R}, \; y_i(t)=c_i e^{\lambda_i t}  \\
 \end{array}\right.
 \end{align*}
 Il suffit alors de calculer $PY$ pour obtenir l'ensemble des solutions $\mathcal{S}_H$.
@@ -453,7 +448,7 @@ $$ \left\lbrace \begin{array}{lll}
 
 \textbf{Cas non homogène :} 
 \begin{itemize}
-\item Si on connait une solution particulière, on connait alors l'ensemble des solutions d'après la proposition (\ref{sol}) (il suffit de résoudre le système homogène).
+\item Si on connaît une solution particulière, on connait alors l'ensemble des solutions d'après la proposition (\ref{sol}) (il suffit de résoudre le système homogène).
 \item Sinon, on utilise la même méthode que précédemment mais en gardant le second membre $B$ :
 \begin{align*}
 X \in \mathcal{S} & \Longleftrightarrow  X'=AX+B \\
@@ -466,7 +461,7 @@ Y'=DY+C \\
 \end{array}\right. \\
 & \Longleftrightarrow \left\lbrace \begin{array}{l}
 Y=P^{-1}X \hbox{ et }  C=P^{-1}B\\
-\forall i \in \Interv{1}{n}, \; \forall t \in  \mathbb{R}, \, y_i'(t)=\lambda_i y_i(t) + c_i(t)  \\
+\forall i \in \iii{1}{n}, \; \forall t \in  \mathbb{R}, \, y_i'(t)=\lambda_i y_i(t) + c_i(t)  \\
 \end{array}\right. \qquad \qquad \hbox{ où } Y= ~^t(y_1, \ldots, y_n) \hbox{ et } C= ~^t(c_1, \ldots, c_n)
 \end{align*}
 Chacune des équations différentielles est une équation différentielle linéaire du premier ordre dont on sait trouver les solutions (en utilisant par exemple la méthode de la variation de la constante).
