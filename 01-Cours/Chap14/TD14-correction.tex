@@ -1,30 +1,29 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\newcommand{\Sum}[2]{\ensuremath{\textstyle{\sum\limits_{#1}^{#2}}}}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
+
+%cSpell:ignore orthonormaliser orthonormalisant 
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Correction du TD 14 : Espaces préhilbertiens réels}
 
+\tableofcontents
+\separationTitre
 
-\begin{center}
-\textit{{ {\huge TD 14 : Espaces préhilbertiens réels, }}}
+\subsection{espaces euclidiens}
 
-\textit{{ {\huge espaces euclidiens}}}
-\end{center}
-
-\bigskip
 
 \noindent Si rien n'est précisé dans un exercice, le produit scalaire utilisé est noté $< \cdot , \cdot >$ et la norme associée est notée $\Vert \cdot \Vert$.
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Produit scalaire, orthogonalité}}}
-\end{center}
+\subsection{Produit scalaire, orthogonalité}
 
-\medskip
 
 \begin{Exercice}{} On pose pour tout $(P,Q) \in \mathbb{R}[X]^2$,
 $$ <P,Q> = \sum_{n=0}^{+ \infty} P(n) Q(n) e^{-n} $$
@@ -37,7 +36,6 @@ donc
 $$ P(n)Q(n) e^{-n} \underset{+ \infty}{=} o \left( \dfrac{1}{n^2} \right)$$
 La série de terme général positif $1/n^2$ converge (série de Riemann avec $2>1$) donc par critère de comparaison la série de terme général $P(n)Q(n) e^{-n}$ converge absolument donc converge. Ainsi, $<P,Q>$ est bien défini.
 
-\medskip
 
 \noindent Vérifions les différents points de la définition.
 
@@ -73,7 +71,6 @@ Ainsi, la fonction (positive) $t \mapsto \dfrac{M}{\sqrt{1-t}}$ est intégrable 
 $$ t \mapsto  \dfrac{P(t)Q(t)}{\sqrt{1-t}} $$
 aussi et $<P,Q>$ est donc bien défini.
 
-\medskip
 
 \noindent Vérifions les différents points de la définition.
 
@@ -129,7 +126,7 @@ et finalement,
 $$ f(\lambda x +y)= \lambda f(x)+f(y)$$
 On en déduit que $f \in \mathcal{L}(H)$.
 
-\begin{Exercice}{} Considérons $\mathbb{R}^5$ muni du produit scalaire usuel. Soit $F= \textrm{Vect}(x_1,x_2)$ où
+\begin{Exercice}{} Considérons $\mathbb{R}^5$ muni du produit scalaire usuel. Soit $F= \Vect(x_1,x_2)$ où
 $$ x_1 = (1,1,1,1,1) \et x_2 = (1,2,3,4,5)$$
 Déterminer une base de $F^{\perp}$.
 \end{Exercice} 
@@ -149,7 +146,7 @@ x \in F^{\perp} & \Longleftrightarrow <x,x_1>=0 \, \hbox{ et } \,  <x,x_2>=0 \\
 où
 $$ u=(1,-2,1,0,0), \, v =(2,-3,0,1,0) \, \hbox{ et } \, w=(4,-5,0,0,1)$$
 Ainsi,
-$$ F^{\perp} = \textrm{Vect}(u,v,w)$$
+$$ F^{\perp} = \Vect(u,v,w)$$
 On montre facilement (à faire) que la famille $(u,v,w)$ est libre donc c'est une base de $F^{\perp}$.
 
 \begin{Exercice}{} Soient $x$ et $y$ deux vecteurs d'un espace préhilbertien réel tels que :
@@ -278,7 +275,6 @@ donc $\lambda f+g \in F$.
 \end{itemize}
 Ainsi, $F$ est un sous-espace vectoriel de $H$.
 
-\medskip
 
 \noindent Soit $g \in F^{\perp}$. Posons $h$ la fonction de $F$ définie par :
 $$ \forall t \in [0,1], \; h(t)=tg(t)$$
@@ -396,13 +392,11 @@ Or $g$ appartient à $G$ donc $g$ est de classe $\mathcal{C}^2$ sur $[0,1]$ et $
  \end{align*}
  car $f(1)=0$ et $f(0)=0$. Ainsi, $F$ et $G$ sont orthogonaux dans $E$ (en particulier, ils sont en somme directe).
  
- \medskip
- 
+  
  \noindent Raisonnons par analyse-synthèse pour montrer que $F$ et $G$ sont supplémentaires dans $E$.
  
- \medskip
- 
- \noindent \textit{Analyse.} Soit $f \in E$. On suppose l'existence de $(f_1,f_2) \in F \times G$ tel que $f=f_1+f_2$. La fonction $f_2$ est solution de $y''=y$ dont on connait l'ensemble des solutions : il existe deux réels $\lambda$ et $\mu$ tels que pour tout $x \in [0,1]$,
+  
+ \noindent \textit{Analyse.} Soit $f \in E$. On suppose l'existence de $(f_1,f_2) \in F \times G$ tel que $f=f_1+f_2$. La fonction $f_2$ est solution de $y''=y$ dont on connaît l'ensemble des solutions : il existe deux réels $\lambda$ et $\mu$ tels que pour tout $x \in [0,1]$,
  $$ f_2(x) = \lambda e^x + \mu e^{-x}$$
  Ainsi, pour tout $x \in [0,1]$,
  $$ f(x)= f_1(x) + \lambda e^x + \mu e^{-x}$$
@@ -421,14 +415,13 @@ Or $g$ appartient à $G$ donc $g$ est de classe $\mathcal{C}^2$ sur $[0,1]$ et $
  & = f(0) - \dfrac{f(1)-ef(0)}{e^{-1}-e} 
  \end{align*}
  On vient donc de déterminer $f_2$ donc $f_1$.
- \medskip
- 
+  
  \noindent \textit{Synthèse.} Soit $f \in E$. Posons $f_2 : [0,1] \rightarrow \mathbb{R}$ définie par :
  $$ \forall x \in [0,1], \, f_2(x)= \left(f(0) - \dfrac{f(1)-ef(0)}{e^{-1}-e} \right) e^x + \dfrac{f(1)-ef(0)}{e^{-1}-e} e^{-x}$$
  et posons $f_1 = f-f_2$. 
  \begin{itemize}
  \item $f=f_1+f_2$.
- \item $f_2$ est solution de $y''=y$ (on connait l'ensemble des solutions donnée dans l'analyse).
+ \item $f_2$ est solution de $y''=y$ (on connaît l'ensemble des solutions donnée dans l'analyse).
  \item On a :
  \begin{align*}
  f_1(0) & = f(0) - \left(f(0) - \dfrac{f(1)-ef(0)}{e^{-1}-e} \right) e^0 - \dfrac{f(1)-fe(0)}{e^{-1}-e} e^{-0} \\
@@ -445,16 +438,15 @@ $$ \forall x \in H, \; \Vert x \Vert^2= \sum_{k=1}^n <x,e_k>^2 $$
 Montrer que $\mathcal{F}$ est une base orthonormée de $H$.
 \end{Exercice}
 
-\corr Soit $i \in \Interv{1}{n}$. Par hypothèse, on a :
+\corr Soit $i \in \ii{1}{n}$. Par hypothèse, on a :
 $$ \Vert e_i \Vert^2= \sum_{k=1}^n <e_i,e_k>^2 = <e_i,e_i>^2 + \sum_{k \neq i}^n <e_i,e_k>^2 $$
 Or $e_i$ est unitaire donc sa norme vaut $1$ (donc $<e_i,e_i>$ aussi). Ainsi :
 $$ 0 =  \sum_{k \neq i}^n <e_i,e_k>^2 $$
-Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls donc pour tout $k \in \Interv{1}{n}$, $k \neq i$, on a :
+Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls donc pour tout $k \in \ii{1}{n}$, $k \neq i$, on a :
 $$<e_i,e_k>=0$$
 On en déduit que $(e_1, \ldots, e_n)$ est une famille orthogonale, de vecteurs non nuls car unitaires donc c'est aussi une famille libre. Posons :
-$$ F = \textrm{Vect}(\mathcal{F})$$
+$$ F = \Vect(\mathcal{F})$$
 
-\medskip
 
 \noindent Soit $x \in H$. Si $x$ est orthogonal à $F$ alors :
 $$ \Vert x \Vert^2= \sum_{k=1}^n <x,e_k>^2 = \sum_{k=1}^n  0 = 0$$
@@ -468,13 +460,9 @@ donc $F=H$. Ainsi, $\mathcal{F}$ est une famille libre orthogonal qui génère $
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Projection orthogonale}}}
-\end{center}
+\subsection{Projection orthogonale}
 
-\medskip
 
 \begin{Exercice}{} Donner la matrice de la projection orthogonale sur le plan d'équation $x-2y+z=0$ dans la base canonique de $\mathbb{R}^3$ muni du produit scalaire usuel.
 \end{Exercice}
@@ -483,7 +471,6 @@ donc $F=H$. Ainsi, $\mathcal{F}$ est une famille libre orthogonal qui génère $
 $$ n = \dfrac{1}{\sqrt{6}} (1,-2,1)$$
 forme une base orthonormée de $F^{\perp}$. 
 
-\medskip
 
 \noindent Notons $p$ (resp. $q$) la projection orthogonale sur $F$ (resp. $F^{\perp}$). Alors $p+q=\textrm{Id}$. D'après le cours, on sait que pour tout $(x,y,z) \in \mathbb{R}^3$,
 \begin{align*}
@@ -509,7 +496,7 @@ $$ \textrm{Mat}_{\mathcal{B}}(p) = \dfrac{1}{6} \begin{pmatrix}
 \item Rappeler le produit scalaire usuel sur $\mathcal{M}_{2}(\mathbb{R})$. 
 \item Montrer que $F=\left\{\left(\begin{array}{cc} a & b\\ -b & a \end{array}\right),\ (a,b)\in\R^2\right
 \}$ est un sous-espace vectoriel de ${\cal M}_2(\R).$
-\item Trouver une base de $F^{\perp}$ et d\'eterminer le projet\'e orthogonal de $N=\left(\begin{array}{cc} 1&1\\ 1&1 \end{array}\right)$ sur $F^{\perp}$.
+\item Trouver une base de $F^{\perp}$ et déterminer le projeté orthogonal de $N=\left(\begin{array}{cc} 1&1\\ 1&1 \end{array}\right)$ sur $F^{\perp}$.
 \end{enumerate}
 \end{Exercice}
 
@@ -521,7 +508,7 @@ $$ \textrm{Mat}_{\mathcal{B}}(p) = \dfrac{1}{6} \begin{pmatrix}
 \begin{align*}
 F & =\left \lbrace \begin{pmatrix} a & b\\ -b & a \end{pmatrix} \, \vert \,  (a,b)\in\R^2\right\rbrace \\
 & = \left\lbrace aM_1+bM_2 \, \vert \, (a,b) \in \mathbb{R}^2 \right\rbrace \\
-& = \textrm{Vect}(M_1,M_2)
+& = \Vect(M_1,M_2)
 \end{align*}
 où
 $$ M_1 = I_2, \, \hbox{ et } \, M_2 = \begin{pmatrix}
@@ -558,7 +545,7 @@ $$ M = d \begin{pmatrix}
 1 & 0 \\
 \end{pmatrix}$$
 On en déduit que :
-$$ F^{\perp} = \textrm{Vect}(M_3,M_4)$$
+$$ F^{\perp} = \Vect(M_3,M_4)$$
 où
 $$ M_3 = \begin{pmatrix}
 -1 & 0 \\
@@ -569,7 +556,6 @@ $$ M_3 = \begin{pmatrix}
 \end{pmatrix}$$
 Les vecteurs $M_3$ et $M_4$ sont non colinéaires donc $(M_3,M_4)$ est une base de $F^{\perp}$.
 
-\medskip
 
 \noindent Il est évident que :
 $$ N= M_1+M_4$$
@@ -586,12 +572,12 @@ avec $M_1 \in F$ et $M_2 \in F^{\perp}$. L'espace $F$ est de dimension finie don
  \item \textit{Analyse.} Soit $H$ un hyperplan de $E$ tel que $y = p_{H}(x)$. Alors $y \in H$ et $y-x \in H^{\perp}$. Or sachant que $E$ est un espace euclidien, on sait que :
  $$ \textrm{dim}(H^{\perp})= \textrm{dim}(E) - \textrm{dim}(H)=1$$
  Le vecteur $y-x$ est non nul car $y$ et $x$ sont distincts donc :
- $$ H^{\perp}= \textrm{Vect}(y-x)$$
+ $$ H^{\perp}= \Vect(y-x)$$
  Sachant que $E$ est euclidien, on en déduit que :
- $$ H = \textrm{Vect}(y-x)^{\perp}$$
+ $$ H = \Vect(y-x)^{\perp}$$
  \item \textit{Synthèse.} Posons :
- $$ H = \textrm{Vect}(y-x)^{\perp}$$
- Le vecteur $y-x$ est non nul car $y$ et $x$ sont distincts donc $ \textrm{Vect}(y-x)$ est de dimension $1$ et sachant que $E$ est euclidien, on en déduit que :
+ $$ H = \Vect(y-x)^{\perp}$$
+ Le vecteur $y-x$ est non nul car $y$ et $x$ sont distincts donc $ \Vect(y-x)$ est de dimension $1$ et sachant que $E$ est euclidien, on en déduit que :
  $$ \textrm{dim}(H) = \textrm{dim}(E) - 1 $$
  donc $H$ est un hyperplan de $E$. Remarquons maintenant que $y \in H$ car par bilinéarité du produit scalaire :
  $$ <y,y-x> = <y,y>-<y,x>= \Vert y \Vert^2 - <y,x>= 0$$
@@ -602,20 +588,16 @@ avec $M_1 \in F$ et $M_2 \in F^{\perp}$. L'espace $F$ est de dimension finie don
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Calcul de distances}}}
-\end{center}
+\subsection{Calcul de distances}
 
-\medskip
 
-\begin{Exercice}{} Considérons $\R^4$ muni de son produit scalaire usuel. Soient $e_1=(1,0,1,0)$ et $e_2=(1,-1,1,-1)$ et $F=\textrm{Vect}(e_1,e_2)$.
+\begin{Exercice}{} Considérons $\R^4$ muni de son produit scalaire usuel. Soient $e_1=(1,0,1,0)$ et $e_2=(1,-1,1,-1)$ et $F=\Vect(e_1,e_2)$.
 \begin{enumerate}
-    \item  D\'eterminer une base orthonormale de $F.$
-    \item  D\'eterminer la matrice dans la base canonique de $\R^4$ du projecteur orthogonal
+    \item  Déterminer une base orthonormale de $F.$
+    \item  Déterminer la matrice dans la base canonique de $\R^4$ du projecteur orthogonal
 sur $F.$
-    \item  D\'eterminer la distance du vecteur $(1,1,1,1)$ au sous-espace vectoriel  $F.$
+    \item  Déterminer la distance du vecteur $(1,1,1,1)$ au sous-espace vectoriel  $F.$
 \end{enumerate}
 \end{Exercice}
 
@@ -656,7 +638,6 @@ $$ \textrm{Mat}_{\mathcal{B}}(p_F) =\dfrac{1}{2} \begin{pmatrix}
 $$ (1,0,1,0)-(0,-1,0,-1) = (1,1,1,1)$$
 Donc $(1,1,1,1)$ appartient à $F$ donc la distance de vecteur à $F$ vaut $0$.
 
-\medskip
 
 \noindent Sinon, on peut aussi utiliser l'égalité suivante :
 $$ \textrm{d}((1,1,1,1),F) = \Vert (1,1,1,1)-p_F((1,1,1,1) \Vert$$
@@ -684,7 +665,7 @@ $$ \forall (P,Q) \in \mathbb{R}_n[X]^2, \; <P,Q> = \sum_{k=0}^{n} P^{(k)}(1)Q^{(
 \item La bilinéarité est évidente par symétrie et par linéarité par rapport à la première variable (dû à la linéarité de la dérivation).
 \item Soit $P \in \mathbb{R}_n[X]$. Alors :
 $$ <P,P> = \sum_{k=0}^{n} P^{(k)}(1)^2 \geq 0$$
-Si $<P,P>=0$ alors sachant qu'une somme de termes positifs est nulle si et seulement si tous les termes sont nuls, on obtient que pour tout $k \in \Interv{0}{n}$, $P^{(k)}(1)=0$. Ainsi, $1$ est une racine d'ordre au moins $n+1$ de $P$ qui est au plus de degré $n$. Nécessairement, $P$ est le polynôme nul. 
+Si $<P,P>=0$ alors sachant qu'une somme de termes positifs est nulle si et seulement si tous les termes sont nuls, on obtient que pour tout $k \in \ii{0}{n}$, $P^{(k)}(1)=0$. Ainsi, $1$ est une racine d'ordre au moins $n+1$ de $P$ qui est au plus de degré $n$. Nécessairement, $P$ est le polynôme nul. 
 \end{itemize}
 Ainsi, cela définit un produit scalaire sur $\mathbb{R}_n[X]$.
 \item Posons $\varphi : \mathbb{R}_n[X] \rightarrow \mathbb{R}$ définie pour tout $P \in \mathbb{R}_n[X]$ par :
@@ -705,9 +686,9 @@ $$ d(1,E) = \dfrac{\vert <1,1> \vert }{\Vert 1 \Vert} = \Vert 1 \Vert = 1$$
 
 \item Montrer que pour tout $A\in{\cal M}_n(\R)$, on a  $|$tr$(A)|\leq \sqrt{n\hbox{tr}(^t\!AA)}.$
 	
-\item On note $S_n(\R)$ (resp. $A_n(\R)$)	le sous-espace vectoriel des matrices sym\'etriques (resp. antisym\'etriques). Montrer qu'ils sont suppl\'ementaires orthogonaux.
+\item On note $S_n(\R)$ (resp. $A_n(\R)$)	le sous-espace vectoriel des matrices symétriques (resp. antisymétriques). Montrer qu'ils sont supplémentaires orthogonaux.
 
-\item Déterminer $\dis\inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2$ pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donn\'ee.
+\item Déterminer $\inf_{M\in{\cal S}_n(\R)}\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2$ pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donnée.
 \item Soit $A\in{\cal M}_n(\R)$. Montrer que $\textrm{Ker}(A)^{\perp}= \textrm{Im}(^t\!A)$.
 \end{enumerate}
 \end{Exercice}
@@ -736,16 +717,16 @@ $$ <A,B> = \textrm{Tr}(AB) = 0$$
 On en déduit que $\mathcal{S}_n(\mathbb{R})$ et $\mathcal{A}_n(\mathbb{R})$ sont orthogonaux.
 \item Rappelons que pour une matrice $B=(b_{i,j})$ de $\mathcal{M}_n(\mathbb{R})$, on a :
 $$ \Vert B \Vert^2 = <B,B> = \sum_{1 \leq i,j \leq n} {b_{i,j}}^2$$
-Ainsi, pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donn\'ee,
-$$ \inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2  = \inf_{M\in{\cal S}_n(\R)} \Vert A-M \Vert^2 $$
+Ainsi, pour $A=(a_{i,j})_{1 \leq i,j \leq n}$ donnée,
+$$ \inf_{M\in{\cal S}_n(\R)}\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2  = \inf_{M\in{\cal S}_n(\R)} \Vert A-M \Vert^2 $$
 On sait que $\mathcal{S}_n(\mathbb{R})$ est un sous-espace vectoriel de dimension finie donc en notant $p$ la projection orthogonale sur $\mathcal{S}_n(\mathbb{R})$ (qui est la projection sur $\mathcal{S}_n(\mathbb{R})$ parallèlement à $\mathcal{A}_n(\mathbb{R})$ d'après la question précédente) on a :
 \begin{align*}
- \inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 & = \Vert A-p(A) \Vert^2 \\
+ \inf_{M\in{\cal S}_n(\R)}\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 & = \Vert A-p(A) \Vert^2 \\
  & = \left\Vert A- \dfrac{A+^tA}{2} \right\Vert^2 \\
  & =  \left\Vert \dfrac{A-^tA}{2} \right\Vert^2 
  \end{align*}
  ce qui donne :
- $$  \inf_{M\in{\cal S}_n(\R)}\dis\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 = \dfrac{1}{4} \sum_{1 \leq i,j \leq n} (a_{i,j}-a_{j,i})^2$$
+ $$  \inf_{M\in{\cal S}_n(\R)}\sum_{1 \leq i,j \leq n}(a_{i,j}-m_{i,j})^2 = \dfrac{1}{4} \sum_{1 \leq i,j \leq n} (a_{i,j}-a_{j,i})^2$$
 \end{enumerate}
 
 
@@ -754,7 +735,7 @@ $$ <P,Q> = \sum_{k=0}^n P(a_k) Q(a_k)$$
 où $a_0$, $\ldots$, $a_n$ sont $n$ réels distincts deux à deux $(n \geq 2)$.
 \begin{enumerate}
 \item Montrer que cela définit un produit scalaire sur $\mathbb{R}_n[X]$.
-\item Montrer brièvement que $F= \dis \left\lbrace P \in \mathbb{R}_n[X] \, \vert \, \sum_{k=0}^n P(a_k)=0 \right\rbrace$ est un espace vectoriel. Donner sa dimension et son orthogonal.
+\item Montrer brièvement que $F= \left\lbrace P \in \mathbb{R}_n[X] \, \vert \, \sum_{k=0}^n P(a_k)=0 \right\rbrace$ est un espace vectoriel. Donner sa dimension et son orthogonal.
 \item Déterminer la distance de $X^n$ à $F$.
 \end{enumerate}
 \end{Exercice}
@@ -770,21 +751,20 @@ Si $<P,P>=0$, sachant qu'une somme de termes positifs est nulle si et seulement 
 $$ P(a_0)= P(a_1) = \cdots = P(a_n)=0$$
 Les réels $a_0$, $\ldots$, $a_n$ sont deux à deux distincts donc $P$ admet $n+1$ racines distinctes et est de degré inférieur ou égal à $n$ donc $P$ est le polynôme nul.
 
-\medskip
 
 \noindent Ainsi, $(P,Q) \mapsto <P,Q>$ définit un produit scalaire sur $\mathbb{R}_n[X]$.
 \end{itemize}
 \item Notons abusivement $1$ le polynôme constant égal à $1$. Alors :
-$$ F = \lbrace P \in \mathbb{R}_n[X] \, \vert \, <P,1>= 0 \rbrace = \textrm{Vect}(1)^{\perp}$$
+$$ F = \lbrace P \in \mathbb{R}_n[X] \, \vert \, <P,1>= 0 \rbrace = \Vect(1)^{\perp}$$
 On en déduit que $F$ est un sous-espace vectoriel de $ \mathbb{R}_n[X]$ et cet espace étant de dimension finie, on a :
-$$ \textrm{dim}(F) =  \textrm{dim}(\textrm{Vect}(1)^{\perp}) =  \textrm{dim}(\mathbb{R}_n[X]) -  \textrm{dim}(\textrm{Vect}(1)) = n$$
+$$ \textrm{dim}(F) =  \textrm{dim}(\Vect(1)^{\perp}) =  \textrm{dim}(\mathbb{R}_n[X]) -  \textrm{dim}(\Vect(1)) = n$$
 En utilisant de nouveau que $ \mathbb{R}_n[X]$ est de dimension finie, on a :
-$$ F^{\perp} = (\textrm{Vect}(1)^{\perp})^{\perp} = \textrm{Vect}(1)$$
+$$ F^{\perp} = (\Vect(1)^{\perp})^{\perp} = \Vect(1)$$
 \item L'espace $F$ est un hyperplan de $\mathbb{R}_n[X]$ et $1$ génère son orthogonal donc :
 \begin{align*}
 \textrm{d}(X^n, F) & = \dfrac{\vert <X^n,1> \vert}{\Vert 1 \Vert} \\
-& = \dfrac{\dis\left\vert \sum_{k=0}^n a_k^n \right\vert }{\sqrt{<1,1>}} \\
-& = \dfrac{\dis\left\vert \sum_{k=0}^n a_k^n \right\vert }{\sqrt{n+1}} 
+& = \dfrac{\left\vert \sum_{k=0}^n a_k^n \right\vert }{\sqrt{<1,1>}} \\
+& = \dfrac{\left\vert \sum_{k=0}^n a_k^n \right\vert }{\sqrt{n+1}} 
 \end{align*}
 \end{enumerate}
 
@@ -811,7 +791,6 @@ donc
 $$ P(t)Q(t) e^{-t} \underset{+ \infty}{=} o \left( \dfrac{1}{t^2} \right)$$
 La fonction $t \mapsto \dfrac{1}{t^2}$ est intégrable sur $[1, + \infty[$ donc par critère de comparaison $t \mapsto P(t)Q(t)e^{-t}$ est aussi intégrable sur $[1, + \infty[$ et donc sur $\mathbb{R}_+$ par continuité sur $[0,1]$. On en déduit que l'intégrale définissant $<P,Q>$ converge donc l'application est bien définie.
 
-\medskip
 
 \noindent La linéarité par rapport à la première variable est évidente (par linéarité de l'intégrale), la symétrie aussi donc la bilinéarité est vérifiée. Soit $P \in \mathbb{R}[X]$. Alors par positivité de l'intégrale :
 $$ <P,P> = \int_0^{+ \infty} P(t)^2 e^{-t} \dt \geq 0$$
@@ -821,7 +800,6 @@ donc
 $$ \forall t \geq 0, \; P(t)=0$$
 On en déduit que $P$ a une infinité de racines donc $P$ est le polynôme nul.
 
-\medskip
 
 \noindent Ainsi, $< \cdot \, , \, \cdot>$ est un produit scalaire sur $\mathbb{R}[X]^2$.
 \item Soit $(p,q) \in \mathbb{N}^2$. Alors (voir le chapitre sur l'intégration pour la valeur de $\Gamma$) :
@@ -865,13 +843,9 @@ $$<X^p,X^q> = \int_0^{+ \infty} t^{p+q} e^{-t} \dt = \Gamma(p+q+1) = (p+q)!$$
  \end{align*}
 \end{enumerate}
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Divers}}}
-\end{center}
+\subsection{Divers}
 
-\medskip
 
 
 \begin{Exercice}{} Considérons $H= \mathbb{R}[X]$ muni du produit scalaire :
@@ -894,11 +868,11 @@ $$ <P_n,Q> = (-1)^n \int_{0}^1 (t^2-t)^n Q^{(n)}(t) \dt $$
 $$ 2n(2n-1) \times \cdots (2n-(n-1)) =\dfrac{(2n)!}{n!}$$
 \item Soient $n \in \mathbb{N}$ et $Q \in \mathbb{R}[X]$. On a :
 $$ <P_n,Q> = \int_0^1 P_n(t) Q(t) \dt = \int_0^1 Q_n^{(n)}(t) Q(t) \dt$$
-Par intégration par parties (les fonctions considérées sont de classe $\mathcal{C}^1$ sur $[0,1]$ car polynômiales), on a :
+Par intégration par parties (les fonctions considérées sont de classe $\mathcal{C}^1$ sur $[0,1]$ car polynomiales), on a :
 $$ <P_n,Q> = [Q_n^{(n-1)}(t) Q(t)]_0^1 - \int_0^1 Q_n^{(n-1)}(t) Q'(t) \dt$$
 Or $Q_n=X^n(X-1)^n$ donc $0$ et $1$ sont racines de $Q_n$ d'ordre $n$ ce qui implique que $0$ et $1$ sont racines de $Q_n^{(n-1)}$ d'ordre $1$ donc :
 $$ <P_n,Q> =  - \int_0^1 Q_n^{(n-1)}(t) Q'(t) \dt$$
-On répète alors le procédé $n-1$ fois sachant que $0$ et $1$ sont racines de $Q_n^{(k)}$ pour tout $k \in \Interv{0}{n-1}$ donc le \og crochet \fg{} sera tout le temps nul :
+On répète alors le procédé $n-1$ fois sachant que $0$ et $1$ sont racines de $Q_n^{(k)}$ pour tout $k \in \ii{0}{n-1}$ donc le \og crochet \fg{} sera tout le temps nul :
 $$ <P_n,Q> = (-1)^n \int_0^1 Q_n^{(n-n)}(t) Q^{(n)}(t) \dt$$
 donc
 $$ <P_n,Q> = (-1)^n \int_{0}^1 (t^2-t)^n Q^{(n)}(t) \dt $$

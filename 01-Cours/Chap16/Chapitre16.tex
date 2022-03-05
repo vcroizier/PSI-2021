@@ -21,15 +21,15 @@ Dans tout ce chapitre, $(\Omega, \AA, \P)$ désigne un espace probabilisé quelc
 
 Considérons l'expérience suivante : on jette deux fois un dé et on s'intéresse à la somme des chiffres obtenus que l'on note $S$. Modélisons cette expérience de la manière suivante : chaque issue de l'expérience peut être représentée par un couple $(x,y)$ où $x \in$ $\ii16$ et $y  \in$ $\ii16$. Autrement dit l'univers peut s'écrire $\Omega = \ii16^2$ et nous sommes en situation d'équiprobabilité.
 %
-%\vspace{0.2cm}
+%\vspace*{0.2cm}
 %
 %Étant donné que l'on s'intéresse à la somme des chiffres obtenus, de quelle manière commode peut-on représenter la situation ? 
 
-\vspace{0.2cm}
+\vspace*{0.2cm}
 
 La somme $S$ est en fait une \og \emph{variable} \fg  qui varie \emph{aléatoirement} selon le couple obtenu. On dit que c'est une variable aléatoire. Remarquons que $S$ associe à chaque issue de l'expérience $\omega=(x,y)$ un chiffre (la somme des chiffres obtenus) : c'est une application de $\Omega$ dans $\mathbb{R}$.
 
-\vspace{0.2cm}
+\vspace*{0.2cm}
 
 Pour finir, remarquons que ce qui nous intéresse, c'est la somme des chiffres obtenus et non pas les chiffres obtenus. On s'intéressera par exemple par la suite à la probabilité que cette somme soit égale, inférieure, supérieure à un certain réel.
 
@@ -45,8 +45,6 @@ $$  X(\Omega) = \{X(\omega), \, \omega \in \Omega\} $$
 est fini ou dénombrable.
 \item Pour tout $x \in X(\Omega)$, $X^{-1}(\lbrace x \rbrace) \in \mathcal{A}$ (c'est un évènement).
 \end{itemize}
-
-\medskip
 
 \begin{Notation}{}
 \begin{itemize}
@@ -64,7 +62,7 @@ est fini ou dénombrable.
 
 \begin{Exemple}{} On lance un dé jusqu'à obtenir un 6. $T$ vaut $k$ si le jeu se termine en $k$ lancers exactement, $T$ vaut 0 si le jeu ne se termine jamais. Déterminons le support de $T$. Cette variable est-elle discrète ?
 
-\vspace{2cm}
+\vspace*{2cm}
 \end{Exemple}
 
 \begin{Proposition}{} Soit $X$ une variable aléatoire sur $(\Omega, \mathcal{A})$ et $U$ un sous-ensemble de $X(\Omega)$. Alors $X^{-1}(U) \in \mathcal{A}$.
@@ -99,7 +97,7 @@ où $I$ est une partie (finie ou infinie) de $\mathbb{N}$. Dans tout le chapitre
 \section{Loi de probabilité d'une variable aléatoire réelle discrète}
 \subsection{Définition et exemples}
 
-\begin{Definition}{}[Loi d'une variable aléatoire]
+\begin{Definition}{Loi d'une variable aléatoire}
 Soit $X$ une variable aléatoire sur $(\Omega, \mathcal{A}, \P)$. On appelle \emph{loi de la variable aléatoire} $X$ la fonction définie sur $X(\Omega)$ par :
 $$ \forall x \in X(\Omega), \, P_X(x) = P(X=x)$$
 \end{Definition}
@@ -110,26 +108,20 @@ Ainsi, déterminer la \emph{loi de probabilité} d'une variable aléatoire discr
   \item Calculer les probabilités $\P\big(X=k\big)$ pour toutes les valeurs de $k$ appartenant à $X(\Omega)$.
  \end{itemize}
 
-\medskip
-
 \begin{Remarque}{} La loi de $X$ définit ainsi une probabilité sur $(X(\Omega), \mathcal{P}(X(\Omega)))$ : l'univers n'est \og plus important \fg, on s'intéresse aux valeurs de $X$.
 \end{Remarque}
 
 \begin{Exemple}{} Une urne contient 1 boule rouge, 2 noires et 2 jaunes. On tire successivement et sans remise une boule jusqu'à ce qu'il ne reste que deux couleurs. Soit $X$ le nombre de tirages nécessaires. Déterminons la loi de $X$.
 
-\vspace{10cm}
+\newpage
+
+\vspace*{3cm}
 \end{Exemple}
 
 \begin{Exemple}{} On lance un dé équilibré jusqu'à obtenir un 6. $T$ vaut $k$ si le jeu se termine en $k$ lancers exactement, $T$ vaut 0 si le jeu ne se termine jamais. Déterminons la loi de $T$.
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Exemple} 
-
-\newpage
-
-$\phantom{test}$
-
-\vspace{6cm}
 
 \begin{ApplicationDirecte}{} Soit $n \in \mathbb{N}$. Une urne contient 2 boules blanches et $n$ boules rouges. On tire au hasard une boule dans l'urne et on recommence (sans remise) jusqu'à temps d'obtenir une boule blanche. On appelle $X$ le rang de sortie de la première boule blanche et $Y$ le nombre de boules rouges restantes à ce moment dans l'urne. Déterminer la loi de $X$ et exprimer $Y$ en fonction de $X$.
 \end{ApplicationDirecte} 
@@ -146,7 +138,7 @@ $$ \P(X \in U) = \sum_{x_n \in U} \P(X=x_n)$$
 
 \begin{Demonstration}{} 
 
-\vspace{3cm}
+\vspace*{3cm}
 \end{Demonstration}
 
 \begin{Exemple}{} Si $X(\Omega) = \mathbb{N}$, la probabilité que $X$ soit paire est :
@@ -159,15 +151,13 @@ où $I$ est une partie de $\mathbb{N}$. Alors $\big([X=x_n]\big)_{n \in I}$  est
 $$\sum_{n \in I} \P(X=x_n) = 1$$
 \end{Corollaire}
 
-\medskip
-
 Ce dernier résultat est très utilisé avec la formule des probabilités totales : pour tout évènement $B$,
 $$ \P(B) = \sum_{n \in I} P(X=x_n) P_{(X=x_n)}(B)$$
 
 \subsection{Fonction de répartition}
 
 
-\begin{Definition}{}[Fonction de répartition]
+\begin{Definition}{Fonction de répartition}
 Soit $X$ une variable aléatoire \emph{réelle} discrète sur $(\Omega, \mathcal{A}, \P)$. On appelle \emph{fonction de répartition} de $X$ la fonction notée $F_X$ définie pour tout $x \in \mathbb{R}$ par :
 $$F_X(x) = \P(X \leq x) $$
 \end{Definition}
@@ -185,7 +175,7 @@ Soient $X$ une variable aléatoire réelle discrète sur $(\Omega, \mathcal{A}, 
 
 \begin{Demonstration}{}
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Demonstration}
 
 \begin{Remarques}{}
@@ -205,14 +195,10 @@ Si deux variables aléatoires réelles discrètes ont la même fonction de répa
 
 \begin{Exemple}{} On considère une variable aléatoire $X$ telle que $X(\Omega) = \ii04$. On suppose que $P(X<3) = \frac{1}{2}$, $P(X>3)= \frac{1}{3}$ et que les évènements $[X=0], \, [X=1] \hbox{ et } [X=2]$ sont équiprobables. Déterminons la loi de $X$ puis la fonction de répartition de $X$ et traçons sa représentation graphique.
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Exemple}
 
-\newpage
 
-\phantom{test}
-
-\vspace{7cm}
 \subsection{Variable \texorpdfstring{$Y=G(X)$}{Y=G(X)}}
 \begin{Proposition}{}
 Soit $X$ une variable aléatoire discrète sur $(\Omega, \mathcal{A}, \P)$ et $f$ une fonction dont le domaine de définition contient $X(\Omega)$. Alors l'application $Y=f \circ X$, notée abusivement $f(X)$, est une variable aléatoire discrète.
@@ -220,8 +206,6 @@ Soit $X$ une variable aléatoire discrète sur $(\Omega, \mathcal{A}, \P)$ et $f
 
 \begin{Exemple}{} Si $X$ est une variable aléatoire discrète strictement positive, $\ln(X)$ est aussi une variable aléatoire discrète.
 \end{Exemple}
-
-\medskip
 
 \begin{Methode}{}
 Pour déterminer la loi de $Y=f(X)$, on procède en deux étapes : 
@@ -241,19 +225,13 @@ Soit $Y$ la variable aléatoire discrète telle que $Y(\Omega) = \mathbb{N}^*$ e
 \begin{enumerate}
 \item Vérifions que $\sum_{k=1}^{+ \infty} \frac{1}{k(k+1)} = 1$.
 
-\vspace{3cm}
+\vspace*{3cm}
 
 \item Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x) = (x-2)^2$ si $x \leq 3$ et $f(x)=2$ sinon. Déterminons la loi de $W=f(Y)$.
 
-\vspace{3cm}
+\vspace*{7cm}
 \end{enumerate}
 \end{Exemple}
-
-\newpage
-
-\phantom{test}
-
-\vspace{4cm}
 
 \begin{ApplicationDirecte}{} Soient $X$ une variable aléatoire telle que $X(\Omega) = \ii {-3}2$ et telle que $\P(X=k) = \dfrac 16$ pour tout $k \in \ii {-3}2$ et $Y = X^2$. Déterminer la loi de $Y$.
  \end{ApplicationDirecte}
@@ -297,7 +275,6 @@ Soit $p \in [0,1]$.
  \item \phantom{$X(\Omega)= \{0,1\}$}
  \item \phantom{$ \P\big(X=1\big)= p$ et $\P\big(X=0\big)=1-p$.}
 \end{itemize}
-$\phantom{}$
 \end{enumerate}
 \end{Definition}
 
@@ -305,7 +282,7 @@ Si l'on considère une épreuve de Bernoulli de paramètre $p$ et que l'on note 
 
 \begin{Remarque}{} Soit $(\Omega, \mathcal{A}, \P)$ un espace probabilisé. Si $A$ est un évènement de probabilité $p$, différent de $\varnothing$ et de $\Omega$ alors la fonction indicatrice de $A$ :
 
-\vspace{2cm}
+\vspace*{2cm}
 
 est une variable aléatoire qui suit la loi de Bernoulli de paramètre $p$. Réciproquement, si $X$ suit la loi de Bernoulli de paramètre $p$ alors $X$ est la fonction indicatrice de $A$ où $A=(X=1)$ (qui est un évènement de probabilité $p$).
 \end{Remarque}
@@ -348,19 +325,18 @@ Considérons l'expérience suivante :
  
 Soit $X$ la variable aléatoire égale au rang du premier succès. 
 
-\vspace{0.2cm}
-
+\smallskip
 Remarquons qu'il se pourrait que l'on obtienne jamais un succès. Montrons que la probabilité que l'on n'obtienne jamais un succès est nulle.
 
-\vspace{5cm}
+\vspace*{5cm}
 
 
 On négligera donc cet évènement.
-\vspace{0.2cm}
+\smallskip
 
 Quel est le support de $X$? Déterminons $P(X=1)$, $P(X=2)$ puis $P(X=k)$ pour tout $k \in X(\Omega)$.
 
-\vspace{9cm}
+\vspace*{9cm}
 
 \begin{Definition}{}
 Soient $X$ une variable aléatoire discrète sur $(\Omega, \mathcal{A},\P)$, et $p \in ]0,1[$. 
@@ -372,8 +348,6 @@ On dit que $X$ \emph{suit la loi géométrique de paramètre $p$} et on note $X 
  \item Pour tout $k \in \mathbb{N}^*,\;P(X=k)= \phantom{(1-p)^{k-1} p.}$
 \end{itemize}
 \end{Definition}
-
-\medskip
 
 Pour tout $k \in \mathbb{N}^*$, $\P(X=k) \geq 0$ et la série de terme général $(1-p)^{k-1} p$ est convergente (série géométrique avec $1-p \in ]0,1[$) et on a :
 $$ \sum_{k=1}^{+ \infty} (1-p)^{k-1} p = p \sum_{k=1}^{+ \infty} (1-p)^{k-1} = p \sum_{k=0}^{+ \infty} (1-p)^{k} = p \times \dfrac{1}{1-(1-p)} = 1$$
@@ -393,7 +367,7 @@ Si $X$ suit une loi géométrique de paramètre $p \in ]0,1[$ alors :
 \end{Proposition}
 
 \begin{Demonstration}{}
-\vspace{5cm}
+\vspace*{5cm}
 \end{Demonstration}
 
 \begin{ApplicationDirecte}{} Soit $X$ une variable aléatoire telle que $X \hookrightarrow \mathcal{G}(p)$ où $p \in ]0,1[$. Déterminer la probabilité que $X$ soit paire.
@@ -410,7 +384,10 @@ La loi d'une variable vérifiant $2$ est dite \emph{sans mémoire}.
 \end{Proposition}
 
 \begin{Demonstration}{}
-\vspace{13cm}
+
+\newpage
+
+\vspace*{3cm}
 \end{Demonstration}
 
 \subsection{Loi de Poisson}
@@ -428,8 +405,6 @@ On dit que $X$ \emph{suit la loi de Poisson de paramètre $\lambda$} et on note 
 \end{itemize}
 \end{Definition}
 
-\medskip
-
 Pour tout $k \in \mathbb{N}$, on a $\P(X=k) \geq 0$ et la série de terme général $\P(X=k)$ est convergente (série exponentielle) et on a :
 $$ \sum_{k=0}^{+ \infty} P(X=k) = e^{-\lambda} \sum_{k=0}^{+ \infty} \dfrac{\lambda^k}{k!} = e^{\lambda} e^{- \lambda} = e^0=1$$
 
@@ -444,17 +419,13 @@ Soit $\lambda \in ]0,+\infty[$. Pour tout $n \in \N$, on considère une variable
  $$ \lim_{n\to +\infty} \P(X_n = k) = e^{-\lambda} \frac{\lambda^k}{k!}$$
 \end{Proposition}
 
-\medskip
-
 \emph{Interprétation :} si on considère une variable aléatoire $X$ qui suit une loi binomiale $\mathcal B(n,p)$ avec $n$ \og grand \fg et $p$ \og petit \fg, alors pour les premières valeurs de $k$, on approche $\P(X=k)$ par $e^{-\lambda} \frac{\lambda^k}{k !}$ avec $\lambda = np$. Cette approximation est pratique car les coefficients binomiaux sont difficiles à calculer pour des grandes valeurs de $n$.
 
-\medskip
-
 \begin{Demonstration}{}
-\vspace{6cm}
+\vspace*{7cm}
 \end{Demonstration}
 
-\newpage
+
 Voici un exemple de comparaison des deux lois :
 
 
@@ -465,7 +436,7 @@ Voici un exemple de comparaison des deux lois :
 \begin{Exemple}{}
 On considère une assemblée de 500 personnes et on appelle $X$ la variable aléatoire égale au nombre de personnes nées un premier janvier. Quelle est la loi de $X$ ? Comment calculer la probabilité $\P(X=k)$ pour $k\in \ii 0 5$ ?
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Exemple}
 
 \section{Familles de variables aléatoires}
@@ -478,7 +449,7 @@ est une variable aléatoire sur $(\Omega, \mathcal{A})$, appelée \emph{couple} 
 
 \begin{Demonstration}{}
 
-\vspace{5cm}
+\vspace*{5cm}
 \end{Demonstration}
 
 \begin{Notation}{}
@@ -490,12 +461,12 @@ $$ ((X,Y) \in (A \times B)) = (X \in A, Y \in B)= (X \in A) \cap (Y \in B)$$
 \end{itemize}
 \end{Notation}
 
-\begin{Corollaire}{}[Admis] L'ensemble des variables aléatoires sur $(\Omega, \mathcal{A})$ à valeurs dans $\mathbb{K}$ est un $\mathbb{K}$-espace vectoriel (pour les lois usuelles).
+\begin{Corollaire}{Admis} L'ensemble des variables aléatoires sur $(\Omega, \mathcal{A})$ à valeurs dans $\mathbb{K}$ est un $\mathbb{K}$-espace vectoriel (pour les lois usuelles).
 \end{Corollaire}
 
 %\begin{Demonstration}{}
 %
-%\vspace{5cm}
+%\vspace*{5cm}
 %\end{Demonstration}
 
 \begin{Definition}{} Soit $(X,Y)$ une couple de variables aléatoires sur $(\Omega, \mathcal{A}, \P)$. 
@@ -510,33 +481,35 @@ $$ ((X,Y) \in (A \times B)) = (X \in A, Y \in B)= (X \in A) \cap (Y \in B)$$
 
 \begin{Exemple}{} On lance simultanément deux dés et on note $X$ le plus grand des deux chiffres obtenus et $Y$ le plus petit. Déterminer la loi conjointe de $X$ de $Y$. En déduire alors les lois marginales.
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Exemple}
 
 \begin{Proposition}{} Soit $(X,Y)$ un couple de variables aléatoires sur $(\Omega, \mathcal{A}, \P)$.  La loi du couple détermine les lois marginales :
 
 \begin{itemize}
-\item $\forall x \in X(\Omega), \, \P(X=x) = \sum_{y \in Y(\Omega)} P(X=x, Y=y) = \sum_{y \in Y(\Omega)} P(Y=y)P_{(Y=y)}(X=x)$.
-\item $\forall y \in Y(\Omega), \, \P(Y=x) = \sum_{x \in X(\Omega)} P(X=x, Y=y) = \sum_{x \in X(\Omega)} P(X=x)P_{(X=x)}(Y=y)$.
+\item $\forall x \in X(\Omega)$,
+
+$\P(X=x) = \sum_{y \in Y(\Omega)} P(X=x, Y=y) = \sum_{y \in Y(\Omega)} P(Y=y)P_{(Y=y)}(X=x)$.
+\item $\forall y \in Y(\Omega)$,
+
+$\P(Y=x) = \sum_{x \in X(\Omega)} P(X=x, Y=y) = \sum_{x \in X(\Omega)} P(X=x)P_{(X=x)}(Y=y)$.
 \end{itemize}
 \end{Proposition}
 
 \begin{Demonstration}{} Conséquence de la formule des probabilités totales.
 %
-%\vspace{3cm}
+%\vspace*{3cm}
 \end{Demonstration}
-\medskip
-
 \begin{Remarque}[\alerte]{} La loi du couple $(X,Y)$ détermine ainsi les lois conjointes de $X$ et $Y$. La réciproque est fausse :
 
-\vspace{5cm}
+\vspace*{3cm}~
 \end{Remarque}
 
 \begin{ApplicationDirecte}{} On considère une urne qui contient deux boules blanches, une noire et une rouge. On tire simultanément deux boules dans cette urne et on note $X$ le nombre de boules blanches obtenues et $Y$ le nombre de boules noires tirées. Déterminer la loi du couple $(X,Y)$ puis les lois conjointes.
 \end{ApplicationDirecte}
 \subsection{Conditionnement, indépendance}
 
-\begin{Definition}{}[Loi conditionnelle] Soient $X$ et $Y$ deux variables aléatoires sur $(\Omega, \mathcal{A}, \P)$ et $y \in Y(\Omega)$ tel que $\P(Y=y)>0$. La \emph{loi conditionnelle} de $X$ sachant $(Y=y)$ est l'application :
+\begin{Definition}{Loi conditionnelle} Soient $X$ et $Y$ deux variables aléatoires sur $(\Omega, \mathcal{A}, \P)$ et $y \in Y(\Omega)$ tel que $\P(Y=y)>0$. La \emph{loi conditionnelle} de $X$ sachant $(Y=y)$ est l'application :
 $$ \left\lbrace \begin{array}{ccl}
 X(\Omega) & \longrightarrow & [0,1] \\
 x & \longmapsto & P_{(Y=y)}(X=x) \\
@@ -545,11 +518,11 @@ x & \longmapsto & P_{(Y=y)}(X=x) \\
 
 \begin{Exemple}{} On considère six urnes numérotées de $1$ à $6$ et considère que l'urne $i \in \lbrace 1, \ldots, 6 \rbrace$ contient $i$ boules numérotées $1$ et $6-i$ boules numérotées $2$. On jette un dé équilibré et on pioche dans l'urne associé au chiffre obtenu avec le dé. On appelle $X$ le chiffre obtenu en lançant le dé et $Y$ le numéro de la boule obtenue. Quelle est la loi de $X$? Déterminer pour tout $i \in X(\Omega)$, la loi conditionnelle de $Y$ sachant que $(X=i)$. En déduire la loi de $Y$.
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Exemple}
 
 
-\begin{Definition}{}[Indépendance de deux variables aléatoires discrètes]
+\begin{Definition}{Indépendance de deux variables aléatoires discrètes}
 Soient $X$ et $Y$ deux variables aléatoires discrètes sur $(\Omega, \mathcal{A}, \P)$. On dit que $X$ et $Y$ sont \emph{indépendantes} si pour tout $(x,y) \in X(\Omega) \times Y(\Omega)$, les évènements $(X=x)$ et $(Y=y)$ sont indépendants, c'est-à-dire :
 $$ P(X=x,Y=y)=P(X=x)P(Y=y)$$
 \end{Definition}
@@ -563,19 +536,19 @@ où $a \in \mathbb{R}$.
   \item
     Déterminer la valeur de $a$.
     
-    \vspace{4cm}
+    \vspace*{4cm}
   \item
     Retrouvons les lois marginales de $X$ et $Y$.
     
-    \vspace{5cm}
+    \vspace*{5cm}
   \item
     Les variables $X$ et $Y$ sont elles indépendantes?
     
-    \vspace{3cm}
+    \vspace*{3cm}
   \end{enumerate}
 \end{Exemple}
 
-\begin{Definition}{}[Indépendance de variables aléatoires discrètes]
+\begin{Definition}{Indépendance de variables aléatoires discrètes}
 Soit $I$ un ensemble d'indices et $(X_i)_{i \in I}$ une famille de variables aléatoires discrètes sur $(\Omega, \mathcal{A}, \P)$. On dit que les variables aléatoires $X_i$ (pour $i \in I$) sont \emph{mutuellement indépendantes} si pour toute famille $(x_i)_{i \in I}$ (avec $x_i \in X_i(\Omega)$), les évènements $(X_i=x_i)$ sont mutuellement indépendants, c'est-à-dire : pour toute famille finie $J \subset I$,
 $$ P \left( \bigcap_{j \in J} (X_j=x_j) \right) = \prod_{j \in J} P(X_j=x_j)$$
 \end{Definition}
@@ -594,19 +567,15 @@ $$ \P(X \in A, Y \in B) = \P(X \in A) P(Y \in B)$$
 \begin{enumerate}
 \item Déterminons la loi de $X_A$ et $X_B$. 
 
-\vspace{3cm}
+\vspace*{3cm}
 \item Calculons la probabilité que les deux joueurs obtiennent leur premier pile après le même nombre de lancers.
 
-\vspace{6cm}
+\vspace*{6cm}
 
-\newpage
 
-$\phantom{}$
-
-\vspace{3cm}
 \item On pose $Y=\max (X_A,X_B)$. Justifions que $Y(\Omega) = \mathbb{N}^*$ puis en notant $F_Y$ la fonction de répartition de $Y$, déterminons $F_Y(n)$ pour tout $n \in \mathbb{N}^*$. En déduire finalement la loi de $Y$.
 
-\vspace{8cm}
+\vspace*{8cm}
 \end{enumerate}
 \end{Exemple}
 
@@ -616,7 +585,7 @@ $\phantom{}$
 
 \begin{Demonstration}{}
 
-\vspace{3cm}
+\vspace*{4cm}
 \end{Demonstration}
 
 \begin{Exemple}{} Si $X$ et $Y$ sont des variables aléatoires discrètes sur le même espace probabilité alors $\exp(X)$ et $Y+1$ sont indépendantes.
@@ -626,7 +595,7 @@ $\phantom{}$
 \end{Proposition}
 
 \begin{Demonstration}{}
-\vspace{3cm}
+\vspace*{4cm}
 \end{Demonstration}
 
 \subsection{Un résultat d'existence}
@@ -642,7 +611,7 @@ $\phantom{}$
 
 
 
-
+\newpage
 \section{Moments d'une variable aléatoire discrète}
 
 
@@ -650,7 +619,7 @@ $\phantom{}$
 \subsection{Espérance}
 
 
-\begin{Definition}{}[Espérance : cas fini]
+\begin{Definition}{Espérance : cas fini}
 Soit $X$ une variable aléatoire réelle sur $(\Omega, \mathcal{A}, \P)$ tel que $X(\Omega)$ est fini. On appelle \emph{espérance} de $X$ et on note $\E(X)$ le nombre :
  $$ \phantom{\E (X) = \sum_{x \in X(\Omega)}x  \P\big(X=x\big)}$$
 \end{Definition}
@@ -672,11 +641,11 @@ k & -4 & 6\\
 \hline
 \end{array}$$
 
-\vspace{2cm}
+\vspace*{2cm}
 \end{Exemple}
 
 
-\begin{Definition}{}[Espérance : cas infini]
+\begin{Definition}{Espérance : cas infini}
 Soit $X$ une variable aléatoire discrète sur $(\Omega, \mathcal{A}, \P)$ donc le support est dénombrable. On peut écrire alors :
 $$ X(\Omega) = \lbrace x_n \, \vert \, n \geq 0 \rbrace$$
 On dit que $X$ \emph{admet une espérance} lorsque la série $\sum_{n \geq 0} x_n P(X=x_n)$ est \emph{absolument convergente}.
@@ -697,12 +666,8 @@ $$\E(X) = \sum\limits_{k=0}^{+\infty} k \P(X=k)$$
 \begin{Remarque}{} On dit aussi que $X$ est d'espérance finie.
 \end{Remarque}
 
-\medskip
-
 \begin{Remarque}[\alerte]{} Contrairement à une variable aléatoire finie, une variable aléatoire discrète \emph{infinie} n'admet pas forcément d'espérance! Il faut prouver l'absolue convergence de la série avant de pouvoir parler d'espérance. 
 \end{Remarque}
-
-\medskip
 
 \begin{Remarques}{}
 \begin{itemize}
@@ -715,7 +680,7 @@ $$\E(X) = \sum\limits_{k=0}^{+\infty} k \P(X=k)$$
 
 Justifier que cela définit bien une loi de probabilité. La variable $X$ admet-elle une espérance ? Si oui, calculer la.
 
-\vspace{11.3cm}
+\vspace*{10cm}
 \end{Exemple}
 
 \begin{ApplicationDirecte}{} Soit $X$ une variable aléatoire telle que $X(\Omega) = \mathbb{N}^*$ et telle que pour tout $n \in \mathbb{N}^*$, $\P(X=n)= \dfrac{1}{n}- \dfrac{1}{n+1} \cdot$
@@ -734,13 +699,11 @@ Soient $X$ et $Y$ deux variables aléatoires discrètes définies sur le même e
 
 \begin{Demonstration}{}
 
-\vspace{5cm}
+\vspace*{4cm}
 \end{Demonstration}
 
 \begin{Remarque}[\alerte]{} Pour utiliser la propriété de linéarité pour des variables discrètes infinies, il faut bien préciser que les variables admettent une espérance ce qui n'était pas nécessaire pour des variables aléatoires finies qui admettent toujours une espérance.
 \end{Remarque} 
-
-\medskip
 
 
 \begin{Remarques}{}
@@ -770,7 +733,10 @@ converge et dans ce cas, l'espérance de $X$ est égale à la somme de cette sé
 \end{Proposition}
 
 \begin{Demonstration}{}
-\vspace{10cm}
+
+\newpage
+  
+\vspace*{6cm}
 \end{Demonstration}
 
 \begin{Theoreme}{Espérances associées aux lois usuelles}
@@ -786,11 +752,11 @@ $$ \E(X) = \phantom{\dfrac{1}{n} \sum_{i = 1}^n a_i}$$
 \end{itemize}
 \end{Theoreme}
 
+\begin{Demonstration}{}
+
 \newpage
 
-$\phantom{}$
-\begin{Demonstration}{}
-\vspace{12cm}
+\vspace*{3cm}
 \end{Demonstration}
 
 \begin{Remarque}{} En particulier, si $X$ suit une loi uniforme sur $\ii{1}{n}$, $\E(X) = \dfrac{n+1}{2} \cdot$
@@ -823,7 +789,7 @@ L'énorme intérêt du Théorème de transfert est de prouver l'existence et de 
 
 \begin{Exemple}{} Soit $X$ une variable aléatoire suivant une loi géométrique de paramètre $p \in ]0,1[$. Montrons que $X^2$ est d'espérance finie et déterminons cette espérance.
 
-\vspace{10cm}
+\vspace*{9cm}
 \end{Exemple}
 
 
@@ -833,7 +799,7 @@ L'énorme intérêt du Théorème de transfert est de prouver l'existence et de 
 
 \begin{Demonstration}{}
 
-\vspace{6cm}
+\vspace*{5cm}
 \end{Demonstration}
 
 \begin{TheoremeDefinition}{}
@@ -843,12 +809,9 @@ Si $X$ admet une variance, alors on définit son \emph{écart-type} par
 $$\sigma (X) = \sqrt{\V(X)}$$
 \end{TheoremeDefinition}{}
 
-\newpage
-
-$\phantom{}$
 \begin{Demonstration}{} 
 
-\vspace{4cm}
+\vspace*{3.5cm}
 \end{Demonstration}
 
 \begin{Remarques}{}
@@ -870,7 +833,7 @@ $$\V(aX+b) = \phantom{a^2 \V(X)} \et \sigma(aX+b) = \phantom{\vert a \vert \sigm
 
 \begin{Demonstration}{}
 
-\vspace{5cm}
+\vspace*{4cm}
 \end{Demonstration}
 
 \begin{Proposition}{Formule de Koenig-Huygens}
@@ -879,7 +842,7 @@ $$\V(X) = \phantom{\E\big(X^2\big) - \big(\E(X)\big)^2}$$
 \end{Proposition}
 
 \begin{Demonstration}{}
-\vspace{3cm}
+\vspace*{3cm}
 \end{Demonstration}
 
 \begin{Methode}{} 
@@ -900,7 +863,7 @@ Soit $X$ une variable aléatoire discrète sur $(\Omega, \mathcal{A}, \P)$. Soit
 
 \begin{Demonstration}{}
 
-\vspace{15cm}
+\vspace*{15cm}
 \end{Demonstration}
 
 \begin{Remarque}{} Si $X$ suit la loi uniforme sur $\ii{1}{n}$ alors $X$ admet une variance et $\V(X) = \dfrac{n^2-1}{12} \cdot$
@@ -915,7 +878,7 @@ k & -4 & 6\\
 \hline
 \end{array}$$
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Exemple}
 
 \subsection{Covariance et corrélation}
@@ -926,7 +889,7 @@ $$ \vert \E(XY) \vert \leq \sqrt{\E(X^2)\E(Y^2)}$$
 \end{Proposition}
 
 \begin{Demonstration}{}
-\vspace{3cm}
+\vspace*{3cm}
 \end{Demonstration}
 
 
@@ -941,7 +904,7 @@ $$ \rho(X,Y) = \dfrac{\textrm{Cov}(X,Y)}{\sigma(X) \sigma(Y)}$$
 \end{TheoremeDefinition}{}
 
 \begin{Demonstration}{}
-\vspace{6cm}
+\vspace*{6cm}
 \end{Demonstration}
 
 \begin{Remarques}{}
@@ -956,7 +919,7 @@ $$ \rho(X,Y) = \dfrac{\textrm{Cov}(X,Y)}{\sigma(X) \sigma(Y)}$$
 
 \begin{Demonstration}{}
 
-\vspace{1cm}
+\vspace*{1cm}
 \end{Demonstration}
 
 \begin{ApplicationDirecte}{} Soient $X$ une variable suivant une loi uniforme sur $\lbrace -1,0,1 \rbrace$ et $Y=X^2$. Justifier que $\textrm{Cov}(X,Y)=0$ (on pourra remarquer que $XY=X$). Montrer que $X$ et $Y$ ne sont pas indépendantes (calculer par exemple $\P(X=0, Y=1)$).
@@ -970,7 +933,7 @@ $$ \rho(X,Y) \in [-1,1]$$
 
 \begin{Demonstration}{}
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Demonstration}
 
 \begin{Remarque}{} Le coefficient de corrélation $\rho(X,Y)$ \og mesure la dépendance \fg entre $X$ et $Y$. Si $X$ et $Y$ sont indépendantes, ce coefficient est nul et si il est proche de $1$ en valeur absolue, il y a une \og dépendance affine \fg entre $X$ et $Y$ (conséquence de l'inégalité de Cauchy-Schwarz).
@@ -987,12 +950,16 @@ $$ \textrm{V} \left(\sum_{k=1}^n X_k \right) = \sum_{k=1}^n \textrm{V}(X_k)$$
 \end{Proposition}
 
 \begin{Demonstration}{}
-\vspace{10cm}
+
+%\vspace*{10cm}
+\vspace*{\stretch{1}}
 \end{Demonstration}
+\newpage
+
 
 \begin{Remarque}{} On retrouve l'expression de la variance d'une variable aléatoire suivant une loi binomiale.
 
-\vspace{5cm}
+\vspace*{4cm}~
 \end{Remarque}
 
 \section{Variables aléatoires à valeurs dans \texorpdfstring{$\mathbb{N}$}{ℕ}}
@@ -1005,7 +972,7 @@ La fonction $G_X$ est la somme d'une série entière de rayon de convergence sup
 \end{TheoremeDefinition}{}
 
 \begin{Demonstration}{}
-\vspace{5cm}
+\vspace*{5cm}
 \end{Demonstration}
 
 \begin{Remarques}{}
@@ -1017,7 +984,8 @@ La fonction $G_X$ est la somme d'une série entière de rayon de convergence sup
 
 \begin{Exemple}{} Déterminons les fonctions génératrices de variables suivant une loi de Bernoulli et une loi binomiale.
 
-\vspace{5cm}
+
+\vspace*{5cm}
 \end{Exemple}
 
 \begin{Proposition}{} La loi d'une variable est déterminée par sa fonction génératrice : si $X$ et $Y$ sont deux variables aléatoires sur $(\Omega, \mathcal{A}, \P)$, ayant le même support et telles que :
@@ -1027,7 +995,7 @@ Alors $X$ et $Y$ ont la même loi.
 
 \begin{Demonstration}{}
 
-\vspace{3cm}
+\vspace*{3cm}
 \end{Demonstration}
 
 \begin{Remarque}{} D'après l'expression des coefficients d'une série entière, on a :
@@ -1047,7 +1015,9 @@ Soit $X$ une variable aléatoire sur $(\Omega, \mathcal{A}, \P)$. Soit $p \in ]0
 
 \begin{Demonstration}{}
 
-\vspace{10cm}
+\newpage
+
+\vspace*{10cm}
 \end{Demonstration}
 
 \subsection{Lien avec l'espérance et la variance}
@@ -1063,12 +1033,12 @@ Si les assertions sont vérifiées, on a $G_X'(1)=\E(X)$.
 
 \begin{Remarque}{} On peut retrouver facilement cette égalité :
 
-\vspace{3cm}
+\vspace*{3cm}~
 \end{Remarque}
 
 \begin{Exemple}{} Retrouvons les valeurs des espérances de variables suivant des lois de bernoulli et binomiale :
 
-\vspace{5cm}
+\vspace*{5cm}
 \end{Exemple}
 
 \begin{ApplicationDirecte}{} Retrouver les valeurs des espérances de variables suivant des lois géométriques et de Poisson.
@@ -1085,12 +1055,12 @@ Si les assertions sont vérifiées, on a $\V(X)=G_X''(1)+G_X'(1)-G_X'(1)^2$.
 
 \begin{Remarque}{} On peut retrouver facilement cette égalité :
 
-\vspace{4cm}
+\vspace*{4cm}~
 \end{Remarque}
 
 \begin{Exemple}{} Retrouvons les valeurs des variances de variables suivant des lois de Bernoulli et binomiale :
 
-\vspace{5cm}
+\vspace*{5cm}
 \end{Exemple}
 
 \begin{ApplicationDirecte}{} Retrouver les valeurs des variances de variables suivant des lois géométriques et de Poisson.
@@ -1105,7 +1075,7 @@ $$ G_{X+Y}(t) = G_X(t) G_Y(t)$$
 
 \begin{Demonstration}{}
 
-\vspace{3cm}
+\vspace*{3cm}
 \end{Demonstration}
 
 \begin{Corollaire}{} Soient $X$ et $Y$ deux variables aléatoires indépendantes sur $(\Omega, \mathcal{A}, \P)$ et $(\lambda, \mu) \in (\mathbb{R}_+^{*})^2$. On suppose que $X \hookrightarrow \mathcal{P}(\lambda)$ et $Y \hookrightarrow \mathcal{P}(\mu)$. Alors $X+Y \hookrightarrow \mathcal{P}(\lambda+\mu)$
@@ -1113,7 +1083,7 @@ $$ G_{X+Y}(t) = G_X(t) G_Y(t)$$
 
 \begin{Demonstration}{}
 
-\vspace{5cm}
+\vspace*{5cm}
 \end{Demonstration}
 
 \begin{ApplicationDirecte}{} Soient $n \geq 1$ et $(p,q) \in ]0,1[^2$. Montrer que si $X \hookrightarrow \mathcal{B}(n,p)$ et $Y \hookrightarrow \mathcal{B}(n,q)$ et que $X$ et $Y$ sont indépendantes alors $X+Y \hookrightarrow \mathcal{B}(n,p+q)$.
@@ -1128,7 +1098,7 @@ $$ \P(X \geq \varepsilon) \leq \dfrac{\E(X)}{\varepsilon}$$
 
 \begin{Demonstration}{}
 
-\vspace{5cm}
+\vspace*{5cm}
 \end{Demonstration}
 
 \begin{Theoreme}{Inégalité de Bienaymé-Tchebychev}
@@ -1137,7 +1107,7 @@ $$ \P( \vert X- \E(X) \vert \geq \varepsilon) \leq \dfrac{\V(X)}{\varepsilon^2}$
 \end{Theoreme}
 
 \begin{Demonstration}{}
-\vspace{5cm}
+\vspace*{5cm}
 \end{Demonstration}
 
 \begin{Remarque}{} Plus la variance est petite, plus la probabilité que la variable s'écarte de son espérance est petite.
@@ -1148,7 +1118,7 @@ $$ \P( \vert X- \E(X) \vert \geq \varepsilon) \leq \dfrac{\V(X)}{\varepsilon^2}$
   \forall \alpha > 0,\:\P\left(\vert X - \E(X) \vert < \alpha \sigma \right) \geq 1 - \frac{1}{\alpha^{2}}
   \]
   
- \vspace{5cm}
+ \vspace*{5cm}
 \end{Exemple}
 
 \begin{Theoreme}{Loi faible des grands nombres} Soit $(X_n)_{n \geq 1}$ une suite de variable aléatoires discrètes sur $(\Omega, \mathcal{A}, \P)$. On suppose que :
@@ -1166,14 +1136,9 @@ $$ \lim_{n \rightarrow + \infty} \P \left( \left\vert \dfrac{S_n}{n}-m \right\ve
 
 \begin{Demonstration}{}
 
-\vspace{8cm}
+\vspace*{10cm}
 \end{Demonstration}
 
-\newpage
-
-\phantom{test}
-
-\vspace{6cm}
 \begin{Remarques}{}
 \begin{itemize} 
 \item Supposons que l'on répète une infinité de fois la même expérience où l'on observe un résultat. On peut modéliser cette situation par des variables aléatoires $X_n$ où pour tout $n \geq 1$, $X_n$ représente le résultat observé à la $n$-ième répétition de cette expérience. On peut modéliser ceci en supposant que les variables $X_n$ sont deux à deux indépendantes. Dans ce cas, $\dfrac{S_n}{n}$ représente la moyenne des résultats lors des $n$ premières répétitions de l'expérience. Ainsi, le résultat précédent affirme que pour tout nombre $\varepsilon>0$, la probabilité que $\dfrac{S_n}{n}$ s'écarte de l'espérance commune $m$ d'au moins $\varepsilon$ tend vers $0$ plus le nombre d'expériences est grand. Par passage à l'évènement contraire, on a :
@@ -1181,8 +1146,6 @@ $$ \P \left( m - \varepsilon < \dfrac{S_n}{n}< m + \varepsilon \right) \underset
 \item Ce théorème permet parfois de vérifier un modèle : si par exemple, on suppose une pièce équilibrée et que les répétitions du lancer de cette pièce nous donne une moyenne ne tendant pas vers $\dfrac{1}{2}$, il faut sûrement repenser le modèle.
 \end{itemize}
 \end{Remarques}
-
-\medskip
 
 Voici un exemple pour finir : on représente ici trois simulations de 800 lancers d'une pièce équilibrée et on représente la fréquence relative d'apparition du Face :
 

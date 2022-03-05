@@ -1,26 +1,24 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
-\usepackage{pifont}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Correction du TD 12 : Espaces vectoriels normés}
 
-\begin{center}
-\textit{{ {\huge TD 12 : Espaces vectoriels normés}}}
-\end{center}
+\tableofcontents
+\separationTitre
 
 
-\bigskip
+Dans la suite, $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$ et $n$, $p$ seront deux entiers naturels non nuls.
 
-\noindent Dans la suite, $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$ et $n$, $p$ seront deux entiers naturels non nuls.
 
-\medskip
+\subsection{Normes}
 
-\begin{center}
-\textit{{ {\large Normes}}}
-\end{center}
-
-\medskip
 
 
 
@@ -31,7 +29,7 @@ Montrer que $A \mapsto \Vert A \Vert_{1}$ et $A \mapsto \Vert A \Vert_{\infty}$ 
 
 \corr 
 
-\noindent $\rhd$ Montrons que $A \mapsto \Vert A \Vert_{1}$ définit une norme sur $\mathcal{M}_{n,p}(\K)$.
+$\rhd$ Montrons que $A \mapsto \Vert A \Vert_{1}$ définit une norme sur $\mathcal{M}_{n,p}(\K)$.
 
 \begin{itemize}
 \item Pour tout $A \in \mathcal{M}_{n,p}(\K)$, $\Vert A \Vert_{1} \geq 0$.
@@ -45,9 +43,9 @@ Montrer que $A \mapsto \Vert A \Vert_{1}$ et $A \mapsto \Vert A \Vert_{\infty}$ 
 \item Montrons la séparation. Soit $A=(a_{i,j}) \in \mathcal{M}_{n,p}(\mathbb{K})$ telle que $\Vert A \Vert_1=0$. Alors :
 $$ \sum_{i = 1}^{n} \sum_{j = 1}^{p} \vert a_{i,j} \vert =0$$
 Or, une somme de termes positifs est nulle si et seulement si tous les termes sont nuls donc :
-$$ \forall (i,j) \in \Interv{1}{n} \times \Interv{1}{p}, \; \vert a_{i,j} \vert =0$$
+$$ \forall (i,j) \in \ii{1}{n} \times \ii{1}{p}, \; \vert a_{i,j} \vert =0$$
 et ainsi :
-$$  \forall (i,j) \in \Interv{1}{n} \times \Interv{1}{p}, \;  a_{i,j}  =0$$
+$$  \forall (i,j) \in \ii{1}{n} \times \ii{1}{p}, \;  a_{i,j}  =0$$
 La matrice $A$ est donc la matrice nulle. Réciproquement, la matrice nulle a une norme nulle.
 \item Montrons l'inégalité triangulaire. Soient $A=(a_{i,j})$ et $B=(b_{i,j})$ deux matrices de $\mathcal{M}_{n,p}(\mathbb{K})$. Alors :
 \begin{align*}
@@ -59,13 +57,12 @@ La matrice $A$ est donc la matrice nulle. Réciproquement, la matrice nulle a un
 \end{itemize}
 Ainsi, $A \mapsto \Vert A \Vert_1$ est une norme sur $\mathcal{M}_{n,p}(\mathbb{K})$.
 
-\medskip
 
-\noindent $\rhd$ Montrons que $A \mapsto \Vert A \Vert_{\infty}$ définit une norme sur $\mathcal{M}_{n,p}(\K)$.
+$\rhd$ Montrons que $A \mapsto \Vert A \Vert_{\infty}$ définit une norme sur $\mathcal{M}_{n,p}(\K)$.
 
 \begin{itemize}
 \item Pour tout $A \in \mathcal{M}_{n,p}(\K)$, $\Vert A \Vert_{\infty}$ existe et est positif (maximum d'un ensemble fini de réels positifs).
-\item Prouvons l'homogénéité. Soient $\lambda \in \mathbb{K}$ et $A=(a_{i,j}) \in \mathcal{M}_{n,p}(\K)$. Pour tout $(i,j) \in (i,j) \in \Interv{1}{n} \times \Interv{1}{p}$,
+\item Prouvons l'homogénéité. Soient $\lambda \in \mathbb{K}$ et $A=(a_{i,j}) \in \mathcal{M}_{n,p}(\K)$. Pour tout $(i,j) \in (i,j) \in \ii{1}{n} \times \ii{1}{p}$,
 $$ \vert \lambda a_{i,j} \vert = \vert \lambda \vert \vert a_{i,j}\vert \leq \vert \lambda \vert \Vert A \Vert_{\infty}$$
 On en déduit que :
 $$ \Vert \lambda A \Vert_{\infty} \leq \vert \lambda \vert \Vert A \Vert_{\infty}$$
@@ -76,14 +73,14 @@ $$ \vert \lambda \vert \Vert A \Vert_{\infty} \leq \Vert \lambda A \Vert_{\infty
 et on obtient ainsi l'inégalité (par double inégalité).
 
 
-\item Montrons la séparation. Soit $A=(a_{i,j}) \in \mathcal{M}_{n,p}(\mathbb{K})$ telle que $\Vert A \Vert_{\infty}=0$. Pour tout $(i,j) \in (i,j) \in \Interv{1}{n} \times \Interv{1}{p}$,
+\item Montrons la séparation. Soit $A=(a_{i,j}) \in \mathcal{M}_{n,p}(\mathbb{K})$ telle que $\Vert A \Vert_{\infty}=0$. Pour tout $(i,j) \in (i,j) \in \ii{1}{n} \times \ii{1}{p}$,
 $$ 0 \leq \vert a_{i,j} \vert \leq \Vert A \Vert_{\infty}=0$$
 donc :
-$$ \forall (i,j) \in \Interv{1}{n} \times \Interv{1}{p}, \; \vert a_{i,j} \vert =0$$
+$$ \forall (i,j) \in \ii{1}{n} \times \ii{1}{p}, \; \vert a_{i,j} \vert =0$$
 et ainsi :
-$$  \forall (i,j) \in \Interv{1}{n} \times \Interv{1}{p}, \;  a_{i,j}  =0$$
+$$  \forall (i,j) \in \ii{1}{n} \times \ii{1}{p}, \;  a_{i,j}  =0$$
 La matrice $A$ est donc la matrice nulle. Réciproquement, la matrice nulle a une norme nulle.
-\item Montrons l'inégalité triangulaire. Soient $A=(a_{i,j})$ et $B=(b_{i,j})$ deux matrices de $\mathcal{M}_{n,p}(\mathbb{K})$. Alors pour tout $(i,j) \in (i,j) \in \Interv{1}{n} \times \Interv{1}{p}$, d'après l'inégalité triangulaire liée au module :
+\item Montrons l'inégalité triangulaire. Soient $A=(a_{i,j})$ et $B=(b_{i,j})$ deux matrices de $\mathcal{M}_{n,p}(\mathbb{K})$. Alors pour tout $(i,j) \in (i,j) \in \ii{1}{n} \times \ii{1}{p}$, d'après l'inégalité triangulaire liée au module :
 $$ \vert a_{i,j} + b_{i,j} \vert \leq \vert a_{i,j} \vert + \vert b_{i,j} \vert \leq \Vert A \Vert_{\infty} + \Vert B \Vert_{\infty}$$
 Ainsi,
 $$ \Vert A+B \Vert_{\infty}  \leq \Vert A \Vert_{\infty} + \Vert B \Vert_{\infty}$$
@@ -107,9 +104,8 @@ $$ N((x,y)) = \sup_{t \in [0,1]} \vert x+ty \vert$$
 \begin{enumerate}
 \item Soit $(x,y) \in \mathbb{R}^2$. La fonction $t \mapsto \vert x+ty \vert$ est continue sur le segment $[0,1]$ donc bornée et admet un maximum sur ce segment. Ainsi, $N((x,y))$ est bien défini.
 
-\medskip
 
-\noindent Montrons que $N$ est une norme sur $\mathbb{R}^2$. Pour gagner en efficacité, remarquons que :
+Montrons que $N$ est une norme sur $\mathbb{R}^2$. Pour gagner en efficacité, remarquons que :
 $$ N((x,y)) = \Vert f_{x,y} \Vert_{\infty}$$
 où $f_{x,y} : t \mapsto x+ty$ et $\Vert \cdot \Vert_{\infty}$ est la norme infini sur $[0,1]$.
 
@@ -146,7 +142,6 @@ On en déduit que :
 \end{align*}
 Voici une représentation graphique :
 
-\medskip
 
 \begin{center}
 \includegraphics[scale=0.4]{BouleU}
@@ -171,7 +166,7 @@ N(\lambda P) & =  \sum_{k = 0}^{ n } \vert (\lambda P)^{(k)} (0) \vert  \\
 \end{align*}
 \item Montrons la séparation. Soit $P \in  \R_n[X ]$ tel que $N(P)=0$. Alors :  
 $$ \sum_{k = 0}^{ n } \vert P^{(k)} (0) \vert =0$$
-Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls. Ainsi, pour tout entier $k \in \Interv{0}{n}$,
+Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls. Ainsi, pour tout entier $k \in \ii{0}{n}$,
 $$  \vert P^{(k)} (0) \vert = 0$$
 et donc 
 $$   P^{(k)} (0)  = 0$$
@@ -210,7 +205,7 @@ Ainsi, $N$ définit une norme sur $\mathbb{R}_n[X]$.
 
 \begin{itemize}
 \item Pour tout $A \in \mathcal{M}_n(\mathbb{C})$, $\Vert A \Vert \geq 0$.
-\item Montrons l'homogénéité. Soient $\lambda \in \mathbb{C}$ et $A=(a_{i,j}) \in \mathcal{M}_n(\mathbb{C})$. Pour tout $i \in \Interv{1}{n}$,
+\item Montrons l'homogénéité. Soient $\lambda \in \mathbb{C}$ et $A=(a_{i,j}) \in \mathcal{M}_n(\mathbb{C})$. Pour tout $i \in \ii{1}{n}$,
 \begin{align*}
  \sum_{j=1}^n \vert \lambda a_{i,j} \vert & =  \sum_{j=1}^n \vert \lambda \vert \vert a_{i,j} \vert \\
  & =  \vert \lambda \vert \sum_{j=1}^n \vert a_{i,j} \vert \\
@@ -223,18 +218,18 @@ Ainsi, $N$ définit une norme sur $\mathbb{R}_n[X]$.
  et ainsi :
  $$  \vert \lambda \vert \Vert A \Vert \leq \Vert \lambda A \Vert$$
  ce qui donne l'égalité (par double inégalité).
- \item Montrons la séparation. Soit $A \in \mathcal{M}_n(\mathbb{C})$ tel que $\Vert A \Vert =0$. Alors pour tout $i \in \Interv{1}{n}$,
+ \item Montrons la séparation. Soit $A \in \mathcal{M}_n(\mathbb{C})$ tel que $\Vert A \Vert =0$. Alors pour tout $i \in \ii{1}{n}$,
 $$ 0 \leq \sum_{j=1}^n \vert a_{i,j} \vert \leq \Vert A \Vert = 0$$
 donc :
 $$ \sum_{j=1}^n \vert a_{i,j} \vert = 0$$
-Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls donc finalement pour tout $(i,j) \in \Interv{1}{n}^2$,
+Une somme de termes positifs est nulle si et seulement si tous les termes sont nuls donc finalement pour tout $(i,j) \in \ii{1}{n}^2$,
 $$  \vert a_{i,j} \vert = 0$$
 et ainsi :
 $$ a_{i,j}=0$$
 Ainsi, $A$ est nulle. Réciproquement, si $A$ est nulle, $\Vert A \Vert$ est nul.
 \item Montrons l'inégalité triangulaire. Soient $A=(a_{i,j})$ et $B=(b_{i,j})$, deux matrices de $\mathcal{M}_n(\mathbb{C})$. On a :
 $$ \Vert A+B \Vert = \max_{1 \leq i \leq n} \sum_{j=1}^n \vert a_{i,j}+ b_{i,j} \vert$$
-Soit $i \in \Interv{1}{n}$. Alors d'après l'inégalité triangulaire (liée au module) :
+Soit $i \in \ii{1}{n}$. Alors d'après l'inégalité triangulaire (liée au module) :
 \begin{align*}
  \sum_{j=1}^n \vert a_{i,j}+ b_{i,j} \vert &  \leq \sum_{j=1}^n \vert a_{i,j} \vert + \vert b_{i,j} \vert \\
  & = \sum_{j=1}^n \vert a_{i,j} \vert + \sum_{j=1}^n \vert b_{i,j} \vert  \\
@@ -246,14 +241,14 @@ $$ \Vert A+B \Vert \leq \Vert A \Vert + \Vert B \Vert$$
 Ainsi, $A \mapsto \Vert A \Vert$ définit une norme sur $\mathcal{M}_{n}(\mathbb{C})$.
 \item Soient $A=(a_{i,j})$ et $B=(b_{i,j})$, deux matrices de $\mathcal{M}_n(\mathbb{C})$. Alors :
 $$ \Vert AB \Vert = \max_{1 \leq i \leq n} \sum_{j=1}^n \vert (AB)_{i,j} \vert$$
-Soit $i \in \Interv{1}{n}$. Alors :
+Soit $i \in \ii{1}{n}$. Alors :
 \begin{align*}
 \sum_{j=1}^n \vert (AB)_{i,j} \vert & = \sum_{j=1}^n \left\vert \sum_{k=1}^n a_{i,k} b_{k,j} \right\vert \\
 & \leq  \sum_{j=1}^n  \sum_{k=1}^n \vert a_{i,k} \vert \vert b_{k,j} \vert \quad \hbox{(inégalité triangulaire)} \\
 & = \sum_{k=1}^n  \sum_{j=1}^n \vert a_{i,k} \vert \vert b_{k,j} \vert  \\
 & =  \sum_{k=1}^n \vert a_{i,k} \vert  \sum_{j=1}^n \vert b_{k,j} \vert  
 \end{align*}
-Or on a pour tout $k \in \Interv{1}{n}$,
+Or on a pour tout $k \in \ii{1}{n}$,
 $$ \sum_{j=1}^n \vert b_{k,j} \vert   \leq \Vert B \Vert$$
 On en déduit que :
 \begin{align*}
@@ -261,7 +256,7 @@ On en déduit que :
 & = \Vert B \Vert  \sum_{k=1}^n \vert a_{i,k} \vert \\
 & \leq \Vert B \Vert \Vert A \Vert
 \end{align*}
-Cette inégalité est vérifiée pour tout $i \in \Interv{1}{n}$ donc :
+Cette inégalité est vérifiée pour tout $i \in \ii{1}{n}$ donc :
 $$ \Vert AB \Vert \leq \Vert B \Vert \Vert A \Vert$$
 \end{enumerate}
 
@@ -269,13 +264,9 @@ $$ \Vert AB \Vert \leq \Vert B \Vert \Vert A \Vert$$
 
 
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Comparaisons de normes, normes équivalentes}}}
-\end{center}
+\subsection{Comparaisons de normes, normes équivalentes}
 
-\medskip
 
 \begin{Exercice}{} On considère deux normes définies sur $E= \mathcal{C}([0,1], \mathbb{R})$ de la manière suivante :
 $$ \forall f \in E, \; \Vert f \Vert_1 = \int_0^1 \vert f(t) \vert \dt \; \hbox{ et } \; \Vert f \Vert_{\infty} = \max_{x \in [0,1]} \vert f(x) \vert$$
@@ -290,7 +281,7 @@ Représenter graphiquement les fonctions $f_1$, $f_2$ et $f_3$.
 \end{enumerate}
 \end{Exercice}
 
-\begin{Exercice}{\ding{80}}
+\begin{Exercice}[$\bigstar$]{}
 \begin{enumerate}
 \item Montrer que $N$, définie par :
 $$ N(f) = \sup_{[0,1]} \vert f''+2f'+f \vert $$
@@ -307,9 +298,8 @@ $$ \Vert f \Vert_{\infty} \leq a N(f)$$
 \begin{enumerate}
 \item Soit $f \in E$. Alors $f$ est de classe $\mathcal{C}^2$ sur $[0,1]$ donc $f''+2f'+f$ est continue sur le segment $[0,1]$ et donc bornée sur celui-ci. Ainsi $N(f)$ existe. L'application $N$ est donc bien définie.
 
-\medskip
 
-\noindent Remarquons que pour tout $f \in E$,
+Remarquons que pour tout $f \in E$,
 $$ N(f) = \Vert f''+2f"+f \Vert_{\infty}$$
 En utilisant que la norme infini est une norme sur $E$, toutes les propriétés à vérifier sont immédiates sauf la séparation. Soit $f \in E$ tel que $N(f)=0$. En utilisant que la norme infini est une norme sur $E$, on en déduit que $f''+2f"+f=0$ et en particulier $f$ est solution de l'équation différentielle linéaire homogène d'ordre deux suivante :
 $$ y''+ 2y'+y = 0$$
@@ -352,13 +342,9 @@ $$ \Vert m \Vert_{\infty}=(1-2 e^{-1}) N(m)$$
 La valeur $a = 1-2e^{-1}$ est donc minimale.
 \end{enumerate}
 
-\medskip
 
-\begin{center}
-\textit{{ {\large Ouverts, fermés, bornés}}}
-\end{center}
+\subsection{Ouverts, fermés, bornés}
 
-\medskip
 
 
 
@@ -418,7 +404,7 @@ $$ \Vert M \Vert_{\infty} = \max_{1 \leq i,j \leq n} \vert a_{i,j} \vert  \leq 1
 Ainsi, $A$ est borné.
 \end{enumerate}
 
-\begin{Exercice}{} Repr\'esenter graphiquement les ensembles suivants. Sont-ils des ouverts ? Des ferm\'es ? Des parties bornées ?
+\begin{Exercice}{} Représenter graphiquement les ensembles suivants. Sont-ils des ouverts ? Des fermés ? Des parties bornées ?
 \begin{enumerate}
 \item $A = \lbrace (x,y)\in\R^2 \, \vert \, x^2 < 1 \hbox{ et } y> 1\rbrace$
 \item $B = \lbrace (x,y)\in\R^2 \, \vert \, x^2 < 1 \hbox{ et } y \geq 1\rbrace$
@@ -487,7 +473,7 @@ $$ \lim_{n \rightarrow + \infty} \left(1- \dfrac{1}{n},1\right) = (1,1) \notin A
 \end{itemize}
 \end{enumerate}
 
-\begin{Exercice}{} Montrer que $\left\{P\in\R_n[X], \, \dis\int_0^1P(t)dt= 1\right\}$ est un fermé.
+\begin{Exercice}{} Montrer que $\left\{P\in\R_n[X], \, \int_0^1P(t)dt= 1\right\}$ est un fermé.
 \end{Exercice}
 
 \corr Soit $F$ cet ensemble. Remarquons que :
@@ -501,9 +487,9 @@ L'application $f$ est continue comme différence d'une forme linéaire sur un es
 
 \corr Soit $F$ cet ensemble. Soit $(M_k)_{k \geq 0}$ une suite d'éléments de $F$ convergeant vers une matrice $M$ de $\mathcal{M}_n(\mathbb{R})$ :
 $$ \lim_{k \rightarrow + \infty} M_k = M$$
-Par convergence composante par composante, on a pour tout $(i,j) \in \Interv{1}{n}^2$,
+Par convergence composante par composante, on a pour tout $(i,j) \in \ii{1}{n}^2$,
 $$  \lim_{k \rightarrow + \infty} (M_k)_{i,j} = M_{i,j}$$
-Pour tout entier $k \geq 0$, $^t(M_k)=-M_k$ donc pour tout $(i,j) \in \Interv{1}{n}^2$,
+Pour tout entier $k \geq 0$, $^t(M_k)=-M_k$ donc pour tout $(i,j) \in \ii{1}{n}^2$,
 $$ (M_k)_{j,i} = - (M_k)_{i,j}$$
 Par passage à la limite, on en déduit que :
 $$ M_{j,i}=-M_{i,j}$$
@@ -524,12 +510,11 @@ On a donc une suite d'éléments de $GL_n(\mathbb{R})$ convergeant vers une matr
 $$ B(a,r) \subset A \subset B$$
 donc $a \in  \mathring{B}$. Ainsi, $\mathring{A} \subset \mathring{B}$.
 
-\medskip
 
-\noindent Soit $x \in \overline{A}$. Il existe une suite d'éléments de $A$ (donc de $B$ car $A \subset B$) convergeant vers $x$. Donc $x \in \overline{B}$.
+Soit $x \in \overline{A}$. Il existe une suite d'éléments de $A$ (donc de $B$ car $A \subset B$) convergeant vers $x$. Donc $x \in \overline{B}$.
 
 
-\begin{Exercice}{\ding{80}} Soit $F$ un sous-espace vectoriel d'un espace vectoriel normé $E$, distinct de $E$. Montrer que $F$ est d'intérieur vide.
+\begin{Exercice}[$\bigstar$]{} Soit $F$ un sous-espace vectoriel d'un espace vectoriel normé $E$, distinct de $E$. Montrer que $F$ est d'intérieur vide.
 \end{Exercice}
 
 \corr Supposons par l'absurde que $F$ n'est pas d'intérieur vide. Il existe donc un vecteur $a$ de $E$ et un réel strictement positif $r>0$ tel que :
@@ -587,9 +572,8 @@ Chaque matrice $\begin{pmatrix}
 0 & 1 \\
 \end{pmatrix}$ n'est pas diagonalisable car cette matrice admet pour unique valeur propre $1$ : si elle était diagonalisable, elle serait semblable à $I_2$ donc égale à $I_2$ ce qui est faux. Ainsi, $\mathcal{D}$ n'est pas un fermé de $\mathcal{M}_2(\mathbb{R})$.
 
-\medskip
 
-\noindent On a : 
+On a : 
 $$ \lim_{\varepsilon \rightarrow 0} \begin{pmatrix}
 0 & \varepsilon \\
 0 & 0 
@@ -600,7 +584,7 @@ La matrice $0_2$ est diagonalisable. Si $\mathcal{D}$ était un ouvert de $\math
 \end{pmatrix}$ tend vers $0_2$ quand $\varepsilon$ tend vers $0$ et chacune de ces matrices n'est pas diagonalisable car cette matrice admet pour unique valeur propre $0$ : si elle était diagonalisable, elle serait semblable à $0_2$ donc égale à $0_2$ ce qui est faux. Ainsi, $\mathcal{D}$ n'est pas un ouvert de $\mathcal{M}_2(\mathbb{R})$.
 
 
-\begin{Exercice}{\ding{80}} Soit $E= \mathcal{M}_n(\mathbb{R})$. On note $\mathcal{N}$ l'ensemble des matrices nilpotentes de $E$.
+\begin{Exercice}[$\bigstar$]{} Soit $E= \mathcal{M}_n(\mathbb{R})$. On note $\mathcal{N}$ l'ensemble des matrices nilpotentes de $E$.
 
 \begin{enumerate}
 \item Montrer que si $A$ est une matrice nilpotente de $E$ alors $A^n=0_n$.
@@ -622,7 +606,7 @@ D'après le théorème de Cayley-Hamilton, on en déduit que :
 $$ A^n=0_n$$
 \item Soient $(A_k)_{k \geq 0}$ une suite d'éléments de $\mathcal{N}$ convergeant vers une matrice $A$ de $E$ :
 $$ \lim_{k \rightarrow + \infty} A_k = A$$
-D'après la question précédente, pour tout entier $k \geq 0$, $A_k^n=0_n$. Or l'application $f : E \rightarrow E$ définie par $f(M)=M^n$ est continue sur $E$ (chaque composante de $f(M)$ est polynômiale en les coefficients de $M$). On en déduit que :
+D'après la question précédente, pour tout entier $k \geq 0$, $A_k^n=0_n$. Or l'application $f : E \rightarrow E$ définie par $f(M)=M^n$ est continue sur $E$ (chaque composante de $f(M)$ est polynomiale en les coefficients de $M$). On en déduit que :
 $$ \lim_{k \rightarrow + \infty} f(A_k) = f(A)$$
 ou encore :
 $$ \lim_{k \rightarrow + \infty} A_k^n = A^n$$
@@ -648,9 +632,8 @@ par multilinéarité du déterminant et donc d'après la question précédente,
 $$ \textrm{det}(A+ \varepsilon I_n)  = \varepsilon^n \neq 0$$
 Ainsi, $A+ \varepsilon I_n$ est inversible et répond donc à la question.
 
-\medskip
 
-\noindent Montrons que $\mathcal{N}$ est d'intérieur vide. Si par l'absurde $\mathcal{N}$ n'était pas d'intérieur vide, il existerait une matrice $A \in \mathcal{N}$ et une boule ouverte $B$ de rayon $r>0$ centrée en $A$ telle que $B \subset N$. D'après la question précédente, il existe une matrice $P$ inversible appartenant à $B$ et donc à $\mathcal{N}$. C'est absurde car une matrice inversible ne peut pas être nilpotente (une matrice nilpotente admet $0$ pour valeur propre). Ainsi, par l'absurde, on a montré que $\mathcal{N}$ était d'intérieur vide.
+Montrons que $\mathcal{N}$ est d'intérieur vide. Si par l'absurde $\mathcal{N}$ n'était pas d'intérieur vide, il existerait une matrice $A \in \mathcal{N}$ et une boule ouverte $B$ de rayon $r>0$ centrée en $A$ telle que $B \subset N$. D'après la question précédente, il existe une matrice $P$ inversible appartenant à $B$ et donc à $\mathcal{N}$. C'est absurde car une matrice inversible ne peut pas être nilpotente (une matrice nilpotente admet $0$ pour valeur propre). Ainsi, par l'absurde, on a montré que $\mathcal{N}$ était d'intérieur vide.
 \end{enumerate}
 \end{enumerate}
 
@@ -660,13 +643,12 @@ Ainsi, $A+ \varepsilon I_n$ est inversible et répond donc à la question.
 
 \corr Procédons en trois étapes.
 
-\medskip
 
-\noindent $\rhd$ Montrons que $\mathcal{S}$ est convexe, c'est-à-dire :
+$\rhd$ Montrons que $\mathcal{S}$ est convexe, c'est-à-dire :
 $$ \forall (A,B) \in \mathcal{S}^2, \; \forall \lambda \in [0,1], \; \lambda A+(1-\lambda)B \in \mathcal{S}$$
 Soient $(A,B) \in \mathcal{S}^2$ et $\lambda \in [0,1]$. En notant $A=(a_{i,j})$ et $B=(b_{i,j})$, on a :
 $$ \lambda A+ (1- \lambda) B = (\lambda a_{i,j} + (1- \lambda) b_{i,j})$$
-Tous les coefficients $a_{i,j}$ et $ b_{i,j}$ appartiennent à $[0,1]$ qui est convexe donc les réels $\lambda a_{i,j} + (1- \lambda) b_{i,j}$ aussi. Par définition de $\mathcal{S}$, on sait que pour tout $i \in \Interv{1}{n}$,
+Tous les coefficients $a_{i,j}$ et $ b_{i,j}$ appartiennent à $[0,1]$ qui est convexe donc les réels $\lambda a_{i,j} + (1- \lambda) b_{i,j}$ aussi. Par définition de $\mathcal{S}$, on sait que pour tout $i \in \ii{1}{n}$,
 $$ \sum_{j=1}^n a_{i,j} = \sum_{j=1}^n b_{i,j} = 1$$
 Ainsi,
 \begin{align*}
@@ -676,19 +658,17 @@ Ainsi,
 \end{align*}
 Ainsi, $\lambda A+ (1- \lambda)B$ appartient à $\mathcal{S}$. Finalement, $\mathcal{S}$ est convexe.
 
-\medskip
 
-\noindent $\rhd$ Montrons que $S$ est un fermé de $\mathcal{M}_n(\mathbb{R})$. Soit $(A_k)_{k \geq 0}$ une suite d'éléments de $S$ convergeant vers $A=(a_{i,j}) \in \mathcal{M}_n(\mathbb{R})$. Montrons que $A$ appartient à $\mathcal{S}$. Notons pour tout $k \geq 0$, $A_k = (a_{i,j}^k)$. Par convergence composante par composante, on a pour tout $(i,j) \in \Interv{1}{n}^2$,
+$\rhd$ Montrons que $S$ est un fermé de $\mathcal{M}_n(\mathbb{R})$. Soit $(A_k)_{k \geq 0}$ une suite d'éléments de $S$ convergeant vers $A=(a_{i,j}) \in \mathcal{M}_n(\mathbb{R})$. Montrons que $A$ appartient à $\mathcal{S}$. Notons pour tout $k \geq 0$, $A_k = (a_{i,j}^k)$. Par convergence composante par composante, on a pour tout $(i,j) \in \ii{1}{n}^2$,
 $$ \lim_{k \rightarrow + \infty} a_{i,j}^k = a_{i,j}$$
-Or les matrices $A_k$ appartiennent à $\mathcal{S}$ donc tous les coefficients $a_{i,j}^k$ appartient à $[0,1]$ donc par passage à la limite, $a_{i,j} \in [0,1]$. De, pour tout entier $k \geq 0$ et tout entier $i \in \Interv{1}{n}$,
+Or les matrices $A_k$ appartiennent à $\mathcal{S}$ donc tous les coefficients $a_{i,j}^k$ appartient à $[0,1]$ donc par passage à la limite, $a_{i,j} \in [0,1]$. De, pour tout entier $k \geq 0$ et tout entier $i \in \ii{1}{n}$,
 $$ \sum_{p=1}^n a_{i,p}^k = 1$$
 Donc par passage à la limite quand $k$ tend vers $+ \infty$ :
 $$ \sum_{p=1}^n a_{i,p} = 1$$
 On en déduit que $A$ appartient à $\mathcal{S}$. Ainsi, $\mathcal{S}$ est fermé.
 
-\medskip
 
-\noindent $\rhd$ Utilisons la norme $1$ définie dans un autre exercice. Pour toute matrice $A=(a_{i,j})$ de $\mathcal{M}_n(\mathbb{R})$,
+$\rhd$ Utilisons la norme $1$ définie dans un autre exercice. Pour toute matrice $A=(a_{i,j})$ de $\mathcal{M}_n(\mathbb{R})$,
 \begin{align*}
 \Vert A \Vert_1 & = \sum_{i = 1}^{n} \sum_{j = 1}^{n} \vert a_{i,j} \vert \\
 & = \sum_{i = 1}^{n} \sum_{j = 1}^{n}  a_{i,j}  \\
@@ -696,14 +676,8 @@ On en déduit que $A$ appartient à $\mathcal{S}$. Ainsi, $\mathcal{S}$ est ferm
  & = n
 \end{align*}
 Ainsi, $\mathcal{S}$ est inclus dans la sphère de centre la matrice nulle et de rayon $n$ donc $\mathcal{S}$ est bornée.
-\medskip
 
-\begin{center}
-\textit{{ {\large Fonctions à valeurs réelles}}}
-\end{center}
-
-\medskip
-
+\subsection{Fonctions à valeurs réelles}
 
 
 \begin{Exercice}{} Étudier la continuité de $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par $ f((x,y))=  \max(x,y)$.
@@ -715,12 +689,12 @@ et
 $$ \max(x,y)-\min(x,y) = \vert x-y \vert$$
 On en déduit que :
 $$ f(x,y)= \max(x,y) = \dfrac{x+y+ \vert x-y \vert}{2}$$
-Les fonctions polynômiales (en les composantes) sont bornées sur $\mathbb{R}^2$ et la valeur absolue l'est sur $\mathbb{R}$ donc par composition, $f$ est continue sur $\mathbb{R}^2$.
+Les fonctions polynomiales (en les composantes) sont bornées sur $\mathbb{R}^2$ et la valeur absolue l'est sur $\mathbb{R}$ donc par composition, $f$ est continue sur $\mathbb{R}^2$.
 
 \begin{Exercice}{} Étudier la continuité de $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ définie par $f((x,y))= \ln(1 + \sqrt{x^2+y^2})$.
 \end{Exercice}
 
-\corr La fonction $(x,y) \mapsto x^2+y^2$ est polynômiale (en les composantes) donc continue sur $\mathbb{R}^2$ et à valeurs positives, $t \mapsto \sqrt{t}$ est continue sur $\mathbb{R}_+$ et à valeurs positives donc :
+\corr La fonction $(x,y) \mapsto x^2+y^2$ est polynomiale (en les composantes) donc continue sur $\mathbb{R}^2$ et à valeurs positives, $t \mapsto \sqrt{t}$ est continue sur $\mathbb{R}_+$ et à valeurs positives donc :
 $$ (x,y) \mapsto 1+ \sqrt{x^2+y^2}$$
 est continue et strictement positive sur $\mathbb{R}^2$. La fonction $\ln$ est continue sur $\mathbb{R}_+^{*}$ donc $f$ est continue sur $\mathbb{R}^2$.
 
@@ -731,11 +705,10 @@ $$ f((x,y)) = \left\lbrace \begin{array}{cl}
 \end{array}\right.$$
 \end{Exercice}
 
-\corr La fonction $f$ est continue en tout point $(x,y) \neq (0,0)$ par quotient de fonctions polynômiales et sachant que dans ce cas, $x^6+y^4 \neq 0$. 
+\corr La fonction $f$ est continue en tout point $(x,y) \neq (0,0)$ par quotient de fonctions polynomiales et sachant que dans ce cas, $x^6+y^4 \neq 0$. 
 
-\medskip
 
-\noindent Étudions la continuité de $f$ en $(0,0)$. Celle-ci est continue en $(0,0)$ si :
+Étudions la continuité de $f$ en $(0,0)$. Celle-ci est continue en $(0,0)$ si :
 $$ \lim_{(x,y) \rightarrow (0,0)} f((x,y)) =f((0,0))= 0$$
 Pour tout réel $x$ non nul,
 $$ f((x,x^2)) = \dfrac{x^6}{x^6+x^8} = \dfrac{1}{1+x^2}$$
@@ -769,7 +742,7 @@ et donc $f$ est continue en $(0,0)$.
 
 
 
-\begin{Exercice}{} Montrer que $\dis \max \left\lbrace x^5y^5 e^{z-2} \, \vert \, (x,y,z) \in (\mathbb{R}_+)^3 \hbox{ vérifiant } x+y+z =1 \right\rbrace$ existe.
+\begin{Exercice}{} Montrer que $\max \left\lbrace x^5y^5 e^{z-2} \, \vert \, (x,y,z) \in (\mathbb{R}_+)^3 \hbox{ vérifiant } x+y+z =1 \right\rbrace$ existe.
 \end{Exercice}
 
 \corr La fonction $(x,y,z) \mapsto x^5y^5 e^{z-2}$ est continue sur $\mathbb{R}^3$ (par produit de fonctions qui le sont). Il suffit de montrer que :
@@ -790,15 +763,11 @@ Ainsi, $(a,b,c) \in K$. L'ensemble $K$ est donc fermé.
 \end{align*}
 Ainsi, $K$ est inclus dans la sphère unité donc est borné.
 \end{itemize}
-L'ensemble $K$ est compact donc $\dis \max \left\lbrace x^5y^5 e^{z-2} \, \vert \, (x,y,z) \in (\mathbb{R}_+)^3 \hbox{ vérifiant } x+y+z =1 \right\rbrace$ existe.
+L'ensemble $K$ est compact donc $\max \left\lbrace x^5y^5 e^{z-2} \, \vert \, (x,y,z) \in (\mathbb{R}_+)^3 \hbox{ vérifiant } x+y+z =1 \right\rbrace$ existe.
 
-\bigskip
 
-\begin{center}
-\textit{{ {\large Fonctions lipschitziennes}}}
-\end{center}
+\subsection{Fonctions lipschitziennes}
 
-\medskip
 
 
 \begin{Exercice}{} Soit $I$ un intervalle de $\mathbb{R}$.
@@ -817,7 +786,7 @@ sont aussi $k$-lipschitziennes.
 \begin{enumerate}
 \item Soit $(x,y) \in I^2$. Alors :
 \begin{align*}
-\vert (\alpha f(x)+ \beta g(x))-(\alpha f(y)+ \beta g(y)) \vert & = \vert \alpha (f(x)-f(y)) + \beta (g(x)-g(y)) \vert \\
+\vert (\alpha f(x)+ \beta g(x))-&(\alpha f(y)+ \beta g(y)) \vert = \vert \alpha (f(x)-f(y)) + \beta (g(x)-g(y)) \vert \\
 & \leq \vert \alpha (f(x)-f(y)) \vert + \vert \beta (g(x)-g(y)) \vert \quad \hbox{(inégalité triangulaire)} \\
 & = \vert \alpha \vert \vert f(x)-f(y) \vert + \vert \beta \vert \vert g(x)-g(y) \vert \quad \hbox{(homogénéité)} \\
 & \leq k \vert \alpha \vert  \vert x-y \vert + k' \vert \beta \vert \vert x-y \vert 
@@ -846,7 +815,7 @@ On obtient de même que $f^{-}$ est $k-$lipschitzienne.
 
 
 
-\begin{Exercice}{\ding{80}} Soit $A$ une partie non vide d'un espace vectoriel normé $E$. Pour tout $x \in E$, on pose :
+\begin{Exercice}[$\bigstar$]{} Soit $A$ une partie non vide d'un espace vectoriel normé $E$. Pour tout $x \in E$, on pose :
 $$d(x,A) = \inf_{a \in A} \Vert x- a \Vert$$
 
 \begin{enumerate}
@@ -891,9 +860,8 @@ Soit $x \in E$. Si $x \in A$, on a :
 $$ 0 \leq d(x,A) \leq \Vert x-x\Vert = 0$$
 donc $d(x,A)=0$.
 
-\medskip
 
-\noindent Supposons maintenant que $d(x,A)=0$. Alors :
+Supposons maintenant que $d(x,A)=0$. Alors :
 $$ \inf_{a \in A} \Vert x- a \Vert = 0$$
 Il existe donc une suite $(a_n)_{n \geq 0}$ d'éléments de $A$ tel que :
 $$ \lim_{n \rightarrow + \infty} \Vert x-a_n \Vert = 0$$
@@ -924,7 +892,7 @@ D'après le théorème d'encadrement, on en déduit $d(a,A)=0$ et donc d'après 
 %%
 %%
 %%\exo Fixons une norme $X\longmapsto \Vert X \Vert$ sur $\mathcal{M}_{n,1}(\R)$. On définit trois applications $N_1$, $N_2$ et $N_3$ de $\mathcal{M}_n(\R)$ dans $\mathbb{R}_+$ par :
-%%$$\forall A\in {\cal M}_n(\R),\qquad N_1(A)=\dis\sup_{X\in{\cal  M}_{n,1}(\R)\setminus\{0\}}\dis\frac{\|AX\|}{\|X\|},\quad N_2(A)=\dis\sup_{\|X\|\leq 1}\|AX\| \quad\hbox{et}\quad N_3(A)=\dis\sup_{\|X\|= 1}\|AX\|.$$
+%%$$\forall A\in {\cal M}_n(\R),\qquad N_1(A)=\sup_{X\in{\cal  M}_{n,1}(\R)\setminus\{0\}}\frac{\|AX\|}{\|X\|},\quad N_2(A)=\sup_{\|X\|\leq 1}\|AX\| \quad\hbox{et}\quad N_3(A)=\sup_{\|X\|= 1}\|AX\|.$$
 %%
 %%\begin{enumerate}
 %%	\item Démontrer que $N_1=N_2=N_3$ et que ces applications définissent une norme sur $\mathcal{M}_n(\R)$. On note désormais $N$ cette norme.
@@ -935,7 +903,6 @@ D'après le théorème d'encadrement, on en déduit $d(a,A)=0$ et donc d'après 
 %%\end{enumerate}
 %%
 
-\medskip
 
 %%\exo 
 %

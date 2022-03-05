@@ -1,21 +1,21 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{cours}
+\documentclass[a4paper,twoside,french,11pt]{VcCours}
+
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}}
+\newcommand{\Int}[2]{\int_{#1}^{#2}}
+
+\newcommand{\corr}{\textbf{Corrigé:}}
 
 \begin{document}
-\everymath{\displaystyle}
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Correction du TD 13 : Fonctions définies par une intégrale}
 
-\begin{center}
-\textit{{ {\huge TD 13 : Fonctions définies par une intégrale}}}
-\end{center}
+\tableofcontents
+\separationTitre
 
 
-\bigskip
+\subsection{Théorème fondamental de l'analyse}
 
-\begin{center}
-\textit{{ {\large Théorème fondamental de l'analyse}}}
-\end{center}
-
-\medskip
 
 \begin{Exercice}{} Soit $f$ définie par 
 $$f(x) = \int_{1/x}^{3x}\frac{1}{\sqrt{t^6+1}}\dt$$ 
@@ -57,7 +57,6 @@ $$ f(x) + \int_{0}^x (x-t)f(t) \dt =1$$
 
 \corr Raisonnons par analyse-synthèse.
 
-\medskip
 
 \noindent \textit{Analyse.} Soit $f$ une fonction continue sur $\mathbb{R}$ telle que pour tout $x \in \mathbb{R}$,
 $$ f(x) + \int_{0}^x (x-t)f(t) \dt =1$$
@@ -77,7 +76,6 @@ L'équation caractéristique de cette équation, $x^2+1=0$, admet $i$ et $-i$ po
 $$ f(x) = \lambda \cos(x) + \mu \sin(x)$$
 Or en reprenant la première égalité, on sait que $f(0)=1$ et la deuxième inégalité implique que $f'(0)=0$. On en déduit que $\lambda=1$ et $\mu=0$. Ainsi, $f$ est la fonction cosinus.
 
-\medskip
 
 \noindent \textit{Synthèse.} Une intégration par parties (bien justifiée) montre que pour tout réel $x$, on a :
 $$ \int_0^x t \cos(t) \dt = x \sin(x) - \int_0^x \sin(t) \dt = x \sin(x) + \cos(x) - 1 $$
@@ -132,15 +130,11 @@ où $(A,B) \in \mathbb{R}^2$.
 
 
 
-\bigskip
 
-\begin{center}
-\textit{{ {\large Intégrales à paramètres}}}
-\end{center}
+\subsection{Intégrales à paramètres}
 
-\medskip
 
-\begin{Exercice}{} Étudier la continuité sur $\mathbb{R}$ de $\dis x \mapsto \int_{0}^1 \sin(xt^2) \dt$.
+\begin{Exercice}{} Étudier la continuité sur $\mathbb{R}$ de $x \mapsto \int_{0}^1 \sin(xt^2) \dt$.
 \end{Exercice}
 
 \corr Vérifions les hypothèses du théorème de dérivation sous le signe intégrale.
@@ -164,19 +158,16 @@ $$ f(x) = \int_{0}^{+ \infty} \dfrac{\dt}{t^x(1+t)}$$
 $$ t \mapsto  \dfrac{1}{t^x(1+t)}$$
 est continue  et positive sur $]0, + \infty[$ donc l'intégrale définissant $f(x)$ est impropre en $0$ et $+ \infty$. On a :
 $$  \dfrac{1}{t^x(1+t)} \underset{t \rightarrow 0}{\sim} \dfrac{1}{t^x}$$
-L'intégrale $\dis \int_{0}^1 \dfrac{1}{t^x} \dt$ converge si et seulement si $x<1$ (intégrale de référence). Par critère de comparaison (les intégrandes sont positives), on en déduit que $\dis \int_{0}^1 \dfrac{1}{t^x(1+t)} \dt$ converge si et seulement si $x<1$.
+L'intégrale $\int_{0}^1 \dfrac{1}{t^x} \dt$ converge si et seulement si $x<1$ (intégrale de référence). Par critère de comparaison (les intégrandes sont positives), on en déduit que $\int_{0}^1 \dfrac{1}{t^x(1+t)} \dt$ converge si et seulement si $x<1$.
 
-\medskip
 
 \noindent On a aussi :
 $$   \dfrac{1}{t^x(1+t)} \underset{t \rightarrow + \infty}{\sim} \dfrac{1}{t^{x+1}}$$
-L'intégrale $\dis \int_{1}^{+ \infty} \dfrac{1}{t^{x+1}} \dt$ converge si et seulement si $x+1>1$ (intégrale de référence). Par critère de comparaison (les intégrandes sont positives), on en déduit que $\dis \int_{1}^{+ \infty} \dfrac{1}{t^x(1+t)} \dt$ converge si et seulement si $x>0$.
+L'intégrale $\int_{1}^{+ \infty} \dfrac{1}{t^{x+1}} \dt$ converge si et seulement si $x+1>1$ (intégrale de référence). Par critère de comparaison (les intégrandes sont positives), on en déduit que $\int_{1}^{+ \infty} \dfrac{1}{t^x(1+t)} \dt$ converge si et seulement si $x>0$.
 
-\medskip
 
 \noindent Finalement l'intégrale définissant $f(x)$ converge si et seulement si $x<1$ et $x>0$ donc $f$ est définie sur $]0,1[$.
 
-\medskip
 
 \noindent Étudions maintenant la continuité de $f$ sur $]0,1[$.
 \begin{itemize}
@@ -228,7 +219,7 @@ et ainsi :
 $$ g'(x) = \dfrac{1}{x} [ \ln(1+xt) ]_0^1 = \dfrac{\ln(1+x)}{x}$$
 \end{enumerate}
 
-\begin{Exercice}{} Soit $f : \dis x \mapsto \int_{0}^{+ \infty} \dfrac{\arctan(xt)}{t(1+t^2)} \dt$.
+\begin{Exercice}{} Soit $f : x \mapsto \int_{0}^{+ \infty} \dfrac{\arctan(xt)}{t(1+t^2)} \dt$.
 \begin{enumerate}
 \item Déterminer l'ensemble de définition de $f$, notée $\mathcal{D}$.
 \item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathcal{D}$.
@@ -244,11 +235,10 @@ Pour tout $x \in \mathbb{R}$, $t \mapsto f(x,t)$ est continue sur $\mathbb{R}_+^
 $$ f(x,t) \underset{ t \rightarrow 0 }{\sim} \dfrac{xt}{t(1+t^2)} = \dfrac{x}{1+t^2}$$
 Ainsi,
 $$ \lim_{t \rightarrow 0 } f(x,t) = x$$
-On en déduit que $\dis \int_{0}^1 f(x,t) \dt$ est faussement impropre en $0$ donc convergente. On a pour tout $t \geq 1$,
+On en déduit que $\int_{0}^1 f(x,t) \dt$ est faussement impropre en $0$ donc convergente. On a pour tout $t \geq 1$,
 $$ \vert f(x,t) \vert \leq \dfrac{\pi}{2} \times \dfrac{1}{1+t^2} \leq \dfrac{\pi}{2t^2}$$
-Par critère de comparaison, on en déduit que $t \mapsto f(x,t)$ est intégrable sur $[1,+ \infty[$ et donc $\dis \int_{1}^{+ \infty} f(x,t) \dt$ est absolument convergente donc convergente.
+Par critère de comparaison, on en déduit que $t \mapsto f(x,t)$ est intégrable sur $[1,+ \infty[$ et donc $\int_{1}^{+ \infty} f(x,t) \dt$ est absolument convergente donc convergente.
 
-\medskip
 
 \noindent Finalement, $f$ est définie sur $\mathbb{R}$.
 \item Vérifions les hypothèses du théorème de dérivation sous le signe intégrale.
@@ -309,7 +299,7 @@ $$ \vert  -t e^{-t^2} \sin(xt) \vert \leq t e^{-t^2} $$
 et la fonction $t \mapsto t e^{-t^2}$ est continue sur $\mathbb{R}_+$ et intégrable sur $\mathbb{R}_+$ (même preuve que pour $t \mapsto e^{-t^2}$).
 \end{itemize}
 Par théorème de dérivation sous le signe intégrale, on en déduit que $f$ est $\mathcal{C}^1$ sur $\mathbb{R}$ et que pour tout $x \in \mathbb{R}$,
-$$f'(x) =  \dis \int_{0}^{+ \infty} -t e^{-t^2} \sin(xt) \dt$$
+$$f'(x) =  \int_{0}^{+ \infty} -t e^{-t^2} \sin(xt) \dt$$
 Soit $x \in \mathbb{R}$. Les fonctions $t \mapsto \dfrac{1}{2} e^{-t^2}$ et $t \mapsto \sin(xt)$ sont de classe $\mathcal{C}^1$ sur $\mathbb{R}_+$ donc par intégration par parties, on a pour tout $A>0$ :
 $$ \int_{0}^{A}  -t e^{-t^2} \sin(xt) \dt = \left[\dfrac{1}{2} e^{-t^2}  \sin(xt) \right]_0^A - \dfrac{x}{2} \int_{0}^A e^{-t^2} \cos(xt) \dt$$ 
 Par passage à la limite quand $A$ tend vers $+ \infty$ (la fonction sinus étant bornée sur $\mathbb{R}$), on en déduit que :
@@ -318,14 +308,14 @@ Ainsi $f$ sur solution sur $\mathbb{R}$ de l'équation différentielle linéaire
 $$ x \mapsto K e^{- \dfrac{x^2}{4}}$$
 ou $K \in \mathbb{R}$. Ainsi, il existe $K \in \mathbb{R}$ tel que pour tout $x \in \mathbb{R}$,
 $$ f(x) = Ke^{- \dfrac{x^2}{4}}$$
-Or $f(0)= \dis \int_{0}^{+ \infty} e^{-t^2} \dt = \dfrac{\sqrt{\pi}}{2}$ (intégrale \og classique \fg) donc on en déduit que pour tout $x \in \mathbb{R}$,
+Or $f(0)= \int_{0}^{+ \infty} e^{-t^2} \dt = \dfrac{\sqrt{\pi}}{2}$ (intégrale \og classique \fg) donc on en déduit que pour tout $x \in \mathbb{R}$,
 $$ f(x) = \dfrac{\sqrt{\pi}}{2 } e^{- \dfrac{x^2}{4}}$$
 \end{enumerate}
 
-\begin{Exercice}{} Soit $f$ la fonction d\'efinie par 
+\begin{Exercice}{} Soit $f$ la fonction définie par 
 $$f(x)=\int_0^1 \frac{t^x}{1+t} \dt$$
 	\begin{enumerate}
-	\item Montrer que $f$ est bien d\'efinie et continue sur $I=]-1, + \infty[$.
+	\item Montrer que $f$ est bien définie et continue sur $I=]-1, + \infty[$.
 
 	\item Montrer que :
 $$\forall x\in I,\quad f(x+1)+f(x)=\frac1{x+1}$$
@@ -333,12 +323,12 @@ $$\forall x\in I,\quad f(x+1)+f(x)=\frac1{x+1}$$
 	\item Montrer que :
 $$\forall x\in I,\quad 0\leq f(x) \leq \frac1{x+1}$$
 
-	\item Montrer que la fonction $f$ est d\'ecroissante sur $I$.
+	\item Montrer que la fonction $f$ est décroissante sur $I$.
 
-	\item En d\'eduire que :
+	\item En déduire que :
 $$\forall x\in]0,+\infty[,\quad \frac1{2(x+1)} \leq f(x) \leq \frac1{2x}$$
 
-	\item Donner, en le justifiant, un \'equivalent simple de $f(x)$ au voisinage de $+\infty$.
+	\item Donner, en le justifiant, un équivalent simple de $f(x)$ au voisinage de $+\infty$.
 	\end{enumerate}
 \end{Exercice}
 
@@ -347,10 +337,9 @@ $$\forall x\in]0,+\infty[,\quad \frac1{2(x+1)} \leq f(x) \leq \frac1{2x}$$
 	\begin{enumerate}
 	\item Soit $x \in I$. La fonction $t\mapsto\dfrac{t^x}{1+t}$ est continue et positive sur $]0,1]$. On a :
 	$$ \frac{t^{x}}{1+t} \underset{t \rightarrow 0}{\sim} \frac1{t^{-x}}$$
-	et d'après le résultat sur les intégrales de Riemann, $t \mapsto \dfrac{1}{t^{-x}}$ est intégrable si et seulement si $-x<-1$ ou encore $x>-1$ (et dans ce cas l'intégrale converge donc $f(x)$ existe). Ainsi, $f$ est bien d\'efinie sur $I$.
+	et d'après le résultat sur les intégrales de Riemann, $t \mapsto \dfrac{1}{t^{-x}}$ est intégrable si et seulement si $-x<-1$ ou encore $x>-1$ (et dans ce cas l'intégrale converge donc $f(x)$ existe). Ainsi, $f$ est bien définie sur $I$.
 	
-	\medskip
-
+	
 \noindent Utilisons le théorème de continuité sous le signe intégrale.
 
 \begin{itemize}
@@ -377,14 +366,14 @@ $$ \forall x\in I,\quad 0\le f(x) \le \frac1{x+1}$$
 
 	\item Soit ($x,y$)$\in I^2$ tel que $x\le y$. Par croissance de la fonction exponentielle sur $\mathbb{R}$, on a :
 $$\forall t\in[0,1], \ \frac{t^x}{1+t} \ge \frac{t^y}{1+t}$$
-Donc par croissance de l'intégrale (les bornes sont dans le bon sens), on en déduit que $f(x)\ge f(y)$. Ainsi, $f$ est d\'ecroissante sur $I$.
+Donc par croissance de l'intégrale (les bornes sont dans le bon sens), on en déduit que $f(x)\ge f(y)$. Ainsi, $f$ est décroissante sur $I$.
 
-	\item La fonction $f$ \'etant d\'ecroissante sur $I$ donc pour tout $x \in I$, on en d\'eduit que 
+	\item La fonction $f$ étant décroissante sur $I$ donc pour tout $x \in I$, on en déduit que 
 	$$2f(x+1) \le f(x+1)+f(x) \le 2f(x)$$
 Ainsi, d'après la question 2, 
 $$f(x)\ge \frac1{2(x+1)}$$
  et $$f(x+1) \le \frac1{2(x+1)}$$
-ou encore $\dis f(x) \le \frac1{2x}$ (changement de variable).
+ou encore $f(x) \le \frac1{2x}$ (changement de variable).
 
 	\item On a pour tout $x>0$,
 $$\frac{2x}{2x+2} \le 2xf(x) \le 1$$ 
@@ -416,10 +405,10 @@ est continue sur $\mathbb{R}_+$.
 $$ \dfrac{e^{-xt}}{\sqrt{1+t}} \geq \dfrac{1}{\sqrt{1+t}}$$
 et 
 $$ \dfrac{1}{\sqrt{1+t}} \underset{+ \infty}{\sim} \dfrac{1}{\sqrt{t}}$$
-On sait que $\dis \int_1^{+ \infty} \dfrac{1}{\sqrt{t}} \dt$ est une intégrale de Riemann divergente donc par critère de comparaison (les fonctions sont positives sur $[1, + \infty[$), $\dis \int_1^{+ \infty}  \dfrac{1}{\sqrt{1+t}}  \dt$ est divergente et de nouveau par critère de comparaison, $\dis \int_1^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}}$ diverge et ainsi, $f(x)$ n'est pas défini.
+On sait que $\int_1^{+ \infty} \dfrac{1}{\sqrt{t}} \dt$ est une intégrale de Riemann divergente donc par critère de comparaison (les fonctions sont positives sur $[1, + \infty[$), $\int_1^{+ \infty}  \dfrac{1}{\sqrt{1+t}}  \dt$ est divergente et de nouveau par critère de comparaison, $\int_1^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}}$ diverge et ainsi, $f(x)$ n'est pas défini.
 \item Soit $x \in \mathbb{R}_+^*$. Pour tout réel positif $t$,
 $$ 0 \leq  \dfrac{e^{-xt}}{\sqrt{1+t}} \leq e^{-xt}$$
-L'intégrale de référence $\dis \int_0^{+ \infty} e^{-xt} \dt$ est convergente (car $x>0$) donc par critère de comparaison (les fonctions sont positives), $ \int_0^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}}$ converge et ainsi, $f(x)$ est bien défini.
+L'intégrale de référence $\int_0^{+ \infty} e^{-xt} \dt$ est convergente (car $x>0$) donc par critère de comparaison (les fonctions sont positives), $ \int_0^{+ \infty} \dfrac{e^{-xt}}{\sqrt{1+t}}$ converge et ainsi, $f(x)$ est bien défini.
 \end{itemize}
 Finalement, $f$ est définie sur $\mathcal{D}= \mathbb{R}_+^*$.
 \item Soit $g : \mathbb{R}_+^* \times \mathbb{R}_+ \rightarrow \mathbb{R}$ définie par :
@@ -509,7 +498,7 @@ C'est absurde. Ainsi, $f$ admet pour limite $+ \infty$ en $0$.
  \item Montrer que $F$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}_+$ et donner une expression sous forme d'une intégrale.
  \item Montrer que $G$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}_+$ et donner une expression sous forme d'une intégrale.
  \item Justifier que $H$ est une fonction constante et déterminer celle-ci.
- \item En déduire la valeur de l'intégrale de Gauss $\dis \int_{0}^{+ \infty} e^{-t^2} \dt$.
+ \item En déduire la valeur de l'intégrale de Gauss $\int_{0}^{+ \infty} e^{-t^2} \dt$.
  \end{enumerate}
 \end{Exercice}
 
@@ -569,17 +558,17 @@ $$  \int_{0}^{+ \infty} e^{-t^2} \dt  = \dfrac{\sqrt{\pi}}{2}$$
 
 
 %%\exo
-%%Soit $f$ la fonction définie sur $\mathbb{R}$ par $\displaystyle{f(x)=\int_x^{2x} e^{-t^2}\;\text{d}t}$.
+%%Soit $f$ la fonction définie sur $\mathbb{R}$ par ${f(x)=\int_x^{2x} e^{-t^2}\;\text{d}t}$.
 %%\begin{enumerate}
 %%\item Montrer que $f$ est une fonction impaire.\\
 %%\textit{Indication :} On pourra faire le changement de variable $u=-t$.
 %%\item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et calculer $f'$.
 %%\item Étudier les variations de $f$.
-%%\item En encadrant $f(x)$, déterminer $\displaystyle{\lim_{x \rightarrow +\infty} f(x)}$.
+%%\item En encadrant $f(x)$, déterminer ${\lim_{x \rightarrow +\infty} f(x)}$.
 %%\end{enumerate}
 %
 %\exo
-%Soit $f$ la fonction définie par $\displaystyle{f(x)=\frac 1 {x-1}\int_1^x \frac{t^2}{t^8+1} \;\text{d}t.}$
+%Soit $f$ la fonction définie par ${f(x)=\frac 1 {x-1}\int_1^x \frac{t^2}{t^8+1} \;\text{d}t.}$
 %\begin{enumerate}
 %\item Montrer que $f$ est définie et continue sur $\mathbb{R} \setminus \{1\}$.
 %%\item Soit $\varphi : x \mapsto \int_1^x \frac{t^2}{t^8+1} \;\text{d}t$. Montrer que $\varphi$ est de classe $\mathcal C^1$ sur $\R$ donner son développement limité en 1.
