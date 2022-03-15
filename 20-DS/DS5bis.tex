@@ -1,0 +1,199 @@
+\documentclass[twoside,french,11pt]{VcCours}
+%cspell:ignore orthonormaliser
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dt}{\text{d}t}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir surveillé n°5}
+
+\begin{center}
+\large 
+Le jeudi 10 mars 2022
+
+\bigskip
+\textbf{Durée: 3h30}
+
+\bigskip
+\large\underline{\textbf{Calculatrice interdite}}
+\end{center}
+
+\bigskip
+\begin{itemize}
+  \item Le candidat attachera la plus grande importance à la clarté, à la précision et à la concision de la rédaction. Si un candidat est amené à repérer ce qui peut lui sembler être une erreur d'énoncé, il le signalera sur sa copie et devra poursuivre sa composition en expliquant les raisons des initiatives qu'il a été amené à prendre.
+  \item Il est conseillé au candidat de lire l'intégralité du sujet et de repérer les parties qui lui semblent plus abordables.
+  \item Le candidat \fbox{encadrera} ou \underline{soulignera} les résultats.
+%   \item Si un étudiant a traité tout ce qu'il savait faire, il peut rendre sa copie et recevoir en contrepartie une feuille
+%   contenant des indications. Il composera alors sur une nouvelle copie les questions qu'il souhaite.
+  \end{itemize}
+\separationTitre
+
+\section*{Problème 1}
+
+On admet dans ce problème que : $\sum_{k=1}^{+ \infty} \dfrac{1}{k^2} = \dfrac{\pi^2}{6} \cdot$
+
+\subsection*{Partie 1}
+Soit $x\in \R$. On note, lorsque cela a un sens, $K(x)=\int_0^1\frac{t^x\ln(t)}{t-1}\dt$.
+\begin{enumerate}
+\item Démontrer que pour $s>-1$, l'intégrale $J_s=\int_0^1t^s\ln(t)\dt$ existe et déterminer sa valeur.
+\item \underline{Étude de la fonction $K$}
+\begin{enumerate}
+	\item Montrer que l'ensemble de définition de la fonction $K$ est $D_K=]-1,+\infty[$.
+	\item Montrer que $K$ est monotone sur $D_K$.
+	%\item Montrer que pour tout réel $\alpha >0$, la fonction $t\longmapsto\frac{t^\alpha(\ln(t))^2}{1-t}$ est prolongeable en une fonction bornée sur le segment $[0,1]$.
+\item Démontrer que $K$ est de classe ${\cal C}^1$ sur $D_K$. Retrouver alors la monotonie de $K$.
+\item À l'aide d'une majoration judicieuse, démontrer que $\lim_{x\to +\infty}K(x)=0$.
+\item Démontrer que :
+\[\forall x>-1,\quad K(x)-K(x+1)=\frac{1}{(x+1)^2}\]
+\item Déterminer alors un équivalent simple de $K(x)$ lorsque $x$ tend vers $-1$ par valeurs supérieures.
+\item Soit $x>-1$.
+\begin{enumerate}
+	\item Justifier la convergence de la série $\sum_{k\geq 1}\frac{1}{(x+k)^2} \cdot$
+	\item Prouver que pour tout $n\in \N^*$, 
+	\[K(x)=\sum_{k=1}^n\frac{1}{(x+k)^2}+K(x+n)\]
+	\item En déduire que :
+	\[K(x)=\sum_{k=1}^{+ \infty} \frac{1}{(x+k)^2}\]
+	\item Calculer $K(0)$ et $K(1)$.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie 2}
+
+\begin{enumerate}
+\item Prouver que pour tout $x>-1$ et tout entier naturel $k$ non nul,
+\[\frac{1}{(x+k+1)^2}\leq \int_k^{k+1}\frac{dt}{(x+t)^2}\leq \frac{1}{(x+k)^2}\]
+\item Déterminer un équivalent de $K(x)$ lorsque $x$ tend vers $+\infty$.
+\item Pour tout entier naturel $n$, on pose $u_n=K(n)$.
+\begin{enumerate}
+	\item Étudier la convergence des séries $\sum_{n\geq 0}u_n$ et $\sum_{n\geq 0}(-1)^nu_n$.
+	\item Pour $n\in\N$ et pour $t\in]0,1[,$ on pose $f_n(t)=(-1)^n\frac{t^{n}\ln(t)}{t-1} \cdot$\\
+	Montrer que $\sum f_n$ converge simplement sur $]0,1[$ et calculer sa somme $S$.
+	\item Démontrer alors que
+$\sum_{n=0}^{+\infty}(-1)^nu_n=\int_0^1\frac{\ln(v)}{v^2-1}\;dv.$
+\item Donner la valeur de cette intégrale en fonction de $K\left (-\frac{1}{2}\right )$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie 3}
+
+Pour tout entier naturel $k\geq 2$, on note :
+\[Z_k=\sum_{p=1}^{+\infty}\frac{1}{p^k}\]
+\begin{enumerate}
+	\item Pour tout couple d'entiers naturels $(p,q)$, on pose $I_{p,q}=\int_0^1t^p(\ln(t))^q\dt$ et on admettra que cette intégrale existe.
+	\begin{enumerate}
+		\item Démontrer que si $q\geq 1$, $I_{p,q}=-\frac{q}{p+1}I_{p,q-1}$.
+\item En déduire la valeur de $I_{p,q}$.
+\end{enumerate}
+\item
+\begin{enumerate}
+	\item Justifier l'existence pour tout $n\in \N$ de $B_n=\int_0^1 \frac{(\ln(t))^{n+1}}{t-1}\dt$.
+	\item Exprimer $B_n$ à l'aide des intégrales $I_{p,q}$.
+	
+	\indication{On pourra utiliser la série de terme général $t^p$.}
+\item Prouver enfin que pour tout $n\in \N,\ B_n=(-1)^n(n+1)!Z_{n+2}$.
+\end{enumerate}
+\item En déduire alors que :
+\[\forall x\in ]-1,1[,\ K(x)=\sum_{k=0}^{+\infty}(-1)^k(k+1)Z_{k+2}x^k\]
+\item Quel est le rayon de convergence de la série entière dont $K$ est la somme sur $]-1,1[$?
+\end{enumerate}
+
+
+\section*{Problème 2}
+
+Dans ce problème, $\R[X]$ désigne l'espace vectoriel des polynômes à coefficients réels et $\R_n[X]$ celui des polynômes à coefficients réels de degré inférieur ou égal à $n$ (entier naturel non nul).
+
+\medskip
+On rappelle aussi la valeur de l'intégrale de Gauss :
+$$\int_{-\infty}^{+\infty}e^{-x^2} \dx=\sqrt{\pi}=\pi^{1/2}$$
+Les parties 1 et 2 sont indépendantes. Les parties 3 et 4 utilisent les résultats précédents.
+
+\subsection*{Partie 1 : Une famille de polynômes}
+
+On note $w$ l'application de $\R$ dans $\R$ définie par :
+$\ \forall x\in\R,\quad w(x)=e^{-x^2}.$
+
+Pour tout $n\in\N,$ on note alors $K_n$ l'application  de $\R$ dans $\R$ définie par :
+$$\forall x\in\R,\qquad K_n(x)=(-1)^ne^{x^2}w^{(n)}(x)$$
+où $w^{(n)}$ désigne la dérivée $n$-ième de $w$. En particulier, $K_0(x)=1.$
+
+\begin{enumerate}
+	\item Calculer pour tout $x\in\R,$ $K_1(x), K_2(x)$ et $K_3(x).$
+	\item Montrer que pour tout $n\in\N$ et pour tout $x\in\R$, on a :
+	$$K_{n+1}(x)=2xK_n(x)-K'_n(x).$$
+	%En déduire l'expression de $K_4(x).$
+	\item En déduire que pour tout $n\in\N$, $K_n$ est un polynôme et déterminer son degré et son terme dominant.
+	\item Démontrer que pour tout $n\in\N$ et tout $x\in\R$, on a $K_n(-x)=(-1)^nK_n(x).$\\
+	En déduire, en fonction de $n$, la parité de $K_n.$
+	
+\end{enumerate}
+
+\subsection*{Partie 2 : un produit scalaire sur $\R[X]$}
+
+Pour tous $P,Q\in\R[X],$ on pose :
+$$\langle P|Q\rangle=\int_{-\infty}^{+\infty}P(t)Q(t)e^{-t^2}\dt$$
+Pour $P\in\R[X],$ on note $\|P\|=\sqrt{\langle P|P\rangle }.$
+\begin{enumerate}
+	\item Justifier l'existence de $\langle P|Q\rangle $ pour tous $P,Q\in\R[X].$
+	\item Démontrer que $(P,Q)\longmapsto \langle P|Q\rangle $ définit un produit scalaire sur $\R[X].$
+	\item
+	\begin{enumerate}
+		\item Que valent $\|1\|$ et $\langle X| 1\rangle $ ?
+		\item Démontrer que pour tout $n\in\N,$ $\int_{-\infty}^{+\infty}t^{2n+1}e^{-t^2}\dt=0.$
+		\item Pour $n\in\N,$ on pose $I_n=\int_{-\infty}^{+\infty}t^{2n}e^{-t^2}\dt.$
+
+		Démontrer que pour tout $n\in\N,$ $I_{n+1}=\frac{2n+1}{2}I_n.$
+		
+		En déduire l'expression de $I_n$ à l'aide de factorielles.
+\end{enumerate}
+	\item On note $F$ le sous-espace vectoriel des polynômes pairs, et $G$ celui des polynômes impairs.
+
+	Démontrer que $F\perp G.$
+	\item Orthonormaliser la famille $(1,X,X^2)$ par le procédé de Gram-Schmidt.
+	
+	On notera $(P_0, P_1, P_2)$ la famille obtenue.
+	\item Déterminer $\inf_{(a,b)\in\R^2}\int_{-\infty}^{+\infty}(t^2-a-bt)^2e^{-t^2} \dt.$
+\end{enumerate}
+ 
+\subsection*{Partie 3 : construction d'une base orthonormée de $\R_n[X].$}
+
+Soit $n \in \mathbb{N}^*$. Dans cette partie, $\R_n[X]$ est muni du produit scalaire introduit dans la partie 2. On travaille avec les polynômes $K_k$ défini dans la partie $1.$ 
+
+\begin{enumerate}
+  \item Démontrer que pour tout $P\in\R[X]$ et pour tout $k \in\N^*,$ on a :
+	$$\langle P'|K_{k-1}\rangle  \ = \ \langle P|K_k\rangle  $$
+	\item En déduire que pour tout $P\in\R_{n-1}[X],$ on a 
+	$\langle P|K_n\rangle =0.$
+	\item Montrer alors que la famille $(K_0,K_1,\dots,K_n)$ est orthogonale.
+	\item En déduire que $(K_0,K_1,\dots,K_n)$ est une base de $\R_n[X].$
+	\item Soit $k\in\N$.
+	\begin{enumerate}
+		\item Montrer que $\| K_k\|^2=\langle K_k^{(k)}| K_0\rangle .$
+		\item En déduire la valeur de $\|K_k\|$ et donner une base orthonormée de $\R_n[X].$
+	\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie 4 : étude d'un endomorphisme}
+
+Soit $n\in\N^*.$ On considère l'application $f$ définie par :
+$$\forall P\in\R_n[X],\quad f(P)=-P''+2XP'+P.$$
+
+\begin{enumerate}
+	\item Montrer que $f$ est un endomorphisme de $\R_n[X].$
+	\item 
+	\begin{enumerate}
+	\item Démontrer que pour tous $P,Q\in\R_n[X]$, on a $\langle P'|Q'\rangle =\langle f(P)|Q\rangle -\langle P|Q\rangle .$
+	\item En déduire que pour tous $P,Q\in\R_n[X]$, $\langle f(P)|Q\rangle  = \langle P|f(Q)\rangle $.
+	\end{enumerate}
+	\item 
+	\begin{enumerate}
+	\item Calculer $f(K_0)$ et $f(K_1).$
+	\item Soit $k\in\{0,\dots, n\}$. Démontrer que $K'_{k+1}=K_k+f(K_k).$
+	\item Démontrer par récurrence que pour tout $k\in\{0,\dots,n\},$ on a $f(K_k)=(2k+1)K_k.$
+	\item Déterminer enfin une base orthonormée de $\R_n[X]$ formée de vecteurs propres de $f.$
+	\end{enumerate}
+\end{enumerate}
+
+
+
+\end{document}

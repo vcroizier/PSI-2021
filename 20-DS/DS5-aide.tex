@@ -1,4 +1,4 @@
-\documentclass[twoside,french,11pt]{VcCours}
+\documentclass[twoside,french,10pt]{VcCours}
 %cspell:ignore orthonormaliser
 \newcommand{\dx}{\text{d}x}
 \newcommand{\dt}{\text{d}t}
@@ -8,147 +8,92 @@
 \Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir surveillé n°5}
 
 \begin{center}
-\large 
-Le samedi 5 mars 2022
-
-\bigskip
-\textbf{Durée: 3h30}
-
-\bigskip
-\large\underline{\textbf{Calculatrice interdite}}
+	\textbf{\Large Indications}
 \end{center}
-
-\bigskip
-\begin{itemize}
-  \item Le candidat attachera la plus grande importance à la clarté, à la précision et à la concision de la rédaction. Si un candidat est amené à repérer ce qui peut lui sembler être une erreur d'énoncé, il le signalera sur sa copie et devra poursuivre sa composition en expliquant les raisons des initiatives qu'il a été amené à prendre.
-  \item Il est conseillé au candidat de lire l'intégralité du sujet et de repérer les parties qui lui semblent plus abordables.
-  \item Le candidat \fbox{encadrera} ou \underline{soulignera} les résultats.
-  \item Si un étudiant a traité tout ce qu'il savait faire, il peut rendre sa copie et recevoir en contrepartie une feuille
-  contenant des indications. Il composera alors sur une nouvelle copie les questions qu'il souhaite.
-  \end{itemize}
+	
 \separationTitre
 
 \section*{Problème 1}
 
-Dans ce problème, $\R[X]$ désigne l'espace vectoriel des polynômes à coefficients réels et $\R_n[X]$ celui des polynômes à coefficients réels de degré inférieur ou égal à $n$ (entier naturel non nul).
-
-\medskip
-On rappelle aussi la valeur de l'intégrale de Gauss :
-$$\int_{-\infty}^{+\infty}e^{-x^2} \dx=\sqrt{\pi}=\pi^{1/2}$$
-Les parties 1 et 2 sont indépendantes. Les parties 3 et 4 utilisent les résultats précédents.
-
 \subsection*{Partie 1 : polynômes d'Hermite}
 
-On note $w$ l'application de $\R$ dans $\R$ définie par :
-$\ \forall x\in\R,\quad w(x)=e^{-x^2}.$
-
-Pour tout $n\in\N,$ on note alors $H_n$ l'application  de $\R$ dans $\R$ définie par :
-$$\forall x\in\R,\qquad H_n(x)=(-1)^nw^{(n)}(x)e^{x^2}$$
-où $w^{(n)}$ désigne la dérivée $n$-ième de $w$. En particulier, $H_0(x)=1.$
-
 \begin{enumerate}
-	\item Calculer pour tout $x\in\R,$ $H_1(x), H_2(x)$ et $H_3(x).$
-	\item Montrer que pour tout $n\in\N$ et pour tout $x\in\R$, on a :
-	$$H_{n+1}(x)=2xH_n(x)-H'_n(x).$$
-	%En déduire l'expression de $H_4(x).$
-	\item En déduire que pour tout $n\in\N$, $H_n$ est un polynôme et déterminer son degré et son terme dominant.
-	\item Démontrer que pour tout $n\in\N$ et tout $x\in\R$, on a $H_n(-x)=(-1)^nH_n(x).$\\
-	En déduire, en fonction de $n$, la parité de $H_n.$
-	
+	\item Calculer les dérivées successives de $w$.
+	\item Calculer $H_n'(x)+H_{n+1}(x)$.
+	\item Récurrence, degré et terme dominant d'une somme de deux polynômes.
+	\item Utiliser la parité de $w$ pour en déduire celle de $w^{(n)}$.
 \end{enumerate}
 
 \subsection*{Partie 2 : un produit scalaire sur $\R[X]$}
 
-Pour tous $P,Q\in\R[X],$ on pose :
-$$\langle P|Q\rangle=\int_{-\infty}^{+\infty}P(t)Q(t)e^{-t^2}\dt$$
-Pour $P\in\R[X],$ on note $\|P\|=\sqrt{\langle P|P\rangle }.$
 \begin{enumerate}
-	\item Justifier l'existence de $\langle P|Q\rangle $ pour tous $P,Q\in\R[X].$
-	\item Démontrer que $(P,Q)\longmapsto \langle P|Q\rangle $ définit un produit scalaire sur $\R[X].$
-	\item
+	\item $P(t)Q(t)\equi_{+\infty}ct^d$ le produit des monômes dominants, croissances comparées.
+	\item Définition de produit scalaire...
+	\item 
 	\begin{enumerate}
-		\item Que valent $\|1\|$ et $\langle X| 1\rangle $ ?
-		\item Démontrer que pour tout $n\in\N,$ $\int_{-\infty}^{+\infty}t^{2n+1}e^{-t^2}\dt=0.$
-		\item Pour $n\in\N,$ on pose $I_n=\int_{-\infty}^{+\infty}t^{2n}e^{-t^2}\dt.$
-
-		Démontrer que pour tout $n\in\N,$ $I_{n+1}=\frac{2n+1}{2}I_n.$
-		
-		En déduire l'expression de $I_n$ à l'aide de factorielles.
-\end{enumerate}
-	\item On note $F$ le sous-espace vectoriel des polynômes pairs, et $G$ celui des polynômes impairs.
-
-	Démontrer que $F\perp G.$
-	\item Orthonormaliser la famille $(1,X,X^2)$ par le procédé de Gram-Schmidt.
+		\item Utiliser l'intégrale de Gauss rappelée au début du sujet.
 	
-	On notera $(P_0, P_1, P_2)$ la famille obtenue.
-	\item Déterminer $\inf_{(a,b)\in\R^2}\int_{-\infty}^{+\infty}(t^2-a-bt)^2e^{-t^2} \dt.$
+		Pour $\langle X|1\rangle$, calcul direct avec une primitive.
+		\item Utiliser un argument de parité, ou alors poser $t=-u$.
+		\item Intégration par parties. Puis récurrence.
+	\end{enumerate}
+	\item Utiliser un argument de parité, ou alors poser $t=-u$.
+	\item Suivre la méthode, certain produits scalaires sont nuls grâce à la question précédente.
+	\item Y voir $\inf_{P\in F}||X^2-P||^2$ où $F$ est un sev à reconnaître.
 \end{enumerate}
  
 \subsection*{Partie 3 : construction d'une base orthonormée de $\R_n[X].$}
 
-Soit $n \in \mathbb{N}^*$. Dans cette partie, $\R_n[X]$ est muni du produit scalaire introduit dans la partie 2. On travaille avec les polynômes de Hermite $H_k$ défini dans la partie $1.$ 
-
 \begin{enumerate}
-  \item Démontrer que pour tout $P\in\R[X]$ et pour tout $k \in\N^*,$ on a :
-	$$\langle P'|H_{k-1}\rangle  \ = \ \langle P|H_k\rangle  $$
-	\item En déduire que pour tout $P\in\R_{n-1}[X],$ on a 
-	$\langle P|H_n\rangle =0.$
-	\item Montrer alors que la famille $(H_0,H_1,\dots,H_n)$ est orthogonale.
-	\item En déduire que $(H_0,H_1,\dots,H_n)$ est une base de $\R_n[X].$
-	\item Soit $k\in\N$.
+	\item Intégration par parties et utiliser Partie 1 : 2).
+	\item Itérer la relation précédente.
+	\item Utiliser la question précédente. 
+	\item Famille orthogonale...
+	\item
 	\begin{enumerate}
-		\item Montrer que $\| H_k\|^2=\langle H_k^{(k)}| H_0\rangle .$
-		\item En déduire la valeur de $\|H_k\|$ et donner une base orthonormée de $\R_n[X].$
+		\item Itérer la formule du 1).
+		\item Utiliser Partie 1 : 3).
 	\end{enumerate}
 \end{enumerate}
 
 \subsection*{Partie 4 : étude d'un endomorphisme}
 
-Soit $n\in\N^*.$ On considère l'application $f$ définie par :
-$$\forall P\in\R_n[X],\quad f(P)=-P''+2XP'+P.$$
-
 \begin{enumerate}
-	\item Montrer que $f$ est un endomorphisme de $\R_n[X].$
+	\item Penser à justifier que $f(P)\in\R_{n}[X]$.
 	\item 
 	\begin{enumerate}
-	\item Démontrer que pour tous $P,Q\in\R_n[X]$, on a $\langle P'|Q'\rangle =\langle f(P)|Q\rangle -\langle P|Q\rangle .$
-	\item En déduire que pour tous $P,Q\in\R_n[X]$, $\langle f(P)|Q\rangle  = \langle P|f(Q)\rangle $.
+		\item Intégration par parties.
+		\item \ldots
 	\end{enumerate}
-	\item 
+	\item  
 	\begin{enumerate}
-	\item Calculer $f(H_0)$ et $f(H_1).$
-	\item Soit $k\in\{0,\dots, n\}$. Démontrer que $H'_{k+1}=H_k+f(H_k).$
-	\item Démontrer par récurrence que pour tout $k\in\{0,\dots,n\},$ on a $f(H_k)=(2k+1)H_k.$
-	\item Déterminer enfin une base orthonormée de $\R_n[X]$ formée de vecteurs propres de $f.$
+		\item Calcul. 
+		\item Utiliser Partie 1 : 2)
+		\item \ldots
+		\item Que sais-t-on des $H_k$ ?
 	\end{enumerate}
 \end{enumerate}
 
 \section*{Problème 2}
 
-On admet dans ce problème que : $\sum_{k=1}^{+ \infty} \dfrac{1}{k^2} = \dfrac{\pi^2}{6} \cdot$
-
 \subsection*{Partie 1}
-Soit $x\in \R$. On note, lorsque cela a un sens, $H(x)=\int_0^1\frac{t^x\ln(t)}{t-1}\dt$.
+
 \begin{enumerate}
-\item Démontrer que pour $s>-1$, l'intégrale $J_s=\int_0^1t^s\ln(t)\dt$ existe et déterminer sa valeur.
-\item \underline{Étude de la fonction H}
+\item Intégration par parties.
+\item
 \begin{enumerate}
-\item Montrer que l'ensemble de définition de la fonction $H$ est $D_H=]-1,+\infty[$.
-\item Montrer que $H$ est monotone sur $D_H$.
-%\item Montrer que pour tout réel $\alpha >0$, la fonction $t\longmapsto\frac{t^\alpha(\ln(t))^2}{1-t}$ est prolongeable en une fonction bornée sur le segment $[0,1]$.
-\item Démontrer que $H$ est de classe ${\cal C}^1$ sur $D_H$. Retrouver alors la monotonie de $H$.
-\item À l'aide d'une majoration judicieuse, démontrer que $\lim_{x\to +\infty}H(x)=0$.
-\item Démontrer que :
-\[\forall x>-1,\quad H(x)-H(x+1)=\frac{1}{(x+1)^2}\]
-\item Déterminer alors un équivalent simple de $H(x)$ lorsque $x$ tend vers $-1$ par valeurs supérieures.
-\item Soit $x>-1$.
+	\item Utiliser des équivalents\ldots
+	\item Pour $x\leq y$, comparer $H(x)$ et $H(y)$. 
+	\item Dérivation sous le signe intégrale.
+	\item Montrer que $g:x\longmapsto\frac{t\ln(t)}{t-1}$ est bornée sur $]0;1[$.
+	\item Simplifier par $t-1$.
+	\item $\lim_{x\to-1}H(x+1)$ ?
+	\item 
 \begin{enumerate}
-\item Justifier la convergence de la série $\sum_{k\geq 1}\frac{1}{(x+k)^2} \cdot$
-\item Prouver que pour tout $n\in \N^*$, 
-\[H(x)=\sum_{k=1}^n\frac{1}{(x+k)^2}+H(x+n)\]
-\item En déduire que :
-\[H(x)=\sum_{k=1}^{+ \infty} \frac{1}{(x+k)^2}\]
-\item Calculer $H(0)$ et $H(1)$.
+		\item Équivalent.
+		\item Grâce à (e) : récurrence, ou alors utiliser un télescopage.
+		\item Passage à la limite.
+		\item $\sum_{k=1}^{+\infty}\frac{1}{k^2}$ donné au début de l'énoncé.
 \end{enumerate}
 \end{enumerate}
 \end{enumerate}
@@ -156,41 +101,34 @@ Soit $x\in \R$. On note, lorsque cela a un sens, $H(x)=\int_0^1\frac{t^x\ln(t)}{
 \subsection*{Partie 2}
 
 \begin{enumerate}
-\item Prouver que pour tout $x>-1$ et tout entier naturel $k$ non nul,
-\[\frac{1}{(x+k+1)^2}\leq \int_k^{k+1}\frac{dt}{(x+t)^2}\leq \frac{1}{(x+k)^2}\]
-\item Déterminer un équivalent de $H(x)$ lorsque $x$ tend vers $+\infty$.
-\item Pour tout entier naturel $n$, on pose $u_n=H(n)$.
+\item \ldots 
+\item Comparaison série intégrale.
+\item 
 \begin{enumerate}
-\item Étudier la convergence des séries $\sum_{n\geq 0}u_n$ et $\sum_{n\geq 0}(-1)^nu_n$.
-\item Pour $n\in\N$ et pour $t\in]0,1[,$ on pose $f_n(t)=(-1)^n\frac{t^{n}\ln(t)}{t-1} \cdot$\\
-Montrer que $\sum f_n$ converge simplement sur $]0,1[$ et calculer sa somme $S$.
-\item Démontrer alors que
-$\sum_{n=0}^{+\infty}(-1)^nu_n=\int_0^1\frac{\ln(v)}{v^2-1}\;dv.$
-\item Donner la valeur de cette intégrale en fonction de $H\left (-\frac{1}{2}\right )$.
+	\item Équivalent pour l'un, critère spécial pour l'autre.
+	\item \ldots
+	\item Théorème de convergence dominée.
+	\item Poser $v=\sqrt{u}$.
 \end{enumerate}
 \end{enumerate}
 
 \subsection*{Partie 3}
 
-Pour tout entier naturel $k\geq 2$, on note :
-\[Z_k=\sum_{p=1}^{+\infty}\frac{1}{p^k}\]
 \begin{enumerate}
-\item Pour tout couple d'entiers naturels $(p,q)$, on pose $I_{p,q}=\int_0^1t^p(\ln(t))^q\dt$ et on admettra que cette intégrale existe.
-\begin{enumerate}
-\item Démontrer que si $q\geq 1$, $I_{p,q}=-\frac{q}{p+1}I_{p,q-1}$.
-\item En déduire la valeur de $I_{p,q}$.
-\end{enumerate}
 \item
 \begin{enumerate}
-\item Justifier l'existence pour tout $n\in \N$ de $B_n=\int_0^1 \frac{(\ln(t))^{n+1}}{t-1}\dt$.
-\item Exprimer $B_n$ à l'aide des intégrales $I_{p,q}$.
-
-\indication{On pourra utiliser la série de terme général $t^p$.}
-\item Prouver enfin que pour tout $n\in \N,\ B_n=(-1)^n(n+1)!Z_{n+2}$.
+	\item Intégration par parties.
+	\item Itérer la relation (récurrence sur $q$).
 \end{enumerate}
-\item En déduire alors que :
-\[\forall x\in ]-1,1[,\ H(x)=\sum_{k=0}^{+\infty}(-1)^k(k+1)Z_{k+2}x^k\]
-\item Quel est le rayon de convergence de la série entière dont $H$ est la somme sur $]-1,1[$?
+\item 
+\begin{enumerate}
+	\item \ldots
+	\item Indication du sujet avec intégration terme à terme.
+	\item Utiliser 1)(b).
+\end{enumerate}
+\item Revenir à la définition de $H(x)$ et remplacer $t^x$ à l'aide la série 
+exponentielle.
+\item Si $x=-1$ ?
 \end{enumerate}
 
 \end{document}

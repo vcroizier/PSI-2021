@@ -5,6 +5,7 @@
 \renewcommand{\trou}[1]{{\color{white}#1}}
 %\renewcommand{\trou}[1]{{\color{blue}#1}}
 
+%cSpell:ignore diagonalisabilité trigonalisabilité
 \begin{document}
 
 \Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Chapitre 17 : Équations différentielles}
@@ -12,7 +13,7 @@
 \tableofcontents
 \separationTitre
 
-
+\newpage
 Dans tout le chapitre, $I$ est un intervalle de $\mathbb{R}$ contenant au moins deux éléments. La notation $\mathbb{K}$ désignera $\mathbb{R}$ ou $\mathbb{C}$ et $n,p$ sont deux entiers naturels non nul.
 
 \section{Équations différentielles scalaires linéaires d'ordre \texorpdfstring{$1$}{1}}
@@ -35,7 +36,7 @@ $$ (1+t^2)y'+ty=t$$
 \end{itemize}
 \end{Remarques}{}
 
-\medskip
+
 
 \begin{Definition}{} Reprenons les notations de la définition précédente.
 
@@ -49,7 +50,7 @@ Si la fonction $\alpha$ ne s'annule pas sur $I$, l'équation $(\mathcal{E})$ est
 $$ y+ay'=b$$
 où $a = \dfrac{\beta}{\alpha}$ et $b = \dfrac{\gamma}{\alpha} \cdot$
 
-\medskip
+
 
 On se ramène à ce cas pour le moment.
 
@@ -68,10 +69,9 @@ où :
 \begin{Theoreme}{Cauchy-Lipschitz linéaire} Si $a$ et $b$ sont des fonctions continues sur $I$ alors le problème de Cauchy précédent admet une unique solution.
 \end{Theoreme}
 
-\begin{Remarque}{} L'unicité d'une solution vérifiant la condition $y(t_0)=y_0$ signifie que si deux solutions coincident en un point alors elles coïncident partout. Autrement dit, les courbes intégrales ne se coupent pas.
+\begin{Remarque}{} L'unicité d'une solution vérifiant la condition $y(t_0)=y_0$ signifie que si deux solutions coïncident en un point alors elles coïncident partout. Autrement dit, les courbes intégrales ne se coupent pas.
 \end{Remarque}
 
-\pagebreak
 
 \begin{center}
 \textbf{Courbes intégrales associées à $y'+ay+1=0$ }
@@ -109,17 +109,17 @@ où $\lambda \in \mathbb{K}$.
 
 \begin{Demonstration}{}
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Demonstration}
 
 \begin{Remarque}{} En notant $f_h=\exp \circ (-A)$, l'ensemble des solutions $\mathcal{S}_H$ de $(\mathcal{E}_H)$ est défini par :
-$$ \mathcal{S}_H = \lbrace \lambda f_h \, \vert \, \lambda \in \mathbb{K} \rbrace = \textrm{Vect}_{\mathbb{K}}(f_h)$$
+$$ \mathcal{S}_H = \lbrace \lambda f_h \, \vert \, \lambda \in \mathbb{K} \rbrace = \Vect_{\mathbb{K}}(f_h)$$
 \end{Remarque}
 
 \begin{Exemple} Résolvons l'équation différentielle suivante sur $]-1, + \infty[$ :
 $$ y'+ \frac{y}{1+t}= 0 $$
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Exemple}
 
 \subsection{Résolution de l'équation avec une solution particulière}
@@ -137,55 +137,50 @@ où $\lambda \in \mathbb{K}$.
 
 \begin{Demonstration}{}
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Demonstration}
 
 \begin{Remarque}{} En notant $f_h=\exp \circ (-A)$ et $f_p$ une solution particulière de $E$, l'ensemble des solutions $\mathcal{S}$ de $(\mathcal{E})$ est défini par :
 $$ \mathcal{S} = \lbrace f_p + \lambda f_h  \, \vert \, \lambda \in \mathbb{K} \rbrace$$
 On utilise parfois la notation affine :
-$$  \mathcal{S} = f_p + \textrm{Vect}_{\mathbb{K}}(f_h)$$
-qui signifie que tout élément de $S$ s'écrit comme $f_p$ plus un élément de $\textrm{Vect}_{\mathbb{K}}(f_h)$.
+$$  \mathcal{S} = f_p + \Vect_{\mathbb{K}}(f_h)$$
+qui signifie que tout élément de $S$ s'écrit comme $f_p$ plus un élément de $\Vect_{\mathbb{K}}(f_h)$.
 \end{Remarque}
 
-\medskip
+
 
 \begin{Exemple} Résolvons l'équation différentielle suivante sur $]-1, + \infty[$ :
 $$ y'+ \frac{y}{1+t}= \dfrac{1}{1+t} $$
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Exemple}
 
 \subsection{Comment déterminer une solution particulière ?}
 
-\medskip
 
-\textbf{Méthode 1 : cas où $a$ est constante non nulle}
+
+\subsubsection*{Méthode 1 : cas où $a$ est constante non nulle}
 
 \begin{enumerate}
 \item \emph{Technique d'annulation de la dérivée de Mme Boivin} : si $b$ est aussi constante, $t \mapsto \dfrac{b}{a}$ est une solution évidente.
 \item Si $b$ est une fonction polynômiale de degré supérieur ou égal à $1$, on peut chercher comme solution particulière une fonction polynomiale même degré que $b$.
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exemple} Résolvons l'équation différentielle suivante :
 $$ y'-y = t^2+2t-3$$
 
-\vspace{5cm}
+\newpage
+\vspace*{5cm}
 \end{Exemple}
 
-\pagebreak
-
-$\phantom{test}$
-
-\vspace{2cm}
-
-\begin{ApplicationDirecte} Résoudre l'équation différentielle suivante : $y'-2y=5t+2$.
+\begin{ApplicationDirecte}{} Résoudre l'équation différentielle suivante : $y'-2y=5t+2$.
 \end{ApplicationDirecte}
 
-\medskip
 
-\textbf{Méthode 2 : variation de la constante}
+
+\subsubsection*{Méthode 2 : variation de la constante}
 
 Considérons l'équation différentielle linéaire du premier ordre suivante : 
 $$(\mathcal{E}) \quad y'+a y= b $$
@@ -193,30 +188,31 @@ où $a : I \rightarrow \mathbb{K}$ et $b : I \rightarrow \mathbb{K}$ sont des fo
 
 Les solutions de l'équation homogène associée sont les fonctions définies sur $I$ de la forme $t \mapsto \lambda \exp \circ(-A)$. Il suffit alors de chercher une solution particulière sous la forme $t \mapsto \lambda(t) e^{-A(t)}$ où $\lambda : I \rightarrow \mathbb{K}$ est une fonction dérivable sur $I$.
 
-\medskip
+
 
 \begin{Exemple} Résoudre $y'+y= \ch(t)$.
 
-\vspace{12cm}
+\newpage
+%\vspace*{12cm}
 \end{Exemple}
 
-\begin{ApplicationDirecte} Résoudre, sur $]0,\pi[$, l'équation différentielle $y' + \dfrac{\cos(t)}{\sin(t)}y=1$
+\begin{ApplicationDirecte}{}Résoudre, sur $]0,\pi[$, l'équation différentielle $y' + \dfrac{\cos(t)}{\sin(t)}y=1$
 \end{ApplicationDirecte}
 
-\medskip
 
-\textbf{Méthode 3 : principe de superposition}
+
+\subsubsection*{Méthode 3 : principe de superposition}
 
 Soient $b_1 : I \rightarrow \mathbb{K}$ et $b_2 : I \rightarrow \mathbb{K}$ deux fonctions continues sur $I$ et $(\lambda_1, \lambda_2) \in \mathbb{K}^2$.
 
 Si $y_1$ (resp. $y_2$) est une solution de $y'+ay=b_1$ (resp. $y'+ay=b_2$) alors $\lambda_1 y_1 + \lambda_2 y_2$ est une solution de $y'+ay=\lambda_1 b_1+ \lambda_2 b_2$.
 
-\medskip
 
-\pagebreak
+
+
 \begin{Exemple} Résoudre, sur $\mathbb{R}$, l'équation $y'+y = \cos(t)$.
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Exemple}
 
 
@@ -229,22 +225,22 @@ où $\alpha$, $\beta$ et $\gamma$ trois fonctions définies sur $I$. Si $\alpha$
 \item On résout $(\mathcal{E})$ sur les plus grands (au sens de l'inclusion) intervalles $J \subset I$ où $a$ ne s'annule pas.
 \item On raisonne ensuite par analyse-synthèse : 
 \begin{itemize}
-\item On suppose l'existence d'une solution $y$ de $(\mathcal{E})$ sur $I$. On connait son expression en tout point où $a$ ne s'annule pas.
+\item On suppose l'existence d'une solution $y$ de $(\mathcal{E})$ sur $I$. On connaît son expression en tout point où $a$ ne s'annule pas.
 \item Cette solution est continue et dérivable en tout point de $I$ : cela donne des conditions sur $y$.
 \item La synthèse permet d'obtenir l'ensemble des solutions (si il y en a : il peut tout se passer !).
 \end{itemize}
 \end{enumerate}
 
-\medskip
+
 
 \begin{Exemple} Résolvons $ty'-y=t^2$ sur $\mathbb{R}$.
-\vspace{10cm}
+\vspace*{10cm}
 \end{Exemple}
 
 \phantom{test}
 
-\vspace{4cm}
-\begin{ApplicationDirecte} Résoudre sur $\mathbb{R}$ l'équation :
+\vspace*{4cm}
+\begin{ApplicationDirecte}{}Résoudre sur $\mathbb{R}$ l'équation :
   \[
   (\e^{t} - 1)y' + \e^{t} y = 1
   \]
@@ -345,7 +341,10 @@ est un isomorphisme d'espaces vectoriels.
 
 \begin{Demonstration}{}
 
-\vspace{8cm}
+\newpage
+
+%\vspace*{8cm}
+\vspace*{3cm}
 \end{Demonstration}
 
 \begin{Exemple} Tout système de la forme :
@@ -356,11 +355,11 @@ x_2'= c x_1+dx_2 \\
 où $a$, $b$, $c$ et $d$ sont des fonctions continues de $I$ dans $\mathbb{K}$, a un ensemble solution qui est un plan vectoriel.
 \end{Exemple}
 
-\begin{Remarque}{} Si on connait une famille \emph{libre} de solutions de $E$, $(X_1, \ldots, X_n)$, alors cette famille est génératrice de $\mathcal{S}_H$ (argument de dimension) et ainsi :
-$$ \mathcal{S}_H= \textrm{Vect}_{\mathbb{K}}(X_1, \ldots, X_n) = \lbrace \lambda_1 X_1 + \cdots + \lambda_n X_n \, \vert \, (\lambda_1, \ldots, \lambda_n) \in \mathbb{K}^n \rbrace$$
+\begin{Remarque}{} Si on connaît une famille \emph{libre} de solutions de $E$, $(X_1, \ldots, X_n)$, alors cette famille est génératrice de $\mathcal{S}_H$ (argument de dimension) et ainsi :
+$$ \mathcal{S}_H= \Vect_{\mathbb{K}}(X_1, \ldots, X_n) = \lbrace \lambda_1 X_1 + \cdots + \lambda_n X_n \, \vert \, (\lambda_1, \ldots, \lambda_n) \in \mathbb{K}^n \rbrace$$
 \end{Remarque}
 
-\begin{ApplicationDirecte} Résoudre le système différentiel suivant : 
+\begin{ApplicationDirecte}{}Résoudre le système différentiel suivant : 
 $$ \left\lbrace \begin{array}{lclll}
 x_1'= (2-t)x_1+(t-1) x_2 \\
 x_2'= 2(1-t)x_1 +(2t-1)x_2 \\
@@ -381,13 +380,13 @@ où $X_h$ est une solution de l'équation homogène associée à $(\mathcal{E}$)
 
 
 \begin{Demonstration}{}
-\vspace{4cm}
+\vspace*{4cm}
 \end{Demonstration}
 
 \begin{Remarque}{} L'ensemble des solutions $\mathcal{S}$ de $(\mathcal{E})$ est défini par :
 $$ \mathcal{S} = \lbrace X_p + \lambda_1 Y_1 + \cdots + \lambda_n Y_n  \, \vert \, (\lambda_1, \ldots, \lambda_n) \in \mathbb{K}^n \rbrace$$
 où $(Y_1, \ldots, Y_n)$ est une base de $\mathcal{S}_H$. En utilisant la notation affine, on a :
-$$  \mathcal{S} =X_p + \textrm{Vect}_{\mathbb{K}}(Y_1, \ldots, Y_n)$$
+$$  \mathcal{S} =X_p + \Vect_{\mathbb{K}}(Y_1, \ldots, Y_n)$$
 qui signifie que tout élément de $S$ s'écrit comme $X_p$ plus un élément de $\mathcal{S}_H$.
 \end{Remarque}
 
@@ -401,9 +400,9 @@ Dans ce cas, il existe une matrice $D \in \mathcal{M}_n(\mathbb{K})$ diagonale e
 $$ A=PDP^{-1}$$
 On a $D= \textrm{diag}(\lambda_1, \ldots, \lambda_n)$ où les $\lambda_i$ sont les valeurs propres de $A$ (éventuellement avec répétitions).
 
-\medskip
 
-\textbf{Cas homogène :} Notons $\mathcal{S}_H$ l'ensemble des solutions de $(\mathcal{E}_H)$. Soit $X : I \rightarrow \mathbb{K}$ une application dérivable. Alors :
+
+\subsubsection*{Cas homogène :} Notons $\mathcal{S}_H$ l'ensemble des solutions de $(\mathcal{E}_H)$. Soit $X : I \rightarrow \mathbb{K}$ une application dérivable. Alors :
 \begin{align*}
 X \in \mathcal{S}_H & \Longleftrightarrow  X'=AX \\
 & \Longleftrightarrow X'=PDP^{-1} X\\
@@ -424,7 +423,7 @@ X=PY \\
 \end{align*}
 Il suffit alors de calculer $PY$ pour obtenir l'ensemble des solutions $\mathcal{S}_H$.
 
-\begin{Remarque}{} Il n'est pas nécessaire de connaitre $P^{-1}$ dans ce cas.
+\begin{Remarque}{} Il n'est pas nécessaire de connaître $P^{-1}$ dans ce cas.
 \end{Remarque}
 
 \begin{Exemple} Résolvons le système différentiel linéaire d'ordre $1$ à coefficients constants suivant : 
@@ -433,10 +432,12 @@ $$ \left\lbrace \begin{array}{lll}
     y' & = x + y \\
     \end{array}\right.$$
     
-    \vspace{12cm}
+    \vspace*{12cm}
 \end{Exemple}
 
-\begin{ApplicationDirecte} Résoudre le système différentiel suivant :
+\newpage
+
+\begin{ApplicationDirecte}{} Résoudre le système différentiel suivant :
 $$ \left\lbrace \begin{array}{lll}
      x'&=y+z \\
     y' & =x \\
@@ -444,11 +445,11 @@ $$ \left\lbrace \begin{array}{lll}
     \end{array}\right.$$
 
 \end{ApplicationDirecte}
-\medskip
 
-\textbf{Cas non homogène :} 
+
+\subsubsection*{Cas non homogène :} 
 \begin{itemize}
-\item Si on connaît une solution particulière, on connait alors l'ensemble des solutions d'après la proposition (\ref{sol}) (il suffit de résoudre le système homogène).
+\item Si on connaît une solution particulière, on connaît alors l'ensemble des solutions d'après la proposition (\ref{sol}) (il suffit de résoudre le système homogène).
 \item Sinon, on utilise la même méthode que précédemment mais en gardant le second membre $B$ :
 \begin{align*}
 X \in \mathcal{S} & \Longleftrightarrow  X'=AX+B \\
@@ -458,28 +459,28 @@ X \in \mathcal{S} & \Longleftrightarrow  X'=AX+B \\
 & \Longleftrightarrow \left\lbrace \begin{array}{l}
 Y=P^{-1}X \hbox{ et }  C=P^{-1}B\\
 Y'=DY+C \\
-\end{array}\right. \\
+\end{array}\right. \hbox{ où } Y= ~^t(y_1, \ldots, y_n) \hbox{ et } C= ~^t(c_1, \ldots, c_n)\\
 & \Longleftrightarrow \left\lbrace \begin{array}{l}
 Y=P^{-1}X \hbox{ et }  C=P^{-1}B\\
 \forall i \in \iii{1}{n}, \; \forall t \in  \mathbb{R}, \, y_i'(t)=\lambda_i y_i(t) + c_i(t)  \\
-\end{array}\right. \qquad \qquad \hbox{ où } Y= ~^t(y_1, \ldots, y_n) \hbox{ et } C= ~^t(c_1, \ldots, c_n)
+\end{array}\right.
 \end{align*}
 Chacune des équations différentielles est une équation différentielle linéaire du premier ordre dont on sait trouver les solutions (en utilisant par exemple la méthode de la variation de la constante).
 \end{itemize}
 
 \begin{Remarque}{} Dans le cas précédent, il devient nécessaire de déterminer expliciter $P^{-1}$.
 \end{Remarque}
-\medskip
 
-\textbf{Cas où la matrice est diagonalisable dans $\mathbb{C}$} 
+
+\subsubsection*{Cas où la matrice est diagonalisable dans $\mathbb{C}$} 
 
 Dans ce cas, on diagonalise dans $\mathbb{C}$ et si l'on s'intéresse aux solutions à valeurs réelles, on cherche des conditions sur les constantes pour que les solutions vérifient cela.
 
-\subsection{Deuxième cas : si $A$ est trigonalisable}
+\subsection{Deuxième cas : si \texorpdfstring{$A$}{A} est trigonalisable}
 
 Dans ce cas, on adapte la méthode utilisée dans le cas où la matrice est diagonalisable. La détermination de $y_1$, $\ldots$, $y_n$ devient plus pénible : on trouve facilement $y_n$ (équation différentielle linéaire homogène), puis $y_{n-1}$ en utilisant l'expression de $y_n$ et on continue de proche en proche. 
 
-\medskip
+
 
 \begin{Exemple} Résolvons le système différentiel linéaire d'ordre $1$ à coefficients constants suivant : 
 $$ \left\lbrace \begin{array}{lll}
@@ -488,20 +489,18 @@ $$ \left\lbrace \begin{array}{lll}
     \end{array}\right.$$
 \end{Exemple}
 
-\vspace{10cm}
+\vspace*{10cm}
 
-\newpage
+\vspace*{10cm}
 
-$\phantom{test}$
 
-\vspace{6cm}
-\section{Équations différentielles linéaires scalaires d'ordre $2$}
+\section{Équations différentielles linéaires scalaires d'ordre \texorpdfstring{$2$}{2}}
 
 On s'intéresse dans cette section à une équation différentielle linéaire d'ordre deux de la forme :
 $$ (\mathcal{E}) \quad x''+a(t)x'+b(t)=c(t)$$
 où $a$, $b$ et $c$ sont trois fonctions continues de $I$ dans $\mathbb{K}$ et $x : I \rightarrow \mathbb{K}$ est l'inconnue (fonction $2$ fois dérivable sur $I$).
 
-\medskip
+
 
 Remarquons qu'une solution de $(\mathcal{E})$ est alors nécessairement de classe $\mathcal{C}^2$ sur $I$.
 
@@ -564,7 +563,7 @@ $$ x''(t)= -a(t)x'(t)-b(t)x(t)+c(t)$$
 et ainsi $x$ est solution de $(E)$ sur $I$.
 \end{itemize}
 
-\medskip
+
 
 Le résultat prouvé est donc le suivant :
 
@@ -575,22 +574,22 @@ $$ \begin{pmatrix}
 x \\
 x' \\
 \end{pmatrix}$$
-où $x$ est solution de $(\mathcal{E})$. En particulier, les solutions de $(E)$ sont les premières fonctions coordonées des solutions de $X'=A(t)X+B(t)$.
+où $x$ est solution de $(\mathcal{E})$. En particulier, les solutions de $(E)$ sont les premières fonctions coordonnées des solutions de $X'=A(t)X+B(t)$.
 \end{Proposition}
 
-\begin{retenir} Pour résoudre une équation différentielle linéaire d'ordre deux, on peut se ramener à un système d'équation différentiel linéaire d'ordre $1$ (que l'on a étudié dans les sections précédentes).
-\end{retenir}
+\begin{Remarque}{}Pour résoudre une équation différentielle linéaire d'ordre deux, on peut se ramener à un système d'équation différentiel linéaire d'ordre $1$ (que l'on a étudié dans les sections précédentes).
+\end{Remarque}
 
 \begin{Exemple} Donnons le système différentiel associé à l'équation suivante :
 $$ x''+tx'+t^2x=t^3$$
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Exemple}
 
 \begin{Remarque}{} On peut procéder de la même manière pour associer une équation différentielle linéaire d'ordre $n$ à un système différentiel de taille $n$ : voir TD.
 \end{Remarque}
 
-\medskip
+
 
 Le théorème de Cauchy-Lipschitz linéaire connu dans dans le cas des systèmes différentiels s'adapte donc aux équations du même type que $(\mathcal{E})$.
 
@@ -618,11 +617,11 @@ On s'intéresse dans cette sous-section à une équation différentielle linéai
 $$ (\mathcal{E}) \quad x''+ax'+b=c(t)$$
 où $a$ et $b$ sont deux réels et $c$ une fonction continue de $I$ dans $\mathbb{K}$.
 
-\medskip
+
 
 Notons $(\mathcal{E}_H)$ l'équation homogène associée à $(\mathcal{E})$ et $\mathcal{S}_H$ l'ensemble des solutions associé.
 
-\medskip
+
 
 Le cours de première année permet de déterminer $\mathcal{S}_H$ : il suffit pour cela de s'intéresser à l'équation caractéristique, notée $(EC)$, associée à $(\mathcal{E}_H)$ :
 $$ z^2+az+b=0 \hbox{ où } z \in \mathbb{K}$$
@@ -648,7 +647,7 @@ Le polynôme caractéristique de cette matrice est $X^2+aX+b$ ce qui justifie la
 
 \begin{Exemple} Résolvons sur $\mathbb{R}$ l'équation différentielle $y''+2y'+2=0$.
 
-\vspace{4cm}
+\vspace*{4cm}
 \end{Exemple}
 
 \subsection{Obtention d'une solution particulière pour les équations à coefficients constants}
@@ -656,7 +655,7 @@ On s'intéresse dans cette section à une équation différentielle linéaire d'
 $$ (\mathcal{E}) \quad x''+ax'+b=c(t)$$
 où $a$ et $b$ sont deux réels et $c$ une fonction continue de $I$ dans $\mathbb{K}$.
 
-\medskip
+
 
 Voici quelques méthodes pour déterminer une solution particulière : 
 
@@ -675,21 +674,16 @@ en se ramenant au cas précédent puis on considère la partie réelle ou imagin
 
 \begin{Exemple} Résoudre $y'' + 3y' + 2y = \ch(t)$.
 
-\vspace{10cm}
+\vspace*{13cm}
 \end{Exemple}
-
-\newpage
-
-$\phantom{test}$
-
-\vspace{10cm}
 
 \begin{Exemple} Résoudre $y''+2y'+y= \cos(t)$.
-
-\vspace{10cm}
+  
+  \newpage
+\vspace*{4cm}
 \end{Exemple}
 
-\begin{ApplicationDirecte} Déterminer les solutions réelles de l'équation :
+\begin{ApplicationDirecte}{}Déterminer les solutions réelles de l'équation :
   \[
    y'' - 3y' + 2y = \sin(2x)
   \]
@@ -697,13 +691,13 @@ $\phantom{test}$
 \subsection{Que faire si le second membre n'est pas \og simple \fg ? (pleurer n'est pas une solution)}
 Dans ce cas, d'après le programme, une indication doit être donnée.
 
-\medskip
+
 
 \begin{Exemple} Résoudre sur $\mathbb{R}$ l'équation différentielle suivante :
 $$ x''+6x'+9x= \dfrac{e^{-3t}}{1+t^2}$$
 On cherchera une solution sous la forme $t \mapsto b(t)e^{-3t}$ où $b$ est une fonction dérivable sur $\mathbb{R}$.
 
-\vspace{11cm}
+\vspace*{11cm}
 \end{Exemple}
 
 %\begin{Remarque}{} On verra dans le TD quelques méthodes de résolution dans des cas particuliers.
@@ -714,24 +708,22 @@ Si l'équation donnée est de la forme :
 $$ \alpha(t) y''+ \beta(t) y'+ \gamma(t) = \delta(t)$$
 et que la fonction $\alpha$ s'annule sur $I$ : on adapte la méthode donnée dans le cas de l'ordre $1$ : la nuance est d'utiliser (probablement) la dérivabilité d'ordre deux de (ou des) solution(s) éventuelle(s) (dans la phase d'analyse).
 \section{Utilisation des séries entières}
-Supposons que l'on souhaite résoudre une équation différentielle linéaire du premier ordre ou du second ordre dont les coefficients sont des fonctions polynômiales (ou développables en séries entières). On peut dans ce cas supposer l'existence d'une solution de cette équation développable en série entière (raisonnement par analyse-synthèse) : on injecte celle-ci dans l'équation et cela donne des conditions sur les coefficients. La synthèse permet effectivement de conclure sur l'existence d'une solution (et le théorème de Cauchy-Lipschitz linéaire peut même préciser l'unicité si nous disposons de condition(s) initiale(s)).
+Supposons que l'on souhaite résoudre une équation différentielle linéaire du premier ordre ou du second ordre dont les coefficients sont des fonctions polynomiales (ou développables en séries entières). On peut dans ce cas supposer l'existence d'une solution de cette équation développable en série entière (raisonnement par analyse-synthèse) : on injecte celle-ci dans l'équation et cela donne des conditions sur les coefficients. La synthèse permet effectivement de conclure sur l'existence d'une solution (et le théorème de Cauchy-Lipschitz linéaire peut même préciser l'unicité si nous disposons de condition(s) initiale(s)).
 
-\medskip
+
 
 %Bibmath
 \begin{Exemple} Considérons le problème de Cauchy suivant :
 $$ y''+xy'+y=1 $$
 avec $y(0)=y'(0)=0$. Ce problème de Cauchy a une unique solution d'après le théorème de Cauchy-Lipschitz linéaire. Déterminons cette unique solution.
 
-\vspace{10cm}
+\vspace*{10cm}
 \end{Exemple}
 
 \newpage
 
-$\phantom{test}$
 
-\vspace{7cm}
-\begin{ApplicationDirecte}
+\begin{ApplicationDirecte}{}
 Soit $f$ définie sur $]-1,1[$ par :
 $$ f(x) = \dfrac{\arcsin(x)}{\sqrt{1-x^2}}$$
 \begin{enumerate}

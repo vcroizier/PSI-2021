@@ -1,0 +1,176 @@
+\documentclass[twoside,a4paper,french,10pt]{VcCours}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{\vspace{-1.5em}}
+
+\begin{center}
+\large\bf
+Programme de colles\hspace{\stretch{1}}Semaine n\degres20 du 14/03 au 18/03/2022
+\end{center}
+\separationTitre
+
+
+Pour cette khôlle, chaque étudiant aura :
+\begin{itemize}
+\item Une ou deux \textbf{question de cours}.
+\item Une démonstration \textbf{(D)} ou un exercice à retravailler.
+\end{itemize} 
+  
+
+
+\section*{Chapitre 15 : Séries entières}
+\begin{enumerate}
+\item Convergence d'une série entière.
+\begin{itemize}
+\item Définition d'une série entière.
+\item Somme d'une série entière.
+\item \textbf{Lemme D'Abel + (D)}
+\item \textbf{Définition du rayon de convergence}.
+\item Proposition 1.10 : si $\vert z \vert < R$ et si $\vert z \vert >R$...
+\item Intervalle (ou disque) ouvert de convergence. Bien comprendre qu'il peut tout se passer sur la frontière ($-R$ et $R$ dans le cas réel et le cercle $C(0,R)$ dans le cas complexe).
+\item Connaître quelques méthodes pour obtenir des inégalités sur le rayon de convergence (avant l'exemple 2). \textbf{Important dans la pratique}.
+\item \textbf{Critère de comparaison $a_n = O(b_n)$ et $a_n \sim b_n$ + (D)}
+\item Utilisation du critère de d'Alembert.
+\item Différentes convergences sur l'intervalle ouvert de convergence.
+\end{itemize}
+\item Opérations sur les séries entières.
+\begin{itemize}
+\item Produit par un réel. \textbf{Somme}. 
+\item Produit de Cauchy.
+\end{itemize}
+\item Propriétés de la somme d'une série entière.
+\begin{itemize}
+\item Continuité de la somme sur $]-R,R[$. Cas complexe.
+\item \textbf{Petit résultat utile}.
+\item \textbf{Primitivation terme à terme.}
+\item \textbf{Dérivation terme à terme.}
+\item La somme d'une série entière est $\mathcal{C}^{\infty}$ sur $]-R,R[$, 
+\textbf{connaître l'expression des dérivées de la somme et savoir retrouver 
+l'expression en fonction de ces dérivées (corollaire 14)}.
+\item Unicité du développement en série entière.
+\end{itemize}
+\item Développement en série entière.
+\begin{itemize}
+\item \textbf{Série de Taylor en $0$}.
+\item Un contre-exemple : se méfier de la série de Taylor. 
+\item \textbf{Formule de Taylor avec reste intégrale}.
+\item \textbf{Développement de $\exp$ + (D)}
+\item \textbf{Connaître parfaitement} les développements en séries usuels 
+$\cos$, $\sin$, $ch$, $sh$, $\dfrac{1}{1-z}$ (et ceux associés...), 
+$\ln(1+x)$, $\ln(1+x)$, $\arctan(x)$, $(1+x)^{\alpha}$% + \textbf{(D)} 
+pour celle-ci. \textbf{La moindre erreur sur un de ces développements 
+= note inférieure à 10}.
+\item Quelques méthodes pour développer en série entière.
+\end{itemize}
+\end{enumerate}
+
+\section*{Chapitre 16 : Variables aléatoires discrètes}
+  
+  \begin{enumerate}
+  \item Généralités 
+  \begin{itemize}
+  \item Variable aléatoire discrète (VAD).
+  \item Support. Notations $(X=a)$, $(X \in U)$...
+  \end{itemize}
+  \item Loi d'une VAD.
+  \begin{itemize}
+  \item Loi. On commence par déterminer le support puis $P(X=k)$ pour $k$ dans le support.
+  \item Système complet d'évènements associé à une VAD.
+  \item \textbf{Fonction de répartition}. Propriétés. \textbf{(D)} : Croissance et limite en $+ \infty$.
+  \item Variable $Y=g(X)$.
+  \end{itemize}
+  \item Lois usuelles.
+  \begin{itemize}
+  \item \textbf{Connaître parfaitement les lois usuelles : uniforme, Bernoulli, Binomiale, Géométrique, Poisson.} (Bien préciser le support à chaque fois).
+  \item Savoir justifier qu'une variable suit une loi binomiale.
+  \item Savoir justifier qu'une variable suit une loi géométrique.
+  \item Caractérisation des lois géométrique, loi sans mémoire.
+  \item \textbf{Approximation de la loi binomiale par la loi de Poisson% + (D)
+  }.
+  \end{itemize}
+  \item Famille de variables aléatoires.
+  \begin{itemize}
+  \item Couple de variables aléatoires discrètes. Loi conjointe, loi marginale.
+  \item Savoir déterminer les lois marginales à l'aide de la loi conjointe. L'autre sens n'est pas possible.
+  \item Loi conditionnelle.
+  \item \textbf{Indépendance de deux variables aléatoires discrètes}. Généralisation. Quelques propriétés.
+  \item Si $X$ et $Y$ sont indépendantes, $f(X)$ et $g(Y)$ aussi.
+  \end{itemize}
+  % \item Moments d'une variable aléatoire.
+  % \begin{itemize}
+  % \item \textbf{Définition} de l'espérance (cas fini et cas infini).
+  % \item Linéarité, positivité, croissance.
+  % \item Proposition 5.10 : soit $X$ une V.A.D à valeurs dans $\mathbb{N}$. Alors $X$ admet une espérance si et seulement si la série :
+  % $$\sum_{n \geq 1} \P(X \geq n)$$
+  % converge et dans ce cas, l'espérance de $X$ est égale à la somme de cette série.
+  % \item \textbf{Espérances associées lois usuelles} + \textbf{(D) pour loi géométrique}.
+  % \item Espérance d'un produit de deux variables aléatoires indépendantes.
+  % \item \textbf{Théorème de transfert : cas fini et infini}. 
+  % \item Si $X^2$ admet une espérance alors $X$ admet une espérance : \textbf{(D)}.
+  % \item \textbf{Définition de la variance + propriétés + formule de Kœnig-Huygens}.
+  % \item \textbf{Variances associées aux lois usuelles}.
+  % \item Inégalité de Cauchy-Schwarz.
+  % \item \textbf{Définition : covariance et coefficient de corrélation}.
+  % \item Si $X$ et $Y$ sont deux variables aléatoires indépendantes admettant une variance alors $\textrm{Cov}(X,Y)=0$. La réciproque est fausse.
+  % \item $\rho(X,Y) \in [-1,1]$.
+  % \item \textbf{Variance d'une somme de variables aléatoires discrètes}.
+  % \end{itemize}
+  % \item
+  % \begin{itemize}
+  % \item \textbf{Fonction génératrice}.
+  % \item La loi d'une variable aléatoire est déterminée par sa fonction génératrice.
+  % \item Fonctions génératrices associées aux lois usuelles. \textbf{(D) pour la loi de Poisson}.
+  % \item Fonction génératrice : lien avec espérance et variance.
+  % \item Fonction génératrice d'une somme de variables aléatoires indépendantes.
+  % \item Somme de deux variables aléatoires indépendantes suivant une loi de Poisson : \textbf{(D)}
+  % \end{itemize}
+  % \item
+  % \begin{itemize}
+  % \item \textbf{Inégalité de Markov et inégalité de Bienaymé-Tchebychev}.
+  % \item \textbf{Loi faible des grands nombres.}
+  % \end{itemize}
+  \end{enumerate}
+  
+
+\begin{Exercice}
+  Développer en série entière $f : x \mapsto \dfrac{1}{(1-x)(2+x)} \cdot$
+\end{Exercice}
+
+\begin{Exercice}
+  Déterminer le développement en série entière en $0$ de $\arcsin$.
+\end{Exercice}
+
+  % \begin{Exercice}
+  %   Soient $\sum_{n \geq 0} a_n x^n$ une série entière d'une variable réelle de rayon de convergence $R>0$ et $S$ sa somme. 
+  %   Montrer que $S$ est paire sur $]-R,R[$ si et seulement si pour tout $n \in \mathbb{N}$, $a_{2n+1}=0$.
+  % \end{Exercice}
+
+%     \begin{Exercice}
+%       Montrons que la fonction $f$ définie sur $\mathbb{R}^*$ pour tout $x \in \mathbb{R}^*$ par :
+% $$ f(x) = \frac{e^x-1-x}{x^2}$$
+% est prolongeable en une fonction $\mathcal{C}^{\infty}$ sur $\mathbb{R}$.
+% \end{Exercice}
+
+\begin{Exercice}
+  Montrer que $\int_{0}^1 \dfrac{\ln(1+t)}{t}\dt = \sum_{n=1}^{+ \infty} \dfrac{(-1)^{n-1}}{n^2} \cdot$
+\end{Exercice}
+
+\begin{Exercice}
+  Soient $X$ et $Y$ deux variables aléatoires à valeurs dans $\N$. On suppose que la loi conjointe de $X$ et $Y$ vérifie :
+  \[
+  \forall (j,k) \in \mathbb{N}^2,  \P( X = j,Y = k ) = \frac{a}{j!k!}
+  \]
+où $a \in \mathbb{R}$.
+  \begin{enumerate}
+  \item
+    Déterminer la valeur de $a$.
+  \item
+    Retrouvons les lois marginales de $X$ et $Y$.
+  \item
+    Les variables $X$ et $Y$ sont elles indépendantes?
+  \end{enumerate}
+\end{Exercice}
+
+\end{document}  
