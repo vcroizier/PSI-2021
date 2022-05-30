@@ -1,0 +1,240 @@
+\documentclass[french,11pt,twoside]{VcCours}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+
+\renewcommand{\trou}[1]{{\color{white}#1}}
+%\renewcommand{\trou}[1]{{\color{blue}#1}}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Révisions d'algèbre}
+
+% \tableofcontents
+% \separationTitre
+
+\begin{Exercice}
+  \begin{enumerate}
+    \item Montrer qu’une matrice de rang $1$ est diagonalisable si et seulement si sa trace est non nulle.
+    \item Montrer qu’une matrice est de rang $1$ si et seulement si elle est le produit d’une matrice colonne par une matrice ligne.
+    \item Montrer que si $A$ est une matrice de rang $1$ alors pour tout $n$ de $\N^*$, $A^n=(\text{tr}(A))^{n-1}A$.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soient $F$ et $G$ deux sev d’un espace vectoriel euclidien $E$. Montrer que :
+ \[(F+G)^{\perp}=F^{\perp}\cap G^{\perp}\qquad\et\qquad (F\cap G)^{\perp}=F^{\perp}+G^{\perp}\]
+\end{Exercice}
+
+
+\begin{Exercice}
+  Est-ce que l’endomorphisme $\phi$ définie sur $\MM_4(\K)$ par
+  $\phi\left(\begin{matrix}
+    a&b\\c&d
+  \end{matrix}\right)=\left(\begin{matrix}
+    d&a\\b&c
+  \end{matrix}\right)$
+  est diagonalisable ?
+\end{Exercice}
+
+
+\begin{Exercice}
+  On se place dans $\R^4$ muni du produit scalaire usuel. 
+  
+  Déterminer la matrice, dans la base canonique, de la projection
+  orthogonale sur l'espace vectoriel $F$ défini par le système :
+  \[\systeme{x_1+x_2+x_3+x_4=0\\x_1-x_2+x_3-x_4=0}\]
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $A\in\MM_6(\R)$ inversible telle que $A^3-3A^2+2A=0$ et $\text{tr}(A)=8$.
+  \begin{enumerate}
+    \item Montrer que $A$ est diagonalisable.
+    \item Déterminer la liste des valeurs propres de $A$ ainsi que leur multiplicité. 
+    En déduire une matrice $D$ diagonale semblable à $A$.
+    \item Donner tous les polynômes annulateurs de $A$.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $A$ une matrice carrée symétrique d’ordre $n$.
+  \begin{enumerate}
+    \item Notons $B$ une matrice semblable à $A$. Montrer que $\Vert A\Vert_2=\Vert B\Vert_2$.
+    \item En déduire que la somme des carrés des valeurs propres de $A$ est égale à la somme des carrés de ses coefficients.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $A=\matrice{-2&0&1\\-5&3&0\\-4&4&-2}$ et $M\in\MM_3(\R)$ vérifiant $M^2-3M=A$.
+\begin{enumerate}
+\item Déterminer $P$ inversible et $D$ diagonale tels que : $A = PDP^{-1}$.
+\item Montrer que $AM = MA$.
+\item En déduire que $P^{-1}MP$ est diagonale.
+\item En déduire les valeurs possibles de $M$.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Déterminer la nature des applications linéaires définie, dans une base orthonormales, par les matrices :
+\[
+  -\frac19\matrice{7&4&4\\-4&8&-1\\4&1&-8}
+  \qquad  
+  \frac1{27}\matrice{2&-26&7\\-23&2&14\\14&7&22}
+  \qquad  
+  \frac13\matrice{2&-1&2\\2&2&-1\\-1&2&2}
+\]
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soient $n\in\N^*$ et $a_0$, \ldots, $a_n$ des réels deux à deux distincts. On pose :
+\[\forall P,Q\in\R_n[X],\quad (P|Q) = \sum_{k=0}^nP(a_k)Q(a_k)\]
+\begin{enumerate}
+  \item Montrer qu’il s’agit d’une produit scalaire.
+  \item On pose $F=\ensemble{P\in\R_n[X]}{\sum_{k=0}^nP(a_k)=0}$.
+  
+  Justifier rapidement que $F$ est un sous-espace vectoriel de $\R_n[X]$.
+  \item Calculer sa dimension ainsi que son orthogonal.
+  \item Calculer la distance de $X^n$ à $F$.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $A$ non inversible appartenant à $\MM_2(\R)$ telle que $A^2=\tr A$ et $A\neq0$.
+  \begin{enumerate}
+    \item Trouver un polynôme annulateur de $A$.
+    \item Déterminer $\Sp(A)$.
+    \item Montrer que $A$ est semblable à $B=\matrice{1&0\\0&0}$ avec une matrice de passage orthogonale.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soient $M=\matrice{a&c&b\\c&a+b&c\\b&c&a}$ et
+  $K=\matrice{0&1&0\\1&0&1\\0&1&0}$.
+  \begin{enumerate}
+    \item Montrer que $K$ est diagonalisable.
+    \item Montrer que $M$ s’écrit en fonction des puissances de $K$.
+    \item Diagonaliser $M$.
+    \item En déduire $M^n$.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  On pose pour $P$ et $Q$ dans $\R[X]$ : 
+  \[\langle P, Q\rangle = \int_0^1P(x)Q(x)dx\]
+  \begin{enumerate}
+    \item Montrer que $\langle\ ,\ \rangle$ est un produit scalaire.
+    \item Construire une base orthonormale de $\R_2[X]$ pour ce produit scalaire.
+    \item Déterminer le minimum pour $(a,b)$ dans $\R^2$ de
+          \[\int_0^1(x^2-ax-b)^2\dx\]
+    \item Traduire le résultat précédent en terme de distance à un sous-espace.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $A\in\MM_n(\R)$ vérifiant $A^3=A\tr A$.
+  \begin{enumerate}
+    \item Montrer que $\Ker(A^4)=\Ker(A)$.
+    \item Montrer que $X^4(X^3-1)$ est un polynôme annulateur de $A$.
+    \item Montrer que $X(X^3-1)$ est un polynôme annulateur de $A$.
+    \item En considérant $\Vert AX\Vert^2$
+    où $X$ est un vecteur propre de $A$, 
+    montrer que $\Sp(A)\subset\{0;1\}$.
+    \item En déduire les valeurs possibles pour $A$.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $A\in\MM_n(\K)$ définie par
+  \[A=\matrice{
+    a&b&\cdots&b\\
+    b&a&\ddots&\vdots\\
+    \vdots&\ddots&\ddots&b\\
+    b&\cdots&b&a}
+  \]
+\begin{enumerate}
+  \item Déterminer le polynôme caractéristique de $A$.
+  \item $A$ est-elle diagonalisable ?
+  \item Déterminer un polynôme annulateur de $A$, 
+  scindé à racines simples.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $A\in\MM_n(\R)$. Notons $f_A$ l’endomorphisme 
+  de $\MM_n(\R)$ définie par $f_A(M)=AM$.
+  \begin{enumerate}
+    \item Soit $\beta=(E_{11},E_{21},E_{31},\ldots,E_{nn})$.
+    Montrer
+    \[[f_A]_{\beta}=\left[
+    \begin{array}{c|c|c}
+      A&0&0\\\hline0&\ddots&0\\\hline0&0&A      
+    \end{array}\right]\]
+    \item Déterminer le rang de $f_A$ en fonction du rang de $A$.
+    \item Montrer que $f_A$ est diagonalisable si et seulement si $A$ est diagonalisable.
+    \item Déterminer $\chi_{f_A}$, $\text{tr}(f_A)$ et $\det(f_A)$.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $E$ un espace préhilbertien réel.
+  \begin{enumerate}
+    \item Montrer que si $p$ est un projecteur orthogonal alors pour tout $x$ de $E$, on a :
+      \[\langle x, p(x)\rangle = \Vert p(x)\Vert^2\qquad\et\qquad \langle x,x-p(x)\rangle = \Vert x-p(x)\Vert^2\]
+    \item Soit $u$ la somme de deux projecteurs orthogonaux. Montrer que les valeurs propres de $u$ sont réelles et qu’elles
+      sont dans $[0;2]$.
+\item Étudier $\Ker(u)$ et $\Ker(u-2\Id)$.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $n\in\N^*$. 
+  La matrice échiquier de taille $2n$ est la matrice 
+  $M_n$ ayant pour coefficient $m_{i,j} = 1$ si $i+j$ est paire, $0$
+  sinon. Ainsi :
+  \[M_3=\matrice{
+    1& 0& 1& 0& 1& 0\\
+    0& 1& 0& 1& 0& 1\\
+    1& 0& 1& 0& 1& 0\\
+    0& 1& 0& 1& 0& 1\\
+    1& 0& 1& 0& 1& 0\\
+    0& 1& 0& 1& 0& 1}
+  \]
+  \begin{enumerate}
+    \item Déterminer le rang de $M_n$.
+    \item Montrer sans calculer le polynôme caractéristique que $M_n$ est diagonalisable.
+    \item En déduire qu’il existe $2$ valeurs propres $0$ et une notée $\lambda$. 
+      Déterminer une base des espaces propres de $M$.
+    \item Montrer que ces espaces propres sont orthogonaux.
+    \item Déterminer l’expression analytique de la projection orthogonale sur $E_{\lambda}$ puis sur $E_0$.
+    \item Écrire en langage Python, une fonction qui renvoie la liste des matrices échiquiers pour $n$ dans ${1;\ldots;100}$.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  \begin{enumerate}
+    \item Montrer que les normes $\Vert\ldots\Vert_1$, $\Vert\ldots\Vert_2$ et $\Vert\ldots\Vert_{\infty}$ ne sont pas équivalentes sur $\CC([a,b],\R)$.
+    \item Déterminer une suite de $\CC([a,b],\R)$ convergeant pour $\Vert\ldots\Vert_1$ mais pas pour $\Vert\ldots\Vert_{\infty}$.
+    \item Montrer que si une suite de $\CC([a,b],\R)$ convergent pour $\Vert\ldots\Vert_{\infty}$, elle converge aussi pour $\Vert\ldots\Vert_1$. 
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Montrer que $\OO_n(\R)$ engendre $\MM_n(\R)$, c’est-à-dire que le plus petit 
+  sev de $\MM_n(\R)$ contenant $\OO_n(\R)$ est $\MM_n(\R)$ lui-même.
+\end{Exercice}
+\end{document}

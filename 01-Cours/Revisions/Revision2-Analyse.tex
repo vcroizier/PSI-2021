@@ -1,0 +1,304 @@
+\documentclass[french,11pt,twoside]{VcCours}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dx}{\text{d}x}
+
+\renewcommand{\trou}[1]{{\color{white}#1}}
+%\renewcommand{\trou}[1]{{\color{blue}#1}}
+
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Révisions d'analyse}
+
+% \tableofcontents
+% \separationTitre
+
+\begin{Exercice}
+  Déterminer le DSE des fonctions suivantes. Vous donnerez également 
+  l'intervalle $]-r;r[$ sur lequel l'égalité a lieu entre
+  la fonction et son DSE.
+  \begin{multicols}{3}
+  \begin{enumerate}
+  \item $\frac{1}{(1-x)^2}$
+  \item $\frac1{a-x}$
+  \item $\frac {e^x}{1-x}$
+  \item $\ln(1+2x^2)$
+  \item $\ln(1+x-2x^2)$
+  \item $\ln(1+x+x^2)$
+  \end{enumerate}
+  \end{multicols}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $\theta\in\R^*$. Résoudre le système différentiel $X'=AX$ avec 
+  $A=\matrice{0&\theta\\-\theta&0}$.
+\end{Exercice}
+
+
+\begin{Exercice}
+  Posons
+  \[I=\int_0^{+\infty}\frac1{1+t^4}dt
+  \qquad\et\qquad 
+  J=\int_0^{+\infty}\frac{t^2}{1+t^4}dt\]
+  \begin{enumerate}
+    \item Montrer que $I$ et $J$ convergent.
+    \item Montrer que $I = J$ en effectuant le changement de variable $x=\frac1t$.
+    \item Calculer $I+J$ en effectuant le changement de variable $x=t-\frac1t$.
+    En déduire la valeur de $I$.
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $f$ la fonction :
+  \[f(x)=\int_0^{+\infty}e^{-t}\frac{\sin(xt)}{t}dt\]
+  \begin{enumerate}
+    \item Quelle est le domaine de définition de $f$ ?
+    \item Montrer que $f$ est de classe $C^1$ sur $\R$ puis calculer $f'$.
+    \item En déduire la valeur de $f(x)$.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Considérons la courbe :
+  \[\sys{x(t)=a\cos(t)(1+\cos(t))\\
+      y(t)=a\sin(t)(1+\cos(t))
+    }
+  \]
+  pour $t\in[0;2\pi]$.
+\begin{enumerate}
+  \item Étudier et tracer la courbe.
+  \item Déterminer la longueur de la courbe.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Déterminer le rayon de convergence de la série $\sum a_nz^n$ si la suite $(a_n)$ est périodique, et non identique nulle.
+\end{Exercice}
+
+
+\begin{Exercice}
+  Considérons les fonctions $f_n$ définie de $\R$ dans $\R$ par :
+  \[fn(x)=\frac{x}{1+nx^2}\]
+  \begin{enumerate}
+    \item Montrer que $f_n$ converge uniformément sur $\R$. Identifier la limite $f$.
+    \item Montrer que $f_n'$ converge simplement sur $\R$. Identifier la limite $g$. 
+    En déduire qu'il n'y a pas convergence uniforme.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Montrer que l'équation différentielle :
+  \[x\ln(x)y' + y = x\]
+  admet une unique solution sur $]0;+\infty[$.
+\end{Exercice}
+
+
+\begin{Exercice}
+  Montrer que la série $\sum\frac{[\sqrt{n+1}]-[\sqrt{n}]}{n}$
+    est convergente. Déterminer sa limite.
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soient $a$ et $b$ deux réels tels que $0<a<b$. Justifier la convergence puis calculer :
+  \[I=\int_a^b\frac1{\sqrt{(b-x)(x-a)}}dx\]
+  Pour calculer l'intégrale on pourra mettre $(b-x)(x-a)$ sous forme canonique puis effectuer un changement de variable
+  adéquate.
+\end{Exercice}
+
+
+\begin{Exercice}
+  Considérons l'application $f$ définie par :
+  \[f(x,y)=\frac{xy(x^2-y^2)}{x^2+y^2}\]
+  \begin{enumerate}
+    \item Montrer que $f$ est prolongeable par continuité en $(0,0)$. 
+    On note encore $f$ ce prolongement.
+    \item Montrer que $f$ est de classe $C^1$ sur $\R^2$.
+    \item Montrer que $f$ n'est pas de classe $C^2$ sur $\R$.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Déterminer le rayon de convergence de la série entière
+  \[\sum_{n\geq0}\frac{3n}{n+2}x^n\]
+  puis calculer sa somme.
+\end{Exercice}
+
+
+\begin{Exercice}
+  Déterminer l'ensemble de définition et de continuité de la fonction :
+  \[F(x)=\int_0^{+\infty}\frac{e^{-tx}{1+t^2}}dt\]
+  Préciser $F(0)$ et $\lim_{x\to+\infty}F(x)$.
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $k$ un réel positif. On considère le système différentiel :
+  \[\systeme{
+      x''_1(t)=k(x_2(t)-x_1(t))-kx_1(t)\\
+      x''_2(t)=k(x_3(t)-x_2(t))+k(x_1(t)-x_2(t))\\
+      x''_3(t)=k(x_2(t)-x_3(t))-kx_3(t)
+    }
+  \]
+  Soit $X=\vecteur{x_1\\x_2\\x_3}$ et $A$ la matrice telle que $X''=AX$.
+  \begin{enumerate}
+    \item Trouver les valeurs propres de $A$
+    et la matrice $P$ telle que $P^{-1}AP$ est diagonale.
+    \item Résoudre ce système différentiel.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Étudier et tracer la courbe :
+  \[\systeme{x(t)=cos(2t)\\y(t)=\tan(t)\cos(2t)}\]
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $(an)$ une suite décroissante de $\R$ tels que la série $\sum a_n$ converge.
+  \begin{enumerate}
+    \item Notons $(R_n)$ la suite des restes de cette série, c'est-à-dire $R_n =
+    \sum_{k=n+1}^{+\infty}a_k$. Montrer que $R_n\tend_{n\to+\infty}0$.
+    \item Montrer que pour tout $n$ de $\N$, on a :
+  \[\systeme{0\leq(2n)a_{2n}\leq2R_n\\0\leq(2n+1)a_{2n+1}\leq2R_n}\]
+  \item En déduire que $na_n\tend_{n\to+\infty}0$.
+  \item En considérant la suite $a_n=\frac1n$ si $n$ est un carré et $u_n = 0$ sinon, 
+  montrer que l'hypothèse $(a_n)$ décroissante est indispensable.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Déterminer le rayon de convergence de la série entière $\sum a_nz^n$ où $(an)$ 
+  est la suite déterminée par $a_0 = \alpha$, $a_1 = \beta$ et
+  $a_{n+2} = 2a_{n+1}-a_n$ pour tout $n$ dans $\N$.
+\end{Exercice}
+
+
+\begin{Exercice}
+  Considérons l'intégrale :
+  \[I=\in_0^1\frac{\ln(1-t)\ln(t)}{t}dt\]
+  \begin{enumerate}
+    \item Montrer que la série $\sum\frac{x^n}{n+1}$ converge simplement vers $-\frac{\ln(1-x)}{x}$.
+    \item En déduire que : $I=\sum_{n=1}^{+\infty}\frac{1}{n^3}$.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $(f_n)$ une suite croissante de fonctions continues convergeant vers $f$ continue, sur un segment $[a,b]$ de $\R$. 
+  On se propose de montrer que la convergence est uniforme.
+  \begin{enumerate}
+    \item Soit $(F_n)$ une suite décroissante de fermés de $[a,b]$ telle que chaque $F_n$ soit non vide.
+    \begin{enumerate}
+      \item Montrer que $F_n$ est compact pour tout $n$ de $\N$. En déduire que $u_n = \max(F_n)$ existe.
+      \item Montrer que $(u_n)$ est décroissante. En déduire que $(u_n)$ est convergente. 
+      Notons $l$ sa limite.
+      \item Montrer que $l\in\bigcap_{n\in\N}F_n$ et donc que $\bigcap_{n\in\N}F_n$ est non vide.
+\end{enumerate}
+\item Soit $\epsilon$ positif. Considérons les ensembles : $Fn = \ensemble{x\in X}{f(x)-f_n(x) \geq \epsilon}$.
+  \begin{enumerate}
+    \item Montrer que $(F_n)$ est une suite décroissante de fermés.
+  \item Montrer que l'intersection des $F_n$ est vide.
+  \item En déduire : $\exists n\in\N/\ \forall x\in X,\ f(x)-f_n(x) \leq \epsilon$.
+  \item Monter que la convergence est uniforme.
+\end{enumerate}
+\item Montrer en étudiant la suite $1-x^n$ sur $[0;1]$ que la continuité de $f$ est indispensable.
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Notons
+  \[I=\int_0^{+\infty}\frac{e^{-x}-e^{-2x}}{x}dx\]
+  \begin{enumerate}
+    \item Justifier l'existence de $I$.
+    \item Montrer que $\forall t\in\R_+^*$, $\int_t^{+\infty}\frac{e^{-x}-e^{-2x}}{x}dx
+    =\int_{t}^{2t}\frac{e^{-y}}{y}dy$
+    \item En déduire la valeur de $I$. On pourra utiliser $\int_{t}^{2t}\frac{1}{x}dx$
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $f$ l'application de $\R^2$ dans $\R$ définie par :
+  $f(x,y) = x^2 + y^2-2x-4y$
+  \begin{enumerate}
+    \item Déterminer les extrema de la fonction.
+    \item $f$ admet-elle un maximum global sur $\R^2$ ? Préciser le minimum global sur $\R^2$.
+    \item Soit \[D = \ensemble{(x,y)\in\R^2}{0 \leq x \leq 2\et0 \leq y \leq x}\]
+    Représenter l'ensemble $D$.
+    \item Quels sont les extrema globaux de $f$ sur $D$ ?
+\end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Dans les $3$ cas suivants, on prolonge la fonction en $(0;0)$ par $0$. Déterminer si ces fonctions sont continues :
+  \[f_1(x,y)=\frac{xy^2-3x^3}{x^2+2y^2}\qquad f_2(x,y)=\frac{xy}{x^2+y^2}
+  \qquad f_3(x,y)=\frac{1-cos(xy)}{xy^2}\]
+\end{Exercice}
+
+
+\begin{Exercice}
+  Soit $\sum a_nx^n$ une série entière dont le rayon de convergence est strictement positif. 
+  On note $f$ sa somme sur $]-R;R[$.
+    \begin{enumerate}
+      \item Trouver des conditions nécessaires et suffisantes portant sur les coefficients $(a_n)$ pour que $f$ soit solution de
+    l'équation différentielle :
+    \[xy'' + 2y' + xy = 0\]
+    \item On suppose ces conditions vérifiées. Déterminer $a_n$ lorsque $a_0 = 1$.
+    \item Quelle est la fonction $f$ obtenue ? Quelle est le rayon de convergence $R$ ?
+  \end{enumerate}
+\end{Exercice}
+
+
+\begin{Exercice}
+  Notons $H_n=1+\frac12+\frac13+\ldots+\frac1n$ et $a\in[0;1[$. 
+  Déterminer les valeurs de $a$ pour lesquelles la série $\sum a^{H_n}$ est convergente.
+\end{Exercice}
+
+
+\begin{Exercice}
+  Calculer l'intégrale de :
+  \[I=\int_0^1\frac{\ln(x)}{1-x}dx\]
+\end{Exercice}
+
+
+% \begin{Exercice}
+%   Soit $f_n$ l'application définie par :
+%   \[f_n(x)=\sum_{k=1}^n\frac{[kx]}{k3^}\]
+%   où $[\ldots]$ représente la partie entière.
+%   \begin{enumerate}
+%     \item Montrer que $(f_n)$ converge normalement sur tout segment de $\R$. On note $f$ sa limite.
+%     \item Montrer que $f$ est continue en chaque réel irrationnel.
+%     \item Soit $x=\frac{p}{q}$ un élément de $\Q$. Montrer que pour tout $\epsilon\in\R_+^*$ :
+%       \[f(x)-f(x-\epsilon)\geq\frac{1}{q^3}\]
+%       En déduire que $f$ n'est continue en aucun élément de $\Q$.
+% \end{enumerate}
+% \end{Exercice}
+
+
+\begin{Exercice}
+  Trouver toutes les applications $f$ deux fois dérivables de $\R$ dans $\R$ vérifiant :
+  \[\forall(x,y)\in\R^2,\ f(x+y)+f(x-y)=2f(x)f(y)\]
+\end{Exercice}
+
+\begin{Exercice}
+Soit la surface d'équation $xyz = 1$.
+\begin{enumerate}
+  \item Montrer que la surface est régulière, c'est-à-dire qu'elle n'a pas de point critique.
+  \item Déterminer l'équation du plan tangent en un point $M_0 = (x_0,y_0,z_0)$ quelconque de la surface.
+  \item Notons $A$, $B$ et $C$ les points d'intersection du plan tangent en $M_0$ avec les axes $(Ox)$, $(Oy)$ et $(Oz)$. Montrer que
+l'aire du tétraèdre $(O,A,B,C)$ ne dépend pas du point choisi. On rappelle que le volume du tétraèdre $(O,A,B,C)$
+est : $\frac16\det(\vect{OA},\vect{OB},\vect{OC})$.
+\end{enumerate}
+\end{Exercice}
+
+\end{document}

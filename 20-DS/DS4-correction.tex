@@ -1,0 +1,215 @@
+\documentclass[twoside,french,11pt]{VcCours}
+\newcommand{\enc}[1]{\fbox{#1}}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\du}{\text{d}u}
+\renewcommand{\d}{\text{d}}
+\begin{document}
+
+\Titre{PSI}{Promotion 2021--2022}{Mathématiques}{Devoir surveillé n°4}
+
+\begin{center}
+\large\bf
+Correction
+\end{center}
+\separationTitre
+
+
+\section*{Exercice 1 : Intégrales impropres}
+
+
+\section*{Exercice 2 : Probabilités discrètes}
+
+
+\section*{Problème 3 : Matrices nilpotentes d'ordre $3$}
+
+
+\section*{Problème 4 : Étude d'un endomorphisme sur un espace de polynômes}
+\begin{enumerate}
+  \item Exercice entièrement corrigé en TD.
+  \item 
+  \begin{enumerate}
+  \item Soit $P= a+bX+cX^2 \in  \mathbb{R}_2[X]$. Alors pour tout réel $x$ et tout réel $t$,
+  $$ P(x+t) = a+b(x+t)+c(x+t)^2 = (a+bx+ cx^2) \times 1 + (b+2cx)t+ c t^2$$
+  D'après la question $1$, on sait que pour tout entier $k \geq 0$,
+  $$ \int_0^{+ \infty} t^k e^{-t} \dt = k!$$
+  Par linéarité, on en déduit que l'intégrale définissant $T(P)(x)$ converge et vaut :
+  $$ T(P)(x) = (a+bx+cx^2) \times 0! + (b+2cx) \times 1! + c \times 2!  = (a+b+2c)+ (b+2c)x+c x^2$$
+  On en déduit que pour tout $P \in  \mathbb{R}_2[X]$, $T(P) \in  \mathbb{R}_2[X]$. Montrons la linéarité de $T$. Soit $P,Q \in  \mathbb{R}_2[X]$ et $\lambda \in \mathbb{R}$. Alors pour tout réel $x$,
+  \begin{align*}
+  T(\lambda P+Q)(x) & = \int_0^{+ \infty} e^{-t} (\lambda P(x+t)+Q(x+t)) \dt \\
+  & = \lambda \int_0^{+ \infty} e^{-t} P(x+t) \dt + \int_0^{+ \infty} e^{-t} Q(x+t) \dt
+  \end{align*}
+  par linéarité sachant que les intégrales convergent d'après le raisonnement précédent. Ainsi, pour tout réel $x$,
+  $$ T(\lambda P+Q)(x) = \lambda T(P)(x) + T(Q)(x)$$
+  donc 
+  $$ T(\lambda P+Q) = \lambda T(P) + T(Q)$$
+  Ainsi,
+  \enc{$T$ est un endomorphisme de $\mathbb{R}_2[X]$}
+  D'après le calcul général obtenu au début de la question, on a :
+  $$ \boxed{ M=\begin{pmatrix}
+  1&1&2\\
+  0&1&2\\
+   0&0&1\end{pmatrix}}$$
+  %
+  % on pose :
+  %$$ \forall x \in \mathbb{R}, \; T(P)(x) = \int_0^{+ \infty} e^{-t} P(x+t) \dt$$
+  \item La matrice $M$ est triangulaire supérieure et son unique valeur propre est $1$. Si elle était diagonalisable, elle serait semblable à la matrice $I_3$ donc serait égale à $I_3$ ce qui est faux. Ainsi,
+  \enc{la matrice $M$ n'est pas diagonalisable}
+  \end{enumerate}
+  \item 
+  \begin{enumerate}
+  \item Soient $P$ et $\mathbb{R}_n[X]$ et $(x,t) \in \mathbb{R}^2$. Appliquons la formule de Taylor pour les polynômes. Pour un polynôme de degré au plus $n$ on a :
+  $$P(x+t)=\sum_{k=0}^n\frac{P^{(k)}(x)}{k!}t^k$$
+  Ainsi,
+  \enc{$P(x+t)= \sum_{k=0}^nt^kb_k(x)$ en posant $b_k(x)=\dfrac{P^{(k)}(x)}{k!}$}
+  
+  \item Soit $x \in \mathbb{R}$. Alors :
+  $$ P(x+t)= \sum_{k=0}^n b_k(x) t^k$$
+  D'après la question $1$, on sait que pour tout entier $k \geq 0$,
+  $$ \int_0^{+ \infty} t^k e^{-t} \dt = k!$$
+  Par linéarité, on en déduit que l'intégrale définissant $T(P)(x)$ converge et on a :
+  \begin{align*}
+  T(P)(x) & = \sum_{k=0}^n b_k(x) k! \\
+  & =  \sum_{k=0}^n P^{(k)}(x) k! \\
+  & = \sum_{k=0}^n D^k(P)(x)
+  \end{align*}
+  Cette égalité est vraie pour tout réel $x$ donc :
+  $$T(P) = \sum_{k=0}^n D^k(P) $$
+  Ainsi,
+  $$ \boxed{T = \sum_{k=0}^n D^k}$$
+  Or $D$ est un endomorphisme de $\mathbb{R}_n[X]$ donc pour tout entier $k \geq 0$, $D^k$ aussi et ainsi, 
+  \enc{$T$ est un endomorphisme de $\mathbb{R}_n[X]$}
+  \item Soit $k \in \iii{0}{n}$. D'après la question précédente, on a :
+  $$T(X^k)=X^k+kX^{k-1}+ \cdots +k!$$
+  Ainsi, la matrice de $T$ dans la base canonique de $\R_n[X]$ est :
+  $$M=\begin{pmatrix}
+  1&1&2& \cdots &n! \\
+   0&1&2& \cdots &n! \\
+    0&0&1&\cdots&n!/2\\
+    \vdots & \vdots &\vdots& &\vdots \\
+   0&0&0& \cdots&1 \\
+   \end{pmatrix}$$
+  
+  $M$ est triangulaire et a donc comme unique valeur propre 1 (d'ordre $n+1$).
+  Le sous-espace propre associé \`a 1 est l'ensemble des polynômes $P$ qui vérifient $T(P)=P$, c'est-\`a-dire 
+  $$P'+P''+...+P^{(n)}= \tilde{0}$$
+  C'est équivalent \`a $P'=0$ puisque si $P'$ n'était pas nul, $P'+P''+...+P^{(n)}$ aurait le degré de $P'$. Ainsi,
+  \enc{le sous-espace propre associé \`a 1 est donc l'ensemble des polynômes constants}
+  
+  \end{enumerate}
+  \item L'équation différentielle :
+  $$  y'-y+g=0$$
+  est une équation différentielle linéaire du première ordre à coefficients et second membre continues. L'équation différentielle homogène associé est :
+  $$ y'-y=0$$
+  donc les solutions sont les fonctions définies sur $\mathbb{R}$ de la forme $x \mapsto ke^x$ où $k \in \mathbb{R}$. Pour répondre à la question posée, il suffit de montrer que la fonction $h : \mathbb{R} \rightarrow \mathbb{R}$ définie par :
+  $$ h(x) = e^x \int_x^{+ \infty} e^{-t} g(t) \dt$$
+  est une solution particulière de $y'-y+g=0$. Remarquons pour commencer que $g$ est bornée sur $\mathbb{R}$ donc 
+  $$ g(t) e^{-t} =\underset{+ \infty} O(e^{-t})$$
+  Or la fonction $t \mapsto e^{-t}$ est intégrable sur $\mathbb{R}_+$ donc $t \mapsto g(t) e^{-t}$ aussi. Par continuité de cette fonction sur $\mathbb{R}$, on en déduit que $h$ est bien définie sur $\mathbb{R}$. Pour tout réel $x$, on a :
+  $$ h(x) = e^x \left( I - \int_0^x  e^{-t} g(t) \dt \right)$$
+  où 
+  $$ I = \int_0^{+ \infty}  e^{-t} g(t) \dt $$
+  Sachant que $x \mapsto e^{-t} g(t)$ est continue sur $\mathbb{R}$, on en déduit d'après le théorème fondamental de l'analyse que $h$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ (par produit) et on a pour tout réel $x$,
+  \begin{align*}
+  h'(x) &= e^x  \left( I - \int_0^x  e^{-t} g(t) \dt \right) + e^x (-e^{-x}g(x)) \\
+  & = h(x) - g(x)
+  \end{align*}
+  Ainsi, $h$ est solution particulière de $y'-y+g=0$. Finalement,  les solutions sur $\mathbb{R}$ de l'équation différentielle :
+  $$ y'-y+g=0$$
+  sont les fonctions de la forme :
+  $$ \boxed{x \mapsto k e^x + e^x \int_x^{+ \infty} e^{-t} g(t) \dt}$$
+  où $k \in \mathbb{R}$.
+  \item 
+  \begin{enumerate}
+  \item Pour montrer que $T_g$ est bien définie, par continuité de $t \mapsto e^{-t} g(t+x)$ sur $\mathbb{R}$ pour tout réel $x$, il suffit de montrer que $t \mapsto e^{-t} g(t+x)$ est intégrable sur $\mathbb{R}_+$. Or la fonction $g$ est bornée sur $\mathbb{R}$ donc :
+  $$ g(t) e^{-t} =\underset{+ \infty} O(e^{-t})$$
+  Or la fonction $t \mapsto e^{-t}$ est intégrable sur $\mathbb{R}_+$ donc $t \mapsto g(x+t) e^{-t}$ aussi. Ainsi,
+  \enc{$T_g$ est bien définie}
+  Soit $x \in \mathbb{R}$. Le changement de variable $u=t+x$ (affine donc licite) dans l'intégrale (convergente) précédente montre que celle-ci est égale à l'intégrale convergente suivante : 
+  $$\boxed{T_g(x) = e^x \int_x^{+ \infty} e^{-u} g(u) \textrm{d}u}$$
+  %On a donc pour tout réel $x$,
+  %$$ T_g(x) = e^x \left( I - \int_0^x e^{-u} g(u) \textrm{d}u \right)$$
+  %où
+  %$$ I= \int_0^{+ \infty} e^{-u} g(u) \textrm{d}u$$
+  %La fonction $u \mapsto e^{-u}g(u)$ est continue sur $\mathbb{R}$ donc d'après le théorème fondamental de l'analyse, on en déduit que 
+  D'après la question précédente ($T_g$ a la bonne forme),
+  \enc{$T_g$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$}
+  %et on a pour tout réel $x$,
+  %\begin{align*}
+  %T_g'(x) & = e^x\left( I - \int_0^x e^{-u} g(u) \textrm{d}u \right) + e^x (-e^{x}g(x)) \\
+  %& = T_g(x) -g(x)
+  %\end{align*}
+  %Ainsi,
+  et
+  \enc{$T_g'=T_g-g$}
+  %On définit $T_g : \mathbb{R} \rightarrow \mathbb{R}$ par :
+  %$$ \forall x \in \mathbb{R}, \; T_g(x) = \int_0^{+ \infty} e^{-t} g(t+x) \dt$$
+  %Justifier que $T_g$ est bien définie puis que :
+  %$$ \forall x \in \mathbb{R}, \; T_g(x) = e^x \int_x^{+ \infty} e^{-u} g(u) \textrm{d}u$$
+  %En déduire que $T_g$ est de classe $\mathcal{C}^1$ sur $\mathbb{R}$ et préciser la relation entre $(T_g)'$, $T_g$ et $g$.
+  \item Soit $\lambda$ un réel tel que $T_g= \lambda g$. Si $\lambda$ est nul alors $T_g$ est nul puis $T_g'$ est nul donc $g$ est nulle d'après la question précédente ce qui est faux. Si $\lambda$ n'est pas nul alors $g$ est aussi de classe $\mathcal{C}^1$ et $T_g'= \lambda g'$ donc d'après la question précédente :
+  $$ \lambda g' = (\lambda - 1)g$$
+  puis
+  $$ g' = \dfrac{\lambda-1}{\lambda} g$$
+  donc il existe un réel $k$ non nul (car $g$ est non nul) tel que :
+  $$ g(x)=k\e^{\frac{\lambda-1}{\lambda}x}$$
+  La fonction $g$ étant bornée sur $\mathbb{R}$, seul $\lambda=1$ est possible. Dans ce cas $g'$ est nulle donc $g$ est constante non nulle. Réciproquement, Si $g$ est constante non nulle, seul $\lambda=1$ convient. Sinon il n'existe pas de $\lambda$ tel que $T_g=\lambda g$. Ainsi,
+  \enc{Seul $\lambda=1$ est possible}
+  \item La fonction $g$ est bornée donc pour tout $x\in\R$,
+   $$|g(x)|\leq \Vert g \Vert_{\infty}$$
+  Sachant que $t \mapsto e^{-t}$ est intégrable sur $\mathbb{R}_+$, on a d'après l'inégalité triangulaire que pour tout réel $x$,
+  $$|T_g(x)|\le \int_0^{+\infty}\e^{-t}\Vert g \Vert_{\infty}\d t=\Vert g \Vert_{\infty}$$
+  après calcul de l'intégrale (en passant par une intégrale partielle évidemment!). Ainsi, $T_g$ est borné sur $\mathbb{R}$ et 
+  \enc{$\Vert T_g \Vert_{\infty}\leq \Vert g \Vert_{\infty}$}
+  \item Supposons que $g$ tend vers 0 en $+\infty$. Soit $\varepsilon>0$. il existe $A\in\R_+$ tel que pour tout réel $x \geq A$,
+  $$|g(x)|\le\varepsilon$$
+  Sachant que $t \mapsto e^{-t}$ est intégrable sur $\mathbb{R}_+$, on a d'après l'inégalité triangulaire que pour tout réel $x \geq A$,
+  $$|T_g(x)|\le \int_0^{+\infty}\varepsilon\,\e^{-t}\d t=\varepsilon$$
+  puisque $|g(x+t)|\le\varepsilon$ pour $t\ge0$. Ainsi,
+  \enc{$T_g$ tend vers 0 en $+\infty$}
+  \end{enumerate}
+  \item 
+  \begin{enumerate}
+  \item Soit $A \in \mathbb{R}$. La fonction $t \mapsto e^{(i-1)t}$ est continue sur $\mathbb{R}$ et pour tout réel $t$,
+  $$ \vert e^{(i-1)t} \vert = e^{-t}$$
+  La fonction $t \mapsto e^{-t}$ est intégrable sur $\mathbb{R}_+$ donc 
+  \enc{ $\int_A^{+ \infty} e^{(i-1)t} \dt$ converge absolument donc converge}
+  Soit $X>A$. Alors :
+  \begin{align*}
+  \int_A^X  e^{(i-1)t} \dt & = \left[ \dfrac{e^{(i-1)t}}{i-1} \right]_A^X \\
+  &  =   \dfrac{e^{(i-1)X}}{i-1} -  \dfrac{e^{(i-1)A}}{i-1}\\
+  & = \dfrac{e^{iX} e^{-X}}{i-1} - \dfrac{e^{iA} e^{-A}}{i-1} 
+  \end{align*}
+  Sachant que $\vert e^{i X} \vert = 1$, on en déduit que :
+  $$ \int_A^{+ \infty} e^{(i-1)t} \dt = - \dfrac{e^{iA} e^{-A}}{i-1}$$
+  donc 
+  $$ \boxed{\int_A^{+ \infty} e^{(i-1)t} \dt=  \dfrac{e^{iA} e^{-A}}{1-i}}$$
+  \item La linéarité de $g \mapsto T_g$ est évidente. Pour $g : t  \mapsto \e^{it}$, on a d'après la question précédente que pour tout réel $x$,
+  $$T_g(x)=\e^x\int_x^{+\infty}\e^{-u}\e^{iu}\d u=\frac{\e^{ix}}{1-i}$$
+  Ainsi,
+  $$T_g(x)=\frac12(\cos(x)+i\sin(x))(1+i)=\frac12(\cos(x)-\sin(x)) +\frac i2(\cos(x)+\sin(x))$$
+  Par linéarité de $T$, en notant $c$ et $s$ les fonctions cosinus et sinus, on en déduit que :
+  $$T_c(x)=\Re e(T_g(x))=\frac12(\cos(x)-\sin(x))$$
+  et 
+  $$T_s(x)=\Im m(T_g(x))=\frac12(\cos(x)+\sin(x))$$
+  Ainsi,
+  $$T_c=\frac12(c-s) \; \hbox{ et } \; T_s=\frac12(c+s)$$
+  Ainsi,
+  \enc{l'application $g\mapsto T_g$ est bien un endomorphisme de $F$}
+  Sa matrice dans la base $(c,s)$ est 
+  $$N=\frac12 \begin{pmatrix}
+  1&1\\
+  -1 & 1 \\
+  \end{pmatrix}$$
+  Son polynôme caractéristique vaut :
+  $$\chi_N(x)=x^2-x+\frac12$$
+  et il n'est pas scindé dans $\mathbb{R}$ (son discriminant vaut $-1<0$). Ainsi,
+  \enc{$N$ n'est pas diagonalisable dans $M_2(\R)$}
+  
+  \end{enumerate}
+  \end{enumerate}
+
+\section*{Problème 5 : Racine carré}
+
+
+\end{document}
